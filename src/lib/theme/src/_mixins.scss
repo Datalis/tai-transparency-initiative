@@ -1,0 +1,128 @@
+@mixin generate-color-utilities($colors, $contrasts) {
+	@each $key, $value in $colors {
+		.text_#{$key} {
+			color: $value;
+		}
+		.bg_#{$key} {
+			background-color: $value;
+			$fg: map-get($contrasts, $key);
+			color: a11y-color($fg, $value);
+		}
+	}
+}
+
+@mixin generate-grid-system($breakpoints, $gutter) {
+	$xs: 0;
+	$sm: map-get($breakpoints, 'sm');
+	$md: map-get($breakpoints, 'md');
+	$lg: map-get($breakpoints, 'lg');
+	$xl: map-get($breakpoints, 'xl');
+
+	@each $breakpoint, $value in $breakpoints {
+		.show_on_#{$breakpoint}_and_down {
+			display: none;
+			@media (max-width: $value) {
+				display: unset;
+			}
+		}
+		.show_on_#{$breakpoint}_and_up {
+			display: none;
+			@media (min-width: $value) {
+				display: unset;
+			}
+		}
+		.hide_on_#{$breakpoint}_and_down {
+			@media (max-width: $value) {
+				display: none;
+			}
+		}
+		.hide_on_#{$breakpoint}_and_up {
+			@media (min-width: $value) {
+				display: none;
+			}
+		}
+	}
+
+	.container {
+		width: 100%;
+		height: 100%;
+		// Max width for container if >=960px
+		max-width: calc($xl - $gutter);
+		margin: 0 auto;
+		padding: 0 1rem;
+		@media (max-width: $sm) {
+			padding: 0 1rem;
+		}
+		@media (max-width: $xl) {
+			max-width: calc(100% - ($gutter * 4));
+		}
+		.row {
+			width: 100%;
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+			// margin-right: -1rem;
+			// margin-left: -1rem;
+			&::after {
+				content: ' ';
+				display: table;
+				clear: both;
+			}
+			& [class^='col'] {
+				float: left;
+				margin: 0.5rem;
+				min-height: 0.125rem;
+			}
+			.col {
+				max-width: 100%;
+				flex-basis: 0;
+				flex-grow: 1;
+				@for $i from 1 through 12 {
+					&_#{$i} {
+						flex: 0 calc($i / 12 * 100% - $gutter);
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin generate-dividers {
+	.divider {
+		display: block;
+		//width: 100%;
+		height: 1px;
+		background-color: #212121;
+		@for $i from 1 through 4 {
+			&_#{$i} {
+				height: #{$i}px;
+			}
+		}
+		@each $key, $value in $colors {
+			&_#{$key} {
+				background-color: $value;
+			}
+		}
+	}
+}
+
+@mixin generate-utilities($utilities) {
+	@each $name, $u in $utilities {
+		$value: map-get($u, 'value');
+		$class: map-get($u, 'class');
+		$prop: map-get($u, 'prop');
+		@if type-of($value) == 'string' or type-of(nth($value, 1)) != 'list' {
+			$value: zip($value, $value);
+		}
+		@if type-of($prop) == 'string' {
+			$prop: append((), $prop);
+		}
+		@each $k, $v in $value {
+			.#{$class}_#{$k} {
+				@each $p in $prop {
+					#{$p}: $v;
+				}
+			}
+		}
+	}
+}

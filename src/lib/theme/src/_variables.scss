@@ -1,0 +1,217 @@
+$white: #fff;
+$black: #101010;
+
+$colors: (
+	'white': #ffffff,
+	'black': #000000,
+	'dark': #222222,
+	'gray': #7a879fff,
+	'gray_light': #c7ccd6,
+	'light': #fafafa,
+	'surface': #f6f6f6,
+	'panel': #c7ccd6ff,
+	'blue': #0a132d,
+	'blue_light': #5c4affff,
+	'green': #00d8ad,
+	'green_light': #59ebcfff,
+	'orange': #e79e6a,
+	'danger': #dc3545
+);
+
+$contrasts: (
+	'white': #212121,
+	'black': #fafafa,
+	'dark': #fafafa,
+	'gray': #212121,
+	'gray_light': #212121,
+	'light': #212121,
+	'surface': #212121,
+	'panel': #212121,
+	'blue': #fff,
+	'blue_light': #fff,
+	'green': #212121,
+	'green_light': #212121,
+	'orange': #212121,
+	'danger': #fafafa
+);
+
+$grid-breakpoints: (
+	'xs': 0,
+	'sm': 540px,
+	'md': 720px,
+	'lg': 960px,
+	'xl': 1200px
+);
+
+$grid-gutter: 1rem;
+
+$spacers: (
+	'0': 0,
+	'1': 0.25rem,
+	'2': 0.5rem,
+	'3': 1rem,
+	'4': 1.5rem,
+	'5': 3rem,
+	'auto': auto
+);
+
+$sizes: (
+	'0': 0,
+	'15': 15%,
+	'25': 25%,
+	'50': 50%,
+	'75': 75%,
+	'100': 100%,
+	'auto': auto
+);
+
+$font-size: 1rem !default;
+
+$font-weights: (
+	'thin': 100,
+	'light': 300,
+	'regular': 400,
+	'bold': 700,
+	'black': 900
+);
+
+$utilities: (
+	width: (
+		prop: width,
+		class: w,
+		value: $sizes
+	),
+	height: (
+		prop: height,
+		class: h,
+		value: $sizes
+	),
+	display: (
+		prop: display,
+		class: display,
+		value: inline inline-block block grid table table-row table-cell flex inline-flex none
+	),
+	margin: (
+		prop: margin,
+		class: m,
+		value: $spacers
+	),
+	margin-x: (
+		prop: margin-left margin-right,
+		class: mx,
+		value: $spacers
+	),
+	margin-y: (
+		prop: margin-top margin-bottom,
+		class: my,
+		value: $spacers
+	),
+	margin-right: (
+		prop: margin-right,
+		class: mr,
+		value: $spacers
+	),
+	margin-left: (
+		prop: margin-left,
+		class: ml,
+		value: $spacers
+	),
+	margin-top: (
+		prop: margin-top,
+		class: mt,
+		value: $spacers
+	),
+	margin-bottom: (
+		prop: margin-bottom,
+		class: mb,
+		value: $spacers
+	),
+	padding: (
+		prop: padding,
+		class: p,
+		value: $spacers
+	),
+	padding-x: (
+		prop: padding-right padding-left,
+		class: px,
+		value: $spacers
+	),
+	padding-y: (
+		prop: padding-top padding-bottom,
+		class: py,
+		value: $spacers
+	),
+	padding-left: (
+		prop: padding-left,
+		class: pl,
+		value: $spacers
+	),
+	padding-right: (
+		prop: padding-right,
+		class: pr,
+		value: $spacers
+	),
+	padding-top: (
+		prop: padding-top,
+		class: pt,
+		value: $spacers
+	),
+	padding-bottom: (
+		prop: padding-bottom,
+		class: pb,
+		value: $spacers
+	),
+	text-transform: (
+		prop: text-transform,
+		class: text,
+		value: capitalize lowercase uppercase
+	),
+	text-align: (
+		prop: text-align,
+		class: text,
+		value: center left right
+	),
+	font-weight: (
+		prop: font-weight,
+		class: font,
+		value: $font-weights
+	),
+	z-index: (
+		prop: z-index,
+		class: z,
+		value: 1 2 3 4 5 6 7 8 9 10
+	),
+	flex-direction: (
+		prop: flex-direction,
+		class: flex,
+		value: row column row-reverse column-reverse
+	),
+	flex-grow: (
+		prop: flex-grow,
+		class: flex-grow,
+		value: 1 0
+	),
+	align-items: (
+		prop: align-items,
+		class: align,
+		value: (
+			start: flex-start,
+			end: flex-end,
+			center: center,
+			baseline: baseline,
+			stretch: stretch
+		)
+	),
+	justify-content: (
+		prop: justify-content,
+		class: justify,
+		value: (
+			start: flex-start,
+			end: flex-end,
+			center: center,
+			between: space-between,
+			around: space-around,
+			evenly: space-evenly
+		)
+	)
+);

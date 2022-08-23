@@ -1,0 +1,211 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba($color: #000000, $alpha: 0);
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-size: $font-size;
+}
+
+/** ------ RESETS ---------  */
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1;
+}
+
+// TODO: Move to mixin
+
+h1 {
+	font-size: calc($font-size * 2.5);
+}
+h2 {
+	font-size: calc($font-size * 2);
+}
+h3 {
+	font-size: calc($font-size * 1.75);
+}
+h4 {
+	font-size: calc($font-size * 1.5);
+}
+h5 {
+	font-size: calc($font-size * 1.25);
+}
+h6 {
+	font-size: $font-size;
+}
+small,
+.small {
+	font-size: $font-size * 0.75;
+}
+
+input,
+textarea,
+select {
+	appearance: none;
+}
+
+textarea::placeholder {
+	font-family: 'Lato';
+	font-size: 14px;
+	font-weight: 300;
+}
+
+button {
+	appearance: none;
+	outline: none;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/** ------ INPUTS ---------  */
+
+.form_control {
+	position: relative;
+	margin-bottom: 0.5rem;
+	display: block;
+
+	label {
+		display: block;
+		margin-bottom: 0.25rem;
+	}
+
+	&--inline {
+		display: flex;
+		flex-direction: row-reverse;
+		margin-left: 0;
+		justify-content: flex-end;
+		align-items: center;
+		label {
+			margin-left: 1rem;
+		}
+	}
+	input {
+		border: none;
+		padding: 0.85rem 1.25rem;
+		font-size: 14px;
+		line-height: 1;
+		border-radius: 5px;
+		border: 2px solid map-get($colors, 'blue');
+		width: 100%;
+		background-color: transparent;
+	}
+	input[type='checkbox'] {
+		appearance: checkbox;
+		width: 24px;
+		height: 24px;
+	}
+
+	select {
+		border: none;
+		padding: 0.85rem 1.25rem;
+		font-size: 14px;
+		line-height: 1;
+		border-radius: 5px;
+		border: 2px solid map-get($colors, 'blue');
+		width: 100%;
+		background-color: transparent;
+		background-position: calc(100% - 7px) calc(100% - 14px + 1px);
+		background-repeat: no-repeat;
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABmJLR0QA/wD/AP+gvaeTAAAAZElEQVQoke3MwQmDAAyF4a9ancIVrEu5gze9drvOox7aSwpBQc+CPwTCy5/HzSklerQHThtOkcMOXyyYUKVbFdkSzis/PjCm4yfKutj/pWO4O7bituiQJwbMWPFGffaUaWKuzg9thxaOrEQgIAAAAABJRU5ErkJggg==');
+	}
+
+	textarea {
+		font-family: inherit !important;
+		border: none;
+		padding: 0.85rem 1.25rem;
+		font-size: 14px;
+		line-height: 1;
+		border-radius: 5px;
+		border: 2px solid map-get($colors, 'blue');
+		width: 100%;
+		background-color: transparent;
+	}
+}
+
+/** ------ BUTTONS ---------  */
+
+.btn {
+	border-radius: 50px;
+	padding: 0.75rem 1.25rem;
+	min-width: 200px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1;
+	vertical-align: middle;
+	border: 3px solid transparent;
+
+	@each $name, $color in $colors {
+		$contrast: map-get($contrasts, $name);
+		&_#{$name} {
+			background-color: $color;
+			color: a11y-color($contrast, $color);
+		}
+		&_outline_#{$name} {
+			background-color: transparent;
+			border: 3px solid $color;
+			color: map-get($colors, 'light');
+		}
+	}
+
+	&_small {
+		font-size: 12px;
+		min-width: 120px;
+		padding: 0.5rem 1rem;
+	}
+}
+
+/** ------ CARDS ---------  */
+.card {
+	display: block;
+	position: relative;
+	width: 100%;
+	border-radius: 15px;
+	box-shadow: 0 0 50px rgba(#111, 0.75);
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	height: 100%;
+	padding: 2rem;
+	@each $key, $value in $colors {
+		&_#{$key} {
+			background-color: $value;
+		}
+	}
+}
+
+/** ------ MIXINS ---------  */
+
+@include generate-utilities($utilities);
+@include generate-color-utilities($colors, $contrasts);
+@include generate-grid-system($grid-breakpoints, $grid-gutter);
+@include generate-dividers();

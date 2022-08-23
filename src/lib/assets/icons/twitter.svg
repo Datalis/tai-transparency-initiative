@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg9"
+   width="19.119995"
+   height="19.119999"
+   viewBox="0 0 19.119995 19.119999"
+   sodipodi:docname="WEB Diseño-xd.pdf"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs13">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath313">
+      <path
+         d="m 443.88,1834.33 h 6.24 v -5.07 h -6.24 z"
+         id="path311" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview11"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false" />
+  <g
+     id="g17"
+     inkscape:groupmode="layer"
+     inkscape:label="Page 1"
+     transform="matrix(1.3333333,0,0,-1.3333333,-586.44,2452.2266)">
+    <path
+       d="m 447,1825.33 c -3.69,0 -6.67,2.98 -6.67,6.67 0,3.69 2.98,6.67 6.67,6.67 3.69,0 6.67,-2.98 6.67,-6.67 0,-3.69 -2.98,-6.67 -6.67,-6.67 z"
+       style="fill:none;stroke:#c8ccd5;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+       id="path287" />
+    <g
+       id="g307">
+      <g
+         id="g309"
+         clip-path="url(#clipPath313)">
+        <path
+           d="m 449.48,1833.06 c 0,-0.05 0,-0.11 0,-0.16 0,-1.69 -1.28,-3.64 -3.64,-3.64 v 0 c -0.69,0 -1.37,0.19 -1.96,0.57 0.1,-0.01 0.2,-0.02 0.31,-0.02 0.57,0 1.13,0.19 1.59,0.55 -0.55,0.01 -1.03,0.37 -1.2,0.89 0.19,-0.04 0.39,-0.03 0.58,0.02 -0.6,0.12 -1.03,0.65 -1.03,1.26 0,0 0,0.01 0,0.01 0.18,-0.1 0.38,-0.15 0.58,-0.16 -0.56,0.38 -0.73,1.13 -0.39,1.71 0.65,-0.8 1.6,-1.29 2.63,-1.34 -0.1,0.45 0.04,0.91 0.37,1.23 0.52,0.48 1.33,0.46 1.81,-0.06 0.29,0.06 0.56,0.16 0.82,0.31 -0.11,-0.3 -0.29,-0.54 -0.57,-0.71 0.26,0.03 0.5,0.1 0.74,0.21 -0.18,-0.26 -0.39,-0.49 -0.64,-0.67 z"
+           style="fill:#00e0b5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path315" />
+      </g>
+    </g>
+  </g>
+</svg>

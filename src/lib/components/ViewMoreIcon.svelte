@@ -1,0 +1,37 @@
+<script>
+	import CrossIcon from '$lib/assets/icons/cross.svg?component';
+
+	export let isOpen = false;
+</script>
+
+<div class="view_more" class:is-open={isOpen}>
+	<CrossIcon class="view_more__icon" width="24" height="24" />
+</div>
+
+<style scoped lang="scss">
+	$panel: map-get($colors, 'panel');
+	$blue: map-get($colors, 'blue');
+	$light: map-get($colors, 'light');
+	.view_more {
+		width: 35px;
+		height: 35px;
+		background-color: $panel;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+		:global(.view_more__icon) {
+			transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+		}
+		&.is-open {
+			background-color: $blue;
+			:global(.view_more__icon) {
+				transform: rotate(45deg) !important;
+			}
+			:global(.view_more__icon g > line) {
+				stroke: $light !important;
+			}
+		}
+	}
+</style>
