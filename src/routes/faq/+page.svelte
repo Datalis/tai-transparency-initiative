@@ -69,11 +69,14 @@
 	<SubscribeSection />
 </div>
 
-<style>
+<style lang="scss">
 	.landing_section {
 		min-height: unset !important;
 	}
 	.faq_list_section {
 		min-height: unset !important;
+		.divider {
+			width: 100% !important;
+		}
 	}
 </style>

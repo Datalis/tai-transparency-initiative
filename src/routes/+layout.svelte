@@ -27,6 +27,9 @@
 		section {
 			min-height: 500px;
 			padding: 3rem 0;
+			.divider {
+				width: 100px;
+			}
 		}
 	}
 </style>

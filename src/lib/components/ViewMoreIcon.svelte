@@ -15,14 +15,14 @@
 	.view_more {
 		width: 35px;
 		height: 35px;
-		background-color: $panel;
+		background-color: darken($color: $panel, $amount: 10);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		border-radius: 50%;
-		transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 		:global(.view_more__icon) {
-			transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+			transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 		}
 		&.is-open {
 			background-color: $blue;

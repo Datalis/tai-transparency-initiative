@@ -4,6 +4,7 @@
 	import TwitterIcon from '$lib/assets/icons/twitter.svg?component';
 	import LinkedInIcon from '$lib/assets/icons/linkedin.svg?component';
 	import XIcon from '$lib/assets/icons/x.svg?component';
+	import LinkIcon from '$lib/assets/icons/link.svg?component';
 </script>
 
 <footer class="footer container">
@@ -111,7 +112,9 @@
 				<span class="display_block mt_2 text_gray"
 					>1100 13th St NW, Suite 800 Washington, DC 20005, United States</span
 				>
-				<a href="/" class="display_block mt_2 text_dark mt_3 font_bold">View larger map</a>
+				<a href="/" class="display_block mt_2 text_dark mt_3 font_bold"
+					>View larger map <LinkIcon class="ml_2" fill="#212121" /></a
+				>
 				<div class="display_flex mt_4">
 					<FacebookIcon class="mr_2" width="32" height="32" />
 					<TwitterIcon class="mr_2" width="32" height="32" />

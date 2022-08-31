@@ -6,14 +6,14 @@
 	<div class="container">
 		<h3 class="mb_4">Transparency and Accountability Initiative Resources</h3>
 		<div class="divider divider_4 divider_green" />
-		<div class="row mt_4">
-			<div class="col">
+		<div class="row mt_5">
+			<div class="col_4">
 				<ResourceItem />
 			</div>
-			<div class="col">
+			<div class="col_4">
 				<ResourceItem />
 			</div>
-			<div class="col">
+			<div class="col_4">
 				<ResourceItem />
 			</div>
 		</div>

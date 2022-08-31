@@ -3,7 +3,6 @@
 </script>
 
 <div class="resource_item">
-	<div class="divider divider_dark divider_2" />
 	<div class="resource_item__wrapper">
 		<div class="resource_item__wrapper--left">
 			<div class="img_wrapper">

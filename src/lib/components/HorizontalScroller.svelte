@@ -1,25 +1,43 @@
 <script>
-	export let height = 200;
-	export let clazz = '';
+	export let height = 300;
+	export let px = 0;
+	export let variant = 'white';
 </script>
 
-<div id="scroller" class={clazz} style="height: {height}px;">
+<div id="scroller" class="scroller--{variant}" style="height: {height}px;">
 	<div class="wrapper" style="height: {height + 30}px;">
-		<slot />
+		<div class="container">
+			<div class="display_flex px_{px}">
+				<slot />
+			</div>
+		</div>
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	#scroller {
 		width: 100%;
 		overflow: hidden;
+		padding: 2rem 0;
 	}
 	#scroller .wrapper {
 		width: 100%;
-		padding: 1rem;
+		//padding: 1rem;
 		overflow-x: scroll;
 		overflow-y: hidden;
 		-webkit-overflow-scrolling: touch;
-		display: inline-flex;
+		background: url(/src/lib/assets/images/decor1.svg);
+		background-repeat: no-repeat;
+		background-size: 105% auto;
+		background-position-x: center;
+		background-attachment: local;
+	}
+
+	#scroller.scroller--green .wrapper {
+		background: url(/src/lib/assets/images/decor1--green.svg);
+		background-repeat: no-repeat;
+		background-size: 105% auto;
+		background-position-x: center;
+		background-attachment: local;
 	}
 </style>

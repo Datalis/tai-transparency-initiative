@@ -29,5 +29,9 @@
 				line-height: 1.5;
 			}
 		}
+
+		.form_control input {
+			border-radius: 25px;
+		}
 	}
 </style>

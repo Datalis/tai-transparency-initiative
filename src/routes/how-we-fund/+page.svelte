@@ -9,6 +9,7 @@
 	import ResourceItem from '$lib/components/ResourceItem.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
+	import HorizontalScroller from '$lib/components/HorizontalScroller.svelte';
 </script>
 
 <div id="how-we-fund" class="page">
@@ -30,7 +31,7 @@
 		</div>
 	</section>
 	<section class="partners_section">
-		<img class="partners_section--dec" src={PartnerDecorImg} alt="" />
+		<!-- <img class="partners_section--dec" src={PartnerDecorImg} alt="" /> -->
 		<div class="container">
 			<h5 class="font_bold mb_4">Partner support</h5>
 			<div class="divider divider_4 divider_green" />
@@ -38,36 +39,51 @@
 				We help donor members work together to improve grant making practice and <br />
 				boost collective impact. Specifically, TAI aims to accomplish the following:
 			</p>
-			<div class="row mt_5">
-				<div class="col">
-					<div class="partners_section__item">
-						<img src={PartnerImg1} alt="" />
-						<p class="mt_5">
-							Enhance diversity, equity and inclusion practices in our own foundations and in our
-							partners
-						</p>
-					</div>
-				</div>
-				<div class="col">
-					<div class="partners_section__item">
-						<img src={PartnerImg1} alt="" />
-						<p class="mt_5">
-							Enhance diversity, equity and inclusion practices in our own foundations and in our
-							partners
-						</p>
-					</div>
-				</div>
-				<div class="col">
-					<div class="partners_section__item">
-						<img src={PartnerImg1} alt="" />
-						<p class="mt_5">
-							Enhance diversity, equity and inclusion practices in our own foundations and in our
-							partners
-						</p>
-					</div>
-				</div>
-			</div>
 		</div>
+		<HorizontalScroller height={400} variant="green">
+			<div class="partners_section__item">
+				<img src={PartnerImg1} alt="" />
+				<p class="mt_5">
+					Enhance diversity, equity and inclusion practices in our own foundations and in our
+					partners
+				</p>
+			</div>
+			<div class="partners_section__item">
+				<img src={PartnerImg1} alt="" />
+				<p class="mt_5">
+					Enhance diversity, equity and inclusion practices in our own foundations and in our
+					partners
+				</p>
+			</div>
+			<div class="partners_section__item">
+				<img src={PartnerImg1} alt="" />
+				<p class="mt_5">
+					Enhance diversity, equity and inclusion practices in our own foundations and in our
+					partners
+				</p>
+			</div>
+			<div class="partners_section__item">
+				<img src={PartnerImg1} alt="" />
+				<p class="mt_5">
+					Enhance diversity, equity and inclusion practices in our own foundations and in our
+					partners
+				</p>
+			</div>
+			<div class="partners_section__item">
+				<img src={PartnerImg1} alt="" />
+				<p class="mt_5">
+					Enhance diversity, equity and inclusion practices in our own foundations and in our
+					partners
+				</p>
+			</div>
+			<div class="partners_section__item">
+				<img src={PartnerImg1} alt="" />
+				<p class="mt_5">
+					Enhance diversity, equity and inclusion practices in our own foundations and in our
+					partners
+				</p>
+			</div>
+		</HorizontalScroller>
 	</section>
 	<section class="founders_section">
 		<div class="container">
@@ -122,50 +138,23 @@
 	}
 	.partners_section {
 		position: relative;
-		&--dec {
-			position: absolute;
-			top: 50%;
-			z-index: 1;
-			width: 110vw;
-			object-fit: cover;
-			object-position: center;
-			margin: 0 auto;
-			left: 0;
-			right: 0;
-		}
-		.divider {
-			width: 100px;
-			margin-left: 0;
-		}
-		.col {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		.col:first-child {
-			align-items: flex-start;
-		}
-		.col:last-child {
-			align-items: flex-end;
-		}
 		&__item {
-			width: 75%;
+			min-width: 33.333%;
+			height: 400px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			img {
+				height: 60%;
+				width: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
 		}
-	}
 
-	.participatory_section {
-		.divider {
-			width: 100px;
-			margin-left: 0;
-		}
-	}
-	.founders_section {
-		.divider {
-			width: 100px;
-			margin-left: 0;
+		&__item + &__item {
+			margin-left: 4rem;
+			//margin-right: 2rem;
 		}
 	}
 </style>

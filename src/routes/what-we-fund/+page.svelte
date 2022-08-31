@@ -36,7 +36,7 @@
 		<div class="container">
 			<h3 class="text_dark">What does TAI Funding look like?</h3>
 			<span class="divider divider_4 divider_green my_4" />
-			<div class="row">
+			<div class="row mt_5">
 				<div class="col_4">
 					<div class="funding_item">
 						<span class="funding_item__icon">
@@ -50,7 +50,9 @@
 				</div>
 				<div class="col_4 display_flex">
 					<div class="funding_item mx_auto">
-						<span class="funding_item__icon" />
+						<span class="funding_item__icon">
+							<InternetIcon />
+						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
 							health services they were promised and deserve
@@ -59,7 +61,9 @@
 				</div>
 				<div class="col_4 display_flex">
 					<div class="funding_item ml_auto">
-						<span class="funding_item__icon" />
+						<span class="funding_item__icon">
+							<TargetIcon class="ml_1 mb_1" />
+						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
 							health services they were promised and deserve
@@ -70,7 +74,9 @@
 			<div class="row mt_4">
 				<div class="col_4">
 					<div class="funding_item">
-						<span class="funding_item__icon" />
+						<span class="funding_item__icon">
+							<SearchIcon />
+						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
 							health services they were promised and deserve
@@ -79,7 +85,9 @@
 				</div>
 				<div class="col_4 display_flex">
 					<div class="funding_item mx_auto">
-						<span class="funding_item__icon" />
+						<span class="funding_item__icon">
+							<CogsIcon />
+						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
 							health services they were promised and deserve
@@ -88,7 +96,9 @@
 				</div>
 				<div class="col_4 display_flex">
 					<div class="funding_item ml_auto">
-						<span class="funding_item__icon" />
+						<span class="funding_item__icon">
+							<ChartIcon />
+						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
 							health services they were promised and deserve
@@ -169,19 +179,11 @@
 	$green: map-get($colors, 'green');
 	$blue: map-get($colors, 'blue');
 	.landing_section {
-		.divider {
-			width: 100px;
-			margin-left: 0;
-		}
 		&__content {
 			width: 30vw;
 		}
 	}
 	.funding_section {
-		.divider {
-			width: 100px;
-			margin-left: 0;
-		}
 		.funding_item {
 			&__icon {
 				position: absolute;
@@ -202,24 +204,6 @@
 			border-radius: 25px;
 			padding: 2rem 3rem;
 			background-color: $green;
-		}
-	}
-	.funding_data_section {
-		.divider {
-			width: 100px;
-			margin-left: 0;
-		}
-	}
-	.why_matters_section {
-		.divider {
-			width: 100px;
-			margin-left: 0;
-		}
-	}
-	.participatory_section {
-		.divider {
-			width: 100px;
-			margin-left: 0;
 		}
 	}
 </style>

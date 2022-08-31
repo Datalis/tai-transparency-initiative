@@ -5,7 +5,7 @@
 
 	import FeaturedImg from '$lib/assets/images/featured-1.jpg';
 
-	import PartnerDecorImg from '$lib/assets/images/decor1.png';
+	import PartnerDecorImg from '$lib/assets/images/decor1.svg?component';
 	import ResourceItem from '$lib/components/ResourceItem.svelte';
 	import HorizontalScroller from '$lib/components/HorizontalScroller.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
@@ -32,12 +32,13 @@
 		</div>
 	</section>
 	<section class="_6Cs_section">
-		<!-- <img class="partners_section--dec" src={PartnerDecorImg} alt="" /> -->
 		<div class="container">
 			<div class="_6Cs_wrapper">
-				<h3 class="font_bold mb_4 mt_0">Our 6Cs of funder support</h3>
-				<div class="divider divider_4 divider_light" />
-				<HorizontalScroller clazz="mt_4">
+				<div class="p_4">
+					<h3 class="font_bold mb_4 mt_0">Our 6Cs of funder support</h3>
+					<div class="divider divider_4 divider_light" />
+				</div>
+				<HorizontalScroller px={4}>
 					<div class="_6Cs_item">
 						<div class="display_flex align_center">
 							<span class="_6Cs_item__count mr_3">1</span>
@@ -140,7 +141,7 @@
 				</div>
 				<div class="model_item">
 					<div class="model_item__header bg_blue py_3 px_4">
-						<h5 class="text_uppercase text_green m_0">Learning</h5>
+						<h5 class="text_uppercase text_green m_0">Collaboration</h5>
 					</div>
 					<div class="model_item_body bg_gray p_4 display_flex flex_column justify_evenly">
 						<div>
@@ -162,7 +163,7 @@
 				</div>
 				<div class="model_item">
 					<div class="model_item__header bg_blue py_3 px_4">
-						<h5 class="text_uppercase text_green m_0">Learning</h5>
+						<h5 class="text_uppercase text_green m_0">Impact</h5>
 					</div>
 					<div class="model_item_body bg_gray p_4 display_flex flex_column justify_evenly">
 						<div>
@@ -179,6 +180,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="display_flex align_center justify_center mt_5">
+				<button class="btn btn_outline_green text_dark">Full 2020-2024 Strategy</button>
 			</div>
 		</div>
 	</section>
@@ -269,7 +273,7 @@
 		._6Cs_wrapper {
 			background-color: $green_light;
 			border-radius: 15px;
-			padding: 2rem;
+			//padding: 2rem;
 		}
 
 		._6Cs_item {

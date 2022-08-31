@@ -16,7 +16,7 @@
      transform="matrix(1.3333333,0,0,-1.3333333,39.606201,2688.2377)">
     <path
        d="m 639.19,2015.5 c 0,0 -5.91,-43.16 -125.26,-45.93 -119.35,-2.77 -146.14,30.06 -226.6,31.46 -80.45,1.4 -155.66,-28.43 -208.29,-34.36 -52.62,-5.94 -106.61,19.55 -106.61,19.55"
-       style="fill:none;stroke:#fafafa;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#00d8ad;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
        id="path2176" />
   </g>
 </svg>

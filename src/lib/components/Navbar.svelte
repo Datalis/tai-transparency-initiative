@@ -152,20 +152,22 @@
 			overflow: hidden;
 			transform: translate3d(0, -100%, 0);
 			will-change: transform;
-			transition: all 0.9s cubic-bezier(1, 0, 0, 1);
-			transition-delay: 0.3s;
-			//animation: close 0.9s cubic-bezier(1, 0, 0, 1) 0.4s;
+			transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.3s ease 0.5s;
+			transition-delay: 0.4s;
+			opacity: 0;
 			.container {
 				opacity: 0;
-				transition: opacity 0.4s;
+				transition: opacity 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 			}
 
 			&.open {
+				opacity: 1;
+				transition: all 0.7s cubic-bezier(1, 0, 0, 1), opacity 0.3s ease;
 				transition-delay: 0.001s;
 				transform: translate3d(0, 0, 0);
 				.container {
 					opacity: 1;
-					transition-delay: 0.8s;
+					transition-delay: 0.6s;
 				}
 			}
 

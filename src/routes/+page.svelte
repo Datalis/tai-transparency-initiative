@@ -27,7 +27,7 @@
 	<section class="cards_section bg_blue">
 		<div class="container">
 			<div class="row">
-				<div class="col">
+				<div class="col_4">
 					<div class="cards_section__card card">
 						<div class="cards_section__card--overlay">
 							<img src={PlaceHolderImg} alt="" />
@@ -42,7 +42,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col_4">
 					<div class="cards_section__card card">
 						<div class="cards_section__card--overlay">
 							<img src={PlaceHolderImg} alt="" />
@@ -57,7 +57,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col_4">
 					<div class="cards_section__card card">
 						<div class="cards_section__card--overlay">
 							<img src={PlaceHolderImg} alt="" />
@@ -109,10 +109,6 @@
 		&__content {
 			height: 100%;
 			width: 30vw;
-			.divider {
-				width: 100px;
-				margin-left: 0;
-			}
 
 			p {
 				line-height: 1.5;
@@ -148,9 +144,6 @@
 				h3 {
 					margin: 0;
 					line-height: 4rem;
-				}
-				.divider {
-					width: 100px;
 				}
 			}
 		}

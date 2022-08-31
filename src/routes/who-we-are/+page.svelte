@@ -10,6 +10,7 @@
 	import MemberItem from '$lib/components/MemberItem.svelte';
 	import JoinSection from '$lib/components/JoinSection.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
+	import StaffItem from '$lib/components/StaffItem.svelte';
 </script>
 
 <div>
@@ -69,6 +70,9 @@
 			<div class="member_list mt_4 display_flex flex_column">
 				<MemberItem />
 				<div class="divider divider_blue divider_4 my_4" />
+				<MemberItem />
+				<div class="divider divider_blue divider_4 my_4" />
+				<MemberItem />
 			</div>
 		</div>
 	</section>
@@ -82,14 +86,26 @@
 				produce and share knowledge.
 			</p>
 			<div class="staff_list mt_4">
-				<h5 class="mb_2">Staff</h5>
+				<h4 class="mb_2">Staff</h4>
 				<div class="divider divider_blue divider_4" />
-				<Accordion>
-					<AccordionItem>
-						<div slot="header" class="" />
-						<div slot="body" class="" />
-					</AccordionItem>
-				</Accordion>
+				<StaffItem />
+				<div class="divider divider_blue divider_4" />
+				<StaffItem />
+				<div class="divider divider_blue divider_4" />
+				<StaffItem />
+			</div>
+		</div>
+	</section>
+	<section class="committee_section bg_panel">
+		<div class="container">
+			<div class="committee_list mt_4">
+				<h4 class="mb_2">Steering Committee</h4>
+				<div class="divider divider_blue divider_4" />
+				<StaffItem />
+				<div class="divider divider_blue divider_4" />
+				<StaffItem />
+				<div class="divider divider_blue divider_4" />
+				<StaffItem />
 			</div>
 		</div>
 	</section>
@@ -98,10 +114,6 @@
 </div>
 
 <style lang="scss">
-	section .divider {
-		width: 100px;
-		margin-left: 0;
-	}
 	.landing_section {
 		padding: 0 !important;
 		height: 400px;
@@ -127,7 +139,14 @@
 		.staff_list {
 			.divider {
 				width: 100% !important;
+				margin-top: 0.5rem !important;
+				margin-bottom: 0.5rem !important;
 			}
 		}
+	}
+	.committee_section .divider {
+		width: 100% !important;
+		margin-top: 0.5rem !important;
+		margin-bottom: 0.5rem !important;
 	}
 </style>
