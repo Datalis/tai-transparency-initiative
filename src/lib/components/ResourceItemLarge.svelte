@@ -3,7 +3,7 @@
 </script>
 
 <div class="resource_item">
-	<div class="resource_item__wrapper">
+	<a href="/resources/10101001" class="resource_item__wrapper">
 		<div class="resource_item__wrapper--left">
 			<div class="img_wrapper">
 				<span class="category_tag">Some</span>
@@ -26,13 +26,13 @@
 			<h3 class="text_green mt_3 mb_4">Who receives over $500m in TPA grants?</h3>
 			<small class="text_gray">By <a href="/" class="text_gray">Author name</a> (Role at TAI)</small
 			>
-			<p>
+			<p class="text_dark">
 				We also wanted to share with you our updated TAIʼs grants database, covering our memberʼs
 				TPA-related grants active in 2021. We are working on a short series of blogs related funding
 				trends, both of TAI and more broadly. Here is the first!
 			</p>
 		</div>
-	</div>
+	</a>
 </div>
 
 <style lang="scss" scoped>

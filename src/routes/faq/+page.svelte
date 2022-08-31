@@ -4,7 +4,7 @@
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ViewMoreIcon from '$lib/components/ViewMoreIcon.svelte';
 
-	let currentFAQ = 1;
+	let currentFAQ = 0;
 </script>
 
 <div>
