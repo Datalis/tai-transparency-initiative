@@ -1,9 +1,9 @@
 <section class="subscribe_section">
 	<div class="container">
 		<div class="subscribe_section__panel bg_panel p_4">
-			<h3 class="font_regular">Keep updated with TAI WEEKLY</h3>
-			<span>Everything you need to know about transparency, accountability</span>
-			<span>and participation, delivered to your inbox.</span>
+			<h2 class="text_center">Keep updated with <br /> TAI WEEKLY</h2>
+			<span class="font_light">Everything you need to know about transparency, accountability</span>
+			<span class="font_light">and participation, delivered to your inbox.</span>
 			<div class="display_flex mt_5">
 				<div class="form_control mr_4 mb_0">
 					<input type="email" placeholder="Email" name="" id="" />
@@ -23,6 +23,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			justify-content: center;
 			h3 {
 				max-width: 300px;
 				text-align: center;

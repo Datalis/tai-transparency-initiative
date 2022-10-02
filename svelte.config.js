@@ -11,15 +11,16 @@ const config = {
 		},
 		postcss: {
 			plugins: [
-				autoprefixer({
-					add: true
-				})
+				autoprefixer()
 			]
 		}
 	}),
 	kit: {
+		prerender: {
+			entries: ['*']
+		},
 		adapter: adapter({
-			edge: true
+			edge: true,
 		})
 	}
 };

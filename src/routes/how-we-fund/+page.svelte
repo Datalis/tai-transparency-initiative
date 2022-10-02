@@ -1,23 +1,94 @@
 <script>
-	import PartnerImg1 from '$lib/assets/images/partner1.png';
-	import PartnerImg2 from '$lib/assets/images/partner2.png';
-	import PartnerImg3 from '$lib/assets/images/partner3.png';
+	import PartnerImg1 from '$lib/assets/images/partner_support/1.png';
+	import PartnerImg2 from '$lib/assets/images/partner_support/2.png';
+	import PartnerImg3 from '$lib/assets/images/partner_support/3.png';
+	import PartnerImg4 from '$lib/assets/images/partner_support/4.png';
+	import PartnerImg5 from '$lib/assets/images/partner_support/5.png';
 
-	import LaptopImg from '$lib/assets/images/laptop.png';
+	import ParticipatoryStrategyVideo from '$lib/assets/video/movie.webm';
 
-	import PartnerDecorImg from '$lib/assets/images/decor1.png';
-	import ResourceItem from '$lib/components/ResourceItem.svelte';
+	// import PartnerDecorImg from '$lib/assets/images/decor1.png';
+	// import ResourceItem from '$lib/components/ResourceItem.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
-	import HorizontalScroller from '$lib/components/HorizontalScroller.svelte';
+	// import HorizontalScroller from '$lib/components/HorizontalScroller.svelte';
+
+	import { gsap } from 'gsap/dist/gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { onMount } from 'svelte';
+
+	/**
+	 * @type {HTMLElement}
+	 */
+	let partnersSlide;
+	/**
+	 * @type {number}
+	 */
+	let windowWidth;
+
+	$: partnersSlideWidth = partnersSlide?.getBoundingClientRect()?.width || 0;
+
+	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		// @ts-ignore
+		gsap.to('.partners_section', {
+			scrollTrigger: {
+				trigger: '.partners_section',
+				start: 'center center',
+				end: 'bottom -100%',
+				pin: true,
+				scrub: true
+			}
+		});
+
+		// @ts-ignore
+		gsap.to('.partners_section .container', {
+			scrollTrigger: {
+				trigger: '.partners_section',
+				start: 'top bottom',
+				end: 'bottom -300%',
+				scrub: 0.5
+			},
+			y: '-15%'
+		});
+
+		let sliderOffset = partnersSlide.getBoundingClientRect().left;
+		console.log(sliderOffset);
+		let toScroll = windowWidth - partnersSlide.offsetWidth - 2 * sliderOffset;
+
+		// @ts-ignore
+		gsap.to('.partners_section .partners_section__slide', {
+			scrollTrigger: {
+				trigger: '.partners_section',
+				scrub: 1,
+				start: 'top top',
+				end: 'bottom -100%'
+			},
+			x: toScroll
+		});
+
+		// @ts-ignore
+		gsap.to('.partners_section .partners_section__slide--decor', {
+			scrollTrigger: {
+				trigger: '.partners_section',
+				scrub: 1,
+				start: 'top top',
+				end: 'bottom -100%'
+			},
+			x: toScroll + 2 * sliderOffset
+		});
+	});
 </script>
+
+<svelte:window bind:innerWidth={windowWidth} />
 
 <div id="how-we-fund" class="page">
 	<section class="landing_section bg_blue">
 		<div class="container h-100">
 			<div class="landing_section__content">
 				<h1 class="text_green">How we fund</h1>
-				<span class="divider divider_4 divider_light" />
+				<span class="divider divider_2 divider_light" />
 				<p class="mt_4">
 					TAI offers a platform for candid, constructive exchange around grantmaking practices. Our
 					members learn from each other and hold each other accountable to be more inclusive,
@@ -33,57 +104,55 @@
 	<section class="partners_section">
 		<!-- <img class="partners_section--dec" src={PartnerDecorImg} alt="" /> -->
 		<div class="container">
-			<h5 class="font_bold mb_4">Partner support</h5>
-			<div class="divider divider_4 divider_green" />
-			<p>
+			<h2 class="font_bold mb_4">Partner support</h2>
+			<div class="divider divider_2 divider_green" />
+			<p class="mt_4">
 				We help donor members work together to improve grant making practice and <br />
 				boost collective impact. Specifically, TAI aims to accomplish the following:
 			</p>
 		</div>
-		<HorizontalScroller height={400} variant="green">
-			<div class="partners_section__item">
-				<img src={PartnerImg1} alt="" />
-				<p class="mt_5">
-					Enhance diversity, equity and inclusion practices in our own foundations and in our
-					partners
-				</p>
+		<div class="partners_section__slide--wrapper">
+			<div class="partners_section__slide--decor" style="width: {partnersSlideWidth}px;" />
+			<div class="container">
+				<div class="partners_section__slide" bind:this={partnersSlide}>
+					<div class="partners_section__item">
+						<img src={PartnerImg1} alt="" />
+						<p class="mt_4">
+							Enhance diversity, equity and inclusion practices in our own foundations and in our
+							partners
+						</p>
+					</div>
+					<div class="partners_section__item">
+						<img src={PartnerImg2} alt="" />
+						<p class="mt_4">
+							Enhance diversity, equity and inclusion practices in our own foundations and in our
+							partners
+						</p>
+					</div>
+					<div class="partners_section__item">
+						<img src={PartnerImg3} alt="" />
+						<p class="mt_4">
+							Enhance diversity, equity and inclusion practices in our own foundations and in our
+							partners
+						</p>
+					</div>
+					<div class="partners_section__item">
+						<img src={PartnerImg4} alt="" />
+						<p class="mt_4">
+							Enhance diversity, equity and inclusion practices in our own foundations and in our
+							partners
+						</p>
+					</div>
+					<div class="partners_section__item">
+						<img src={PartnerImg5} alt="" />
+						<p class="mt_4">
+							Enhance diversity, equity and inclusion practices in our own foundations and in our
+							partners
+						</p>
+					</div>
+				</div>
 			</div>
-			<div class="partners_section__item">
-				<img src={PartnerImg1} alt="" />
-				<p class="mt_5">
-					Enhance diversity, equity and inclusion practices in our own foundations and in our
-					partners
-				</p>
-			</div>
-			<div class="partners_section__item">
-				<img src={PartnerImg1} alt="" />
-				<p class="mt_5">
-					Enhance diversity, equity and inclusion practices in our own foundations and in our
-					partners
-				</p>
-			</div>
-			<div class="partners_section__item">
-				<img src={PartnerImg1} alt="" />
-				<p class="mt_5">
-					Enhance diversity, equity and inclusion practices in our own foundations and in our
-					partners
-				</p>
-			</div>
-			<div class="partners_section__item">
-				<img src={PartnerImg1} alt="" />
-				<p class="mt_5">
-					Enhance diversity, equity and inclusion practices in our own foundations and in our
-					partners
-				</p>
-			</div>
-			<div class="partners_section__item">
-				<img src={PartnerImg1} alt="" />
-				<p class="mt_5">
-					Enhance diversity, equity and inclusion practices in our own foundations and in our
-					partners
-				</p>
-			</div>
-		</HorizontalScroller>
+		</div>
 	</section>
 	<section class="founders_section">
 		<div class="container">
@@ -103,21 +172,23 @@
 			</p>
 		</div>
 	</section>
-	<section class="participatory_section bg_gray">
+	<section class="participatory_section">
 		<div class="container">
 			<div class="row">
 				<div class="col col_4">
-					<h5 class="font_bold mb_4">Participatory Strategy</h5>
-					<div class="divider divider_4 divider_green" />
+					<h2 class="font_bold mb_4 mt_0">Participatory Strategy</h2>
+					<div class="divider divider_2 divider_green" />
 					<p class="mt_4">
 						TAI offers a platform for candid, constructive exchange around grantmaking practices.
 						Our members learn from each other and hold each other accountable to be more inclusive,
 						equitable, innovative, and effective grantmakers.
 					</p>
-					<button class="btn btn_green btn_bordered mt_5"> Learn more </button>
+					<button class="btn btn_green btn_bordered mt_4"> Learn more </button>
 				</div>
 				<div class="col col_8">
-					<img src={LaptopImg} alt="" />
+					<video muted controls={false} preload="none" autoplay width="100%" height="100%" loop>
+						<source type="video/webm" src={ParticipatoryStrategyVideo} />
+					</video>
 				</div>
 			</div>
 		</div>
@@ -133,28 +204,81 @@
 			margin-left: 0;
 		}
 		&__content {
-			width: 30vw;
+			width: 42vw;
+			p {
+				font-weight: 300;
+				font-size: 22px;
+				line-height: 35px;
+			}
 		}
 	}
 	.partners_section {
 		position: relative;
+		min-height: 100vh !important;
+
+		.container {
+			height: unset;
+		}
+
+		&__slide {
+			display: flex;
+			width: max-content;
+			will-change: transform;
+			margin-top: 4rem;
+
+			&--decor {
+				content: ' ';
+				position: absolute;
+				top: auto;
+				width: 100%;
+				height: 300px;
+				z-index: 1;
+				background: url(/src/lib/assets/images/decor1--green.svg);
+				background-repeat: no-repeat;
+				background-size: 110% auto;
+				background-attachment: local;
+				background-position-x: center;
+				-webkit-overflow-scrolling: touch;
+				margin-top: -30px;
+			}
+		}
+
 		&__item {
-			min-width: 33.333%;
-			height: 400px;
+			flex-shrink: 0;
+			width: calc(100vw / 3);
+			max-width: calc(1140px / 3 - 2rem);
+			height: calc(100vw / 3);
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
 			img {
 				height: 60%;
 				width: 100%;
 				object-fit: cover;
 				object-position: center;
+				border-radius: 15px;
+				overflow: hidden;
 			}
+
+			// p {
+			// 	text-align: center;
+			// }
 		}
 
 		&__item + &__item {
 			margin-left: 4rem;
 			//margin-right: 2rem;
 		}
+	}
+
+	.participatory_section {
+		background: #e4e8ef;
+		min-height: 75vh !important;
+		display: flex !important;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

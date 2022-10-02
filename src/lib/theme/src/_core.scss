@@ -24,7 +24,8 @@ a {
 }
 
 p {
-	line-height: 1.4;
+	line-height: 1.2;
+	letter-spacing: 0.44px;
 }
 
 h1,
@@ -34,6 +35,7 @@ h4,
 h5,
 h6 {
 	line-height: 1;
+	letter-spacing: -1px;
 }
 
 // TODO: Move to mixin
@@ -41,21 +43,27 @@ h6 {
 h1 {
 	font-size: calc($font-size * 2.5);
 }
+
 h2 {
 	font-size: calc($font-size * 2);
 }
+
 h3 {
 	font-size: calc($font-size * 1.75);
 }
+
 h4 {
 	font-size: calc($font-size * 1.5);
 }
+
 h5 {
 	font-size: calc($font-size * 1.25);
 }
+
 h6 {
 	font-size: $font-size;
 }
+
 small,
 .small {
 	font-size: $font-size * 0.75;
@@ -93,6 +101,7 @@ ul {
 	position: relative;
 	margin-bottom: 0.5rem;
 	display: block;
+
 	&_radio,
 	&_check {
 		label {
@@ -119,6 +128,7 @@ ul {
 		border: 2px solid map-get($colors, 'blue');
 		width: 100%;
 		background-color: transparent;
+
 		&:focus {
 			outline: none;
 		}
@@ -139,6 +149,7 @@ ul {
 		margin-right: 0.5rem;
 		display: grid;
 		place-content: center;
+
 		&::before {
 			transform: scale(0);
 			transition: 100ms transform ease-in-out;
@@ -149,6 +160,7 @@ ul {
 			//background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMTgiIGhlaWdodD0iMTgiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iIzAwZDhhZCI+PHBhdGggZD0iTTcyLjU2MjUsMTQ3LjgxMjVsLTU2LjQzNzUsLTU5LjEyNWw4LjA2MjUsLTEwLjc1bDQ1LjY4NzUsMzIuMjVsNzcuOTM3NSwtNzcuOTM3NWwxMC43NSwxMC43NXoiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPg==);
 			background-color: currentColor;
 		}
+
 		&:checked::before {
 			transform: scale(1);
 		}
@@ -168,6 +180,7 @@ ul {
 		transform: translate(-0.5rem);
 		display: grid;
 		place-content: center;
+
 		&::before {
 			content: '';
 			will-change: transform;
@@ -178,6 +191,7 @@ ul {
 			transition: 120ms transform ease-in-out;
 			box-shadow: inset 1em 1em #fff;
 		}
+
 		&:checked::before {
 			transform: scale(1);
 		}
@@ -224,12 +238,15 @@ ul {
 	vertical-align: middle;
 	border: 3px solid transparent;
 
-	@each $name, $color in $colors {
+	@each $name,
+	$color in $colors {
 		$contrast: map-get($contrasts, $name);
+
 		&_#{$name} {
 			background-color: $color;
 			color: a11y-color($contrast, $color);
 		}
+
 		&_outline_#{$name} {
 			background-color: transparent;
 			border: 3px solid $color;
@@ -254,7 +271,9 @@ ul {
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	height: 100%;
 	padding: 2rem;
-	@each $key, $value in $colors {
+
+	@each $key,
+	$value in $colors {
 		&_#{$key} {
 			background-color: $value;
 		}

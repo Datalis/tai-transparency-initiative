@@ -7,23 +7,36 @@
 	<div class="article_item__image">
 		<img src={ArticleImg} alt="" />
 	</div>
-	<span class="mt_3">
+	<span class="article_item__resume mt_3">
 		Accountability Initiative on building capacity towards responsive government
 	</span>
-	<a href="/" class="text_dark font_bold mt_4"
-		>Read More <LinkIcon class="ml_1" width="12" height="12" /></a
+	<a href="/" class="text_gray font_bold mt_4 display_flex align_center"
+		><small>Read More</small>
+		<LinkIcon class="ml_1" width="18" height="18" style="fill: var(--gray)" /></a
 	>
 </div>
 
 <style lang="scss">
+	$gray: map-get($colors, 'gray');
+
 	.article_item {
 		display: flex;
 		flex-direction: column;
 		//padding: 1rem;
+
+		--gray: #{$gray};
+
 		&__image {
 			overflow: hidden;
 			border-radius: 15px;
 		}
+
+		&__resume {
+			font-size: 22px;
+			line-height: 35px;
+			font-weight: 400;
+		}
+
 		&__image img {
 			width: 100%;
 			height: auto;

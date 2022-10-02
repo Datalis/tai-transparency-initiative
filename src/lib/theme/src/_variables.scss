@@ -15,7 +15,7 @@ $colors: (
 	'green': #00d8ad,
 	'green_light': #59ebcfff,
 	'orange': #e79e6a,
-	'danger': #dc3545
+	'danger': #dc3545,
 );
 
 $contrasts: (
@@ -65,7 +65,7 @@ $sizes: (
 	'auto': auto
 );
 
-$font-size: 1rem !default;
+$font-size: 20px !default;
 
 $font-weights: (
 	'thin': 100,
@@ -76,142 +76,88 @@ $font-weights: (
 );
 
 $utilities: (
-	width: (
-		prop: width,
+	width: (prop: width,
 		class: w,
-		value: $sizes
-	),
-	height: (
-		prop: height,
+		value: $sizes),
+	height: (prop: height,
 		class: h,
-		value: $sizes
-	),
-	display: (
-		prop: display,
+		value: $sizes),
+	display: (prop: display,
 		class: display,
-		value: inline inline-block block grid table table-row table-cell flex inline-flex none
-	),
-	margin: (
-		prop: margin,
+		value: inline inline-block block grid table table-row table-cell flex inline-flex none),
+	margin: (prop: margin,
 		class: m,
-		value: $spacers
-	),
-	margin-x: (
-		prop: margin-left margin-right,
+		value: $spacers),
+	margin-x: (prop: margin-left margin-right,
 		class: mx,
-		value: $spacers
-	),
-	margin-y: (
-		prop: margin-top margin-bottom,
+		value: $spacers),
+	margin-y: (prop: margin-top margin-bottom,
 		class: my,
-		value: $spacers
-	),
-	margin-right: (
-		prop: margin-right,
+		value: $spacers),
+	margin-right: (prop: margin-right,
 		class: mr,
-		value: $spacers
-	),
-	margin-left: (
-		prop: margin-left,
+		value: $spacers),
+	margin-left: (prop: margin-left,
 		class: ml,
-		value: $spacers
-	),
-	margin-top: (
-		prop: margin-top,
+		value: $spacers),
+	margin-top: (prop: margin-top,
 		class: mt,
-		value: $spacers
-	),
-	margin-bottom: (
-		prop: margin-bottom,
+		value: $spacers),
+	margin-bottom: (prop: margin-bottom,
 		class: mb,
-		value: $spacers
-	),
-	padding: (
-		prop: padding,
+		value: $spacers),
+	padding: (prop: padding,
 		class: p,
-		value: $spacers
-	),
-	padding-x: (
-		prop: padding-right padding-left,
+		value: $spacers),
+	padding-x: (prop: padding-right padding-left,
 		class: px,
-		value: $spacers
-	),
-	padding-y: (
-		prop: padding-top padding-bottom,
+		value: $spacers),
+	padding-y: (prop: padding-top padding-bottom,
 		class: py,
-		value: $spacers
-	),
-	padding-left: (
-		prop: padding-left,
+		value: $spacers),
+	padding-left: (prop: padding-left,
 		class: pl,
-		value: $spacers
-	),
-	padding-right: (
-		prop: padding-right,
+		value: $spacers),
+	padding-right: (prop: padding-right,
 		class: pr,
-		value: $spacers
-	),
-	padding-top: (
-		prop: padding-top,
+		value: $spacers),
+	padding-top: (prop: padding-top,
 		class: pt,
-		value: $spacers
-	),
-	padding-bottom: (
-		prop: padding-bottom,
+		value: $spacers),
+	padding-bottom: (prop: padding-bottom,
 		class: pb,
-		value: $spacers
-	),
-	text-transform: (
-		prop: text-transform,
+		value: $spacers),
+	text-transform: (prop: text-transform,
 		class: text,
-		value: capitalize lowercase uppercase
-	),
-	text-align: (
-		prop: text-align,
+		value: capitalize lowercase uppercase),
+	text-align: (prop: text-align,
 		class: text,
-		value: center left right
-	),
-	font-weight: (
-		prop: font-weight,
+		value: center left right),
+	font-weight: (prop: font-weight,
 		class: font,
-		value: $font-weights
-	),
-	z-index: (
-		prop: z-index,
+		value: $font-weights),
+	z-index: (prop: z-index,
 		class: z,
-		value: 1 2 3 4 5 6 7 8 9 10
-	),
-	flex-direction: (
-		prop: flex-direction,
+		value: 1 2 3 4 5 6 7 8 9 10),
+	flex-direction: (prop: flex-direction,
 		class: flex,
-		value: row column row-reverse column-reverse
-	),
-	flex-grow: (
-		prop: flex-grow,
+		value: row column row-reverse column-reverse),
+	flex-grow: (prop: flex-grow,
 		class: flex-grow,
-		value: 1 0
-	),
-	align-items: (
-		prop: align-items,
+		value: 1 0),
+	align-items: (prop: align-items,
 		class: align,
-		value: (
-			start: flex-start,
+		value: (start: flex-start,
 			end: flex-end,
 			center: center,
 			baseline: baseline,
-			stretch: stretch
-		)
-	),
-	justify-content: (
-		prop: justify-content,
+			stretch: stretch)),
+	justify-content: (prop: justify-content,
 		class: justify,
-		value: (
-			start: flex-start,
+		value: (start: flex-start,
 			end: flex-end,
 			center: center,
 			between: space-between,
 			around: space-around,
-			evenly: space-evenly
-		)
-	)
+			evenly: space-evenly))
 );

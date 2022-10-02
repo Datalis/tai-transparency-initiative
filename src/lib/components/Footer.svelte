@@ -15,7 +15,7 @@
 			</div>
 			<div class="col col_2">
 				<h6 class="text_uppercase mt_0 mb_4">
-					<a href="/" class="text_green">Who we are</a>
+					<a href="/" class="text_blue">Who we are</a>
 				</h6>
 				<ul>
 					<li>
@@ -39,7 +39,7 @@
 				</ul>
 			</div>
 			<div class="col">
-				<h6 class="text_uppercase text_green mt_0 mb_4">What we fund and why</h6>
+				<h6 class="text_uppercase text_blue mt_0 mb_4">What we fund and why</h6>
 				<ul>
 					<li class="">
 						<a href="/" class="text_gray">What does TPA funding look like?</a>
@@ -54,8 +54,8 @@
 						<a href="/" class="text_gray">Pathways to change</a>
 					</li>
 				</ul>
-				<h6 class="text_uppercase text_green mb_4">
-					<a href="/how-we-fund" class="text_green">How we fund</a>
+				<h6 class="text_uppercase text_blue mb_4">
+					<a href="/how-we-fund" class="text_blue">How we fund</a>
 				</h6>
 				<ul>
 					<li>
@@ -73,8 +73,8 @@
 				</ul>
 			</div>
 			<div class="col">
-				<h6 class="text_uppercase text_green mt_0 mb_4">
-					<a href="/how-we-work" class="text_green">How we work together</a>
+				<h6 class="text_uppercase text_blue mt_0 mb_4">
+					<a href="/how-we-work" class="text_blue">How we work together</a>
 				</h6>
 				<ul>
 					<li>
@@ -90,7 +90,7 @@
 						<a href="/" class="text_gray">Working with other groups</a>
 					</li>
 				</ul>
-				<h6 class="text_uppercase text_green mb_4">Resources</h6>
+				<h6 class="text_uppercase text_blue mb_4">Resources</h6>
 				<ul>
 					<li>
 						<a href="/" class="text_gray">Blogs</a>
@@ -107,19 +107,19 @@
 				</ul>
 			</div>
 			<div class="col">
-				<h6 class="text_uppercase text_green mt_0 mb_4">Contact Us</h6>
+				<h6 class="text_uppercase text_blue mt_0 mb_4">Contact Us</h6>
 				<span class="display_block text_gray">contact@transparency-initiative.org</span>
-				<span class="display_block mt_2 text_gray"
+				<span class="display_block mt_4 text_gray"
 					>1100 13th St NW, Suite 800 Washington, DC 20005, United States</span
 				>
-				<a href="/" class="display_block mt_2 text_dark mt_3 font_bold"
-					>View larger map <LinkIcon class="ml_2" fill="#212121" /></a
+				<a href="/" class="display_flex align_center mt_2 text_dark mt_3 font_bold"
+					><strong>View larger map</strong> <LinkIcon class="ml_2" fill="#212121" /></a
 				>
 				<div class="display_flex mt_4">
 					<FacebookIcon class="mr_2" width="32" height="32" />
 					<TwitterIcon class="mr_2" width="32" height="32" />
 					<LinkedInIcon class="mr_2" width="32" height="32" />
-					<XIcon width="32" height="32" />
+					<!-- <XIcon width="32" height="32" /> -->
 				</div>
 			</div>
 		</div>
@@ -141,9 +141,25 @@
 			ul li {
 				margin-top: 0.25rem;
 			}
+			h6 a,
+			h6 {
+				font-size: 14px;
+				line-height: 1;
+				letter-spacing: normal;
+				font-weight: 600;
+			}
+			a,
+			span {
+				font-size: 16px;
+				line-height: 24px;
+				font-weight: 400;
+			}
 		}
 		&_copyright {
 			padding: 1rem 0;
+			a {
+				font-size: 14px;
+			}
 		}
 	}
 </style>

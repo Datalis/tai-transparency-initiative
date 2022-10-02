@@ -23,30 +23,30 @@
 	<div class="container">
 		<div class="navbar">
 			<a href="/" class="navbar_brand">
-				<Logo width="180" height="" />
+				<Logo width="180" height="50" />
 			</a>
 			<nav class="navbar_nav">
-				<a href="/">
-					<FacebookIcon width="32" height="32" />
+				<a href="/" class="link-icon">
+					<FacebookIcon width="20" height="20" />
 				</a>
-				<a href="/">
-					<TwitterIcon width="32" height="32" />
+				<a href="/" class="link-icon">
+					<TwitterIcon width="20" height="20" />
 				</a>
-				<a href="/">
-					<LinkedInIcon width="32" height="32" />
+				<a href="/" class="link-icon">
+					<LinkedInIcon width="20" height="20" />
 				</a>
-				<a href="/">
+				<!-- <a href="/">
 					<XIcon width="32" height="32" />
-				</a>
+				</a> -->
 			</nav>
 			<button type="button" class="navbar_toggler" on:click={() => toggleMenu()}>
-				<MenuIcon width="38" height="38" />
+				<MenuIcon width="50" height="40" />
 			</button>
 			<div class="navbar_menu bg_blue" class:open={isMenuOpen}>
 				<div class="container">
 					<div class="display_flex align_center mt_3">
 						<a href="/" class="navbar_menu_brand">
-							<Logo width="180" height="" />
+							<Logo width="180" height="50" />
 						</a>
 						<button class="navbar_menu__close ml_auto" on:click={() => toggleMenu()}>
 							<CloseIcon width="24" height="24" />
@@ -58,16 +58,16 @@
 							class="display_flex align_center text_gray"
 							class:text_green={$page.url.pathname.includes('who-we-are')}
 						>
-							<h3 class="m_0">Who we are?</h3>
+							<h2 class="m_0">Who we are?</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_4 my_3" />
 						<a
 							href="/what-we-fund"
-							class="display_flex align_center text_gray"
+							class="display_flex align_center text_gray mt_2"
 							class:text_green={$page.url.pathname.includes('what-we-fund')}
 						>
-							<h3 class=" m_0">What we fund and why</h3>
+							<h2 class=" m_0">What we fund and why</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_4 my_3" />
@@ -76,7 +76,7 @@
 							class="display_flex align_center text_gray"
 							class:text_green={$page.url.pathname.includes('how-we-fund')}
 						>
-							<h3 class=" m_0">How we fund?</h3>
+							<h2 class=" m_0">How we fund?</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_4 my_3" />
@@ -85,7 +85,7 @@
 							class="display_flex align_center text_gray"
 							class:text_green={$page.url.pathname.includes('how-we-work')}
 						>
-							<h3 class=" m_0">How we work together</h3>
+							<h2 class=" m_0">How we work together</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_4 my_3" />
@@ -94,24 +94,24 @@
 							class="display_flex align_center text_gray"
 							class:text_green={$page.url.pathname.includes('resources')}
 						>
-							<h3 class=" m_0">Resources</h3>
+							<h2 class=" m_0">Resources</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_4 my_3" />
 					</nav>
 					<nav class="navbar_menu__links mt_5">
-						<a href="/" class="mr_3">
-							<FacebookIcon width="42" height="42" />
+						<a href="/" class="mr_3 link-icon">
+							<FacebookIcon width="20" height="20" />
 						</a>
-						<a href="/" class="mr_3">
-							<TwitterIcon width="42" height="42" />
+						<a href="/" class="mr_3 link-icon">
+							<TwitterIcon width="20" height="20" />
 						</a>
-						<a href="/" class="mr_3">
-							<LinkedInIcon width="42" height="42" />
+						<a href="/" class="mr_3 link-icon">
+							<LinkedInIcon width="20" height="20" />
 						</a>
-						<a href="/" class="mr_3">
+						<!-- <a href="/" class="mr_3">
 							<XIcon width="42" height="42" />
-						</a>
+						</a> -->
 					</nav>
 				</div>
 			</div>
@@ -173,6 +173,11 @@
 
 			&__nav {
 				margin-top: 4rem;
+			}
+
+			&__links {
+				display: flex;
+				align-items: center;
 			}
 
 			&__close {
