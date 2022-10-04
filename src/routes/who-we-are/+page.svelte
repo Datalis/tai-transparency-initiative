@@ -22,14 +22,14 @@
 			>
 				<LogoIcon width="72" height="72" />
 				<h1 class="text_green mt_4">Who we are?</h1>
-				<div class="divider divider_light divider_4 w_15 mt_4" />
+				<div class="divider divider_light divider_2 w_15 mt_4" />
 			</div>
 		</div>
 	</section>
 	<section class="envision_section">
 		<div class="container">
 			<h3>We envision a society where</h3>
-			<div class="divider divider_green divider_4" />
+			<div class="divider divider_green divider_2" />
 			<div class="row mt_4">
 				<div class="col_4">
 					<div class="display_flex flex_column align_center">
@@ -58,7 +58,7 @@
 	<section class="members_section bg_gray">
 		<div class="container">
 			<h3>Our members</h3>
-			<div class="divider divider_green divider_4" />
+			<div class="divider divider_green divider_2" />
 			<p class="mt_4">
 				Our members - both private foundations and public funders - recognize that governance <br />
 				challenges are complex and cross-cutting. They warrant a collaborative approach. TAI donors
@@ -79,7 +79,7 @@
 	<section class="team_section">
 		<div class="container">
 			<h3 class="">Our Team</h3>
-			<div class="divider divider_green divider_4" />
+			<div class="divider divider_green divider_2" />
 			<p class="mt_4">
 				TAIʼs small and nimble team helps donors identify new opportunities for <br />
 				collaboration, supports design of out-of-the-box solutions and helps <br />

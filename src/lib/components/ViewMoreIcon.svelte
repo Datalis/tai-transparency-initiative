@@ -20,7 +20,7 @@
 		align-items: center;
 		justify-content: center;
 		border-radius: 50%;
-		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 		:global(.view_more__icon) {
 			transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 		}
@@ -29,7 +29,7 @@
 			:global(.view_more__icon) {
 				transform: rotate(45deg) !important;
 			}
-			:global(.view_more__icon g > line) {
+			:global(.view_more__icon path) {
 				stroke: $light !important;
 			}
 		}

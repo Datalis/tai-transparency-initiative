@@ -87,9 +87,9 @@
 	<section class="landing_section bg_blue">
 		<!-- <img src={HeaderImg} class="landing_section--bg" alt="" /> -->
 		<div class="landing_section__hero-img">
-			<img class="parallax" data-depth="0.10" src={HeroImgLayer0} alt="" />
-			<img class="parallax" data-depth="0.30" src={HeroImgLayer1} alt="" />
-			<img class="parallax" data-depth="0.60" src={HeroImgLayer2} alt="" />
+			<img class="parallax" data-depth="-0.25" src={HeroImgLayer0} alt="" />
+			<img class="parallax" data-depth="0.10" src={HeroImgLayer1} alt="" />
+			<img class="parallax" data-depth="0.20" src={HeroImgLayer2} alt="" />
 		</div>
 		<div class="container h-100">
 			<div class="landing_section__content">
@@ -219,17 +219,6 @@
 					left: 100px;
 				}
 			}
-		}
-
-		&--bg {
-			z-index: 0;
-			position: absolute;
-			height: 80vh;
-			object-fit: cover;
-			max-width: 900px;
-			top: 0;
-			right: 0;
-			image-rendering: optimizeQuality;
 		}
 
 		&__content {

@@ -3,19 +3,51 @@
 	import FacebookIcon from '$lib/assets/icons/facebook.svg?component';
 	import TwitterIcon from '$lib/assets/icons/twitter.svg?component';
 	import LinkedInIcon from '$lib/assets/icons/linkedin.svg?component';
-	import XIcon from '$lib/assets/icons/x.svg?component';
+	// import XIcon from '$lib/assets/icons/x.svg?component';
 	import MenuIcon from '$lib/assets/icons/menu.svg?component';
 	import CloseIcon from '$lib/assets/icons/close.svg?component';
 	import ArrowRightIcon from '$lib/assets/icons/arrow-right.svg?component';
 	import { page } from '$app/stores';
 	import { beforeNavigate } from '$app/navigation';
+	import { gsap } from 'gsap/dist/gsap';
+	import { onMount } from 'svelte';
 
 	let isMenuOpen = false;
 
-	const toggleMenu = () => (isMenuOpen = !isMenuOpen);
+	let menuAnim = gsap.timeline({ paused: true });
+
+	const toggleMenu = () => {
+		isMenuOpen = !isMenuOpen;
+	};
+
+	$: {
+		isMenuOpen ? menuAnim.play() : menuAnim.reverse();
+	}
 
 	beforeNavigate(() => {
 		isMenuOpen = false;
+	});
+
+	onMount(() => {
+		// menuAnim.from('.navbar .navbar_menu', {
+		// 	y: '-100%',
+		// 	opacity: 0,
+		// 	ease: 'power2'
+		// });
+		menuAnim
+			.to('.navbar .navbar_menu', {
+				y: 0,
+				opacity: 1,
+				duration: 0.2,
+				ease: 'power2'
+			})
+			.from('.navbar .navbar_menu .container', {
+				opacity: 0,
+				y: '-1%',
+				scale: 0.99,
+				duration: 0.1,
+				delay: 0.1
+			});
 	});
 </script>
 
@@ -124,8 +156,10 @@
 
 	.header {
 		background-color: $blue;
+		position: relative;
+		z-index: 14;
 	}
-	.navbar {
+	.header .navbar {
 		background-color: $blue;
 		width: 100%;
 		display: inline-flex;
@@ -151,24 +185,29 @@
 			z-index: 10;
 			height: 100vh;
 			overflow: hidden;
-			transform: translate3d(0, -100%, 0);
 			will-change: transform;
-			transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.3s ease 0.5s;
-			transition-delay: 0.4s;
+
+			transform: translate3d(0, -100%, 0);
 			opacity: 0;
-			.container {
-				opacity: 0;
-				transition: opacity 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-			}
+
+			// transform: translate3d(0, -100%, 0);
+			// transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.3s ease 0.5s;
+			// transition-delay: 0.4s;
+			// opacity: 0;
+
+			// .container {
+			// 	opacity: 0;
+			// }
 
 			&.open {
-				opacity: 1;
-				transition: all 0.7s cubic-bezier(1, 0, 0, 1), opacity 0.3s ease;
-				transition-delay: 0.001s;
-				transform: translate3d(0, 0, 0);
+				// opacity: 1;
+				// transition: all 0.7s cubic-bezier(1, 0, 0, 1), opacity 0.3s ease;
+				// transition-delay: 0.001s;
+				// transform: translate3d(0, 0, 0);
+
 				.container {
 					opacity: 1;
-					transition-delay: 0.6s;
+					// transition-delay: 0.6s;
 				}
 			}
 

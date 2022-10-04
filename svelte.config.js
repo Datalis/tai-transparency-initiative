@@ -19,7 +19,9 @@ const config = {
 		prerender: {
 			entries: ['*']
 		},
-		adapter: adapter()
+		adapter: adapter({
+			edge: true
+		})
 	}
 };
 

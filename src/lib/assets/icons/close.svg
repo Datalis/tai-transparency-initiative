@@ -31,11 +31,11 @@
      transform="matrix(1.3333333,0,0,-1.3333333,-685.29333,472.69332)">
     <path
        d="m 515.11,353.38 9.03,-9.03"
-       style="fill:none;stroke:#7c879d;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#7c879d;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="path1385" />
     <path
        d="m 514.97,344.21 9.31,9.31"
-       style="fill:none;stroke:#7c879d;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#7c879d;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="path1387" />
   </g>
 </svg>
