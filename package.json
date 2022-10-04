@@ -13,13 +13,11 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@emotion/is-prop-valid": "^1.2.0",
 		"@playwright/test": "^1.22.2",
 		"@poppanator/sveltekit-svg": "^0.3.4",
 		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-netlify": "1.0.0-next.71",
+		"@sveltejs/adapter-netlify": "next",
 		"@sveltejs/kit": "next",
-		"@types/gsap": "^3.0.0",
 		"@types/siema": "^1.4.8",
 		"autoprefixer": "^10.4.8",
 		"eslint": "^8.22.0",
