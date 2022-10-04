@@ -20,7 +20,7 @@ const config = {
 			entries: ['*']
 		},
 		adapter: adapter({
-			edge: true
+			edge: false
 		})
 	}
 };
