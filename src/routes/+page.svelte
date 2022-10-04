@@ -1,6 +1,10 @@
 <script lang="ts">
 	import HeaderImg from '$lib/assets/images/header.png';
 
+	import HeroImgLayer0 from '$lib/assets/images/home/home_layer_0@4x.png';
+	import HeroImgLayer1 from '$lib/assets/images/home/home_layer_1@4x.png';
+	import HeroImgLayer2 from '$lib/assets/images/home/home_layer_2@4x.png';
+
 	import PlaceHolderImg from '$lib/assets/images/placeholder-1.png';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
@@ -43,7 +47,7 @@
 		});
 		gsap.to('.join_section .wrapper', {
 			position: 'absolute',
-			yPercent: -10,
+			// yPercent: -10,
 			ease: 'none',
 			stagger: 0.5,
 			scrollTrigger: {
@@ -54,12 +58,39 @@
 				// pin: true
 			}
 		});
+
+		const parallax = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.landing_section',
+				start: 'top 90px',
+				end: 'bottom top',
+				scrub: true
+			}
+		});
+
+		gsap.utils.toArray('.landing_section__hero-img .parallax').forEach((layer: HTMLElement) => {
+			const d = +(layer.dataset.depth || 0);
+			const movement = -(layer.offsetHeight * d);
+			parallax.to(
+				layer,
+				{
+					y: movement,
+					ease: 'none'
+				},
+				0
+			);
+		});
 	});
 </script>
 
 <div id="home" class="page">
 	<section class="landing_section bg_blue">
-		<img src={HeaderImg} class="landing_section--bg" alt="" />
+		<!-- <img src={HeaderImg} class="landing_section--bg" alt="" /> -->
+		<div class="landing_section__hero-img">
+			<img class="parallax" data-depth="0.10" src={HeroImgLayer0} alt="" />
+			<img class="parallax" data-depth="0.30" src={HeroImgLayer1} alt="" />
+			<img class="parallax" data-depth="0.60" src={HeroImgLayer2} alt="" />
+		</div>
 		<div class="container h-100">
 			<div class="landing_section__content">
 				<h1 class="text_green">Who we are?</h1>
@@ -151,28 +182,61 @@
 		flex-direction: column;
 		justify-content: flex-end;
 
+		$md: map-get($grid-breakpoints, 'md');
+
+		&__hero-img {
+			position: absolute;
+			right: 0;
+			height: 100vh;
+			width: 100%;
+			max-width: 900px;
+
+			@media (max-width: $md) {
+			}
+
+			img {
+				object-fit: cover;
+				image-rendering: optimizeQuality;
+				position: absolute;
+				max-width: 100%;
+				z-index: 9;
+
+				&:nth-child(1) {
+					top: 25%;
+					height: 50%;
+					width: auto;
+					max-width: unset;
+				}
+				&:nth-child(2) {
+					top: 40%;
+					height: 50%;
+					z-index: 10;
+					left: 150px;
+				}
+				&:nth-child(3) {
+					top: 25px;
+					height: 70%;
+					left: 100px;
+				}
+			}
+		}
+
 		&--bg {
 			z-index: 0;
 			position: absolute;
-			//width: 100vw;
 			height: 80vh;
 			object-fit: cover;
 			max-width: 900px;
 			top: 0;
 			right: 0;
 			image-rendering: optimizeQuality;
-			// $xl: map-get($grid-breakpoints, 'xl');
-			// $lg: map-get($grid-breakpoints, 'lg');
-			// $margin: calc((100vw - $xl) / 2 - 150px);
-			// @media (min-width: $xl) {
-			// 	right: $margin;
-			// }
 		}
 
 		&__content {
 			height: 100%;
-			width: 42vw;
-
+			width: 45%;
+			position: relative;
+			z-index: 12;
 			p {
 				font-weight: 300;
 				font-size: 22px;

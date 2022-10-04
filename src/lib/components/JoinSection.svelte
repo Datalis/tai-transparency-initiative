@@ -96,6 +96,7 @@
 		width: 100%;
 		height: 100%;
 		z-index: -1;
+		padding-bottom: 2rem;
 	}
 	.join_section .wrapper.fixed {
 		position: fixed !important;

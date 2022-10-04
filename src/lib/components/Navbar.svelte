@@ -22,10 +22,10 @@
 <header class="header">
 	<div class="container">
 		<div class="navbar">
-			<a href="/" class="navbar_brand">
+			<a href="/" class="navbar_brand mr_auto">
 				<Logo width="180" height="50" />
 			</a>
-			<nav class="navbar_nav">
+			<nav class="navbar_nav hide_on_md_and_down">
 				<a href="/" class="link-icon">
 					<FacebookIcon width="20" height="20" />
 				</a>
@@ -121,6 +121,7 @@
 
 <style lang="scss">
 	$blue: map-get($colors, 'blue');
+
 	.header {
 		background-color: $blue;
 	}

@@ -24,30 +24,30 @@
 	@each $breakpoint,
 	$value in $breakpoints {
 		.show_on_#{$breakpoint}_and_down {
-			display: none;
+			display: none !important;
 
 			@media (max-width: $value) {
-				display: unset;
+				display: unset !important;
 			}
 		}
 
 		.show_on_#{$breakpoint}_and_up {
-			display: none;
+			display: none !important;
 
 			@media (min-width: $value) {
-				display: unset;
+				display: unset !important;
 			}
 		}
 
 		.hide_on_#{$breakpoint}_and_down {
 			@media (max-width: $value) {
-				display: none;
+				display: none !important;
 			}
 		}
 
 		.hide_on_#{$breakpoint}_and_up {
 			@media (min-width: $value) {
-				display: none;
+				display: none !important;
 			}
 		}
 	}
@@ -65,6 +65,7 @@
 
 		@media (max-width: $sm) {
 			padding: 0 1rem;
+			max-width: 100% !important;
 		}
 
 		@media (max-width: $xl) {
