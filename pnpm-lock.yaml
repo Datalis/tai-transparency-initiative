@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@emotion/is-prop-valid': ^1.2.0
   '@playwright/test': ^1.22.2
   '@poppanator/sveltekit-svg': ^0.3.4
   '@sveltejs/adapter-auto': next
@@ -27,6 +28,7 @@ specifiers:
   vite-imagetools: ^4.0.4
 
 devDependencies:
+  '@emotion/is-prop-valid': 1.2.0
   '@playwright/test': 1.25.0
   '@poppanator/sveltekit-svg': 0.3.4_svelte@3.49.0
   '@sveltejs/adapter-auto': 1.0.0-next.80
@@ -56,6 +58,16 @@ packages:
 
   /@cloudflare/workers-types/3.14.1:
     resolution: {integrity: sha512-B1/plF62pt+H2IJHvApK8fdOJAVsvojvacuac8x8s+JIyqbropMyqNqHTKLm3YD8ZFLGwYeFTudU+PQ7vGvBdA==}
+    dev: true
+
+  /@emotion/is-prop-valid/1.2.0:
+    resolution: {integrity: sha512-3aDpDprjM0AwaxGE09bOPkNxHpBd+kA6jty3RnaEXdweX1DF1U3VQpPYb0g1IStAuK7SVQ1cy+bNBBKp4W3Fjg==}
+    dependencies:
+      '@emotion/memoize': 0.8.0
+    dev: true
+
+  /@emotion/memoize/0.8.0:
+    resolution: {integrity: sha512-G/YwXTkv7Den9mXDO7AhLWkE3q+I92B+VqAE+dYG4NGPaHZGvt3G8Q0p9vmE+sq7rTGphUbAvmQ9YpbfMQGGlA==}
     dev: true
 
   /@esbuild/android-arm/0.15.9:
