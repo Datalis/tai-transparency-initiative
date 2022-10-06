@@ -211,6 +211,8 @@
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
+	$lg: map-get($grid-breakpoints, 'lg');
+	$xl: map-get($grid-breakpoints, 'xl');
 
 	.landing_section {
 		min-height: calc(100vh - 82px);
@@ -226,13 +228,34 @@
 		&__hero {
 			position: absolute;
 			right: 0;
+			top: -180px;
 			height: 100vh;
-			width: 100%;
-			max-width: 900px;
+			width: 60%;
+			// max-width: 900px;
+
+			@media (max-width: $lg) {
+				width: 85% !important;
+			}
+
+			@media (max-width: $xl) {
+				width: 75% !important;
+				img:nth-child(3) {
+					height: 70% !important;
+				}
+				img:nth-child(2) {
+					// top: unset !important;
+					bottom: 0;
+					height: auto !important;
+					z-index: 10;
+					left: 200px !important;
+				}
+			}
 
 			@media (max-width: $md) {
+				top: -15px;
 				position: relative;
 				height: 50vh;
+				width: auto !important;
 				img {
 					&:nth-child(1) {
 						height: auto !important;
