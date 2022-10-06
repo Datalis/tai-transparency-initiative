@@ -22,6 +22,11 @@
 
 	$: {
 		isMenuOpen ? menuAnim.play() : menuAnim.reverse();
+		if (typeof document !== 'undefined') {
+			isMenuOpen
+				? document.documentElement.classList.add('--menu-open')
+				: document.documentElement.classList.remove('--menu-open');
+		}
 	}
 
 	beforeNavigate(() => {
@@ -86,15 +91,6 @@
 					</div>
 					<nav class="navbar_menu__nav">
 						<a
-							href="/who-we-are"
-							class="display_flex align_center text_gray"
-							class:text_green={$page.url.pathname.includes('who-we-are')}
-						>
-							<h2 class="m_0">Who we are?</h2>
-							<ArrowRightIcon width="42" height="42" class="ml_auto" />
-						</a>
-						<div class="divider divider_gray divider_4 my_3" />
-						<a
 							href="/what-we-fund"
 							class="display_flex align_center text_gray mt_2"
 							class:text_green={$page.url.pathname.includes('what-we-fund')}
@@ -102,7 +98,7 @@
 							<h2 class=" m_0">What we fund and why</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
-						<div class="divider divider_gray divider_4 my_3" />
+						<div class="divider divider_gray divider_2 my_4" />
 						<a
 							href="/how-we-fund"
 							class="display_flex align_center text_gray"
@@ -111,7 +107,7 @@
 							<h2 class=" m_0">How we fund?</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
-						<div class="divider divider_gray divider_4 my_3" />
+						<div class="divider divider_gray divider_2 my_4" />
 						<a
 							href="/how-we-work"
 							class="display_flex align_center text_gray"
@@ -120,7 +116,7 @@
 							<h2 class=" m_0">How we work together</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
-						<div class="divider divider_gray divider_4 my_3" />
+						<div class="divider divider_gray divider_2 my_4" />
 						<a
 							href="/resources"
 							class="display_flex align_center text_gray"
@@ -129,7 +125,16 @@
 							<h2 class=" m_0">Resources</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
-						<div class="divider divider_gray divider_4 my_3" />
+						<div class="divider divider_gray divider_2 my_4" />
+						<a
+							href="/about-us"
+							class="display_flex align_center text_gray"
+							class:text_green={$page.url.pathname.includes('about-us')}
+						>
+							<h2 class="m_0">About Us</h2>
+							<ArrowRightIcon width="42" height="42" class="ml_auto" />
+						</a>
+						<div class="divider divider_gray divider_2 my_4" />
 					</nav>
 					<nav class="navbar_menu__links mt_5">
 						<a href="/" class="mr_3 link-icon">
@@ -153,6 +158,7 @@
 
 <style lang="scss">
 	$blue: map-get($colors, 'blue');
+	$sm: map-get($grid-breakpoints, 'sm');
 
 	.header {
 		background-color: $blue;
@@ -173,6 +179,7 @@
 			padding: 0;
 			margin-right: 2rem;
 			align-items: center;
+
 			a {
 				margin-right: 1rem;
 			}
@@ -186,33 +193,30 @@
 			height: 100vh;
 			overflow: hidden;
 			will-change: transform;
-
 			transform: translate3d(0, -100%, 0);
 			opacity: 0;
 
-			// transform: translate3d(0, -100%, 0);
-			// transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.3s ease 0.5s;
-			// transition-delay: 0.4s;
-			// opacity: 0;
-
-			// .container {
-			// 	opacity: 0;
-			// }
-
 			&.open {
-				// opacity: 1;
-				// transition: all 0.7s cubic-bezier(1, 0, 0, 1), opacity 0.3s ease;
-				// transition-delay: 0.001s;
-				// transform: translate3d(0, 0, 0);
-
 				.container {
 					opacity: 1;
-					// transition-delay: 0.6s;
 				}
 			}
 
 			&__nav {
 				margin-top: 4rem;
+				a {
+					:global(svg) {
+						min-width: 42px;
+					}
+					h2 {
+						letter-spacing: -0.85px !important;
+					}
+				}
+				@media (max-width: $sm) {
+					a h2 {
+						font-size: 2rem !important;
+					}
+				}
 			}
 
 			&__links {

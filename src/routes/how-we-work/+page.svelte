@@ -27,31 +27,33 @@
 	let _6CsSectionSlider;
 
 	onMount(() => {
-		gsap.to('._6Cs_section', {
-			scrollTrigger: {
-				trigger: '._6Cs_section',
-				pin: true,
-				scrub: true,
-				start: 'center center',
-				end: 'bottom -100%'
-			}
-		});
-		gsap.to('._6Cs_section ._6Cs_wrapper', {
-			scrollTrigger: {
-				trigger: '._6Cs_section',
-				start: 'top bottom',
-				end: 'bottom -300%',
-				scrub: 0.5
-			},
-			y: '-10%'
-		});
+		gsap
+			.timeline()
+			.to('._6Cs_section', {
+				scrollTrigger: {
+					trigger: '._6Cs_section',
+					pin: true,
+					scrub: true,
+					start: 'center center',
+					end: 'bottom -100%'
+				}
+			})
+			.to('._6Cs_section ._6Cs_wrapper', {
+				scrollTrigger: {
+					trigger: '._6Cs_section',
+					start: 'top bottom',
+					end: 'bottom -300%',
+					scrub: 0.5
+				},
+				y: '-10%'
+			});
 
 		let parentWidth = _6CsSectionSlider.parentElement?.getBoundingClientRect().width || 0;
 		let marginOffset = _6CsSectionSlider.getBoundingClientRect().left;
 		let toScroll =
 			parentWidth - _6CsSectionSlider.getBoundingClientRect().right + marginOffset * 1.1;
 
-		gsap.to('._6Cs_section ._6Cs_section_slide', {
+		gsap.timeline().to('._6Cs_section ._6Cs_section_slide', {
 			x: toScroll,
 			scrollTrigger: {
 				trigger: '._6Cs_section',
@@ -66,7 +68,7 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 <div id="how-we-fund" class="page">
-	<section class="landing_section bg_blue">
+	<section class="landing_section section bg_blue">
 		<div class="container h-100">
 			<div class="landing_section__content">
 				<h1 class="text_green">How we work</h1>
@@ -81,10 +83,10 @@
 			</div>
 		</div>
 	</section>
-	<section class="_6Cs_section">
+	<section class="_6Cs_section section bg_light">
 		<div class="container">
 			<div class="_6Cs_wrapper">
-				<div class="p_5">
+				<div class="_6Cs_section_title">
 					<h3 class="font_regular mb_4 mt_0">Our 6Cs of funder support</h3>
 					<div class="divider divider_2 divider_light" />
 				</div>
@@ -159,14 +161,14 @@
 			</div>
 		</div>
 	</section>
-	<section class="progress_model_section">
+	<section class="progress_model_section section bg_light">
 		<div class="container">
 			<h2 class="mt_3">Our Model for Field-Level Progress</h2>
 			<div class="divider divider_green divider_2" />
 			<span class="mt_4 display_block"
 				>At every stage, we monitor and evaluate what works, when, how and why.</span
 			>
-			<div class="display_flex align_center justify_between mt_5">
+			<div class="model_items mt_5">
 				<div class="model_item">
 					<div class="model_item__header bg_blue py_3 px_4">
 						<h5 class="text_uppercase text_green m_0">Learning</h5>
@@ -186,7 +188,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="display_flex flex_column">
+				<div class="model_item_arrow display_flex flex_column">
 					<ChevronRightIcon width="52" height="52" />
 				</div>
 				<div class="model_item">
@@ -208,7 +210,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="display_flex flex_column">
+				<div class="model_item_arrow display_flex flex_column">
 					<ChevronRightIcon width="52" height="52" />
 				</div>
 				<div class="model_item">
@@ -236,17 +238,17 @@
 			</div>
 		</div>
 	</section>
-	<section class="featured_section bg_blue_light">
+	<section class="featured_section section bg_blue_light">
 		<div class="container">
 			<h2>Featured topics</h2>
 			<div class="divider divider_green divider_2" />
-			<p class="w_75 mt_4">
+			<p class="mt_4">
 				TAI members evolve their priorities in line with the global context and TAI collective
 				conversations evolve similarly. We scope out funding opportunities or look back at the
 				effectiveness of programming on specific topics that inform member thinking and investment
 				choices. We then move on to new topics.
 			</p>
-			<p class="w_75">
+			<p class="">
 				One current priority is how to strengthen transparency, participation and accountability
 				dimensions of responses to the climate crisis. Technical solutions are essential, but we
 				know from experience that they are hard to implement effectively without underlying good
@@ -262,35 +264,35 @@
 			</div>
 		</div>
 	</section>
-	<section class="past_funding_section bg_gray_light">
+	<section class="past_funding_section section bg_gray_light">
 		<div class="container">
 			<h2>Past Funding Exploration</h2>
 			<div class="divider divider_white divider_2" />
-			<div class="row mt_5">
-				<div class="col_4">
+			<div class="row mt_4">
+				<div class="col col_4 col_md_12">
 					<ArticleItem />
 				</div>
-				<div class="col_4">
+				<div class="col col_4 col_md_12">
 					<ArticleItem />
 				</div>
-				<div class="col_4">
+				<div class="col col_4 col_md_12">
 					<ArticleItem />
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="other_groups_section bg_gray_light">
+	<section class="other_groups_section section bg_gray_light">
 		<div class="container">
 			<h2>Working with other groups</h2>
 			<div class="divider divider_white divider_2" />
-			<p class="w_75 mt_5">
+			<p class="mt_5">
 				Transparency, participation and accountability are essential to deliver positive societal
 				outcomes, be that a stellar education service, effective regulation of new technologies or
 				accessible, affordable renewable energy. Our work is intersectional in its nature and it is
 				important we work with those championing change on related issues. That includes partnering
 				with other funder networks.
 			</p>
-			<p class="w_75">
+			<p class="">
 				The good news is that there is a growing list of progressive funder groups to connect with.
 				TAI is in regular dialogue with other groups – sharing learnings, exploring overlapping
 				interests across our memberships and promoting responsible funder practices. We are hugely
@@ -307,17 +309,19 @@
 	$blue: map-get($colors, 'blue');
 	$light: map-get($colors, 'light');
 
+	$md: map-get($grid-breakpoints, 'md');
+
 	.landing_section {
-		.divider {
-			width: 100px;
-			margin-left: 0;
-		}
 		&__content {
 			width: 42vw;
+			@media (max-width: $md) {
+				width: 100%;
+				margin-top: 40vh;
+			}
 			p {
 				font-weight: 300;
-				font-size: 22px;
-				line-height: 35px;
+				font-size: pxToRem(20);
+				line-height: 1.4;
 			}
 		}
 	}
@@ -343,6 +347,13 @@
 			overflow: hidden;
 		}
 
+		._6Cs_section_title {
+			padding: 3rem;
+			@media (max-width: $md) {
+				padding: 2rem;
+			}
+		}
+
 		._6Cs_section_slide {
 			width: max-content;
 			display: flex;
@@ -354,6 +365,9 @@
 			background-size: 110% auto;
 			background-position: center;
 			background-attachment: local;
+			@media (max-width: $md) {
+				padding-left: 1rem;
+			}
 		}
 
 		._6Cs_item + ._6Cs_item {
@@ -364,6 +378,11 @@
 			width: 30vw;
 			display: block;
 			flex-shrink: 0;
+
+			@media (max-width: $md) {
+				width: 90vw;
+			}
+
 			&__count {
 				width: 60px;
 				height: 60px;
@@ -399,10 +418,30 @@
 
 	.progress_model_section {
 		min-height: 100vh !important;
-		.divider {
-			width: 100px;
-			margin-left: 0;
+
+		@media (max-width: $md) {
+			button {
+				width: 100%;
+			}
 		}
+
+		.model_items {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			@media (max-width: $md) {
+				flex-direction: column;
+			}
+		}
+
+		.model_item_arrow {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			@media (max-width: $md) {
+				transform: rotate(90deg);
+			}
+		}
+
 		.model_item {
 			width: 300px;
 			height: 450px;
@@ -410,6 +449,12 @@
 			flex-direction: column;
 			border-radius: 15px;
 			overflow: hidden;
+
+			@media (max-width: $md) {
+				width: 100% !important;
+				height: 350px;
+			}
+
 			&__header {
 				h5 {
 					font-weight: 500;
@@ -435,29 +480,31 @@
 		padding-top: 2.5rem;
 		padding-bottom: 4rem !important;
 		p {
-			font-size: 22px;
+			font-size: pxToRem(20);
 			font-weight: 300;
-		}
-		.divider {
-			width: 100px;
-			margin-left: 0;
+			width: 75vw;
+			@media (max-width: $md) {
+				width: 100%;
+			}
 		}
 		.video_wrapper {
 			padding-left: 4rem;
 			padding-right: 4rem;
 			margin-top: 4rem;
+			@media (max-width: $md) {
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
 		}
 	}
-	.past_funding_section {
-		.divider {
-			width: 100px;
-			margin-left: 0;
-		}
-	}
+	// .past_funding_section {
+	// }
 	.other_groups_section {
-		.divider {
-			width: 100px;
-			margin-left: 0;
+		p {
+			width: 75vw;
+			@media (max-width: $md) {
+				width: 100%;
+			}
 		}
 	}
 </style>

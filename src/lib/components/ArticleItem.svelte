@@ -10,7 +10,7 @@
 	<span class="article_item__resume mt_3">
 		Accountability Initiative on building capacity towards responsive government
 	</span>
-	<a href="/" class="text_gray font_bold mt_4 display_flex align_center"
+	<a href="/" class="article_item__link text_gray font_bold mt_4 display_flex align_center"
 		><small>Read More</small>
 		<LinkIcon class="ml_1" width="18" height="18" style="fill: var(--gray)" /></a
 	>
@@ -22,7 +22,6 @@
 	.article_item {
 		display: flex;
 		flex-direction: column;
-		//padding: 1rem;
 
 		--gray: #{$gray};
 

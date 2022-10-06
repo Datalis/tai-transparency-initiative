@@ -1,33 +1,19 @@
 <script lang="ts">
 	import JoinImg from '$lib/assets/images/join.png';
-	import { onDestroy, onMount } from 'svelte';
-	import { useViewportScroll } from 'svelte-motion';
-
-	export let backgroundClass = 'bg_green';
-
-	let showFixed = false;
-	let ref: HTMLElement;
-
-	const onScroll = () => {
-		// const top = ref?.getBoundingClientRect().top;
-		// showFixed = top > 0;
-	};
 </script>
 
-<svelte:window on:scroll={onScroll} />
-
-<section class="join_section" bind:this={ref}>
-	<div class="wrapper" class:fixed={showFixed}>
-		<div class="container ">
+<section class="join_section">
+	<div class="wrapper">
+		<div class="container">
 			<div class="row">
-				<div class="col col_7">
+				<div class="col col_7 col_lg_12">
 					<div class="h_100 display_flex flex_column">
 						<img class="join_section__img my_auto" src={JoinImg} alt="" />
 					</div>
 				</div>
-				<div class="col col_5">
+				<div class="col col_5 col_lg_12">
 					<div class="display_flex flex_column justify_center h_100">
-						<h2 class="mb_4 font_bold">Join TAI</h2>
+						<h2 class="mb_4 font_bold mt_0">Join TAI</h2>
 						<div class="divider divider_light divider_2" />
 						<p class="mt_4 font_light">
 							We invite <strong>FUNDERS</strong> to join our conversations. If you are new to this field
@@ -77,28 +63,43 @@
 </section>
 
 <style lang="scss" scoped>
+	$sm: map-get($grid-breakpoints, 'sm');
+
 	.join_section {
 		min-height: 100vh !important;
 		position: relative;
+		padding: 0 !important;
+		z-index: 0;
+
 		.divider {
 			width: 100px;
-			margin-left: 0;
 		}
+
 		p {
-			line-height: 35px;
+			line-height: 1.4;
 		}
 	}
 	.join_section .wrapper {
+		// min-height: 100vh;
 		background: #59ebcf;
-		position: absolute;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
+		position: fixed;
 		z-index: -1;
 		padding-bottom: 2rem;
-	}
-	.join_section .wrapper.fixed {
-		position: fixed !important;
+
+		@media (max-width: $sm) {
+			.col {
+				margin-top: 2rem;
+			}
+
+			button {
+				width: 100%;
+			}
+		}
 	}
 </style>

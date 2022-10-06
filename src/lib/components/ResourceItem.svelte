@@ -28,7 +28,6 @@
 	.resource_item {
 		display: flex;
 		flex-direction: column;
-		//padding: 1rem;
 
 		--gray: #{map-get($colors, 'gray')};
 
@@ -37,7 +36,7 @@
 			border-radius: 15px;
 		}
 		&__image img {
-			max-width: 100%;
+			width: 100%;
 			height: auto;
 			object-fit: cover;
 			object-position: center;

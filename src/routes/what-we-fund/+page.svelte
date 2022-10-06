@@ -7,17 +7,22 @@
 	import ChartIcon from '$lib/assets/icons/chart.svg?component';
 
 	import PCImg from '$lib/assets/images/pc.png';
-	import ResourceItem from '$lib/components/ResourceItem.svelte';
+	// import ResourceItem from '$lib/components/ResourceItem.svelte';
 	import ArticleItem from '$lib/components/ArticleItem.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
-	import StrategyImg from '$lib/assets/images/strategy.svg?component';
+	// import StrategyImg from '$lib/assets/images/strategy.svg?component';
+
+	import 'swiper/css';
+	import 'swiper/css/pagination';
+	import { Swiper, SwiperSlide } from 'swiper/svelte';
+	import { Pagination } from 'swiper';
 </script>
 
 <div id="what-we-fund" class="page">
-	<section id="" class="landing_section bg_blue">
-		<div class="container h-100">
+	<section class="landing_section section bg_blue">
+		<div class="container">
 			<div class="landing_section__content">
 				<h1 class="text_green">What we fund</h1>
 				<span class="divider divider_2 divider_light" />
@@ -32,13 +37,13 @@
 			</div>
 		</div>
 	</section>
-	<section class="funding_section">
+	<section class="funding_section section bg_light">
 		<div class="container">
 			<h2 class="text_dark">What does TAI Funding look like?</h2>
 			<span class="divider divider_2 divider_green my_4" />
-			<div class="row mt_5">
-				<div class="col_4">
-					<div class="funding_item">
+			<div class="show_on_md_and_up row mt_5">
+				<div class="col_4 col_lg_6 mt_4">
+					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<SpeakerIcon />
 						</span>
@@ -48,7 +53,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 display_flex">
+				<div class="col_4 col_lg_6 mt_4">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<InternetIcon />
@@ -59,8 +64,8 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 display_flex">
-					<div class="funding_item ml_auto">
+				<div class="col_4 col_lg_6 mt_4">
+					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<TargetIcon class="ml_1 mb_1" />
 						</span>
@@ -70,10 +75,8 @@
 						</p>
 					</div>
 				</div>
-			</div>
-			<div class="row mt_4">
-				<div class="col_4">
-					<div class="funding_item">
+				<div class="col_4 col_lg_6 mt_4">
+					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<SearchIcon />
 						</span>
@@ -83,7 +86,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 display_flex">
+				<div class="col_4 col_lg_6 mt_4">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<CogsIcon />
@@ -94,8 +97,8 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 display_flex">
-					<div class="funding_item ml_auto">
+				<div class="col_4 col_lg_6 mt_4">
+					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<ChartIcon />
 						</span>
@@ -106,17 +109,93 @@
 					</div>
 				</div>
 			</div>
+			<div class="show_on_md_and_down">
+				<Swiper class="slider" pagination={true} modules={[Pagination]}>
+					<SwiperSlide>
+						<div class="funding_item mx_auto">
+							<span class="funding_item__icon">
+								<SpeakerIcon />
+							</span>
+							<p>
+								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
+								health services they were promised and deserve
+							</p>
+						</div>
+					</SwiperSlide>
+					<SwiperSlide>
+						<div class="funding_item mx_auto">
+							<span class="funding_item__icon">
+								<SpeakerIcon />
+							</span>
+							<p>
+								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
+								health services they were promised and deserve
+							</p>
+						</div>
+					</SwiperSlide>
+					<SwiperSlide>
+						<div class="funding_item mx_auto">
+							<span class="funding_item__icon">
+								<SpeakerIcon />
+							</span>
+							<p>
+								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
+								health services they were promised and deserve
+							</p>
+						</div>
+					</SwiperSlide>
+					<SwiperSlide>
+						<div class="funding_item mx_auto">
+							<span class="funding_item__icon">
+								<SpeakerIcon />
+							</span>
+							<p>
+								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
+								health services they were promised and deserve
+							</p>
+						</div>
+					</SwiperSlide>
+					<SwiperSlide>
+						<div class="funding_item mx_auto">
+							<span class="funding_item__icon">
+								<SpeakerIcon />
+							</span>
+							<p>
+								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
+								health services they were promised and deserve
+							</p>
+						</div>
+					</SwiperSlide>
+					<SwiperSlide>
+						<div class="funding_item mx_auto">
+							<span class="funding_item__icon">
+								<SpeakerIcon />
+							</span>
+							<p>
+								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
+								health services they were promised and deserve
+							</p>
+						</div>
+					</SwiperSlide>
+				</Swiper>
+			</div>
 		</div>
 	</section>
-	<section class="funding_data_section">
+	<section class="funding_data_section section bg_light">
 		<div class="container">
 			<div class="row">
-				<div class="col_7">
-					<img class="w_100" src={PCImg} alt="" />
-				</div>
-				<div class="col_5 mt_5">
+				<div class="show_on_md_and_down col col_12">
 					<h2>Funding Data Library</h2>
 					<div class="divider divider_green divider_2" />
+				</div>
+				<div class="col col_7 col_md_12">
+					<img class="w_100" src={PCImg} alt="" />
+				</div>
+				<div class="col col_5 col_md_12">
+					<div class="show_on_md_and_up">
+						<h2>Funding Data Library</h2>
+						<div class="divider divider_green divider_2" />
+					</div>
 					<p class="mt_4">
 						You can explore data related to over $500 million in active transparency and
 						accountability grants in TAI’s member funding database.
@@ -134,31 +213,33 @@
 			</div>
 		</div>
 	</section>
-	<section class="why_matters_section">
+	<section class="why_matters_section section">
 		<div class="container">
 			<h2 class="text_dark mt_0">Why it matters</h2>
 			<span class="divider divider_2 divider_gray mb_4" />
-			<div class="display_flex align_center">
-				<span class="w_75">
+			<div class="row">
+				<span class="col col_8 col_md_12">
 					<strong>TPA FULL DISCLOSURE</strong> Introducing the people behind funding and practice in
 					the world of transparency, participation, and accountability.
 				</span>
-				<button class="btn btn_outline_gray text_dark ml_auto">See All</button>
+				<div class="col col_4 col_md_12">
+					<button class="btn btn_outline_gray text_dark ml_auto">See All</button>
+				</div>
 			</div>
 			<div class="articles_row row">
-				<div class="col_4">
+				<div class="col col_4 col_md_12">
 					<ArticleItem />
 				</div>
-				<div class="col_4">
+				<div class="col col_4 col_md_12">
 					<ArticleItem />
 				</div>
-				<div class="col_4">
+				<div class="col col_4 col_md_12">
 					<ArticleItem />
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="participatory_section bg_blue_light">
+	<section class="participatory_section section bg_blue_light">
 		<div class="container">
 			<h2>Participatory Strategy</h2>
 			<div class="divider divider_green divider_2 my_4" />
@@ -178,17 +259,50 @@
 <style lang="scss">
 	$green: #59ebcf;
 	$blue: map-get($colors, 'blue');
+
+	$md: map-get($grid-breakpoints, 'md');
+
 	.landing_section {
+		min-height: 100vh;
 		&__content {
 			width: 42vw;
+
+			@media (max-width: $md) {
+				width: 100%;
+				margin-top: 30vh;
+			}
+
 			p {
 				font-weight: 300;
-				font-size: 22px;
-				line-height: 35px;
+				font-size: pxToRem(20);
+				line-height: 1.4;
 			}
 		}
 	}
 	.funding_section {
+		:global {
+			.slider {
+				height: 335px;
+				--swiper-pagination-color: #7a879f;
+				.funding_item {
+					margin-top: 35px;
+					padding: 1rem !important;
+					padding-top: 1.5rem !important;
+					&__icon {
+						position: absolute;
+						top: -35px !important;
+						left: 0 !important;
+						right: 0 !important;
+						margin: auto !important;
+					}
+				}
+			}
+		}
+
+		.row {
+			margin: 0;
+		}
+
 		.funding_item {
 			&__icon {
 				position: absolute;
@@ -203,6 +317,12 @@
 				align-items: center;
 				justify-content: center;
 				font-size: 22px;
+				:global {
+					svg path {
+						stroke-miterlimit: 1 !important;
+						stroke-width: 1.2px !important;
+					}
+				}
 			}
 
 			width: 90%;
@@ -216,7 +336,15 @@
 
 			p {
 				font-weight: 300;
-				font-size: 22px;
+				font-size: pxToRem(20);
+			}
+		}
+	}
+
+	.funding_data_section {
+		@media (max-width: $md) {
+			button {
+				width: 100%;
 			}
 		}
 	}
@@ -226,8 +354,14 @@
 		display: flex !important;
 		align-items: center;
 		justify-content: center;
+		padding-top: 3rem !important;
 		.articles_row {
-			margin-top: 3rem;
+			margin-top: 2rem;
+		}
+		@media (max-width: $md) {
+			button {
+				width: 100%;
+			}
 		}
 	}
 	.participatory_section {
@@ -236,8 +370,8 @@
 			margin-top: 5rem;
 		}
 		p {
-			font-size: 22px;
-			line-height: 32px;
+			font-size: pxToRem(20);
+			// line-height: 32px;
 			font-weight: 300;
 		}
 	}

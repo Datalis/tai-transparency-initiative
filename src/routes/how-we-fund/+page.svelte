@@ -84,7 +84,7 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 <div id="how-we-fund" class="page">
-	<section class="landing_section bg_blue">
+	<section class="landing_section section bg_blue">
 		<div class="container h-100">
 			<div class="landing_section__content">
 				<h1 class="text_green">How we fund</h1>
@@ -101,7 +101,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="partners_section">
+	<section class="partners_section section bg_light">
 		<!-- <img class="partners_section--dec" src={PartnerDecorImg} alt="" /> -->
 		<div class="container">
 			<h2 class="font_bold mb_4">Partner support</h2>
@@ -154,17 +154,17 @@
 			</div>
 		</div>
 	</section>
-	<section class="founders_section">
+	<section class="founders_section section bg_light">
 		<div class="container">
-			<h3>Funder exits</h3>
+			<h2 class="mt_0">Funder exits</h2>
 			<div class="divider divider_green divider_4" />
-			<p class="mt_4 w_75">
+			<p class="mt_4">
 				Funders regularly adapt their strategies, which often prompt investment in new issue areas,
 				but also the tough decision to scale back or fully wind down funding for existing
 				portfolios. These funding “exits” are a painful reality, especially for impacted grantees,
 				but also other funders of that field. However, they can be managed in responsible ways.
 			</p>
-			<p class="w_75">
+			<p>
 				TAI members use our platform to regularly discuss how to handle exits, to encourage good
 				practice, and to manage the knock on effects for a field. We have been trying to document
 				learnings as in this blog. Are you planning a funding exit? Interested in how other funder
@@ -172,10 +172,10 @@
 			</p>
 		</div>
 	</section>
-	<section class="participatory_section">
+	<section class="participatory_section section">
 		<div class="container">
 			<div class="row">
-				<div class="col col_4">
+				<div class="col col_4 col_md_12">
 					<h2 class="font_bold mb_4 mt_0">Participatory Strategy</h2>
 					<div class="divider divider_2 divider_green" />
 					<p class="mt_4">
@@ -185,7 +185,7 @@
 					</p>
 					<button class="btn btn_green btn_bordered mt_4"> Learn more </button>
 				</div>
-				<div class="col col_8">
+				<div class="col col_8 col_md_12">
 					<video muted controls={false} preload="none" autoplay width="100%" height="100%" loop>
 						<source type="video/webm" src={ParticipatoryStrategyVideo} />
 					</video>
@@ -198,6 +198,8 @@
 </div>
 
 <style lang="scss">
+	$md: map-get($grid-breakpoints, 'md');
+
 	.landing_section {
 		.divider {
 			width: 100px;
@@ -205,10 +207,14 @@
 		}
 		&__content {
 			width: 42vw;
+			@media (max-width: $md) {
+				width: 100%;
+				margin-top: 40vh;
+			}
 			p {
 				font-weight: 300;
-				font-size: 22px;
-				line-height: 35px;
+				font-size: pxToRem(20);
+				line-height: 1.4;
 			}
 		}
 	}
@@ -256,10 +262,16 @@
 			img {
 				height: 60%;
 				width: 100%;
+				min-height: 300px;
+				min-width: 100%;
 				object-fit: cover;
 				object-position: center;
 				border-radius: 15px;
 				overflow: hidden;
+			}
+
+			@media (max-width: $md) {
+				width: 100vw !important;
 			}
 
 			// p {
@@ -273,6 +285,16 @@
 		}
 	}
 
+	.founders_section {
+		padding-top: 0 !important;
+		p {
+			width: 75%;
+			@media (max-width: $md) {
+				width: 100%;
+			}
+		}
+	}
+
 	.participatory_section {
 		background: #e4e8ef;
 		min-height: 75vh !important;
@@ -280,5 +302,10 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		@media (max-width: $md) {
+			button {
+				width: 100%;
+			}
+		}
 	}
 </style>

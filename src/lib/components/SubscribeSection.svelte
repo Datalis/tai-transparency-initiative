@@ -1,22 +1,33 @@
-<section class="subscribe_section">
+<section class="subscribe_section bg_light">
 	<div class="container">
 		<div class="subscribe_section__panel bg_panel p_4">
 			<h2 class="text_center">Keep updated with <br /> TAI WEEKLY</h2>
-			<span class="font_light">Everything you need to know about transparency, accountability</span>
-			<span class="font_light">and participation, delivered to your inbox.</span>
-			<div class="display_flex mt_5">
-				<div class="form_control mr_4 mb_0">
+			<span class="font_light text_center"
+				>Everything you need to know about transparency, accountability <br /> and participation, delivered
+				to your inbox.</span
+			>
+
+			<form class="mt_5">
+				<div class="form_control mb_0">
 					<input type="email" placeholder="Email" name="" id="" />
 				</div>
 				<button class="btn btn_blue">Subscribe</button>
-			</div>
+			</form>
 		</div>
 	</div>
 </section>
 
 <style lang="scss">
+	$md: map-get($grid-breakpoints, 'md');
+
 	.subscribe_section {
-		height: 400px;
+		min-height: 400px;
+		padding-top: 2rem;
+
+		@media (max-width: $md) {
+			height: auto;
+		}
+
 		&__panel {
 			height: 100%;
 			border-radius: 15px;
@@ -24,15 +35,42 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			h3 {
-				max-width: 300px;
-				text-align: center;
-				line-height: 1.5;
-			}
-		}
+			padding-top: 2rem;
+			padding-bottom: 2rem;
 
-		.form_control input {
-			border-radius: 25px;
+			h2 {
+				margin-top: 0;
+			}
+
+			form {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.form_control {
+					margin-right: 1rem;
+				}
+				.form_control input {
+					border-radius: 35px;
+					padding: 0.7rem 1.25rem;
+				}
+
+				@media (max-width: $md) {
+					flex-direction: column;
+					.form_control {
+						margin-right: 0;
+					}
+					.form_control,
+					.btn {
+						flex-grow: 1;
+						width: 100%;
+					}
+					.btn {
+						margin-top: 1rem;
+					}
+				}
+			}
 		}
 	}
 </style>

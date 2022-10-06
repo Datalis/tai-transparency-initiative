@@ -25,15 +25,19 @@
 
 	html,
 	body {
-		scroll-behavior: smooth;
 		overflow-x: hidden;
+		scroll-behavior: smooth;
+		&.--menu-open {
+			overflow: hidden;
+		}
 	}
 
 	#app {
 		font-family: 'Lato', sans-serif;
+		background: map-get($colors, 'blue');
 
-		section {
-			min-height: 500px;
+		.section {
+			position: relative;
 			display: block;
 			padding-top: 2rem;
 			padding-bottom: 2rem;
