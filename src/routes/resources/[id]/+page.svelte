@@ -7,10 +7,10 @@
 </script>
 
 <article id="resource" class="page">
-	<section class="heading_section bg_blue">
+	<section class="heading_section section bg_blue">
 		<div class="container">
 			<div class="row">
-				<div class="col_7">
+				<div class="col col_7 col_sm_12">
 					<span class="text_light text_uppercase">TPA FULL DISCLOSURE</span>
 					<h1 class="text_green">
 						World Justice Project Team talks expanding access to justice and strengthening the rule
@@ -20,16 +20,16 @@
 						By <a href="/" class="text_gray">Oluwabusayomi Sotunde</a> (Communications fellow at TAI)
 					</small>
 				</div>
-				<div class="col_5">
-					<img src={PlaceholderImg} class="" alt="" />
+				<div class="col col_5 col_sm_12">
+					<img src={PlaceholderImg} class="w_100" alt="" />
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="content_section">
+	<section class="content_section section bg_light">
 		<div class="container">
 			<div class="row">
-				<div class="col_8">
+				<div class="col col_8 col_sm_12">
 					<p>
 						<a href="/" class="text_gray">World Justice Project</a> the convener of the World
 						Justice Challenge, a global competition that identifies, recognize, and support
@@ -68,14 +68,14 @@
 						on access to civil justice globally, criminal justice in Mexico, and rule of aw in Afghanistan
 						to name just a few.
 					</p>
-					<div class="connect_block mt_5">
+					<div class="connect_block mt_5 text_center">
 						Love to hear more from Killian and Ted? Connect with Killian on Twitter at
 						@dorier_killian and Ted at @piccone_ted. You can also follow-up with World Justice
 						Project on Twitter at @The WJP
 					</div>
 					<div class="share_block">
 						<h5 class="mr_3">Share this article</h5>
-						<div class="divider divider_dark divider_4 mr_3" />
+						<div class="divider divider_dark divider_2 mr_3" />
 						<span class="share_icon">
 							<FacebookIcon width="14" height="14" fill="#fff" />
 						</span>
@@ -87,9 +87,9 @@
 						</span>
 					</div>
 				</div>
-				<div class="col_4">
+				<div class="col col_4 col_sm_12">
 					<div class="subscribe_block">
-						<h5 class="font_regular mb_3 mt_0">Keep updated with TAI weekly</h5>
+						<h4 class="font_bold mb_3 mt_0">Keep updated with TAI weekly</h4>
 						<p>
 							Everything you need to know about transparency, accountability and participation,
 							delivered to your inbox.
@@ -99,8 +99,8 @@
 						</div>
 						<button class="btn btn_blue mt_3">Subscribe</button>
 					</div>
-					<h5 class="mt_5 mb_4">You may also like</h5>
-					<div class="divider divider_green divider_4 mb_4" />
+					<h4 class="mt_5 mb_4">You may also like</h4>
+					<div class="divider divider_green divider_2 mb_4" />
 					<div class="related_articles_list">
 						<a href="/" class="related_article_item">
 							<div class="img_wrapper">
@@ -111,7 +111,8 @@
 								accountability) sector
 							</span>
 							<small>
-								<a href="/" class="text_green">Read More <LinkIcon class="ml_1" stroke="green" /></a
+								<a href="/" class="text_gray display_flex align_center"
+									>Read More <LinkIcon class="ml_1" style="fill: var(--gray);" /></a
 								>
 							</small>
 						</a>
@@ -124,7 +125,8 @@
 								accountability) sector
 							</span>
 							<small>
-								<a href="/" class="text_green">Read More <LinkIcon class="ml_1" stroke="green" /></a
+								<a href="/" class="text_gray display_flex align_center"
+									>Read More <LinkIcon class="ml_1" style="fill: var(--gray);" /></a
 								>
 							</small>
 						</a>
@@ -137,6 +139,8 @@
 </article>
 
 <style lang="scss">
+	$green_light: #59ebcf;
+
 	.heading_section {
 		min-height: unset !important;
 	}
@@ -156,7 +160,7 @@
 	}
 	.content_section .connect_block {
 		padding: 2rem;
-		background-color: map-get($colors, 'green');
+		background-color: $green_light;
 		border-radius: 10px;
 	}
 	.content_section .share_block {
@@ -182,7 +186,7 @@
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		background-color: map-get($colors, 'green');
+		background-color: $green_light;
 		padding: 2rem;
 		border-radius: 15px;
 		.form_control,
@@ -190,7 +194,8 @@
 			width: 100%;
 		}
 		.form_control input {
-			border-radius: 25px;
+			border-radius: 30px;
+			padding: 0.7rem 1.25rem !important;
 		}
 		.form_control input::placeholder {
 			font-style: italic;
@@ -203,6 +208,7 @@
 			display: flex;
 			flex-direction: column;
 			text-decoration: none;
+			--gray: #{map-get($colors, 'gray')};
 			a {
 				text-decoration: none;
 			}

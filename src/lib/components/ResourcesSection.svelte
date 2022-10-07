@@ -2,7 +2,7 @@
 	import ResourceItem from './ResourceItem.svelte';
 </script>
 
-<section class="resources_section bg_light">
+<section class="resources_section section bg_light">
 	<div class="container">
 		<h2 class="mb_4">Transparency and Accountability Initiative Resources</h2>
 		<div class="divider divider_2 divider_green" />

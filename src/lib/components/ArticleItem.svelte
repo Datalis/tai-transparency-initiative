@@ -30,12 +30,6 @@
 			border-radius: 15px;
 		}
 
-		&__resume {
-			font-size: 22px;
-			line-height: 35px;
-			font-weight: 400;
-		}
-
 		&__image img {
 			width: 100%;
 			height: auto;

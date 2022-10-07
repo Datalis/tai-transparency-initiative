@@ -1,15 +1,9 @@
 <script lang="ts">
-	import HeaderImg from '$lib/assets/images/header.png';
-
-	import HeroImgLayer0 from '$lib/assets/images/home/home_layer_0@4x.png';
-	import HeroImgLayer1 from '$lib/assets/images/home/home_layer_1@4x.png';
-	import HeroImgLayer2 from '$lib/assets/images/home/home_layer_2@4x.png';
+	import HeroImgLayer0 from '$lib/assets/images/home/group_3.webp';
+	import HeroImgLayer1 from '$lib/assets/images/home/group_1.webp';
+	import HeroImgLayer2 from '$lib/assets/images/home/group_2.webp';
 
 	import PlaceHolderImg from '$lib/assets/images/placeholder.png';
-	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
-	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
-	import JoinSection from '$lib/components/JoinSection.svelte';
-
 	import MacArthurLogo from '$lib/assets/icons/mac-arthur.svg?component';
 	import FordLogo from '$lib/assets/icons/ford.svg?component';
 	import HewlettLogo from '$lib/assets/icons/hewlett.svg?component';
@@ -17,21 +11,20 @@
 	import OpenSocietyLogo from '$lib/assets/icons/open-s.svg?component';
 	import SkollLogo from '$lib/assets/icons/skoll.svg?component';
 
-	import { Motion, useViewportScroll, useTransform } from 'svelte-motion';
-
-	let { scrollY } = useViewportScroll();
-	let scrollBrandParallax = useTransform(scrollY, (n) => (n - 250) * -1.2);
+	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
+	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
+	import JoinSection from '$lib/components/JoinSection.svelte';
 
 	import { gsap } from 'gsap/dist/gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 
-	gsap.registerPlugin(ScrollTrigger);
+	// gsap.registerPlugin(ScrollTrigger);
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
 
-	onMount(() => {
+	function setupAnimations() {
 		const offset = brandSlide.getBoundingClientRect().left - 100;
 		const scrollBy = windowWidth - brandSlide.getBoundingClientRect().right + offset;
 
@@ -50,17 +43,17 @@
 				}
 			});
 
-		// gsap.timeline().from('.cards_section .wrapper', {
-		// 	y: '5%',
-		// 	scrollTrigger: {
-		// 		trigger: '.cards_section',
-		// 		pin: true,
-		// 		scrub: 1,
-		// 		start: 'center center',
-		// 		end: 'bottom top'
-		// 		// end: 'bottom -=20%'
-		// 	}
-		// });
+		gsap.timeline().from('.cards_section .wrapper', {
+			y: '5%',
+			scrollTrigger: {
+				trigger: '.cards_section',
+				pin: true,
+				scrub: 1,
+				start: 'center center',
+				end: 'bottom top'
+				// end: 'bottom -=20%'
+			}
+		});
 		// .to('.cards_section .wrapper', {
 		// 	y: '-10%',
 		// 	scrollTrigger: {
@@ -72,18 +65,6 @@
 		// 	}
 		// });
 
-		gsap.timeline().to('.join_section .wrapper', {
-			position: 'relative',
-			ease: 'none',
-			stagger: 0.5,
-			scrollTrigger: {
-				trigger: '.join_section',
-				start: 'top top',
-				end: '+=300%',
-				scrub: true
-			}
-		});
-
 		const parallax = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.landing_section',
@@ -93,7 +74,7 @@
 			}
 		});
 
-		gsap.utils.toArray('.landing_section__hero .parallax').forEach((layer: HTMLElement) => {
+		gsap.utils.toArray('.landing_section__hero .parallax').forEach((layer: any) => {
 			const d = +(layer.dataset.depth || 0);
 			const movement = -(layer.offsetHeight * d);
 			parallax.to(
@@ -105,8 +86,18 @@
 				0
 			);
 		});
+	}
+
+	onMount(() => {
+		setupAnimations();
 	});
 </script>
+
+<svelte:head>
+	<link rel="preconnect" href={HeroImgLayer0} />
+	<link rel="preconnect" href={HeroImgLayer1} />
+	<link rel="preconnect" href={HeroImgLayer2} />
+</svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
 
@@ -121,7 +112,7 @@
 			<div class="landing_section__content">
 				<h1 class="text_green mb_4">Who we are?</h1>
 				<span class="divider divider_2 divider_light" />
-				<p class="mt_4 font_light">
+				<p class="mt_4 w_75 font_light">
 					The Transparency and Accountability Initiative (TAI) is a donor collaborative working
 					toward a democratic world where power and resources are more equally distributed; people
 					are informed and empowered, governments and the corporate sector are open and responsive,
@@ -131,13 +122,13 @@
 			</div>
 		</div>
 	</section>
-	<section class="brands_section bg_blue show_on_lg_and_up">
+	<section class="brands_section section bg_blue show_on_lg_and_up">
 		<div class="wrapper" bind:this={brandSlide}>
-			<MacArthurLogo />
-			<FordLogo />
-			<HewlettLogo />
-			<LuminateLogo />
-			<OpenSocietyLogo />
+			<MacArthurLogo width="300" />
+			<FordLogo width="300" />
+			<HewlettLogo width="300" />
+			<LuminateLogo width="300" />
+			<OpenSocietyLogo width="300" />
 			<SkollLogo height="80" />
 		</div>
 	</section>
@@ -151,9 +142,9 @@
 			<SkollLogo height="50" width="50%" class="mt_4" />
 		</div>
 	</section> -->
-	<section class="cards_section bg_blue">
+	<section class="cards_section section bg_blue">
 		<div class="wrapper">
-			<div class="container container_fluid">
+			<div class="container">
 				<div class="row">
 					<div class="col col_4 col_lg_12">
 						<div class="card">
@@ -163,25 +154,29 @@
 							<div class="content">
 								<h3 class="text_dark">What we fund</h3>
 								<div class="divider divider_light divider_2" />
-								<strong class="text_dark mb_1">What does TPA funding look like?</strong>
-								<span class="text_dark display_block">Funding Data Library</span>
-								<span class="text_dark display_block">Why it matters</span>
-								<span class="text_dark display_block">Pathways to change</span>
+								<div class="content__text">
+									<strong class="text_dark mb_1">What does TPA funding look like?</strong>
+									<span class="text_dark display_block">Funding Data Library</span>
+									<span class="text_dark display_block">Why it matters</span>
+									<span class="text_dark display_block">Pathways to change</span>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col col_4 col_lg_12">
-						<div class=" card">
+						<div class="card">
 							<div class="overlay">
 								<img src={PlaceHolderImg} alt="" />
 							</div>
 							<div class="content">
 								<h3 class="text_dark">How we fund</h3>
 								<div class="divider divider_light divider_2" />
-								<strong class="text_dark mb_1">What does TPA funding look like?</strong>
-								<span class="text_dark display_block">Funding Data Library</span>
-								<span class="text_dark display_block">Why it matters</span>
-								<span class="text_dark display_block">Pathways to change</span>
+								<div class="content__text">
+									<strong class="text_dark mb_1">What does TPA funding look like?</strong>
+									<span class="text_dark display_block">Funding Data Library</span>
+									<span class="text_dark display_block">Why it matters</span>
+									<span class="text_dark display_block">Pathways to change</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -193,10 +188,12 @@
 							<div class="content">
 								<h3 class="text_dark">How we work</h3>
 								<div class="divider divider_light divider_2" />
-								<strong class="text_dark mb_1">What does TPA funding look like?</strong>
-								<span class="text_dark display_block">Funding Data Library</span>
-								<span class="text_dark display_block">Why it matters</span>
-								<span class="text_dark display_block">Pathways to change</span>
+								<div class="content__text">
+									<strong class="text_dark mb_1">What does TPA funding look like?</strong>
+									<span class="text_dark display_block">Funding Data Library</span>
+									<span class="text_dark display_block">Why it matters</span>
+									<span class="text_dark display_block">Pathways to change</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -220,6 +217,8 @@
 		flex-direction: column;
 		justify-content: flex-end;
 		z-index: 1;
+		padding-top: 0 !important;
+		padding-bottom: 6.125rem !important;
 
 		@media (max-width: $md) {
 			padding-top: 0 !important;
@@ -318,12 +317,6 @@
 					width: 100%;
 				}
 			}
-
-			p {
-				font-weight: 300;
-				font-size: pxToRem(20);
-				line-height: 1.4;
-			}
 		}
 	}
 
@@ -357,13 +350,13 @@
 		$card-blue: map-get($colors, 'blue');
 		$card-green: #59ebcf;
 
-		min-height: 100vh;
+		min-height: 105vh;
 
-		// padding: 0 !important;
-		padding-right: 2rem !important;
-		padding-left: 2rem !important;
+		// // padding: 0 !important;
+		// padding-right: 2rem !important;
+		// padding-left: 2rem !important;
 
-		perspective: 1px;
+		// perspective: 1px;
 		display: flex !important;
 		align-items: center;
 		justify-content: space-around;
@@ -373,7 +366,7 @@
 		@media (max-width: $md) {
 			padding-right: 0 !important;
 			padding-left: 0 !important;
-			padding-bottom: 2rem;
+			// padding-bottom: 2rem;
 		}
 
 		.wrapper {
@@ -386,54 +379,23 @@
 				overflow: hidden;
 				padding: 0;
 				background: $card-green;
-				border-radius: 25px;
-				height: 85vh;
-				width: 95%;
+				border-radius: 15px;
+				height: calc(100vh - pxToRem(150));
 				margin: auto;
 
 				@media (max-width: $md) {
-					display: flex;
-					flex-direction: column;
-					width: 100%;
-					.overlay {
-						height: 40vh !important;
-					}
+					height: 85vh;
 				}
 
-				@media (hover: hover) {
-					&:hover {
-						.overlay {
-							height: 50%;
-							border-bottom-left-radius: 25px;
-							border-bottom-right-radius: 25px;
-						}
-						.content {
-							.divider {
-								width: 100px;
-							}
-						}
-					}
-				}
-
-				@media (hover: none) {
-					.overlay {
-						height: 50%;
-						border-bottom-left-radius: 25px;
-						border-bottom-right-radius: 25px;
-					}
-					.content {
-						.divider {
-							width: 100px;
-						}
-					}
+				.overlay,
+				.content {
+					transition: height 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 				}
 
 				.overlay {
-					transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-					background-color: $card-blue;
-					height: calc(100% - 5rem);
-					border-bottom-left-radius: 0px;
-					border-bottom-right-radius: 0px;
+					height: calc(100% - 100px);
+					border-bottom-left-radius: 15px;
+					border-bottom-right-radius: 15px;
 					overflow: hidden;
 					img {
 						width: 100%;
@@ -441,40 +403,50 @@
 						object-fit: cover;
 					}
 				}
+
 				.content {
-					transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-					padding: 1rem;
+					padding-left: 1rem;
+					padding-right: 1rem;
+					height: 100px;
 					display: flex;
 					flex-direction: column;
-					justify-content: space-around;
-					height: 50%;
-
 					.divider {
-						transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-						width: 0;
-						margin-top: 1rem;
-						margin-bottom: 1rem;
+						width: 0 !important;
+						transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 					}
-
-					@media (max-width: $md) {
-						padding-top: 2rem;
-						justify-content: space-evenly;
+					&__text {
 						flex-grow: 1;
+						margin-top: 25px;
+						margin-bottom: 25px;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-evenly;
 					}
+				}
+				.content h3 {
+					line-height: 100px;
+					margin: 0;
+				}
 
-					h3 {
-						margin: 0;
-						font-weight: 600;
-						font-family: 'Lato';
-						letter-spacing: -1px;
-						color: #051231;
-						white-space: nowrap;
+				@media (hover: hover) {
+					&:hover {
+						.content,
+						.overlay {
+							height: 50%;
+						}
+						.content .divider {
+							width: 100px !important;
+						}
 					}
-					span,
-					strong {
-						font-size: pxToRem(20) !important;
-						letter-spacing: normal !important;
-						color: #051231;
+				}
+
+				@media (hover: none) {
+					.content,
+					.overlay {
+						height: 50%;
+					}
+					.content .divider {
+						width: 100px !important;
 					}
 				}
 			}

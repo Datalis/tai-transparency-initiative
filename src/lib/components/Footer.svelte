@@ -186,6 +186,8 @@
 	$sm: map-get($grid-breakpoints, 'sm');
 
 	.footer {
+		position: relative;
+		z-index: 1;
 		&_content {
 			padding: 2rem 0rem;
 

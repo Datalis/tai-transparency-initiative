@@ -31,6 +31,11 @@
 
 		--gray: #{map-get($colors, 'gray')};
 
+		&__title {
+			font-size: pxToRem(20);
+			letter-spacing: normal;
+		}
+
 		&__image {
 			overflow: hidden;
 			border-radius: 15px;
@@ -40,15 +45,6 @@
 			height: auto;
 			object-fit: cover;
 			object-position: center;
-		}
-
-		h6 {
-			font-size: 22px;
-		}
-
-		p {
-			font-size: 18px;
-			line-height: 33px;
 		}
 	}
 </style>

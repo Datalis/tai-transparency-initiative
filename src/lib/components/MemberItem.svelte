@@ -210,11 +210,6 @@
 					transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 				}
 
-				p {
-					font-size: pxToRem(18);
-					font-weight: 400;
-				}
-
 				a {
 					font-size: pxToRem(18);
 				}

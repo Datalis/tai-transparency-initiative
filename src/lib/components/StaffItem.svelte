@@ -63,6 +63,7 @@
 		transition: all 0.4s ease;
 
 		&__text {
+			display: none;
 			opacity: 0;
 			overflow: hidden;
 			max-height: 0;

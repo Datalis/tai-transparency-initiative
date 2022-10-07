@@ -23,7 +23,7 @@
 		</div>
 		<div class="resource_item__wrapper--right">
 			<small class="text_gray text_uppercase">March 29, 2022</small>
-			<h3 class="text_green mt_3 mb_4">Who receives over $500m in TPA grants?</h3>
+			<h3 class="text_green mt_3 mb_3">Who receives over $500m in TPA grants?</h3>
 			<small class="text_gray">By <a href="/" class="text_gray">Author name</a> (Role at TAI)</small
 			>
 			<p class="text_dark">
@@ -36,12 +36,29 @@
 </div>
 
 <style lang="scss" scoped>
+	$md: map-get($grid-breakpoints, 'md');
+
 	.resource_item {
 		&__wrapper {
 			display: flex;
 			align-items: stretch;
 			padding-top: 1rem;
 			padding-bottom: 1rem;
+
+			@media (max-width: $md) {
+				flex-direction: column;
+
+				&--left {
+					width: 100% !important;
+					height: 250px;
+				}
+
+				&--right {
+					margin-top: 1rem;
+					padding-left: 0 !important;
+				}
+			}
+
 			&--left {
 				width: 30%;
 				flex-shrink: 0;
@@ -60,7 +77,7 @@
 						padding: 0.5rem 2rem;
 						text-transform: uppercase;
 						font-weight: 700;
-						font-size: 14px;
+						font-size: pxToRem(14);
 						color: #fafafa;
 					}
 				}

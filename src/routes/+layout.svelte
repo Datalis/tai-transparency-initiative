@@ -2,6 +2,10 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import PageTransition from '$lib/components/PageTransition.svelte';
+
+	import { gsap } from 'gsap/dist/gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	gsap.registerPlugin(ScrollTrigger);
 </script>
 
 <svelte:head>
@@ -27,8 +31,16 @@
 	body {
 		overflow-x: hidden;
 		scroll-behavior: smooth;
-		&.--menu-open {
-			overflow: hidden;
+		scrollbar-color: #999 #333;
+		&::-webkit-scrollbar {
+			width: 10px;
+			height: 10px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: #999;
+		}
+		&::-webkit-scrollbar-track {
+			background: #333;
 		}
 	}
 
@@ -39,8 +51,8 @@
 		.section {
 			position: relative;
 			display: block;
-			padding-top: 2rem;
-			padding-bottom: 2rem;
+			padding-top: pxToRem(50);
+			padding-bottom: pxToRem(50);
 			.divider {
 				width: 100px;
 			}

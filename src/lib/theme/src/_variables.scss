@@ -47,7 +47,7 @@ $grid-breakpoints: (
 	'xxl': 1400px,
 );
 
-$grid-gutter: 1rem;
+$grid-gutter: 1.25rem;
 
 $spacers: (
 	'0': 0,
@@ -68,8 +68,6 @@ $sizes: (
 	'100': 100%,
 	'auto': auto
 );
-
-$font-size: 1.2rem !default;
 
 $font-weights: (
 	'thin': 100,

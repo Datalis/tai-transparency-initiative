@@ -6,7 +6,6 @@ specifiers:
   '@sveltejs/adapter-auto': next
   '@sveltejs/adapter-netlify': next
   '@sveltejs/kit': next
-  '@types/siema': ^1.4.8
   autoprefixer: ^10.4.8
   eslint: ^8.22.0
   eslint-config-prettier: ^8.5.0
@@ -15,11 +14,9 @@ specifiers:
   prettier: ^2.6.2
   prettier-plugin-svelte: ^2.7.0
   sass: ^1.54.4
-  siema: ^1.5.1
   svelte: ^3.44.0
   svelte-check: ^2.7.1
   svelte-collapsible: ^0.2.1
-  svelte-motion: ^0.11.3
   svelte-preprocess: ^4.10.7
   swiper: ^8.4.2
   typescript: ^4.7.4
@@ -31,8 +28,7 @@ devDependencies:
   '@poppanator/sveltekit-svg': 0.3.4_svelte@3.49.0
   '@sveltejs/adapter-auto': 1.0.0-next.80
   '@sveltejs/adapter-netlify': 1.0.0-next.78
-  '@sveltejs/kit': 1.0.0-next.510_svelte@3.49.0+vite@3.1.4
-  '@types/siema': 1.4.8
+  '@sveltejs/kit': 1.0.0-next.511_svelte@3.49.0+vite@3.1.4
   autoprefixer: 10.4.8_postcss@8.4.16
   eslint: 8.22.0
   eslint-config-prettier: 8.5.0_eslint@8.22.0
@@ -41,11 +37,9 @@ devDependencies:
   prettier: 2.7.1
   prettier-plugin-svelte: 2.7.0_o3ioganyptcsrh6x4hnxvjkpqi
   sass: 1.54.5
-  siema: 1.5.1
   svelte: 3.49.0
   svelte-check: 2.8.1_f4ocuume5qq4kteljx4yno44ge
   svelte-collapsible: 0.2.1
-  svelte-motion: 0.11.3_svelte@3.49.0
   svelte-preprocess: 4.10.7_vg6ducirvwwyf55jrdrmsrrkvq
   swiper: 8.4.2
   typescript: 4.7.4
@@ -238,8 +232,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.510_svelte@3.49.0+vite@3.1.4:
-    resolution: {integrity: sha512-i96sRqEzNP1dOaQQ2aR38H6emdQJhc1qr5KqNyjqi3Wb0sDAG49cQxMRUOdydkVKZkG/o7PvC5qdyblVfalAdA==}
+  /@sveltejs/kit/1.0.0-next.511_svelte@3.49.0+vite@3.1.4:
+    resolution: {integrity: sha512-A/fxd4qHWDD07Mjo6qEEEfsBEkoj5C4/dPSzx6xPUoWmPvRPhU8t+P0oMc8BOn5YHOhPDq3coH8bmafbh73zKg==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -302,34 +296,14 @@ packages:
     resolution: {integrity: sha512-SST7B//wF7xlGoLo1IEVB0cQ4e7BgXlDk5IaPgb5s0DlYLjb4if07h8+0zbQIvahfPNXs6e7zyT0EH1MqaS+5g==}
     dev: true
 
-  /@types/prop-types/15.7.5:
-    resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: true
-
   /@types/pug/2.0.6:
     resolution: {integrity: sha512-SnHmG9wN1UVmagJOnyo/qkk0Z7gejYxOYYmaAwr5u2yFYfsupN3sg10kyzN8Hep/2zbHxCnsumxOoRIRMBwKCg==}
-    dev: true
-
-  /@types/react/17.0.50:
-    resolution: {integrity: sha512-ZCBHzpDb5skMnc1zFXAXnL3l1FAdi+xZvwxK+PkglMmBrwjpp9nKaWuEvrGnSifCJmBFGxZOOFuwC6KH/s0NuA==}
-    dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
-      csstype: 3.1.1
     dev: true
 
   /@types/sass/1.43.1:
     resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
     dependencies:
       '@types/node': 18.7.10
-    dev: true
-
-  /@types/scheduler/0.16.2:
-    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
-
-  /@types/siema/1.4.8:
-    resolution: {integrity: sha512-mcaZ3Ve0VfX3Vnwqf4bcZsGmEZ+ZGRf+KLrwbd2dSqXSzG0uZykIE7Pk4ouUqmaVLkYhUUFNNHZ9AIR12Heyhg==}
     dev: true
 
   /@vercel/nft/0.22.0:
@@ -650,10 +624,6 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       css-tree: 1.1.3
-    dev: true
-
-  /csstype/3.1.1:
-    resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
     dev: true
 
   /debug/4.3.4:
@@ -1208,12 +1178,6 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /framesync/5.3.0:
-    resolution: {integrity: sha512-oc5m68HDO/tuK2blj7ZcdEBRx3p1PjrgHazL8GYEpvULhrtGIFbQArN6cQS2QhW8mitffaB+VYzMjDqBxxQeoA==}
-    dependencies:
-      tslib: 2.4.0
-    dev: true
-
   /fs-constants/1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
     dev: true
@@ -1342,10 +1306,6 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
-    dev: true
-
-  /hey-listen/1.0.8:
-    resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
     dev: true
 
   /https-proxy-agent/5.0.1:
@@ -1773,15 +1733,6 @@ packages:
     hasBin: true
     dev: true
 
-  /popmotion/9.3.5:
-    resolution: {integrity: sha512-Lr2rq8OP0j8D7CO2/6eO17ALeFCxjx1hfTGbMg+TLqFj+KZSGOoj6gRBVTzDINGqo6LQrORQSSSDaCL5OrB3bw==}
-    dependencies:
-      framesync: 5.3.0
-      hey-listen: 1.0.8
-      style-value-types: 4.1.4
-      tslib: 2.4.0
-    dev: true
-
   /postcss-value-parser/4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
     dev: true
@@ -2023,10 +1974,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /siema/1.5.1:
-    resolution: {integrity: sha512-BUNFdTSbC9/2gA6r6teBY9B8O/XZOUz8kVyttpsbq4gbHF9PidUDzs6aPtiObhV4KoEuPQdhRvK5hPPi9lgSTg==}
-    dev: true
-
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
@@ -2140,20 +2087,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /style-value-types/4.1.4:
-    resolution: {integrity: sha512-LCJL6tB+vPSUoxgUBt9juXIlNJHtBMy8jkXzUJSBzeHWdBu6lhzHqCvLVkXFGsFIlNa2ln1sQHya/gzaFmB2Lg==}
-    dependencies:
-      hey-listen: 1.0.8
-      tslib: 2.4.0
-    dev: true
-
-  /style-value-types/5.0.0:
-    resolution: {integrity: sha512-08yq36Ikn4kx4YU6RD7jWEv27v4V+PUsOGa4n/as8Et3CuODMJQ00ENeAVXAeydX4Z2j1XHZF1K2sX4mGl18fA==}
-    dependencies:
-      hey-listen: 1.0.8
-      tslib: 2.4.0
-    dev: true
-
   /supports-color/7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
@@ -2211,19 +2144,6 @@ packages:
       svelte: '>=3.19.0'
     dependencies:
       svelte: 3.49.0
-    dev: true
-
-  /svelte-motion/0.11.3_svelte@3.49.0:
-    resolution: {integrity: sha512-eBkZMUFGd97m7/yLOUWuXSM/Q4krSxzl6GIxUleM9X3zXfzGSsPRORG1i+0q84Vyw7U4X+N+iFWr+LB6yhEjdw==}
-    peerDependencies:
-      svelte: ^3.35.0
-    dependencies:
-      '@types/react': 17.0.50
-      framesync: 5.3.0
-      popmotion: 9.3.5
-      style-value-types: 5.0.0
-      svelte: 3.49.0
-      tslib: 2.4.0
     dev: true
 
   /svelte-preprocess/4.10.7_vg6ducirvwwyf55jrdrmsrrkvq:
@@ -2364,10 +2284,6 @@ packages:
 
   /tr46/0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
-    dev: true
-
-  /tslib/2.4.0:
-    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: true
 
   /tunnel-agent/0.6.0:

@@ -1,4 +1,4 @@
-<section class="subscribe_section bg_light">
+<section class="subscribe_section section bg_light">
 	<div class="container">
 		<div class="subscribe_section__panel bg_panel p_4">
 			<h2 class="text_center">Keep updated with <br /> TAI WEEKLY</h2>
@@ -30,6 +30,7 @@
 
 		&__panel {
 			height: 100%;
+			min-height: 400px;
 			border-radius: 15px;
 			display: flex;
 			flex-direction: column;

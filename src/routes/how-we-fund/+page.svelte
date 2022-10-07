@@ -14,7 +14,6 @@
 	// import HorizontalScroller from '$lib/components/HorizontalScroller.svelte';
 
 	import { gsap } from 'gsap/dist/gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 
 	/**
@@ -29,7 +28,7 @@
 	$: partnersSlideWidth = partnersSlide?.getBoundingClientRect()?.width || 0;
 
 	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
+		// gsap.registerPlugin(ScrollTrigger);
 
 		// @ts-ignore
 		gsap.to('.partners_section', {
@@ -87,14 +86,14 @@
 	<section class="landing_section section bg_blue">
 		<div class="container h-100">
 			<div class="landing_section__content">
-				<h1 class="text_green">How we fund</h1>
+				<h1 class="text_green mb_4">How we fund</h1>
 				<span class="divider divider_2 divider_light" />
-				<p class="mt_4">
+				<p class="mt_4 font_light">
 					TAI offers a platform for candid, constructive exchange around grantmaking practices. Our
 					members learn from each other and hold each other accountable to be more inclusive,
 					equitable, innovative, and effective grantmakers.
 				</p>
-				<p>
+				<p class="font_light">
 					We supports partners to harness transparency, participation and accountability for the
 					public good, and these are also our values we want to live by.
 				</p>
@@ -211,11 +210,6 @@
 				width: 100%;
 				margin-top: 40vh;
 			}
-			p {
-				font-weight: 300;
-				font-size: pxToRem(20);
-				line-height: 1.4;
-			}
 		}
 	}
 	.partners_section {
@@ -230,7 +224,9 @@
 			display: flex;
 			width: max-content;
 			will-change: transform;
-			margin-top: 4rem;
+			&--wrapper {
+				margin-top: pxToRem(100);
+			}
 
 			&--decor {
 				content: ' ';
@@ -239,9 +235,9 @@
 				width: 100%;
 				height: 300px;
 				z-index: 1;
-				background: url(/src/lib/assets/images/decor1--green.svg);
+				background: url(/src/lib/assets/images/green_line.svg);
 				background-repeat: no-repeat;
-				background-size: 110% auto;
+				background-size: 110% 100%;
 				background-attachment: local;
 				background-position-x: center;
 				-webkit-overflow-scrolling: touch;
@@ -297,7 +293,7 @@
 
 	.participatory_section {
 		background: #e4e8ef;
-		min-height: 75vh !important;
+		min-height: 80vh !important;
 		display: flex !important;
 		flex-direction: column;
 		align-items: center;

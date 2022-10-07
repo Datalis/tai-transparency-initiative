@@ -16,17 +16,17 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.timeline().to('.join_section .wrapper', {
-			position: 'relative',
-			ease: 'none',
-			stagger: 0.5,
-			scrollTrigger: {
-				trigger: '.join_section',
-				start: 'top top',
-				end: '+=300%',
-				scrub: true
-			}
-		});
+		// gsap.timeline().to('.join_section .wrapper', {
+		// 	position: 'relative',
+		// 	ease: 'none',
+		// 	stagger: 0.5,
+		// 	scrollTrigger: {
+		// 		trigger: '.join_section',
+		// 		start: 'top top',
+		// 		end: '+=300%',
+		// 		scrub: true
+		// 	}
+		// });
 	});
 </script>
 

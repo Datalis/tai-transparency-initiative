@@ -71,9 +71,9 @@
 	<section class="landing_section section bg_blue">
 		<div class="container h-100">
 			<div class="landing_section__content">
-				<h1 class="text_green">How we work</h1>
+				<h1 class="text_green mb_4">How we work</h1>
 				<span class="divider divider_2 divider_light" />
-				<p class="mt_4">
+				<p class="mt_4 font_light">
 					Our members use TAI as a space to strategize, interrogate evidence and develop joint
 					actions. We do this through working groups, coffee hours, research, bringing in expert
 					voices and other funders across a wide range of issues areas. We share knowledge and
@@ -163,7 +163,7 @@
 	</section>
 	<section class="progress_model_section section bg_light">
 		<div class="container">
-			<h2 class="mt_3">Our Model for Field-Level Progress</h2>
+			<h2 class="mt_0">Our Model for Field-Level Progress</h2>
 			<div class="divider divider_green divider_2" />
 			<span class="mt_4 display_block"
 				>At every stage, we monitor and evaluate what works, when, how and why.</span
@@ -318,11 +318,6 @@
 				width: 100%;
 				margin-top: 40vh;
 			}
-			p {
-				font-weight: 300;
-				font-size: pxToRem(20);
-				line-height: 1.4;
-			}
 		}
 	}
 
@@ -392,21 +387,20 @@
 				align-items: center;
 				justify-content: center;
 				color: $green_light;
-				font-size: 42px;
-				font-weight: 700;
+				font-size: pxToRem(38);
 				line-height: 1;
 				font-weight: 900;
 			}
 			&__title {
-				font-size: 32px;
+				font-size: pxToRem(24);
 				font-weight: 700;
 				letter-spacing: 1.75px;
 			}
 			&__text {
 				padding-left: calc(35px + 2.3rem);
-				font-size: 22px;
-				font-weight: 500;
-				margin-top: 1.2rem;
+				// font-size: 22px;
+				font-weight: 400;
+				margin-top: 1rem;
 			}
 		}
 
@@ -459,7 +453,6 @@
 				h5 {
 					font-weight: 500;
 					letter-spacing: 2.5px;
-					font-size: 24px;
 				}
 			}
 			&_body {
@@ -469,7 +462,7 @@
 				justify-content: space-between;
 				background-color: #c7ccd6 !important;
 				span {
-					font-size: 22px;
+					font-size: pxToRem(17);
 					font-weight: 400;
 				}
 			}
@@ -480,7 +473,6 @@
 		padding-top: 2.5rem;
 		padding-bottom: 4rem !important;
 		p {
-			font-size: pxToRem(20);
 			font-weight: 300;
 			width: 75vw;
 			@media (max-width: $md) {

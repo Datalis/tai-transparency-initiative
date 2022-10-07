@@ -1,12 +1,12 @@
 <script>
-	import SpeakerIcon from '$lib/assets/icons/speaker.svg?component';
-	import InternetIcon from '$lib/assets/icons/internet.svg?component';
-	import TargetIcon from '$lib/assets/icons/target.svg?component';
-	import SearchIcon from '$lib/assets/icons/search.svg?component';
-	import CogsIcon from '$lib/assets/icons/cog.svg?component';
-	import ChartIcon from '$lib/assets/icons/chart.svg?component';
+	import SpeakerIcon from '$lib/assets/icons/funding/1.svg?component';
+	import InternetIcon from '$lib/assets/icons/funding/2.svg?component';
+	import TargetIcon from '$lib/assets/icons/funding/3.svg?component';
+	import SearchIcon from '$lib/assets/icons/funding/4.svg?component';
+	import CogsIcon from '$lib/assets/icons/funding/5.svg?component';
+	import ChartIcon from '$lib/assets/icons/funding/6.svg?component';
 
-	import PCImg from '$lib/assets/images/pc.png';
+	import PCImg from '$lib/assets/images/funding_data_library.png';
 	// import ResourceItem from '$lib/components/ResourceItem.svelte';
 	import ArticleItem from '$lib/components/ArticleItem.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
@@ -24,9 +24,9 @@
 	<section class="landing_section section bg_blue">
 		<div class="container">
 			<div class="landing_section__content">
-				<h1 class="text_green">What we fund</h1>
+				<h1 class="text_green mb_4">What we fund</h1>
 				<span class="divider divider_2 divider_light" />
-				<p class="mt_4">
+				<p class="mt_4 font_light">
 					When TAI started in 2010, there was no established transparency and accountability field.
 					The number and capacity of organizations working on these issues has grown fast, many with
 					support from TAI members. Today, our members support a broad range of organizations at
@@ -67,7 +67,7 @@
 				<div class="col_4 col_lg_6 mt_4">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
-							<TargetIcon class="ml_1 mb_1" />
+							<TargetIcon />
 						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -215,10 +215,10 @@
 	</section>
 	<section class="why_matters_section section">
 		<div class="container">
-			<h2 class="text_dark mt_0">Why it matters</h2>
-			<span class="divider divider_2 divider_gray mb_4" />
-			<div class="row">
-				<span class="col col_8 col_md_12">
+			<h2 class="text_dark mt_0 mb_4">Why it matters</h2>
+			<span class="divider divider_2 divider_gray" />
+			<div class="row mt_3">
+				<span class="col col_8 col_md_12 mt_0">
 					<strong>TPA FULL DISCLOSURE</strong> Introducing the people behind funding and practice in
 					the world of transparency, participation, and accountability.
 				</span>
@@ -263,19 +263,13 @@
 	$md: map-get($grid-breakpoints, 'md');
 
 	.landing_section {
-		min-height: 100vh;
+		// min-height: 100vh;
 		&__content {
 			width: 42vw;
 
 			@media (max-width: $md) {
 				width: 100%;
 				margin-top: 30vh;
-			}
-
-			p {
-				font-weight: 300;
-				font-size: pxToRem(20);
-				line-height: 1.4;
 			}
 		}
 	}
@@ -308,15 +302,15 @@
 				position: absolute;
 				top: 2rem;
 				left: -35px;
-				padding: 0.5rem;
-				width: 70px;
-				height: 70px;
+				padding: 0.65rem;
+				width: 60px;
+				height: 60px;
 				border-radius: 50%;
 				background-color: $blue;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				font-size: 22px;
+
 				:global {
 					svg path {
 						stroke-miterlimit: 1 !important;
@@ -336,7 +330,6 @@
 
 			p {
 				font-weight: 300;
-				font-size: pxToRem(20);
 			}
 		}
 	}
@@ -370,8 +363,6 @@
 			margin-top: 5rem;
 		}
 		p {
-			font-size: pxToRem(20);
-			// line-height: 32px;
 			font-weight: 300;
 		}
 	}

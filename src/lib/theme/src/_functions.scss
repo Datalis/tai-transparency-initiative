@@ -1,8 +1,17 @@
+@use 'sass:math';
+
 @function pxToRem($value) {
 	$rem: calc($value / 16)+rem;
 	@return $rem;
 }
 
+@function strip-unit($number) {
+	@if type-of($number)=='number' and not unitless($number) {
+		@return math.div($number, $number * 0 + 1);
+	}
+
+	@return $number;
+}
 
 @function luminance($color) {
 	// $linear-channel-values are our Lookup Table of constants

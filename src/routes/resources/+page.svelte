@@ -19,7 +19,7 @@
 			<ResourceFilters />
 		</div>
 	</div>
-	<section class="resource_list_section">
+	<section class="resource_list_section section bg_light">
 		<div class="container">
 			<div class="display_flex flex_column">
 				<div class="display_flex align_center">
@@ -35,13 +35,13 @@
 						<input type="search" placeholder="Search..." />
 					</div>
 				</div>
-				<div class="divider divider_dark divider_4 my_2	" />
+				<div class="divider divider_dark divider_2 my_2	" />
 				<ResourceItemLarge />
-				<div class="divider divider_dark divider_4 my_2" />
+				<div class="divider divider_dark divider_2 my_2" />
 				<ResourceItemLarge />
-				<div class="divider divider_dark divider_4 my_2" />
+				<div class="divider divider_dark divider_2 my_2" />
 				<ResourceItemLarge />
-				<div class="divider divider_dark divider_4 my_2" />
+				<div class="divider divider_dark divider_2 my_2" />
 				<ResourceItemLarge />
 			</div>
 			<div class="display_flex align_center justify_center mt_5">
@@ -53,6 +53,7 @@
 </div>
 
 <style lang="scss">
+	$md: map-get($grid-breakpoints, 'md');
 	.resource_list_section {
 		.divider {
 			width: 100% !important;
