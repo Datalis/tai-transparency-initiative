@@ -43,17 +43,19 @@
 				}
 			});
 
-		gsap.timeline().from('.cards_section .wrapper', {
-			y: '5%',
-			scrollTrigger: {
-				trigger: '.cards_section',
-				pin: true,
-				scrub: 1,
-				start: 'center center',
-				end: 'bottom top'
-				// end: 'bottom -=20%'
-			}
-		});
+		if (windowWidth > 992) {
+			gsap.timeline().from('.cards_section .wrapper', {
+				y: '5%',
+				scrollTrigger: {
+					trigger: '.cards_section',
+					pin: true,
+					scrub: 1,
+					start: 'center center',
+					end: 'bottom top'
+					// end: 'bottom -=20%'
+				}
+			});
+		}
 		// .to('.cards_section .wrapper', {
 		// 	y: '-10%',
 		// 	scrollTrigger: {
@@ -112,7 +114,7 @@
 			<div class="landing_section__content">
 				<h1 class="text_green mb_4">Who we are?</h1>
 				<span class="divider divider_2 divider_light" />
-				<p class="mt_4 w_75 font_light">
+				<p class="mt_4 font_light">
 					The Transparency and Accountability Initiative (TAI) is a donor collaborative working
 					toward a democratic world where power and resources are more equally distributed; people
 					are informed and empowered, governments and the corporate sector are open and responsive,
@@ -132,7 +134,7 @@
 			<SkollLogo height="80" />
 		</div>
 	</section>
-	<!-- <section class="brands_section_mobile bg_blue show_on_lg_and_down">
+	<section class="brands_section_mobile section bg_blue show_on_lg_and_down">
 		<div class="wrapper">
 			<MacArthurLogo height="50" width="50%" />
 			<FordLogo height="50" width="50%" />
@@ -141,7 +143,7 @@
 			<OpenSocietyLogo height="50" width="50%" class="mt_4" />
 			<SkollLogo height="50" width="50%" class="mt_4" />
 		</div>
-	</section> -->
+	</section>
 	<section class="cards_section section bg_blue">
 		<div class="wrapper">
 			<div class="container">
@@ -310,9 +312,16 @@
 			position: relative;
 			z-index: 12;
 
+			p {
+				width: 75%;
+			}
+
 			@media (max-width: $md) {
 				width: 100%;
 				margin-top: 3rem;
+				p {
+					width: 100%;
+				}
 				a {
 					width: 100%;
 				}
@@ -338,6 +347,10 @@
 
 		&_mobile {
 			min-height: unset !important;
+			position: relative;
+			z-index: 1;
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
 			.wrapper {
 				display: flex;
 				flex-wrap: wrap;

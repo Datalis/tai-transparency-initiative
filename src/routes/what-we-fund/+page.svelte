@@ -300,11 +300,11 @@
 		.funding_item {
 			&__icon {
 				position: absolute;
-				top: 2rem;
+				top: 1.5rem;
 				left: -35px;
 				padding: 0.65rem;
-				width: 60px;
-				height: 60px;
+				width: 80px;
+				height: 80px;
 				border-radius: 50%;
 				background-color: $blue;
 				display: flex;
@@ -329,7 +329,7 @@
 			background-color: $green;
 
 			p {
-				font-weight: 300;
+				letter-spacing: normal;
 			}
 		}
 	}

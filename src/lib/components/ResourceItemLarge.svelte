@@ -22,9 +22,10 @@
 			</div>
 		</div>
 		<div class="resource_item__wrapper--right">
-			<small class="text_gray text_uppercase">March 29, 2022</small>
+			<small class="text_gray text_uppercase font_regular">March 29, 2022</small>
 			<h3 class="text_green mt_3 mb_3">Who receives over $500m in TPA grants?</h3>
-			<small class="text_gray">By <a href="/" class="text_gray">Author name</a> (Role at TAI)</small
+			<small class="text_gray font_regular"
+				>By <a href="/" class="text_gray">Author name</a> (Role at TAI)</small
 			>
 			<p class="text_dark">
 				We also wanted to share with you our updated TAIʼs grants database, covering our memberʼs

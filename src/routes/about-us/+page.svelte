@@ -1,7 +1,5 @@
-<script>
-	// import { Accordion, AccordionItem } from 'svelte-collapsible';
-
-	import WorldImg from '$lib/assets/images/world.png';
+<script lang="ts">
+	import WorldImg from '$lib/assets/images/home/group_3.webp';
 	import LogoIcon from '$lib/assets/images/logo_icon.svg?component';
 
 	import EnvisionImg1 from '$lib/assets/images/envision-1.png';
@@ -11,23 +9,6 @@
 	import JoinSection from '$lib/components/JoinSection.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import StaffItem from '$lib/components/StaffItem.svelte';
-
-	import { gsap } from 'gsap/dist/gsap';
-	import { onMount } from 'svelte';
-
-	onMount(() => {
-		// gsap.timeline().to('.join_section .wrapper', {
-		// 	position: 'relative',
-		// 	ease: 'none',
-		// 	stagger: 0.5,
-		// 	scrollTrigger: {
-		// 		trigger: '.join_section',
-		// 		start: 'top top',
-		// 		end: '+=300%',
-		// 		scrub: true
-		// 	}
-		// });
-	});
 </script>
 
 <div>
@@ -38,7 +19,7 @@
 				style:background-image="url({WorldImg})"
 			>
 				<LogoIcon width="72" height="72" />
-				<h1 class="text_green mt_4">Who we are?</h1>
+				<h1 class="text_green mt_4">About Us</h1>
 				<div class="divider divider_light divider_2 w_15 mt_4" />
 			</div>
 		</div>
