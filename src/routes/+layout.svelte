@@ -8,15 +8,7 @@
 	gsap.registerPlugin(ScrollTrigger);
 </script>
 
-<svelte:head>
-	<title>Transparency & Accountability Initiative</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
+<svelte:head />
 
 <Navbar />
 <PageTransition>
@@ -32,6 +24,8 @@
 		overflow-x: hidden;
 		scroll-behavior: smooth;
 		scrollbar-color: #999 #333;
+
+		-moz-osx-font-smoothing: grayscale;
 		&::-webkit-scrollbar {
 			width: 10px;
 			height: 10px;

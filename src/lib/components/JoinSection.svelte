@@ -1,5 +1,5 @@
 <script lang="ts">
-	import JoinImg from '$lib/assets/images/join.png';
+	import JoinImg from '$lib/assets/images/news.webp';
 	import IntersectionObserver from './IntersectionObserver.svelte';
 </script>
 
@@ -9,8 +9,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col col_7 col_lg_12">
-						<div class="display_flex flex_column">
-							<img class="join_section__img my_auto" src={JoinImg} alt="" />
+						<div class="display_flex flex_column align_center">
+							<img class="join_img my_auto" src={JoinImg} alt="" />
 						</div>
 					</div>
 					<div class="col col_5 col_lg_12">
@@ -66,7 +66,7 @@
 </section>
 
 <style lang="scss" scoped>
-	$sm: map-get($grid-breakpoints, 'sm');
+	$lg: map-get($grid-breakpoints, 'lg');
 
 	.join_section {
 		background: #59ebcf;
@@ -87,11 +87,15 @@
 		height: 100vh;
 		z-index: -1;
 
+		.join_img {
+			width: 75%;
+		}
+
 		&.pinned {
 			position: fixed;
 		}
 
-		@media (max-width: $sm) {
+		@media (max-width: $lg) {
 			height: auto;
 
 			.col {

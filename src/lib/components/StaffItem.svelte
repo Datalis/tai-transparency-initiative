@@ -1,5 +1,5 @@
 <script>
-	import PersonImg from '$lib/assets/images/person.png';
+	import PersonImg from '$lib/assets/images/person.webp';
 	import ViewMoreIcon from './ViewMoreIcon.svelte';
 
 	export let isExpanded = false;

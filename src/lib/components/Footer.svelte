@@ -3,7 +3,6 @@
 	import FacebookIcon from '$lib/assets/icons/facebook.svg?component';
 	import TwitterIcon from '$lib/assets/icons/twitter.svg?component';
 	import LinkedInIcon from '$lib/assets/icons/linkedin.svg?component';
-	// import XIcon from '$lib/assets/icons/x.svg?component';
 	import LinkIcon from '$lib/assets/icons/link.svg?component';
 </script>
 

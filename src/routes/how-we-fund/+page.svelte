@@ -1,9 +1,9 @@
 <script>
-	import PartnerImg1 from '$lib/assets/images/partner_support/1.png';
-	import PartnerImg2 from '$lib/assets/images/partner_support/2.png';
-	import PartnerImg3 from '$lib/assets/images/partner_support/3.png';
-	import PartnerImg4 from '$lib/assets/images/partner_support/4.png';
-	import PartnerImg5 from '$lib/assets/images/partner_support/5.png';
+	import PartnerImg1 from '$lib/assets/images/partner_support/1.webp';
+	import PartnerImg2 from '$lib/assets/images/partner_support/2.webp';
+	import PartnerImg3 from '$lib/assets/images/partner_support/3.webp';
+	import PartnerImg4 from '$lib/assets/images/partner_support/4.webp';
+	import PartnerImg5 from '$lib/assets/images/partner_support/5.webp';
 
 	import ParticipatoryStrategyVideo from '$lib/assets/video/movie.webm';
 

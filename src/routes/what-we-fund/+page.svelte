@@ -5,9 +5,8 @@
 	import SearchIcon from '$lib/assets/icons/funding/4.svg?component';
 	import CogsIcon from '$lib/assets/icons/funding/5.svg?component';
 	import ChartIcon from '$lib/assets/icons/funding/6.svg?component';
+	import FundingImg from '$lib/assets/images/funding_data_library.webp';
 
-	import PCImg from '$lib/assets/images/funding_data_library.png';
-	// import ResourceItem from '$lib/components/ResourceItem.svelte';
 	import ArticleItem from '$lib/components/ArticleItem.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
@@ -189,7 +188,7 @@
 					<div class="divider divider_green divider_2" />
 				</div>
 				<div class="col col_7 col_md_12">
-					<img class="w_100" src={PCImg} alt="" />
+					<img class="w_100" src={FundingImg} alt="" />
 				</div>
 				<div class="col col_5 col_md_12">
 					<div class="show_on_md_and_up">

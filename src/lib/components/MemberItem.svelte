@@ -1,6 +1,6 @@
 <script>
 	import LinkIcon from '$lib/assets/icons/link.svg?component';
-	import FordImg from '$lib/assets/images/ford.png';
+	import FordImg from '$lib/assets/images/ford.webp';
 
 	import 'swiper/css';
 	import 'swiper/css/pagination';

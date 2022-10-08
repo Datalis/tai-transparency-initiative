@@ -1,6 +1,6 @@
 <script>
 	import LinkIcon from '$lib/assets/icons/link.svg?component';
-	import ArticleImg from '$lib/assets/images/blue_placeholder.png';
+	import ArticleImg from '$lib/assets/images/blue_placeholder.webp';
 </script>
 
 <div class="article_item">

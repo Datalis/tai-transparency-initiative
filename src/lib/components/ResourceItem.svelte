@@ -1,6 +1,6 @@
 <script>
 	import LinkIcon from '$lib/assets/icons/link.svg?component';
-	import ResourceImg from '$lib/assets/images/r1.jpg';
+	import ResourceImg from '$lib/assets/images/r1.webp';
 </script>
 
 <div class="resource_item">
