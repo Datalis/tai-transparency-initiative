@@ -93,48 +93,48 @@
 						<a
 							href="/what-we-fund"
 							class="display_flex align_center text_gray mt_2"
-							class:text_green={$page.url.pathname.includes('what-we-fund')}
+							class:active={$page.url.pathname.includes('what-we-fund')}
 						>
 							<h2 class=" m_0">What we fund and why</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
-						<div class="divider divider_gray divider_2 my_4" />
+						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/how-we-fund"
 							class="display_flex align_center text_gray"
-							class:text_green={$page.url.pathname.includes('how-we-fund')}
+							class:active={$page.url.pathname.includes('how-we-fund')}
 						>
 							<h2 class=" m_0">How we fund?</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
-						<div class="divider divider_gray divider_2 my_4" />
+						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/how-we-work"
 							class="display_flex align_center text_gray"
-							class:text_green={$page.url.pathname.includes('how-we-work')}
+							class:active={$page.url.pathname.includes('how-we-work')}
 						>
 							<h2 class=" m_0">How we work together</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
-						<div class="divider divider_gray divider_2 my_4" />
+						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/resources"
 							class="display_flex align_center text_gray"
-							class:text_green={$page.url.pathname.includes('resources')}
+							class:active={$page.url.pathname.includes('resources')}
 						>
 							<h2 class=" m_0">Resources</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
-						<div class="divider divider_gray divider_2 my_4" />
+						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/about-us"
 							class="display_flex align_center text_gray"
-							class:text_green={$page.url.pathname.includes('about-us')}
+							class:active={$page.url.pathname.includes('about-us')}
 						>
 							<h2 class="m_0">About Us</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
-						<div class="divider divider_gray divider_2 my_4" />
+						<div class="divider divider_gray divider_1 my_4" />
 					</nav>
 					<nav class="navbar_menu__links mt_5">
 						<a href="/" class="mr_3 link-icon">
@@ -158,6 +158,7 @@
 
 <style lang="scss">
 	$blue: map-get($colors, 'blue');
+	$green: map-get($colors, 'green');
 	$sm: map-get($grid-breakpoints, 'sm');
 
 	.header {
@@ -204,12 +205,31 @@
 
 			&__nav {
 				margin-top: 4rem;
+				.divider {
+					margin-top: 1.2rem !important;
+					margin-bottom: 1.2rem !important;
+				}
 				a {
 					:global(svg) {
 						min-width: 42px;
 					}
+					:global(svg path){ 
+						stroke-width: 1px !important;
+					}
 					h2 {
-						letter-spacing: -0.85px !important;
+						font-weight: 400 !important;
+					}
+				}
+				a:hover,
+				a.active {
+					h2 {
+						font-weight: 600 !important;
+						color: $green;
+					}
+					:global(svg path){ 
+						transition: all 0.1s ease;
+						stroke-width: 2px !important;
+						stroke: $green !important; 
 					}
 				}
 				@media (max-width: $sm) {
