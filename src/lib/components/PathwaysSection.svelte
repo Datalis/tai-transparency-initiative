@@ -370,6 +370,7 @@
 		top: 0;
 		left: 0;
 		bottom: 0;
+		right: 0;
 		background-color: rgba(#051231, 0.8);
 		backdrop-filter: blur(25.2px);
 		display: flex;

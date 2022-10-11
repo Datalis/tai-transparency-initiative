@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import PartnerImg1 from '$lib/assets/images/partner_support/1.webp';
 	import PartnerImg2 from '$lib/assets/images/partner_support/2.webp';
 	import PartnerImg3 from '$lib/assets/images/partner_support/3.webp';
@@ -7,31 +7,21 @@
 
 	import ParticipatoryStrategyVideo from '$lib/assets/video/movie.webm';
 
-	// import PartnerDecorImg from '$lib/assets/images/decor1.png';
-	// import ResourceItem from '$lib/components/ResourceItem.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
-	// import HorizontalScroller from '$lib/components/HorizontalScroller.svelte';
 
 	import { gsap } from 'gsap/dist/gsap';
+	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
-	/**
-	 * @type {HTMLElement}
-	 */
-	let partnersSlide;
-	/**
-	 * @type {number}
-	 */
-	let windowWidth;
+	let partnersSlide: HTMLElement;
+	let windowWidth: number;
+	let videoTime: any;
 
 	$: partnersSlideWidth = partnersSlide?.getBoundingClientRect()?.width || 0;
 
 	onMount(() => {
-		// gsap.registerPlugin(ScrollTrigger);
-
-		// @ts-ignore
-		gsap.to('.partners_section', {
+		gsap.timeline().to('.partners_section', {
 			scrollTrigger: {
 				trigger: '.partners_section',
 				start: 'center center',
@@ -41,8 +31,7 @@
 			}
 		});
 
-		// @ts-ignore
-		gsap.to('.partners_section .container', {
+		gsap.timeline().to('.partners_section .container', {
 			scrollTrigger: {
 				trigger: '.partners_section',
 				start: 'top bottom',
@@ -52,8 +41,19 @@
 			y: '-15%'
 		});
 
+		gsap.timeline().to('.participatory_section .container', {
+			y: '-1%',
+			scrollTrigger: {
+				trigger: '.participatory_section',
+				pin: true,
+				scrub: 1,
+				start: 'center center',
+				end: 'bottom top'
+				// end: 'bottom -=20%'
+			}
+		});
+
 		let sliderOffset = partnersSlide.getBoundingClientRect().left;
-		console.log(sliderOffset);
 		let toScroll = windowWidth - partnersSlide.offsetWidth - 2 * sliderOffset;
 
 		// @ts-ignore
@@ -172,25 +172,38 @@
 		</div>
 	</section>
 	<section class="participatory_section section">
-		<div class="container">
-			<div class="row">
-				<div class="col col_4 col_md_12">
-					<h2 class="font_bold mb_4 mt_0">Participatory Strategy</h2>
-					<div class="divider divider_2 divider_green" />
-					<p class="mt_4">
-						TAI offers a platform for candid, constructive exchange around grantmaking practices.
-						Our members learn from each other and hold each other accountable to be more inclusive,
-						equitable, innovative, and effective grantmakers.
-					</p>
-					<button class="btn btn_green btn_bordered mt_4"> Learn more </button>
-				</div>
-				<div class="col col_8 col_md_12">
-					<video muted controls={false} preload="none" autoplay width="100%" height="100%" loop>
-						<source type="video/webm" src={ParticipatoryStrategyVideo} />
-					</video>
+		<div class="video-container">
+			<video
+				muted
+				controls={false}
+				preload="none"
+				autoplay
+				width="100%"
+				height="100%"
+				bind:currentTime={videoTime}
+			>
+				<source type="video/webm" src={ParticipatoryStrategyVideo} />
+			</video>
+		</div>
+		{#if videoTime > 50}
+			<div class="content-container" transition:fade={{duration: 800}}>
+				<div class="container">
+					<div class="row">
+						<div class="col col_6 col_md_12">
+							<h2 class="font_bold mb_4 mt_0">Participatory Strategy</h2>
+							<div class="divider divider_2 divider_green" />
+							<p class="mt_4">
+								TAI offers a platform for candid, constructive exchange around grantmaking
+								practices. Our members learn from each other and hold each other accountable to be
+								more inclusive, equitable, innovative, and effective grantmakers.
+							</p>
+							<button class="btn btn_green btn_bordered mt_4"> Learn more </button>
+						</div>
+						<div class="col col_6 col_md_12" />
+					</div>
 				</div>
 			</div>
-		</div>
+		{/if}
 	</section>
 	<ResourcesSection />
 	<SubscribeSection />
@@ -283,6 +296,7 @@
 
 	.founders_section {
 		padding-top: 0 !important;
+		margin-top: -1px;
 		p {
 			width: 75%;
 			@media (max-width: $md) {
@@ -293,11 +307,40 @@
 
 	.participatory_section {
 		background: #e4e8ef;
-		min-height: 80vh !important;
+		min-height: 105vh !important;
 		display: flex !important;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding: 0 !important;
+
+		.content-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			background-color: rgba(#0a132d, 0.6);
+			backdrop-filter: blur(5px);
+			color: #fafafa;
+			.container {
+				margin: auto;
+				height: auto;
+			}
+		}
+		.video-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			video {
+				object-fit: cover;
+			}
+		}
+
 		@media (max-width: $md) {
 			button {
 				width: 100%;

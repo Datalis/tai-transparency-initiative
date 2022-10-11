@@ -8,7 +8,7 @@
 	import CloseIcon from '$lib/assets/icons/close.svg?component';
 	import ArrowRightIcon from '$lib/assets/icons/arrow-right.svg?component';
 	import { page } from '$app/stores';
-	import { beforeNavigate } from '$app/navigation';
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
 
@@ -29,9 +29,13 @@
 		}
 	}
 
-	beforeNavigate(() => {
+	// beforeNavigate(() => {
+	// 	isMenuOpen = false;
+	// });
+
+	afterNavigate(() => {
 		isMenuOpen = false;
-	});
+	})
 
 	onMount(() => {
 		// menuAnim.from('.navbar .navbar_menu', {
@@ -217,7 +221,8 @@
 						stroke-width: 1px !important;
 					}
 					h2 {
-						font-weight: 400 !important;
+						font-weight: 499 !important;
+						transition: all 0.15s ease;
 					}
 				}
 				a:hover,
