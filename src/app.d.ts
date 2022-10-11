@@ -12,6 +12,15 @@ declare module '*.svg?component' {
 
 declare module 'svelte-collapsible';
 
+declare namespace svelte.JSX {
+	interface HTMLAttributes<T> {
+		onclick_outside?: (e: CustomEvent) => void
+	}
+	interface SVGProps<T> {
+		onclick_outside?: (e: CustomEvent) => void
+	}
+}
+
 declare namespace App {
 	// interface Locals {}
 	// interface Platform {}

@@ -5,7 +5,7 @@
 	import SearchIcon from '$lib/assets/icons/funding/4.svg?component';
 	import LightBulbIcon from '$lib/assets/icons/funding/5.svg?component';
 	import ChartIcon from '$lib/assets/icons/funding/6.svg?component';
-	
+
 	import FundingImg from '$lib/assets/images/funding_data_library.webp';
 
 	import ArticleItem from '$lib/components/ArticleItem.svelte';
@@ -18,6 +18,24 @@
 	import 'swiper/css/pagination';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
 	import { Pagination } from 'swiper';
+	import PathwaysSection from '$lib/components/PathwaysSection.svelte';
+	import { onMount } from 'svelte';
+
+	import gsap from 'gsap/dist/gsap';
+
+	onMount(() => {
+		gsap.timeline().from('.pathways_section .container', {
+			y: '5%',
+			scrollTrigger: {
+				trigger: '.pathways_section',
+				pin: true,
+				scrub: 1,
+				start: 'center center',
+				end: 'bottom top'
+				// end: 'bottom -=20%'
+			}
+		});
+	});
 </script>
 
 <div id="what-we-fund" class="page">
@@ -89,7 +107,7 @@
 				<div class="col_4 col_lg_6 mt_4">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
-							<LightBulbIcon  class="light_bulb_icon" />
+							<LightBulbIcon class="light_bulb_icon" />
 						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -239,7 +257,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="participatory_section section bg_blue_light">
+	<!-- <section class="participatory_section section bg_blue_light">
 		<div class="container">
 			<h2>Participatory Strategy</h2>
 			<div class="divider divider_green divider_2 my_4" />
@@ -248,10 +266,11 @@
 				/> It is in no way a representation of pathways to change for the TAP field as a whole.
 			</p>
 			<div class="strategy_graph">
-				<!-- <StrategyImg width="100%" height="auto" /> -->
+				
 			</div>
 		</div>
-	</section>
+	</section> -->
+	<PathwaysSection />
 	<ResourcesSection />
 	<SubscribeSection />
 </div>
@@ -311,6 +330,12 @@
 				align-items: center;
 				justify-content: center;
 				:global {
+					svg path {
+						stroke: unset;
+						stroke-width: unset;
+						fill: #c8ccd5;
+					}
+
 					.hands_icon {
 						padding: 0.1rem;
 						margin-bottom: 0.1rem;
@@ -348,7 +373,7 @@
 		}
 	}
 	.why_matters_section {
-		min-height: 95vh !important;
+		min-height: 100vh !important;
 		background-color: #e4e8ef;
 		display: flex !important;
 		align-items: center;
