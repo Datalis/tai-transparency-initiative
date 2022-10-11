@@ -24,17 +24,17 @@
 	import gsap from 'gsap/dist/gsap';
 
 	onMount(() => {
-		gsap.timeline().from('.pathways_section .container', {
-			y: '5%',
-			scrollTrigger: {
-				trigger: '.pathways_section',
-				pin: true,
-				scrub: 1,
-				start: 'center center',
-				end: 'bottom top'
-				// end: 'bottom -=20%'
-			}
-		});
+		// gsap.timeline().from('.pathways_section .container', {
+		// 	y: '5%',
+		// 	scrollTrigger: {
+		// 		trigger: '.pathways_section',
+		// 		pin: true,
+		// 		scrub: 1,
+		// 		start: 'center center',
+		// 		end: 'bottom top'
+		// 		// end: 'bottom -=20%'
+		// 	}
+		// });
 	});
 </script>
 
@@ -388,13 +388,13 @@
 			}
 		}
 	}
-	.participatory_section {
-		min-height: 100vh !important;
-		.strategy_graph {
-			margin-top: 5rem;
-		}
-		p {
-			font-weight: 300;
-		}
-	}
+	// .participatory_section {
+	// 	min-height: 100vh !important;
+	// 	.strategy_graph {
+	// 		margin-top: 5rem;
+	// 	}
+	// 	p {
+	// 		font-weight: 300;
+	// 	}
+	// }
 </style>

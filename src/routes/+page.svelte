@@ -11,6 +11,8 @@
 	import LuminateLogo from '$lib/assets/icons/luminate.svg?component';
 	import OpenSocietyLogo from '$lib/assets/icons/open-s.svg?component';
 	import SkollLogo from '$lib/assets/icons/skoll.svg?component';
+	import ChandlerLogo from '$lib/assets/images/chandler.svg?component';
+	import FCDOLogo from '$lib/assets/images/fcdo.svg?component';
 
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
@@ -24,7 +26,6 @@
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
-
 
 	$: hero1_img = windowWidth > 768 ? HeroImgLayer1 : HeroImgLayer1Mobile;
 
@@ -136,6 +137,9 @@
 			<LuminateLogo width="300" />
 			<OpenSocietyLogo width="300" />
 			<SkollLogo height="80" />
+
+			<FCDOLogo width="300" />
+			<ChandlerLogo width="300" />
 		</div>
 	</section>
 	<section class="brands_section_mobile section bg_blue show_on_lg_and_down">
@@ -146,6 +150,9 @@
 			<LuminateLogo height="50" width="50%" class="mt_4" />
 			<OpenSocietyLogo height="50" width="50%" class="mt_4" />
 			<SkollLogo height="50" width="50%" class="mt_4" />
+
+			<FCDOLogo height="50" width="50%" class="mt_4" />
+			<ChandlerLogo height="50" width="50%" class="mt_4" />
 		</div>
 	</section>
 	<section class="cards_section section bg_blue">
