@@ -1,6 +1,7 @@
 <script lang="ts">
 	import HeroImgLayer0 from '$lib/assets/images/home/group_3.webp';
 	import HeroImgLayer1 from '$lib/assets/images/home/group_1.webp';
+	import HeroImgLayer1Mobile from '$lib/assets/images/home/group_1_sm.webp';
 	import HeroImgLayer2 from '$lib/assets/images/home/group_2.webp';
 
 	import PlaceHolderImg from '$lib/assets/images/placeholder.png';
@@ -23,6 +24,9 @@
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
+
+
+	$: hero1_img = windowWidth > 768 ? HeroImgLayer1 : HeroImgLayer1Mobile;
 
 	function setupAnimations() {
 		const offset = brandSlide.getBoundingClientRect().left - 100;
@@ -97,7 +101,7 @@
 
 <svelte:head>
 	<link rel="preconnect" href={HeroImgLayer0} />
-	<link rel="preconnect" href={HeroImgLayer1} />
+	<link rel="preconnect" href={hero1_img} />
 	<link rel="preconnect" href={HeroImgLayer2} />
 </svelte:head>
 
@@ -106,8 +110,8 @@
 <div id="home" class="page">
 	<section class="landing_section section bg_blue">
 		<div class="landing_section__hero">
-			<img class="parallax" data-depth="-0.25" src={HeroImgLayer0} alt="" />
-			<img class="parallax" data-depth="0.10" src={HeroImgLayer1} alt="" />
+			<img class="parallax" data-depth="0.15" src={HeroImgLayer0} alt="" />
+			<img class="parallax" data-depth="-0.15" src={hero1_img} alt="" />
 			<img class="parallax" data-depth="0.20" src={HeroImgLayer2} alt="" />
 		</div>
 		<div class="container">
@@ -239,7 +243,7 @@
 			}
 
 			@media (max-width: $xl) {
-				width: 75% !important;
+				// width: 75% !important;
 				img:nth-child(3) {
 					height: 70% !important;
 				}
@@ -248,14 +252,14 @@
 					bottom: 0;
 					height: auto !important;
 					z-index: 10;
-					left: 200px !important;
+					left: 15% !important;
 				}
 			}
 
 			@media (max-width: $md) {
-				top: -15px;
+				top: 0;
 				position: relative;
-				height: 50vh;
+				height: 60vh;
 				width: auto !important;
 				img {
 					&:nth-child(1) {
@@ -264,10 +268,12 @@
 					}
 					&:nth-child(2) {
 						top: unset !important;
-						bottom: 0;
+						bottom: -20px;
 						height: auto !important;
 						z-index: 10;
+						margin: auto;
 						left: 0 !important;
+						right: 0 !important;
 					}
 					&:nth-child(3) {
 						top: -50px !important;
@@ -287,21 +293,25 @@
 				z-index: 9;
 
 				&:nth-child(1) {
-					top: 25%;
+					top: 35%;
+					left: -10px;
 					height: 50%;
 					width: auto;
 					max-width: unset;
 				}
 				&:nth-child(2) {
-					top: 40%;
+					top: 50%;
 					height: 50%;
 					z-index: 10;
-					left: 150px;
+					// left: 150px;
+					left: 18%;
 				}
 				&:nth-child(3) {
-					top: 25px;
+					// top: 80px;
+					top: 9%;
 					height: 70%;
-					left: 100px;
+					// left: 100px;
+					left: 12%;
 				}
 			}
 		}

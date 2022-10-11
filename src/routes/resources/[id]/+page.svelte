@@ -21,7 +21,7 @@
 					</small>
 				</div>
 				<div class="col col_5 col_sm_12">
-					<img src={PlaceholderImg} class="w_100" alt="" />
+					<!-- <img src={PlaceholderImg} class="w_100" alt="" /> -->
 				</div>
 			</div>
 		</div>
@@ -143,6 +143,7 @@
 
 	.heading_section {
 		min-height: unset !important;
+		// height: 70vh
 	}
 	.heading_section a {
 		text-decoration: underline;

@@ -21,11 +21,11 @@
 			</label>
 		</div>
 	{/each}
-	<div class="form_control form_control_radio form_control_large">
+	<!-- <div class="form_control form_control_radio form_control_large">
 		<label>
 			<input type="radio" bind:group={currentFilter} name="filter" value={null} />
 		</label>
-	</div>
+	</div> -->
 </div>
 
 <style lang="scss" scoped>

@@ -1,10 +1,11 @@
 <script>
-	import SpeakerIcon from '$lib/assets/icons/funding/1.svg?component';
-	import InternetIcon from '$lib/assets/icons/funding/2.svg?component';
-	import TargetIcon from '$lib/assets/icons/funding/3.svg?component';
+	import WebIcon from '$lib/assets/icons/funding/1.svg?component';
+	import HandsIcon from '$lib/assets/icons/funding/2.svg?component';
+	import CogsIcon from '$lib/assets/icons/funding/3.svg?component';
 	import SearchIcon from '$lib/assets/icons/funding/4.svg?component';
-	import CogsIcon from '$lib/assets/icons/funding/5.svg?component';
+	import LightBulbIcon from '$lib/assets/icons/funding/5.svg?component';
 	import ChartIcon from '$lib/assets/icons/funding/6.svg?component';
+	
 	import FundingImg from '$lib/assets/images/funding_data_library.webp';
 
 	import ArticleItem from '$lib/components/ArticleItem.svelte';
@@ -44,7 +45,7 @@
 				<div class="col_4 col_lg_6 mt_4">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
-							<SpeakerIcon />
+							<WebIcon class="web_icon" />
 						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -55,7 +56,7 @@
 				<div class="col_4 col_lg_6 mt_4">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
-							<InternetIcon />
+							<HandsIcon class="hands_icon" />
 						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -66,7 +67,7 @@
 				<div class="col_4 col_lg_6 mt_4">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
-							<TargetIcon />
+							<CogsIcon class="cogs_icon" />
 						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -77,7 +78,7 @@
 				<div class="col_4 col_lg_6 mt_4">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
-							<SearchIcon />
+							<SearchIcon class="search_icon" />
 						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -88,7 +89,7 @@
 				<div class="col_4 col_lg_6 mt_4">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
-							<CogsIcon />
+							<LightBulbIcon  class="light_bulb_icon" />
 						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -99,7 +100,7 @@
 				<div class="col_4 col_lg_6 mt_4">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
-							<ChartIcon />
+							<ChartIcon class="chart_icon" />
 						</span>
 						<p>
 							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -113,7 +114,7 @@
 					<SwiperSlide>
 						<div class="funding_item mx_auto">
 							<span class="funding_item__icon">
-								<SpeakerIcon />
+								<WebIcon class="web_icon" />
 							</span>
 							<p>
 								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -124,7 +125,7 @@
 					<SwiperSlide>
 						<div class="funding_item mx_auto">
 							<span class="funding_item__icon">
-								<SpeakerIcon />
+								<HandsIcon class="hands_icon" />
 							</span>
 							<p>
 								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -135,7 +136,7 @@
 					<SwiperSlide>
 						<div class="funding_item mx_auto">
 							<span class="funding_item__icon">
-								<SpeakerIcon />
+								<CogsIcon class="cogs_icon" />
 							</span>
 							<p>
 								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -146,7 +147,7 @@
 					<SwiperSlide>
 						<div class="funding_item mx_auto">
 							<span class="funding_item__icon">
-								<SpeakerIcon />
+								<SearchIcon class="search_icon" />
 							</span>
 							<p>
 								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -157,7 +158,7 @@
 					<SwiperSlide>
 						<div class="funding_item mx_auto">
 							<span class="funding_item__icon">
-								<SpeakerIcon />
+								<LightBulbIcon class="light_bulb_icon" />
 							</span>
 							<p>
 								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -168,7 +169,7 @@
 					<SwiperSlide>
 						<div class="funding_item mx_auto">
 							<span class="funding_item__icon">
-								<SpeakerIcon />
+								<ChartIcon class="chart_icon" />
 							</span>
 							<p>
 								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
@@ -309,11 +310,17 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-
 				:global {
-					svg path {
-						stroke-miterlimit: 1 !important;
-						stroke-width: 1.2px !important;
+					.hands_icon {
+						padding: 0.1rem;
+						margin-bottom: 0.1rem;
+					}
+					.search_icon {
+						padding: 0.25rem;
+					}
+					.light_bulb_icon {
+						padding: 0.25rem;
+						margin-bottom: 0.2rem;
 					}
 				}
 			}
