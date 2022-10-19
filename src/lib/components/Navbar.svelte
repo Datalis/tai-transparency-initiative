@@ -3,7 +3,6 @@
 	import FacebookIcon from '$lib/assets/icons/facebook.svg?component';
 	import TwitterIcon from '$lib/assets/icons/twitter.svg?component';
 	import LinkedInIcon from '$lib/assets/icons/linkedin.svg?component';
-	// import XIcon from '$lib/assets/icons/x.svg?component';
 	import MenuIcon from '$lib/assets/icons/menu.svg?component';
 	import CloseIcon from '$lib/assets/icons/close.svg?component';
 	import ArrowRightIcon from '$lib/assets/icons/arrow-right.svg?component';
@@ -208,10 +207,10 @@
 			}
 
 			&__nav {
-				margin-top: 4rem;
+				margin-top: 3rem;
 				.divider {
-					margin-top: 1.2rem !important;
-					margin-bottom: 1.2rem !important;
+					margin-top: 1rem !important;
+					margin-bottom: 1rem !important;
 				}
 				a {
 					:global(svg) {
