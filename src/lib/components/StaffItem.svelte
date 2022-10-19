@@ -1,8 +1,11 @@
-<script>
+<script lang="ts">
 	import PersonImg from '$lib/assets/images/person.webp';
+	import type { Staff } from '$lib/types/staff';
+	import Image from './Image.svelte';
 	import ViewMoreIcon from './ViewMoreIcon.svelte';
 
 	export let isExpanded = false;
+	export let data: Staff;
 
 	const toggle = () => (isExpanded = !isExpanded);
 </script>
@@ -11,39 +14,19 @@
 	<div class="staff_item" class:expanded={isExpanded}>
 		<div class="display_flex">
 			<div class="img_wrapper">
-				<img src={PersonImg} alt="" />
+				<Image image={data.image} size="thumbnail" />
 			</div>
 			<div class="content_wrapper display_flex flex_column">
-				<h4 class="text_dark mt_0 mb_2">Michael Jarvis</h4>
-				<small class="text_dark text_uppercase">EXECUTIVE DIRECTOR</small>
-				<p class="content_wrapper__text font_regular">
-					Michael Jarvis joined TAI after almost two decades working on different aspects of the
-					global good governance and development agenda. He has led the development of TAIʼs new
-					strategy and approach, and directs engagement across the new priorities for the donor
-					members. Prior to joining TAI in 2016, Michael was the Global Lead for Extractives
-					Governance within the World Bank Groupʼs Governance Global Practice. <br /><br /> He led the
-					institutionʼs programming to reinforce knowledge, learning and innovative approaches to strengthening
-					good governance in the critical oil, gas and mining sectors. Overall, Michael worked over ten
-					years with the World Bank in a variety of roles relating to anti corruption, private sector
-					partnerships for development, and multi-stakeholder governance. This included a focus on contracting
-					issues through which he helped shepherd development of a new global initiative on Open Contracting
-					to promote better outcomes from the estimated $9.5 trillion in public-private contracts globally.
-				</p>
+				<h4 class="text_dark mt_0 mb_2">{data.name}</h4>
+				<small class="text_dark text_uppercase">{data.role}</small>
+				<div class="content_wrapper__text font_regular">
+					{@html data.description}
+				</div>
 			</div>
 		</div>
-		<p class="staff_item__text font_regular">
-			Michael Jarvis joined TAI after almost two decades working on different aspects of the global
-			good governance and development agenda. He has led the development of TAIʼs new strategy and
-			approach, and directs engagement across the new priorities for the donor members. Prior to
-			joining TAI in 2016, Michael was the Global Lead for Extractives Governance within the World
-			Bank Groupʼs Governance Global Practice. <br /><br /> He led the institutionʼs programming to reinforce
-			knowledge, learning and innovative approaches to strengthening good governance in the critical
-			oil, gas and mining sectors. Overall, Michael worked over ten years with the World Bank in a variety
-			of roles relating to anti corruption, private sector partnerships for development, and multi-stakeholder
-			governance. This included a focus on contracting issues through which he helped shepherd development
-			of a new global initiative on Open Contracting to promote better outcomes from the estimated $9.5
-			trillion in public-private contracts globally.
-		</p>
+		<div class="staff_item__text font_regular">
+			{@html data.description}
+		</div>
 	</div>
 	<button class="mt_3" on:click={toggle}>
 		<ViewMoreIcon isOpen={isExpanded} />
@@ -63,21 +46,25 @@
 		transition: all 0.4s ease;
 
 		&__text {
-			display: none;
-			opacity: 0;
-			overflow: hidden;
-			max-height: 0;
-			transition: max-height 0.4s ease, opacity 0.35s ease, visibility 0.4s, margin 0.6s ease;
-			font-weight: 300;
-			font-size: pxToRem(18);
-			margin: 0;
+			:global(p) {
+				display: none;
+				opacity: 0;
+				overflow: hidden;
+				max-height: 0;
+				transition: max-height 0.4s ease, opacity 0.35s ease, visibility 0.4s, margin 0.6s ease;
+				font-weight: 300;
+				font-size: pxToRem(18);
+				margin: 0;
+			}
 		}
 
 		@media (max-width: $sm) {
 			padding-left: 0rem;
 			flex-grow: 1;
 			&__text {
-				display: inherit;
+				:global(p) {
+					display: inherit;
+				}
 			}
 		}
 
@@ -121,31 +108,39 @@
 				padding-top: 0;
 				flex-grow: 1;
 				&__text {
-					display: none;
+					:global(p) {
+						display: none;
+					}
 				}
 				h4 {
-					font-size: pxToRem(30) !important;
+					font-size: pxToRem(24) !important;
 				}
 			}
+
 			h4 {
-				font-size: pxToRem(35);
+				font-size: pxToRem(28);
 			}
 
 			&__text {
-				font-weight: 300;
-				font-size: pxToRem(18);
-				opacity: 0;
-				overflow: hidden;
-				max-height: 0;
-				transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.4s;
+				:global(p) {
+					font-weight: 300;
+					font-size: pxToRem(18);
+					margin: 0;
+					opacity: 0;
+					overflow: hidden;
+					max-height: 0;
+					transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.4s, margin 0.3s ease;
+				}
 			}
 		}
 
 		&.expanded {
 			.staff_item__text {
-				opacity: 1;
-				max-height: 100vh;
-				margin-top: 1rem;
+				:global(p) {
+					opacity: 1;
+					max-height: 100vh;
+					margin-top: 1rem;
+				}
 			}
 
 			.img_wrapper {
@@ -160,8 +155,11 @@
 			.content_wrapper {
 				min-height: auto;
 				&__text {
-					opacity: 1;
-					max-height: 100vh;
+					:global(p) {
+						opacity: 1;
+						max-height: 100vh;
+						margin-top: 1rem;
+					}
 				}
 			}
 		}

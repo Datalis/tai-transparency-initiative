@@ -110,22 +110,37 @@
 
 <div id="home" class="page">
 	<section class="landing_section section bg_blue">
-		<div class="landing_section__hero">
-			<img class="parallax" data-depth="0.15" src={HeroImgLayer0} alt="" />
-			<img class="parallax" data-depth="-0.15" src={hero1_img} alt="" />
-			<img class="parallax" data-depth="0.20" src={HeroImgLayer2} alt="" />
-		</div>
 		<div class="container">
-			<div class="landing_section__content">
-				<h1 class="text_green mb_4">Who we are?</h1>
-				<span class="divider divider_2 divider_light" />
-				<p class="mt_4 font_light">
-					The Transparency and Accountability Initiative (TAI) is a donor collaborative working
-					toward a democratic world where power and resources are more equally distributed; people
-					are informed and empowered, governments and the corporate sector are open and responsive,
-					and collective action advances the public good
-				</p>
-				<a href="/" class="btn btn_outline_green mt_4 mb_4">Read More</a>
+			<div class="row">
+				<div class="col col_12 show_on_md_and_down">
+					<div class="landing_section__hero landing_section__hero--mobile">
+						<img class="parallax" data-depth="0.15" src={HeroImgLayer0} alt="" />
+						<img class="parallax" data-depth="-0.15" src={HeroImgLayer2} alt="" />
+						<img class="parallax" data-depth="0.20" src={hero1_img} alt="" />
+					</div>
+				</div>
+
+				<div class="col col_5 col_md_12">
+					<div class="landing_section__content">
+						<h1 class="text_green mb_4 mt_0">Who we are?</h1>
+						<span class="divider divider_2 divider_light" />
+						<p class="mt_4 font_light">
+							The Transparency and Accountability Initiative (TAI) is a donor collaborative working
+							toward a democratic world where power and resources are more equally distributed;
+							people are informed and empowered, governments and the corporate sector are open and
+							responsive, and collective action advances the public good
+						</p>
+						<a href="/" class="btn btn_outline_green mt_4 mb_4">Read More</a>
+					</div>
+				</div>
+
+				<div class="col col_7 hide_on_md_and_down">
+					<div class="landing_section__hero">
+						<img class="parallax" data-depth="0.15" src={HeroImgLayer0} alt="" />
+						<img class="parallax" data-depth="0.20" src={HeroImgLayer2} alt="" />
+						<img class="parallax" data-depth="-0.15" src={hero1_img} alt="" />
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -231,118 +246,181 @@
 		justify-content: flex-end;
 		z-index: 1;
 		padding-top: 0 !important;
-		padding-bottom: 6.125rem !important;
+		padding-bottom: 2rem !important;
+
+		.container {
+			height: 100%;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			.row {
+				flex-grow: 1;
+				height: 100%;
+			}
+		}
 
 		@media (max-width: $md) {
 			padding-top: 0 !important;
 		}
 
+		// &__hero {
+		// 	position: absolute;
+		// 	right: 0;
+		// 	// top: -180px;
+		// 	top: 0;
+		// 	// height: 100vh;
+		// 	height: 100%;
+		// 	width: 60%;
+		// 	max-width: 600px;
+
+		// 	// @media (max-width: $lg) {
+		// 	// 	width: 85% !important;
+		// 	// }
+
+		// 	// @media (max-width: $xl) {
+		// 	// 	// width: 75% !important;
+		// 	// 	img:nth-child(3) {
+		// 	// 		height: 70% !important;
+		// 	// 	}
+		// 	// 	img:nth-child(2) {
+		// 	// 		// top: unset !important;
+		// 	// 		bottom: 0;
+		// 	// 		height: auto !important;
+		// 	// 		z-index: 10;
+		// 	// 		left: 15% !important;
+		// 	// 	}
+		// 	// }
+
+		// 	@media (max-width: $md) {
+		// 		top: 0;
+		// 		position: relative;
+		// 		height: 60vh;
+		// 		width: auto !important;
+		// 		img {
+		// 			&:nth-child(1) {
+		// 				height: auto !important;
+		// 				width: 100% !important;
+		// 			}
+		// 			&:nth-child(2) {
+		// 				top: unset !important;
+		// 				bottom: -20px;
+		// 				height: auto !important;
+		// 				z-index: 10;
+		// 				margin: auto;
+		// 				left: 0 !important;
+		// 				right: 0 !important;
+		// 			}
+		// 			&:nth-child(3) {
+		// 				top: -50px !important;
+		// 				height: 80% !important;
+		// 				left: 0 !important;
+		// 				right: 0 !important;
+		// 				margin: auto !important;
+		// 			}
+		// 		}
+		// 	}
+
+		// 	img {
+		// 		object-fit: contain;
+		// 		image-rendering: optimizeQuality;
+		// 		position: absolute;
+		// 		max-width: 100%;
+		// 		z-index: 9;
+
+		// 		&:nth-child(1) {
+		// 			top: 35%;
+		// 			left: -10px;
+		// 			// height: 50%;
+		// 			height: 100%;
+		// 			width: auto;
+		// 			max-width: unset;
+		// 		}
+		// 		&:nth-child(2) {
+		// 			top: 50%;
+		// 			// height: 50%;
+		// 			height: 100%;
+		// 			z-index: 10;
+		// 			// left: 150px;
+		// 			left: 18%;
+		// 		}
+		// 		&:nth-child(3) {
+		// 			// top: 80px;
+		// 			// top: 9%;
+		// 			top: -100px;
+		// 			// height: 70%;
+		// 			height: 100%;
+		// 			// left: 100px;
+		// 			left: 12%;
+		// 		}
+		// 	}
+		// }
+
 		&__hero {
-			position: absolute;
-			right: 0;
-			top: -180px;
-			height: 100vh;
-			width: 60%;
-			// max-width: 900px;
+			position: relative;
+			height: 100%;
 
-			@media (max-width: $lg) {
-				width: 85% !important;
-			}
-
-			@media (max-width: $xl) {
-				// width: 75% !important;
-				img:nth-child(3) {
-					height: 70% !important;
-				}
-				img:nth-child(2) {
-					// top: unset !important;
-					bottom: 0;
-					height: auto !important;
-					z-index: 10;
-					left: 15% !important;
-				}
+			&--mobile {
+				min-height: 60vh;
 			}
 
 			@media (max-width: $md) {
-				top: 0;
-				position: relative;
-				height: 60vh;
-				width: auto !important;
 				img {
-					&:nth-child(1) {
-						height: auto !important;
-						width: 100% !important;
-					}
-					&:nth-child(2) {
-						top: unset !important;
-						bottom: -20px;
-						height: auto !important;
-						z-index: 10;
-						margin: auto;
-						left: 0 !important;
-						right: 0 !important;
-					}
 					&:nth-child(3) {
-						top: -50px !important;
-						height: 80% !important;
-						left: 0 !important;
-						right: 0 !important;
-						margin: auto !important;
+						top: unset;
+						bottom: 0;
 					}
 				}
 			}
 
 			img {
-				object-fit: cover;
-				image-rendering: optimizeQuality;
 				position: absolute;
-				max-width: 100%;
-				z-index: 9;
-
+				width: 100%;
 				&:nth-child(1) {
-					top: 35%;
-					left: -10px;
-					height: 50%;
-					width: auto;
-					max-width: unset;
+					top: 0;
+					bottom: 0;
+					margin: auto;
 				}
 				&:nth-child(2) {
-					top: 50%;
-					height: 50%;
-					z-index: 10;
-					// left: 150px;
-					left: 18%;
+					top: -100px;
+					max-width: 550px;
+					left: 0;
+					right: 0;
+					margin: auto;
 				}
 				&:nth-child(3) {
-					// top: 80px;
-					top: 9%;
-					height: 70%;
-					// left: 100px;
-					left: 12%;
+					top: calc(100% - 400px);
+					max-width: 700px;
+					// left: 0;
+					right: 0;
+					margin: auto;
 				}
 			}
 		}
 
 		&__content {
 			height: 100%;
-			width: 45%;
 			position: relative;
 			z-index: 12;
-
-			p {
-				width: 75%;
-			}
-
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-end;
 			@media (max-width: $md) {
-				width: 100%;
-				margin-top: 3rem;
-				p {
-					width: 100%;
-				}
 				a {
 					width: 100%;
 				}
 			}
+
+			// @media (max-width: $md) {
+			// 	width: 100%;
+			// 	margin-top: 3rem;
+			// 	p {
+			// 		width: 100%;
+			// 	}
+			// 	a {
+			// 		width: 100%;
+			// 	}
+			// }
 		}
 	}
 
@@ -410,8 +488,9 @@
 				padding: 0;
 				background: $card-green;
 				border-radius: 15px;
-				height: calc(100vh - pxToRem(150));
+				height: calc(100% - pxToRem(20));
 				margin: auto;
+				position: relative;
 
 				@media (max-width: $md) {
 					height: 85vh;
@@ -437,7 +516,7 @@
 				.content {
 					padding-left: 1rem;
 					padding-right: 1rem;
-					height: 100px;
+					height: 50%;
 					display: flex;
 					flex-direction: column;
 					.divider {
@@ -460,7 +539,6 @@
 
 				@media (hover: hover) {
 					&:hover {
-						.content,
 						.overlay {
 							height: 50%;
 						}
@@ -471,7 +549,6 @@
 				}
 
 				@media (hover: none) {
-					.content,
 					.overlay {
 						height: 50%;
 					}

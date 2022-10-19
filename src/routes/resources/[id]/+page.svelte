@@ -1,9 +1,23 @@
-<script>
+<script lang="ts">
 	import PlaceholderImg from '$lib/assets/images/placeholder-1.png';
 	import ArticleImg from '$lib/assets/images/article-img.jpg';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import FacebookIcon from '$lib/assets/icons/facebook-simple.svg?component';
 	import LinkIcon from '$lib/assets/icons/link.svg?component';
+	import type { Resource } from '$lib/types/resources';
+	import { onMount } from 'svelte';
+	import type { Response } from '$lib/types/data';
+
+
+	export let data: Response<Resource>;
+
+	$: resource = data.data;
+	$: meta = data.meta;
+
+	onMount(() => {
+		console.log(data)
+	})
+
 </script>
 
 <article id="resource" class="page">
@@ -11,13 +25,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col col_7 col_sm_12">
-					<span class="text_light text_uppercase">TPA FULL DISCLOSURE</span>
+					<span class="text_light text_uppercase">{resource.resource_type.label}</span>
 					<h1 class="text_green">
-						World Justice Project Team talks expanding access to justice and strengthening the rule
-						of law
+						{resource.title}
 					</h1>
 					<small class="text_gray font_light">
-						By <a href="/" class="text_gray">Oluwabusayomi Sotunde</a> (Communications fellow at TAI)
+						By <a href="/" class="text_gray">{resource.author.name}</a> ({resource.author.role})
 					</small>
 				</div>
 				<div class="col col_5 col_sm_12">
@@ -30,49 +43,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col col_8 col_sm_12">
-					<p>
-						<a href="/" class="text_gray">World Justice Project</a> the convener of the World
-						Justice Challenge, a global competition that identifies, recognize, and support
-						innovative rule of law changemakers at the local level and bring them together to share
-						ideas, strategies, and tactics for reform. Two of key people working on this program are
-						Killian Dorier, WJPʼs Senior Program Associate for Engagement at WJP and Ted Piccone, an
-						expert on global democracy and human rights policies and WJPʼs Chief Engagement Officer.
-						<br />
-						<br />
-						We caught up with Killian and Ted and spoke on advancing and stimulating global rule of law
-						change, opportunities and gaps in expanding access to justice and strengthening the rule
-						of law, and the importance of collaboration among field actors on legislative reforms and
-						the rule of law.
-						<br />
-						<br />
-						<strong>
-							Please tell us more about yourself, your interests (the issues you care about), and
-							motivation for working in the transparency, participation, and accountability (TPA)
-							field?
-						</strong>
-						<img src={ArticleImg} class="w_100" alt="" />
-						<strong>
-							How important is collaboration to the work you do around legislative reforms and the
-							rule of law?
-						</strong>
-						<br />
-						<br />
-						<em class="text_green mr_1">Ted:</em> Collaboration is essential to our entire theory of
-						change and work program. As a promoter and convenor of initiatives on the rule of law, our
-						approach is centered on multidisciplinary collaboration with a specific focus on people-centered
-						justice. We do this in two principal ways. First, our methodology for collecting data on
-						the rule of law for our Rule of Law Index seeks to capture how justice, rights and accountable
-						and open governance are experienced in peopleʼs daily lives through household surveys and
-						practitioner expert questionnaires, not by reading legal codes and regulations. This people-centered
-						approach is a hallmark of all of WJPʼs data products, which also include research focused
-						on access to civil justice globally, criminal justice in Mexico, and rule of aw in Afghanistan
-						to name just a few.
-					</p>
-					<div class="connect_block mt_5 text_center">
+					<div class="post_content">
+						{@html resource.content}
+					</div>
+					<!-- <div class="connect_block mt_5 text_center">
 						Love to hear more from Killian and Ted? Connect with Killian on Twitter at
 						@dorier_killian and Ted at @piccone_ted. You can also follow-up with World Justice
 						Project on Twitter at @The WJP
-					</div>
+					</div> -->
 					<div class="share_block">
 						<h5 class="mr_3">Share this article</h5>
 						<div class="divider divider_dark divider_2 mr_3" />
@@ -159,23 +137,61 @@
 		margin-bottom: 2rem;
 		box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.075);
 	}
-	.content_section .connect_block {
-		padding: 2rem;
-		background-color: $green_light;
-		border-radius: 10px;
+
+	.content_section .post_content {
+		:global {
+			p {
+				letter-spacing: normal;
+			}
+			a {
+				color: map-get($colors, 'gray');
+				font-weight: 500;
+				text-decoration: underline;
+			}
+
+			i {
+				color: map-get($colors, 'green');
+				font-weight: 700;
+			}
+
+			strong {
+				font-weight: 700;
+			}
+
+			img {
+				width: 100%;
+			}
+
+			blockquote {
+				background-color: map-get($colors, 'green_light');
+				margin: 0;
+				margin-top: 1rem;
+				border-radius: 10px;
+				padding: 0.25rem 2rem;
+				font-weight: 500;
+			}
+
+			blockquote a {
+				color: currentColor;
+			}
+		}
 	}
+
 	.content_section .share_block {
-		margin-top: 2rem;
 		display: flex;
 		align-items: center;
 		.share_icon {
-			width: 24px;
-			height: 24px;
+			width: 42px;
+			height: 42px;
 			background-color: map-get($colors, 'gray');
 			border-radius: 50%;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			:global(svg) {
+				width: 24px;
+				height: 24px;
+			}
 		}
 		.divider {
 			flex-grow: 1;

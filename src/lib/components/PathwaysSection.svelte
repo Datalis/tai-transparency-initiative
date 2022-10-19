@@ -58,7 +58,7 @@
 {/if}
 <section class="pathways_section section bg_blue_light">
 	<div class="container">
-		<h2>Participatory Strategy</h2>
+		<h2>Pathways to change</h2>
 		<div class="divider divider_green divider_2 my_4" />
 		<p class="mt_4 w_50">
 			This represents critical causal pathways common to TAI donor members’ theories of change. <br

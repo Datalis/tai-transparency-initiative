@@ -1,20 +1,21 @@
-<script>
+<script lang="ts">
 	import LinkIcon from '$lib/assets/icons/link.svg?component';
-	import FordImg from '$lib/assets/images/ford.webp';
 
 	import 'swiper/css';
 	import 'swiper/css/pagination';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
-	import { Pagination } from 'swiper';
+	import type { Member } from '$lib/types/member';
 
-	let selectedTab = 0;
+	import { Pagination } from 'swiper';
+	import Image from './Image.svelte';
+
+	let selectedTab = 'strategy';
 	let showSwipe = false;
 
-	/**
-	 * @param {number} tabIndex
-	 */
-	function setCurrentTab(tabIndex) {
-		selectedTab = tabIndex;
+	export let data: Member;
+
+	function setCurrentTab(tab: string) {
+		selectedTab = tab;
 	}
 
 	function toggleSwipe() {
@@ -24,7 +25,8 @@
 
 <div class="member_item">
 	<div class="img_wrapper" on:click={toggleSwipe}>
-		<img src={FordImg} alt="" />
+		<!-- <img src={FordImg} alt="" /> -->
+		<Image image={data.image} size="small" />
 	</div>
 
 	<div class="content_wrapper">
@@ -34,8 +36,8 @@
 					<div class="content_wrapper__slider--item">
 						<button
 							class="btn btn_small mr_3"
-							class:btn_blue={selectedTab == 0}
-							on:click={() => setCurrentTab(0)}
+							class:btn_blue={selectedTab == 'strategy'}
+							on:click={() => setCurrentTab('strategy')}
 						>
 							STRATEGY
 						</button>
@@ -53,8 +55,8 @@
 					<div class="content_wrapper__slider--item">
 						<button
 							class="btn btn_small mr_3"
-							class:btn_blue={selectedTab == 0}
-							on:click={() => setCurrentTab(0)}
+							class:btn_blue={selectedTab == 'project'}
+							on:click={() => setCurrentTab('project')}
 						>
 							FEATURED PROJECT
 						</button>
@@ -72,8 +74,8 @@
 					<div class="content_wrapper__slider--item">
 						<button
 							class="btn btn_small mr_3"
-							class:btn_blue={selectedTab == 0}
-							on:click={() => setCurrentTab(0)}
+							class:btn_blue={selectedTab == 'contact'}
+							on:click={() => setCurrentTab('contact')}
 						>
 							CONTACT
 						</button>
@@ -93,32 +95,28 @@
 			<div class="display_flex align_center">
 				<button
 					class="btn btn_small mr_3"
-					class:btn_blue={selectedTab == 0}
-					on:click={() => setCurrentTab(0)}
+					class:btn_blue={selectedTab == 'strategy'}
+					on:click={() => setCurrentTab('strategy')}
 				>
 					STRATEGY
 				</button>
 				<button
 					class="btn btn_small mr_3"
-					class:btn_blue={selectedTab == 1}
-					on:click={() => setCurrentTab(1)}
+					class:btn_blue={selectedTab == 'project'}
+					on:click={() => setCurrentTab('project')}
 				>
 					FEATURED PROJECT
 				</button>
 				<button
 					class="btn btn_small"
-					class:btn_blue={selectedTab == 2}
-					on:click={() => setCurrentTab(2)}
+					class:btn_blue={selectedTab == 'contact'}
+					on:click={() => setCurrentTab('contact')}
 				>
 					CONTACT
 				</button>
 			</div>
-			<p>
-				Itʼs only when people become aware, have pathways for action, and engage, that governments
-				are held in account. Our three interconnected strategies focus on expanded participation,
-				equitable resources and powerful engagement.
-			</p>
-			<a href="/" class="display_flex align_center text_dark font_bold"
+			{@html data[selectedTab]}
+			<a href="/" class="display_flex align_center text_dark font_bold mt_auto"
 				>Learn more <LinkIcon class="ml_2" width="24" height="24" />
 			</a>
 		</div>
@@ -141,12 +139,14 @@
 		.img_wrapper {
 			flex-grow: 1;
 			background-color: $blue;
-
 			min-width: 400px;
+			max-width: 400px;
 			height: 100%;
 			display: flex;
 			border-radius: 25px;
+			overflow: hidden;
 			position: relative;
+			height: 250px;
 
 			@media (max-width: $lg) {
 				width: 40%;
@@ -156,15 +156,6 @@
 			@media (max-width: $md) {
 				min-width: 100%;
 				height: 250px;
-			}
-
-			img {
-				height: 100%;
-				width: 100%;
-				margin: auto;
-				overflow: hidden;
-				border-radius: 25px;
-				object-fit: cover;
 			}
 		}
 		.content_wrapper {

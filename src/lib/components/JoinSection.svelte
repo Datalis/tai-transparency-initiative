@@ -9,7 +9,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col col_7 col_lg_12">
-						<div class="display_flex flex_column align_center">
+						<div class="display_flex flex_column align_center h_100">
 							<img class="join_img my_auto" src={JoinImg} alt="" />
 						</div>
 					</div>
@@ -84,7 +84,7 @@
 		left: 0;
 		bottom: 0;
 		width: 100%;
-		height: 100vh;
+		min-height: 100vh;
 		z-index: -1;
 
 		.join_img {

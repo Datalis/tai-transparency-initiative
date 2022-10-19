@@ -1,36 +1,42 @@
-<script>
+<script lang="ts">
 	import FacebookIcon from '$lib/assets/icons/facebook-simple.svg?component';
+	import type { Resource } from '$lib/types/resources';
+
+	export let data: Resource;
 </script>
 
 <div class="resource_item">
-	<a href="/resources/10101001" class="resource_item__wrapper">
+	<a href="/resources/{data.id}" class="resource_item__wrapper">
 		<div class="resource_item__wrapper--left">
 			<div class="img_wrapper">
-				<span class="category_tag">Some</span>
+				<span class="category_tag category_{data.type.id}">{data.type.label}</span>
 				<img src="" alt="" class="image" />
 			</div>
 			<div class="social_links">
+				{#each data.links as link}
+					<span class="icon">
+						<FacebookIcon width="18" height="18" fill="white" />
+					</span>
+				{/each}
+				<!-- <span class="icon">
+					<FacebookIcon width="18" height="18" fill="white" />
+				</span>
 				<span class="icon">
 					<FacebookIcon width="18" height="18" fill="white" />
 				</span>
 				<span class="icon">
-					<!-- <FacebookIcon width="18" height="18" fill="white" /> -->
-				</span>
-				<span class="icon">
-					<!-- <FacebookIcon width="18" height="18" fill="white" /> -->
-				</span>
+					<FacebookIcon width="18" height="18" fill="white" />
+				</span> -->
 			</div>
 		</div>
 		<div class="resource_item__wrapper--right">
-			<small class="text_gray text_uppercase font_regular">March 29, 2022</small>
-			<h3 class="text_green mt_3 mb_3">Who receives over $500m in TPA grants?</h3>
+			<small class="text_gray text_uppercase font_regular">{new Date(data.date).toDateString()}</small>
+			<h3 class="text_green mt_2 mb_2">{data.title}</h3>
 			<small class="text_gray font_regular"
-				>By <a href="/" class="text_gray">Author name</a> (Role at TAI)</small
+				>By <a href="/" class="text_gray">{data.author.name}</a> ({data.author.role})</small
 			>
 			<p class="text_dark">
-				We also wanted to share with you our updated TAIʼs grants database, covering our memberʼs
-				TPA-related grants active in 2021. We are working on a short series of blogs related funding
-				trends, both of TAI and more broadly. Here is the first!
+				{data.summary}
 			</p>
 		</div>
 	</a>
@@ -70,16 +76,38 @@
 					background-color: map-get($colors, 'panel');
 					height: 100%;
 					border-radius: 15px;
+					min-height: 240px;
 					.category_tag {
+						min-width: 140px;
 						position: absolute;
 						left: 0;
 						top: 0;
 						background-color: map-get($colors, 'green');
-						padding: 0.5rem 2rem;
+						padding: 0.25rem 1rem;
 						text-transform: uppercase;
 						font-weight: 700;
-						font-size: pxToRem(14);
+						font-size: pxToRem(12);
 						color: #fafafa;
+						display: flex;
+						justify-content: center;
+						&.category_1 {
+							background-color: map-get($colors, 'green');
+						}
+						&.category_2 {
+							background-color: map-get($colors, 'gray');
+						}
+						&.category_3 {
+							background-color: map-get($colors, 'dark');
+						}
+						&.category_4 {
+							background-color: map-get($colors, 'danger');
+						}
+						&.category_5 {
+							background-color: map-get($colors, 'blue_light');
+						}
+						&.category_6 {
+							background-color: #bcbc00;
+						}
 					}
 				}
 				.social_links {
@@ -105,6 +133,14 @@
 				flex-grow: 1;
 				a {
 					text-decoration: underline;
+				}
+				p {
+					font-size: pxToRem(16);
+					line-height: 1.2;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 4;
+					overflow: hidden;
 				}
 			}
 		}

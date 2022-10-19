@@ -9,6 +9,13 @@
 	import JoinSection from '$lib/components/JoinSection.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import StaffItem from '$lib/components/StaffItem.svelte';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+
+	$: members = data.members.data;
+	$: staff = data.staff.data;
+	$: commitee = data.staff.data.filter((e) => e.steering_commitee);
 </script>
 
 <div>
@@ -72,11 +79,15 @@
 				below.
 			</p>
 			<div class="member_list mt_4 display_flex flex_column">
-				<MemberItem />
+				<!-- <MemberItem />
 				<div class="divider divider_blue divider_2 my_4" />
 				<MemberItem />
 				<div class="divider divider_blue divider_2 my_4" />
-				<MemberItem />
+				<MemberItem /> -->
+				{#each members as member}
+					<MemberItem data={member} />
+					<div class="divider divider_blue divider_2 my_5" />
+				{/each}
 			</div>
 		</div>
 	</section>
@@ -91,12 +102,15 @@
 			</p>
 			<div class="staff_list mt_4">
 				<h4 class="mb_4">Staff</h4>
-				<div class="divider divider_blue divider_2" />
+				{#each staff as staffItem}
+					<div class="divider divider_blue divider_2" />
+					<StaffItem data={staffItem} />
+				{/each}
+
+				<!-- <div class="divider divider_blue divider_2" />
 				<StaffItem />
 				<div class="divider divider_blue divider_2" />
-				<StaffItem />
-				<div class="divider divider_blue divider_2" />
-				<StaffItem />
+				<StaffItem /> -->
 			</div>
 		</div>
 	</section>
@@ -104,12 +118,15 @@
 		<div class="container">
 			<div class="committee_list mt_4">
 				<h4 class="mb_4 mt_4">Steering Committee</h4>
-				<div class="divider divider_blue divider_2" />
+				{#each commitee as commiteeItem}
+					<div class="divider divider_blue divider_2" />
+					<StaffItem data={commiteeItem} />
+				{/each}
+
+				<!-- <div class="divider divider_blue divider_2" />
 				<StaffItem />
 				<div class="divider divider_blue divider_2" />
-				<StaffItem />
-				<div class="divider divider_blue divider_2" />
-				<StaffItem />
+				<StaffItem /> -->
 			</div>
 		</div>
 	</section>
@@ -155,8 +172,6 @@
 			margin-bottom: 3rem;
 			.divider {
 				width: 100% !important;
-				margin-top: 4rem;
-				margin-bottom: 4rem;
 			}
 		}
 	}

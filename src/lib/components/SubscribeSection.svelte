@@ -54,7 +54,7 @@
 				}
 				.form_control input {
 					border-radius: 35px;
-					padding: 0.7rem 1.25rem;
+					padding: 0.56rem 1.25rem;
 				}
 
 				@media (max-width: $md) {
