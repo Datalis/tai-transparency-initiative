@@ -19,10 +19,7 @@
 	import JoinSection from '$lib/components/JoinSection.svelte';
 
 	import { gsap } from 'gsap/dist/gsap';
-	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
-
-	// gsap.registerPlugin(ScrollTrigger);
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
@@ -459,12 +456,6 @@
 		$card-green: #59ebcf;
 
 		min-height: 105vh;
-
-		// // padding: 0 !important;
-		// padding-right: 2rem !important;
-		// padding-left: 2rem !important;
-
-		// perspective: 1px;
 		display: flex !important;
 		align-items: center;
 		justify-content: space-around;
@@ -474,11 +465,9 @@
 		@media (max-width: $md) {
 			padding-right: 0 !important;
 			padding-left: 0 !important;
-			// padding-bottom: 2rem;
 		}
 
 		.wrapper {
-			// height: 90%;
 			width: 100%;
 
 			.card {
