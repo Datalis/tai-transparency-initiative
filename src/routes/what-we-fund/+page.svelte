@@ -12,30 +12,12 @@
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
-	// import StrategyImg from '$lib/assets/images/strategy.svg?component';
-
 	import 'swiper/css';
 	import 'swiper/css/pagination';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
 	import { Pagination } from 'swiper';
 	import PathwaysSection from '$lib/components/PathwaysSection.svelte';
-	import { onMount } from 'svelte';
 
-	import gsap from 'gsap/dist/gsap';
-
-	onMount(() => {
-		// gsap.timeline().from('.pathways_section .container', {
-		// 	y: '5%',
-		// 	scrollTrigger: {
-		// 		trigger: '.pathways_section',
-		// 		pin: true,
-		// 		scrub: 1,
-		// 		start: 'center center',
-		// 		end: 'bottom top'
-		// 		// end: 'bottom -=20%'
-		// 	}
-		// });
-	});
 </script>
 
 <div id="what-we-fund" class="page">
