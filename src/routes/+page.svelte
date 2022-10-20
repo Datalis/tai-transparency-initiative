@@ -20,11 +20,18 @@
 
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
+	import type { PageData } from './$types';
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
 
 	$: hero1_img = windowWidth > 768 ? HeroImgLayer1 : HeroImgLayer1Mobile;
+
+
+	export let data: PageData;
+
+	$: hero = data.hero;
+	$: resources = data.ResourcesSection;
 
 	function setupAnimations() {
 		const offset = brandSlide.getBoundingClientRect().left - 100;
@@ -93,6 +100,7 @@
 	}
 
 	onMount(() => {
+		console.log(data)
 		setupAnimations();
 	});
 </script>
@@ -119,14 +127,11 @@
 
 				<div class="col col_5 col_md_12">
 					<div class="landing_section__content">
-						<h1 class="text_green mb_4 mt_0">Who we are?</h1>
+						<h1 class="text_green mb_4 mt_0">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light" />
-						<p class="mt_4 font_light">
-							The Transparency and Accountability Initiative (TAI) is a donor collaborative working
-							toward a democratic world where power and resources are more equally distributed;
-							people are informed and empowered, governments and the corporate sector are open and
-							responsive, and collective action advances the public good
-						</p>
+						<div class="font_light">
+							{@html hero?.message}	
+						</div>
 						<a href="/" class="btn btn_outline_green mt_4 mb_4">Read More</a>
 					</div>
 				</div>
@@ -227,7 +232,7 @@
 		</div>
 	</section>
 	<JoinSection />
-	<ResourcesSection />
+	<ResourcesSection data={resources} />
 	<SubscribeSection />
 </div>
 
@@ -258,6 +263,10 @@
 
 		@media (max-width: $md) {
 			padding-top: 0 !important;
+		}
+
+		@media screen and (max-width: $xl) {
+			padding-bottom: 4rem !important;
 		}
 
 		// &__hero {
@@ -367,6 +376,10 @@
 						bottom: 0;
 					}
 				}
+			}
+
+			@media screen and (max-width: $xl) {
+				
 			}
 
 			img {

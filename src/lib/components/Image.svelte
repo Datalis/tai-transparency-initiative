@@ -5,7 +5,7 @@
 
 	export let size: 'thumbnail' | 'small' | 'medium' | 'large';
 
-	$: img = size && image.formats ? image.formats[size] : image;
+	$: img = size && image?.formats ? image.formats[size] : image;
 </script>
 
 <img
@@ -15,12 +15,12 @@
 	alt={img?.alternativeText}
 	width={img?.width}
 	height={img?.height}
-	src={img.url}
+	src={img?.url}
 />
 
-<style>
+<style lang="scss">
 	img {
 		background-size: cover;
-		background-image: url();
+		background-color: map-get($colors, 'blue');
 	}
 </style>

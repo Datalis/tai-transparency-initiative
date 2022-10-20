@@ -6,20 +6,5 @@ import type { PageServerLoad } from ".svelte-kit/types/src/routes/resources/$typ
 import { error } from "@sveltejs/kit";
 
 export const load: PageServerLoad = async () => {
-	try {
-
-		let params = {
-			populate: '*'
-		}
-
-		const members: Response<Member[]> = await get('wc-members', params);
-		const staff: Response<Staff[]> = await get('wc-staffs', params);
-
-		return {
-			members,
-			staff,
-		}
-	} catch(e) {
-		throw error(500, `${e}`);
-	}
+	
 }

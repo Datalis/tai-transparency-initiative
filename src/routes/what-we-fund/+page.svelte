@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import WebIcon from '$lib/assets/icons/funding/1.svg?component';
 	import HandsIcon from '$lib/assets/icons/funding/2.svg?component';
 	import CogsIcon from '$lib/assets/icons/funding/3.svg?component';
@@ -17,6 +17,14 @@
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
 	import { Pagination } from 'swiper';
 	import PathwaysSection from '$lib/components/PathwaysSection.svelte';
+	import type { PageData } from '.svelte-kit/types/src/routes/$types';
+	import WhyItMattersSection from '$lib/components/WhyItMattersSection.svelte';
+
+	export let data: PageData;
+
+	$: hero = data?.hero;
+	$: resources = data?.resources;
+	$: whyItMatters = data?.WhyItMatters;
 
 </script>
 
@@ -213,47 +221,9 @@
 			</div>
 		</div>
 	</section>
-	<section class="why_matters_section section">
-		<div class="container">
-			<h2 class="text_dark mt_0 mb_4">Why it matters</h2>
-			<span class="divider divider_2 divider_gray" />
-			<div class="row mt_3">
-				<span class="col col_8 col_md_12 mt_0">
-					<strong>TPA FULL DISCLOSURE</strong> Introducing the people behind funding and practice in
-					the world of transparency, participation, and accountability.
-				</span>
-				<div class="col col_4 col_md_12">
-					<button class="btn btn_outline_gray text_dark ml_auto">See All</button>
-				</div>
-			</div>
-			<div class="articles_row row">
-				<div class="col col_4 col_md_12">
-					<ArticleItem />
-				</div>
-				<div class="col col_4 col_md_12">
-					<ArticleItem />
-				</div>
-				<div class="col col_4 col_md_12">
-					<ArticleItem />
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- <section class="participatory_section section bg_blue_light">
-		<div class="container">
-			<h2>Participatory Strategy</h2>
-			<div class="divider divider_green divider_2 my_4" />
-			<p class="mt_4 w_50">
-				This represents critical causal pathways common to TAI donor members’ theories of change. <br
-				/> It is in no way a representation of pathways to change for the TAP field as a whole.
-			</p>
-			<div class="strategy_graph">
-				
-			</div>
-		</div>
-	</section> -->
+	<WhyItMattersSection data={whyItMatters} />
 	<PathwaysSection />
-	<ResourcesSection />
+	<ResourcesSection data={resources} />
 	<SubscribeSection />
 </div>
 
@@ -304,8 +274,8 @@
 				top: 1.5rem;
 				left: -35px;
 				padding: 0.65rem;
-				width: 80px;
-				height: 80px;
+				width: pxToRem(60);
+				height: pxToRem(60);
 				border-radius: 50%;
 				background-color: $blue;
 				display: flex;
@@ -343,6 +313,7 @@
 
 			p {
 				letter-spacing: normal;
+				font-size: pxToRem(14) !important;
 			}
 		}
 	}
@@ -354,29 +325,5 @@
 			}
 		}
 	}
-	.why_matters_section {
-		min-height: 100vh !important;
-		background-color: #e4e8ef;
-		display: flex !important;
-		align-items: center;
-		justify-content: center;
-		padding-top: 3rem !important;
-		.articles_row {
-			margin-top: 2rem;
-		}
-		@media (max-width: $md) {
-			button {
-				width: 100%;
-			}
-		}
-	}
-	// .participatory_section {
-	// 	min-height: 100vh !important;
-	// 	.strategy_graph {
-	// 		margin-top: 5rem;
-	// 	}
-	// 	p {
-	// 		font-weight: 300;
-	// 	}
-	// }
+	
 </style>

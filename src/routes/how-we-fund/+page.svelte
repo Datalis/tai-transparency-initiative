@@ -13,12 +13,20 @@
 	import { gsap } from 'gsap/dist/gsap';
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import FoundersExitsSection from '$lib/components/FoundersExitsSection.svelte';
+	import type { PageData } from '.svelte-kit/types/src/routes/$types';
+	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 
 	let partnersSlide: HTMLElement;
 	let windowWidth: number;
 	let videoTime: any;
 
 	$: partnersSlideWidth = partnersSlide?.getBoundingClientRect()?.width || 0;
+
+	export let data: PageData;
+
+	$: hero = data?.hero;
+	$: resources = data?.resources;
 
 	onMount(() => {
 		gsap.timeline().to('.partners_section', {
@@ -86,17 +94,11 @@
 	<section class="landing_section section bg_blue">
 		<div class="container h-100">
 			<div class="landing_section__content">
-				<h1 class="text_green mb_4">How we fund</h1>
+				<h1 class="text_green mb_4">{hero?.title}</h1>
 				<span class="divider divider_2 divider_light" />
-				<p class="mt_4 font_light">
-					TAI offers a platform for candid, constructive exchange around grantmaking practices. Our
-					members learn from each other and hold each other accountable to be more inclusive,
-					equitable, innovative, and effective grantmakers.
-				</p>
-				<p class="font_light">
-					We supports partners to harness transparency, participation and accountability for the
-					public good, and these are also our values we want to live by.
-				</p>
+				<div class="mt_4 font_light">
+					{@html hero?.message}
+				</div>
 			</div>
 		</div>
 	</section>
@@ -153,59 +155,44 @@
 			</div>
 		</div>
 	</section>
-	<section class="founders_section section bg_light">
-		<div class="container">
-			<h2 class="mt_0">Funder exits</h2>
-			<div class="divider divider_green divider_4" />
-			<p class="mt_4">
-				Funders regularly adapt their strategies, which often prompt investment in new issue areas,
-				but also the tough decision to scale back or fully wind down funding for existing
-				portfolios. These funding “exits” are a painful reality, especially for impacted grantees,
-				but also other funders of that field. However, they can be managed in responsible ways.
-			</p>
-			<p>
-				TAI members use our platform to regularly discuss how to handle exits, to encourage good
-				practice, and to manage the knock on effects for a field. We have been trying to document
-				learnings as in this blog. Are you planning a funding exit? Interested in how other funder
-				approaches? Donʼt hesitate to get in touch.
-			</p>
-		</div>
-	</section>
-	<section class="participatory_section section">
-		<div class="video-container">
-			<video
-				muted
-				controls={false}
-				preload="none"
-				autoplay
-				width="100%"
-				height="100%"
-				bind:currentTime={videoTime}
-			>
-				<source type="video/webm" src={ParticipatoryStrategyVideo} />
-			</video>
-		</div>
-		{#if videoTime > 50}
-			<div class="content-container" transition:fade={{duration: 800}}>
-				<div class="container">
-					<div class="row">
-						<div class="col col_6 col_md_12">
-							<h2 class="font_bold mb_4 mt_0">Participatory Strategy</h2>
-							<div class="divider divider_2 divider_green" />
-							<p class="mt_4">
-								TAI offers a platform for candid, constructive exchange around grantmaking
-								practices. Our members learn from each other and hold each other accountable to be
-								more inclusive, equitable, innovative, and effective grantmakers.
-							</p>
-							<button class="btn btn_green btn_bordered mt_4"> Learn more </button>
+	<FoundersExitsSection />
+	<IntersectionObserver let:top>
+		<section class="participatory_section section">
+			<div class="video-container">
+				<video
+					muted
+					controls={false}
+					preload="none"
+					autoplay
+					width="100%"
+					height="100%"
+					bind:currentTime={videoTime}
+				>
+					<source type="video/webm" src={ParticipatoryStrategyVideo} />
+				</video>
+			</div>
+			{#if videoTime > 45 || top > 100 || top < -600}
+				<div class="content-container" transition:fade={{ duration: 800 }}>
+					<div class="container">
+						<div class="row">
+							<div class="col col_6 col_md_12">
+								<h2 class="font_bold mb_4 mt_0">Participatory Strategy</h2>
+								<div class="divider divider_2 divider_green" />
+								<p class="mt_4">
+									TAI offers a platform for candid, constructive exchange around grantmaking
+									practices. Our members learn from each other and hold each other accountable to be
+									more inclusive, equitable, innovative, and effective grantmakers.
+								</p>
+								<a href="/" class="btn btn_green btn_bordered mt_4"> Learn more </a>
+							</div>
+							<div class="col col_6 col_md_12" />
 						</div>
-						<div class="col col_6 col_md_12" />
 					</div>
 				</div>
-			</div>
-		{/if}
-	</section>
-	<ResourcesSection />
+			{/if}
+		</section>
+	</IntersectionObserver>
+	<ResourcesSection data={resources} />
 	<SubscribeSection />
 </div>
 
@@ -238,7 +225,7 @@
 			width: max-content;
 			will-change: transform;
 			&--wrapper {
-				margin-top: pxToRem(100);
+				margin-top: pxToRem(60);
 			}
 
 			&--decor {
@@ -260,19 +247,16 @@
 
 		&__item {
 			flex-shrink: 0;
-			width: calc(100vw / 3);
-			max-width: calc(1140px / 3 - 2rem);
-			height: calc(100vw / 3);
+			width: 20vw;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+			position: relative;
 
 			img {
-				height: 60%;
+				height: 20vw;
 				width: 100%;
-				min-height: 300px;
-				min-width: 100%;
 				object-fit: cover;
 				object-position: center;
 				border-radius: 15px;
@@ -283,25 +267,17 @@
 				width: 100vw !important;
 			}
 
-			// p {
-			// 	text-align: center;
-			// }
+			p {
+				margin-top: 1rem;
+				text-align: center;
+				font-size: pxToRem(14);
+				font-weight: 400;
+			}
 		}
 
 		&__item + &__item {
 			margin-left: 4rem;
 			//margin-right: 2rem;
-		}
-	}
-
-	.founders_section {
-		padding-top: 0 !important;
-		margin-top: -1px;
-		p {
-			width: 75%;
-			@media (max-width: $md) {
-				width: 100%;
-			}
 		}
 	}
 

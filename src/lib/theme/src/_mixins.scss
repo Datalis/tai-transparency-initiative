@@ -2,7 +2,7 @@
 	$min-vw: 320px;
 	$max-vw: 1200px;
 	$max-font-size: $font_size;
-	$min-font-size: calc($font_size / 1.11111111);
+	$min-font-size: calc($font_size / 1.111111);
 
 	$u1: unit($min-vw);
 	$u2: unit($max-vw);
@@ -13,12 +13,18 @@
 		& {
 			font-size: $min-font-size;
 
-			@media screen and (min-width: $min-vw) {
-				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-			}
+			// @media screen and (min-width: $min-vw) {
+			// 	font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			// }
 
 			@media screen and (min-width: $max-vw) {
 				font-size: $max-font-size;
+			}
+
+			@media	only screen and (-webkit-min-device-pixel-ratio: 1.3),
+			only screen and (-o-min-device-pixel-ratio: 13/10),
+			only screen and (min-resolution: 120dpi) {
+				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));	
 			}
 		}
 	}

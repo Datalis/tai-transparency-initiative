@@ -25,7 +25,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col col_7 col_sm_12">
-					<span class="text_light text_uppercase">{resource.resource_type.label}</span>
+					<span class="text_light text_uppercase">{resource.type.label}</span>
 					<h1 class="text_green">
 						{resource.title}
 					</h1>

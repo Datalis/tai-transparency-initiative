@@ -13,9 +13,9 @@
 
 	export let data: PageData;
 
-	$: members = data.members.data;
-	$: staff = data.staff.data;
-	$: commitee = data.staff.data.filter((e) => e.steering_commitee);
+	$: members = []
+	$: staff = []
+	$: commitee = []
 </script>
 
 <div>
@@ -37,7 +37,7 @@
 			<div class="divider divider_green divider_2" />
 			<div class="row mt_5">
 				<div class="col col_4 col_md_12">
-					<div class="display_flex flex_column align_center">
+					<div class="envision_section__item display_flex flex_column align_center">
 						<img src={EnvisionImg1} alt="" class="w_75" />
 						<span class="mt_5 text_center text_dark font_light">
 							Citizens are informed and empowered
@@ -45,7 +45,7 @@
 					</div>
 				</div>
 				<div class="col col_4 col_md_12">
-					<div class="display_flex flex_column align_center">
+					<div class="envision_section__item display_flex flex_column align_center">
 						<img src={EnvisionImg2} alt="" class="w_75" />
 						<span class="mt_5 text_center text_dark font_light">
 							Citizens are informed and empowered
@@ -53,7 +53,7 @@
 					</div>
 				</div>
 				<div class="col col_4 col_md_12">
-					<div class="display_flex flex_column align_center">
+					<div class="envision_section__item display_flex flex_column align_center">
 						<img src={EnvisionImg3} alt="" class="w_75" />
 						<span class="mt_5 text_center text_dark font_light">
 							Citizens are informed and empowered
@@ -157,6 +157,11 @@
 		min-height: 100vh;
 		position: relative;
 		z-index: 1;
+
+		&__item {
+			max-width: 300px;
+			margin: auto;
+		}
 
 		@media (max-width: $md) {
 			button {

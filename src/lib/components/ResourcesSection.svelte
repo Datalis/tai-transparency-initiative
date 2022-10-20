@@ -1,13 +1,23 @@
-<script>
+<script lang="ts">
 	import ResourceItem from './ResourceItem.svelte';
+
+	export let data: any;
+
+	$: resources = data?.resources || [];
+
 </script>
 
 <section class="resources_section section bg_light">
 	<div class="container">
-		<h2 class="mb_4">Transparency and Accountability Initiative Resources</h2>
+		<h2 class="mb_4">{data?.title}</h2>
 		<div class="divider divider_2 divider_green" />
 		<div class="row mt_4">
-			<div class="col col_4 col_md_6 col_sm_12">
+			{#each resources as resItem}
+				<div class="col col_4 col_md_6 col_sm_12">
+					<ResourceItem data={resItem} />
+				</div>
+			{/each}
+			<!-- <div class="col col_4 col_md_6 col_sm_12">
 				<ResourceItem />
 			</div>
 			<div class="col col_4 col_md_6 col_sm_12">
@@ -15,7 +25,7 @@
 			</div>
 			<div class="col col_4 col_md_12 col_sm_12">
 				<ResourceItem />
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>

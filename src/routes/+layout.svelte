@@ -3,9 +3,25 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import PageTransition from '$lib/components/PageTransition.svelte';
 
+	import NProgress from 'nprogress';
+	// import 'nprogress/nprogress.css';
+
+	import { navigating } from '$app/stores';
 	import { gsap } from 'gsap/dist/gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	gsap.registerPlugin(ScrollTrigger);
+
+	NProgress.configure({
+		minimum: 0.16
+	});
+
+	$: {
+		if ($navigating) {
+			NProgress.start();
+		} else {
+			NProgress.done();
+		}
+	}
 </script>
 
 <svelte:head />
@@ -35,6 +51,88 @@
 		}
 		&::-webkit-scrollbar-track {
 			background: #333;
+		}
+	}
+
+	/* Make clicks pass-through */
+	#nprogress {
+		pointer-events: none;
+	}
+
+	#nprogress .bar {
+		background: map-get($colors, 'green');
+
+		position: fixed;
+		z-index: 1031;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 2px;
+	}
+
+	/* Fancy blur effect */
+	#nprogress .peg {
+		display: block;
+		position: absolute;
+		right: 0px;
+		width: 100px;
+		height: 100%;
+		box-shadow: 0 0 10px map-get($colors, 'green'), 0 0 5px map-get($colors, 'green');
+		opacity: 1;
+
+		-webkit-transform: rotate(3deg) translate(0px, -4px);
+		-ms-transform: rotate(3deg) translate(0px, -4px);
+		transform: rotate(3deg) translate(0px, -4px);
+	}
+
+	/* Remove these to get rid of the spinner */
+	#nprogress .spinner {
+		display: block;
+		position: fixed;
+		z-index: 1031;
+		top: 15px;
+		right: 15px;
+	}
+
+	#nprogress .spinner-icon {
+		width: 18px;
+		height: 18px;
+		box-sizing: border-box;
+
+		border: solid 2px transparent;
+		border-top-color: map-get($colors, 'green');
+		border-left-color: map-get($colors, 'green');
+		border-radius: 50%;
+
+		-webkit-animation: nprogress-spinner 400ms linear infinite;
+		animation: nprogress-spinner 400ms linear infinite;
+	}
+
+	.nprogress-custom-parent {
+		overflow: hidden;
+		position: relative;
+	}
+
+	.nprogress-custom-parent #nprogress .spinner,
+	.nprogress-custom-parent #nprogress .bar {
+		position: absolute;
+	}
+
+	@-webkit-keyframes nprogress-spinner {
+		0% {
+			-webkit-transform: rotate(0deg);
+		}
+		100% {
+			-webkit-transform: rotate(360deg);
+		}
+	}
+	@keyframes nprogress-spinner {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
 		}
 	}
 
