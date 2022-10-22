@@ -436,7 +436,7 @@
 	}
 
 	.brands_section {
-		padding-top: 5rem !important;
+		padding-top: 4rem !important;
 		padding-bottom: 0 !important;
 		background: map-get($colors, 'blue');
 		position: relative;

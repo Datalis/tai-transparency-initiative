@@ -226,16 +226,16 @@
 			}
 			h6 a,
 			h6 {
-				font-size: pxToRem(14);
+				font-size: pxToRem(13);
 				line-height: 1;
 				letter-spacing: normal;
-				font-weight: 600;
+				font-weight: bold;
 			}
 			a,
 			span {
-				font-size: pxToRem(14);
-				line-height: 24px;
-				font-weight: 400;
+				font-size: pxToRem(13);
+				line-height: 35px;
+				font-weight: normal;
 			}
 		}
 		&_copyright {
@@ -249,7 +249,7 @@
 				}
 			}
 			a {
-				font-size: pxToRem(14);
+				font-size: pxToRem(13);
 			}
 		}
 	}
