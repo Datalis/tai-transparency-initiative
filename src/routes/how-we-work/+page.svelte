@@ -4,11 +4,12 @@
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
 	import ChevronRightIcon from '$lib/assets/icons/chevron-right-thin.svg?component';
-	
+
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 	import PastFundingSection from '$lib/components/PastFundingSection.svelte';
 	import Six6csSection from '$lib/components/Six6csSection.svelte';
-
+	import { onMount } from 'svelte';
+	import gsap from 'gsap/dist/gsap';
 
 	let windowWidth: number;
 
@@ -19,6 +20,26 @@
 	$: past_funding = data.past_funding;
 	$: six_data = data.six_cs;
 
+
+	onMount(() => {
+		gsap.timeline({
+			scrollTrigger: {
+				trigger: '.featured_section',
+				pin: true,
+				scrub: true,
+				start: 'top top',
+				end: '+=200%'
+			}
+		}).to('.featured_section .featured_section__content', {
+			yPercent: -5
+		}).to('.featured_section .featured_section__content .video_wrapper', {
+			xPercent: -65,
+			flexBasis: '100%',
+			// ease: 'none'
+		}).to('.featured_section .featured_section__content .video_wrapper img', {
+			height: '100%'
+		})
+	})
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -83,7 +104,9 @@
 						</div>
 						<div>
 							<span class="display_block font_bold">REDUCE</span>
-							<span class="display_block mt_1">transaction costs <!-- and test new approaches --></span>
+							<span class="display_block mt_1"
+								>transaction costs <!-- and test new approaches --></span
+							>
 						</div>
 					</div>
 				</div>
@@ -117,16 +140,19 @@
 	</section>
 	<section class="featured_section section bg_blue_light">
 		<div class="container">
-			<h2>Featured topics</h2>
-			<div class="divider divider_green divider_2" />
-			<p class="mt_4">
-				TAI members evolve their priorities in line with the global context and TAI collective
-				conversations evolve similarly. One current priority is how to strengthen transparency,
-				participation and accountability dimensions of responses to the climate crisis
-			</p>
-
-			<div class="video_wrapper text_center">
-				<img src={FeaturedImg} class="w_100" alt="" />
+			<div class="featured_section__content">
+				<div class="content_wrapper">
+					<h2>Featured topics</h2>
+					<div class="divider divider_green divider_2" />
+					<p class="mt_4">
+						TAI members evolve their priorities in line with the global context and TAI collective
+						conversations evolve similarly. One current priority is how to strengthen transparency,
+						participation and accountability dimensions of responses to the climate crisis
+					</p>
+				</div>
+				<div class="video_wrapper text_center">
+					<img src={FeaturedImg} class="w_100" alt="" />
+				</div>
 			</div>
 		</div>
 	</section>
@@ -170,8 +196,6 @@
 			}
 		}
 	}
-
-	
 
 	.progress_model_section {
 		margin-top: -2px;
@@ -236,28 +260,69 @@
 	}
 
 	.featured_section {
-		padding-top: 2.5rem;
-		padding-bottom: 4rem !important;
-		p {
-			font-weight: 300;
-			width: 75vw;
-			@media (max-width: $md) {
-				width: 100%;
+		min-height: 105vh;
+		display: flex !important;
+		flex-direction: column;
+		justify-content: center;
+
+		.container {
+			flex: 1 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		&__content {
+			display: flex;
+			justify-content: flex-start;
+			align-items: stretch;
+			transform: translate3d(0,0,0);
+			flex: 1 0 auto;
+
+			.content_wrapper {
+				padding-right: 4rem;
+			}
+
+			.content_wrapper,
+			.video_wrapper {
+				flex-shrink: 0;
+				flex-basis: 65%;
+			}
+
+			.video_wrapper {
+				display: flex;
+				flex-direction: column;
+				img {
+					height: 90%;
+					margin: auto;
+					max-width: 100%;
+					object-fit: cover;
+					border-radius: 25px;
+				}
 			}
 		}
-		.video_wrapper {
-			padding-left: 4rem;
-			padding-right: 4rem;
-			margin-top: 4rem;
-			@media (max-width: $md) {
-				padding-left: 1rem;
-				padding-right: 1rem;
-			}
-		}
+
+		// p {
+		// 	font-weight: 300;
+		// 	width: 75vw;
+		// 	@media (max-width: $md) {
+		// 		width: 100%;
+		// 	}
+		// }
+		// .video_wrapper {
+		// 	padding-left: 4rem;
+		// 	padding-right: 4rem;
+		// 	margin-top: 4rem;
+		// 	@media (max-width: $md) {
+		// 		padding-left: 1rem;
+		// 		padding-right: 1rem;
+		// 	}
+		// }
 	}
 	// .past_funding_section {
 	// }
 	.other_groups_section {
+		min-height: 100vh;
 		p {
 			width: 75vw;
 			@media (max-width: $md) {

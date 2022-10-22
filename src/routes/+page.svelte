@@ -122,7 +122,7 @@
 					<div class="landing_section__hero landing_section__hero--mobile">
 						<img class="parallax" data-depth="0.15" src={HeroImgLayer0} alt="" />
 						<img class="parallax" data-depth="-0.15" src={HeroImgLayer2} alt="" />
-						<img class="parallax" data-depth="0.20" src={hero1_img} alt="" />
+						<img class="parallax" data-depth="0.10" src={hero1_img} alt="" />
 					</div>
 				</div>
 
@@ -436,6 +436,8 @@
 	}
 
 	.brands_section {
+		padding-top: 5rem !important;
+		padding-bottom: 0 !important;
 		background: map-get($colors, 'blue');
 		position: relative;
 		z-index: 1;

@@ -6,7 +6,7 @@
 	$: items = data?.PastFundingItem || [];
 </script>
 
-<section class="past_funding_section section bg_gray_light">
+<section class="past_funding_section section">
 	<div class="container">
 		<h2>{data?.title}</h2>
 		<div class="divider divider_white divider_2" />
@@ -30,4 +30,7 @@
 </section>
 
 <style lang="scss">
+.past_funding_section {
+	background-color: #f2f4f7;
+}
 </style>
