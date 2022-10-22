@@ -3,7 +3,6 @@
 
 	import { gsap } from 'gsap/dist/gsap';
 
-	// let windowWidth: number;
 	let _6CsSectionSlider: HTMLElement;
 
 	export let data: any;
@@ -53,88 +52,29 @@
 	<div class="container">
 		<div class="_6Cs_wrapper">
 			<div class="_6Cs_section_title">
-				<h3 class="font_regular mb_4 mt_0">{data?.title}</h3>
-				<div class="divider divider_2 divider_light" />
+				<h3 class="font_regular mb_4 mt_0 text_light">{data?.title}</h3>
+				<div class="divider divider_2 divider_green_light" />
 			</div>
 			<div class="_6Cs_section_slide" bind:this={_6CsSectionSlider}>
 				{#each items as item}
 					<div class="_6Cs_item">
 						<div class="display_flex align_center">
 							<span class="_6Cs_item__count mr_3">{item?.order}</span>
-							<span class="_6Cs_item__title text_uppercase font_light">{item?.title}</span>
+							<span class="_6Cs_item__title text_uppercase font_light text_light">{item?.title}</span>
 						</div>
-						<p class="_6Cs_item__text mt_1">
+						<p class="_6Cs_item__text mt_1 text_light">
 							{item?.message}
 						</p>
 					</div>
 				{/each}
-				<!-- <div class="_6Cs_item">
-					<div class="display_flex align_center">
-						<span class="_6Cs_item__count mr_3">1</span>
-						<span class="_6Cs_item__title text_uppercase font_light">Collaborate</span>
-					</div>
-					<p class="_6Cs_item__text mt_1">
-						with diverse practitioners, researchers, and allies to pinpoint learnings and act on new
-						ideas and insights. Multi-Stakeholder Initiatives Internationally, and National Chapters
-					</p>
-				</div>
-				<div class="_6Cs_item">
-					<div class="display_flex align_center">
-						<span class="_6Cs_item__count mr_3">2</span>
-						<span class="_6Cs_item__title text_uppercase font_light">Collaborate</span>
-					</div>
-					<p class="_6Cs_item__text mt_1">
-						with diverse practitioners, researchers, and allies to pinpoint learnings and act on new
-						ideas and insights. Multi-Stakeholder Initiatives Internationally, and National Chapters
-					</p>
-				</div>
-				<div class="_6Cs_item">
-					<div class="display_flex align_center">
-						<span class="_6Cs_item__count mr_3">3</span>
-						<span class="_6Cs_item__title text_uppercase font_light">Collaborate</span>
-					</div>
-					<p class="_6Cs_item__text mt_1">
-						with diverse practitioners, researchers, and allies to pinpoint learnings and act on new
-						ideas and insights. Multi-Stakeholder Initiatives Internationally, and National Chapters
-					</p>
-				</div>
-				<div class="_6Cs_item">
-					<div class="display_flex align_center">
-						<span class="_6Cs_item__count mr_3">4</span>
-						<span class="_6Cs_item__title text_uppercase font_light">Collaborate</span>
-					</div>
-					<p class="_6Cs_item__text mt_1">
-						with diverse practitioners, researchers, and allies to pinpoint learnings and act on new
-						ideas and insights. Multi-Stakeholder Initiatives Internationally, and National Chapters
-					</p>
-				</div>
-				<div class="_6Cs_item">
-					<div class="display_flex align_center">
-						<span class="_6Cs_item__count mr_3">5</span>
-						<span class="_6Cs_item__title text_uppercase font_light">Collaborate</span>
-					</div>
-					<p class="_6Cs_item__text mt_1">
-						with diverse practitioners, researchers, and allies to pinpoint learnings and act on new
-						ideas and insights. Multi-Stakeholder Initiatives Internationally, and National Chapters
-					</p>
-				</div>
-				<div class="_6Cs_item">
-					<div class="display_flex align_center">
-						<span class="_6Cs_item__count mr_3">6</span>
-						<span class="_6Cs_item__title text_uppercase font_light">Collaborate</span>
-					</div>
-					<p class="_6Cs_item__text mt_1">
-						with diverse practitioners, researchers, and allies to pinpoint learnings and act on new
-						ideas and insights. Multi-Stakeholder Initiatives Internationally, and National Chapters
-					</p>
-				</div> -->
 			</div>
 		</div>
 	</div>
 </section>
 
 <style lang="scss" scoped>
-	$green_light: #59ebcf;
+	$green_light: map-get($colors, 'green_light');
+	$blue_light: map-get($colors, 'blue_light');
 	$blue: map-get($colors, 'blue');
 	$light: map-get($colors, 'light');
 
@@ -150,7 +90,7 @@
 		}
 
 		._6Cs_wrapper {
-			background-color: $green_light;
+			background-color: $blue_light;
 			border-radius: 15px;
 			//padding: 2rem;
 			height: 85vh;
@@ -200,12 +140,12 @@
 			&__count {
 				width: 60px;
 				height: 60px;
-				background-color: $blue;
+				background-color: $green_light;
 				border-radius: 50%;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				color: $green_light;
+				color: $blue_light;
 				font-size: pxToRem(38);
 				line-height: 1;
 				font-weight: 900;

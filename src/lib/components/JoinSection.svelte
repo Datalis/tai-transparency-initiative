@@ -1,7 +1,16 @@
 <script lang="ts">
 	import JoinImg from '$lib/assets/images/news.webp';
 	import IntersectionObserver from './IntersectionObserver.svelte';
+	import { enhance } from '$app/forms';
+	import { page } from '$app/stores';
 
+	export let form: any;
+
+	let formData: { name: string, email: string, subscribe: boolean } = {
+		name: "",
+		email: "",
+		subscribe: true
+	}
 
 </script>
 
@@ -24,7 +33,7 @@
 								field or looking to complement your portfolio, we are here to help. 
 							</p>
 							<h6 class="mb_4">Let the TAI Secretariat know how we can help</h6>
-							<form action="">
+							<form action="{$page.url.pathname}?/join" method="post" use:enhance>
 								<div class="form_control">
 									<input
 										type="text"
@@ -32,30 +41,38 @@
 										name="name"
 										id="name"
 										placeholder="Full name"
+										value={form?.name ?? ''}
 									/>
+									{#if form?.nameError}
+										<small class="text_danger">The name field is required</small>
+									{/if}
 								</div>
 								<div class="form_control mt_4">
 									<input
 										type="email"
 										class="form_control__input"
-										name="name"
-										id="name"
+										name="email"
+										id="email"
 										placeholder="Email"
+										value={form?.email ?? ''}
 									/>
+									{#if form?.emailError}
+										<small class="text_danger">The email field is required</small>						
+									{/if}
 								</div>
 								<div class="form_control form_control_check mt_4">
 									<label for="subscribe">
 										<input
+											bind:checked={formData.subscribe}
 											name="subscribe"
 											class="form_control__input"
 											id="subscribe"
 											type="checkbox"
-											checked
 										/>
 										Subscribe to TAI's Weekly
 									</label>
 								</div>
-								<button class="btn btn_blue mt_4">Get in Touch</button>
+								<button class="btn btn_blue mt_4" type="submit">Get in Touch</button>
 							</form>
 						</div>
 					</div>

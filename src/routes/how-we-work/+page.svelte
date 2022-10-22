@@ -4,10 +4,7 @@
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
 	import ChevronRightIcon from '$lib/assets/icons/chevron-right-thin.svg?component';
-	// import ArticleItem from '$lib/components/ArticleItem.svelte';
-	// import { onMount } from 'svelte';
-
-	// import { gsap } from 'gsap/dist/gsap';
+	
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 	import PastFundingSection from '$lib/components/PastFundingSection.svelte';
 	import Six6csSection from '$lib/components/Six6csSection.svelte';
@@ -228,7 +225,8 @@
 				padding-bottom: 1rem;
 				flex-grow: 1;
 				justify-content: space-between;
-				background-color: #c7ccd6 !important;
+				// background-color: #c7ccd6 !important;
+				background-color: #e4e8ef !important;
 				span {
 					font-size: pxToRem(15);
 					font-weight: 400;

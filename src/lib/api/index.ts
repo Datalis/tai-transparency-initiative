@@ -13,3 +13,7 @@ export const get = async (path: string, params: { [key: string]: any } = {}) => 
 	const data = await response.json();
 	return data;
 }
+
+export const post = async (path: string, data: any) => {
+	
+}

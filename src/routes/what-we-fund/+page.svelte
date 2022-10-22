@@ -25,7 +25,6 @@
 	$: hero = data?.hero;
 	$: resources = data?.resources;
 	$: whyItMatters = data?.WhyItMatters;
-
 </script>
 
 <div id="what-we-fund" class="page">
@@ -67,8 +66,8 @@
 							<HandsIcon class="hands_icon" />
 						</span>
 						<p>
-							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-							health services they were promised and deserve
+							<strong>GRASSROOTS ORGANIZERS</strong> working with indigenous groups to document the plunder
+							of their lands and assert their rights in the courts.
 						</p>
 					</div>
 				</div>
@@ -78,8 +77,7 @@
 							<CogsIcon class="cogs_icon" />
 						</span>
 						<p>
-							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-							health services they were promised and deserve
+							<strong>INVESTIGATIVE JOURNALISTS</strong> uncovering dodgy deals that favor the politically connected.
 						</p>
 					</div>
 				</div>
@@ -89,8 +87,7 @@
 							<SearchIcon class="search_icon" />
 						</span>
 						<p>
-							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-							health services they were promised and deserve
+							<strong>RESEARCHERS</strong> proving the value of inclusive participatory processes in shaping government policy.
 						</p>
 					</div>
 				</div>
@@ -100,8 +97,7 @@
 							<LightBulbIcon class="light_bulb_icon" />
 						</span>
 						<p>
-							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-							health services they were promised and deserve
+							<strong>TECHNOLOGISTS</strong> guiding civil society groups to use data from multiple sources to back up their policy asks.
 						</p>
 					</div>
 				</div>
@@ -111,8 +107,7 @@
 							<ChartIcon class="chart_icon" />
 						</span>
 						<p>
-							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-							health services they were promised and deserve
+							<strong>THINK TANKS</strong> pinpointing government revenues lost due to loopholes in international tax agreements.
 						</p>
 					</div>
 				</div>
@@ -303,6 +298,7 @@
 			}
 
 			width: 90%;
+			min-height: 220px;
 			position: relative;
 			border-radius: 15px;
 			padding-top: 0.5rem;
@@ -325,5 +321,4 @@
 			}
 		}
 	}
-	
 </style>

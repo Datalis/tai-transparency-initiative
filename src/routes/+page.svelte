@@ -20,7 +20,7 @@
 
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
-	import type { PageData } from './$types';
+	import type { ActionData, PageData } from './$types';
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
@@ -29,6 +29,7 @@
 
 
 	export let data: PageData;
+	export let form: ActionData;
 
 	$: hero = data.hero;
 	$: resources = data.ResourcesSection;
@@ -231,7 +232,7 @@
 			</div>
 		</div>
 	</section>
-	<JoinSection />
+	<JoinSection form={form} />
 	<ResourcesSection data={resources} />
 	<SubscribeSection />
 </div>

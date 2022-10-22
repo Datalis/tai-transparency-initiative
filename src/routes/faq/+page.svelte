@@ -1,68 +1,44 @@
-<script>
-	// @ts-ignore
+<script lang="ts">
 	import { Accordion, AccordionItem } from 'svelte-collapsible';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ViewMoreIcon from '$lib/components/ViewMoreIcon.svelte';
+	import { afterNavigate } from '$app/navigation';
+	import type { PageData } from '.svelte-kit/types/src/routes/resources/$types';
 
 	let currentFAQ = 0;
+
+	export let data: any;
+
+	$: faqs = data.FAQItem || [];
+
+	afterNavigate(() => {
+		window.scrollTo(0, 0);
+	});
 </script>
 
-<div>
-	<section class="landing_section bg_blue">
+<div class="page">
+	<section class="landing_section section bg_blue">
 		<div class="container">
 			<div class="text_center">
 				<h1 class="text_green">FAQ's</h1>
 			</div>
 		</div>
 	</section>
-	<section class="faq_list_section">
+	<section class="faq_list_section section bg_light">
 		<div class="container">
 			<Accordion bind:key={currentFAQ}>
-				<AccordionItem key="1">
-					<div slot="header" class="display_flex align_center">
-						<h3 class="mr_auto my_2">How does TAI work?</h3>
-						<ViewMoreIcon isOpen={currentFAQ == 1} />
-					</div>
-					<div slot="body">
-						<p class="text_gray">
-							The Transparency and Accountability Initiative (TAI) is a collaborative of the worldʼs
-							leading transparency and accountability philanthropic funders working toward a world
-							where citizens are informed and empowered, governments are open and responsive, and
-							collective action advances the public good.
-						</p>
-					</div>
-				</AccordionItem>
-				<div class="divider divider_blue divider_4 my_3" />
-				<AccordionItem key="2">
-					<div slot="header" class="display_flex align_center">
-						<h3 class="mr_auto my_2">How does TAI work?</h3>
-						<ViewMoreIcon isOpen={currentFAQ == 2} />
-					</div>
-					<div slot="body">
-						<p class="text_gray">
-							The Transparency and Accountability Initiative (TAI) is a collaborative of the worldʼs
-							leading transparency and accountability philanthropic funders working toward a world
-							where citizens are informed and empowered, governments are open and responsive, and
-							collective action advances the public good.
-						</p>
-					</div>
-				</AccordionItem>
-				<div class="divider divider_blue divider_4 my_3" />
-				<AccordionItem key="3">
-					<div slot="header" class="display_flex align_center">
-						<h3 class="mr_auto my_2">How does TAI work?</h3>
-						<ViewMoreIcon isOpen={currentFAQ == 3} />
-					</div>
-					<div slot="body">
-						<p class="text_gray">
-							The Transparency and Accountability Initiative (TAI) is a collaborative of the worldʼs
-							leading transparency and accountability philanthropic funders working toward a world
-							where citizens are informed and empowered, governments are open and responsive, and
-							collective action advances the public good.
-						</p>
-					</div>
-				</AccordionItem>
-				<div class="divider divider_blue divider_4 my_3" />
+				{#each faqs as faq, index}
+					<AccordionItem key={index + 1}>
+						<div slot="header" class="display_flex align_center">
+							<h3 class="mr_auto my_2">{faq?.title}</h3>
+							<ViewMoreIcon isOpen={currentFAQ == 1} />
+						</div>
+						<div slot="body" class="text_gray">
+							{@html faq?.message}
+						</div>
+					</AccordionItem>
+					<div class="divider divider_blue divider_2 my_3" />
+				{/each}
 			</Accordion>
 		</div>
 	</section>

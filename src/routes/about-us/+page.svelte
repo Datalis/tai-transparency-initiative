@@ -9,16 +9,26 @@
 	import JoinSection from '$lib/components/JoinSection.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import StaffItem from '$lib/components/StaffItem.svelte';
-	import type { PageData } from './$types';
+	import type { ActionData, PageData } from './$types';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
+	export let form: ActionData;
 
-	$: members = []
-	$: staff = []
-	$: commitee = []
+	$: members = data?.Members;
+	$: memberList = members?.MemberItem || [];
+
+	$: staff = data?.Staff;
+	$: staffList = staff.StaffItem || [];
+	
+	$: commitee = data?.SteeringCommittee;
+	$: commiteeList = commitee?.StaffItem || [];
+
+
+	onMount(() => console.log(data))
 </script>
 
-<div>
+<div class="page">
 	<section class="landing_section section bg_blue">
 		<div class="container">
 			<div
@@ -68,23 +78,13 @@
 	</section>
 	<section class="members_section section bg_gray">
 		<div class="container">
-			<h2 class="mb_4">Our members</h2>
+			<h2 class="mb_4">{members.title}</h2>
 			<div class="divider divider_green divider_2" />
 			<p class="mt_4">
-				Our members - both private foundations and public funders - recognize that governance <br />
-				challenges are complex and cross-cutting. They warrant a collaborative approach. TAI donors
-				<br />
-				work together to strengthen accountability around the world. Learn more about each member
-				<br />
-				below.
+				{@html members.message}
 			</p>
 			<div class="member_list mt_4 display_flex flex_column">
-				<!-- <MemberItem />
-				<div class="divider divider_blue divider_2 my_4" />
-				<MemberItem />
-				<div class="divider divider_blue divider_2 my_4" />
-				<MemberItem /> -->
-				{#each members as member}
+				{#each memberList as member}
 					<MemberItem data={member} />
 					<div class="divider divider_blue divider_2 my_5" />
 				{/each}
@@ -93,24 +93,17 @@
 	</section>
 	<section class="team_section section bg_light">
 		<div class="container">
-			<h3 class="">Our Team</h3>
+			<h3 class="">{staff.title}</h3>
 			<div class="divider divider_green divider_2" />
 			<p class="mt_4">
-				TAIʼs small and nimble team helps donors identify new opportunities for <br />
-				collaboration, supports design of out-of-the-box solutions and helps <br />
-				produce and share knowledge.
+				{@html staff.message}
 			</p>
 			<div class="staff_list mt_4">
 				<h4 class="mb_4">Staff</h4>
-				{#each staff as staffItem}
+				{#each staffList as staffItem}
 					<div class="divider divider_blue divider_2" />
 					<StaffItem data={staffItem} />
 				{/each}
-
-				<!-- <div class="divider divider_blue divider_2" />
-				<StaffItem />
-				<div class="divider divider_blue divider_2" />
-				<StaffItem /> -->
 			</div>
 		</div>
 	</section>
@@ -118,19 +111,14 @@
 		<div class="container">
 			<div class="committee_list mt_4">
 				<h4 class="mb_4 mt_4">Steering Committee</h4>
-				{#each commitee as commiteeItem}
+				{#each commiteeList as commiteeItem}
 					<div class="divider divider_blue divider_2" />
 					<StaffItem data={commiteeItem} />
 				{/each}
-
-				<!-- <div class="divider divider_blue divider_2" />
-				<StaffItem />
-				<div class="divider divider_blue divider_2" />
-				<StaffItem /> -->
 			</div>
 		</div>
 	</section>
-	<JoinSection />
+	<JoinSection form={form} />
 	<SubscribeSection />
 </div>
 

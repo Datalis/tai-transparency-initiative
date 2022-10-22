@@ -1,11 +1,9 @@
 <script lang="ts">
-	import PersonImg from '$lib/assets/images/person.webp';
-	import type { Staff } from '$lib/types/staff';
 	import Image from './Image.svelte';
 	import ViewMoreIcon from './ViewMoreIcon.svelte';
 
 	export let isExpanded = false;
-	export let data: Staff;
+	export let data: any;
 
 	const toggle = () => (isExpanded = !isExpanded);
 </script>
@@ -20,12 +18,12 @@
 				<h4 class="text_dark mt_0 mb_2">{data.name}</h4>
 				<small class="text_dark text_uppercase">{data.role}</small>
 				<div class="content_wrapper__text font_regular">
-					{@html data.description}
+					{@html data.summary}
 				</div>
 			</div>
 		</div>
 		<div class="staff_item__text font_regular">
-			{@html data.description}
+			{@html data.summary}
 		</div>
 	</div>
 	<button class="mt_3" on:click={toggle}>

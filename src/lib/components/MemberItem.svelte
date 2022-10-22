@@ -26,7 +26,7 @@
 <div class="member_item">
 	<div class="img_wrapper" on:click={toggleSwipe}>
 		<!-- <img src={FordImg} alt="" /> -->
-		<Image image={data.image} size="small" />
+		<Image image={data?.image} size="thumbnail" />
 	</div>
 
 	<div class="content_wrapper">
@@ -92,31 +92,37 @@
 			</Swiper>
 		</div>
 		<div class="content_wrapper__tabs">
-			<div class="display_flex align_center">
-				<button
-					class="btn btn_small mr_3"
-					class:btn_blue={selectedTab == 'strategy'}
-					on:click={() => setCurrentTab('strategy')}
-				>
-					STRATEGY
-				</button>
-				<button
-					class="btn btn_small mr_3"
-					class:btn_blue={selectedTab == 'project'}
-					on:click={() => setCurrentTab('project')}
-				>
-					FEATURED PROJECT
-				</button>
-				<button
-					class="btn btn_small"
-					class:btn_blue={selectedTab == 'contact'}
-					on:click={() => setCurrentTab('contact')}
-				>
-					CONTACT
-				</button>
+			<div class="display_flex align_center mb_2">
+				{#if data?.strategy}
+					<button
+						class="btn btn_small mr_3"
+						class:btn_blue={selectedTab == 'strategy'}
+						on:click={() => setCurrentTab('strategy')}
+					>
+						STRATEGY
+					</button>
+				{/if}
+				{#if data?.featured_project}
+					<button
+						class="btn btn_small mr_3"
+						class:btn_blue={selectedTab == 'featured_project'}
+						on:click={() => setCurrentTab('featured_project')}
+					>
+						FEATURED PROJECT
+					</button>
+				{/if}
+				{#if data?.contact}
+					<button
+						class="btn btn_small"
+						class:btn_blue={selectedTab == 'contact'}
+						on:click={() => setCurrentTab('contact')}
+					>
+						CONTACT
+					</button>
+				{/if}
 			</div>
 			{@html data[selectedTab]}
-			<a href="/" class="display_flex align_center text_dark font_bold mt_auto"
+			<a href={data?.url} class="display_flex align_center text_dark font_bold mt_auto"
 				>Learn more <LinkIcon class="ml_2" width="24" height="24" />
 			</a>
 		</div>
@@ -147,6 +153,12 @@
 			overflow: hidden;
 			position: relative;
 			height: 250px;
+
+			:global {
+				img {
+					width: 100%;
+				}
+			}
 
 			@media (max-width: $lg) {
 				width: 40%;
