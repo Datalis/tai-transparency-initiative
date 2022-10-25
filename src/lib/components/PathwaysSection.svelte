@@ -56,7 +56,7 @@
 		</div>
 	</div>
 {/if}
-<section class="pathways_section section bg_blue_light">
+<section id="pathways-to-change" class="pathways_section section bg_blue_light">
 	<div class="container">
 		<h2>Pathways to change</h2>
 		<div class="divider divider_green divider_2 my_4" />
@@ -329,19 +329,21 @@
 					</g>
 
 					<g id="tooltip1" class="pathways-tooltip" class:active={activeCog == 1}>
-						<rect x="105.07" width="200" height="100" rx="15" />
+						<rect x="105.07" width="200" height="100" rx="5" />
 						<foreignObject x="105.07" width="200" height="100">
 							<p
 								style="
 								color: #051231; 
-								font-size: 8px;
+								font-size: 7.5px;
 								position: absolute;
 								top: 0;
 								bottom: 0;
-								line-height: 1.2;
+								line-height: 1.4;
+								letter-spacing: 0.1px;
 								margin: auto;
-								padding: 4px 18px;
-								height: fit-content;"
+								padding: 12px 15px;
+								font-weight: 500;
+								height: 100px;"
 							>
 								How do governments officials directly use information or data that is produced by
 								(inter)national without going through any other accountability actors. (ex:

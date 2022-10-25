@@ -1,6 +1,6 @@
 <section class="subscribe_section section bg_light">
 	<div class="container">
-		<div class="subscribe_section__panel bg_panel p_4">
+		<div class="subscribe_section__panel bg_panel">
 			<h2 class="text_center">Keep updated with <br /> TAI WEEKLY</h2>
 			<span class="font_light text_center"
 				>Everything you need to know about transparency, accountability <br /> and participation, delivered
@@ -22,7 +22,6 @@
 
 	.subscribe_section {
 		min-height: 400px;
-		padding-top: 2rem;
 
 		@media (max-width: $md) {
 			height: auto;
@@ -36,8 +35,8 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			padding-top: 2rem;
-			padding-bottom: 2rem;
+			padding-top: pxToRem(50);
+			padding-bottom: pxToRem(50);
 
 			h2 {
 				margin-top: 0;

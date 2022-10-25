@@ -222,6 +222,7 @@
 					h2 {
 						font-weight: 499 !important;
 						transition: all 0.15s ease;
+						letter-spacing: normal !important;
 					}
 				}
 				a:hover,

@@ -301,26 +301,7 @@
 				}
 			}
 		}
-
-		// p {
-		// 	font-weight: 300;
-		// 	width: 75vw;
-		// 	@media (max-width: $md) {
-		// 		width: 100%;
-		// 	}
-		// }
-		// .video_wrapper {
-		// 	padding-left: 4rem;
-		// 	padding-right: 4rem;
-		// 	margin-top: 4rem;
-		// 	@media (max-width: $md) {
-		// 		padding-left: 1rem;
-		// 		padding-right: 1rem;
-		// 	}
-		// }
 	}
-	// .past_funding_section {
-	// }
 	.other_groups_section {
 		min-height: 100vh;
 		p {

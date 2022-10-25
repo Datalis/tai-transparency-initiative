@@ -27,7 +27,6 @@
 
 	$: hero1_img = windowWidth > 768 ? HeroImgLayer1 : HeroImgLayer1Mobile;
 
-
 	export let data: PageData;
 	export let form: ActionData;
 
@@ -66,16 +65,6 @@
 				}
 			});
 		}
-		// .to('.cards_section .wrapper', {
-		// 	y: '-10%',
-		// 	scrollTrigger: {
-		// 		trigger: '.cards_section',
-		// 		pin: true,
-		// 		scrub: true,
-		// 		start: 'center +=55%'
-		// 		// end: 'bottom -=20%'
-		// 	}
-		// });
 
 		const parallax = gsap.timeline({
 			scrollTrigger: {
@@ -101,7 +90,6 @@
 	}
 
 	onMount(() => {
-		console.log(data)
 		setupAnimations();
 	});
 </script>
@@ -128,12 +116,12 @@
 
 				<div class="col col_5 col_md_12">
 					<div class="landing_section__content">
-						<h1 class="text_green mb_4 mt_0">{hero?.title}</h1>
-						<span class="divider divider_2 divider_light" />
+						<h1 class="text_green mb_0 mt_0">{hero?.title}</h1>
+						<span class="divider divider_1 divider_light" />
 						<div class="font_light">
-							{@html hero?.message}	
+							{@html hero?.message}
 						</div>
-						<a href="/" class="btn btn_outline_green mt_4 mb_4">Read More</a>
+						<a href="/about-us" class="btn btn_outline_green mt_4 mb_4">Read More</a>
 					</div>
 				</div>
 
@@ -148,6 +136,9 @@
 		</div>
 	</section>
 	<section class="brands_section section bg_blue show_on_lg_and_up">
+		<div class="container">
+			<span class="brands_section__title">OUR MEMBERS</span>
+		</div>
 		<div class="wrapper" bind:this={brandSlide}>
 			<MacArthurLogo width="300" />
 			<FordLogo width="300" />
@@ -161,6 +152,9 @@
 		</div>
 	</section>
 	<section class="brands_section_mobile section bg_blue show_on_lg_and_down">
+		<div class="container">
+			<span class="brands_section__title">OUR MEMBERS</span>
+		</div>
 		<div class="wrapper">
 			<MacArthurLogo height="50" width="50%" />
 			<FordLogo height="50" width="50%" />
@@ -186,10 +180,10 @@
 								<h3 class="text_dark">What we fund</h3>
 								<div class="divider divider_light divider_2" />
 								<div class="content__text">
-									<strong class="text_dark mb_1">What does TPA funding look like?</strong>
-									<span class="text_dark display_block">Funding Data Library</span>
-									<span class="text_dark display_block">Why it matters</span>
-									<span class="text_dark display_block">Pathways to change</span>
+									<a href="/what-we-fund#funding" class="text_dark display_block">What does TPA funding look like?</a>
+									<a href="/what-we-fund#funding-data-library" class="text_dark display_block">Funding Data Library</a>
+									<a href="/what-we-fund#why-it-matters" class="text_dark display_block">Why it matters</a>
+									<a href="/what-we-fund#pathways-to-change" class="text_dark display_block">Pathways to change</a>
 								</div>
 							</div>
 						</div>
@@ -203,10 +197,10 @@
 								<h3 class="text_dark">How we fund</h3>
 								<div class="divider divider_light divider_2" />
 								<div class="content__text">
-									<strong class="text_dark mb_1">What does TPA funding look like?</strong>
-									<span class="text_dark display_block">Funding Data Library</span>
-									<span class="text_dark display_block">Why it matters</span>
-									<span class="text_dark display_block">Pathways to change</span>
+									<a href="/how-we-fund#partner-support" class="text_dark display_block">Partner Support</a>
+									<a href="/how-we-fund" class="text_dark display_block">Funding Data Library</a>
+									<a href="/how-we-fund" class="text_dark display_block">Why it matters</a>
+									<a href="/how-we-fund" class="text_dark display_block">Pathways to change</a>
 								</div>
 							</div>
 						</div>
@@ -232,7 +226,7 @@
 			</div>
 		</div>
 	</section>
-	<JoinSection form={form} />
+	<JoinSection {form} />
 	<ResourcesSection data={resources} />
 	<SubscribeSection />
 </div>
@@ -270,98 +264,6 @@
 			padding-bottom: 4rem !important;
 		}
 
-		// &__hero {
-		// 	position: absolute;
-		// 	right: 0;
-		// 	// top: -180px;
-		// 	top: 0;
-		// 	// height: 100vh;
-		// 	height: 100%;
-		// 	width: 60%;
-		// 	max-width: 600px;
-
-		// 	// @media (max-width: $lg) {
-		// 	// 	width: 85% !important;
-		// 	// }
-
-		// 	// @media (max-width: $xl) {
-		// 	// 	// width: 75% !important;
-		// 	// 	img:nth-child(3) {
-		// 	// 		height: 70% !important;
-		// 	// 	}
-		// 	// 	img:nth-child(2) {
-		// 	// 		// top: unset !important;
-		// 	// 		bottom: 0;
-		// 	// 		height: auto !important;
-		// 	// 		z-index: 10;
-		// 	// 		left: 15% !important;
-		// 	// 	}
-		// 	// }
-
-		// 	@media (max-width: $md) {
-		// 		top: 0;
-		// 		position: relative;
-		// 		height: 60vh;
-		// 		width: auto !important;
-		// 		img {
-		// 			&:nth-child(1) {
-		// 				height: auto !important;
-		// 				width: 100% !important;
-		// 			}
-		// 			&:nth-child(2) {
-		// 				top: unset !important;
-		// 				bottom: -20px;
-		// 				height: auto !important;
-		// 				z-index: 10;
-		// 				margin: auto;
-		// 				left: 0 !important;
-		// 				right: 0 !important;
-		// 			}
-		// 			&:nth-child(3) {
-		// 				top: -50px !important;
-		// 				height: 80% !important;
-		// 				left: 0 !important;
-		// 				right: 0 !important;
-		// 				margin: auto !important;
-		// 			}
-		// 		}
-		// 	}
-
-		// 	img {
-		// 		object-fit: contain;
-		// 		image-rendering: optimizeQuality;
-		// 		position: absolute;
-		// 		max-width: 100%;
-		// 		z-index: 9;
-
-		// 		&:nth-child(1) {
-		// 			top: 35%;
-		// 			left: -10px;
-		// 			// height: 50%;
-		// 			height: 100%;
-		// 			width: auto;
-		// 			max-width: unset;
-		// 		}
-		// 		&:nth-child(2) {
-		// 			top: 50%;
-		// 			// height: 50%;
-		// 			height: 100%;
-		// 			z-index: 10;
-		// 			// left: 150px;
-		// 			left: 18%;
-		// 		}
-		// 		&:nth-child(3) {
-		// 			// top: 80px;
-		// 			// top: 9%;
-		// 			top: -100px;
-		// 			// height: 70%;
-		// 			height: 100%;
-		// 			// left: 100px;
-		// 			left: 12%;
-		// 		}
-		// 	}
-		// }
-
 		&__hero {
 			position: relative;
 			height: 100%;
@@ -380,7 +282,6 @@
 			}
 
 			@media screen and (max-width: $xl) {
-				
 			}
 
 			img {
@@ -422,6 +323,26 @@
 				}
 			}
 
+			.divider {
+				width: 0 !important;
+				transition: all 0.20s ease;
+			}
+
+			&:hover {
+				.divider {
+					width: 265px !important;
+				}
+
+				.btn {
+					background-color: map-get($colors, 'green');
+					color: map-get($colors, 'dark');
+				}
+
+				// h1 {
+				// 	text-decoration: underline;
+				// }
+			}
+
 			// @media (max-width: $md) {
 			// 	width: 100%;
 			// 	margin-top: 3rem;
@@ -442,7 +363,15 @@
 		position: relative;
 		z-index: 1;
 
+		&__title {
+			font-size: pxToRem(14);
+			font-weight: 500;
+			color: map-get($colors, 'green');
+			display: block;
+		}
+
 		.wrapper {
+			margin-top: 2rem;
 			width: max-content;
 			display: flex;
 			:global(svg) {
@@ -459,6 +388,7 @@
 			z-index: 1;
 			padding-top: 0 !important;
 			padding-bottom: 0 !important;
+
 			.wrapper {
 				display: flex;
 				flex-wrap: wrap;
@@ -487,7 +417,6 @@
 			width: 100%;
 
 			.card {
-				cursor: pointer;
 				border: none;
 				overflow: hidden;
 				padding: 0;
@@ -535,11 +464,18 @@
 						display: flex;
 						flex-direction: column;
 						justify-content: space-evenly;
+						a {
+							font-weight: bold;
+							&:hover {
+								font-weight: 900 !important;
+							}
+						}
 					}
 				}
 				.content h3 {
-					line-height: 100px;
 					margin: 0;
+					line-height: 100px;
+					font-weight: 600;
 				}
 
 				@media (hover: hover) {

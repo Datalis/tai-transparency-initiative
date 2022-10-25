@@ -2,7 +2,7 @@
 	import IntersectionObserver from './IntersectionObserver.svelte';
 </script>
 
-<section class="founders_section section">
+<section id="founders-exits" class="founders_section section">
 	<IntersectionObserver let:top>
 		<div class="wrapper">
 			<div class="container">
@@ -20,7 +20,7 @@
 						<p>
 							TAI members use our platform to regularly discuss how to handle exits, to encourage
 							good practice, and to manage the knock on effects for a field. We have been trying to
-							document learnings as in this blog. Are you planning a funding exit? Interested in how
+							document learnings as in this <a class="text_green font_regular" href="https://cep.org/heading-for-the-exit-5-considerations/">blog</a>. Are you planning a funding exit? Interested in how
 							other funder approaches? Donʼt hesitate to get in touch.
 						</p>
 					</div>
@@ -72,13 +72,12 @@
 	$lg: map-get($grid-breakpoints, 'lg');
 
 	.founders_section {
-		margin-top: -4px;
 		background: map-get($colors, 'light');
 		position: relative;
 		z-index: 0;
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
-		// min-height: 100vh;
+		min-height: 100vh;
 	}
 	.founders_section .wrapper {
 		// background: #59ebcf;
@@ -90,14 +89,6 @@
 		width: 100%;
 		// min-height: 100vh;
 		z-index: -1;
-
-		.join_img {
-			width: 75%;
-		}
-
-		&.pinned {
-			position: fixed;
-		}
 
 		@media (max-width: $lg) {
 			height: auto;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ResourceType } from "$lib/types/resources";
+	import type { ResourceType } from '$lib/types/resources';
 
 	export let currentFilter = 1;
 
@@ -15,6 +15,12 @@
 			</label>
 		</div>
 	{/each}
+	<div class="form_control form_control_radio">
+		<label>
+			<input type="radio" bind:group={currentFilter} name="filter" value={10} />
+			Library
+		</label>
+	</div>
 	<!-- <div class="form_control form_control_radio form_control_large">
 		<label>
 			<input type="radio" bind:group={currentFilter} name="filter" value={null} />

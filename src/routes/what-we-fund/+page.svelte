@@ -31,20 +31,15 @@
 	<section class="landing_section section bg_blue">
 		<div class="container">
 			<div class="landing_section__content">
-				<h1 class="text_green mb_4">What we fund</h1>
+				<h1 class="text_green mb_4">{hero?.title}</h1>
 				<span class="divider divider_2 divider_light" />
-				<p class="mt_4 font_light">
-					When TAI started in 2010, there was no established transparency and accountability field.
-					The number and capacity of organizations working on these issues has grown fast, many with
-					support from TAI members. Today, our members support a broad range of organizations at
-					global and local level that work at the intersection of rights and transparency,
-					participation, and accountability to advance more just, equal, inclusive, open, and green
-					societies.
-				</p>
+				<div class="mt_4 font_light">
+					{@html hero?.message}
+				</div>
 			</div>
 		</div>
 	</section>
-	<section class="funding_section section bg_light">
+	<section id="funding" class="funding_section section bg_light">
 		<div class="container">
 			<h2 class="text_dark">What does TAI Funding look like?</h2>
 			<span class="divider divider_2 divider_green my_4" />
@@ -184,7 +179,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="funding_data_section section bg_light">
+	<section id="funding-data-library" class="funding_data_section section bg_light">
 		<div class="container">
 			<div class="row">
 				<div class="show_on_md_and_down col col_12">
@@ -299,6 +294,7 @@
 
 			width: 90%;
 			min-height: 220px;
+			height: 100%;
 			position: relative;
 			border-radius: 15px;
 			padding-top: 0.5rem;

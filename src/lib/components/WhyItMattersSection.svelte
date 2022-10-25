@@ -6,7 +6,7 @@
 	$: resources = data?.resources || [];
 </script>
 
-<section class="why_matters_section section">
+<section id="why-it-matters" class="why_matters_section section">
 	<div class="container">
 		<h2 class="text_dark mt_0 mb_4">Why it matters</h2>
 		<span class="divider divider_2 divider_gray" />
