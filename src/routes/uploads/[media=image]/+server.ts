@@ -1,7 +1,7 @@
 import { API_SERVER } from "$env/static/private";
 import type { RequestHandler } from "@sveltejs/kit";
 import sharp from 'sharp';
-import { Blob } from 'buffer';
+import { Blob } from 'node:buffer';
 
 /**
  * Process images comming from strapi media library
