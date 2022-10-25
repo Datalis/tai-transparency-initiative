@@ -26,7 +26,7 @@
 					trigger: '._6Cs_section',
 					start: 'top bottom',
 					end: 'bottom -300%',
-					scrub: 0.5
+					scrub: 0.5,
 				},
 				y: '-5%'
 			});
@@ -48,7 +48,7 @@
 	});
 </script>
 
-<section class="_6Cs_section section bg_light">
+<section id="6cs" class="_6Cs_section section bg_light">
 	<div class="container">
 		<div class="_6Cs_wrapper">
 			<div class="_6Cs_section_title">

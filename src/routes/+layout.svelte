@@ -9,7 +9,8 @@
 	import { navigating } from '$app/stores';
 	import { gsap } from 'gsap/dist/gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	gsap.registerPlugin(ScrollTrigger);
+	import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
+	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 	NProgress.configure({
 		minimum: 0.16

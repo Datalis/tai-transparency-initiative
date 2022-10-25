@@ -1,14 +1,12 @@
 <script lang="ts">
-	import FeaturedImg from '$lib/assets/images/featured-1.jpg';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
-
 	import ChevronRightIcon from '$lib/assets/icons/chevron-right-thin.svg?component';
-
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 	import PastFundingSection from '$lib/components/PastFundingSection.svelte';
 	import Six6csSection from '$lib/components/Six6csSection.svelte';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import gsap from 'gsap/dist/gsap';
 
 	let windowWidth: number;
@@ -20,26 +18,34 @@
 	$: past_funding = data.past_funding;
 	$: six_data = data.six_cs;
 
-
 	onMount(() => {
-		gsap.timeline({
-			scrollTrigger: {
-				trigger: '.featured_section',
-				pin: true,
-				scrub: true,
-				start: 'top top',
-				end: '+=200%'
-			}
-		}).to('.featured_section .featured_section__content', {
-			yPercent: -5
-		}).to('.featured_section .featured_section__content .video_wrapper', {
-			xPercent: -65,
-			flexBasis: '100%',
-			// ease: 'none'
-		}).to('.featured_section .featured_section__content .video_wrapper img', {
-			height: '100%'
-		})
-	})
+		gsap
+			.timeline({
+				scrollTrigger: {
+					trigger: '.featured_section',
+					pin: true,
+					scrub: true,
+					start: 'top top',
+					end: '+=200%'
+				}
+			})
+			.to('.featured_section .featured_section__content', {
+				yPercent: -5
+			})
+			.to('.featured_section .featured_section__content .video_wrapper', {
+				xPercent: -65,
+				flexBasis: '100%'
+				// ease: 'none'
+			})
+			.to('.featured_section .featured_section__content .video_wrapper video', {
+				height: '100%'
+			});
+		if ($page.url.hash) {
+			gsap.timeline().to(window, {
+				scrollTo: $page.url.hash
+			});
+		}
+	});
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -57,7 +63,7 @@
 		</div>
 	</section>
 	<Six6csSection data={six_data} />
-	<section class="progress_model_section section bg_light">
+	<section id="progress-model" class="progress_model_section section bg_light">
 		<div class="container">
 			<h2 class="mt_0">Our Model for Field-Level Progress</h2>
 			<div class="divider divider_green divider_2" />
@@ -138,7 +144,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="featured_section section bg_blue_light">
+	<section id="featured-topics" class="featured_section section bg_blue_light">
 		<div class="container">
 			<div class="featured_section__content">
 				<div class="content_wrapper">
@@ -151,13 +157,22 @@
 					</p>
 				</div>
 				<div class="video_wrapper text_center">
-					<img src={FeaturedImg} class="w_100" alt="" />
+					<!-- <img src={FeaturedImg} class="w_100" alt="" /> -->
+					<video
+						src="https://api.tai.datalis.dev/uploads/climate_TAI_7c23ce0f47.webm"
+						preload="auto"
+						autoplay
+						muted
+						loop
+					>
+						<track kind="captions" />
+					</video>
 				</div>
 			</div>
 		</div>
 	</section>
 	<PastFundingSection data={past_funding} />
-	<section class="other_groups_section section bg_gray_light">
+	<section id="working-with-others" class="other_groups_section section bg_gray_light">
 		<div class="container">
 			<h2>Working with other groups</h2>
 			<div class="divider divider_white divider_2" />
@@ -276,7 +291,7 @@
 			display: flex;
 			justify-content: flex-start;
 			align-items: stretch;
-			transform: translate3d(0,0,0);
+			transform: translate3d(0, 0, 0);
 			flex: 1 0 auto;
 
 			.content_wrapper {
@@ -292,7 +307,7 @@
 			.video_wrapper {
 				display: flex;
 				flex-direction: column;
-				img {
+				video {
 					height: 90%;
 					margin: auto;
 					max-width: 100%;

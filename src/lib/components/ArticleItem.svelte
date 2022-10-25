@@ -42,6 +42,7 @@
 		}
 
 		&__image {
+			min-height: 200px;
 			background-color: map-get($colors, 'blue');
 			&--title {
 				display: flex;

@@ -5,10 +5,7 @@
 	import SearchIcon from '$lib/assets/icons/funding/4.svg?component';
 	import LightBulbIcon from '$lib/assets/icons/funding/5.svg?component';
 	import ChartIcon from '$lib/assets/icons/funding/6.svg?component';
-
 	import FundingImg from '$lib/assets/images/funding_data_library.webp';
-
-	import ArticleItem from '$lib/components/ArticleItem.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
@@ -19,12 +16,22 @@
 	import PathwaysSection from '$lib/components/PathwaysSection.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 	import WhyItMattersSection from '$lib/components/WhyItMattersSection.svelte';
+	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	import gsap from 'gsap/dist/gsap';
 
 	export let data: PageData;
 
 	$: hero = data?.hero;
 	$: resources = data?.resources;
 	$: whyItMatters = data?.WhyItMatters;
+
+
+	onMount(() => {
+		gsap.timeline().to(window, {
+			scrollTo: $page.url.hash || 0
+		});
+	})
 </script>
 
 <div id="what-we-fund" class="page">

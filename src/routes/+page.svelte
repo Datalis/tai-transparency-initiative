@@ -177,7 +177,7 @@
 								<img src={PlaceHolderImg} alt="" />
 							</div>
 							<div class="content">
-								<h3 class="text_dark">What we fund</h3>
+								<a href="/what-we-fund"><h3 class="text_dark">What we fund</h3></a>
 								<div class="divider divider_light divider_2" />
 								<div class="content__text">
 									<a href="/what-we-fund#funding" class="text_dark display_block">What does TPA funding look like?</a>
@@ -194,13 +194,14 @@
 								<img src={PlaceHolderImg} alt="" />
 							</div>
 							<div class="content">
-								<h3 class="text_dark">How we fund</h3>
+								<a href="/how-we-fund">
+									<h3 class="text_dark">How we fund</h3>
+								</a>
 								<div class="divider divider_light divider_2" />
 								<div class="content__text">
 									<a href="/how-we-fund#partner-support" class="text_dark display_block">Partner Support</a>
-									<a href="/how-we-fund" class="text_dark display_block">Funding Data Library</a>
-									<a href="/how-we-fund" class="text_dark display_block">Why it matters</a>
-									<a href="/how-we-fund" class="text_dark display_block">Pathways to change</a>
+									<a href="/how-we-fund#founders-exits" class="text_dark display_block">Funder exits</a>
+									<a href="/how-we-fund#participatory-strategy" class="text_dark display_block">Participatory Strategy</a>
 								</div>
 							</div>
 						</div>
@@ -211,13 +212,16 @@
 								<img src={PlaceHolderImg} alt="" />
 							</div>
 							<div class="content">
-								<h3 class="text_dark">How we work</h3>
+								<a href="/how-we-work">
+									<h3 class="text_dark">How we work</h3>
+								</a>
 								<div class="divider divider_light divider_2" />
 								<div class="content__text">
-									<strong class="text_dark mb_1">What does TPA funding look like?</strong>
-									<span class="text_dark display_block">Funding Data Library</span>
-									<span class="text_dark display_block">Why it matters</span>
-									<span class="text_dark display_block">Pathways to change</span>
+									<a href="/how-we-work#6cs" class="text_dark display_block">Our 6Cs of funder support</a>
+									<a href="/how-we-work#progress-model" class="text_dark display_block">Our Model for Field-Level Progress</a>
+									<a href="/how-we-work#featured-topics" class="text_dark display_block">Featured topics</a>
+									<a href="/how-we-work#past-funding" class="text_dark display_block">Past Funding Explorations</a>
+									<a href="/how-we-work#working-with-others" class="text_dark display_block">Working with other groups</a>
 								</div>
 							</div>
 						</div>

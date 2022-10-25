@@ -6,7 +6,7 @@
 	$: items = data?.PastFundingItem || [];
 </script>
 
-<section class="past_funding_section section">
+<section id="past-funding" class="past_funding_section section">
 	<div class="container">
 		<h2>{data?.title}</h2>
 		<div class="divider divider_white divider_2" />
@@ -16,15 +16,6 @@
 					<ArticleItem data={item} />
 				</div>
 			{/each}
-			<!-- <div class="col col_4 col_md_12">
-				<ArticleItem />
-			</div>
-			<div class="col col_4 col_md_12">
-				<ArticleItem />
-			</div>
-			<div class="col col_4 col_md_12">
-				<ArticleItem />
-			</div> -->
 		</div>
 	</div>
 </section>
@@ -32,5 +23,6 @@
 <style lang="scss">
 .past_funding_section {
 	background-color: #f2f4f7;
+	min-height: 100vh;
 }
 </style>

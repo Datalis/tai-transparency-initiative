@@ -10,6 +10,7 @@
 
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import FoundersExitsSection from '$lib/components/FoundersExitsSection.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 
@@ -42,9 +43,6 @@
 			.to('.partners_section .partners_section__slide', {
 				x: toScroll
 			});
-		// .to('.partners_section .partners_section__slide--decor', {
-		// 	x: toScroll,
-		// });
 
 		gsap
 			.timeline({
@@ -67,6 +65,10 @@
 			.to('.participatory_section .participatory_section__content .video_wrapper video', {
 				height: '100%'
 			});
+
+		gsap.timeline().to(window, {
+			scrollTo: $page.url.hash || 0
+		});
 	});
 </script>
 
@@ -155,9 +157,10 @@
 						<video
 							autoplay
 							muted
+							loop
 							class="w_100"
 							src="https://api.tai.datalis.dev/uploads/participatory_strategy_d1cb234e94.webm"
-							preload="metadata"
+							preload="auto"
 						>
 							<track kind="captions" />
 						</video>
