@@ -265,7 +265,6 @@
 	$md: map-get($grid-breakpoints, 'md');
 
 	.landing_section {
-		height: 70vh;
 		z-index: 1;
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
@@ -278,7 +277,7 @@
 		:global {
 			img {
 				object-fit: cover;
-				height: 100%;
+				height: 500px;
 			}
 		}
 	}
