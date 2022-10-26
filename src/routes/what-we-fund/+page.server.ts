@@ -6,7 +6,12 @@ export const load: PageServerLoad = async () => {
 	const params = {
 		populate: {
 			hero: {
-				fields: ['title', 'message']
+				fields: ['title', 'message'],
+				populate: {
+					image: {
+						populate: "*"
+					}
+				}
 			},
 			resources: {
 				fields: ['title'],

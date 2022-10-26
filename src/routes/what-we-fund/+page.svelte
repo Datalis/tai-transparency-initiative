@@ -19,6 +19,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import gsap from 'gsap/dist/gsap';
+	import Image from '$lib/components/Image.svelte';
 
 	export let data: PageData;
 
@@ -26,22 +27,28 @@
 	$: resources = data?.resources;
 	$: whyItMatters = data?.WhyItMatters;
 
-
 	onMount(() => {
 		gsap.timeline().to(window, {
 			scrollTo: $page.url.hash || 0
 		});
-	})
+	});
 </script>
 
 <div id="what-we-fund" class="page">
 	<section class="landing_section section bg_blue">
 		<div class="container">
-			<div class="landing_section__content">
-				<h1 class="text_green mb_4">{hero?.title}</h1>
-				<span class="divider divider_2 divider_light" />
-				<div class="mt_4 font_light">
-					{@html hero?.message}
+			<div class="row">
+				<div class="col col_5">
+					<div class="display_flex flex_column justify_end h_100">
+						<h1 class="text_green mb_4">{hero?.title}</h1>
+						<span class="divider divider_2 divider_light" />
+						<div class="mt_4 mb_2 font_light">
+							{@html hero?.message}
+						</div>
+					</div>
+				</div>
+				<div class="col col_7 h_100">
+					<Image size="medium" image={hero?.image}></Image>
 				</div>
 			</div>
 		</div>
@@ -79,7 +86,8 @@
 							<CogsIcon class="cogs_icon" />
 						</span>
 						<p>
-							<strong>INVESTIGATIVE JOURNALISTS</strong> uncovering dodgy deals that favor the politically connected.
+							<strong>INVESTIGATIVE JOURNALISTS</strong> uncovering dodgy deals that favor the politically
+							connected.
 						</p>
 					</div>
 				</div>
@@ -89,7 +97,8 @@
 							<SearchIcon class="search_icon" />
 						</span>
 						<p>
-							<strong>RESEARCHERS</strong> proving the value of inclusive participatory processes in shaping government policy.
+							<strong>RESEARCHERS</strong> proving the value of inclusive participatory processes in
+							shaping government policy.
 						</p>
 					</div>
 				</div>
@@ -99,7 +108,8 @@
 							<LightBulbIcon class="light_bulb_icon" />
 						</span>
 						<p>
-							<strong>TECHNOLOGISTS</strong> guiding civil society groups to use data from multiple sources to back up their policy asks.
+							<strong>TECHNOLOGISTS</strong> guiding civil society groups to use data from multiple sources
+							to back up their policy asks.
 						</p>
 					</div>
 				</div>
@@ -109,7 +119,8 @@
 							<ChartIcon class="chart_icon" />
 						</span>
 						<p>
-							<strong>THINK TANKS</strong> pinpointing government revenues lost due to loopholes in international tax agreements.
+							<strong>THINK TANKS</strong> pinpointing government revenues lost due to loopholes in international
+							tax agreements.
 						</p>
 					</div>
 				</div>
@@ -231,13 +242,20 @@
 	$md: map-get($grid-breakpoints, 'md');
 
 	.landing_section {
-		// min-height: 100vh;
-		&__content {
-			width: 42vw;
+		height: 70vh;
+		z-index: 1;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
 
-			@media (max-width: $md) {
-				width: 100%;
-				margin-top: 30vh;
+		.col {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		:global {
+			img {
+				object-fit: cover;
+				height: 100%;
 			}
 		}
 	}

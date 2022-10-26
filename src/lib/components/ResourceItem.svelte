@@ -7,10 +7,10 @@
 
 <a href="/resources/{data?.id}" class="resource_item resource_item_{data?.type?.id}">
 	<div class="resource_item__image">
-		<Image image={data?.image} size="thumbnail" />
+		<Image image={data?.image} size="small" />
 	</div>
 	<small class="resource_item__type text_gray text_uppercase mt_2 font_regular">{data?.type?.label || '-'}</small>
-	<h6 class="resource_item__title font_bold mb_3 mt_2 text_dark">Strengthening Pandemic Governance</h6>
+	<h6 class="resource_item__title font_bold mb_3 mt_2 text_dark">{data?.title}</h6>
 	<div class="divider divider_2 divider_gray" />
 	<p class="resource_item__summary text_dark">
 		{data?.summary}
