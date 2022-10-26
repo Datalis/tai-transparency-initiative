@@ -48,6 +48,7 @@
 <style lang="scss">
 	.landing_section {
 		min-height: unset !important;
+		padding-top: 100px !important;
 	}
 	.faq_list_section {
 		min-height: unset !important;

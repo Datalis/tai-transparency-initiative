@@ -190,21 +190,23 @@
 
 	.landing_section {
 		z-index: 1;
-		padding-top: 0 !important;
-		padding-bottom: 0 !important;
+		padding-top: 100px !important;
+		min-height: 100vh;
+		background-image: url(/src/lib/assets/images/hero.webp);
 
-		.row {
-			align-items: flex-end;
-		}
+		.container,
 		.col {
 			margin-top: 0;
 			margin-bottom: 0;
 		}
-
+		
 		:global {
 			img {
-				object-fit: scale-down;
-				height: 500px;
+				background-color: transparent;
+				object-fit: contain;
+				height: 100%;
+				max-height: calc(100vh - 100px - 3rem);
+				width: 100%;
 			}
 		}
 	}
@@ -278,7 +280,7 @@
 	}
 
 	.participatory_section {
-		background: #e4e8ef;
+		background: #F2F4F7;
 		min-height: 105vh;
 		display: flex !important;
 		flex-direction: column;
@@ -300,6 +302,9 @@
 
 			.content_wrapper {
 				padding-right: 4rem;
+				p {
+					max-width: 70%;
+				}
 			}
 
 			.content_wrapper,

@@ -167,12 +167,12 @@
 	$xl: map-get($grid-breakpoints, 'xl');
 
 	.landing_section {
-		min-height: calc(100vh - 82px);
+		min-height: 100vh;
 		display: flex !important;
 		flex-direction: column;
 		justify-content: flex-end;
 		z-index: 1;
-		padding-top: 0 !important;
+		padding-top: 120px !important;
 		padding-bottom: 2rem !important;
 
 		.container {

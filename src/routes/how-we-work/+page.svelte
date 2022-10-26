@@ -70,7 +70,7 @@
 				
 			</div> -->
 			<div class="row">
-				<div class="col col_5 h_100">
+				<div class="col col_5">
 					<div class="display_flex flex_column h_100 justify_end">
 						<h1 class="text_green mb_4">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light" />
@@ -79,7 +79,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col col_7 h_100">
+				<div class="col col_7">
 					<Image size="medium" image={hero?.image} />
 				</div>
 			</div>
@@ -266,18 +266,23 @@
 
 	.landing_section {
 		z-index: 1;
-		padding-top: 0 !important;
-		padding-bottom: 0 !important;
+		padding-top: 100px !important;
+		min-height: 100vh;
+		background-image: url(/src/lib/assets/images/hero.webp);
 
+		.container,
 		.col {
 			margin-top: 0;
 			margin-bottom: 0;
 		}
-
+		
 		:global {
 			img {
-				object-fit: cover;
-				height: 500px;
+				background-color: transparent;
+				object-fit: contain;
+				height: 100%;
+				max-height: calc(100vh - 100px - 3rem);
+				width: 100%;
 			}
 		}
 	}

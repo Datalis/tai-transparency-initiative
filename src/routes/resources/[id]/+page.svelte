@@ -121,7 +121,7 @@
 
 	.heading_section {
 		min-height: unset !important;
-		// height: 70vh
+		padding-top: 100px !important;
 	}
 	.heading_section a {
 		text-decoration: underline;

@@ -15,17 +15,6 @@
 			</label>
 		</div>
 	{/each}
-	<div class="form_control form_control_radio">
-		<label>
-			<input type="radio" bind:group={currentFilter} name="filter" value={10} />
-			Library
-		</label>
-	</div>
-	<!-- <div class="form_control form_control_radio form_control_large">
-		<label>
-			<input type="radio" bind:group={currentFilter} name="filter" value={null} />
-		</label>
-	</div> -->
 </div>
 
 <style lang="scss" scoped>
@@ -34,5 +23,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		label {
+			font-size: pxToRem(12);
+		}
 	}
 </style>

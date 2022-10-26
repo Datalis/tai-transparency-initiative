@@ -35,7 +35,7 @@
 </script>
 
 <div id="resources" class="page">
-	<div class="bg_blue pt_3 pb_2">
+	<div class="resource_filters bg_blue pb_2">
 		<div class="container">
 			<ResourceFilters options={types} bind:currentFilter={typeParam}  />
 		</div>
@@ -73,6 +73,9 @@
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
+	.resource_filters {
+		padding-top: 100px;
+	}
 	.resource_list_section {
 		.divider {
 			width: 100% !important;

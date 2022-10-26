@@ -111,11 +111,11 @@
 		._6Cs_section_slide {
 			width: max-content;
 			display: flex;
-			flex-grow: 1;
+			// flex-grow: 1;
 			align-items: flex-start;
 			padding-top: 1rem;
 			padding-left: 3rem;
-			background: url(/src/lib/assets/images/decor1.svg);
+			background: url(/src/lib/assets/images/purple_line.svg);
 			background-repeat: no-repeat;
 			background-size: 110% auto;
 			background-position: center;

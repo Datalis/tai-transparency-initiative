@@ -165,12 +165,14 @@
 	$sm: map-get($grid-breakpoints, 'sm');
 
 	.header {
-		background-color: $blue;
-		position: relative;
+		// background-color: $blue;
+		position: absolute;
 		z-index: 14;
+		max-height: 100px;
+		width: 100%;
 	}
 	.header .navbar {
-		background-color: $blue;
+		// background-color: $blue;
 		width: 100%;
 		display: inline-flex;
 		padding: 1rem 0rem;
