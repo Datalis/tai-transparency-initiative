@@ -2,9 +2,9 @@
 	import WorldImg from '$lib/assets/images/home/group_3.webp';
 	import LogoIcon from '$lib/assets/images/logo_icon.svg?component';
 
-	import EnvisionImg1 from '$lib/assets/images/envision_1.png';
-	import EnvisionImg2 from '$lib/assets/images/envision_2.png';
-	import EnvisionImg3 from '$lib/assets/images/envision_3.png';
+	import EnvisionImg1 from '$lib/assets/images/envision_1.webp';
+	import EnvisionImg2 from '$lib/assets/images/envision_2.webp';
+	import EnvisionImg3 from '$lib/assets/images/envision_3.webp';
 	import MemberItem from '$lib/components/MemberItem.svelte';
 	import JoinSection from '$lib/components/JoinSection.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
