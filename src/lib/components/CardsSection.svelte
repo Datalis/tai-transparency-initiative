@@ -193,6 +193,7 @@
 					display: flex;
 					flex-direction: column;
 					.divider {
+						flex-shrink: 0 !important;
 						width: 0 !important;
 						transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 					}
@@ -204,16 +205,17 @@
 						flex-direction: column;
 						justify-content: space-evenly;
 						a {
-							font-weight: bold;
+							font-weight: 400;
+							font-size: pxToRem(12);
 							&:hover {
-								font-weight: 900 !important;
+								font-weight: 600 !important;
 							}
 						}
 					}
 				}
 				.content h3 {
 					margin: 0;
-					line-height: 100px;
+					line-height: 80px;
 					font-weight: 600;
 				}
 

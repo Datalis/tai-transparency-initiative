@@ -24,7 +24,18 @@ export const load: PageServerLoad = async ({ url }) => {
 			pagination: {
 				page,
 			},
-			populate: "*"
+			fields: ['id', 'summary', 'title', 'date', 'url'],
+			populate: {
+				image: {
+					populate: '*'
+				},
+				type: {
+					fields: ['id', 'label']
+				},
+				author: {
+					fields: ['name', 'role']
+				}
+			},
 		};
 
 		const resources: Response<Resource[]> = await get('wc-resources', params);
