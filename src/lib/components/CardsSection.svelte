@@ -1,9 +1,8 @@
 <script lang="ts">
-	import CardBg from '$lib/assets/images/home/cards/fondo.png';
-
-	import Card1Img from '$lib/assets/images/home/cards/1.png';
-	import Card2Img from '$lib/assets/images/home/cards/2.png';
-	import Card3Img from '$lib/assets/images/home/cards/3.png';
+	import CardBg from '$lib/assets/images/home/cards/fondo.webp';
+	import Card1Img from '$lib/assets/images/home/cards/1.webp';
+	import Card2Img from '$lib/assets/images/home/cards/2.webp';
+	import Card3Img from '$lib/assets/images/home/cards/3.webp';
 
 
 	import { onMount } from 'svelte';

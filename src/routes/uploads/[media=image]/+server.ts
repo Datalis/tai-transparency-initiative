@@ -11,10 +11,10 @@ export const GET: RequestHandler = async ({params}) => {
 	const response = await fetch(`${API_SERVER}/uploads/${image}`, {
 		method: 'GET',
 	})
-	const file = await response.arrayBuffer()
-	const buffer = Buffer.from(file);
-	const output = await sharp(buffer).webp({lossless: true}).toBuffer()
-	const blob = new Blob([output]);
+	const file = await response.blob();
+	// const buffer = Buffer.from(file);
+	// const output = await sharp(buffer).webp({lossless: true}).toBuffer()
+	// const blob = new Blob([output]);
 	//@ts-ignore
-	return new Response(blob);
+	return new Response(file);
 }
