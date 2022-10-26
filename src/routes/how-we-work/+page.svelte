@@ -40,11 +40,9 @@
 			.to('.featured_section .featured_section__content .video_wrapper video', {
 				height: '100%'
 			});
-		if ($page.url.hash) {
-			gsap.timeline().to(window, {
-				scrollTo: $page.url.hash
-			});
-		}
+		gsap.timeline().to(window, {
+			scrollTo: $page.url.hash || 0
+		});
 	});
 </script>
 

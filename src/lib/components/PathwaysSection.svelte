@@ -272,7 +272,14 @@
 						<text id="g1-text" class="cls-14" transform="translate(103.07 82.47)">1</text>
 					</g>
 
-					<g id="g2" class="pathways-cog">
+					<g
+						id="g2"
+						class="pathways-cog"
+						class:active={activeCog == 2}
+						on:click={() => toggleCog(2)}
+						use:clickOutside
+						on:click_outside={() => (activeCog = -1)}
+					>
 						<path
 							class="cls-13"
 							d="M115.37,133.84l-.48,3-1.68.34a9.08,9.08,0,0,1-1.22,2l.42,1.68-2.48,1.81-1.43-.94a8.53,8.53,0,0,1-2.28.55l-.89,1.49-3-.48-.34-1.67a8.75,8.75,0,0,1-2-1.23l-1.7.4-1.76-2.42.91-1.47a8.17,8.17,0,0,1-.55-2.28l-1.48-.92.46-3,1.68-.39a8.75,8.75,0,0,1,1.23-2l-.4-1.7,2.42-1.76,1.47.91a8.53,8.53,0,0,1,2.28-.55l.92-1.48,3,.46.4,1.69a8.38,8.38,0,0,1,2,1.22l1.68-.42,1.82,2.48-1,1.43a8.93,8.93,0,0,1,.55,2.28Z"
@@ -360,8 +367,43 @@
 						</g>
 					</g>
 				</g>
-			</g>
-		</svg>
+
+				<g id="tooltip2" class="pathways-tooltip" class:active={activeCog == 2}>
+					<rect x="105.07" y="55.47" width="200" height="100" rx="5" />
+					<foreignObject x="105.07" y="55.47" width="200" height="100">
+						<p
+							style="
+								color: #051231; 
+								font-size: 7.5px;
+								position: absolute;
+								top: 0;
+								bottom: 0;
+								line-height: 1.4;
+								letter-spacing: 0.1px;
+								margin: auto;
+								padding: 12px 15px;
+								font-weight: 500;
+								height: 100px;"
+						>
+							How do governments officials directly use information or data that is produced by
+							(inter)national without going through any other accountability actors. (ex: ministries
+							making data open/available and instating a FOI mechanism directly as result of the
+							Open Government Partnership?).
+						</p>
+					</foreignObject>
+					<g
+						class="cog"
+						on:click={() => toggleCog(2)}
+					>
+						<path
+							class="cls-13"
+							d="M115.37,133.84l-.48,3-1.68.34a9.08,9.08,0,0,1-1.22,2l.42,1.68-2.48,1.81-1.43-.94a8.53,8.53,0,0,1-2.28.55l-.89,1.49-3-.48-.34-1.67a8.75,8.75,0,0,1-2-1.23l-1.7.4-1.76-2.42.91-1.47a8.17,8.17,0,0,1-.55-2.28l-1.48-.92.46-3,1.68-.39a8.75,8.75,0,0,1,1.23-2l-.4-1.7,2.42-1.76,1.47.91a8.53,8.53,0,0,1,2.28-.55l.92-1.48,3,.46.4,1.69a8.38,8.38,0,0,1,2,1.22l1.68-.42,1.82,2.48-1,1.43a8.93,8.93,0,0,1,.55,2.28Z"
+						/>
+						<text class="cls-14" transform="translate(103.24 136.47)">2</text>
+					</g>
+				</g>
+			</g></svg
+		>
 		<slot name="e" />
 	</div>
 </section>
