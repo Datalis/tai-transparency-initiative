@@ -34,6 +34,10 @@
 	});
 </script>
 
+<svelte:head>
+	<link rel="preconnect" href={hero?.image} />
+</svelte:head>
+
 <div id="what-we-fund" class="page">
 	<section class="landing_section section bg_blue">
 		<div class="container">

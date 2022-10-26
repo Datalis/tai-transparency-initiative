@@ -75,6 +75,10 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
+<svelte:head>
+	<link rel="preconnect" href={hero?.image} />
+</svelte:head>
+
 <div id="how-we-fund" class="page">
 	<section class="landing_section section bg_blue">
 		<div class="container h-100">
@@ -316,7 +320,7 @@
 		}
 
 		@media (max-width: $md) {
-			button {
+			.btn {
 				width: 100%;
 			}
 		}

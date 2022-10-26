@@ -27,6 +27,10 @@
 	});
 </script>
 
+<svelte:head>
+	
+</svelte:head>
+
 <svelte:window bind:innerWidth={windowWidth} />
 
 <section class="cards_section section bg_blue">
@@ -35,10 +39,10 @@
 			<div class="row">
 				<div class="col col_4 col_lg_12">
 					<div class="card" id="card-1">
-						<div class="overlay">
+						<a class="overlay" href="/what-we-fund">
 							<img src={CardBg} alt="" />
 							<img class="overlay__img" src={Card1Img} alt="" />
-						</div>
+						</a>
 						<div class="content">
 							<a href="/what-we-fund"><h3 class="text_dark">What we fund</h3></a>
 							<div class="divider divider_light divider_2" />
@@ -61,10 +65,10 @@
 				</div>
 				<div class="col col_4 col_lg_12">
 					<div class="card" id="card-2">
-						<div class="overlay">
+						<a class="overlay" href="/how-we-fund">
 							<img src={CardBg} alt="" />
 							<img class="overlay__img" src={Card2Img} alt="" />
-						</div>
+						</a>
 						<div class="content">
 							<a href="/how-we-fund">
 								<h3 class="text_dark">How we fund</h3>
@@ -86,11 +90,10 @@
 				</div>
 				<div class="col col_4 col_lg_12">
 					<div class="card" id="card-3">
-						<div class="overlay">
+						<a class="overlay" href="/how-we-work">
 							<img src={CardBg} alt="" />
 							<img class="overlay__img" src={Card3Img} alt="" />
-							
-						</div>
+						</a>
 						<div class="content">
 							<a href="/how-we-work">
 								<h3 class="text_dark">How we work</h3>
@@ -163,6 +166,7 @@
 				}
 
 				.overlay {
+					display: block;
 					transform-origin: center;
 					height: calc(100% - 100px);
 					border-bottom-left-radius: 15px;
