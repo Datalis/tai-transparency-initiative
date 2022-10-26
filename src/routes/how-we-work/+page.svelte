@@ -1,4 +1,13 @@
 <script lang="ts">
+	import MacArthurLogo from '$lib/assets/icons/mac-arthur.svg?component';
+	import FordLogo from '$lib/assets/icons/ford.svg?component';
+	import HewlettLogo from '$lib/assets/icons/hewlett.svg?component';
+	import LuminateLogo from '$lib/assets/icons/luminate.svg?component';
+	import OpenSocietyLogo from '$lib/assets/icons/open-s.svg?component';
+	import SkollLogo from '$lib/assets/icons/skoll.svg?component';
+	import ChandlerLogo from '$lib/assets/images/chandler.svg?component';
+	import FCDOLogo from '$lib/assets/images/fcdo.svg?component';
+
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 	import ChevronRightIcon from '$lib/assets/icons/chevron-right-thin.svg?component';
@@ -8,6 +17,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import gsap from 'gsap/dist/gsap';
+	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 
 	let windowWidth: number;
 
@@ -170,24 +180,63 @@
 		</div>
 	</section>
 	<PastFundingSection data={past_funding} />
-	<section id="working-with-others" class="other_groups_section section bg_gray_light">
-		<div class="container">
-			<h2>Working with other groups</h2>
-			<div class="divider divider_white divider_2" />
-			<p class="mt_5">
-				Transparency, participation and accountability are essential to deliver positive societal
-				outcomes, be that a stellar education service, effective regulation of new technologies or
-				accessible, affordable renewable energy. Our work is intersectional in its nature and it is
-				important we work with those championing change on related issues. That includes partnering
-				with other funder networks.
-			</p>
-			<p class="">
-				The good news is that there is a growing list of progressive funder groups to connect with.
-				TAI is in regular dialogue with other groups – sharing learnings, exploring overlapping
-				interests across our memberships and promoting responsible funder practices. We are hugely
-				grateful for the insights and advice of those running peer networks.
-			</p>
-		</div>
+	<section id="working-with-others" class="other_groups_section section bg_gray">
+		<IntersectionObserver let:top>
+			<div class="wrapper" class:pinned={top > 0}>
+				<div class="brands_container">
+					<div class="brands_container__left bg_gray_light" />
+					<div class="brands_container__right">
+						<div class="wrapper">
+							<div class="marquee">
+								<div class="marquee_item">
+									<MacArthurLogo width="300" />
+									<FordLogo width="300" />
+									<HewlettLogo width="300" />
+									<LuminateLogo width="300" />
+									<OpenSocietyLogo width="300" />
+									<SkollLogo width="200" />
+									<FCDOLogo width="300" />
+									<ChandlerLogo width="300" />
+								</div>
+								<div class="marquee_item">
+									<MacArthurLogo width="300" />
+									<FordLogo width="300" />
+									<HewlettLogo width="300" />
+									<LuminateLogo width="300" />
+									<OpenSocietyLogo width="300" />
+									<SkollLogo width="200" />
+									<FCDOLogo width="300" />
+									<ChandlerLogo width="300" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col col_6">
+							<h2>Working with other groups</h2>
+							<div class="divider divider_white divider_2" />
+							<p class="mt_4">
+								Transparency, participation and accountability are essential to deliver positive
+								societal outcomes, be that a stellar education service, effective regulation of new
+								technologies or accessible, affordable renewable energy. Our work is intersectional
+								in its nature and it is important we work with those championing change on related
+								issues. That includes partnering with other funder networks.
+							</p>
+							<p class="">
+								The good news is that there is a growing list of progressive funder groups to
+								connect with. TAI is in regular dialogue with other groups – sharing learnings,
+								exploring overlapping interests across our memberships and promoting responsible
+								funder practices. We are hugely grateful for the insights and advice of those
+								running peer networks.
+							</p>
+						</div>
+						<div class="col col_6" />
+					</div>
+				</div>
+			</div>
+		</IntersectionObserver>
 	</section>
 	<ResourcesSection data={resources} />
 	<SubscribeSection />
@@ -201,6 +250,7 @@
 	$md: map-get($grid-breakpoints, 'md');
 
 	.landing_section {
+		z-index: 1;
 		&__content {
 			width: 42vw;
 			@media (max-width: $md) {
@@ -213,6 +263,7 @@
 	.progress_model_section {
 		margin-top: -2px;
 		min-height: 100vh !important;
+		z-index: 1;
 
 		@media (max-width: $md) {
 			button {
@@ -277,6 +328,7 @@
 		display: flex !important;
 		flex-direction: column;
 		justify-content: center;
+		z-index: 1;
 
 		.container {
 			flex: 1 0 auto;
@@ -315,12 +367,77 @@
 			}
 		}
 	}
+
 	.other_groups_section {
 		min-height: 100vh;
-		p {
-			width: 75vw;
-			@media (max-width: $md) {
-				width: 100%;
+		z-index: 0 !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		.brands_container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			&__left {
+				width: 55%;
+			}
+			&__right {
+				width: 45%;
+				overflow: hidden;
+
+				.wrapper {
+					transform: rotate(-45deg);
+				}
+
+				.marquee {
+					display: flex;
+					flex-direction: column;
+				}
+
+				@keyframes marquee {
+					0% {
+						transform: translateY(0);
+					}
+					100% {
+						transform: translateY(calc(300px * -4));
+					}
+				}
+
+				.marquee_item {
+					will-change: transform;
+					animation: marquee 15s linear infinite;
+					flex-shrink: 1;
+					display: grid;
+					grid-template-columns: repeat(2, 300px);
+					grid-template-rows: repeat(2, 300px);
+					height: calc(300px * 4) !important;
+					justify-content: center;
+					align-items: center;
+
+					:global {
+						svg {
+							transform: rotate(45deg);
+							display: block;
+						}
+					}
+				}
+			}
+		}
+		.wrapper {
+			min-height: 100vh;
+			height: 100%;
+			position: relative;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -2 !important;
+			&.pinned {
+				position: fixed;
+				z-index: -1 !important;
 			}
 		}
 	}

@@ -24,5 +24,6 @@
 .past_funding_section {
 	background-color: #f2f4f7;
 	min-height: 100vh;
+	z-index: 1;
 }
 </style>

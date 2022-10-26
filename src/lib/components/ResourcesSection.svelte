@@ -17,15 +17,6 @@
 					<ResourceItem data={resItem} />
 				</div>
 			{/each}
-			<!-- <div class="col col_4 col_md_6 col_sm_12">
-				<ResourceItem />
-			</div>
-			<div class="col col_4 col_md_6 col_sm_12">
-				<ResourceItem />
-			</div>
-			<div class="col col_4 col_md_12 col_sm_12">
-				<ResourceItem />
-			</div> -->
 		</div>
 	</div>
 </section>

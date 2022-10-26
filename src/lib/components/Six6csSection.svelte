@@ -83,6 +83,7 @@
 		position: relative;
 		// height: 100vh;
 		min-height: 100vh !important;
+		z-index: 1;
 		> .container {
 			// height: 70% !important;
 			display: flex;
