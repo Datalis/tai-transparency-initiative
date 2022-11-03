@@ -5,12 +5,20 @@
 
 	export let size: 'thumbnail' | 'small' | 'medium' | 'large';
 
+	export let priority: boolean = false;
+
 	$: img = size && image?.formats ? image.formats[size] : image;
 </script>
 
+<svelte:head>
+	{#if priority}
+		<link rel="preconnect" href={img?.url} />
+	{/if}
+</svelte:head>
+
 <img
-	loading="lazy"
-	decoding="async"
+	loading={ priority ? 'eager' : 'lazy' }
+	decoding={ priority ? 'sync' : 'async' }
 	name={img?.name}
 	alt={img?.alternativeText}
 	width={img?.width}

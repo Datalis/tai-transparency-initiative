@@ -34,10 +34,6 @@
 	});
 </script>
 
-<svelte:head>
-	<link rel="preconnect" href={hero?.image} />
-</svelte:head>
-
 <div id="what-we-fund" class="page">
 	<section class="landing_section section bg_blue">
 		<div class="container">
@@ -52,7 +48,7 @@
 					</div>
 				</div>
 				<div class="col col_7 h_100">
-					<Image size="medium" image={hero?.image}></Image>
+					<Image size="medium" image={hero?.image} priority></Image>
 				</div>
 			</div>
 		</div>
@@ -248,9 +244,15 @@
 	.landing_section {
 		z-index: 1;
 		padding-top: 100px !important;
-		min-height: 100vh;
+		height: 80vh;
 		background-image: url(/src/lib/assets/images/hero.webp);
 		background-size: cover;
+		display: flex !important;
+		flex-direction: column !important;
+
+		.container {
+			margin-top: auto !important;
+		}
 
 		.container,
 		.col {
@@ -263,7 +265,7 @@
 				background-color: transparent;
 				object-fit: contain;
 				height: 100%;
-				max-height: calc(100vh - 100px - 3rem);
+				// max-height: calc(100vh - 100px - 3rem);
 				width: 100%;
 			}
 		}
