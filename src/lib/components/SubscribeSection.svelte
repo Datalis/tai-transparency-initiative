@@ -38,6 +38,11 @@
 			padding-top: pxToRem(50);
 			padding-bottom: pxToRem(50);
 
+			@media screen and (max-width: $md) {
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+
 			h2 {
 				margin-top: 0;
 			}

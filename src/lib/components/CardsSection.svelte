@@ -149,6 +149,10 @@
 			height: 100%;
 			max-height: 75vh;
 
+			@media screen and (max-width: $md) {
+				max-height: unset;
+			}
+
 			.card {
 				border: none;
 				overflow: hidden;

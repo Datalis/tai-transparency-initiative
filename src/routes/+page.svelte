@@ -94,7 +94,7 @@
 	<section class="landing_section section bg_blue">
 		<div class="container">
 			<div class="row">
-				<div class="col col_12 show_on_md_and_down">
+				<div class="landing_section__hero--wrapper col col_12 show_on_md_and_down">
 					<div class="landing_section__hero landing_section__hero--mobile">
 						<img class="parallax" data-depth="0.15" src={HeroImgLayer0} alt="" />
 						<img class="parallax" data-depth="-0.15" src={HeroImgLayer2} alt="" />
@@ -197,6 +197,10 @@
 		&__hero {
 			position: relative;
 			height: 100%;
+
+			&--wrapper {
+				padding-top: 122px;
+			}
 
 			&--mobile {
 				min-height: 60vh;
