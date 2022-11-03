@@ -3,8 +3,9 @@
 	import HeroImgLayer1 from '$lib/assets/images/home/group_1.webp';
 	import HeroImgLayer1Mobile from '$lib/assets/images/home/group_1_sm.webp';
 	import HeroImgLayer2 from '$lib/assets/images/home/group_2.webp';
+	import HeroImgLayer2Mobile from '$lib/assets/images/home/group_2_sm.webp';
 
-	import PlaceHolderImg from '$lib/assets/images/placeholder.png';
+
 	import MacArthurLogo from '$lib/assets/icons/mac-arthur.svg?component';
 	import FordLogo from '$lib/assets/icons/ford.svg?component';
 	import HewlettLogo from '$lib/assets/icons/hewlett.svg?component';
@@ -27,6 +28,7 @@
 	let windowWidth: number;
 
 	$: hero1_img = windowWidth > 768 ? HeroImgLayer1 : HeroImgLayer1Mobile;
+	$: hero2_img = windowWidth > 768 ? HeroImgLayer2 : HeroImgLayer2Mobile;
 
 	export let data: PageData;
 	export let form: ActionData;
@@ -85,7 +87,7 @@
 <svelte:head>
 	<link rel="preconnect" href={HeroImgLayer0} />
 	<link rel="preconnect" href={hero1_img} />
-	<link rel="preconnect" href={HeroImgLayer2} />
+	<link rel="preconnect" href={hero2_img} />
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -97,7 +99,7 @@
 				<div class="landing_section__hero--wrapper col col_12 show_on_md_and_down">
 					<div class="landing_section__hero landing_section__hero--mobile">
 						<img class="parallax" data-depth="0.15" src={HeroImgLayer0} alt="" />
-						<img class="parallax" data-depth="-0.15" src={HeroImgLayer2} alt="" />
+						<img class="parallax" data-depth="-0.15" src={hero2_img} alt="" />
 						<img class="parallax" data-depth="0.10" src={hero1_img} alt="" />
 					</div>
 				</div>
@@ -116,7 +118,7 @@
 				<div class="col col_7 hide_on_md_and_down">
 					<div class="landing_section__hero">
 						<img class="parallax" data-depth="0.15" src={HeroImgLayer0} alt="" />
-						<img class="parallax" data-depth="0.20" src={HeroImgLayer2} alt="" />
+						<img class="parallax" data-depth="0.20" src={hero2_img} alt="" />
 						<img class="parallax" data-depth="-0.15" src={hero1_img} alt="" />
 					</div>
 				</div>
@@ -198,18 +200,23 @@
 			position: relative;
 			height: 100%;
 
-			&--wrapper {
-				padding-top: 122px;
-			}
+			// &--wrapper {
+			// 	// padding-top: 180px;
+			// }
 
 			&--mobile {
-				min-height: 60vh;
+				margin-top: 80px;
+				min-height: 50vh;
 			}
 
 			@media (max-width: $md) {
 				img {
+					&:nth-child(2) {
+						top: unset !important;
+						// bottom: 0;
+					}
 					&:nth-child(3) {
-						top: unset;
+						top: -10px !important;
 						bottom: 0;
 					}
 				}
