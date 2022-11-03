@@ -122,8 +122,8 @@
 				{/if}
 			</div>
 			{@html data[selectedTab]}
-			<a href={data?.url} class="display_flex align_center text_dark font_bold mt_auto"
-				>Learn more <LinkIcon class="ml_2" width="24" height="24" />
+			<a href={data?.url} target="blank" class="display_flex align_center text_dark font_bold mt_auto"
+				><small>Learn more </small><LinkIcon class="ml_2" width="18" height="18" />
 			</a>
 		</div>
 	</div>
@@ -203,7 +203,7 @@
 				height: 100%;
 				display: flex;
 				flex-direction: column;
-				padding-bottom: 1rem;
+				// padding-bottom: 1rem;
 
 				@media (max-width: $md) {
 					display: none !important;
@@ -211,6 +211,9 @@
 
 				.btn {
 					transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+				}
+				.btn.btn_blue:hover {
+					color: map-get($colors, 'light');
 				}
 
 				a {

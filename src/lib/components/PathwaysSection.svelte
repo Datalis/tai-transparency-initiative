@@ -61,8 +61,7 @@
 		<h2>Pathways to change</h2>
 		<div class="divider divider_green divider_2 my_4" />
 		<p class="mt_4 w_50">
-			This represents critical causal pathways common to TAI donor members’ theories of change. <br
-			/> It is in no way a representation of pathways to change for the TAP field as a whole.
+			This represents critical causal pathways common to TAI donor members’ theories of change. It is in no way a representation of pathways to change for the TAP field as a whole.
 		</p>
 		<svg
 			class="pathways-svg mt_4 mb_5"

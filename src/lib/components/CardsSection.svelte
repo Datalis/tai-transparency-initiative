@@ -45,7 +45,7 @@
 						</a>
 						<div class="content">
 							<a href="/what-we-fund"><h3 class="text_dark">What we fund</h3></a>
-							<div class="divider divider_light divider_2" />
+							<div class="divider divider_light divider_1" />
 							<div class="content__text">
 								<a href="/what-we-fund#funding" class="text_dark display_block"
 									>What does TPA funding look like?</a
@@ -73,7 +73,7 @@
 							<a href="/how-we-fund">
 								<h3 class="text_dark">How we fund</h3>
 							</a>
-							<div class="divider divider_light divider_2" />
+							<div class="divider divider_light divider_1" />
 							<div class="content__text">
 								<a href="/how-we-fund#partner-support" class="text_dark display_block"
 									>Partner Support</a
@@ -84,6 +84,9 @@
 								<a href="/how-we-fund#participatory-strategy" class="text_dark display_block"
 									>Participatory Strategy</a
 								>
+								<a href="/how-we-fund#resources" class="text_dark display_block">
+									Transparency and Accountability Initiative Resources
+								</a>
 							</div>
 						</div>
 					</div>
@@ -98,7 +101,7 @@
 							<a href="/how-we-work">
 								<h3 class="text_dark">How we work</h3>
 							</a>
-							<div class="divider divider_light divider_2" />
+							<div class="divider divider_light divider_1" />
 							<div class="content__text">
 								<a href="/how-we-work#6cs" class="text_dark display_block"
 									>Our 6Cs of funder support</a
@@ -173,6 +176,7 @@
 					border-bottom-right-radius: 15px;
 					overflow: hidden;
 					position: relative;
+					box-shadow: 1px 10px 22px -9px rgba(0,0,0,0.75);
 					img {
 						width: 100%;
 						height: 100%;
@@ -193,6 +197,7 @@
 					display: flex;
 					flex-direction: column;
 					.divider {
+						margin: auto;
 						flex-shrink: 0 !important;
 						width: 0 !important;
 						transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -217,6 +222,8 @@
 					margin: 0;
 					line-height: 80px;
 					font-weight: 600;
+					text-align: center;
+					font-size: pxToRem(35);
 				}
 
 				@media (hover: hover) {

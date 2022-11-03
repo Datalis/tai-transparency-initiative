@@ -10,8 +10,8 @@
 	<a href="/resources/{data?.id}" class="resource_item__wrapper">
 		<div class="resource_item__wrapper--left">
 			<div class="img_wrapper">
-				<span class="category_tag category_{data?.type?.id}">{data?.type?.label}</span>
-				<Image size="small" image={data?.image}></Image>
+				<!-- <span class="category_tag category_{data?.type?.id}">{data?.type?.label}</span> -->
+				<Image size="small" image={data?.image} />
 			</div>
 			{#if data?.links}
 				<div class="social_links">
@@ -86,7 +86,6 @@
 
 					:global {
 						img {
-
 							height: 100%;
 							width: 100%;
 							object-fit: contain;
@@ -94,38 +93,38 @@
 						}
 					}
 
-					.category_tag {
-						min-width: 140px;
-						position: absolute;
-						left: 0;
-						top: 0;
-						background-color: map-get($colors, 'green');
-						padding: 0.25rem 1rem;
-						text-transform: uppercase;
-						font-weight: 800 !important;
-						font-size: pxToRem(12);
-						color: #fafafa;
-						display: flex;
-						justify-content: center;
-						&.category_1 {
-							background-color: map-get($colors, 'green');
-						}
-						&.category_2 {
-							background-color: map-get($colors, 'gray');
-						}
-						&.category_3 {
-							background-color: map-get($colors, 'dark');
-						}
-						&.category_4 {
-							background-color: map-get($colors, 'danger');
-						}
-						&.category_5 {
-							background-color: map-get($colors, 'blue_light');
-						}
-						&.category_6 {
-							background-color: #bcbc00;
-						}
-					}
+					// .category_tag {
+					// 	min-width: 140px;
+					// 	position: absolute;
+					// 	left: 0;
+					// 	top: 0;
+					// 	background-color: map-get($colors, 'green');
+					// 	padding: 0.25rem 1rem;
+					// 	text-transform: uppercase;
+					// 	font-weight: 800 !important;
+					// 	font-size: pxToRem(12);
+					// 	color: #fafafa;
+					// 	display: flex;
+					// 	justify-content: center;
+					// 	&.category_1 {
+					// 		background-color: map-get($colors, 'green');
+					// 	}
+					// 	&.category_2 {
+					// 		background-color: map-get($colors, 'gray');
+					// 	}
+					// 	&.category_3 {
+					// 		background-color: map-get($colors, 'dark');
+					// 	}
+					// 	&.category_4 {
+					// 		background-color: map-get($colors, 'danger');
+					// 	}
+					// 	&.category_5 {
+					// 		background-color: map-get($colors, 'blue_light');
+					// 	}
+					// 	&.category_6 {
+					// 		background-color: #bcbc00;
+					// 	}
+					// }
 				}
 				.social_links {
 					display: flex;
@@ -150,18 +149,27 @@
 				flex-grow: 1;
 				h3 {
 					line-height: 1;
+					text-align: justify;
+					text-justify: distribute;
 				}
 
 				a {
 					text-decoration: underline;
 				}
 				p {
+					// font-size: pxToRem(14);
+					// line-height: 1.2;
+					// display: -webkit-box;
+					// -webkit-box-orient: vertical;
+					// -webkit-line-clamp: 4;
+					// overflow: hidden;
+
 					font-size: pxToRem(14);
-					line-height: 1.2;
 					display: -webkit-box;
 					-webkit-box-orient: vertical;
-					-webkit-line-clamp: 4;
+					-webkit-line-clamp: 3;
 					overflow: hidden;
+					text-overflow: ellipsis;
 				}
 			}
 		}

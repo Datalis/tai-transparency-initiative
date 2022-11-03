@@ -9,13 +9,17 @@
 	<div class="resource_item__image">
 		<Image image={data?.image} size="small" />
 	</div>
-	<small class="resource_item__type text_gray text_uppercase mt_2 font_regular">{data?.type?.label || '-'}</small>
+	<a href="/resources?type={data?.type?.id}" class="mt_2"
+		><small class="resource_item__type text_gray text_uppercase font_regular"
+			>{data?.type?.label || '-'}</small
+		></a
+	>
 	<h6 class="resource_item__title font_bold mb_3 mt_2 text_dark">{data?.title}</h6>
 	<div class="divider divider_2 divider_gray" />
 	<p class="resource_item__summary text_dark">
 		{data?.summary}
 	</p>
-	<span class="text_gray font_bold display_flex align_center"
+	<span class="resource_item__link text_gray font_bold display_flex align_center"
 		><small>Read More </small><LinkIcon
 			class="ml_1"
 			width="18"
@@ -26,7 +30,6 @@
 </a>
 
 <style lang="scss">
-
 	.resource_item.resource_item_4 {
 		.divider,
 		.resource_item__type,
@@ -36,11 +39,29 @@
 		.resource_item__title {
 			font-size: pxToRem(16) !important;
 		}
+
+		.resource_item__image {
+			background: map-get($colors, 'blue');
+			display: flex;
+			align-items: center;
+			:global {
+				img {
+					width: 95%;
+					height: 95%;
+					margin: auto;
+					object-fit: contain;
+				}
+			}
+		}
+		.resource_item__link {
+			margin-top: auto;
+		}
 	}
 
 	.resource_item {
 		display: flex;
 		flex-direction: column;
+		height: 100%;
 
 		--gray: #{map-get($colors, 'gray')};
 
@@ -57,26 +78,27 @@
 
 		.divider {
 			width: 100% !important;
+			margin-top: auto !important;
 		}
 
-		&:hover .resource_item__type {
+		.resource_item__type:hover {
 			color: map-get($colors, 'green');
 		}
 
 		&__type {
-			font-weight: 500;
+			font-weight: 600 !important;
 		}
 
 		&__title {
-			font-size: pxToRem(20);
+			font-size: pxToRem(16);
+			text-align: justify;
+			text-justify: distribute;
 			letter-spacing: normal;
 		}
 
 		&__image {
 			overflow: hidden;
 			border-radius: 15px;
-		}
-		&__image {
 			min-height: 200px;
 			:global(img) {
 				width: 100%;

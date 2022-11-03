@@ -62,7 +62,7 @@
 			<h2 class="text_dark">What does TAI Funding look like?</h2>
 			<span class="divider divider_2 divider_green my_4" />
 			<div class="show_on_md_and_up row mt_5">
-				<div class="col_4 col_lg_6 mt_4">
+				<div class="col_4 col_lg_6 mt_5">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<WebIcon class="web_icon" />
@@ -73,7 +73,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 col_lg_6 mt_4">
+				<div class="col_4 col_lg_6 mt_5">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<HandsIcon class="hands_icon" />
@@ -84,7 +84,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 col_lg_6 mt_4">
+				<div class="col_4 col_lg_6 mt_5">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<CogsIcon class="cogs_icon" />
@@ -95,7 +95,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 col_lg_6 mt_4">
+				<div class="col_4 col_lg_6 mt_5">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<SearchIcon class="search_icon" />
@@ -106,7 +106,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 col_lg_6 mt_4">
+				<div class="col_4 col_lg_6 mt_5">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<LightBulbIcon class="light_bulb_icon" />
@@ -117,7 +117,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 col_lg_6 mt_4">
+				<div class="col_4 col_lg_6 mt_5">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<ChartIcon class="chart_icon" />
@@ -201,7 +201,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="funding-data-library" class="funding_data_section section bg_light">
+	<section id="funding-data-library" class="funding_data_section section">
 		<div class="container">
 			<div class="row">
 				<div class="show_on_md_and_down col col_12">
@@ -228,7 +228,7 @@
 						<strong>GRANT SEEKERS</strong> find out which funders are supporting your issues, or identify
 						new peer groups you might want to meet.
 					</p>
-					<button class="btn btn_outline_green text_dark mt_4">Read More</button>
+					<a href="#" class="btn btn_outline_green text_dark mt_4">Read More</a>
 				</div>
 			</div>
 		</div>
@@ -339,12 +339,13 @@
 
 			p {
 				letter-spacing: normal;
-				font-size: pxToRem(14) !important;
+				font-size: pxToRem(15) !important;
 			}
 		}
 	}
 
 	.funding_data_section {
+		background-color: #e4e8ef;
 		@media (max-width: $md) {
 			button {
 				width: 100%;

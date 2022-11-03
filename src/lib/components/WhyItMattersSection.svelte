@@ -6,7 +6,7 @@
 	$: resources = data?.resources || [];
 </script>
 
-<section id="why-it-matters" class="why_matters_section section">
+<section id="why-it-matters" class="why_matters_section section bg_light">
 	<div class="container">
 		<h2 class="text_dark mt_0 mb_4">Why it matters</h2>
 		<span class="divider divider_2 divider_gray" />
@@ -31,7 +31,6 @@
 	$md: map-get($grid-breakpoints, 'md');
 	.why_matters_section {
 		min-height: 100vh !important;
-		background-color: #e4e8ef;
 		display: flex !important;
 		align-items: center;
 		justify-content: center;
@@ -49,7 +48,7 @@
 			margin-top: 2rem;
 		}
 		@media (max-width: $md) {
-			button {
+			a {
 				width: 100%;
 			}
 		}

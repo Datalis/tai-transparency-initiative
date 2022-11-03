@@ -37,8 +37,8 @@
 					trigger: '.partners_section',
 					scrub: true,
 					start: 'top top',
-					end: 'bottom center'
-					// pin: true
+					end: 'bottom center',
+					pin: true
 				}
 			})
 			.to('.partners_section .partners_section__slide', {
@@ -246,7 +246,7 @@
 
 		&__item {
 			flex-shrink: 0;
-			width: 30vh;
+			width: calc(30vw - 4rem);
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -254,8 +254,9 @@
 			position: relative;
 
 			img {
-				height: 30vh;
-				width: 100%;
+				height: calc(30vw - 4rem);
+				width: calc(30vw - 4rem);
+				// width: 100%;
 				object-fit: cover;
 				object-position: center;
 				border-radius: 15px;

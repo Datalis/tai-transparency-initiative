@@ -212,6 +212,7 @@
 									<SkollLogo width="200" />
 									<FCDOLogo width="300" />
 									<ChandlerLogo width="300" />
+									<MacArthurLogo width="300" />
 								</div>
 								<div class="marquee_item">
 									<MacArthurLogo width="300" />
@@ -222,6 +223,7 @@
 									<SkollLogo width="200" />
 									<FCDOLogo width="300" />
 									<ChandlerLogo width="300" />
+									<MacArthurLogo width="300" />
 								</div>
 							</div>
 						</div>
@@ -438,8 +440,8 @@
 					animation: marquee 15s linear infinite;
 					flex-shrink: 1;
 					display: grid;
-					grid-template-columns: repeat(2, 300px);
-					grid-template-rows: repeat(2, 300px);
+					grid-template-columns: repeat(3, 300px);
+					grid-template-rows: repeat(3,1fr);
 					height: calc(300px * 4) !important;
 					justify-content: center;
 					align-items: center;

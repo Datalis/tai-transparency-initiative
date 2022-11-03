@@ -104,7 +104,7 @@
 
 				<div class="col col_5 col_md_12">
 					<div class="landing_section__content">
-						<h1 class="text_green mb_0 mt_0">{hero?.title}</h1>
+						<h1 class="text_green mb_3 mt_0">{hero?.title}</h1>
 						<span class="divider divider_1 divider_light" />
 						<div class="font_light">
 							{@html hero?.message}
@@ -253,25 +253,27 @@
 				}
 			}
 
-			.divider {
-				width: 0 !important;
-				transition: all 0.20s ease;
-			}
+			// .divider {
+			// 	width: 0 !important;
+			// 	transition: all 0.20s ease;
+			// }
 
-			&:hover {
-				.divider {
-					width: 265px !important;
-				}
+			// &:hover {
+			// 	.divider {
+			// 		width: 265px !important;
+			// 	}
 
-				.btn {
+				
+
+			// 	// h1 {
+			// 	// 	text-decoration: underline;
+			// 	// }
+			// }
+
+			.btn:hover {
 					background-color: map-get($colors, 'green');
 					color: map-get($colors, 'dark');
 				}
-
-				// h1 {
-				// 	text-decoration: underline;
-				// }
-			}
 
 			// @media (max-width: $md) {
 			// 	width: 100%;

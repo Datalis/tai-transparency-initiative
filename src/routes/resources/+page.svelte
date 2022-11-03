@@ -45,8 +45,8 @@
 			<div class="display_flex flex_column">
 				<div class="display_flex align_center">
 					<div class="display_flex align_center flex-grow_1">
-						<h4 class="sort_by_btn mb_1 mr_3 mt_1">Sort By</h4>
-						<ArrowThick width="24" height="24" />
+						<!-- <h4 class="sort_by_btn mb_1 mr_3 mt_1">Sort By</h4>
+						<ArrowThick width="24" height="24" /> -->
 					</div>
 
 					<div class="search_control form_control mb_0" class:show={showSearchInput}>
@@ -56,11 +56,11 @@
 						<input type="search" placeholder="Search..." />
 					</div>
 				</div>
-				<div class="divider divider_dark divider_2 my_2	" />
+				<div class="divider divider_blue divider_1 my_2	" />
 				
 				{#each resources as resource}
 					<ResourceItemLarge data={resource} />
-					<div class="divider divider_dark divider_2 my_2" />
+					<div class="divider divider_blue divider_1 my_2" />
 				{/each}
 			</div>
 			<div class="display_flex align_center justify_center mt_5">
@@ -74,11 +74,12 @@
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
 	.resource_filters {
-		padding-top: 100px;
+		padding-top: calc(100px + 1rem);
 	}
 	.resource_list_section {
 		.divider {
 			width: 100% !important;
+			opacity: 0.85 !important;
 		}
 
 		.search_control {

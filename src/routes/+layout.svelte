@@ -139,7 +139,7 @@
 
 	#app {
 		font-family: 'Lato', sans-serif;
-		background: map-get($colors, 'blue');
+		background: map-get($colors, 'light');
 
 		.section {
 			position: relative;

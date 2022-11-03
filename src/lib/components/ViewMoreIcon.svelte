@@ -8,7 +8,7 @@
 	<CrossIcon class="view_more__icon" width="24" height="24" />
 </div>
 
-<style scoped lang="scss">
+<style lang="scss">
 	$panel: map-get($colors, 'panel');
 	$blue: map-get($colors, 'blue');
 	$light: map-get($colors, 'light');
@@ -23,6 +23,10 @@
 		transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 		:global(.view_more__icon) {
 			transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+			scale: 0.85;
+		}
+		:global(.view_more__icon path) {
+			stroke-width: 1px !important;
 		}
 		&.is-open {
 			background-color: $blue;

@@ -20,12 +20,11 @@
 
 	$: staff = data?.Staff;
 	$: staffList = staff.StaffItem || [];
-	
+
 	$: commitee = data?.SteeringCommittee;
 	$: commiteeList = commitee?.StaffItem || [];
 
-
-	onMount(() => console.log(data))
+	onMount(() => console.log(data));
 </script>
 
 <div class="page">
@@ -80,13 +79,13 @@
 		<div class="container">
 			<h2 class="mb_4">{members.title}</h2>
 			<div class="divider divider_green divider_2" />
-			<p class="mt_4">
+			<p class="mt_4 w_75">
 				{@html members.message}
 			</p>
 			<div class="member_list mt_4 display_flex flex_column">
 				{#each memberList as member}
 					<MemberItem data={member} />
-					<div class="divider divider_blue divider_2 my_5" />
+					<div class="divider divider_blue divider_1 my_5" />
 				{/each}
 			</div>
 		</div>
@@ -95,13 +94,13 @@
 		<div class="container">
 			<h3 class="">{staff.title}</h3>
 			<div class="divider divider_green divider_2" />
-			<p class="mt_4">
+			<p class="mt_4 w_75">
 				{@html staff.message}
 			</p>
 			<div class="staff_list mt_4">
 				<h4 class="mb_4">Staff</h4>
 				{#each staffList as staffItem}
-					<div class="divider divider_blue divider_2" />
+					<div class="divider divider_blue divider_1" />
 					<StaffItem data={staffItem} />
 				{/each}
 			</div>
@@ -112,13 +111,13 @@
 			<div class="committee_list mt_4">
 				<h4 class="mb_4 mt_4">Steering Committee</h4>
 				{#each commiteeList as commiteeItem}
-					<div class="divider divider_blue divider_2" />
+					<div class="divider divider_blue divider_1" />
 					<StaffItem data={commiteeItem} />
 				{/each}
 			</div>
 		</div>
 	</section>
-	<JoinSection form={form} />
+	<JoinSection {form} />
 	<SubscribeSection />
 </div>
 
@@ -127,8 +126,7 @@
 
 	.landing_section {
 		padding: 0 !important;
-		height: 400px;
-		min-height: unset !important;
+		min-height: 75vh !important;
 		position: relative;
 		z-index: 1;
 		padding-top: 100px !important;
@@ -151,7 +149,7 @@
 			max-width: 300px;
 			margin: auto;
 			img {
-				height: 200px;
+				height: 300px;
 				width: auto;
 				object-fit: contain;
 			}
@@ -172,6 +170,9 @@
 			.divider {
 				width: 100% !important;
 			}
+			.divider.divider_blue {
+				opacity: 0.5;
+			}
 		}
 	}
 	.team_section {
@@ -183,15 +184,30 @@
 				margin-top: 0.5rem !important;
 				margin-bottom: 0.5rem !important;
 			}
+			.divider.divider_blue {
+				opacity: 0.5;
+			}
 		}
 	}
 	.committee_section {
+		background-color: #f2f4f7;
 		position: relative;
 		z-index: 1;
 		.divider {
 			width: 100% !important;
 			margin-top: 0.5rem !important;
 			margin-bottom: 0.5rem !important;
+		}
+		.divider.divider_blue {
+			opacity: 0.5;
+		}
+	}
+	:global {
+		.join_section {
+			background-color: map-get($colors, 'light') !important;
+			.divider {
+				background-color: map-get($colors, 'green');
+			}
 		}
 	}
 </style>
