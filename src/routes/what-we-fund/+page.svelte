@@ -349,7 +349,7 @@
 	.funding_data_section {
 		background-color: #e4e8ef;
 		@media (max-width: $md) {
-			button {
+			a {
 				width: 100%;
 			}
 		}

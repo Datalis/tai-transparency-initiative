@@ -3,7 +3,6 @@
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ViewMoreIcon from '$lib/components/ViewMoreIcon.svelte';
 	import { afterNavigate } from '$app/navigation';
-	import type { PageData } from '.svelte-kit/types/src/routes/resources/$types';
 
 	let currentFAQ = 0;
 

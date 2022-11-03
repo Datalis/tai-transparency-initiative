@@ -8,13 +8,13 @@
 
 <div class="article_item">
 	<div class="article_item__image">
-		<div class="article_item__image--title">
+		<!-- <div class="article_item__image--title">
 			<h6 class="my_2 text_green">{data?.name}</h6>
-		</div>
+		</div> -->
 		<Image size="thumbnail" image={data?.image} />
 	</div>
-	
-	<p class="article_item__resume mt_3">
+	<h6 class="my_3 text_dark">{data?.name}</h6>
+	<p class="article_item__resume mt_0">
 		{data?.summary}
 	</p>
 	<a href="/" class="article_item__link text_gray font_bold mt_2 display_flex align_center"
@@ -29,6 +29,7 @@
 	.article_item {
 		display: flex;
 		flex-direction: column;
+		height: 100%;
 
 		--gray: #{$gray};
 
@@ -41,17 +42,21 @@
 			border-radius: 15px;
 		}
 
+		&__link {
+			margin-top: auto;
+		}
+
 		&__image {
-			min-height: 200px;
+			min-height: 250px;
 			background-color: map-get($colors, 'blue');
-			&--title {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				h6 {
-					font-size: pxToRem(14);
-				}
-			}
+			// &--title {
+			// 	display: flex;
+			// 	align-items: center;
+			// 	justify-content: center;
+			// 	h6 {
+			// 		font-size: pxToRem(14);
+			// 	}
+			// }
 			:global {
 				img {
 					height: 100%;

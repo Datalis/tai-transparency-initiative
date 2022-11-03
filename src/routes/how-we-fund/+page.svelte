@@ -15,8 +15,12 @@
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 	import Image from '$lib/components/Image.svelte';
 
+	import ParticipatoryVideoPoster from '$lib/assets/images/participatory-video-poster.webp';
+
 	let partnersSlide: HTMLElement;
 	let windowWidth: number;
+	let videoPlayer: HTMLVideoElement;
+
 
 	let partnersSlideWidth = 0;
 
@@ -163,12 +167,14 @@
 					</div>
 					<div class="video_wrapper">
 						<video
+							bind:this={videoPlayer}
 							autoplay
 							muted
 							loop
 							class="w_100"
 							src="https://api.tai.datalis.dev/uploads/participatory_strategy_d1cb234e94.webm"
 							preload="auto"
+							poster={ParticipatoryVideoPoster}
 						>
 							<track kind="captions" />
 						</video>
@@ -305,6 +311,10 @@
 			flex: 1 0 auto;
 
 			.content_wrapper {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-start;
 				padding-right: 4rem;
 				p {
 					max-width: 70%;

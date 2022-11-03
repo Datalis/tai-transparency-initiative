@@ -9,7 +9,7 @@
 <section id="past-funding" class="past_funding_section section">
 	<div class="container">
 		<h2>{data?.title}</h2>
-		<div class="divider divider_white divider_2" />
+		<div class="divider divider_green divider_2" />
 		<div class="row mt_4">
 			{#each items as item}
 				<div class="col col_4 col_md_12">

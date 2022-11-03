@@ -8,6 +8,7 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
+	import ResourceFiltersMobile from '$lib/components/ResourceFiltersMobile.svelte';
 
 	let showSearchInput = false;
 
@@ -35,15 +36,18 @@
 </script>
 
 <div id="resources" class="page">
-	<div class="resource_filters bg_blue pb_2">
+	<div class="resource_filters bg_blue pb_2 show_on_md_and_up">
 		<div class="container">
 			<ResourceFilters options={types} bind:currentFilter={typeParam}  />
 		</div>
 	</div>
+	<div class="resource_filters_mobile bg_blue pb_2 show_on_md_and_down">
+		<ResourceFiltersMobile options={types} bind:currentFilter={typeParam}></ResourceFiltersMobile>
+	</div>
 	<section class="resource_list_section section bg_light">
 		<div class="container">
 			<div class="display_flex flex_column">
-				<div class="display_flex align_center">
+				<div class="display_flex align_center show_on_md_and_up">
 					<div class="display_flex align_center flex-grow_1">
 						<!-- <h4 class="sort_by_btn mb_1 mr_3 mt_1">Sort By</h4>
 						<ArrowThick width="24" height="24" /> -->
@@ -76,6 +80,11 @@
 	.resource_filters {
 		padding-top: calc(100px + 1rem);
 	}
+
+	.resource_filters_mobile {
+		padding-top: 100px;
+	}
+
 	.resource_list_section {
 		.divider {
 			width: 100% !important;
@@ -107,6 +116,8 @@
 				opacity: 0;
 				padding: 0;
 				height: 32px;
+				border: none;
+				background: #f2f4f7;
 			}
 			input::placeholder {
 				font-style: italic;

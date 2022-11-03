@@ -8,6 +8,8 @@
 	import ChandlerLogo from '$lib/assets/images/chandler.svg?component';
 	import FCDOLogo from '$lib/assets/images/fcdo.svg?component';
 
+	import ClimateVideoPoster from '$lib/assets/images/climate-video-poster.webp';
+
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 	import ChevronRightIcon from '$lib/assets/icons/chevron-right-thin.svg?component';
@@ -169,7 +171,7 @@
 				<div class="content_wrapper">
 					<h2>Featured topics</h2>
 					<div class="divider divider_green divider_2" />
-					<p class="mt_4">
+					<p class="mt_4 w_75">
 						TAI members evolve their priorities in line with the global context and TAI collective
 						conversations evolve similarly. One current priority is how to strengthen transparency,
 						participation and accountability dimensions of responses to the climate crisis
@@ -183,6 +185,7 @@
 						autoplay
 						muted
 						loop
+						poster={ClimateVideoPoster}
 					>
 						<track kind="captions" />
 					</video>
@@ -378,6 +381,9 @@
 
 			.content_wrapper {
 				padding-right: 4rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
 			}
 
 			.content_wrapper,
