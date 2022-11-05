@@ -22,12 +22,12 @@
 			duration: 200
 		}}
 	>
-		<div class="content">
+		<div class="content container">
 			<button class="content-close" on:click={() => toggleCircle(activeCircle)}>
 				<CloseCircleIcon style="fill: #c7c1ff" />
 			</button>
 			<div class="mx_4">
-				<h2 class="text_green">Accountability Actors</h2>
+				<h3 class="text_green">Accountability Actors</h3>
 				<p>
 					<strong>Government</strong> - lawyers, judges, auditor generals, parliamentary committees,
 					etc.
@@ -341,7 +341,7 @@
 								style="
 								color: #051231; 
 								font-size: 7.5px;
-								position: absolute;
+								/*position: absolute;*/
 								top: 0;
 								bottom: 0;
 								line-height: 1.4;
@@ -374,7 +374,7 @@
 							style="
 								color: #051231; 
 								font-size: 7.5px;
-								position: absolute;
+								/*position: absolute;*/
 								top: 0;
 								bottom: 0;
 								line-height: 1.4;
@@ -424,11 +424,15 @@
 		.content-close {
 			position: absolute;
 			right: 0;
+			top: 24px;
 		}
 		.content {
 			position: relative;
-			max-width: 60%;
+			// max-width: 60%;
 			margin: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 			blockquote {
 				margin: 0;
 				padding: 1rem 1.5rem;
@@ -445,9 +449,11 @@
 		}
 
 		.pathways-tooltip {
-			visibility: collapse;
+			// visibility: collapse;
+			display: none !important;
 			&.active {
-				visibility: visible;
+				// visibility: visible;
+				display: inherit !important;
 			}
 			rect {
 				fill: #fafafa;

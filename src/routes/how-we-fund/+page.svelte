@@ -83,7 +83,7 @@
 	<section class="landing_section section bg_blue">
 		<div class="container h-100">
 			<div class="row">
-				<div class="col col_5">
+				<div class="col col_5 col_sm_12">
 					<div class="display_flex flex_column h_100 justify_end">
 						<h1 class="text_green mb_4">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light" />
@@ -92,7 +92,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col col_7 h_100">
+				<div class="img_wrapper col col_7 col_sm_12 h_100">
 					<Image image={hero?.image} size="medium" priority />
 				</div>
 			</div>
@@ -208,6 +208,10 @@
 			margin-top: 0;
 			margin-bottom: 0;
 		}
+
+		.img_wrapper {
+			margin: auto !important;
+		}
 		
 		:global {
 			img {
@@ -255,6 +259,7 @@
 		&__item {
 			flex-shrink: 0;
 			width: calc(30vw - 4rem);
+			max-width: calc(1400px / 4);
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -264,6 +269,8 @@
 			img {
 				height: calc(30vw - 4rem);
 				width: calc(30vw - 4rem);
+				max-width: calc(1400px / 4);
+				max-height: calc(1400px / 4);
 				// width: 100%;
 				object-fit: cover;
 				object-position: center;

@@ -32,27 +32,31 @@
 	$: six_data = data.six_cs;
 
 	onMount(() => {
-		gsap
-			.timeline({
-				scrollTrigger: {
-					trigger: '.featured_section',
-					pin: true,
-					scrub: true,
-					start: 'top top',
-					end: '+=200%'
-				}
-			})
-			.to('.featured_section .featured_section__content', {
-				yPercent: -5
-			})
-			.to('.featured_section .featured_section__content .video_wrapper', {
-				xPercent: -65,
-				flexBasis: '100%'
-				// ease: 'none'
-			})
-			.to('.featured_section .featured_section__content .video_wrapper video', {
-				height: '100%'
-			});
+		if (windowWidth > 768) {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: '.featured_section',
+						pin: true,
+						scrub: true,
+						start: 'top top',
+						end: '+=200%'
+						// pinReparent: true,
+						// markers: {startColor: "green", endColor: "red", fontSize: "12px"}
+					}
+				})
+				// .to('.featured_section .featured_section__content', {
+				// 	yPercent: -3
+				// })
+				.to('.featured_section .featured_section__content .video_wrapper', {
+					xPercent: -65,
+					flexBasis: '100%'
+					// ease: 'none'
+				})
+				.to('.featured_section .featured_section__content .video_wrapper video', {
+					scale: 1.1
+				});
+		}
 		gsap.timeline().to(window, {
 			scrollTo: $page.url.hash || 0
 		});
@@ -64,20 +68,17 @@
 <div id="how-we-fund" class="page">
 	<section class="landing_section section bg_blue">
 		<div class="container h-100">
-			<!-- <div class="landing_section__content">
-				
-			</div> -->
 			<div class="row">
-				<div class="col col_5">
+				<div class="col col_5 col_sm_12">
 					<div class="display_flex flex_column h_100 justify_end">
 						<h1 class="text_green mb_4">{hero?.title}</h1>
-						<span class="divider divider_2 divider_light" />
-						<p class="mt_4 font_light">
+						<span class="divider divider_2 divider_light mb_3" />
+						<div class="font_light">
 							{@html hero?.message}
-						</p>
+						</div>
 					</div>
 				</div>
-				<div class="col col_7 h_100">
+				<div class="img_wrapper col col_7 col_sm_12 h_100">
 					<Image size="medium" image={hero?.image} priority />
 				</div>
 			</div>
@@ -197,7 +198,7 @@
 	<section id="working-with-others" class="other_groups_section section bg_gray">
 		<IntersectionObserver let:top>
 			<div class="wrapper" class:pinned={top > 0}>
-				<div class="brands_container">
+				<div class="brands_container show_on_md_and_up">
 					<div class="brands_container__left bg_gray_light" />
 					<div class="brands_container__right">
 						<div class="wrapper">
@@ -230,7 +231,7 @@
 				</div>
 				<div class="container">
 					<div class="row">
-						<div class="col col_6">
+						<div class="col col_6 col_md_12">
 							<h2>Working with other groups</h2>
 							<div class="divider divider_white divider_2" />
 							<p class="mt_4">
@@ -248,7 +249,18 @@
 								running peer networks.
 							</p>
 						</div>
-						<div class="col col_6" />
+						<div class="col col_6 col_md_12">
+							<div class="brands_grid show_on_md_and_down pb_4">
+								<MacArthurLogo width="150" />
+								<FordLogo width="150" />
+								<HewlettLogo width="150" />
+								<LuminateLogo width="150" />
+								<OpenSocietyLogo width="150" />
+								<SkollLogo width="150" />
+								<FCDOLogo width="150" />
+								<ChandlerLogo width="150" />
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -268,11 +280,16 @@
 	.landing_section {
 		z-index: 1;
 		padding-top: 100px !important;
-		height: 80vh;
+		// height: 80vh;
+		min-height: 80vh;
 		background-image: url(/src/lib/assets/images/hero.webp);
 		background-size: cover;
 		display: flex !important;
 		flex-direction: column !important;
+
+		@media screen and (max-width: $md) {
+			height: unset;
+		}
 
 		.container {
 			margin-top: auto !important;
@@ -283,7 +300,11 @@
 			margin-top: 0;
 			margin-bottom: 0;
 		}
-		
+
+		.img_wrapper {
+			margin: auto !important;
+		}
+
 		:global {
 			img {
 				background-color: transparent;
@@ -365,6 +386,30 @@
 		justify-content: center;
 		z-index: 1;
 
+		@media screen and (max-width: $md) {
+			&__content {
+				flex-direction: column;
+			}
+
+			.content_wrapper {
+				padding: 0 !important;
+			}
+
+			.content_wrapper p {
+				width: 100%;
+			}
+
+			.content_wrapper,
+			.video_wrapper {
+				flex-shrink: 1 !important;
+				flex-basis: 100% !important;
+			}
+
+			.video_wrapper {
+				margin-top: 2rem;
+			}
+		}
+
 		.container {
 			flex: 1 0 auto;
 			display: flex;
@@ -376,8 +421,9 @@
 			display: flex;
 			justify-content: flex-start;
 			align-items: stretch;
-			transform: translate3d(0, 0, 0);
+			// transform: translate3d(0, 0, 0);
 			flex: 1 0 auto;
+			max-height: 100%;
 
 			.content_wrapper {
 				padding-right: 4rem;
@@ -396,11 +442,16 @@
 				display: flex;
 				flex-direction: column;
 				video {
+					background-color: map-get($colors, 'blue');
 					height: 90%;
 					margin: auto;
 					max-width: 100%;
 					object-fit: cover;
 					border-radius: 25px;
+					@media screen and (max-width: $md) {
+						height: unset;
+						aspect-ratio: 1;
+					}
 				}
 			}
 		}
@@ -411,6 +462,18 @@
 		z-index: 0 !important;
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
+
+		@media screen and (max-width: $md) {
+			.wrapper .brands_grid {
+				display: grid;
+				grid-template-columns: repeat(2, auto);
+				grid-template-rows: repeat(1, 1fr);
+				justify-content: space-around;
+				align-items: center;
+				grid-gap: 1rem;
+			}
+		}
+
 		.brands_container {
 			position: absolute;
 			top: 0;
@@ -449,7 +512,7 @@
 					flex-shrink: 1;
 					display: grid;
 					grid-template-columns: repeat(3, 300px);
-					grid-template-rows: repeat(3,1fr);
+					grid-template-rows: repeat(3, 1fr);
 					height: calc(300px * 4) !important;
 					justify-content: center;
 					align-items: center;

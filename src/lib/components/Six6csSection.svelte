@@ -131,6 +131,7 @@
 
 		._6Cs_item {
 			width: 30vw;
+			max-width: calc(1400px/4);
 			display: block;
 			flex-shrink: 0;
 

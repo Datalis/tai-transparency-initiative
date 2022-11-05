@@ -38,7 +38,7 @@
 	<section class="landing_section section bg_blue">
 		<div class="container">
 			<div class="row">
-				<div class="col col_5">
+				<div class="col col_5 col_sm_12">
 					<div class="display_flex flex_column justify_end h_100">
 						<h1 class="text_green mb_4">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light" />
@@ -47,7 +47,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col col_7 h_100">
+				<div class="img_wrapper col col_7 col_sm_12 h_100">
 					<Image size="medium" image={hero?.image} priority></Image>
 				</div>
 			</div>
@@ -244,11 +244,15 @@
 	.landing_section {
 		z-index: 1;
 		padding-top: 100px !important;
-		height: 80vh;
+		min-height: 80vh;
 		background-image: url(/src/lib/assets/images/hero.webp);
 		background-size: cover;
 		display: flex !important;
 		flex-direction: column !important;
+
+		@media screen and (max-width: $md) {
+			height: unset;
+		}
 
 		.container {
 			margin-top: auto !important;
@@ -258,6 +262,10 @@
 		.col {
 			margin-top: 0;
 			margin-bottom: 0;
+		}
+
+		.img_wrapper {
+			margin: auto !important;
 		}
 		
 		:global {
@@ -308,6 +316,10 @@
 				align-items: center;
 				justify-content: center;
 				:global {
+					svg {
+						width: 100%;
+						height: 100%;
+					}
 					svg path {
 						stroke: unset;
 						stroke-width: unset;

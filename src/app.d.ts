@@ -11,6 +11,7 @@ declare module '*.svg?component' {
 }
 
 declare module 'svelte-collapsible';
+declare module 'gsap/dist/gsap';
 
 declare namespace svelte.JSX {
 	interface HTMLAttributes<T> {

@@ -10,6 +10,7 @@ export const GET: RequestHandler = async ({params}) => {
 	const image = params.media;
 	const response = await fetch(`${API_SERVER}/uploads/${image}`, {
 		method: 'GET',
+		cache: "force-cache"
 	})
 	const file = await response.blob();
 	// const buffer = Buffer.from(file);

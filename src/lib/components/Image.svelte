@@ -10,11 +10,11 @@
 	$: img = size && image?.formats ? image.formats[size] : image;
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
 	{#if priority}
 		<link rel="preconnect" href={img?.url} />
 	{/if}
-</svelte:head>
+</svelte:head> -->
 
 <img
 	loading={ priority ? 'eager' : 'lazy' }
