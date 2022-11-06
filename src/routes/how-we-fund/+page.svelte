@@ -173,7 +173,7 @@
 							loop
 							class="w_100"
 							src="https://api.tai.datalis.dev/uploads/participatory_strategy_d1cb234e94.webm"
-							preload="auto"
+							type="webm"
 							poster={ParticipatoryVideoPoster}
 						>
 							<track kind="captions" />
@@ -200,7 +200,7 @@
 		display: flex !important;
 		flex-direction: column !important;
 
-		
+
 		@media screen and (max-width: $md) {
 			height: unset;
 		}

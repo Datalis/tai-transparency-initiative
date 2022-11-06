@@ -30,9 +30,7 @@
 
 	$: pageSize = resourcesPagination?.pageSize || 6;
 
-
 	$: types = data.types.data || [];
-
 
 	$: {
 		let params = new URLSearchParams();
@@ -41,19 +39,26 @@
 		params.set('pageSize', pageSize.toString());
 		if (searchParam) params.set('search', searchParam);
 		if (sortByParam) params.set('sortBy', sortByParam);
-		if (browser) goto('/resources?'+params.toString());
+		if (browser) goto('/resources?' + params.toString());
 	}
 
+	let timer: string | number | NodeJS.Timeout | undefined;
+	const debounce = (v: any) => {
+		clearTimeout(timer);
+		timer = setTimeout(() => {
+			searchParam = v;
+		}, 300);
+	};
 </script>
 
 <div id="resources" class="page">
 	<div class="resource_filters bg_blue pb_2 show_on_md_and_up">
 		<div class="container">
-			<ResourceFilters options={types} bind:currentFilter={typeParam}  />
+			<ResourceFilters options={types} bind:currentFilter={typeParam} />
 		</div>
 	</div>
 	<div class="resource_filters_mobile bg_blue pb_2 show_on_md_and_down">
-		<ResourceFiltersMobile options={types} bind:currentFilter={typeParam}></ResourceFiltersMobile>
+		<ResourceFiltersMobile options={types} bind:currentFilter={typeParam} />
 	</div>
 	<section class="resource_list_section section bg_light">
 		<div class="container">
@@ -68,14 +73,26 @@
 						<div class="search_control_toggler mt_1" on:click={toggleSearch}>
 							<SearchThick width="24" height="24" />
 						</div>
-						<input type="search" placeholder="Search..." />
+						<input
+							type="search"
+							placeholder="Search..."
+							value={searchParam}
+							on:keyup={({
+								target: {
+									// @ts-ignore
+									value
+								}
+							}) => debounce(value)}
+						/>
 					</div>
 				</div>
 				<div class="divider divider_blue divider_1 my_2	" />
-				
+				{#if !resources.length}
+					<h6 class="w_100 text_center text_green">No results found</h6>
+				{/if}
 				{#each resources as resource}
 					{#if resource?.type?.id == 7}
-						<ResourceLibraryItem data={resource}></ResourceLibraryItem>
+						<ResourceLibraryItem data={resource} />
 					{:else}
 						<ResourceItemLarge data={resource} />
 					{/if}
@@ -84,7 +101,7 @@
 			</div>
 			<div class="display_flex align_center justify_center mt_5">
 				<!-- <button class="btn btn_outline_green text_dark">Load More</button> -->
-				<Pagination bind:currentPage={currentPage} bind:pageSize={pageSize} totalItems={resourcesPagination?.total}></Pagination>
+				<Pagination bind:currentPage bind:pageSize totalItems={resourcesPagination?.total} />
 			</div>
 		</div>
 	</section>
@@ -124,7 +141,7 @@
 			&_toggler {
 				cursor: pointer;
 			}
-			
+
 			input {
 				transition: opacity 0.3s ease, margin 0.4s ease, max-width 0.3s ease;
 				border-radius: 25px;

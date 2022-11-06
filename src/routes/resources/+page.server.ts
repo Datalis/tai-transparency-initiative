@@ -20,7 +20,19 @@ export const load: PageServerLoad = async ({ url }) => {
 					id: {
 						$eq: type
 					}
-				}
+				},
+				$or: [
+					{
+						title: {
+							$contains: search
+						},
+					},
+					{
+						summary: {
+							$contains: search
+						}
+					}
+				]
 			},
 			sort: sortBy,
 			pagination: {

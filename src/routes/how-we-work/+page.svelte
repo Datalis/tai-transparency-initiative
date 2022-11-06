@@ -181,12 +181,15 @@
 				<div class="video_wrapper text_center">
 					<!-- <img src={FeaturedImg} class="w_100" alt="" /> -->
 					<video
-						src="https://api.tai.datalis.dev/uploads/climate_TAI_7c23ce0f47.webm"
-						preload="auto"
 						autoplay
 						muted
 						loop
 						poster={ClimateVideoPoster}
+						src="https://api.tai.datalis.dev/uploads/climate_TAI_7c23ce0f47.webm"
+						type="video/webm"
+						playsinline
+						decoding="async"
+						preload="auto"
 					>
 						<track kind="captions" />
 					</video>
@@ -449,7 +452,7 @@
 					background-color: map-get($colors, 'blue');
 					height: 90%;
 					margin: auto;
-					max-width: 100%;
+					max-width: 95%;
 					object-fit: cover;
 					border-radius: 25px;
 					@media screen and (max-width: $md) {
