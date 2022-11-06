@@ -238,7 +238,7 @@
 <style lang="scss">
 	$green: #59ebcf;
 	$blue: map-get($colors, 'blue');
-
+	$xl: map-get($grid-breakpoints, 'xl');
 	$md: map-get($grid-breakpoints, 'md');
 
 	.landing_section {
@@ -252,6 +252,10 @@
 
 		@media screen and (max-width: $md) {
 			height: unset;
+		}
+
+		@media screen and (min-width: $xl) {
+			height: 80vh !important;
 		}
 
 		.container {

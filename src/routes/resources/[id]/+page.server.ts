@@ -1,4 +1,3 @@
-import { API_TOKEN } from "$env/static/private";
 import { get } from "$lib/api";
 import type { Response } from "$lib/types/data";
 import type { Resource } from "$lib/types/resources";

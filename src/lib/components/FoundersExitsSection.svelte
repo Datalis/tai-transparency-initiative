@@ -80,7 +80,7 @@
 		padding-bottom: 0 !important;
 		min-height: 100vh;
 
-		display: flex;
+		display: flex !important;
 		flex-direction: column;
 		justify-content: center;
 	}

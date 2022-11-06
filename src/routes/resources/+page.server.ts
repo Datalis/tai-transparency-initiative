@@ -1,13 +1,15 @@
 import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from '.svelte-kit/types/src/routes/resources/$types';
 import { get } from '$lib/api';
 import type { Response } from '$lib/types/data';
 import type { Resource, ResourceType } from '$lib/types/resources';
+import type { PageServerLoad } from '.svelte-kit/types/src/routes/$types';
 
 export const load: PageServerLoad = async ({ url }) => {
 	try {
 
 		const page = url.searchParams.get('page') || 1;
+		const pageSize = url.searchParams.get('pageSize') || 6;
+
 		const sortBy = url.searchParams.get('sortBy') || 'date';
 		const search = url.searchParams.get('search');
 		const type = url.searchParams.get('type') || 1;
@@ -23,6 +25,7 @@ export const load: PageServerLoad = async ({ url }) => {
 			sort: sortBy,
 			pagination: {
 				page,
+				pageSize,
 			},
 			fields: ['id', 'summary', 'title', 'date', 'url'],
 			populate: {

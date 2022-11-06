@@ -10,7 +10,7 @@
 	{#each options as opt}
 		<div class="form_control form_control_radio">
 			<label>
-				<input type="radio" bind:group={currentFilter} name="filter" value={opt.id} />
+				<input type="radio" bind:group={currentFilter} name="" value={opt.id} />
 				{opt.label}
 			</label>
 		</div>

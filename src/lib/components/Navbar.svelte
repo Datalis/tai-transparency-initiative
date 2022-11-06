@@ -7,7 +7,7 @@
 	import CloseIcon from '$lib/assets/icons/close.svg?component';
 	import ArrowRightIcon from '$lib/assets/icons/arrow-right.svg?component';
 	import { page } from '$app/stores';
-	import { afterNavigate, beforeNavigate } from '$app/navigation';
+	import { afterNavigate } from '$app/navigation';
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
 
@@ -34,14 +34,9 @@
 
 	afterNavigate(() => {
 		isMenuOpen = false;
-	})
+	});
 
 	onMount(() => {
-		// menuAnim.from('.navbar .navbar_menu', {
-		// 	y: '-100%',
-		// 	opacity: 0,
-		// 	ease: 'power2'
-		// });
 		menuAnim
 			.to('.navbar .navbar_menu', {
 				y: 0,
@@ -210,6 +205,11 @@
 
 			&__nav {
 				margin-top: 3rem;
+
+				@media screen and (max-width: $sm) {
+					margin-top: 2rem;
+				}
+
 				.divider {
 					margin-top: 1rem !important;
 					margin-bottom: 1rem !important;
@@ -218,7 +218,7 @@
 					:global(svg) {
 						min-width: 42px;
 					}
-					:global(svg path){ 
+					:global(svg path) {
 						stroke-width: 1px !important;
 					}
 					h2 {
@@ -233,15 +233,21 @@
 						font-weight: 600 !important;
 						color: $green;
 					}
-					:global(svg path){ 
+					:global(svg path) {
 						transition: all 0.1s ease;
 						stroke-width: 2px !important;
-						stroke: $green !important; 
+						stroke: $green !important;
 					}
 				}
 				@media (max-width: $sm) {
 					a h2 {
-						font-size: 2rem !important;
+						font-size: 1.2rem !important;
+					}
+					a {
+						:global(svg) {
+							width: 24px !important;
+							height: 24px !important;
+						}
 					}
 				}
 			}
@@ -249,6 +255,10 @@
 			&__links {
 				display: flex;
 				align-items: center;
+				@media screen and (max-width: $sm) {
+					margin-top: 1.5rem;
+					justify-content: center;
+				}
 			}
 
 			&__close {

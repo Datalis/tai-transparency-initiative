@@ -203,7 +203,7 @@ ul {
 		}
 
 		&:checked::before {
-			transform: scale(1);
+			transform: scale(1) !important;
 		}
 	}
 

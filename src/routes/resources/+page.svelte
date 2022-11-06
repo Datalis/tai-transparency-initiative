@@ -2,13 +2,14 @@
 	import ResourceFilters from '$lib/components/ResourceFilters.svelte';
 	import ResourceItemLarge from '$lib/components/ResourceItemLarge.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
-	import ArrowThick from '$lib/assets/icons/arrow_right_thick.svg?component';
 	import SearchThick from '$lib/assets/icons/search_thick.svg?component';
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 	import ResourceFiltersMobile from '$lib/components/ResourceFiltersMobile.svelte';
+	import ResourceLibraryItem from '$lib/components/ResourceLibraryItem.svelte';
+	import Pagination from '$lib/components/Pagination.svelte';
 
 	let showSearchInput = false;
 
@@ -23,11 +24,21 @@
 	let sortByParam: string | null = $page.url.searchParams.get('sortBy');
 
 	$: resources = data.resources.data || [];
+	$: resourcesPagination = data.resources?.meta?.pagination;
+
+	let currentPage = resourcesPagination?.page || 1;
+
+	$: pageSize = resourcesPagination?.pageSize || 6;
+
+
 	$: types = data.types.data || [];
+
 
 	$: {
 		let params = new URLSearchParams();
 		params.set('type', typeParam.toString());
+		params.set('page', currentPage.toString());
+		params.set('pageSize', pageSize.toString());
 		if (searchParam) params.set('search', searchParam);
 		if (sortByParam) params.set('sortBy', sortByParam);
 		if (browser) goto('/resources?'+params.toString());
@@ -63,12 +74,17 @@
 				<div class="divider divider_blue divider_1 my_2	" />
 				
 				{#each resources as resource}
-					<ResourceItemLarge data={resource} />
+					{#if resource?.type?.id == 7}
+						<ResourceLibraryItem data={resource}></ResourceLibraryItem>
+					{:else}
+						<ResourceItemLarge data={resource} />
+					{/if}
 					<div class="divider divider_blue divider_1 my_2" />
 				{/each}
 			</div>
 			<div class="display_flex align_center justify_center mt_5">
-				<button class="btn btn_outline_green text_dark">Load More</button>
+				<!-- <button class="btn btn_outline_green text_dark">Load More</button> -->
+				<Pagination bind:currentPage={currentPage} bind:pageSize={pageSize} totalItems={resourcesPagination?.total}></Pagination>
 			</div>
 		</div>
 	</section>
@@ -88,7 +104,7 @@
 	.resource_list_section {
 		.divider {
 			width: 100% !important;
-			opacity: 0.85 !important;
+			opacity: 0.65 !important;
 		}
 
 		.search_control {
@@ -119,9 +135,9 @@
 				border: none;
 				background: #f2f4f7;
 			}
-			input::placeholder {
-				font-style: italic;
-			}
+			// input::placeholder {
+			// 	font-style: italic;
+			// }
 		}
 	}
 </style>

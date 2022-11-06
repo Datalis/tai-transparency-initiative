@@ -2,17 +2,12 @@
 	import { Accordion, AccordionItem } from 'svelte-collapsible';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ViewMoreIcon from '$lib/components/ViewMoreIcon.svelte';
-	import { afterNavigate } from '$app/navigation';
 
 	let currentFAQ = 0;
 
 	export let data: any;
 
 	$: faqs = data.FAQItem || [];
-
-	afterNavigate(() => {
-		window.scrollTo(0, 0);
-	});
 </script>
 
 <div class="page">

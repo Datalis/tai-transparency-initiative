@@ -120,8 +120,11 @@
 	$green_light: #59ebcf;
 
 	.heading_section {
-		min-height: unset !important;
+		min-height: 80vh !important;
 		padding-top: 100px !important;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 	.heading_section a {
 		text-decoration: underline;

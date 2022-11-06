@@ -147,27 +147,26 @@
 			&--right {
 				padding-left: 2rem;
 				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+
 				h3 {
 					line-height: 1;
 					text-align: justify;
 					text-justify: distribute;
+					font-size: pxToRem(24);
 				}
 
 				a {
 					text-decoration: underline;
 				}
 				p {
-					// font-size: pxToRem(14);
-					// line-height: 1.2;
-					// display: -webkit-box;
-					// -webkit-box-orient: vertical;
-					// -webkit-line-clamp: 4;
-					// overflow: hidden;
-
+					margin-top: auto;
+					padding-top: 1rem;
 					font-size: pxToRem(14);
 					display: -webkit-box;
 					-webkit-box-orient: vertical;
-					-webkit-line-clamp: 3;
+					-webkit-line-clamp: 4;
 					overflow: hidden;
 					text-overflow: ellipsis;
 				}

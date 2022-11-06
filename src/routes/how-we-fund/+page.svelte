@@ -189,6 +189,7 @@
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
+	$xl: map-get($grid-breakpoints, 'xl');
 
 	.landing_section {
 		z-index: 1;
@@ -198,6 +199,15 @@
 		background-size: cover;
 		display: flex !important;
 		flex-direction: column !important;
+
+		
+		@media screen and (max-width: $md) {
+			height: unset;
+		}
+
+		@media screen and (min-width: $xl) {
+			height: 80vh !important;
+		}
 
 		.container {
 			margin-top: auto !important;

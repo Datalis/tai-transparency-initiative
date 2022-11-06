@@ -21,7 +21,8 @@ export type Resource = {
 	updatedAt: string;
 	publishedAt: string;
 	type: ResourceType;
-	links: { [key: string]: any }[]
+	links: { [key: string]: any }[];
+	url?: string;
 }
 
 export type ResourceFilter = {
