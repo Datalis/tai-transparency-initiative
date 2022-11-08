@@ -159,6 +159,16 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			transition: all 0.25s ease;
+
+			&:hover {
+				background-color: map-get($colors, 'green');
+				border: 1px solid map-get($colors, 'green');
+				svg {
+					fill: map-get($colors, 'blue') !important;
+				}
+			}
+
 			svg {
 				fill: map-get($colors, 'green') !important;
 			}
