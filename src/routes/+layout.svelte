@@ -39,7 +39,7 @@
 	html,
 	body {
 		overflow-x: hidden;
-		scroll-behavior: smooth;
+		scroll-behavior: unset !important;
 		scrollbar-color: #999 #333;
 
 		-moz-osx-font-smoothing: grayscale;

@@ -57,8 +57,10 @@
 					scale: 1.1
 				});
 		}
+
 		gsap.timeline().to(window, {
-			scrollTo: $page.url.hash || 0
+			scrollTo: $page.url.hash,
+			duration: 0.5
 		});
 	});
 </script>
