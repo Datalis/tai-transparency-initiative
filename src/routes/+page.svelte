@@ -107,7 +107,7 @@
 				<div class="col col_5 col_md_12">
 					<div class="landing_section__content">
 						<h1 class="text_green mb_3 mt_0">{hero?.title}</h1>
-						<span class="divider divider_1 divider_light" />
+						<span class="divider divider_2 divider_light" />
 						<div class="font_light">
 							{@html hero?.message}
 						</div>
