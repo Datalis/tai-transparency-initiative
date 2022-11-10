@@ -15,7 +15,7 @@
 				{@html data.message}
 			</div>
 			<div class="col col_4 col_md_12">
-				<a href="/resources?type=4" class="btn btn_outline_gray text_dark ml_auto">See All</a>
+				<a href="/resources?type=4" class="btn btn_outline_green text_dark ml_auto">See All</a>
 			</div>
 		</div>
 		<div class="articles_row row">

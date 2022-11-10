@@ -7,7 +7,7 @@
 	import type { Resource } from '$lib/types/resources';
 	import { onMount } from 'svelte';
 	import type { Response } from '$lib/types/data';
-
+	import Image from '$lib/components/Image.svelte';
 
 	export let data: Response<Resource>;
 
@@ -15,27 +15,40 @@
 	$: meta = data.meta;
 
 	onMount(() => {
-		console.log(data)
-	})
-
+		console.log(data);
+	});
 </script>
 
 <article id="resource" class="page">
 	<section class="heading_section section bg_blue">
 		<div class="container">
 			<div class="row">
-				<div class="col col_7 col_sm_12">
-					<span class="text_light text_uppercase">{resource.type.label}</span>
-					<h1 class="text_green">
-						{resource.title}
-					</h1>
-					<small class="text_gray font_light">
-						By <a href="/" class="text_gray">{resource.author.name}</a> ({resource.author.role})
-					</small>
-				</div>
-				<div class="col col_5 col_sm_12">
-					<!-- <img src={PlaceholderImg} class="w_100" alt="" /> -->
-				</div>
+				{#if resource.type.id == 2}
+
+					<div class="text_center col col_7 col_sm_12">
+						<span class="text_light font_bold text_uppercase">{resource.type.label}</span>
+						<h1 class="text_green">
+							{resource.title}
+						</h1>
+						<small class="text_gray font_light">
+							By <a href="/" class="text_gray">{resource.author.name}</a> ({resource.author.role})
+						</small>
+					</div>
+
+				{:else}
+					<div class="col col_7 col_sm_12">
+						<span class="text_light font_bold text_uppercase">{resource.type.label}</span>
+						<h1 class="text_green">
+							{resource.title}
+						</h1>
+						<small class="text_gray font_light">
+							By <a href="/" class="text_gray">{resource.author.name}</a> ({resource.author.role})
+						</small>
+					</div>
+					<div class="col col_5 col_sm_12">
+						<Image size="medium" priority image={resource?.image} />
+					</div>
+				{/if}
 			</div>
 		</div>
 	</section>
@@ -122,9 +135,19 @@
 	.heading_section {
 		min-height: 80vh !important;
 		padding-top: 100px !important;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		display: flex !important;
+		flex-direction: column !important;
+		justify-content: flex-end !important;
+
+		:global {
+			img {
+				background-color: transparent;
+				object-fit: contain;
+				height: 100%;
+				// max-height: 80vh;
+				width: 100%;
+			}
+		}
 	}
 	.heading_section a {
 		text-decoration: underline;
