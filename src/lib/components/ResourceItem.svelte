@@ -91,8 +91,7 @@
 
 		&__title {
 			font-size: pxToRem(16);
-			text-align: justify;
-			text-justify: distribute;
+			text-align: left;
 			letter-spacing: normal;
 		}
 

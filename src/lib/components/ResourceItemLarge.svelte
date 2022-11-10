@@ -152,8 +152,7 @@
 
 				h3 {
 					line-height: 1;
-					text-align: justify;
-					text-justify: distribute;
+					text-align: left;
 					font-size: pxToRem(24);
 				}
 
