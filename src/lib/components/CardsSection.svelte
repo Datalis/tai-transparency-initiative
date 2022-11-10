@@ -45,7 +45,7 @@
 						</a>
 						<div class="content">
 							<a href="/what-we-fund"><h3 class="text_dark">What we fund</h3></a>
-							<div class="divider divider_light divider_1" />
+							<div class="divider divider_light divider_2" />
 							<div class="content__text">
 								<a href="/what-we-fund#funding" class="text_dark display_block"
 									>What does TPA funding look like?</a
@@ -73,7 +73,7 @@
 							<a href="/how-we-fund">
 								<h3 class="text_dark">How we fund</h3>
 							</a>
-							<div class="divider divider_light divider_1" />
+							<div class="divider divider_light divider_2" />
 							<div class="content__text">
 								<a href="/how-we-fund#partner-support" class="text_dark display_block"
 									>Partner Support</a
@@ -101,7 +101,7 @@
 							<a href="/how-we-work">
 								<h3 class="text_dark">How we work</h3>
 							</a>
-							<div class="divider divider_light divider_1" />
+							<div class="divider divider_light divider_2" />
 							<div class="content__text">
 								<a href="/how-we-work#6cs" class="text_dark display_block"
 									>Our 6Cs of funder support</a
@@ -200,6 +200,7 @@
 					height: 50%;
 					display: flex;
 					flex-direction: column;
+					text-align: center;
 					.divider {
 						margin: auto;
 						flex-shrink: 0 !important;
@@ -226,8 +227,8 @@
 					margin: 0;
 					line-height: 80px;
 					font-weight: 600;
-					text-align: center;
-					font-size: pxToRem(35);
+					
+					font-size: pxToRem(30);
 				}
 
 				@media (hover: hover) {

@@ -171,6 +171,7 @@
 							autoplay
 							muted
 							loop
+							decoding="async"
 							class="w_100"
 							src="https://api.tai.datalis.dev/uploads/participatory_strategy_d1cb234e94.webm"
 							type="webm"
