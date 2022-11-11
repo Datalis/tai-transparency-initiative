@@ -15,6 +15,9 @@
 	export let data: PageData;
 	export let form: ActionData;
 
+	let activeStaff = -1;
+	let activeCommittee = -1;
+
 	$: members = data?.Members;
 	$: memberList = members?.MemberItem || [];
 
@@ -97,9 +100,13 @@
 			</p>
 			<div class="staff_list mt_4">
 				<h4 class="mb_4">Staff</h4>
-				{#each staffList as staffItem}
+				{#each staffList as staffItem, index}
 					<div class="divider divider_blue divider_1" />
-					<StaffItem data={staffItem} />
+					<StaffItem
+						data={staffItem}
+						on:toggle={() => (index == activeStaff ? (activeStaff = -1) : (activeStaff = index))}
+						isExpanded={index == activeStaff}
+					/>
 				{/each}
 			</div>
 		</div>
@@ -108,9 +115,13 @@
 		<div class="container">
 			<div class="committee_list mt_4">
 				<h4 class="mb_4 mt_4">Steering Committee</h4>
-				{#each commiteeList as commiteeItem}
+				{#each commiteeList as commiteeItem, index}
 					<div class="divider divider_blue divider_1" />
-					<StaffItem data={commiteeItem} />
+					<StaffItem
+						data={commiteeItem}
+						on:toggle={() => (index == activeCommittee ? (activeCommittee = -1) : (activeCommittee = index))}
+						isExpanded={index == activeCommittee}
+					/>
 				{/each}
 			</div>
 		</div>

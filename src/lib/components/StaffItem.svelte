@@ -1,11 +1,18 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+
 	import Image from './Image.svelte';
 	import ViewMoreIcon from './ViewMoreIcon.svelte';
+
+	const dispatch = createEventDispatcher();
 
 	export let isExpanded = false;
 	export let data: any;
 
-	const toggle = () => (isExpanded = !isExpanded);
+	const toggle = () => {
+		// isExpanded = !isExpanded;
+		dispatch('toggle', isExpanded);
+	};
 </script>
 
 <div class="staff_item_wrapper display_flex align_start">

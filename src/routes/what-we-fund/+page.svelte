@@ -226,7 +226,7 @@
 						<strong>GRANT SEEKERS</strong> find out which funders are supporting your issues, or identify
 						new peer groups you might want to meet.
 					</p>
-					<a href="/" class="btn btn_outline_green text_dark mt_4">Read More</a>
+					<a href="/resources?type=7" class="btn btn_outline_green text_dark mt_4">Read More</a>
 				</div>
 			</div>
 		</div>

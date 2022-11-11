@@ -272,6 +272,10 @@ ul {
 		color: map-get($colors, 'green');
 	}
 
+	&_outline_green:hover {
+		background-color: map-get($colors, 'green');
+	}
+
 	&_small {
 		@include fluid-type(12px);
 		min-width: 120px;
