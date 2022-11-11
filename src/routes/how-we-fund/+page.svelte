@@ -21,7 +21,6 @@
 	let windowWidth: number;
 	let videoPlayer: HTMLVideoElement;
 
-
 	let partnersSlideWidth = 0;
 
 	export let data: PageData;
@@ -35,41 +34,43 @@
 
 		partnersSlideWidth = partnersSlide.getBoundingClientRect().width + sliderOffset;
 
-		gsap
-			.timeline({
-				scrollTrigger: {
-					trigger: '.partners_section',
-					scrub: true,
-					start: 'top top',
-					end: 'bottom center',
-					pin: true
-				}
-			})
-			.to('.partners_section .partners_section__slide', {
-				x: toScroll
-			});
+		if (windowWidth > 768) {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: '.partners_section',
+						scrub: true,
+						start: 'top top',
+						end: 'bottom center',
+						pin: true
+					}
+				})
+				.to('.partners_section .partners_section__slide', {
+					x: toScroll
+				});
 
-		gsap
-			.timeline({
-				scrollTrigger: {
-					trigger: '.participatory_section',
-					pin: true,
-					scrub: true,
-					start: 'top top',
-					end: '+=200%'
-				}
-			})
-			.to('.participatory_section .participatory_section__content', {
-				yPercent: -5
-			})
-			.to('.participatory_section .participatory_section__content .video_wrapper', {
-				xPercent: -65,
-				flexBasis: '100%'
-				// ease: 'none'
-			})
-			.to('.participatory_section .participatory_section__content .video_wrapper video', {
-				height: '100%'
-			});
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: '.participatory_section',
+						pin: true,
+						scrub: true,
+						start: 'top top',
+						end: '+=200%'
+					}
+				})
+				.to('.participatory_section .participatory_section__content', {
+					yPercent: -5
+				})
+				.to('.participatory_section .participatory_section__content .video_wrapper', {
+					xPercent: -65,
+					flexBasis: '100%'
+					// ease: 'none'
+				})
+				.to('.participatory_section .participatory_section__content .video_wrapper video', {
+					height: '100%'
+				});
+		}
 
 		gsap.timeline().to(window, {
 			scrollTo: $page.url.hash || 0
@@ -201,7 +202,6 @@
 		display: flex !important;
 		flex-direction: column !important;
 
-
 		@media screen and (max-width: $md) {
 			height: unset;
 		}
@@ -223,7 +223,7 @@
 		.img_wrapper {
 			margin: auto !important;
 		}
-		
+
 		:global {
 			img {
 				background-color: transparent;
@@ -246,6 +246,13 @@
 			display: flex;
 			width: max-content;
 			will-change: transform;
+
+			@media screen and (max-width: $md) {
+				width: 100%;
+				flex-direction: column;
+				align-items: center;
+			}
+
 			&--wrapper {
 				margin-top: pxToRem(60);
 			}
@@ -290,13 +297,19 @@
 			}
 
 			@media (max-width: $md) {
-				width: 100vw !important;
+				width: 100% !important;
+				// max-width: unset !impo;
+
+				img {
+					width: 100% !important;
+					height: auto !important;
+				}
 			}
 
 			p {
 				margin-top: 1rem;
 				text-align: center;
-				font-size: pxToRem(12);
+				font-size: pxToRem(14);
 				font-weight: 600;
 			}
 		}
@@ -304,11 +317,13 @@
 		&__item + &__item {
 			margin-left: 4rem;
 			//margin-right: 2rem;
+			@media (max-width: $md) {
+				margin-left: 0;
+			}
 		}
 	}
 
 	.participatory_section {
-		background: #F2F4F7;
 		min-height: 105vh;
 		display: flex !important;
 		flex-direction: column;

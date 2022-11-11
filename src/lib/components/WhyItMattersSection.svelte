@@ -9,7 +9,7 @@
 <section id="why-it-matters" class="why_matters_section section bg_light">
 	<div class="container">
 		<h2 class="text_dark mt_0 mb_4">Why it matters</h2>
-		<span class="divider divider_2 divider_gray" />
+		<span class="divider divider_2 divider_green" />
 		<div class="row mt_3">
 			<div class="why_matters_section__message col col_8 col_md_12 mt_0">
 				{@html data.message}
@@ -42,6 +42,10 @@
 					margin: 0;
 				}
 			}
+		}
+
+		.btn {
+			float: right;
 		}
 
 		.articles_row {

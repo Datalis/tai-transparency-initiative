@@ -73,7 +73,8 @@
 	$lg: map-get($grid-breakpoints, 'lg');
 
 	.founders_section {
-		background: map-get($colors, 'light');
+		// background: map-get($colors, 'light');
+		background: #f2f4f7;
 		position: relative;
 		z-index: 0;
 		padding-top: 0 !important;

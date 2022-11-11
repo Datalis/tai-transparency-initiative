@@ -48,17 +48,17 @@
 					</div>
 				</div>
 				<div class="img_wrapper col col_7 col_sm_12 h_100">
-					<Image size="medium" image={hero?.image} priority></Image>
+					<Image size="medium" image={hero?.image} priority />
 				</div>
 			</div>
 		</div>
 	</section>
 	<section id="funding" class="funding_section section bg_light">
 		<div class="container">
-			<h2 class="text_dark">What does TAI Funding look like?</h2>
-			<span class="divider divider_2 divider_green my_4" />
-			<div class="show_on_md_and_up row mt_5">
-				<div class="col_4 col_lg_6 mt_5">
+			<h2 class="text_dark mt_0">What does TAI Funding look like?</h2>
+			<span class="divider divider_2 divider_green mb_5" />
+			<div class="show_on_md_and_up row">
+				<div class="col_4 col_lg_12">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<WebIcon class="web_icon" />
@@ -69,7 +69,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 col_lg_6 mt_5">
+				<div class="col_4 col_lg_12">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<HandsIcon class="hands_icon" />
@@ -80,7 +80,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 col_lg_6 mt_5">
+				<div class="col_4 col_lg_12">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<CogsIcon class="cogs_icon" />
@@ -91,7 +91,9 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 col_lg_6 mt_5">
+			</div>
+			<div class="show_on_md_and_up row mt_5">
+				<div class="col_4 col_lg_12">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<SearchIcon class="search_icon" />
@@ -102,7 +104,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 col_lg_6 mt_5">
+				<div class="col_4 col_lg_12">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<LightBulbIcon class="light_bulb_icon" />
@@ -113,7 +115,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col_4 col_lg_6 mt_5">
+				<div class="col_4 col_lg_12">
 					<div class="funding_item mx_auto">
 						<span class="funding_item__icon">
 							<ChartIcon class="chart_icon" />
@@ -125,7 +127,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="show_on_md_and_down">
+			<div class="show_on_md_and_down swiper_container">
 				<Swiper class="slider" pagination={true} modules={[Pagination]}>
 					<SwiperSlide>
 						<div class="funding_item mx_auto">
@@ -224,7 +226,7 @@
 						<strong>GRANT SEEKERS</strong> find out which funders are supporting your issues, or identify
 						new peer groups you might want to meet.
 					</p>
-					<a href="#" class="btn btn_outline_green text_dark mt_4">Read More</a>
+					<a href="/" class="btn btn_outline_green text_dark mt_4">Read More</a>
 				</div>
 			</div>
 		</div>
@@ -238,6 +240,7 @@
 <style lang="scss">
 	$green: #59ebcf;
 	$blue: map-get($colors, 'blue');
+	$lg: map-get($grid-breakpoints, 'lg');
 	$xl: map-get($grid-breakpoints, 'xl');
 	$md: map-get($grid-breakpoints, 'md');
 
@@ -271,7 +274,7 @@
 		.img_wrapper {
 			margin: auto !important;
 		}
-		
+
 		:global {
 			img {
 				background-color: transparent;
@@ -283,14 +286,19 @@
 		}
 	}
 	.funding_section {
+		display: flex !important;
+		flex-direction: column !important;
+		min-height: 100vh;
+
 		:global {
 			.slider {
-				height: 335px;
+				height: 400px;
 				--swiper-pagination-color: #7a879f;
 				.funding_item {
 					margin-top: 35px;
 					padding: 1rem !important;
 					padding-top: 1.5rem !important;
+
 					&__icon {
 						position: absolute;
 						top: -35px !important;
@@ -302,8 +310,28 @@
 			}
 		}
 
-		.row {
-			margin: 0;
+		.container {
+			height: 100% !important;
+			flex-grow: 1 !important;
+			display: flex;
+			flex-direction: column;
+			.col_4 {
+				margin-top: 1rem;
+			}
+
+			@media screen and (max-width: $lg) {
+				.row {
+					margin-top: 0;
+				}
+			}
+
+			.swiper_container {
+				.funding_item {
+					width: 100% !important;
+					margin-left: 0 !important;
+					margin-right: 0 !important;
+				}
+			}
 		}
 
 		.funding_item {
@@ -347,6 +375,7 @@
 			width: 90%;
 			min-height: 220px;
 			height: 100%;
+			
 			position: relative;
 			border-radius: 15px;
 			padding-top: 0.5rem;
@@ -354,6 +383,10 @@
 			padding-left: 3rem;
 			padding-right: 1rem;
 			background-color: $green;
+
+			@media screen and (max-width: $lg) {
+				margin-right: 0 !important;
+			}
 
 			p {
 				letter-spacing: normal;
@@ -363,7 +396,23 @@
 	}
 
 	.funding_data_section {
+		min-height: 100vh;
+		display: flex !important;
+		flex-direction: column !important;
 		background-color: #e4e8ef;
+
+		.container {
+			height: 100% !important;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			.row {
+				flex-grow: 1;
+				height: 100%;
+				align-items: center;
+			}
+		}
+
 		@media (max-width: $md) {
 			a {
 				width: 100%;
