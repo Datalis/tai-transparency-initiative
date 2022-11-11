@@ -75,7 +75,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="members_section section bg_gray">
+	<section class="members_section section">
 		<div class="container">
 			<h2 class="mb_4">{members.title}</h2>
 			<div class="divider divider_green divider_2" />
@@ -173,6 +173,7 @@
 		}
 	}
 	.members_section {
+		background: #f2f4f7;
 		position: relative;
 		z-index: 1;
 		.member_list {
