@@ -96,7 +96,7 @@
 					{:else}
 						<ResourceItemLarge data={resource} />
 					{/if}
-					<div class="divider divider_blue divider_1 my_2" />
+					<!-- <div class="divider divider_blue divider_1 my_2" /> -->
 				{/each}
 			</div>
 			<div class="display_flex align_center justify_center mt_5">

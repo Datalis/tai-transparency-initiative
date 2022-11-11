@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { PaginationNav } from 'svelte-paginate';
-	import ArrowLeft from '$lib/assets/icons/arrow-large-left.svg?component'
-	import ArrowRight from '$lib/assets/icons/arrow-large-right.svg?component'
+	import ArrowLeft from '$lib/assets/icons/arrow-large-left.svg?component';
+	import ArrowRight from '$lib/assets/icons/arrow-large-right.svg?component';
 
 	export let totalItems = 0;
 	export let currentPage = 1;
@@ -18,34 +18,46 @@
 		on:setPage={(e) => (currentPage = e.detail.page)}
 	>
 		<span slot="prev">
-			<ArrowLeft class="mr_2" width="24"></ArrowLeft>
+			<ArrowLeft class="mr_2" width="24" />
 			Previous
 		</span>
 		<span slot="next">
 			Next
-			<ArrowRight class="ml_2" width="24"></ArrowRight>
+			<ArrowRight class="ml_2" width="24" />
 		</span>
 	</PaginationNav>
 </div>
 
 <style lang="scss">
 	.pagination_wrapper {
+		width: 100%;
 		:global {
 			.pagination-nav {
 				box-shadow: none;
 				background-color: transparent;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-top: 1px solid map-get($colors, 'gray_light');
 			}
 			.pagination-nav .option {
 				cursor: pointer;
-				padding: .5rem .8rem;
+				padding: 0.5rem 0.8rem;
 				font-weight: 600;
 				font-size: pxToRem(14);
-				border-top: 1px solid map-get($colors, 'gray_light');
+
 				color: map-get($colors, 'gray');
 
 				svg path {
 					stroke: map-get($colors, 'gray') !important;
 				}
+			}
+			.pagination-nav .option.prev {
+				margin-right: auto;
+			}
+			.pagination-nav .option.next {
+				margin-left: auto;
 			}
 			.pagination-nav .option.active {
 				border-top: 2px solid map-get($colors, 'green');
