@@ -58,7 +58,7 @@
 					<div class="envision_section__item display_flex flex_column align_center">
 						<img src={EnvisionImg2} alt="" class="w_75" />
 						<span class="mt_5 text_center text_dark font_light">
-							Citizens are informed and empowered
+							Governments are open and responsive
 						</span>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 					<div class="envision_section__item display_flex flex_column align_center">
 						<img src={EnvisionImg3} alt="" class="w_75" />
 						<span class="mt_5 text_center text_dark font_light">
-							Citizens are informed and empowered
+							Public good is enhanced through civic engagement
 						</span>
 					</div>
 				</div>
