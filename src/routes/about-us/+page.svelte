@@ -30,9 +30,9 @@
 <div class="page">
 	<section class="landing_section section bg_blue">
 		<div class="container">
+			<img class="wrapper_bg" alt="" src={WorldImg}>
 			<div
 				class="wrapper display_flex flex_column align_center justify_center"
-				style:background-image="url({WorldImg})"
 			>
 				<LogoIcon width="72" height="72" />
 				<h1 class="text_green mt_4">About Us</h1>
@@ -126,16 +126,27 @@
 
 	.landing_section {
 		padding: 0 !important;
-		min-height: 70vh !important;
+		min-height: 80vh !important;
 		position: relative;
 		z-index: 1;
 		padding-top: 100px !important;
-		.container {
-			height: 400px;
+		display: flex !important;
+		flex-direction: column !important;
+		justify-content: center;
+		.wrapper_bg {
+			z-index: -1;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			object-fit: contain;
+			margin: auto;
+			width: 70%;
 		}
 		.wrapper {
 			height: 100%;
-			background-repeat: no-repeat;
+			background-repeat: no-repeat;	
 			background-position: center;
 			background-size: contain;
 		}
