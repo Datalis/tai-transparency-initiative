@@ -236,7 +236,7 @@
 				</div>
 				<div class="container">
 					<div class="row">
-						<div class="col col_6 col_md_12">
+						<div class="col col_6 col_md_12 display_flex flex_column justify_center">
 							<h2>Working with other groups</h2>
 							<div class="divider divider_white divider_2" />
 							<p class="mt_4">
@@ -471,6 +471,20 @@
 		z-index: 0 !important;
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
+
+		.wrapper {
+			display: flex !important;
+			flex-direction: column !important;
+			
+			.container {
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+				.row {
+					flex-grow: 1;
+				}
+			}
+		}
 
 		@media screen and (max-width: $md) {
 			.wrapper .brands_grid {
