@@ -27,13 +27,11 @@
 	onMount(() => console.log(data));
 </script>
 
-<div class="page">
+<div class="about_us_page page">
 	<section class="landing_section section bg_blue">
 		<div class="container">
-			<img class="wrapper_bg" alt="" src={WorldImg}>
-			<div
-				class="wrapper display_flex flex_column align_center justify_center"
-			>
+			<img class="wrapper_bg" alt="" src={WorldImg} />
+			<div class="wrapper display_flex flex_column align_center justify_center">
 				<LogoIcon width="72" height="72" />
 				<h1 class="text_green mt_4">About Us</h1>
 				<div class="divider divider_light divider_2 w_15 mt_4" />
@@ -146,7 +144,7 @@
 		}
 		.wrapper {
 			height: 100%;
-			background-repeat: no-repeat;	
+			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;
 		}
@@ -214,11 +212,13 @@
 			opacity: 0.5;
 		}
 	}
-	:global {
-		.join_section {
-			background-color: map-get($colors, 'light') !important;
-			.divider {
-				background-color: map-get($colors, 'green');
+	.about_us_page {
+		:global {
+			.join_section {
+				background-color: map-get($colors, 'light') !important;
+				.divider {
+					background-color: map-get($colors, 'green');
+				}
 			}
 		}
 	}
