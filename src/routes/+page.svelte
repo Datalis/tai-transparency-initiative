@@ -92,7 +92,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<div id="home" class="page">
+<div id="home" class="page bg_blue">
 	<section class="landing_section section bg_blue">
 		<div class="container">
 			<div class="row">
