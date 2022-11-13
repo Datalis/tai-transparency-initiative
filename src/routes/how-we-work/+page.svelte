@@ -286,7 +286,7 @@
 		z-index: 1;
 		padding-top: 100px !important;
 		// height: 80vh;
-		min-height: 80vh;
+		min-height: 100vh;
 		background-image: url(/src/lib/assets/images/hero.webp);
 		background-size: cover;
 		display: flex !important;

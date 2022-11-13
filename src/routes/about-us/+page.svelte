@@ -135,7 +135,7 @@
 
 	.landing_section {
 		padding: 0 !important;
-		min-height: 80vh !important;
+		min-height: 100vh;
 		position: relative;
 		z-index: 1;
 		padding-top: 100px !important;

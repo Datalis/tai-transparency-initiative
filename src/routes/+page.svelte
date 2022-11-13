@@ -49,7 +49,7 @@
 				x: scrollBy,
 				scrollTrigger: {
 					trigger: '.brands_section',
-					start: 'top bottom',
+					start: '+=150px bottom',
 					end: 'bottom -100px',
 					scrub: true
 				}
@@ -130,15 +130,14 @@
 			<span class="brands_section__title">OUR MEMBERS</span>
 		</div>
 		<div class="wrapper" bind:this={brandSlide}>
-			<MacArthurLogo width="300" />
-			<FordLogo width="300" />
-			<HewlettLogo width="300" />
-			<LuminateLogo width="300" />
-			<OpenSocietyLogo width="300" />
-			<SkollLogo height="80" />
-
-			<FCDOLogo width="300" />
-			<ChandlerLogo width="300" />
+			<a href="https://www.macfound.org/" target="blank"><MacArthurLogo width="300" /></a>
+			<a href="https://www.fordfoundation.org/" target="blank"><FordLogo width="300" /></a>
+			<a href="https://hewlett.org/" target="blank"><HewlettLogo width="300" /></a>
+			<a href="https://luminategroup.com/" target="blank"><LuminateLogo width="300" /></a>
+			<a href="https://www.opensocietyfoundations.org/" target="blank"><OpenSocietyLogo width="300" /></a>
+			<a href="https://skoll.org/" target="blank"><SkollLogo height="80" /></a>
+			<a href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office" target="blank"><FCDOLogo width="300" /></a>
+			<a href="https://www.chandlerfoundation.org/" target="blank"><ChandlerLogo width="300" /></a>
 		</div>
 	</section>
 	<section class="brands_section_mobile section bg_blue show_on_lg_and_down">
@@ -146,15 +145,30 @@
 			<span class="brands_section__title">OUR MEMBERS</span>
 		</div>
 		<div class="wrapper">
-			<MacArthurLogo height="50" width="50%" />
-			<FordLogo height="50" width="50%" />
-			<HewlettLogo height="50" width="50%" class="mt_4" />
-			<LuminateLogo height="50" width="50%" class="mt_4" />
-			<OpenSocietyLogo height="50" width="50%" class="mt_4" />
-			<SkollLogo height="50" width="50%" class="mt_4" />
-
-			<FCDOLogo height="50" width="50%" class="mt_4" />
-			<ChandlerLogo height="50" width="50%" class="mt_4" />
+			<a href="https://www.macfound.org/" target="blank">
+				<MacArthurLogo height="50" width="50%" />
+			</a>
+			<a href="https://www.fordfoundation.org/" target="blank">
+				<FordLogo height="50" width="50%" />
+			</a>
+			<a href="https://hewlett.org/" target="blank">
+				<HewlettLogo height="50" width="50%" class="mt_4" />
+			</a>
+			<a href="https://luminategroup.com/" target="blank">
+				<LuminateLogo height="50" width="50%" class="mt_4" />
+			</a>
+			<a href="https://www.opensocietyfoundations.org/" target="blank">
+				<OpenSocietyLogo height="50" width="50%" class="mt_4" />
+			</a>
+			<a href="https://skoll.org/" target="blank">
+				<SkollLogo height="50" width="50%" class="mt_4" />
+			</a>
+			<a href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office" target="blank">
+				<FCDOLogo height="50" width="50%" class="mt_4" />
+			</a>
+			<a href="https://www.chandlerfoundation.org/" target="blank">
+				<ChandlerLogo height="50" width="50%" class="mt_4" />
+			</a>
 		</div>
 	</section>
 	<CardsSection />
@@ -335,7 +349,14 @@
 			.wrapper {
 				display: flex;
 				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
 				padding: 1rem;
+				a {
+					width: 50%;
+					display: flex;
+					justify-content: center;
+				}
 			}
 		}
 	}
