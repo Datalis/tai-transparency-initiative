@@ -164,7 +164,11 @@
 				</div>
 			</div>
 			<div class="display_flex align_center justify_center mt_5">
-				<button class="btn btn_outline_green text_dark">Full 2020-2024 Strategy</button>
+				<a
+					href="https://api.tai.datalis.dev/uploads/tai_strategy_document_2020_2024_45f7b393f2.pdf"
+					target="blank"
+					class="btn btn_outline_green text_dark">Full 2020-2024 Strategy</a
+				>
 			</div>
 		</div>
 	</section>
@@ -475,7 +479,7 @@
 		.wrapper {
 			display: flex !important;
 			flex-direction: column !important;
-			
+
 			.container {
 				display: flex;
 				flex-direction: column;

@@ -4,6 +4,7 @@
 	import PartnerImg3 from '$lib/assets/images/partner_support/3.webp';
 	import PartnerImg4 from '$lib/assets/images/partner_support/4.webp';
 	import PartnerImg5 from '$lib/assets/images/partner_support/5.webp';
+	import PartnerImg6 from '$lib/assets/images/partner_support/6.webp';
 
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
@@ -115,36 +116,42 @@
 					<div class="partners_section__item">
 						<img src={PartnerImg1} alt="" />
 						<p class="mt_4">
-							Enhance diversity, equity and inclusion practices in our own foundations and in our
-							partners
+							Collaborate on selected projects, initiatives, and campaigns that require greater
+							collective action and attention.
 						</p>
 					</div>
 					<div class="partners_section__item">
 						<img src={PartnerImg2} alt="" />
 						<p class="mt_4">
 							Enhance diversity, equity and inclusion practices in our own foundations and in our
-							partners
+							partners.
 						</p>
 					</div>
 					<div class="partners_section__item">
 						<img src={PartnerImg3} alt="" />
 						<p class="mt_4">
-							Enhance diversity, equity and inclusion practices in our own foundations and in our
-							partners
+							Exchange experiences and test ways to enable more equitable funder-grantee
+							relationships.
 						</p>
 					</div>
 					<div class="partners_section__item">
 						<img src={PartnerImg4} alt="" />
-						<p class="mt_4">
-							Enhance diversity, equity and inclusion practices in our own foundations and in our
-							partners
-						</p>
+						<p class="mt_4">Expand the proportion of our grantees receiving flexible support.</p>
 					</div>
 					<div class="partners_section__item">
 						<img src={PartnerImg5} alt="" />
 						<p class="mt_4">
-							Enhance diversity, equity and inclusion practices in our own foundations and in our
-							partners
+							Improve our use of both financial and nonfinancial tools, such as dedicated
+							organizational health funds and strategic communications, to strengthen grantee
+							organizational effectiveness and agency.
+						</p>
+					</div>
+					<div class="partners_section__item">
+						<img src={PartnerImg6} alt="" />
+						<p class="mt_4">
+							Learn from each other (and other nonmember funders) to inform our strategy designs,
+							explore complementarities, and test assumptions, for example, around entering and
+							exiting fields.
 						</p>
 					</div>
 				</div>
@@ -164,7 +171,13 @@
 							Our members learn from each other and hold each other accountable to be more
 							inclusive, equitable, innovative, and effective grantmakers.
 						</p>
-						<a href="/" class="btn btn_green btn_bordered mt_4"> Learn more </a>
+						<a
+							href="https://participatorystrategy.org/"
+							target="blank"
+							class="btn btn_outline_green text_dark mt_4"
+						>
+							Learn more
+						</a>
 					</div>
 					<div class="video_wrapper">
 						<video
@@ -276,19 +289,16 @@
 
 		&__item {
 			flex-shrink: 0;
-			width: calc(30vw - 4rem);
-			max-width: calc(1400px / 4);
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 			position: relative;
 
+			width: calc(33.3333vw - 4rem);
+			max-width: calc(1400px/3 - 4rem);
+
 			img {
-				height: calc(30vw - 4rem);
-				width: calc(30vw - 4rem);
-				max-width: calc(1400px / 4);
-				max-height: calc(1400px / 4);
 				// width: 100%;
 				object-fit: cover;
 				object-position: center;

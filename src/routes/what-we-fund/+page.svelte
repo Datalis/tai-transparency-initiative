@@ -226,7 +226,11 @@
 						<strong>GRANT SEEKERS</strong> find out which funders are supporting your issues, or identify
 						new peer groups you might want to meet.
 					</p>
-					<a href="/resources?type=7" class="btn btn_outline_green text_dark mt_4">Read More</a>
+					<a
+						href="https://grants.transparency-initiative.org/"
+						target="blank"
+						class="btn btn_outline_green text_dark mt_4">Read More</a
+					>
 				</div>
 			</div>
 		</div>
@@ -375,7 +379,7 @@
 			width: 90%;
 			min-height: 220px;
 			height: 100%;
-			
+
 			position: relative;
 			border-radius: 15px;
 			padding-top: 0.5rem;
