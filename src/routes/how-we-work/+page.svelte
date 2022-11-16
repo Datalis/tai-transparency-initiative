@@ -22,6 +22,9 @@
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 	import Image from '$lib/components/Image.svelte';
 
+	import HeroImg1 from '$lib/assets/images/hero/3.2.png';
+	import HeroImg2 from '$lib/assets/images/hero/3.1.png';
+
 	let windowWidth: number;
 
 	export let data: PageData;
@@ -56,6 +59,28 @@
 				.to('.featured_section .featured_section__content .video_wrapper video', {
 					scale: 1.1
 				});
+
+			const parallax = gsap.timeline({
+				scrollTrigger: {
+					trigger: '.landing_section',
+					start: 'top 90px',
+					end: 'bottom top',
+					scrub: true
+				}
+			});
+
+			gsap.utils.toArray('.landing_section .parallax').forEach((layer: any) => {
+				const d = +(layer.dataset.depth || 0);
+				const movement = -(layer.offsetHeight * d);
+				parallax.to(
+					layer,
+					{
+						y: movement,
+						ease: 'none'
+					},
+					0
+				);
+			});
 		}
 
 		gsap.timeline().to(window, {
@@ -71,7 +96,7 @@
 	<section class="landing_section section bg_blue">
 		<div class="container h-100">
 			<div class="row">
-				<div class="col col_5 col_sm_12">
+				<div class="col col_5 col_md_12 pb_5">
 					<div class="display_flex flex_column h_100 justify_end">
 						<h1 class="text_green mb_4">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light mb_3" />
@@ -80,8 +105,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="img_wrapper col col_7 col_sm_12 h_100">
-					<Image size="medium" image={hero?.image} priority />
+				<div class="img_wrapper col col_7 col_md_12 h_100">
+					<!-- <Image size="medium" image={hero?.image} priority /> -->
+					<img class="img_wrapper_1 parallax" data-depth="0.15" decoding="sync" loading="eager" preload='' src={HeroImg1} alt="" />
+					<img class="img_wrapper_2 parallax" data-depth="0" decoding="sync" loading="eager" preload="" src={HeroImg2} alt="" />
 				</div>
 			</div>
 		</div>
@@ -289,6 +316,7 @@
 	.landing_section {
 		z-index: 1;
 		padding-top: 100px !important;
+		padding-bottom: 0 !important;
 		// height: 80vh;
 		min-height: 100vh;
 		background-image: url(/src/lib/assets/images/hero.webp);
@@ -316,15 +344,25 @@
 
 		.img_wrapper {
 			margin: auto !important;
-		}
+			// margin-bottom: 0 !important;
+			position: relative;
 
-		:global {
+			min-height: 50vh;
+
+			img.img_wrapper_1 {
+				bottom: 0;
+				max-width: 80%;
+				margin: auto;
+			}
+			img.img_wrapper_2 {
+				bottom: 0;
+			}
 			img {
-				background-color: transparent;
-				object-fit: contain;
-				height: 100%;
-				// max-height: 80vh;
-				width: 100%;
+				position: absolute;
+				max-width: 100%;
+				max-height: 100%;
+				left: 0;
+				right: 0;
 			}
 		}
 	}

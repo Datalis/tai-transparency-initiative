@@ -8,6 +8,7 @@
 	import FundingImg from '$lib/assets/images/funding_data_library.webp';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
+	import HeroImg from '$lib/assets/images/hero/1.1.png';
 
 	import 'swiper/css';
 	import 'swiper/css/pagination';
@@ -23,22 +24,50 @@
 
 	export let data: PageData;
 
+	let windowWidth = 0;
+
 	$: hero = data?.hero;
 	$: resources = data?.resources;
 	$: whyItMatters = data?.WhyItMatters;
 
 	onMount(() => {
+		if (windowWidth > 768) {
+			const parallax = gsap.timeline({
+				scrollTrigger: {
+					trigger: '.landing_section',
+					start: 'top 90px',
+					end: 'bottom top',
+					scrub: true
+				}
+			});
+
+			gsap.utils.toArray('.landing_section .parallax').forEach((layer: any) => {
+				const d = +(layer.dataset.depth || 0);
+				const movement = -(layer.offsetHeight * d);
+				parallax.to(
+					layer,
+					{
+						y: movement,
+						rotate: 5,
+						ease: 'none'
+					},
+					0
+				);
+			});
+		}
 		gsap.timeline().to(window, {
 			scrollTo: $page.url.hash || 0
 		});
 	});
 </script>
 
+<svelte:window bind:innerWidth={windowWidth} />
+
 <div id="what-we-fund" class="page">
 	<section class="landing_section section bg_blue">
 		<div class="container">
 			<div class="row">
-				<div class="col col_5 col_sm_12">
+				<div class="col col_5 col_md_12">
 					<div class="display_flex flex_column justify_end h_100">
 						<h1 class="text_green mb_4">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light" />
@@ -47,8 +76,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="img_wrapper col col_7 col_sm_12 h_100">
-					<Image size="medium" image={hero?.image} priority />
+				<div class="img_wrapper col col_7 col_md_12 h_100">
+					<!-- <Image size="medium" image={HeroImg} priority /> -->
+					<img
+						class="parallax"
+						data-depth="-0.15"
+						src={HeroImg}
+						alt=""
+						decoding="sync"
+						loading="eager"
+						preload=""
+					/>
 				</div>
 			</div>
 		</div>
@@ -267,6 +305,9 @@
 
 		.container {
 			margin-top: auto !important;
+			@media screen and (max-width: $md) {
+				margin-top: 0 !important;
+			}
 		}
 
 		.container,
@@ -277,15 +318,22 @@
 
 		.img_wrapper {
 			margin: auto !important;
-		}
+			// margin-bottom: 0 !important;
+			position: relative;
 
-		:global {
 			img {
-				background-color: transparent;
-				object-fit: contain;
-				height: 100%;
-				// max-height: calc(100vh - 100px - 3rem);
-				width: 100%;
+				position: absolute;
+				max-width: 80%;
+				left: 0;
+				right: 0;
+				margin: auto;
+				bottom: 0;
+				top: 0;
+				@media screen and (max-width: $md) {
+					position: relative;
+					max-width: 100%;
+					margin-top: 1rem;
+				}
 			}
 		}
 	}

@@ -85,7 +85,7 @@
 									>Participatory Strategy</a
 								>
 								<a href="/how-we-fund#resources" class="text_dark display_block">
-									Transparency and Accountability Initiative Resources
+									Resources
 								</a>
 							</div>
 						</div>

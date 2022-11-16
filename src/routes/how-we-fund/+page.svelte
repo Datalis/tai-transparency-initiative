@@ -14,7 +14,9 @@
 	import { page } from '$app/stores';
 	import FoundersExitsSection from '$lib/components/FoundersExitsSection.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
-	import Image from '$lib/components/Image.svelte';
+
+	import HeroImg1 from '$lib/assets/images/hero/art1.png';
+	// import HeroImg2 from '$lib/assets/images/hero/2.2.png'
 
 	import ParticipatoryVideoPoster from '$lib/assets/images/participatory-video-poster.webp';
 
@@ -71,6 +73,28 @@
 				.to('.participatory_section .participatory_section__content .video_wrapper video', {
 					height: '100%'
 				});
+
+			const parallax = gsap.timeline({
+				scrollTrigger: {
+					trigger: '.landing_section',
+					start: 'top 90px',
+					end: 'bottom top',
+					scrub: true
+				}
+			});
+
+			gsap.utils.toArray('.landing_section .parallax').forEach((layer: any) => {
+				const d = +(layer.dataset.depth || 0);
+				const movement = -(layer.offsetHeight * d);
+				parallax.to(
+					layer,
+					{
+						y: movement,
+						ease: 'none'
+					},
+					0
+				);
+			});
 		}
 
 		gsap.timeline().to(window, {
@@ -85,7 +109,7 @@
 	<section class="landing_section section bg_blue">
 		<div class="container h-100">
 			<div class="row">
-				<div class="col col_5 col_sm_12">
+				<div class="col col_5 col_md_12">
 					<div class="display_flex flex_column h_100 justify_end">
 						<h1 class="text_green mb_4">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light" />
@@ -94,8 +118,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="img_wrapper col col_7 col_sm_12 h_100">
-					<Image image={hero?.image} size="medium" priority />
+				<div class="img_wrapper col col_7 col_md_12 h_100">
+					<img
+						class="parallax"
+						data-depth="-0.15"
+						decoding="sync"
+						loading="eager"
+						preload=""
+						src={HeroImg1}
+						alt=""
+					/>
+					<!-- <img class="img_wrapper_2 parallax" decoding="sync" loading="eager" src={HeroImg2} alt=""> -->
+					<!-- <Image image={hero?.image} size="medium" priority /> -->
 				</div>
 			</div>
 		</div>
@@ -204,6 +238,7 @@
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
+	$lg: map-get($grid-breakpoints, 'lg');
 	$xl: map-get($grid-breakpoints, 'xl');
 
 	.landing_section {
@@ -225,6 +260,9 @@
 
 		.container {
 			margin-top: auto !important;
+			@media screen and (max-width: $md) {
+				margin-top: 0 !important;
+			}
 		}
 
 		.container,
@@ -235,15 +273,15 @@
 
 		.img_wrapper {
 			margin: auto !important;
+			position: relative;
 		}
-
-		:global {
-			img {
-				background-color: transparent;
-				object-fit: contain;
-				height: 100%;
-				// max-height: calc(100vh - 100px - 3rem);
-				width: 100%;
+		.img_wrapper img {
+			margin: auto;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			@media screen and (max-width: $md) {
+				position: relative;
 			}
 		}
 	}
@@ -296,7 +334,7 @@
 			position: relative;
 
 			width: calc(33.3333vw - 4rem);
-			max-width: calc(1400px/3 - 4rem);
+			max-width: calc(1400px / 3 - 4rem);
 
 			img {
 				// width: 100%;

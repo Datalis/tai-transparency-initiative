@@ -56,27 +56,27 @@
 			});
 
 		
-		const parallax = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.landing_section',
-				start: 'top 90px',
-				end: 'bottom top',
-				scrub: true
-			}
-		});
+		// const parallax = gsap.timeline({
+		// 	scrollTrigger: {
+		// 		trigger: '.landing_section',
+		// 		start: 'top 90px',
+		// 		end: 'bottom top',
+		// 		scrub: true
+		// 	}
+		// });
 
-		gsap.utils.toArray('.landing_section__hero .parallax').forEach((layer: any) => {
-			const d = +(layer.dataset.depth || 0);
-			const movement = -(layer.offsetHeight * d);
-			parallax.to(
-				layer,
-				{
-					y: movement,
-					ease: 'none'
-				},
-				0
-			);
-		});
+		// gsap.utils.toArray('.landing_section__hero .parallax').forEach((layer: any) => {
+		// 	const d = +(layer.dataset.depth || 0);
+		// 	const movement = -(layer.offsetHeight * d);
+		// 	parallax.to(
+		// 		layer,
+		// 		{
+		// 			y: movement,
+		// 			ease: 'none'
+		// 		},
+		// 		0
+		// 	);
+		// });
 	}
 
 	onMount(() => {
@@ -260,6 +260,10 @@
 					// left: 0;
 					right: 0;
 					margin: auto;
+
+					@media screen and (max-width: $lg) {
+						top: calc(100% - 325px);
+					}
 				}
 			}
 		}
