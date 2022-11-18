@@ -2,6 +2,9 @@
 	import { CollapsibleCard } from 'svelte-collapsible';
 	import FiltersIcon from '$lib/assets/icons/filters.svg?component';
 	import type { ResourceType } from '$lib/types/resources';
+	import { createEventDispatcher } from 'svelte';
+
+	let emit = createEventDispatcher();
 
 	export let currentFilter = 1;
 
@@ -10,6 +13,11 @@
 	let isOpen = false;
 
 	$: current = options?.find(e => e.id == currentFilter);
+
+	function onFilterChange(e: any) {
+		isOpen = false;
+		emit('onChange', e.target.value)
+	}
 
 </script>
 
@@ -23,7 +31,7 @@
 			{#each options as opt}
 				<div class="form_control form_control_radio">
 					<label>
-						<input type="radio" bind:group={currentFilter} name="filter" value={opt.id} on:change={() => isOpen=false} />
+						<input type="radio" bind:group={currentFilter} name="filter" value={opt.id} on:change={onFilterChange} />
 						{opt.label}
 					</label>
 				</div>

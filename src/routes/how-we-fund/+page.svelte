@@ -175,17 +175,17 @@
 					<div class="partners_section__item">
 						<img src={PartnerImg5} alt="" />
 						<p class="mt_4">
-							Improve our use of both financial and nonfinancial tools, such as dedicated
+							Improve our use of both financial and nonfinancial tools<!-- , such as dedicated
 							organizational health funds and strategic communications, to strengthen grantee
-							organizational effectiveness and agency.
+							organizational effectiveness and agency. -->
 						</p>
 					</div>
 					<div class="partners_section__item">
 						<img src={PartnerImg6} alt="" />
 						<p class="mt_4">
 							Learn from each other (and other nonmember funders) to inform our strategy designs,
-							explore complementarities, and test assumptions, for example, around entering and
-							exiting fields.
+							explore complementarities, and test assumptions<!-- , for example, around entering and
+							exiting fields. -->
 						</p>
 					</div>
 				</div>
@@ -357,7 +357,7 @@
 			p {
 				margin-top: 1rem;
 				text-align: center;
-				font-size: pxToRem(14);
+				font-size: pxToRem(12);
 				font-weight: 600;
 			}
 		}

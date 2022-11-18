@@ -13,8 +13,9 @@ export const load: PageServerLoad = async ({ url }) => {
 		const sortBy = url.searchParams.get('sortBy') || 'date';
 		const search = url.searchParams.get('search');
 		const type = url.searchParams.get('type') || 1;
+		const topic = url.searchParams.get('topic') || null;
 
-		const params = {
+		const params: any = {
 			filters: {
 				type: {
 					id: {
@@ -53,12 +54,22 @@ export const load: PageServerLoad = async ({ url }) => {
 			},
 		};
 
+		if (topic) {
+			params.filters['library_topic'] = {
+				id: {
+					$eq: topic
+				}
+			}
+		}
+
 		const resources: Response<Resource[]> = await get('wc-resources', params);
 		const types: Response<ResourceType[]> = await get('wc-resource-types');
+		const libraryTopics: Response<{ [key: string]: any }[]> = await get('wc-library-topics');
 
 		return {
 			resources,
-			types
+			types,
+			libraryTopics,
 		};
 	} catch (e) {
 		throw error(500, `Error: ${e}`);

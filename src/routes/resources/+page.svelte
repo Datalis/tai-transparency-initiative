@@ -11,7 +11,7 @@
 	import ResourceLibraryItem from '$lib/components/ResourceLibraryItem.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
 
-	let showSearchInput = false;
+	let showSearchInput = true;
 
 	function toggleSearch() {
 		showSearchInput = !showSearchInput;
@@ -23,8 +23,12 @@
 	let searchParam: string | null = $page.url.searchParams.get('search');
 	let sortByParam: string | null = $page.url.searchParams.get('sortBy');
 
+	let currentTopic: number | null = null;
+
 	$: resources = data.resources.data || [];
 	$: resourcesPagination = data.resources?.meta?.pagination;
+
+	$: libTopics = data.libraryTopics.data || [];
 
 	let currentPage = resourcesPagination?.page || 1;
 
@@ -37,8 +41,14 @@
 		params.set('type', typeParam.toString());
 		params.set('page', currentPage.toString());
 		params.set('pageSize', pageSize.toString());
+
+		if (typeParam == 7 && currentTopic) {
+			params.set('topic', currentTopic.toString());
+		}
+
 		if (searchParam) params.set('search', searchParam);
 		if (sortByParam) params.set('sortBy', sortByParam);
+
 		if (browser) goto('/resources?' + params.toString());
 	}
 
@@ -49,27 +59,52 @@
 			searchParam = v;
 		}, 300);
 	};
+
+	function filterByTopic(topic: number) {
+		if (currentTopic == topic) currentTopic = null;
+		else currentTopic = topic;
+	}
 </script>
 
 <div id="resources" class="page">
 	<div class="resource_filters bg_blue pb_2 show_on_md_and_up">
 		<div class="container">
-			<ResourceFilters options={types} bind:currentFilter={typeParam} />
+			<ResourceFilters
+				options={types}
+				bind:currentFilter={typeParam}
+				on:onChange={() => (currentPage = 1)}
+			/>
 		</div>
 	</div>
 	<div class="resource_filters_mobile bg_blue pb_2 show_on_md_and_down">
-		<ResourceFiltersMobile options={types} bind:currentFilter={typeParam} />
+		<ResourceFiltersMobile
+			options={types}
+			bind:currentFilter={typeParam}
+			on:onChange={() => (currentPage = 1)}
+		/>
 	</div>
 	<section class="resource_list_section section bg_light">
 		<div class="container">
 			<div class="display_flex flex_column">
-				<div class="display_flex align_center show_on_md_and_up">
-					<div class="display_flex align_center flex-grow_1">
+				<div class="toolbar_wrapper display_flex align_end">
+					<div class="filters_wrapper display_flex align_center flex-grow_1">
 						<!-- <h4 class="sort_by_btn mb_1 mr_3 mt_1">Sort By</h4>
 						<ArrowThick width="24" height="24" /> -->
+
+						{#if typeParam == 7}
+							{#each libTopics as topic}
+								<!-- svelte-ignore a11y-click-events-have-key-events -->
+								<small
+									class="chip"
+									class:active={currentTopic == topic.id}
+									on:click={() => filterByTopic(topic.id)}>{topic.name}</small
+								>
+							{/each}
+						{/if}
 					</div>
 
 					<div class="search_control form_control mb_0" class:show={showSearchInput}>
+						<!-- svelte-ignore a11y-click-events-have-key-events -->
 						<div class="search_control_toggler mt_1" on:click={toggleSearch}>
 							<SearchThick width="24" height="24" />
 						</div>
@@ -119,15 +154,58 @@
 	}
 
 	.resource_list_section {
+		@media screen and (max-width: $md) {
+			padding-top: 1rem !important;
+		}
+
 		.divider {
 			width: 100% !important;
 			opacity: 0.65 !important;
 		}
 
+		.toolbar_wrapper {
+			@media screen and (max-width: $md) {
+				flex-direction: column;
+
+				.search_control {
+					margin-top: 1rem;
+					width: 100%;
+				}
+			}
+		}
+
+		.filters_wrapper {
+			flex-wrap: wrap;
+
+			.chip {
+				margin: 0.15rem;
+				padding: 0.25rem 0.5rem;
+				font-size: pxToRem(12);
+				line-height: 1;
+				// background-color: map-get($colors, 'green_light');
+				border-radius: 25px;
+				border: 1px solid map-get($colors, 'green');
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
+				&.active {
+					background-color: map-get($colors, 'green');
+					color: map-get($colors, 'light');
+					transform: scale(1.02);
+				}
+				&:hover {
+					transform: scale(1.01);
+				}
+			}
+		}
+
 		.search_control {
+			// flex-grow: 1;
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
+			width: 320px;
+			min-width: 320px;
 
 			&.show {
 				input {
