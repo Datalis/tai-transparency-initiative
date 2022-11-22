@@ -24,9 +24,10 @@
 </script>
 
 <div class="member_item">
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div class="img_wrapper" on:click={toggleSwipe}>
 		<!-- <img src={FordImg} alt="" /> -->
-		<Image image={data?.image} size="thumbnail" />
+		<Image image={data?.image} size="small" />
 	</div>
 
 	<div class="content_wrapper">

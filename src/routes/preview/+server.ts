@@ -6,14 +6,14 @@ const defaultData = {
 	image: "https://placehold.jp/300x250.png"
 }
 
-export const GET: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ url }) => {
 	try {
-		const url = decodeURIComponent(params.url || "").replace(/()/,"");
-		const res = await fetch(`http://api.linkpreview.net/?key=${LIVE_PREVIEW_TOKEN}&q=${url}`, {
+		const data = decodeURIComponent(url.searchParams.get('data') || "");
+		const res = await fetch(`http://api.linkpreview.net/?key=${LIVE_PREVIEW_TOKEN}&q=${data}`, {
 			cache: 'default'
 		})
-		const data = await res.json();
-		return new Response(JSON.stringify(data), {
+		const d = await res.json();
+		return new Response(JSON.stringify(d), {
 			status: 200
 		});
 	} catch (e) {

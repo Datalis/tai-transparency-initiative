@@ -7,15 +7,19 @@
 
 	let preview: any;
 
-	async function fetchPreview() {
-		if (!data.url) return;
-		const res = await fetch(`/preview/${encodeURIComponent(data.url)}`);
-		preview = await res.json();
+	async function fetchPreview(url: string) {
+		console.log(url);
+		try {
+			const res = await fetch(`/preview?data=${encodeURIComponent(url)}`);
+			preview = await res.json();
+		} catch (e) {
+			console.error(e);
+		}
 	}
 
-	onMount(() => {
-		fetchPreview();
-	});
+	$: {
+		data.url && fetchPreview(data.url);
+	}
 </script>
 
 <a href={data?.url} target="blank" class="resource_item">

@@ -11,7 +11,7 @@
 		<!-- <div class="article_item__image--title">
 			<h6 class="my_2 text_green">{data?.name}</h6>
 		</div> -->
-		<Image size="thumbnail" image={data?.image} />
+		<Image size="small" image={data?.image} />
 	</div>
 	<h6 class="my_3 text_dark">{data?.name}</h6>
 	<p class="article_item__resume mt_0">

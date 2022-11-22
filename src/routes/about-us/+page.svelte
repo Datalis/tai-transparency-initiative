@@ -72,13 +72,13 @@
 				</div>
 			</div>
 			<div class="text_center mt_5">
-				<button class="btn btn_outline_green text_dark"> Read More </button>
+				<a href="https://api.tai.datalis.dev/uploads/tai_strategy_document_2020_2024_45f7b393f2.pdf" target="blank" class="btn btn_outline_green text_dark"> Read More </a>
 			</div>
 		</div>
 	</section>
 	<section class="members_section section">
 		<div class="container">
-			<h2 class="mb_4">{members.title}</h2>
+			<h3 class="mb_4">{members.title}</h3>
 			<div class="divider divider_green divider_2" />
 			<p class="mt_4 w_75">
 				{@html members.message}
@@ -93,7 +93,7 @@
 	</section>
 	<section class="team_section section bg_light">
 		<div class="container">
-			<h3 class="">{staff.title}</h3>
+			<h3 class="mt_0">{staff.title}</h3>
 			<div class="divider divider_green divider_2" />
 			<p class="mt_4 w_75">
 				{@html staff.message}
@@ -176,7 +176,7 @@
 		}
 
 		@media (max-width: $md) {
-			button {
+			a {
 				width: 100%;
 			}
 		}
@@ -185,9 +185,10 @@
 		background: #f2f4f7;
 		position: relative;
 		z-index: 1;
+		padding-bottom: 0 !important;
 		.member_list {
 			margin-top: 3rem;
-			margin-bottom: 3rem;
+			// margin-bottom: 3rem;
 			.divider {
 				width: 100% !important;
 			}
@@ -197,6 +198,7 @@
 		}
 	}
 	.team_section {
+		padding-top: 2rem !important;
 		position: relative;
 		z-index: 1;
 		.staff_list {
