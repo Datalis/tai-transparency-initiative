@@ -1,6 +1,7 @@
 <script lang="ts">
 	import HeroImgLayer0 from '$lib/assets/images/home/group_3.webp';
-	import HeroImgLayer1 from '$lib/assets/images/home/group_1.webp';
+	// import HeroImgLayer1 from '$lib/assets/images/home/group_1.webp';
+	import HeroImgLayer1 from '$lib/assets/images/protestas.png';
 	import HeroImgLayer1Mobile from '$lib/assets/images/home/group_1_sm.webp';
 	import HeroImgLayer2 from '$lib/assets/images/home/group_2.webp';
 	import HeroImgLayer2Mobile from '$lib/assets/images/home/group_2_sm.webp';
@@ -255,7 +256,7 @@
 					margin: auto;
 				}
 				&:nth-child(3) {
-					top: calc(100% - 400px);
+					top: calc(100% - 500px);
 					max-width: 700px;
 					// left: 0;
 					right: 0;
