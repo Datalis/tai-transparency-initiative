@@ -93,29 +93,29 @@
 				</div>
 				<div class="col col_4 col_lg_12">
 					<div class="card" id="card-3">
-						<a class="overlay" href="/how-we-work">
+						<a class="overlay" href="/how-tai-works">
 							<img src={CardBg} alt="" />
 							<img class="overlay__img" src={Card3Img} alt="" />
 						</a>
 						<div class="content">
-							<a href="/how-we-work">
-								<h3 class="text_dark">How we work</h3>
+							<a href="/how-tai-works">
+								<h3 class="text_dark">How TAI works</h3>
 							</a>
 							<div class="divider divider_light divider_2" />
 							<div class="content__text">
-								<a href="/how-we-work#6cs" class="text_dark display_block"
+								<a href="/how-tai-works#6cs" class="text_dark display_block"
 									>Our 6Cs of funder support</a
 								>
-								<a href="/how-we-work#progress-model" class="text_dark display_block"
+								<a href="/how-tai-works#progress-model" class="text_dark display_block"
 									>Our Model for Field-Level Progress</a
 								>
-								<a href="/how-we-work#featured-topics" class="text_dark display_block"
+								<a href="/how-tai-works#featured-topics" class="text_dark display_block"
 									>Featured topics</a
 								>
-								<a href="/how-we-work#past-funding" class="text_dark display_block"
+								<a href="/how-tai-works#past-funding" class="text_dark display_block"
 									>Past Funding Explorations</a
 								>
-								<a href="/how-we-work#working-with-others" class="text_dark display_block"
+								<a href="/how-tai-works#working-with-others" class="text_dark display_block"
 									>Working with other groups</a
 								>
 							</div>

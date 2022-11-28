@@ -10,6 +10,7 @@
 	import { gsap } from 'gsap/dist/gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
+	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 	NProgress.configure({
@@ -32,6 +33,7 @@
 	<slot />
 </PageTransition>
 <Footer />
+<ScrollToTop />
 
 <style lang="scss" global>
 	@import '../lib/theme/index.scss';

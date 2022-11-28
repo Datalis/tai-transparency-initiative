@@ -102,8 +102,7 @@
 							<WebIcon class="web_icon" />
 						</span>
 						<p>
-							<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-							health services they were promised and deserve
+							<strong>ADVOCATES</strong> partnering with communities and other stakeholders to ensure tax and budget policies realize rights and reduce inequalities
 						</p>
 					</div>
 				</div>

@@ -107,11 +107,11 @@
 						</a>
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
-							href="/how-we-work"
+							href="/how-tai-works"
 							class="display_flex align_center text_gray"
 							class:active={$page.url.pathname.includes('how-we-work')}
 						>
-							<h2 class=" m_0">How we work together</h2>
+							<h2 class=" m_0">How TAI works</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_1 my_4" />

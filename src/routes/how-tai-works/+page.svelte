@@ -20,7 +20,7 @@
 	import { page } from '$app/stores';
 	import gsap from 'gsap/dist/gsap';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
-	import Image from '$lib/components/Image.svelte';
+	// import Image from '$lib/components/Image.svelte';
 
 	import HeroImg1 from '$lib/assets/images/hero/3.2.png';
 	import HeroImg2 from '$lib/assets/images/hero/3.1.png';
@@ -176,12 +176,12 @@
 					</div>
 					<div class="model_item_body bg_gray p_4 display_flex flex_column justify_evenly">
 						<div>
-							<span class="display_block font_bold">INFLUENCE</span>
-							<span class="display_block mt_1">grantee behavior</span>
+							<span class="display_block font_bold">GROWING</span>
+							<span class="display_block mt_1">grantees resilience</span>
 						</div>
 						<div>
 							<span class="display_block font_bold">BUILD</span>
-							<span class="display_block mt_1">evidence based</span>
+							<span class="display_block mt_1">evidence base</span>
 						</div>
 						<div>
 							<span class="display_block font_bold">STRENGTHEN</span>

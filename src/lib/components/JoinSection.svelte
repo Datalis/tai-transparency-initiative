@@ -15,7 +15,7 @@
 </script>
 
 
-<section class="join_section section">
+<section id="join" class="join_section section">
 	<IntersectionObserver let:top>
 		<div class="wrapper" class:pinned={top > 0}>
 			<div class="container">

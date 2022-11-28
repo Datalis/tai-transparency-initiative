@@ -11,6 +11,8 @@
 	import StaffItem from '$lib/components/StaffItem.svelte';
 	import type { ActionData, PageData } from './$types';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	import gsap from 'gsap/dist/gsap';
 
 	export let data: PageData;
 	export let form: ActionData;
@@ -27,7 +29,12 @@
 	$: commitee = data?.SteeringCommittee;
 	$: commiteeList = commitee?.StaffItem || [];
 
-	onMount(() => console.log(data));
+	onMount(() => {
+		gsap.timeline().to(window, {
+			scrollTo: $page.url.hash,
+			duration: 0.5
+		});
+	});
 </script>
 
 <div class="about_us_page page">
@@ -41,7 +48,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="envision_section section bg_light">
+	<section id="goals" class="envision_section section bg_light">
 		<div class="container">
 			<h2>We envision a society where</h2>
 			<div class="divider divider_green divider_2" />
@@ -76,7 +83,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="members_section section">
+	<section id="members" class="members_section section">
 		<div class="container">
 			<h3 class="mb_4">{members.title}</h3>
 			<div class="divider divider_green divider_2" />
@@ -91,7 +98,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="team_section section bg_light">
+	<section id="team" class="team_section section bg_light">
 		<div class="container">
 			<h3 class="mt_0">{staff.title}</h3>
 			<div class="divider divider_green divider_2" />
