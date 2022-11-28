@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import ScrollToTopIcon from '$lib/assets/icons/chevron-up.svg';
 
 	let scrollTotal;
 	let show = false;
@@ -11,6 +12,13 @@
 		show = rootElement.scrollTop / scrollTotal > 0.7;
 	}
 
+	function scrollToTop() {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		})
+	}
+
 	onMount(() => {
 		window.addEventListener('scroll', handleScroll);
 
@@ -18,7 +26,7 @@
 	});
 </script>
 
-<button class="scroll_to_top" class:visible={show}> Scroll </button>
+<button class="scroll_to_top" class:visible={show} on:click={scrollToTop}> <ScrollToTopIcon></ScrollToTopIcon> </button>
 
 <style lang="scss">
 	.scroll_to_top {
@@ -32,8 +40,16 @@
 		cursor: pointer;
 		background-color: map-get($colors, 'green');
 		visibility: collapse;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		&.visible {
 			visibility: visible;
+		}
+		:global {
+			svg {
+				fill: map-get($colors, 'blue') !important;
+			}
 		}
 	}
 </style>
