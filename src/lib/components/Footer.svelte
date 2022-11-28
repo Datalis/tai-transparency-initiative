@@ -100,24 +100,24 @@
 				</div>
 				<div class="col col_lg_5">
 					<h6 class="text_uppercase text_blue mt_0 mb_4">
-						<a href="/how-we-work" class="text_blue">How we work together</a>
+						<a href="/how-tai-works" class="text_blue">How we work together</a>
 					</h6>
 					<ul>
 						<li>
-							<a href="/how-we-work#6cs" class="text_gray">Our 6Cs</a>
+							<a href="/how-tai-works#6cs" class="text_gray">Our 6Cs</a>
 						</li>
 						<li>
-							<a href="/how-we-work#progress-model" class="text_gray">Our model</a>
+							<a href="/how-tai-works#progress-model" class="text_gray">Our model</a>
 						</li>
 
 						<li>
-							<a href="/how-we-work#featured-topics" class="text_gray">Featured Topic</a>
+							<a href="/how-tai-works#featured-topics" class="text_gray">Featured Topic</a>
 						</li>
 						<li>
-							<a href="/how-we-work#past-funding" class="text_gray">Past Funding</a>
+							<a href="/how-tai-works#past-funding" class="text_gray">Past Funding</a>
 						</li>
 						<li>
-							<a href="/how-we-work#working-with-others" class="text_gray"
+							<a href="/how-tai-works#working-with-others" class="text_gray"
 								>Working with other groups</a
 							>
 						</li>
