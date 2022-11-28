@@ -34,7 +34,7 @@
 		width: 42px;
 		height: 42px;
 		position: fixed;
-		bottom: 5%;
+		bottom: 6%;
 		right: 2.5%;
 		z-index: 999999;
 		cursor: pointer;
