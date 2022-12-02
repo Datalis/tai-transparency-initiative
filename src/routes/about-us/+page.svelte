@@ -98,7 +98,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="team" class="team_section section bg_light">
+	<section id="team" class="team_section section text_light">
 		<div class="container">
 			<h3 class="mt_0">{staff.title}</h3>
 			<div class="divider divider_green divider_2" />
@@ -118,10 +118,10 @@
 			</div>
 		</div>
 	</section>
-	<section class="committee_section section bg_panel">
+	<section class="committee_section section bg_panel text_light">
 		<div class="container">
 			<div class="committee_list mt_4">
-				<h4 class="mb_4 mt_4">Steering Committee</h4>
+				<h4 class="mb_4 mt_4 text_light">Steering Committee</h4>
 				{#each commiteeList as commiteeItem, index}
 					<div class="divider divider_blue divider_1" />
 					<StaffItem
@@ -139,7 +139,9 @@
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
-
+	.green_text {
+		color: #00DEB3;
+	}
 	.landing_section {
 		padding: 0 !important;
 		min-height: 100vh;
@@ -189,7 +191,7 @@
 		}
 	}
 	.members_section {
-		background: #f2f4f7;
+		background: #fafafa;
 		position: relative;
 		z-index: 1;
 		padding-bottom: 0 !important;
@@ -208,6 +210,7 @@
 		padding-top: 2rem !important;
 		position: relative;
 		z-index: 1;
+		background-color: #5c4aff;
 		.staff_list {
 			.divider {
 				width: 100% !important;
@@ -220,7 +223,7 @@
 		}
 	}
 	.committee_section {
-		background-color: #f2f4f7;
+		background-color: #5c4aff;
 		position: relative;
 		z-index: 1;
 		.divider {

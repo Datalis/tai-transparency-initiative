@@ -97,7 +97,7 @@
 		<div class="container h-100">
 			<div class="row">
 				<div class="col col_5 col_md_12 pb_5">
-					<div class="display_flex flex_column h_100 justify_end">
+					<div class="display_flex flex_column h_100 justify_center">
 						<h1 class="text_green mb_4">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light mb_3" />
 						<div class="font_light">
@@ -350,8 +350,8 @@
 			min-height: 50vh;
 
 			img.img_wrapper_1 {
-				bottom: 0;
-				max-width: 80%;
+				bottom: 21%;
+				max-width: 59%;
 				margin: auto;
 			}
 			img.img_wrapper_2 {
@@ -397,7 +397,7 @@
 
 		.model_item {
 			width: 300px;
-			height: 320px;
+			height: 380px;
 
 			display: flex;
 			flex-direction: column;

@@ -31,7 +31,7 @@
 		<p class="text_dark">
 			{data?.summary}
 		</p>
-		<small class="text_dark mt_auto text_gray font_bold"
+		<small class="text_dark resource_item__link mt_auto font_bold"
 			>Read More <LinkIcon class="ml_1" width="18" height="18" style="fill: var(--gray)" />
 		</small>
 	</div>
@@ -51,6 +51,9 @@
 
 		@media screen and (max-width: $md) {
 			flex-direction: column;
+		}
+		&__link {
+			color: #00DEB3;
 		}
 
 		&__left {

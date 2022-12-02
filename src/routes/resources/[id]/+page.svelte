@@ -102,8 +102,8 @@
 								accountability) sector
 							</span>
 							<small>
-								<a href="/" class="text_gray display_flex align_center"
-									>Read More <LinkIcon class="ml_1" style="fill: var(--gray);" /></a
+								<a href="/" class="text_gray display_flex align_center green_text"
+									>Read More <LinkIcon class="ml_1" style="fill: #00DEB3" /></a
 								>
 							</small>
 						</a>
@@ -116,8 +116,8 @@
 								accountability) sector
 							</span>
 							<small>
-								<a href="/" class="text_gray display_flex align_center"
-									>Read More <LinkIcon class="ml_1" style="fill: var(--gray);" /></a
+								<a href="/" class="text_gray display_flex align_center green_text"
+									>Read More <LinkIcon class="ml_1" style="fill: #00DEB3" /></a
 								>
 							</small>
 						</a>
@@ -131,7 +131,9 @@
 
 <style lang="scss">
 	$green_light: #59ebcf;
-
+	.green_text {
+		color: #00DEB3;
+	}
 	.heading_section {
 		min-height: 80vh !important;
 		padding-top: 100px !important;

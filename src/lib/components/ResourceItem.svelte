@@ -19,12 +19,12 @@
 	<p class="resource_item__summary text_dark">
 		{data?.summary}
 	</p>
-	<span class="resource_item__link text_gray font_bold display_flex align_center"
+	<span class="resource_item__link font_bold display_flex align_center"
 		><small>Read More </small><LinkIcon
 			class="ml_1"
 			width="18"
 			height="18"
-			style="fill: var(--gray)"
+			style="fill: #00DEB3"
 		/></span
 	>
 </a>
@@ -83,6 +83,9 @@
 
 		.resource_item__type:hover {
 			color: map-get($colors, 'green');
+		}
+		&__link {
+			color: #00DEB3;
 		}
 
 		&__type {

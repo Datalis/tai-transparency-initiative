@@ -35,20 +35,19 @@
 			<Swiper modules={[Pagination]} pagination={true}>
 				<SwiperSlide>
 					<div class="content_wrapper__slider--item">
-						<button
-							class="btn btn_small mr_3"
-							class:btn_blue={selectedTab == 'strategy'}
+						<span
+							class="small font_bold"
 							on:click={() => setCurrentTab('strategy')}
 						>
 							STRATEGY
-						</button>
+						</span>
 						<p>
 							Itʼs only when people become aware, have pathways for action, and engage, that
 							governments are held in account. Our three interconnected strategies focus on expanded
 							participation, equitable resources and powerful engagement.
 						</p>
-						<a href="/" class="display_flex align_center text_dark font_bold"
-							>Learn more <LinkIcon class="ml_2" width="24" height="24" />
+						<a href="/" class="display_flex align_center green_text font_bold"
+							>Learn more <LinkIcon class="ml_2" width="24" height="24" style="fill: #00DEB3" />
 						</a>
 					</div>
 				</SwiperSlide>
@@ -66,8 +65,8 @@
 							governments are held in account. Our three interconnected strategies focus on expanded
 							participation, equitable resources and powerful engagement.
 						</p>
-						<a href="/" class="display_flex align_center text_dark font_bold"
-							>Learn more <LinkIcon class="ml_2" width="24" height="24" />
+						<a href="/" class="display_flex align_center green_text font_bold"
+							>Learn more <LinkIcon class="ml_2" width="24" style="fill: #00DEB3" height="24" />
 						</a>
 					</div>
 				</SwiperSlide>
@@ -85,8 +84,8 @@
 							governments are held in account. Our three interconnected strategies focus on expanded
 							participation, equitable resources and powerful engagement.
 						</p>
-						<a href="/" class="display_flex align_center text_dark font_bold"
-							>Learn more <LinkIcon class="ml_2" width="24" height="24" />
+						<a href="/" class="display_flex align_center green_text font_bold"
+							>Learn more <LinkIcon class="ml_2" width="24" height="24" style="fill: #00DEB3" />
 						</a>
 					</div>
 				</SwiperSlide>
@@ -95,13 +94,12 @@
 		<div class="content_wrapper__tabs">
 			<div class="display_flex align_center mb_2">
 				{#if data?.strategy}
-					<button
-						class="btn btn_small mr_3"
-						class:btn_blue={selectedTab == 'strategy'}
+					<span
+						class="small font_bold"
 						on:click={() => setCurrentTab('strategy')}
 					>
 						STRATEGY
-					</button>
+					</span>
 				{/if}
 				{#if data?.featured_project}
 					<button
@@ -123,8 +121,8 @@
 				{/if}
 			</div>
 			{@html data[selectedTab]}
-			<a href={data?.url} target="blank" class="display_flex align_center text_dark font_bold mt_auto"
-				><small>Learn more </small><LinkIcon class="ml_2" width="18" height="18" />
+			<a href={data?.url} target="blank" class="display_flex align_center green_text font_bold mt_auto"
+				><small>Learn more </small><LinkIcon class="ml_2" width="18" height="18" style="fill: #00DEB3" />
 			</a>
 		</div>
 	</div>
@@ -142,7 +140,9 @@
 		@media (max-width: $md) {
 			flex-direction: column;
 		}
-
+		.green_text {
+			color: #00DEB3;
+		}
 		.img_wrapper {
 			flex-grow: 1;
 			background-color: $blue;

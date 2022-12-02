@@ -13,13 +13,14 @@
 		</div> -->
 		<Image size="small" image={data?.image} />
 	</div>
-	<h6 class="my_3 text_dark">{data?.name}</h6>
-	<p class="article_item__resume mt_0">
+	<h6 class="my_3">{data?.name}</h6>
+	<div class="divider divider_green" style="width: 100%" />
+	<p class="article_item__resume mt_3">
 		{data?.summary}
 	</p>
-	<a href="/" class="article_item__link text_gray font_bold mt_2 display_flex align_center"
+	<a href="/" class="article_item__link font_bold mt_2 display_flex align_center"
 		><small>Read More</small>
-		<LinkIcon class="ml_1" width="18" height="18" style="fill: var(--gray)" /></a
+		<LinkIcon class="ml_1" width="18" height="18" style="fill: #00DEB3" /></a
 	>
 </div>
 
@@ -44,6 +45,7 @@
 
 		&__link {
 			margin-top: auto;
+			color: #00DEB3;
 		}
 
 		&__image {
