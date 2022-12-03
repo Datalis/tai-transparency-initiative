@@ -10,6 +10,8 @@
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
 	import { gsap } from 'gsap/dist/gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	gsap.registerPlugin(ScrollTrigger);
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import FoundersExitsSection from '$lib/components/FoundersExitsSection.svelte';
@@ -36,7 +38,26 @@
 		let toScroll = windowWidth - partnersSlide.offsetWidth - 2 * sliderOffset;
 
 		partnersSlideWidth = partnersSlide.getBoundingClientRect().width + sliderOffset;
-
+		//Play video on scroll and pause when out of view
+		ScrollTrigger.create({
+			trigger: videoPlayer,
+			start: '+=200%',
+			end: '+=110%',
+			onEnter: () => {
+				videoPlayer.play();
+			},
+			onLeave: () => {
+				videoPlayer.pause();
+			},
+			onEnterBack: () => {
+				videoPlayer.play();
+			},
+			onLeaveBack: () => {
+				//reset video to end
+				videoPlayer.currentTime = videoPlayer.duration;
+				videoPlayer.pause();
+			},
+		});
 		if (windowWidth > 768) {
 			gsap
 				.timeline({
@@ -216,7 +237,6 @@
 					<div class="video_wrapper">
 						<video
 							bind:this={videoPlayer}
-							autoplay
 							muted
 							loop
 							decoding="async"
@@ -273,13 +293,13 @@
 
 		.img_wrapper {
 			margin: auto !important;
-			position: relative;
 		}
 		.img_wrapper img {
 			margin: auto;
 			position: absolute;
 			top: 0;
 			bottom: 0;
+			right: -14%;
 			@media screen and (max-width: $md) {
 				position: relative;
 			}
@@ -337,7 +357,7 @@
 			max-width: calc(1400px / 3 - 4rem);
 
 			img {
-				// width: 100%;
+				width: 90%;
 				object-fit: cover;
 				object-position: center;
 				border-radius: 15px;
@@ -357,7 +377,7 @@
 			p {
 				margin-top: 1rem;
 				text-align: center;
-				font-size: pxToRem(12);
+				font-size: pxToRem(14);
 				font-weight: 600;
 			}
 		}

@@ -15,7 +15,7 @@
 	.view_more {
 		width: 35px;
 		height: 35px;
-		background-color: darken($color: $panel, $amount: 10);
+		background-color: #00DEB3;
 		display: flex;
 		align-items: center;
 		justify-content: center;
