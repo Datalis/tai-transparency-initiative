@@ -10,8 +10,7 @@
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
 	import { gsap } from 'gsap/dist/gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	gsap.registerPlugin(ScrollTrigger);
+
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import FoundersExitsSection from '$lib/components/FoundersExitsSection.svelte';
@@ -38,26 +37,8 @@
 		let toScroll = windowWidth - partnersSlide.offsetWidth - 2 * sliderOffset;
 
 		partnersSlideWidth = partnersSlide.getBoundingClientRect().width + sliderOffset;
-		//Play video on scroll and pause when out of view
-		ScrollTrigger.create({
-			trigger: videoPlayer,
-			start: '+=200%',
-			end: '+=110%',
-			onEnter: () => {
-				videoPlayer.play();
-			},
-			onLeave: () => {
-				videoPlayer.pause();
-			},
-			onEnterBack: () => {
-				videoPlayer.play();
-			},
-			onLeaveBack: () => {
-				//reset video to end
-				videoPlayer.currentTime = videoPlayer.duration;
-				videoPlayer.pause();
-			},
-		});
+
+
 		if (windowWidth > 768) {
 			gsap
 				.timeline({
@@ -80,7 +61,21 @@
 						pin: true,
 						scrub: true,
 						start: 'top top',
-						end: '+=200%'
+						end: '+=200%',
+						onEnter: () => {
+							videoPlayer.play();
+						},
+						onLeave: () => {
+							videoPlayer.pause();
+						},
+						onEnterBack: () => {
+							videoPlayer.play();
+						},
+						onLeaveBack: () => {
+							//reset video to end
+							videoPlayer.currentTime = videoPlayer.duration;
+							videoPlayer.pause();
+						},
 					}
 				})
 				.to('.participatory_section .participatory_section__content', {
