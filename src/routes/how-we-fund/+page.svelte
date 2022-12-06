@@ -63,18 +63,26 @@
 						start: 'top top',
 						end: '+=200%',
 						onEnter: () => {
-							videoPlayer.play();
+							if(videoPlayer) {
+								videoPlayer.play();
+							}
 						},
 						onLeave: () => {
-							videoPlayer.pause();
+							if(videoPlayer) {
+								videoPlayer.pause();
+							}
 						},
 						onEnterBack: () => {
-							videoPlayer.play();
+							if(videoPlayer) {
+								videoPlayer.play();
+							}
 						},
 						onLeaveBack: () => {
 							//reset video to end
-							videoPlayer.currentTime = videoPlayer.duration;
-							videoPlayer.pause();
+							if(videoPlayer) {
+								videoPlayer.currentTime = videoPlayer.duration;
+								videoPlayer.pause();
+							}
 						},
 					}
 				})

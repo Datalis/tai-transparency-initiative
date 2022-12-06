@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<section id="founders-exits" class="founders_section section">
+<section id="founders-exits" class="founders_section section mt_5">
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
