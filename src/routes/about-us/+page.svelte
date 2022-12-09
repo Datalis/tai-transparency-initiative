@@ -92,8 +92,8 @@
 			</p>
 			<div class="member_list mt_4 display_flex flex_column">
 				{#each memberList as member}
-					<MemberItem data={member} />
 					<div class="divider divider_blue divider_1 my_5" />
+					<MemberItem data={member} />
 				{/each}
 			</div>
 		</div>
@@ -198,6 +198,7 @@
 		.member_list {
 			margin-top: 3rem;
 			// margin-bottom: 3rem;
+			padding-bottom: 120px;
 			.divider {
 				width: 100% !important;
 			}
@@ -207,7 +208,7 @@
 		}
 	}
 	.team_section {
-		padding-top: 2rem !important;
+		padding-top: 120px !important;
 		position: relative;
 		z-index: 1;
 		background-color: #5c4aff;

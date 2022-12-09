@@ -80,7 +80,9 @@
 						onLeaveBack: () => {
 							//reset video to end
 							if(videoPlayer) {
-								videoPlayer.currentTime = videoPlayer.duration;
+								if(videoPlayer.duration && videoPlayer.duration > 0) {
+									videoPlayer.currentTime = videoPlayer.duration
+								}
 								videoPlayer.pause();
 							}
 						},
@@ -134,7 +136,7 @@
 		<div class="container h-100">
 			<div class="row">
 				<div class="col col_5 col_md_12">
-					<div class="display_flex flex_column h_100 justify_end">
+					<div class="display_flex flex_column h_100 justify_center">
 						<h1 class="text_green mb_4">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light" />
 						<div class="mt_4 mb_2 font_light">

@@ -27,7 +27,7 @@
 						pin: true,
 						scrub: true,
 						start: 'top top',
-						end: '+=200%'
+						end: '+=130%'
 					}
 				})
 				.to('.pathways_section .wrapper', {
@@ -464,7 +464,7 @@
 						<foreignObject x="8" width="180" height="120">
 							<p
 								style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -498,7 +498,7 @@
 						<foreignObject x="8" y="-25" width="180" height="120">
 							<p
 								style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -529,7 +529,7 @@
 						<foreignObject x="8" y="-15" width="180" height="120">
 							<p
 								style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -561,7 +561,7 @@
 						<foreignObject x="8" y="120" width="180" height="120">
 							<p
 								style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -592,7 +592,7 @@
 						<foreignObject x="8" y="160" width="180" height="120">
 							<p
 								style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -625,7 +625,7 @@
 						<foreignObject x="8" y="215" width="180" height="120">
 							<p
 								style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -657,7 +657,7 @@
 						<foreignObject x="8" y="298" width="180" height="120">
 							<p
 								style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -685,7 +685,7 @@
 						<foreignObject x="8" y="298" width="180" height="120">
 							<p
 								style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -1039,7 +1039,7 @@
 								<foreignObject x="105.07" width="200" height="100">
 									<p
 										style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -1073,7 +1073,7 @@
 							<foreignObject x="105.07" y="45.47" width="200" height="100">
 								<p
 									style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -1106,7 +1106,7 @@
 							<foreignObject x="12" y="90.47" width="200" height="100">
 								<p
 									style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -1138,7 +1138,7 @@
 							<foreignObject x="107.55" y="-10.47" width="200" height="100">
 								<p
 									style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -1170,7 +1170,7 @@
 							<foreignObject x="307.55" y="-40.47" width="200" height="100">
 								<p
 									style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -1203,7 +1203,7 @@
 							<foreignObject x="239.55" y="-2.47" width="200" height="100">
 								<p
 									style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -1236,7 +1236,7 @@
 							<foreignObject x="175.55" y="25.47" width="200" height="100">
 								<p
 									style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;
@@ -1265,7 +1265,7 @@
 							<foreignObject x="175.55" y="90.47" width="200" height="100">
 								<p
 									style="
-								color: #051231; 
+								color: #051231;
 								font-size: 7.5px;
 								/*position: absolute;*/
 								top: 0;

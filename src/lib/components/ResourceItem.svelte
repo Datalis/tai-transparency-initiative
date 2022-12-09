@@ -30,6 +30,7 @@
 </a>
 
 <style lang="scss">
+
 	.resource_item.resource_item_4 {
 		.divider,
 		.resource_item__type,
@@ -89,7 +90,8 @@
 		}
 
 		&__type {
-			font-weight: 600 !important;
+			font-weight: 400 !important;
+			font-size: 14px !important;
 		}
 
 		&__title {

@@ -56,7 +56,7 @@
 				}
 			});
 
-		
+
 		// const parallax = gsap.timeline({
 		// 	scrollTrigger: {
 		// 		trigger: '.landing_section',
@@ -293,7 +293,7 @@
 			// 		width: 265px !important;
 			// 	}
 
-				
+
 
 			// 	// h1 {
 			// 	// 	text-decoration: underline;
@@ -366,5 +366,5 @@
 		}
 	}
 
-	
+
 </style>

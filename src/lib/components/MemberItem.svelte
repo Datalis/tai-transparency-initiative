@@ -91,35 +91,8 @@
 				</SwiperSlide>
 			</Swiper>
 		</div>
-		<div class="content_wrapper__tabs">
-			<div class="display_flex align_center mb_2">
-				{#if data?.strategy}
-					<span
-						class="small font_bold"
-						on:click={() => setCurrentTab('strategy')}
-					>
-						STRATEGY
-					</span>
-				{/if}
-				{#if data?.featured_project}
-					<button
-						class="btn btn_small mr_3"
-						class:btn_blue={selectedTab == 'featured_project'}
-						on:click={() => setCurrentTab('featured_project')}
-					>
-						FEATURED PROJECT
-					</button>
-				{/if}
-				{#if data?.contact}
-					<button
-						class="btn btn_small"
-						class:btn_blue={selectedTab == 'contact'}
-						on:click={() => setCurrentTab('contact')}
-					>
-						CONTACT
-					</button>
-				{/if}
-			</div>
+		<div class="content_wrapper__tabs px_5">
+
 			{@html data[selectedTab]}
 			<a href={data?.url} target="blank" class="display_flex align_center green_text font_bold mt_auto"
 				><small>Learn more </small><LinkIcon class="ml_2" width="18" height="18" style="fill: #00DEB3" />
@@ -200,7 +173,7 @@
 			}
 			&__tabs {
 				flex-shrink: 1;
-				padding-left: 2rem;
+				padding-left: 3rem;
 				height: 100%;
 				display: flex;
 				flex-direction: column;

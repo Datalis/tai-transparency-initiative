@@ -68,7 +68,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col col_5 col_md_12">
-					<div class="display_flex flex_column justify_end h_100">
+					<div class="display_flex flex_column justify_center h_100">
 						<h1 class="text_green mb_4">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light" />
 						<div class="mt_4 mb_2 font_light">
@@ -81,6 +81,7 @@
 					<img
 						class="parallax"
 						data-depth="-0.15"
+						style="height: 96%"
 						src={HeroImg}
 						alt=""
 						decoding="sync"
@@ -432,7 +433,7 @@
 			padding-top: 0.5rem;
 			padding-bottom: 0.5rem;
 			padding-left: 3rem;
-			padding-right: 1rem;
+			padding-right: 2.3rem;
 			background-color: $green;
 
 			@media screen and (max-width: $lg) {

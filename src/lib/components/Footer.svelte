@@ -15,7 +15,7 @@
 				</div>
 				<div class="col col_lg_3 col_2">
 					<h6 class="text_uppercase mt_0 mb_4">
-						<a href="/" class="text_blue">About Us</a>
+						<a href="/about-us" class="text_blue">About Us</a>
 					</h6>
 					<ul>
 						<li>

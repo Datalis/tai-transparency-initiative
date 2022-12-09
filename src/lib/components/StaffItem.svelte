@@ -131,7 +131,7 @@
 
 			&__text {
 				:global(p) {
-					font-weight: 300;
+					font-weight: 400 !important;
 					font-size: pxToRem(18);
 					margin: 0;
 					opacity: 0;
