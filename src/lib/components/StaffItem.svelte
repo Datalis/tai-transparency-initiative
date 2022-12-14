@@ -18,10 +18,10 @@
 <div class="staff_item_wrapper display_flex align_start">
 	<div class="staff_item" class:expanded={isExpanded}>
 		<div class="display_flex">
-			<div class="img_wrapper">
+			<div on:click={toggle} class="img_wrapper">
 				<Image image={data.image} size="thumbnail" />
 			</div>
-			<div class="content_wrapper display_flex flex_column">
+			<div on:click={toggle} class="content_wrapper display_flex flex_column">
 				<h5 class="text_dark mt_0 mb_2 text_light">{data.name}</h5>
 				<small class="text_dark text_uppercase green_text">{data.role}</small>
 				<div class="content_wrapper__text font_regular text_light">
@@ -60,7 +60,6 @@
 				overflow: hidden;
 				max-height: 0;
 				transition: max-height 0.4s ease, opacity 0.35s ease, visibility 0.4s, margin 0.6s ease;
-				font-weight: 300;
 				font-size: pxToRem(18);
 				margin: 0;
 			}
@@ -132,7 +131,7 @@
 			&__text {
 				:global(p) {
 					font-weight: 400 !important;
-					font-size: pxToRem(18);
+					//font-size: pxToRem(18);
 					margin: 0;
 					opacity: 0;
 					overflow: hidden;

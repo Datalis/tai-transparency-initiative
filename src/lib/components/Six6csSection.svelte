@@ -94,7 +94,9 @@
 			background-color: $blue_light;
 			border-radius: 15px;
 			//padding: 2rem;
-			height: 85vh;
+			max-height: 85vh;
+			min-height: 55vh;
+			padding-bottom: 100px;
 			width: 100%;
 			display: flex;
 			flex-direction: column;

@@ -116,6 +116,9 @@
 		.green_text {
 			color: #00DEB3;
 		}
+		.green_text:hover {
+			color: #43B79E;
+		}
 		.img_wrapper {
 			flex-grow: 1;
 			background-color: $blue;

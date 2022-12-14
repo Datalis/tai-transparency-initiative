@@ -20,11 +20,12 @@
 	import { page } from '$app/stores';
 	import gsap from 'gsap/dist/gsap';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
+	import SpeakerIcon from '$lib/assets/icons/Speaker_Icon.svg?component';
 	// import Image from '$lib/components/Image.svelte';
 
 	import HeroImg1 from '$lib/assets/images/hero/3.2.png';
 	import HeroImg2 from '$lib/assets/images/hero/3.1.png';
-
+	let videoPlayer: HTMLVideoElement;
 	let windowWidth: number;
 
 	export let data: PageData;
@@ -36,6 +37,7 @@
 
 	onMount(() => {
 		if (windowWidth > 768) {
+			const isVideoPlaying = video => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
 			gsap
 				.timeline({
 					scrollTrigger: {
@@ -43,7 +45,44 @@
 						pin: true,
 						scrub: true,
 						start: 'top top',
-						end: '+=200%'
+						end: '+=200%',
+						onUpdate: ({progress}) => {
+							if(videoPlayer  && progress > 0.8) {
+								videoPlayer.play();
+								// set visible to false
+							}
+							// get if video html component is playing
+							if(videoPlayer){
+								if(isVideoPlaying(videoPlayer)){
+									// set visible to false
+									if(document.querySelector('.muted')) document.querySelector('.muted').classList.remove('hidden');
+								}else {
+									if(document.querySelector('.muted')) document.querySelector('.muted').classList.add('hidden');
+								}
+
+							}
+						},
+						onLeave: () => {
+							if(videoPlayer) {
+								videoPlayer.pause();
+								if(document.querySelector('.muted')) document.querySelector('.muted').classList.add('hidden');
+							}
+						},
+						onEnterBack: () => {
+							if(videoPlayer) {
+								videoPlayer.play();
+							}
+						},
+						onLeaveBack: () => {
+							//reset video to end
+							if(videoPlayer) {
+								if(videoPlayer.duration && videoPlayer.duration > 0) {
+									videoPlayer.currentTime = videoPlayer.duration
+								}
+								if(document.querySelector('.muted')) document.querySelector('.muted').classList.add('hidden');
+								videoPlayer.pause();
+							}
+						},
 						// pinReparent: true,
 						// markers: {startColor: "green", endColor: "red", fontSize: "12px"}
 					}
@@ -51,7 +90,7 @@
 				// .to('.featured_section .featured_section__content', {
 				// 	yPercent: -3
 				// })
-				.to('.featured_section .featured_section__content .video_wrapper', {
+				.to('.featured_section .featured_section__content .video_wrapper ', {
 					xPercent: -65,
 					flexBasis: '100%'
 					// ease: 'none'
@@ -214,7 +253,7 @@
 				<div class="video_wrapper text_center">
 					<!-- <img src={FeaturedImg} class="w_100" alt="" /> -->
 					<video
-						autoplay
+						bind:this={videoPlayer}
 						muted
 						loop
 						poster={ClimateVideoPoster}
@@ -226,6 +265,15 @@
 					>
 						<track kind="captions" />
 					</video>
+					<div class="video_overlay_muted_button muted hidden" on:click={() => {
+								videoPlayer.muted = !videoPlayer.muted;
+							}}>
+						<SpeakerIcon
+							width="22"
+							height="22"
+							style="fill: #00DEB3"
+							></SpeakerIcon>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -313,6 +361,19 @@
 	$xl: map-get($grid-breakpoints, 'xl');
 	$md: map-get($grid-breakpoints, 'md');
 
+	.hidden {
+		visibility: hidden;
+	}
+
+	.video_overlay_muted_button {
+		position: absolute;
+		z-index: 100;
+		bottom: 33px;
+		right: 48%;
+		cursor: pointer;
+		display: block;
+
+	}
 	.landing_section {
 		z-index: 1;
 		padding-top: 100px !important;
@@ -350,7 +411,7 @@
 			min-height: 50vh;
 
 			img.img_wrapper_1 {
-				bottom: 21%;
+				bottom: 16%;
 				max-width: 59%;
 				margin: auto;
 			}

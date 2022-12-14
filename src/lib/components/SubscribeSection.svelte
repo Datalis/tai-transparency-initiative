@@ -1,3 +1,17 @@
+<script>
+	// Create a function to add the email address to the subscrition url
+	function gotoSub() {
+		// Get the email address from the input field
+		// Add the email address to the subscription url
+		let URI = "https://transparency-initiative.us8.list-manage.com/subscribe?u=3225c2c32fc6c7023ca721588&id=1a5ff28f1e"
+		const subemail = document.getElementById("subemail").value;
+		if(subemail){
+			URI = URI + "&MERGE0=" + subemail
+		}
+		// Open the subscription url in a new tab
+		window.open(URI, '_blank');
+	}
+</script>
 <section class="subscribe_section section bg_light">
 	<div class="container">
 		<div class="subscribe_section__panel bg_panel">
@@ -9,9 +23,9 @@
 
 			<form class="mt_5">
 				<div class="form_control mb_0">
-					<input type="email" placeholder="Email" name="" id="" />
+					<input type="email" placeholder="Email" name="" id="subemail" />
 				</div>
-				<button class="btn btn_blue">Subscribe</button>
+				<button on:click={gotoSub} style="cursor: pointer" class="btn btn_blue">Subscribe</button>
 			</form>
 		</div>
 	</div>

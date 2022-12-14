@@ -108,7 +108,7 @@
 			<div class="staff_list mt_4">
 				<h4 class="mb_4">Staff</h4>
 				{#each staffList as staffItem, index}
-					<div class="divider divider_blue divider_1" />
+					<div class="divider divider_green divider_1" />
 					<StaffItem
 						data={staffItem}
 						on:toggle={() => (index == activeStaff ? (activeStaff = -1) : (activeStaff = index))}
@@ -123,7 +123,7 @@
 			<div class="committee_list mt_4">
 				<h4 class="mb_4 mt_4 text_light">Steering Committee</h4>
 				{#each commiteeList as commiteeItem, index}
-					<div class="divider divider_blue divider_1" />
+					<div class="divider divider_green divider_1" />
 					<StaffItem
 						data={commiteeItem}
 						on:toggle={() => (index == activeCommittee ? (activeCommittee = -1) : (activeCommittee = index))}

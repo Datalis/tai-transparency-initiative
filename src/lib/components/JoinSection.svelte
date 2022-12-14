@@ -31,7 +31,7 @@
 							<div class="divider divider_light divider_2" />
 							<p class="mt_4 font_light text_dark">
 								We invite <strong>FUNDERS</strong> to join our conversations. If you are new to this
-								field or looking to complement your portfolio, we are here to help. 
+								field or looking to complement your portfolio, we are here to help.
 							</p>
 							<h6 class="mb_4 text_dark">Let the TAI Secretariat know how we can help</h6>
 							<form action="{$page.url.pathname}?/join" method="post" use:enhance>
@@ -58,7 +58,7 @@
 										value={form?.email ?? ''}
 									/>
 									{#if form?.emailError}
-										<small class="text_danger">The email field is required</small>						
+										<small class="text_danger">The email field is required</small>
 									{/if}
 								</div>
 								<div class="form_control form_control_check mt_4 text_dark">

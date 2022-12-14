@@ -88,6 +88,9 @@
 		&__link {
 			color: #00DEB3;
 		}
+		&__link:hover {
+			color: #43B79E;
+		}
 
 		&__type {
 			font-weight: 400 !important;

@@ -765,7 +765,7 @@
 								fill: #051231;
 							}
 							.cls-8 {
-								letter-spacing: -0.02em;
+								letter-spacing: 0em;
 							}
 							.cls-9 {
 								stroke-dasharray: 3.06 3.06;

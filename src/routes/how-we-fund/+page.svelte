@@ -62,8 +62,8 @@
 						scrub: true,
 						start: 'top top',
 						end: '+=200%',
-						onEnter: () => {
-							if(videoPlayer) {
+						onUpdate: ({progress}) => {
+							if(videoPlayer  && progress > 0.8) {
 								videoPlayer.play();
 							}
 						},
@@ -223,7 +223,7 @@
 		<div class="participatory_section section">
 			<div class="container">
 				<div class="participatory_section__content">
-					<div class="content_wrapper">
+					<div class="content_wrapper pl_3">
 						<h2 class="font_bold mb_4">Participatory Strategy</h2>
 						<div class="divider divider_2 divider_green" />
 						<p class="mt_4">

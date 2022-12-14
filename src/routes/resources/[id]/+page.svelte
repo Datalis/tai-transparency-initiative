@@ -25,7 +25,7 @@
 			<div class="row">
 				{#if resource.type.id == 2}
 
-					<div class="text_center col col_7 col_sm_12">
+					<div class="text_center col col_7 col_sm_12 ">
 						<span class="text_light font_bold text_uppercase">{resource.type.label}</span>
 						<h1 class="text_green">
 							{resource.title}
@@ -134,8 +134,11 @@
 	.green_text {
 		color: #00DEB3;
 	}
+	.green_text:hover {
+		color: #43B79E;
+	}
 	.heading_section {
-		min-height: 80vh !important;
+		//min-height: 80vh !important;
 		padding-top: 100px !important;
 		display: flex !important;
 		flex-direction: column !important;
@@ -223,6 +226,9 @@
 		}
 		.divider {
 			flex-grow: 1;
+		}
+		h5 {
+			font-size: 20px;
 		}
 	}
 	.content_section .subscribe_block {

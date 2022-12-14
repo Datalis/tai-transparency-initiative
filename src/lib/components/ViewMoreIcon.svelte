@@ -34,7 +34,7 @@
 				transform: rotate(45deg) !important;
 			}
 			:global(.view_more__icon path) {
-				stroke: $light !important;
+				stroke: #00DEB3 !important;
 			}
 		}
 	}

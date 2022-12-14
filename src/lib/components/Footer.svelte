@@ -179,13 +179,13 @@
 						><strong>View larger map</strong> <LinkIcon class="ml_2" fill="#212121" /></a
 					>
 					<div class="display_flex align_center mt_4">
-						<a href="/" class="link-icon mr_2">
+						<a href="https://www.facebook.com/TAInitiative/" class="link-icon mr_2">
 							<FacebookIcon class="" width="24" height="24" />
 						</a>
-						<a href="/" class="link-icon mr_2">
+						<a href="https://twitter.com/TAInitiative" class="link-icon mr_2">
 							<TwitterIcon class="" width="24" height="24" />
 						</a>
-						<a href="/" class="link-icon">
+						<a href="https://www.linkedin.com/organization-guest/company/transparency-and-accountability-initiative?challengeId=AQFexlD2lTMqaAAAAXDvHIOa1MJGYXZxIQdXCoyqun-gbymyAqHKYz4JTJMObstoYl_5nPPpDIzLiS_jaiczyjYN6ze8lOTtlQ&submissionId=ec1285b6-8c7c-fd15-bcd2-b963fa594427" class="link-icon">
 							<LinkedInIcon class="" width="24" height="24" />
 						</a>
 						<!-- <XIcon width="32" height="32" /> -->

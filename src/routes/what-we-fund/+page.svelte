@@ -81,7 +81,6 @@
 					<img
 						class="parallax"
 						data-depth="-0.15"
-						style="height: 96%"
 						src={HeroImg}
 						alt=""
 						decoding="sync"
@@ -323,7 +322,7 @@
 
 			img {
 				position: absolute;
-				max-width: 80%;
+				max-width: 75%;
 				left: 0;
 				right: 0;
 				margin: auto;

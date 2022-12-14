@@ -55,7 +55,9 @@
 		&__link {
 			color: #00DEB3;
 		}
-
+		&__link:hover {
+			color: #43B79E;
+		}
 		&__left {
 			flex-shrink: 0;
 			width: 300px;
