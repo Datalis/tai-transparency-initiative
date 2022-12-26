@@ -63,7 +63,9 @@ export const load: PageServerLoad = async ({ url }) => {
 		}
 
 		const resources: Response<Resource[]> = await get('wc-resources', params);
-		const types: Response<ResourceType[]> = await get('wc-resource-types');
+		const types: Response<ResourceType[]> = await get('wc-resource-types', {
+			filters: { show_front: { $eq: true } }
+		});
 		const libraryTopics: Response<{ [key: string]: any }[]> = await get('wc-library-topics');
 
 		return {
