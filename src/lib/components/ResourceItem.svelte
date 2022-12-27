@@ -16,9 +16,9 @@
 	>
 	<h6 class="resource_item__title font_bold mb_3 mt_2 text_dark">{data?.title}</h6>
 	<div class="divider divider_2 divider_gray" />
-	<p class="resource_item__summary text_dark">
-		{data?.summary}
-	</p>
+	<div class="resource_item__summary text_dark">
+		{@html data?.summary}
+	</div>
 	<span class="resource_item__link font_bold display_flex align_center"
 		><small>Read More </small><LinkIcon
 			class="ml_1"

@@ -10,7 +10,15 @@
 	async function fetchPreview(url: string) {
 		console.log(url);
 		try {
-			const res = await fetch(`/preview?data=${encodeURIComponent(url)}`);
+			const res = await fetch(`/preview`,
+					{
+						method: 'POST',
+						headers: {
+							'Accept': 'application/json',
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({ url })
+					});
 			preview = await res.json();
 		} catch (e) {
 			console.error(e);
@@ -24,7 +32,7 @@
 
 <a href={data?.url} target="blank" class="resource_item">
 	<div class="resource_item__left">
-		<img src={preview?.image} alt={preview?.description} title={preview?.title} />
+		<img src={preview?.ogImage.url} alt={preview?.ogDescription} title={preview?.ogTitle} />
 	</div>
 	<div class="resource_item__right">
 		<!-- <h3 class="text_green">{data?.title}</h3> -->

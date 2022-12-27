@@ -40,9 +40,9 @@
 			<small class="text_gray font_regular"
 				>By <a href="/" class="text_gray">{data?.author?.name}</a> ({data?.author?.role})</small
 			>
-			<p class="text_dark">
-				{data?.summary}
-			</p>
+			<div class="text_dark">
+				{@html data?.summary}
+			</div>
 		</div>
 	</a>
 </div>

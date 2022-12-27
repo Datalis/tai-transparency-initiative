@@ -1,25 +1,41 @@
 import type { RequestHandler } from "@sveltejs/kit";
-import { LIVE_PREVIEW_TOKEN } from '$env/static/private';
+import ogs from 'open-graph-scraper';
 
+// Declara una variable para almacenar la url de la imagen
+let imageUrl = null;
 
-const defaultData = {
-	image: "https://placehold.jp/300x250.png"
+async function getArticleImage(articleUrl: any) {
+	// Opciones de configuración para open-graph-scraper
+	const options = {
+		url: articleUrl,
+	};
+	let res
+	try {
+		// Extrae la información de Open Graph de la página web
+		 res = await ogs(options);
+	} catch (error) {
+		console.log(error);
+		return {ogImage: {url: "https://placehold.jp/300x250.png"}};
+	}
+	// Si no se ha encontrado ninguna imagen para compartir en redes sociales, muestra un mensaje de error
+	// @ts-ignore
+	if (!res.result?.success || !res.result?.ogImage) {
+		console.error('No se ha encontrado ninguna imagen para compartir en redes sociales');
+		return {ogImage: {url: "https://placehold.jp/300x250.png"}};
+	}
+	return res.result
+
 }
 
-export const GET: RequestHandler = async ({ url }) => {
+// @ts-ignore
+export const POST: RequestHandler = async ({ request }) => {
 	try {
-		const data = decodeURIComponent(url.searchParams.get('data') || "");
-		const res = await fetch(`http://api.linkpreview.net/?key=${LIVE_PREVIEW_TOKEN}&q=${data}`, {
-			cache: 'default'
-		})
-		const d = await res.json();
-		return new Response(JSON.stringify(d), {
+		const data = await request.json();
+		const res = await getArticleImage(data.url)
+		return new Response(JSON.stringify(res), {
 			status: 200
 		});
 	} catch (e) {
 		console.error(e);
-		return new Response(JSON.stringify(defaultData), {
-			status: 200
-		})
 	}
 }
