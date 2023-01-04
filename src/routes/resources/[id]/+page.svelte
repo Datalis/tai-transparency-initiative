@@ -2,7 +2,9 @@
 	import PlaceholderImg from '$lib/assets/images/placeholder-1.png';
 	import ArticleImg from '$lib/assets/images/article-img.jpg';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
-	import FacebookIcon from '$lib/assets/icons/facebook-simple.svg?component';
+	import FacebookIcon from '$lib/assets/icons/facebook.svg?component';
+	import TwitterIcon from '$lib/assets/icons/twitter.svg?component';
+	import LinkedInIcon from '$lib/assets/icons/linkedin.svg?component';
 	import LinkIcon from '$lib/assets/icons/link.svg?component';
 	import type { Resource } from '$lib/types/resources';
 	import { onMount } from 'svelte';
@@ -71,10 +73,10 @@
 							<FacebookIcon width="14" height="14" fill="#fff" />
 						</span>
 						<span class="share_icon ml_2">
-							<FacebookIcon width="14" height="14" fill="#fff" />
+							<TwitterIcon width="14" height="14" fill="#fff" />
 						</span>
 						<span class="share_icon ml_2">
-							<FacebookIcon width="14" height="14" fill="#fff" />
+							<LinkedInIcon width="14" height="14" fill="#fff" />
 						</span>
 					</div>
 				</div>
