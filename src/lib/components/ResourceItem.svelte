@@ -37,6 +37,7 @@
 		.resource_item__summary {
 			display: none;
 		}
+
 		.resource_item__title {
 			font-size: pxToRem(16) !important;
 		}
@@ -68,13 +69,15 @@
 
 		// TPA Full Disclosure
 
-		p {
+		.resource_item__summary {
 			font-size: pxToRem(14);
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 4;
+			-webkit-line-clamp: 5;
 			overflow: hidden;
 			text-overflow: ellipsis;
+			line-height: 28px;
+			margin: .75rem 0;
 		}
 
 		.divider {
