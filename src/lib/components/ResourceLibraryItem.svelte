@@ -2,6 +2,7 @@
 	import type { Resource } from '$lib/types/resources';
 	// import { onMount } from 'svelte';
 	import LinkIcon from '$lib/assets/icons/link.svg?component';
+	import ArrowRightIcon from '$lib/assets/icons/arrow-right.svg?component';
 
 	export let data: Partial<Resource>;
 
@@ -33,19 +34,20 @@
 	<!-- <div class="resource_item__left">
 		<img src={preview?.ogImage.url} alt={preview?.ogDescription} title={preview?.ogTitle} />
 	</div> -->
-	<div class="resource_item__right">
+	<div class="resource_item__right mr_4">
 		<!-- <h3 class="text_green">{data?.title}</h3> -->
 
-		<p class="text_dark font_bold">
+		<h4 class="text_dark font_bold mt_0 mb_2">
 			{data?.summary}
-		</p>
+		</h4>
 		<div class="display_flex">
-			<small class="text_gray mr_4">{new Date(data?.date || '').toDateString()}</small>
+			<small class="text_gray text_uppercase mr_4">{new Date(data?.date || '').toDateString()}</small>
 			<small class="text_dark resource_item__link mt_auto font_bold"
 				>Read More <LinkIcon class="ml_1" width="18" height="18" style="fill: var(--gray)" />
 			</small>
 		</div>
 	</div>
+	<ArrowRightIcon class="resource_item__icon" width="70" height="70" />
 </a>
 
 <style lang="scss">
@@ -53,16 +55,29 @@
 
 	.resource_item {
 		display: flex;
-		align-items: stretch;
+		align-items: center;
 		justify-content: center;
 		padding-top: 1rem;
 		padding-bottom: 1rem;
+
+		border-top: 1px solid #0a132d;
 
 		--gray: #{map-get($colors, 'gray')};
 
 		@media screen and (max-width: $md) {
 			flex-direction: column;
 		}
+
+		:global {
+			.resource_item__icon {
+				flex-shrink: 0;
+				path {
+					stroke-width: 1px !important;
+					stroke: #c7ccd6  !important;
+				}
+			}
+		}
+
 		&__link {
 			color: #00deb3;
 		}
@@ -99,18 +114,10 @@
 				padding-left: 0;
 			}
 
-			p {
-				// font-size: pxToRem(14);
-				// line-height: 1.2;
-				// display: -webkit-box;
-				// -webkit-box-orient: vertical;
-				// -webkit-line-clamp: 4;
-				// overflow: hidden;
-
-				font-size: pxToRem(14);
+			h4 {
 				display: -webkit-box;
 				-webkit-box-orient: vertical;
-				-webkit-line-clamp: 4;
+				-webkit-line-clamp: 2;
 				overflow: hidden;
 				text-overflow: ellipsis;
 			}

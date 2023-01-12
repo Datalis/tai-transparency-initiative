@@ -97,7 +97,7 @@
 		{/if}
 		<div class="container">
 			<div class="display_flex flex_column pt_4">
-				<div class="toolbar_wrapper display_flex align_end">
+				<div class="toolbar_wrapper display_flex align_end mb_4">
 					<div class="filters_wrapper display_flex align_center flex-grow_1">
 						<!-- <h4 class="sort_by_btn mb_1 mr_3 mt_1">Sort By</h4>
 						<ArrowThick width="24" height="24" /> -->
@@ -132,7 +132,7 @@
 						/>
 					</div>
 				</div>
-				<div class="divider divider_blue divider_1 my_2	" />
+				<!-- <div class="divider divider_blue divider_1 my_2	" /> -->
 				{#if !resources.length}
 					<h6 class="w_100 text_center text_green">No results found</h6>
 				{/if}
