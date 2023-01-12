@@ -43,8 +43,11 @@
 			<img class="wrapper_bg" alt="" src={WorldImg} />
 			<div class="wrapper display_flex flex_column align_center justify_center">
 				<LogoIcon width="72" height="72" />
-				<h1 class="text_green mt_4">About Us</h1>
-				<div class="divider divider_light divider_2 w_15 mt_4" />
+				<h1 class="text_green mt_4 mb_3">About Us</h1>
+				<div class="divider divider_light divider_2 w_15" />
+				<p class="text_center mx_auto w_75">
+					TAI members are leading funders of transparency, accountability and participation efforts worldwide. We are committed to building a more just, equitable and inclusive society.
+				</p>
 			</div>
 		</div>
 	</section>

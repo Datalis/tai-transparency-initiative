@@ -52,42 +52,51 @@
 				delay: 0.1
 			});
 
+		// TODO
+
 		gsap.timeline({
 			scrollTrigger: {
 				trigger: '.header',
-				start: 'bottom -500px',
+				start: 'bottom -100%',
 				scrub: 1
 			}
 		})
 
-		.to('header', {
-			backgroundColor: 'rgba(10, 19, 45, 0.91)',
-			opacity: 0
+		// .to('.header .navbar .navbar_nav', {
+		// 	opacity: 0
+		// 	// duration: 0.1
+		// })
+
+		
+		.to('.header .navbar .navbar_brand svg', {
+			height: 35
 		})
 
-		.to('.header .navbar .navbar_nav', {
-			opacity: 0
-			// duration: 0.1
+		.to('header', {
+			backgroundColor: 'rgba(250, 250, 250, 0.90)',
+			backdropFilter: 'blur(3px)',
+			duration: 0.5
 		})
-		
+
 		.to('.header', {
 			position: 'fixed',
 			opacity: 1,
-			duration: 0.3
+			// duration: 0.3
 		})
 		
 		.to('.header .navbar', {
 			padding: '0.4rem 0',
 			// duration: 0.4
 		})
+
 	});
 </script>
 
 <header class="header">
 	<div class="container">
 		<div class="navbar">
-			<a href="/" class="navbar_brand mr_auto">
-				<Logo width="180" height="50" />
+			<a href="/" class="navbar_brand display_flex mr_auto">
+				<Logo width="180" height="50" class="my_auto" />
 			</a>
 			<nav class="navbar_nav hide_on_md_and_down">
 				<a href="https://www.facebook.com/TAInitiative/" class="link-icon">
@@ -131,7 +140,7 @@
 							class="display_flex align_center text_gray"
 							class:active={$page.url.pathname.includes('how-we-fund')}
 						>
-							<h2 class=" m_0">How we fund?</h2>
+							<h2 class=" m_0">How we fund</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_1 my_4" />
@@ -202,6 +211,7 @@
 		padding: 1rem 0rem;
 		z-index: 9;
 		position: relative;
+
 		&_nav {
 			margin-left: auto;
 			display: inline-flex;

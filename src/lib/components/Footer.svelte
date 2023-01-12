@@ -175,9 +175,9 @@
 					<span class="display_block mt_4 text_gray"
 						>1100 13th St NW, Suite 800 Washington, DC 20005, United States</span
 					>
-					<a href="/" class="display_flex align_center mt_2 text_dark mt_3 font_bold"
+					<!-- <a href="/" class="display_flex align_center mt_2 text_dark mt_3 font_bold"
 						><strong>View larger map</strong> <LinkIcon class="ml_2" fill="#212121" /></a
-					>
+					> -->
 					<div class="display_flex align_center mt_4">
 						<a href="https://www.facebook.com/TAInitiative/" class="link-icon mr_2">
 							<FacebookIcon class="" width="24" height="24" />

@@ -37,7 +37,7 @@
 
 	onMount(() => {
 		if (windowWidth > 768) {
-			const isVideoPlaying = video => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
+			const isVideoPlaying = (video: HTMLVideoElement) => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
 			gsap
 				.timeline({
 					scrollTrigger: {
@@ -46,7 +46,7 @@
 						scrub: true,
 						start: 'top top',
 						end: '+=200%',
-						onUpdate: ({progress}) => {
+						onUpdate: ({progress}: any) => {
 							if(videoPlayer  && progress > 0.8) {
 								videoPlayer.play();
 								// set visible to false
@@ -283,7 +283,7 @@
 		<IntersectionObserver let:top>
 			<div class="wrapper" class:pinned={top > 0}>
 				<div class="brands_container show_on_md_and_up">
-					<div class="brands_container__left bg_gray_light" />
+					<div class="brands_container__left" />
 					<div class="brands_container__right">
 						<div class="wrapper">
 							<div class="marquee">
@@ -609,6 +609,7 @@
 			display: flex;
 			&__left {
 				width: 55%;
+				background-color: #f2f4f7;
 			}
 			&__right {
 				width: 45%;
