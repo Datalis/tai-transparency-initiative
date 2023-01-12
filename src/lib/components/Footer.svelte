@@ -15,7 +15,7 @@
 				</div>
 				<div class="col col_lg_3 col_2">
 					<h6 class="text_uppercase mt_0 mb_4">
-						<a href="/about-us" class="text_blue">About Us</a>
+						<a href="/about-us" class="text_blue">About us</a>
 					</h6>
 					<ul>
 						<li>
@@ -28,7 +28,7 @@
 							<a href="/" class="text_gray">Strategy</a>
 						</li> -->
 						<li>
-							<a href="/about-us#team" class="text_gray">TAI Team</a>
+							<a href="/about-us#team" class="text_gray">TAI team</a>
 						</li>
 						<li>
 							<a href="/about-us#join" class="text_gray">Join TAI</a>
@@ -45,7 +45,7 @@
 							<a href="/what-we-fund#funding" class="text_gray">What does TPA funding look like?</a>
 						</li>
 						<li>
-							<a href="/what-we-fund#funding-data-library" class="text_gray">Funding Data Library</a
+							<a href="/what-we-fund#funding-data-library" class="text_gray">Funding data library</a
 							>
 						</li>
 						<li>
@@ -61,13 +61,13 @@
 						</h6>
 						<ul>
 							<li>
-								<a href="/how-we-fund#partner-support" class="text_gray">Partner Support</a>
+								<a href="/how-we-fund#partner-support" class="text_gray">Partner support</a>
 							</li>
 							<!-- <li>
 								<a href="/how-we-fund" class="text_gray"></a>
 							</li> -->
 							<li>
-								<a href="/how-we-fund#founders-exits" class="text_gray">Funder Exits</a>
+								<a href="/how-we-fund#founders-exits" class="text_gray">Funder exits</a>
 							</li>
 							<li>
 								<a href="/how-we-fund#participatory-strategy" class="text_gray"
@@ -86,10 +86,10 @@
 							<a href="/" class="text_gray">Our values</a>
 						</li> -->
 						<li>
-							<a href="/how-we-fund#partner-support" class="text_gray">Partner Support</a>
+							<a href="/how-we-fund#partner-support" class="text_gray">Partner support</a>
 						</li>
 						<li>
-							<a href="/how-we-fund#founders-exits" class="text_gray">Funder Exits</a>
+							<a href="/how-we-fund#founders-exits" class="text_gray">Funder exits</a>
 						</li>
 						<li>
 							<a href="/how-we-fund#participatory-strategy" class="text_gray"
@@ -111,10 +111,10 @@
 						</li>
 
 						<li>
-							<a href="/how-tai-works#featured-topics" class="text_gray">Featured Topic</a>
+							<a href="/how-tai-works#featured-topics" class="text_gray">Featured topic</a>
 						</li>
 						<li>
-							<a href="/how-tai-works#past-funding" class="text_gray">Past Funding</a>
+							<a href="/how-tai-works#past-funding" class="text_gray">Past projects</a>
 						</li>
 						<li>
 							<a href="/how-tai-works#working-with-others" class="text_gray"
@@ -126,7 +126,7 @@
 						<h6 class="text_uppercase text_blue mb_4">Resources</h6>
 						<ul>
 							<li>
-								<a href="/resources?type=1" class="text_gray">TAI Weekly</a>
+								<a href="/resources?type=1" class="text_gray">TAI weekly</a>
 							</li>
 							<li>
 								<a href="/resources?type=6" class="text_gray">Blogs</a>
@@ -135,10 +135,10 @@
 								<a href="/resources?type=2" class="text_gray">Reports</a>
 							</li>
 							<li>
-								<a href="/resources?type=3" class="text_gray">Collaboration Cases</a>
+								<a href="/resources?type=3" class="text_gray">Collaboration cases</a>
 							</li>
 							<li>
-								<a href="/resources?type=5" class="text_gray">Think Pieces</a>
+								<a href="/resources?type=5" class="text_gray">Think pieces</a>
 							</li>
 							<li>
 								<a href="/resources?type=7" class="text_gray">Library</a>
@@ -150,7 +150,7 @@
 					<h6 class="text_uppercase text_blue mb_4 mt_0">Resources</h6>
 					<ul>
 						<li>
-							<a href="/resources?type=1" class="text_gray">TAI Weekly</a>
+							<a href="/resources?type=1" class="text_gray">TAI weekly</a>
 						</li>
 						<li>
 							<a href="/resources?type=6" class="text_gray">Blogs</a>
@@ -159,10 +159,10 @@
 							<a href="/resources?type=2" class="text_gray">Reports</a>
 						</li>
 						<li>
-							<a href="/resources?type=3" class="text_gray">Collaboration Cases</a>
+							<a href="/resources?type=3" class="text_gray">Collaboration cases</a>
 						</li>
 						<li>
-							<a href="/resources?type=5" class="text_gray">Think Pieces</a>
+							<a href="/resources?type=5" class="text_gray">Think pieces</a>
 						</li>
 						<li>
 							<a href="/resources?type=7" class="text_gray">Library</a>
@@ -170,7 +170,7 @@
 					</ul>
 				</div>
 				<div class="col full-width">
-					<h6 class="text_uppercase text_blue mt_0 mb_4">Contact Us</h6>
+					<h6 class="text_uppercase text_blue mt_0 mb_4">Contact us</h6>
 					<a href="mailto:contact@transparency-initiative.org" class="display_block text_gray">contact@transparency-initiative.org</a>
 					<span class="display_block mt_4 text_gray"
 						>1100 13th St NW, Suite 800 Washington, DC 20005, United States</span
