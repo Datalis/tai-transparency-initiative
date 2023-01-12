@@ -51,6 +51,35 @@
 				duration: 0.1,
 				delay: 0.1
 			});
+
+		gsap.timeline({
+			scrollTrigger: {
+				trigger: '.header',
+				start: 'bottom -500px',
+				scrub: 1
+			}
+		})
+
+		.to('header', {
+			backgroundColor: 'rgba(10, 19, 45, 0.91)',
+			opacity: 0
+		})
+
+		.to('.header .navbar .navbar_nav', {
+			opacity: 0
+			// duration: 0.1
+		})
+		
+		.to('.header', {
+			position: 'fixed',
+			opacity: 1,
+			duration: 0.3
+		})
+		
+		.to('.header .navbar', {
+			padding: '0.4rem 0',
+			// duration: 0.4
+		})
 	});
 </script>
 
