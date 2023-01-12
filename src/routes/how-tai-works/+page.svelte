@@ -168,7 +168,7 @@
 					<div class="model_item_body bg_gray p_4 display_flex flex_column justify_evenly">
 						<div>
 							<span class="display_block font_bold">CONSOLIDATE</span>
-							<span class="display_block mt_1">evidence based</span>
+							<span class="display_block mt_1">evidence base</span>
 						</div>
 						<div>
 							<span class="display_block font_bold">FACILITATE</span>
@@ -220,7 +220,7 @@
 						</div>
 						<div>
 							<span class="display_block font_bold">BUILD</span>
-							<span class="display_block mt_1">evidence base</span>
+							<span class="display_block mt_1">cross-sectoral advocacy</span>
 						</div>
 						<div>
 							<span class="display_block font_bold">STRENGTHEN</span>
