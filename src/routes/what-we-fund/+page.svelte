@@ -92,7 +92,7 @@
 	</section>
 	<section id="funding" class="funding_section section bg_light">
 		<div class="container">
-			<h2 class="text_dark mt_0">What does TAI Funding look like?</h2>
+			<h2 class="text_dark mt_0">What does TAI funding look like?</h2>
 			<span class="divider divider_2 divider_green mb_5" />
 			<div class="show_on_md_and_up row">
 				<div class="col_4 col_lg_12">
