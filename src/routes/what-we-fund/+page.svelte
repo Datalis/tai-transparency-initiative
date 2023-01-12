@@ -85,7 +85,6 @@
 						alt=""
 						decoding="sync"
 						loading="eager"
-						preload=""
 					/>
 				</div>
 			</div>

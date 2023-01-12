@@ -84,8 +84,19 @@
 		/>
 	</div>
 	<section class="resource_list_section section bg_light">
+		{#if typeParam == 7}
+			<div class="library_summary py_2">
+				<div class="container">
+					<small class="m_0">
+						We also wanted to share with you our updated TAI’s grants database, covering our
+						member’s TPA-related grants active in 2021. We are working on a short series of blogs
+						related funding trends, both of TAI and more broadly. Here is the first!
+					</small>
+				</div>
+			</div>
+		{/if}
 		<div class="container">
-			<div class="display_flex flex_column">
+			<div class="display_flex flex_column pt_4">
 				<div class="toolbar_wrapper display_flex align_end">
 					<div class="filters_wrapper display_flex align_center flex-grow_1">
 						<!-- <h4 class="sort_by_btn mb_1 mr_3 mt_1">Sort By</h4>
@@ -154,6 +165,7 @@
 	}
 
 	.resource_list_section {
+		padding-top: 0 !important;
 		@media screen and (max-width: $md) {
 			padding-top: 1rem !important;
 		}
@@ -171,6 +183,14 @@
 					margin-top: 1rem;
 					width: 100%;
 				}
+			}
+		}
+
+		.library_summary {
+			background-color: map-get($colors, 'gray_light');
+			small {
+				font-size: pxToRem(12);
+				line-height: 1.45;
 			}
 		}
 

@@ -1,47 +1,50 @@
 <script lang="ts">
 	import type { Resource } from '$lib/types/resources';
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 	import LinkIcon from '$lib/assets/icons/link.svg?component';
 
 	export let data: Partial<Resource>;
 
-	let preview: any;
+	// let preview: any;
 
-	async function fetchPreview(url: string) {
-		console.log(url);
-		try {
-			const res = await fetch(`/preview`,
-					{
-						method: 'POST',
-						headers: {
-							'Accept': 'application/json',
-							'Content-Type': 'application/json'
-						},
-						body: JSON.stringify({ url })
-					});
-			preview = await res.json();
-		} catch (e) {
-			console.error(e);
-		}
-	}
+	// async function fetchPreview(url: string) {
+	// 	console.log(url);
+	// 	try {
+	// 		const res = await fetch(`/preview`, {
+	// 			method: 'POST',
+	// 			headers: {
+	// 				Accept: 'application/json',
+	// 				'Content-Type': 'application/json'
+	// 			},
+	// 			body: JSON.stringify({ url })
+	// 		});
+	// 		preview = await res.json();
+	// 	} catch (e) {
+	// 		console.error(e);
+	// 	}
+	// }
 
-	$: {
-		data.url && fetchPreview(data.url);
-	}
+	// $: {
+	// 	data.url && fetchPreview(data.url);
+	// }
 </script>
 
 <a href={data?.url} target="blank" class="resource_item">
-	<div class="resource_item__left">
+	<!-- <div class="resource_item__left">
 		<img src={preview?.ogImage.url} alt={preview?.ogDescription} title={preview?.ogTitle} />
-	</div>
+	</div> -->
 	<div class="resource_item__right">
 		<!-- <h3 class="text_green">{data?.title}</h3> -->
-		<p class="text_dark">
+
+		<p class="text_dark font_bold">
 			{data?.summary}
 		</p>
-		<small class="text_dark resource_item__link mt_auto font_bold"
-			>Read More <LinkIcon class="ml_1" width="18" height="18" style="fill: var(--gray)" />
-		</small>
+		<div class="display_flex">
+			<small class="text_gray mr_4">{new Date(data?.date || '').toDateString()}</small>
+			<small class="text_dark resource_item__link mt_auto font_bold"
+				>Read More <LinkIcon class="ml_1" width="18" height="18" style="fill: var(--gray)" />
+			</small>
+		</div>
 	</div>
 </a>
 
@@ -61,10 +64,10 @@
 			flex-direction: column;
 		}
 		&__link {
-			color: #00DEB3;
+			color: #00deb3;
 		}
 		&__link:hover {
-			color: #43B79E;
+			color: #43b79e;
 		}
 		&__left {
 			flex-shrink: 0;
@@ -87,7 +90,7 @@
 		}
 		&__right {
 			flex-grow: 1;
-			padding-left: 2rem;
+			// padding-left: 2rem;
 			display: flex;
 			flex-direction: column;
 			padding-bottom: 1rem;

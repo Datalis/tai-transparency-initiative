@@ -15,13 +15,21 @@
 
 <div class="resource_filters">
 	{#each options as opt}
-		<div class="form_control form_control_radio">
-			<label>
-				<input type="radio" bind:group={currentFilter} name="" value={opt.id} on:change={onFilterChange} />
-				{opt.label}
-			</label>
-		</div>
+		{#if opt.id !== 7}
+			<div class="form_control form_control_radio">
+				<label>
+					<input type="radio" bind:group={currentFilter} name="" value={opt.id} on:change={onFilterChange} />
+					{opt.label}
+				</label>
+			</div>
+		{/if}
 	{/each}
+	<div class="form_control form_control_radio">
+		<label>
+			<input type="radio" bind:group={currentFilter} name="" value={7} on:change={onFilterChange} />
+			Library
+		</label>
+	</div>
 </div>
 
 <style lang="scss" scoped>
