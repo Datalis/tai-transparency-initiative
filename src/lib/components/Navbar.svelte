@@ -167,7 +167,7 @@
 							class="display_flex align_center text_gray"
 							class:active={$page.url.pathname.includes('about-us')}
 						>
-							<h2 class="m_0">About Us</h2>
+							<h2 class="m_0">About us</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_1 my_4" />
