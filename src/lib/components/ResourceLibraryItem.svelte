@@ -60,7 +60,7 @@
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 
-		border-top: 1px solid #0a132d;
+		border-top: 1px solid #c7ccd6;
 
 		--gray: #{map-get($colors, 'gray')};
 

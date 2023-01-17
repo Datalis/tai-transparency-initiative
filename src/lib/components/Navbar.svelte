@@ -15,6 +15,14 @@
 
 	let menuAnim = gsap.timeline({ paused: true });
 
+	let navbarAnim = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.header',
+			start: 'top -100px',
+			scrub: 1
+		}
+	});
+
 	const toggleMenu = () => {
 		isMenuOpen = !isMenuOpen;
 	};
@@ -34,6 +42,7 @@
 
 	afterNavigate(() => {
 		isMenuOpen = false;
+		navbarAnim.seek(0);
 	});
 
 	onMount(() => {
@@ -54,41 +63,51 @@
 
 		// TODO
 
-		gsap.timeline({
-			scrollTrigger: {
-				trigger: '.header',
-				start: 'bottom -100%',
-				scrub: 1
-			}
-		})
 
-		// .to('.header .navbar .navbar_nav', {
-		// 	opacity: 0
-		// 	// duration: 0.1
-		// })
+		navbarAnim
+			.to('.header', {
+				backgroundColor: 'rgba(250, 250, 250, 0.95)',
+				boxShadow: '0 0 1px rgba(0,0,0,0.1)',
+				backdropFilter: 'blur(3px)'
+			})
+			.to('.header .navbar .navbar_brand svg', { height: 35 })
+			.to('.header .navbar', { padding: '0.4rem 0' })
+			.to('.header .navbar .navbar_nav', { opacity: 0 })
+			
+		// gsap
+		// 	.timeline({
+		// 		scrollTrigger: {
+		// 			trigger: '.header',
+		// 			start: 'bottom -10px',
+		// 			scrub: 1
+		// 		}
+		// 	})
 
-		
-		.to('.header .navbar .navbar_brand svg', {
-			height: 35
-		})
+		// 	.to('.header .navbar .navbar_nav', {
+		// 		opacity: 0
+		// 		// duration: 0.1
+		// 	})
 
-		.to('header', {
-			backgroundColor: 'rgba(250, 250, 250, 0.90)',
-			backdropFilter: 'blur(3px)',
-			duration: 0.5
-		})
+		// 	.to('.header .navbar .navbar_brand svg', {
+		// 		height: 35
+		// 	})
 
-		.to('.header', {
-			position: 'fixed',
-			opacity: 1,
-			// duration: 0.3
-		})
-		
-		.to('.header .navbar', {
-			padding: '0.4rem 0',
-			// duration: 0.4
-		})
+		// 	.to('header', {
+		// 		backgroundColor: 'rgba(250, 250, 250, 0.90)',
+		// 		backdropFilter: 'blur(3px)',
+		// 		duration: 0.5
+		// 	})
 
+		// 	// .to('.header', {
+		// 	// 	position: 'fixed',
+		// 	// 	opacity: 1,
+		// 	// 	// duration: 0.3
+		// 	// })
+
+		// 	.to('.header .navbar', {
+		// 		padding: '0.4rem 0'
+		// 		// duration: 0.4
+		// 	});
 	});
 </script>
 
@@ -105,7 +124,10 @@
 				<a href="https://twitter.com/TAInitiative" class="link-icon">
 					<TwitterIcon width="20" height="20" />
 				</a>
-				<a href="https://www.linkedin.com/organization-guest/company/transparency-and-accountability-initiative?challengeId=AQFexlD2lTMqaAAAAXDvHIOa1MJGYXZxIQdXCoyqun-gbymyAqHKYz4JTJMObstoYl_5nPPpDIzLiS_jaiczyjYN6ze8lOTtlQ&submissionId=ec1285b6-8c7c-fd15-bcd2-b963fa594427" class="link-icon">
+				<a
+					href="https://www.linkedin.com/organization-guest/company/transparency-and-accountability-initiative?challengeId=AQFexlD2lTMqaAAAAXDvHIOa1MJGYXZxIQdXCoyqun-gbymyAqHKYz4JTJMObstoYl_5nPPpDIzLiS_jaiczyjYN6ze8lOTtlQ&submissionId=ec1285b6-8c7c-fd15-bcd2-b963fa594427"
+					class="link-icon"
+				>
 					<LinkedInIcon width="20" height="20" />
 				</a>
 				<!-- <a href="/">
@@ -179,7 +201,10 @@
 						<a href="https://twitter.com/TAInitiative" class="mr_3 link-icon">
 							<TwitterIcon width="20" height="20" />
 						</a>
-						<a href="https://www.linkedin.com/organization-guest/company/transparency-and-accountability-initiative?challengeId=AQFexlD2lTMqaAAAAXDvHIOa1MJGYXZxIQdXCoyqun-gbymyAqHKYz4JTJMObstoYl_5nPPpDIzLiS_jaiczyjYN6ze8lOTtlQ&submissionId=ec1285b6-8c7c-fd15-bcd2-b963fa594427" class="mr_3 link-icon">
+						<a
+							href="https://www.linkedin.com/organization-guest/company/transparency-and-accountability-initiative?challengeId=AQFexlD2lTMqaAAAAXDvHIOa1MJGYXZxIQdXCoyqun-gbymyAqHKYz4JTJMObstoYl_5nPPpDIzLiS_jaiczyjYN6ze8lOTtlQ&submissionId=ec1285b6-8c7c-fd15-bcd2-b963fa594427"
+							class="mr_3 link-icon"
+						>
 							<LinkedInIcon width="20" height="20" />
 						</a>
 						<!-- <a href="/" class="mr_3">
@@ -199,7 +224,7 @@
 
 	.header {
 		// background-color: $blue;
-		position: absolute;
+		position: fixed;
 		z-index: 14;
 		max-height: 100px;
 		width: 100%;

@@ -51,11 +51,14 @@
 	$md: map-get($grid-breakpoints, 'md');
 
 	.resource_item {
+
+		border-top: 1px solid #c7ccd6;
+
 		&__wrapper {
 			display: flex;
 			align-items: stretch;
-			padding-top: 1rem;
-			padding-bottom: 1rem;
+			padding-top: 2rem;
+			padding-bottom: 2rem;
 
 			@media (max-width: $md) {
 				flex-direction: column;
@@ -86,9 +89,11 @@
 
 					:global {
 						img {
+							// background-color: transparent !important;
 							height: 100%;
 							width: 100%;
-							object-fit: contain;
+							object-fit: cover;
+							object-position: center;
 							max-height: 100%;
 						}
 					}
