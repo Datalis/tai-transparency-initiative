@@ -3,6 +3,11 @@
 
 	import { gsap } from 'gsap/dist/gsap';
 
+	import 'swiper/css';
+	import 'swiper/css/pagination';
+	import { Swiper, SwiperSlide } from 'swiper/svelte';
+	import { Pagination } from 'swiper';
+
 	let _6CsSectionSlider: HTMLElement;
 
 	export let data: any;
@@ -26,7 +31,7 @@
 					trigger: '._6Cs_section',
 					start: 'top bottom',
 					end: 'bottom -300%',
-					scrub: 0.5,
+					scrub: 0.5
 				},
 				y: '-5%'
 			});
@@ -48,7 +53,7 @@
 	});
 </script>
 
-<section id="6cs" class="_6Cs_section section bg_light">
+<section id="6cs" class="_6Cs_section section bg_light show_on_md_and_up">
 	<div class="container">
 		<div class="_6Cs_wrapper">
 			<div class="_6Cs_section_title">
@@ -60,7 +65,9 @@
 					<div class="_6Cs_item">
 						<div class="display_flex align_center">
 							<span class="_6Cs_item__count mr_3">{item?.order}</span>
-							<span class="_6Cs_item__title text_uppercase font_light text_light">{item?.title}</span>
+							<span class="_6Cs_item__title text_uppercase font_light text_light"
+								>{item?.title}</span
+							>
 						</div>
 						<p class="_6Cs_item__text mt_1 text_light">
 							{item?.message}
@@ -70,6 +77,25 @@
 			</div>
 		</div>
 	</div>
+</section>
+<section class="_6Cs_section _6Cs_section__mobile section bg_light show_on_md_and_down">
+	<div class="_6Cs_section_title">
+		<h2 class=" mb_4 mt_0 text_dark">{data?.title}</h2>
+		<div class="divider divider_2 divider_green_light" />
+	</div>
+	<Swiper class="slider" pagination={true} modules={[Pagination]}>
+		{#each items as item}
+			<SwiperSlide>
+				<div class="_6Cs_item bg_blue_light">
+					<span class="_6Cs_item__count">{item?.order}</span>
+					<span class="_6Cs_item__title text_uppercase font_bold text_light my_3">{item?.title}</span>
+					<p class="_6Cs_item__text text_light">
+						{item?.message}
+					</p>
+				</div>
+			</SwiperSlide>
+		{/each}
+	</Swiper>
 </section>
 
 <style lang="scss" scoped>
@@ -88,6 +114,25 @@
 			// height: 70% !important;
 			display: flex;
 			align-items: center;
+		}
+
+		&__mobile {
+			._6Cs_item {
+				width: 90% !important;
+				margin: auto;
+				border-radius: 25px;
+				max-width: 100% !important;
+				height: 50vh;
+				padding: 2rem;
+				display: flex !important;
+				flex-direction: column;
+				justify-content: center;
+				margin-bottom: 3rem;
+				&__text {
+					padding-left: 0 !important;
+					margin-top: 0 !important;
+				}
+			}
 		}
 
 		._6Cs_wrapper {
@@ -133,7 +178,7 @@
 
 		._6Cs_item {
 			width: 42.7777vw;
-			max-width: calc(96vw/4);
+			max-width: calc(96vw / 4);
 			display: block;
 			flex-shrink: 0;
 
