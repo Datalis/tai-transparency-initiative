@@ -44,8 +44,8 @@
 				.timeline({
 					scrollTrigger: {
 						trigger: '.partners_section',
-						scrub: true,
-						start: 'top top',
+						scrub: 1,
+						start: 'top -100px',
 						end: 'bottom center',
 						pin: true
 					}
