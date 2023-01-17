@@ -35,9 +35,17 @@
 	$: past_funding = data.past_funding;
 	$: six_data = data.six_cs;
 
+	let isVideoMuted = true;
+
+	function toggleVideoMuted() {
+		isVideoMuted = !isVideoMuted;
+		videoPlayer.muted = !videoPlayer.muted;
+	}
+
 	onMount(() => {
 		if (windowWidth > 768) {
-			const isVideoPlaying = (video: HTMLVideoElement) => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
+			const isVideoPlaying = (video: HTMLVideoElement) =>
+				!!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
 			gsap
 				.timeline({
 					scrollTrigger: {
@@ -46,43 +54,46 @@
 						scrub: true,
 						start: 'top top',
 						end: '+=200%',
-						onUpdate: ({progress}: any) => {
-							if(videoPlayer  && progress > 0.8) {
+						onUpdate: ({ progress }: any) => {
+							if (videoPlayer && progress > 0.8) {
 								videoPlayer.play();
 								// set visible to false
 							}
 							// get if video html component is playing
-							if(videoPlayer){
-								if(isVideoPlaying(videoPlayer)){
+							if (videoPlayer) {
+								if (isVideoPlaying(videoPlayer)) {
 									// set visible to false
-									if(document.querySelector('.muted')) document.querySelector('.muted').classList.remove('hidden');
-								}else {
-									if(document.querySelector('.muted')) document.querySelector('.muted').classList.add('hidden');
+									if (document.querySelector('.muted'))
+										document.querySelector('.muted').classList.remove('hidden');
+								} else {
+									if (document.querySelector('.muted'))
+										document.querySelector('.muted').classList.add('hidden');
 								}
-
 							}
 						},
 						onLeave: () => {
-							if(videoPlayer) {
+							if (videoPlayer) {
 								videoPlayer.pause();
-								if(document.querySelector('.muted')) document.querySelector('.muted').classList.add('hidden');
+								if (document.querySelector('.muted'))
+									document.querySelector('.muted').classList.add('hidden');
 							}
 						},
 						onEnterBack: () => {
-							if(videoPlayer) {
+							if (videoPlayer) {
 								videoPlayer.play();
 							}
 						},
 						onLeaveBack: () => {
 							//reset video to end
-							if(videoPlayer) {
-								if(videoPlayer.duration && videoPlayer.duration > 0) {
-									videoPlayer.currentTime = videoPlayer.duration
+							if (videoPlayer) {
+								if (videoPlayer.duration && videoPlayer.duration > 0) {
+									videoPlayer.currentTime = videoPlayer.duration;
 								}
-								if(document.querySelector('.muted')) document.querySelector('.muted').classList.add('hidden');
+								if (document.querySelector('.muted'))
+									document.querySelector('.muted').classList.add('hidden');
 								videoPlayer.pause();
 							}
-						},
+						}
 						// pinReparent: true,
 						// markers: {startColor: "green", endColor: "red", fontSize: "12px"}
 					}
@@ -95,8 +106,15 @@
 					flexBasis: '100%'
 					// ease: 'none'
 				})
+				// .to('.featured_section .featured_section__content .video_wrapper .video_overlay_muted_button', {
+				// 	opacity: 1
+				// })
+				.to('.featured_section .featured_section__content .content_wrapper', {
+					// xPercent: 10,
+					opacity: 0
+				})
 				.to('.featured_section .featured_section__content .video_wrapper video', {
-					scale: 1.1
+					scale: 1.05
 				});
 
 			const parallax = gsap.timeline({
@@ -146,8 +164,22 @@
 				</div>
 				<div class="img_wrapper col col_7 col_md_12 h_100">
 					<!-- <Image size="medium" image={hero?.image} priority /> -->
-					<img class="img_wrapper_1 parallax" data-depth="0.15" decoding="sync" loading="eager" preload='' src={HeroImg1} alt="" />
-					<img class="img_wrapper_2 parallax" data-depth="0" decoding="sync" loading="eager" preload="" src={HeroImg2} alt="" />
+					<img
+						class="img_wrapper_1 parallax"
+						data-depth="0.15"
+						decoding="sync"
+						loading="eager"
+						src={HeroImg1}
+						alt=""
+					/>
+					<img
+						class="img_wrapper_2 parallax"
+						data-depth="0"
+						decoding="sync"
+						loading="eager"
+						src={HeroImg2}
+						alt=""
+					/>
 				</div>
 			</div>
 		</div>
@@ -258,21 +290,18 @@
 						loop
 						poster={ClimateVideoPoster}
 						src="https://api.tai.datalis.dev/uploads/climate_TAI_7c23ce0f47.webm"
-						type="video/webm"
 						playsinline
-						decoding="async"
 						preload="auto"
 					>
 						<track kind="captions" />
 					</video>
-					<div class="video_overlay_muted_button muted hidden" on:click={() => {
-								videoPlayer.muted = !videoPlayer.muted;
-							}}>
-						<SpeakerIcon
-							width="22"
-							height="22"
-							style="fill: #00DEB3"
-							></SpeakerIcon>
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<div
+						class="video_overlay_muted_button muted hidden"
+						class:mute={!isVideoMuted}
+						on:click={toggleVideoMuted}
+					>
+						<SpeakerIcon width="22" height="22" />
 					</div>
 				</div>
 			</div>
@@ -368,11 +397,32 @@
 	.video_overlay_muted_button {
 		position: absolute;
 		z-index: 100;
-		bottom: 33px;
+		bottom: 60px;
 		right: 48%;
 		cursor: pointer;
 		display: block;
+		width: 45px;
+		height: 45px;
+		background-color: rgba(0, 0, 0, 0.25);
+		backdrop-filter: blur(5px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
 
+		&.mute {
+			:global {
+				svg {
+					scale: 1.2;
+				}
+			}
+		}
+
+		:global {
+			svg {
+				transition: all 0.2s ease;
+			}
+		}
 	}
 	.landing_section {
 		z-index: 1;
