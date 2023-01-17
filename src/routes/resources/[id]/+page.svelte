@@ -16,9 +16,18 @@
 	$: resource = data.data;
 	$: meta = data.meta;
 
-	onMount(() => {
-		console.log(data);
-	});
+	function gotoSub() {
+		// Get the email address from the input field
+		// Add the email address to the subscription url
+		let URI = "https://transparency-initiative.us8.list-manage.com/subscribe?u=3225c2c32fc6c7023ca721588&id=1a5ff28f1e"
+		// @ts-ignore
+		const subemail = document?.getElementById("subemail").value;
+		if(subemail){
+			URI = URI + "&MERGE0=" + subemail
+		}
+		// Open the subscription url in a new tab
+		window.open(URI, '_blank');
+	}
 </script>
 
 <article id="resource" class="page">
@@ -26,7 +35,6 @@
 		<div class="container">
 			<div class="row">
 				{#if resource.type.id == 2}
-
 					<div class="text_center col col_7 col_sm_12 ">
 						<span class="text_light font_bold text_uppercase">{resource.type.label}</span>
 						<h1 class="text_green">
@@ -36,7 +44,6 @@
 							By <a href="/" class="text_gray">{resource.author.name}</a> ({resource.author.role})
 						</small>
 					</div>
-
 				{:else}
 					<div class="col col_7 col_sm_12">
 						<span class="text_light font_bold text_uppercase">{resource.type.label}</span>
@@ -48,7 +55,7 @@
 						</small>
 					</div>
 					<div class="col col_5 col_sm_12">
-						<Image size="medium" priority image={resource?.image} />
+						<!-- <Image size="medium" priority image={resource?.image} /> -->
 					</div>
 				{/if}
 			</div>
@@ -58,6 +65,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col col_8 col_sm_12">
+
+					<div class="content_img"><Image size="medium" priority image={resource?.image} /></div>
+
 					<div class="post_content">
 						{@html resource.content}
 					</div>
@@ -68,7 +78,25 @@
 					</div> -->
 					<div class="share_block">
 						<h5 class="mr_3">Share this article</h5>
-						<div class="divider divider_dark divider_2 mr_3" />
+						<div class="divider divider_dark divider_1 mr_3" />
+						{#each resource.links as link}
+							{#if link.type == 'facebook'}
+								<a href={link.url} class="share_icon mr_2">
+									<FacebookIcon width="14" height="14" />
+								</a>
+							{/if}
+							{#if link.type == 'twitter'}
+								<a href={link.url} class="share_icon mr_2">
+									<TwitterIcon width="14" height="14" />
+								</a>
+							{/if}
+							{#if link.type == 'linkedin'}
+								<a href={link.url} class="share_icon mr_2">
+									<LinkedInIcon width="14" height="14" />
+								</a>
+							{/if}
+						{/each}
+						<!-- 
 						<span class="share_icon">
 							<FacebookIcon width="14" height="14" fill="#fff" />
 						</span>
@@ -77,7 +105,7 @@
 						</span>
 						<span class="share_icon ml_2">
 							<LinkedInIcon width="14" height="14" fill="#fff" />
-						</span>
+						</span> -->
 					</div>
 				</div>
 				<div class="col col_4 col_sm_12">
@@ -88,9 +116,9 @@
 							delivered to your inbox.
 						</p>
 						<div class="form_control mt_4">
-							<input type="email" placeholder="Email Address" />
+							<input type="email" placeholder="Email Address" id="subemail" />
 						</div>
-						<button class="btn btn_blue mt_3">Subscribe</button>
+						<button class="btn btn_blue mt_3" on:click={gotoSub}>Subscribe</button>
 					</div>
 					<h4 class="mt_5 mb_4">You may also like</h4>
 					<div class="divider divider_green divider_2 mb_4" />
@@ -134,10 +162,10 @@
 <style lang="scss">
 	$green_light: #59ebcf;
 	.green_text {
-		color: #00DEB3;
+		color: #00deb3;
 	}
 	.green_text:hover {
-		color: #43B79E;
+		color: #43b79e;
 	}
 	.heading_section {
 		//min-height: 80vh !important;
@@ -162,6 +190,17 @@
 	.heading_section .row {
 		align-items: center;
 	}
+
+	.content_section .content_img {
+		:global {
+			img {
+				background-color: transparent;
+				object-fit: contain;
+				width: 100%;
+			}
+		}
+	}
+
 	.content_section a {
 		text-decoration: underline;
 	}
@@ -216,7 +255,7 @@
 		.share_icon {
 			width: 42px;
 			height: 42px;
-			background-color: map-get($colors, 'gray');
+			background-color: map-get($colors, 'gray_light');
 			border-radius: 50%;
 			display: flex;
 			align-items: center;
@@ -224,17 +263,19 @@
 			:global(svg) {
 				width: 24px;
 				height: 24px;
+				fill: #212121;
 			}
 		}
 		.divider {
 			flex-grow: 1;
 		}
 		h5 {
-			font-size: 20px;
+			font-size: pxToRem(20);
+			line-height: 1;
 		}
 	}
 	.content_section .subscribe_block {
-		margin-top: 1rem;
+		// margin-top: 1rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

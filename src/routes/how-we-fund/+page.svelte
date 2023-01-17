@@ -62,7 +62,7 @@
 						scrub: true,
 						start: 'top top',
 						end: '+=200%',
-						onUpdate: ({progress}) => {
+						onUpdate: ({progress}: any) => {
 							if(videoPlayer  && progress > 0.8) {
 								videoPlayer.play();
 							}
@@ -150,7 +150,6 @@
 						data-depth="-0.15"
 						decoding="sync"
 						loading="eager"
-						preload=""
 						src={HeroImg1}
 						alt=""
 					/>
@@ -244,10 +243,8 @@
 							bind:this={videoPlayer}
 							muted
 							loop
-							decoding="async"
 							class="w_100"
 							src="https://api.tai.datalis.dev/uploads/participatory_strategy_d1cb234e94.webm"
-							type="webm"
 							poster={ParticipatoryVideoPoster}
 						>
 							<track kind="captions" />
