@@ -4,7 +4,8 @@
 		// Get the email address from the input field
 		// Add the email address to the subscription url
 		let URI = "https://transparency-initiative.us8.list-manage.com/subscribe?u=3225c2c32fc6c7023ca721588&id=1a5ff28f1e"
-		const subemail = document.getElementById("subemail").value;
+		// @ts-ignore
+		const subemail = document?.getElementById("subemail").value;
 		if(subemail){
 			URI = URI + "&MERGE0=" + subemail
 		}
@@ -14,7 +15,7 @@
 </script>
 <section class="subscribe_section section bg_light">
 	<div class="container">
-		<div class="subscribe_section__panel bg_panel">
+		<div class="subscribe_section__panel">
 			<h2 class="text_center">Keep updated with <br /> TAI WEEKLY</h2>
 			<span class="font_light text_center"
 				>Everything you need to know about transparency, accountability <br /> and participation, delivered
@@ -42,6 +43,7 @@
 		}
 
 		&__panel {
+			background-color: map-get($colors, 'gray_light');
 			height: 100%;
 			min-height: 400px;
 			border-radius: 15px;

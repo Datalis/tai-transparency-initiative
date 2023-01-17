@@ -46,7 +46,7 @@
 				<h1 class="text_green mt_4 mb_3">About Us</h1>
 				<div class="divider divider_light divider_2 w_15" />
 				<p class="text_center mx_auto w_75">
-					TAI members are leading funders of transparency, accountability and participation efforts worldwide. We are committed to building a more just, equitable and inclusive society.
+					The Transparency and Accountability Initiative (TAI) is a donor collaborative working toward a democratic world where power and resources are more equally distributed; people are informed and empowered, governments and the corporate sector are open and responsive, and collective action advances the public good.
 				</p>
 			</div>
 		</div>
