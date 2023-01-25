@@ -22,7 +22,7 @@ export const post = async (path: string, data: any) => {
 	const response = await fetch(`${API_SERVER}/api/${path}`, {
 		method: 'POST',
 		headers: {
-			'Authorization': `Bearer ${API_TOKEN}`,
+			// 'Authorization': `Bearer ${API_TOKEN}`,
 			"Content-type": "application/json; charset=UTF-8"
 		},
 		body: JSON.stringify(data),

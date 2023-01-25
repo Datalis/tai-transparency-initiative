@@ -14,13 +14,13 @@ export const actions: Actions = {
 			return fail(400, { email, name, emailError: !email, nameError: !name });
 		}
 		try {
-			const result = await post('subscriptions', { name, mail: email, subscribe: subscribe?'Yes':'No' });
+			const result = await post('subscriptions', {data: { "Name": name, "Email": email, "Subscription": subscribe?'yes':'no' }});
 			if(result.error){
-				return fail(400, { email, name, emailError: result.error, nameError: result.error });
+				return fail(400, JSON.parse(result.err));
 			}
-			return result;
+			return JSON.parse(result);
 		} catch (error) {
-			return fail(400, { email, name, emailError: !email, nameError: !name });
+			return fail(400);
 		}
 
 	}
