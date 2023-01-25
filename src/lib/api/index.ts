@@ -19,5 +19,14 @@ export const get = async (path: string, params: { [key: string]: any } = {}) => 
 }
 
 export const post = async (path: string, data: any) => {
-	
+	const response = await fetch(`${API_SERVER}/api/${path}`, {
+		method: 'POST',
+		headers: {
+			'Authorization': `Bearer ${API_TOKEN}`,
+			"Content-type": "application/json; charset=UTF-8"
+		},
+		body: JSON.stringify(data),
+	});
+	const result = await response.json();
+	return result;
 }

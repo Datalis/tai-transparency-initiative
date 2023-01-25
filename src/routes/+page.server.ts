@@ -1,7 +1,7 @@
-import { get } from "$lib/api";
+import { get, post } from "$lib/api";
 import type { PageServerLoad } from ".svelte-kit/types/src/routes/resources/$types";
 import type { Actions } from "@sveltejs/kit";
-import { invalid } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
 
 
 export const actions: Actions = {
@@ -10,12 +10,19 @@ export const actions: Actions = {
 		const name = data.get('name');
 		const email = data.get('email');
 		const subscribe = data.get('subscribe');
-
 		if (!email || !name) {
-			return invalid(400, { email, name, emailError: !email, nameError: !name });
+			return fail(400, { email, name, emailError: !email, nameError: !name });
+		}
+		try {
+			const result = await post('subscriptions', { name, mail: email, subscribe: subscribe?'Yes':'No' });
+			if(result.error){
+				return fail(400, { email, name, emailError: result.error, nameError: result.error });
+			}
+			return result;
+		} catch (error) {
+			return fail(400, { email, name, emailError: !email, nameError: !name });
 		}
 
-		return { success: true };
 	}
 }
 
