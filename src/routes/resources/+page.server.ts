@@ -21,9 +21,14 @@ export const load: PageServerLoad = async ({ url }) => {
 		};
 		if (type === '8') {
 			tipo = {
-				show_front: {
-					$eq: false
-				}
+				id: {
+					$eq: type
+				},
+				$or: [
+					{show_front: {
+						$eq: false
+					}}],
+
 			};
 		}
 		const params: any = {
