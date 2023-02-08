@@ -39,7 +39,9 @@
 					</ul>
 				</div>
 				<div class="col col_lg_5">
-					<h6 class="text_uppercase text_blue mt_0 mb_4">What we fund and why</h6>
+					<h6 class="text_uppercase text_blue mt_0 mb_4">
+						<a href="/what-we-fund" class="text_blue">What we fund and why</a>
+					</h6>
 					<ul>
 						<li class="">
 							<a href="/what-we-fund#funding" class="text_gray">What does TPA funding look like?</a>
@@ -123,7 +125,9 @@
 						</li>
 					</ul>
 					<div class="show_on_sm_and_up">
-						<h6 class="text_uppercase text_blue mb_4">Resources</h6>
+						<h6 class="text_uppercase text_blue mb_4">
+							<a href="/resources" class="text_blue">Resources</a>
+						</h6>
 						<ul>
 							<li>
 								<a href="/resources?type=1" class="text_gray">TAI weekly</a>
@@ -147,7 +151,9 @@
 					</div>
 				</div>
 				<div class="col full-width show_on_sm_and_down">
-					<h6 class="text_uppercase text_blue mb_4 mt_0">Resources</h6>
+					<h6 class="text_uppercase text_blue mb_4 mt_0">
+						<a href="/resources" class="text_blue">Resources</a>
+					</h6>
 					<ul>
 						<li>
 							<a href="/resources?type=1" class="text_gray">TAI weekly</a>
