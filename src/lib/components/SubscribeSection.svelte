@@ -43,7 +43,7 @@
 		}
 
 		&__panel {
-			background-color: map-get($colors, 'gray_light');
+			background-color: map-get($colors, 'green_light');
 			height: 100%;
 			min-height: 400px;
 			border-radius: 15px;

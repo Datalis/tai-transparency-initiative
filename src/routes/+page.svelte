@@ -21,9 +21,13 @@
 	import JoinSection from '$lib/components/JoinSection.svelte';
 
 	import { gsap } from 'gsap/dist/gsap';
+
+	gsap.registerPlugin(ScrollTrigger)
+
 	import { onMount } from 'svelte';
 	import type { ActionData, PageData } from './$types';
 	import CardsSection from '$lib/components/CardsSection.svelte';
+	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
