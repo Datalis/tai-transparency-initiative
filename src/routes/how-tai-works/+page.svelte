@@ -308,7 +308,7 @@
 		</div>
 	</section>
 	<PastFundingSection data={past_funding} />
-	<section id="working-with-others" class="other_groups_section section bg_gray">
+	<section id="working-with-others" class="other_groups_section section bg_blue">
 		<IntersectionObserver let:top>
 			<div class="wrapper" class:pinned={top > 0}>
 				<div class="brands_container show_on_md_and_up">
@@ -344,9 +344,9 @@
 				</div>
 				<div class="container">
 					<div class="row">
-						<div class="col col_6 col_md_12 display_flex flex_column justify_center">
+						<div class="col col_6 col_md_12 display_flex flex_column justify_center text_dark">
 							<h2>Working with other groups</h2>
-							<div class="divider divider_white divider_2" />
+							<div class="divider divider_green divider_2" />
 							<p class="mt_4">
 								Transparency, participation and accountability are essential to deliver positive
 								societal outcomes, be that a stellar education service, effective regulation of new
