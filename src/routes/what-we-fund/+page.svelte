@@ -55,9 +55,11 @@
 				);
 			});
 		}
-		gsap.timeline().to(window, {
-			scrollTo: $page.url.hash || 0
-		});
+		if ($page.url.hash) {
+			gsap.timeline().to(window, {
+				scrollTo: $page.url.hash || 0
+			});
+		}
 	});
 </script>
 
@@ -101,7 +103,8 @@
 							<WebIcon class="web_icon" />
 						</span>
 						<p>
-							<strong>ADVOCATES</strong> partnering with communities and other stakeholders to ensure tax and budget policies realize rights and reduce inequalities
+							<strong>ADVOCATES</strong> partnering with communities and other stakeholders to ensure
+							tax and budget policies realize rights and reduce inequalities
 						</p>
 					</div>
 				</div>
