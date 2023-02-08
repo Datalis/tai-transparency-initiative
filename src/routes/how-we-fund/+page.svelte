@@ -38,7 +38,6 @@
 
 		partnersSlideWidth = partnersSlide.getBoundingClientRect().width + sliderOffset;
 
-
 		if (windowWidth > 768) {
 			gsap
 				.timeline({
@@ -62,30 +61,30 @@
 						scrub: true,
 						start: 'top top',
 						end: '+=200%',
-						onUpdate: ({progress}: any) => {
-							if(videoPlayer  && progress > 0.8) {
+						onUpdate: ({ progress }: any) => {
+							if (videoPlayer && progress > 0.8) {
 								videoPlayer.play();
 							}
 						},
 						onLeave: () => {
-							if(videoPlayer) {
+							if (videoPlayer) {
 								videoPlayer.pause();
 							}
 						},
 						onEnterBack: () => {
-							if(videoPlayer) {
+							if (videoPlayer) {
 								videoPlayer.play();
 							}
 						},
 						onLeaveBack: () => {
 							//reset video to end
-							if(videoPlayer) {
-								if(videoPlayer.duration && videoPlayer.duration > 0) {
-									videoPlayer.currentTime = videoPlayer.duration
+							if (videoPlayer) {
+								if (videoPlayer.duration && videoPlayer.duration > 0) {
+									videoPlayer.currentTime = videoPlayer.duration;
 								}
 								videoPlayer.pause();
 							}
-						},
+						}
 					}
 				})
 				.to('.participatory_section .participatory_section__content', {
@@ -123,9 +122,11 @@
 			});
 		}
 
-		gsap.timeline().to(window, {
-			scrollTo: $page.url.hash || 0
-		});
+		// if ($page.url.hash) {
+		// 	gsap.timeline().to(window, {
+		// 		scrollTo: $page.url.hash
+		// 	});
+		// }
 	});
 </script>
 

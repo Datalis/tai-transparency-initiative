@@ -55,11 +55,11 @@
 				);
 			});
 		}
-		if ($page.url.hash) {
-			gsap.timeline().to(window, {
-				scrollTo: $page.url.hash || 0
-			});
-		}
+		// if ($page.url.hash) {
+		// 	gsap.timeline().to(window, {
+		// 		scrollTo: $page.url.hash || 0
+		// 	});
+		// }
 	});
 </script>
 

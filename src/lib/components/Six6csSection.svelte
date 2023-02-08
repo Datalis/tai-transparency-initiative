@@ -53,7 +53,7 @@
 	});
 </script>
 
-<section id="6cs" class="_6Cs_section section bg_light show_on_md_and_up">
+<section id="sixcs" class="_6Cs_section section bg_light show_on_md_and_up">
 	<div class="container">
 		<div class="_6Cs_wrapper">
 			<div class="_6Cs_section_title">

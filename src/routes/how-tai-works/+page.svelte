@@ -64,10 +64,10 @@
 								if (isVideoPlaying(videoPlayer)) {
 									// set visible to false
 									if (document.querySelector('.muted'))
-										document.querySelector('.muted').classList.remove('hidden');
+										document?.querySelector('.muted')?.classList.remove('hidden');
 								} else {
 									if (document.querySelector('.muted'))
-										document.querySelector('.muted').classList.add('hidden');
+										document?.querySelector('.muted')?.classList.add('hidden');
 								}
 							}
 						},
@@ -75,7 +75,7 @@
 							if (videoPlayer) {
 								videoPlayer.pause();
 								if (document.querySelector('.muted'))
-									document.querySelector('.muted').classList.add('hidden');
+									document?.querySelector('.muted')?.classList.add('hidden');
 							}
 						},
 						onEnterBack: () => {
@@ -90,7 +90,7 @@
 									videoPlayer.currentTime = videoPlayer.duration;
 								}
 								if (document.querySelector('.muted'))
-									document.querySelector('.muted').classList.add('hidden');
+									document?.querySelector('.muted')?.classList.add('hidden');
 								videoPlayer.pause();
 							}
 						}
@@ -140,10 +140,11 @@
 			});
 		}
 
-		gsap.timeline().to(window, {
-			scrollTo: $page.url.hash,
-			duration: 0.5
-		});
+		// if ($page.url.hash) {
+		// 	gsap.timeline().to(window, {
+		// 		scrollTo: $page.url.hash
+		// 	});
+		// } else if (history.state)
 	});
 </script>
 
@@ -291,7 +292,6 @@
 						poster={ClimateVideoPoster}
 						src="https://api.tai.datalis.dev/uploads/climate_TAI_7c23ce0f47.webm"
 						playsinline
-						preload="auto"
 					>
 						<track kind="captions" />
 					</video>

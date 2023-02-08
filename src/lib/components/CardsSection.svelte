@@ -103,7 +103,7 @@
 							</a>
 							<div class="divider divider_light divider_2" />
 							<div class="content__text">
-								<a href="/how-tai-works#6cs" class="text_dark display_block"
+								<a href="/how-tai-works#sixcs" class="text_dark display_block"
 									>Our 6Cs of funder support</a
 								>
 								<a href="/how-tai-works#progress-model" class="text_dark display_block"

@@ -29,12 +29,12 @@
 	$: commitee = data?.SteeringCommittee;
 	$: commiteeList = commitee?.StaffItem || [];
 
-	onMount(() => {
-		gsap.timeline().to(window, {
-			scrollTo: $page.url.hash,
-			duration: 0.5
-		});
-	});
+	// onMount(() => {
+	// 	gsap.timeline().to(window, {
+	// 		scrollTo: $page.url.hash,
+	// 		duration: 0.5
+	// 	});
+	// });
 </script>
 
 <div class="about_us_page page">

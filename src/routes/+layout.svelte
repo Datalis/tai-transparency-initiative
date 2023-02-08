@@ -11,6 +11,9 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
+	import { onMount } from 'svelte';
+
 	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 	NProgress.configure({
@@ -24,6 +27,46 @@
 			NProgress.done();
 		}
 	}
+
+	onMount(() => {
+		
+	})
+
+	/**
+	 * @type {{ to: import("@sveltejs/kit").NavigationTarget | null; from: import("@sveltejs/kit").NavigationTarget | null; scrollY: number | undefined; }[]}
+	 */
+	let scrollHistory = [];
+
+	beforeNavigate((navigation) => {
+		scrollHistory.push({
+			to: navigation.to,
+			from: navigation.from,
+			scrollY: window.scrollY
+		});
+	});
+
+	afterNavigate((navigation) => {
+		const routeHistory = scrollHistory.find((history) => {
+			return history?.from?.url.pathname === navigation?.to?.url.pathname;
+		});
+
+		if (navigation.to?.url.hash) {
+			gsap.to(window, {
+				scrollTo: navigation.to?.url.hash
+			});
+		} else if (routeHistory && navigation.type == 'popstate') {
+			// main?.scrollTo(0, routeHistory?.scrollY || 0);
+			gsap.to(window, {
+				scrollTo: routeHistory?.scrollY
+			});
+			scrollHistory = [];
+		} else {
+			// main?.scrollTo(0, 0);
+			gsap.to(window, {
+				scrollTo: 0
+			})
+		}
+	});
 </script>
 
 <svelte:head />

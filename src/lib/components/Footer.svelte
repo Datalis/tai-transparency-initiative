@@ -106,7 +106,7 @@
 					</h6>
 					<ul>
 						<li>
-							<a href="/how-tai-works#6cs" class="text_gray">Our 6Cs</a>
+							<a href="/how-tai-works#sixcs" class="text_gray">Our 6Cs</a>
 						</li>
 						<li>
 							<a href="/how-tai-works#progress-model" class="text_gray">Our model</a>

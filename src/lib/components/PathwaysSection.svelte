@@ -185,6 +185,7 @@
 			</p>
 
 			{#if windowWidth < 768}
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<svg
 					class="pathways-svg pathways-svg-mobile show_on_md_and_down mt_4 mb_0"
 					xmlns="http://www.w3.org/2000/svg"
@@ -277,6 +278,7 @@
 					<line class="cls-1" x1="42.91" y1="443" x2="44.41" y2="443" />
 					<polygon class="cls-5" points="43.51 439.91 48.86 443 43.51 446.09 43.51 439.91" />
 
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<g id="c1" class="pathways-circle" on:click={() => toggleCircle(1)}>
 						<circle class="cls-5" cx="96.4" cy="38.5" r="37" />
 						<circle class="cls-6" cx="94.9" cy="37" r="37" />
@@ -286,6 +288,7 @@
 						</text>
 					</g>
 
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<g id="c2" class="pathways-circle" on:click={() => toggleCircle(2)}>
 						<circle class="cls-5" cx="96.56" cy="173.83" r="37" />
 						<circle class="cls-6" cx="94.9" cy="172.33" r="37" />
@@ -301,6 +304,7 @@
 						</text>
 					</g>
 
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<g id="c3" class="pathways-circle" on:click={() => toggleCircle(3)}
 						><circle class="cls-5" cx="96.56" cy="309.28" r="37" /><circle
 							class="cls-6"
@@ -320,6 +324,7 @@
 						</text>
 					</g>
 
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<g id="c4" class="pathways-circle" on:click={() => toggleCircle(4)}
 						><circle class="cls-5" cx="96.23" cy="445" r="37" /><circle
 							class="cls-6"
@@ -350,6 +355,7 @@
 					<line class="cls-12" x1="166.67" y1="37" x2="134.79" y2="37" />
 					<polygon class="cls-5" points="144.07 439.91 138.72 443 144.07 446.09 144.07 439.91" />
 
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<g
 						id="g1"
 						class="pathways-cog"
@@ -366,6 +372,7 @@
 						<text id="g1-text" class="cls-15" transform="translate(8.06 14.2)">1</text>
 					</g>
 
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<g
 						id="g2"
 						class="pathways-cog"
@@ -379,6 +386,7 @@
 						/><text class="cls-15" transform="translate(57.25 108.13)">2</text></g
 					>
 
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<g
 						id="g3"
 						class="pathways-cog"
@@ -393,6 +401,7 @@
 						<text class="cls-15" transform="translate(129.75 108.13)">3</text>
 					</g>
 
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<g
 						id="g4"
 						class="pathways-cog"
@@ -406,6 +415,7 @@
 						/><text class="cls-15" transform="translate(129.74 243.46)">4</text></g
 					>
 
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<g
 						id="g5"
 						class="pathways-cog"
@@ -420,6 +430,7 @@
 						<text class="cls-15" transform="translate(183.6 282.78)">5</text>
 					</g>
 
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<g
 						id="g6"
 						class="pathways-cog"
@@ -817,6 +828,7 @@
 							<line class="cls-1" x1="443.37" y1="55.48" x2="443.37" y2="56.98" />
 							<polygon class="cls-5" points="440.28 56.08 443.37 61.43 446.46 56.08 440.28 56.08" />
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g id="c1" on:click={() => toggleCircle(1)} viewBox="0 0 0 0" class="pathways-circle">
 								<circle class="cls-5" cx="38.87" cy="108.97" r="37" />
 								<circle class="cls-6" cx="37.37" cy="107.47" r="37" />
@@ -833,6 +845,7 @@
 								<!-- <text class="cls-7" text-anchor="middle" x="37.37" y="107.47" alignment-baseline="central">Influences</text> -->
 							</g>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g id="c2" on:click={() => toggleCircle(2)} viewBox="0 0 0 0" class="pathways-circle">
 								<circle class="cls-5" cx="174.2" cy="109.13" r="37" />
 								<circle class="cls-6" cx="172.7" cy="107.47" r="37" />
@@ -848,6 +861,7 @@
 								</text>
 							</g>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g id="c3" on:click={() => toggleCircle(3)} viewBox="0 0 0 0" class="pathways-circle">
 								<circle class="cls-5" cx="309.65" cy="109.13" r="37" />
 								<circle class="cls-6" cx="308.03" cy="107.47" r="37" />
@@ -862,6 +876,7 @@
 								</text>
 							</g>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g id="c4" on:click={() => toggleCircle(4)} viewBox="0 0 0 0" class="pathways-circle">
 								<path class="cls-5" d="M431,74.94a37,37,0,1,1-20,48.35A37,37,0,0,1,431,74.94Z" />
 								<circle
@@ -912,6 +927,7 @@
 								points="440.28 156.64 443.37 151.29 446.46 156.64 440.28 156.64"
 							/>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g
 								id="g1"
 								class="pathways-cog"
@@ -929,6 +945,7 @@
 								<text id="g1-text" class="cls-14" transform="translate(103.07 82.47)">1</text>
 							</g>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g
 								id="g2"
 								class="pathways-cog"
@@ -944,6 +961,7 @@
 								<text class="cls-14" transform="translate(103.24 136.47)">2</text>
 							</g>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g
 								id="g3"
 								class="pathways-cog"
@@ -959,6 +977,7 @@
 								<text class="cls-14" transform="translate(8.24 176.14)">3</text>
 							</g>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g
 								id="g4"
 								class="pathways-cog"
@@ -974,6 +993,7 @@
 								<text class="cls-14" transform="translate(305.57 13.14)">4</text>
 							</g>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g
 								id="g5"
 								class="pathways-cog"
@@ -989,6 +1009,7 @@
 								<text class="cls-14" transform="translate(305.57 52.81)">5</text>
 							</g>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g
 								id="g6"
 								class="pathways-cog"
@@ -1004,6 +1025,7 @@
 								<text class="cls-14" transform="translate(237.41 82.47)">6</text>
 							</g>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g
 								id="g7"
 								class="pathways-cog"
@@ -1019,6 +1041,7 @@
 								<text class="cls-14" transform="translate(372.49 82.47)">7</text>
 							</g>
 
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g
 								id="g8"
 								class="pathways-cog"
@@ -1058,6 +1081,7 @@
 										responsibilities, and performance standards?
 									</p>
 								</foreignObject>
+								<!-- svelte-ignore a11y-click-events-have-key-events -->
 								<g class="cog" on:click={() => toggleCog(1)}>
 									<path
 										class="cls-13"
@@ -1092,6 +1116,7 @@
 									responsibilities, and performance standards?
 								</p>
 							</foreignObject>
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g class="cog" on:click={() => toggleCog(2)}>
 								<path
 									class="cls-13"
@@ -1124,6 +1149,7 @@
 									result of the Open Government Partnership?).
 								</p>
 							</foreignObject>
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g class="cog" on:click={() => toggleCog(3)}>
 								<path
 									class="cls-13"
@@ -1156,6 +1182,7 @@
 									service providers) accountable through sanctions or legal action?
 								</p>
 							</foreignObject>
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g class="cog" on:click={() => toggleCog(4)}>
 								<path
 									class="cls-15"
@@ -1189,6 +1216,7 @@
 									scrutinizing performance?
 								</p>
 							</foreignObject>
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g class="cog" on:click={() => toggleCog(5)}>
 								<path
 									class="cls-13"
@@ -1222,6 +1250,7 @@
 									clarifying operational steps, used as evidence, etc.)?
 								</p>
 							</foreignObject>
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g class="cog" on:click={() => toggleCog(6)}>
 								<path
 									class="cls-13"
@@ -1251,6 +1280,7 @@
 									Do citizen accountability actions result in changes in government officials?
 								</p>
 							</foreignObject>
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g class="cog" on:click={() => toggleCog(7)}>
 								<path
 									class="cls-13"
@@ -1280,6 +1310,7 @@
 									How do citizens exercise their voice as voters?
 								</p>
 							</foreignObject>
+							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<g class="cog" on:click={() => toggleCog(8)}>
 								<path
 									class="cls-13"
