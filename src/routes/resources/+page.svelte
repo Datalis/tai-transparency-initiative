@@ -88,9 +88,9 @@
 			<div class="library_summary py_2">
 				<div class="container">
 					<small class="m_0">
-						We also wanted to share with you our updated TAI’s grants database, covering our
-						member’s TPA-related grants active in 2021. We are working on a short series of blogs
-						related funding trends, both of TAI and more broadly. Here is the first!
+						In this library you will find articles with tools, tips and reflections for the donor
+						community that have been published in our Weekly Newsletter. Use the filters or type
+						keywords in the search box. We hope you find it useful. Good search!
 					</small>
 				</div>
 			</div>

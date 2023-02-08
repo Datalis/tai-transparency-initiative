@@ -12,8 +12,7 @@
 	import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	import { onMount } from 'svelte';
-
+	
 	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 	NProgress.configure({
@@ -27,10 +26,6 @@
 			NProgress.done();
 		}
 	}
-
-	onMount(() => {
-		
-	})
 
 	/**
 	 * @type {{ to: import("@sveltejs/kit").NavigationTarget | null; from: import("@sveltejs/kit").NavigationTarget | null; scrollY: number | undefined; }[]}
