@@ -458,7 +458,7 @@
 			// margin-bottom: 0 !important;
 			position: relative;
 
-			min-height: 50vh;
+			min-height: 25vh;
 
 			img.img_wrapper_1 {
 				bottom: 16%;

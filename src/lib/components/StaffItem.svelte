@@ -18,9 +18,11 @@
 <div class="staff_item_wrapper display_flex align_start">
 	<div class="staff_item" class:expanded={isExpanded}>
 		<div class="display_flex">
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div on:click={toggle} class="img_wrapper">
 				<Image image={data.image} size="thumbnail" />
 			</div>
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div on:click={toggle} class="content_wrapper display_flex flex_column">
 				<h5 class="text_dark mt_0 mb_2 text_light">{data.name}</h5>
 				<small class="text_dark text_uppercase green_text">{data.role}</small>
@@ -29,7 +31,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="staff_item__text font_regular">
+		<div class="staff_item__text font_regular text_light">
 			{@html data.summary}
 		</div>
 	</div>
@@ -70,6 +72,7 @@
 			flex-grow: 1;
 			&__text {
 				:global(p) {
+					font-size: pxToRem(14);
 					display: inherit;
 				}
 			}
@@ -97,13 +100,6 @@
 				margin-right: 1rem;
 				transform-origin: top left;
 			}
-
-			// img {
-			// 	width: 100%;
-			// 	height: 100%;
-			// 	object-fit: cover;
-			// 	object-position: center;
-			// }
 		}
 
 		.content_wrapper {
@@ -119,15 +115,17 @@
 						display: none;
 					}
 				}
-				h4 {
-					font-size: pxToRem(24) !important;
+				h5 {
+					font-size: pxToRem(14);
+					max-width: 70%;
+				}
+				small {
+					font-size: pxToRem(12);
+					max-width: 70%;
 				}
 			}
 
-			h4 {
-				font-size: pxToRem(28);
-			}
-
+			
 			&__text {
 				:global(p) {
 					font-weight: 400 !important;

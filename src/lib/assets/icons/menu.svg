@@ -31,15 +31,15 @@
      transform="matrix(1.3333333,0,0,-1.3333333,-681.09332,2490.2266)">
     <path
        d="m 511.82,1866.67 h 17.51"
-       style="fill:none;stroke:#83e8d0;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#83e8d0;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="path606" />
     <path
        d="m 511.82,1863.77 h 17.51"
-       style="fill:none;stroke:#83e8d0;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#83e8d0;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="path608" />
     <path
        d="m 511.82,1860.87 h 17.51"
-       style="fill:none;stroke:#83e8d0;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#83e8d0;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="path610" />
   </g>
 </svg>

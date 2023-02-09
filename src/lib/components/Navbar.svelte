@@ -169,7 +169,7 @@
 						<a
 							href="/how-tai-works"
 							class="display_flex align_center text_gray"
-							class:active={$page.url.pathname.includes('how-we-work')}
+							class:active={$page.url.pathname.includes('how-tai-works')}
 						>
 							<h2 class=" m_0">How TAI works</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
