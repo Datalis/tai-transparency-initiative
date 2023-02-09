@@ -17,7 +17,6 @@
 	import PastFundingSection from '$lib/components/PastFundingSection.svelte';
 	import Six6csSection from '$lib/components/Six6csSection.svelte';
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
 	import gsap from 'gsap/dist/gsap';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 	import SpeakerIcon from '$lib/assets/icons/Speaker_Icon.svg?component';
@@ -138,13 +137,9 @@
 					0
 				);
 			});
+		} else {
+			videoPlayer?.play();
 		}
-
-		// if ($page.url.hash) {
-		// 	gsap.timeline().to(window, {
-		// 		scrollTo: $page.url.hash
-		// 	});
-		// } else if (history.state)
 	});
 </script>
 
@@ -613,6 +608,7 @@
 					@media screen and (max-width: $md) {
 						height: unset;
 						aspect-ratio: 1;
+						width: 100%;
 					}
 				}
 			}
