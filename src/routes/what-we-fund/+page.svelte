@@ -160,7 +160,7 @@
 				</div>
 			</div>
 			<div class="show_on_md_and_down swiper_container">
-				<Swiper class="slider" pagination={true} modules={[Pagination]}>
+				<Swiper class="slider" pagination={true} modules={[Pagination]} spaceBetween={25}>
 					<SwiperSlide>
 						<div class="funding_item mx_auto">
 							<span class="funding_item__icon">
@@ -178,8 +178,8 @@
 								<HandsIcon class="hands_icon" />
 							</span>
 							<p>
-								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-								health services they were promised and deserve
+								<strong>GRASSROOTS ORGANIZERS</strong> working with indigenous groups to document the plunder
+								of their lands and assert their rights in the courts.
 							</p>
 						</div>
 					</SwiperSlide>
@@ -189,8 +189,8 @@
 								<CogsIcon class="cogs_icon" />
 							</span>
 							<p>
-								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-								health services they were promised and deserve
+								<strong>INVESTIGATIVE JOURNALISTS</strong> uncovering dodgy deals that favor the politically
+								connected.
 							</p>
 						</div>
 					</SwiperSlide>
@@ -200,8 +200,8 @@
 								<SearchIcon class="search_icon" />
 							</span>
 							<p>
-								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-								health services they were promised and deserve
+								<strong>RESEARCHERS</strong> proving the value of inclusive participatory processes in
+								shaping government policy.
 							</p>
 						</div>
 					</SwiperSlide>
@@ -211,8 +211,8 @@
 								<LightBulbIcon class="light_bulb_icon" />
 							</span>
 							<p>
-								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-								health services they were promised and deserve
+								<strong>TECHNOLOGISTS</strong> guiding civil society groups to use data from multiple sources
+								to back up their policy asks.
 							</p>
 						</div>
 					</SwiperSlide>
@@ -222,8 +222,8 @@
 								<ChartIcon class="chart_icon" />
 							</span>
 							<p>
-								<strong>ADVOCATES</strong> partnering with communities to monitor and fight for the maternal
-								health services they were promised and deserve
+								<strong>THINK TANKS</strong> pinpointing government revenues lost due to loopholes in international
+								tax agreements.
 							</p>
 						</div>
 					</SwiperSlide>
