@@ -16,7 +16,7 @@
 <section class="subscribe_section section bg_light">
 	<div class="container">
 		<div class="subscribe_section__panel">
-			<h2 class="text_center">Keep updated with <br /> TAI WEEKLY</h2>
+			<h2 class="text_center">Keep updated with <br /> <span class="font_black">TAI WEEKLY</span></h2>
 			<span class="font_light text_center"
 				>Everything you need to know about transparency, accountability <br /> and participation, delivered
 				to your inbox.</span

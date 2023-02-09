@@ -258,7 +258,7 @@
 				font-size: pxToRem(13);
 				line-height: 1;
 				letter-spacing: normal;
-				font-weight: bold;
+				font-weight: 500;
 			}
 			a,
 			span {

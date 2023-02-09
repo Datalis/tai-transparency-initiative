@@ -9,18 +9,16 @@
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 	import HeroImg from '$lib/assets/images/hero/1.1.png';
-
-	import 'swiper/css';
-	import 'swiper/css/pagination';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
 	import { Pagination } from 'swiper';
 	import PathwaysSection from '$lib/components/PathwaysSection.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 	import WhyItMattersSection from '$lib/components/WhyItMattersSection.svelte';
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
 	import gsap from 'gsap/dist/gsap';
-	import Image from '$lib/components/Image.svelte';
+
+	import 'swiper/css';
+	import 'swiper/css/pagination';
 
 	export let data: PageData;
 
@@ -55,11 +53,6 @@
 				);
 			});
 		}
-		// if ($page.url.hash) {
-		// 	gsap.timeline().to(window, {
-		// 		scrollTo: $page.url.hash || 0
-		// 	});
-		// }
 	});
 </script>
 

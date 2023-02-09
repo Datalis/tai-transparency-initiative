@@ -16,7 +16,8 @@
 	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 	NProgress.configure({
-		minimum: 0.16
+		minimum: 0.16,
+		showSpinner: false
 	});
 
 	$: {
