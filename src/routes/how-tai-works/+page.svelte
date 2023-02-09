@@ -344,7 +344,7 @@
 				</div>
 				<div class="container">
 					<div class="row">
-						<div class="col col_6 col_md_12 display_flex flex_column justify_center text_dark">
+						<div class="col col_6 col_md_12 display_flex flex_column justify_center text_dark py_5">
 							<h2>Working with other groups</h2>
 							<div class="divider divider_green divider_2" />
 							<p class="mt_4">
@@ -636,6 +636,13 @@
 				.row {
 					flex-grow: 1;
 				}
+			}
+		}
+
+		@media (max-width: 768px) {
+			.wrapper .container p,
+			.wrapper .container h2 {
+				color: map-get($map: $colors, $key: 'light');
 			}
 		}
 
