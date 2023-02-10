@@ -160,7 +160,7 @@
 				</div>
 			</div>
 			<div class="show_on_md_and_down swiper_container">
-				<Swiper class="slider" pagination={true} modules={[Pagination]} spaceBetween={25}>
+				<Swiper class="slider" pagination={{clickable: true}} modules={[Pagination]} spaceBetween={25}>
 					<SwiperSlide>
 						<div class="funding_item mx_auto">
 							<span class="funding_item__icon">
@@ -336,6 +336,11 @@
 		flex-direction: column !important;
 		min-height: 100vh;
 
+
+		@media screen and (max-width: $md) {
+			min-height: unset;
+		}
+
 		:global {
 			.slider {
 				height: 400px;
@@ -429,6 +434,10 @@
 			padding-left: 3rem;
 			padding-right: 2.3rem;
 			background-color: $green;
+
+			@media screen and (max-width: $md) {
+				height: 75%;
+			}
 
 			@media screen and (max-width: $lg) {
 				margin-right: 0 !important;
