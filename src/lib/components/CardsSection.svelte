@@ -216,7 +216,7 @@
 						justify-content: space-evenly;
 						a {
 							font-weight: 400;
-							font-size: pxToRem(12);
+							// font-size: pxToRem(12);
 							&:hover {
 								font-weight: 600 !important;
 							}
