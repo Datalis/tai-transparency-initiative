@@ -1,5 +1,5 @@
 <script lang="ts">
-	import JoinImg from '$lib/assets/images/news1.webp';
+	import JoinImg from '$lib/assets/images/news1.png';
 	import IntersectionObserver from './IntersectionObserver.svelte';
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';

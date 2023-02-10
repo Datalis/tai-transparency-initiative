@@ -22,8 +22,9 @@
 	import SpeakerIcon from '$lib/assets/icons/Speaker_Icon.svg?component';
 	// import Image from '$lib/components/Image.svelte';
 
-	import HeroImg1 from '$lib/assets/images/hero/3.2.png';
-	import HeroImg2 from '$lib/assets/images/hero/3.1.png';
+	import HeroImg1 from '$lib/assets/images/hero/3.2.webp';
+	// import HeroImg1 from '$lib/assets/images/hero/3.2.png';
+	// import HeroImg2 from '$lib/assets/images/hero/3.1.png';
 	let videoPlayer: HTMLVideoElement;
 	let windowWidth: number;
 
@@ -159,8 +160,9 @@
 					</div>
 				</div>
 				<div class="img_wrapper col col_7 col_md_12 h_100">
+					<img src={HeroImg1} class="img_wrapper_2" alt="" />
 					<!-- <Image size="medium" image={hero?.image} priority /> -->
-					<img
+					<!-- <img
 						class="img_wrapper_1 parallax"
 						data-depth="0.15"
 						decoding="sync"
@@ -175,7 +177,7 @@
 						loading="eager"
 						src={HeroImg2}
 						alt=""
-					/>
+					/> -->
 				</div>
 			</div>
 		</div>
@@ -462,6 +464,9 @@
 			}
 			img.img_wrapper_2 {
 				bottom: 0;
+				@media screen and (max-width: $md) {
+					margin: auto;
+				}
 			}
 			img {
 				position: absolute;
