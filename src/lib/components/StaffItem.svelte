@@ -35,7 +35,7 @@
 			{@html data.summary}
 		</div>
 	</div>
-	<button class="mt_3" on:click={toggle}>
+	<button class="mt_3 show_on_md_and_up" on:click={toggle}>
 		<ViewMoreIcon isOpen={isExpanded} />
 	</button>
 </div>
