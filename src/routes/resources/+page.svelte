@@ -87,11 +87,13 @@
 		{#if typeParam == 7}
 			<div class="library_summary py_2">
 				<div class="container">
-					<small class="m_0">
-						In this library you will find articles with tools, tips and reflections for the donor
-						community that have been published in our Weekly Newsletter. Use the filters or type
-						keywords in the search box. We hope you find it useful. Good search!
-					</small>
+					<div class="col-12">
+						<p class="m_0">
+							In this library you will find articles with tools, tips and reflections for the donor
+							community that have been published in our Weekly Newsletter. Use the filters or type
+							keywords in the search box. We hope you find it useful. Good search!
+						</p>
+					</div>
 				</div>
 			</div>
 		{/if}
@@ -169,6 +171,15 @@
 		// @media screen and (max-width: $md) {
 		// 	padding-top: 1rem !important;
 		// }
+
+		.library_summary p {
+			line-height: 1.5 !important;
+			font-size: pxToRem(14);
+			@media screen and (max-width: $md) {
+				line-height: 1.2!important;
+				font-size: pxToRem(12);
+			}
+		}
 
 		.divider {
 			width: 100% !important;
