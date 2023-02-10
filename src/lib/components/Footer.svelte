@@ -259,12 +259,21 @@
 				line-height: 1;
 				letter-spacing: normal;
 				font-weight: 500;
+				@media screen and (max-width: $sm) {
+					font-size: pxToRem(12);
+				}
 			}
 			a,
 			span {
 				font-size: pxToRem(13);
 				line-height: 35px;
 				font-weight: normal;
+				letter-spacing: normal;
+				font-weight: 400;
+
+				@media screen and (max-width: $sm) {
+					font-size: pxToRem(12);
+				}
 			}
 		}
 		&_copyright {

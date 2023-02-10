@@ -29,6 +29,9 @@
 </div>
 
 <style lang="scss">
+
+	$md: map-get($map: $grid-breakpoints, $key: 'md');
+
 	.pagination_wrapper {
 		width: 100%;
 		:global {
@@ -55,9 +58,15 @@
 			}
 			.pagination-nav .option.prev {
 				margin-right: auto;
+				@media screen and (max-width: $md) {
+					display: none;
+				}
 			}
 			.pagination-nav .option.next {
 				margin-left: auto;
+				@media screen and (max-width: $md) {
+					display: none;
+				}
 			}
 			.pagination-nav .option.active {
 				border-top: 2px solid map-get($colors, 'green');

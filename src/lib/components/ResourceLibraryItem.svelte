@@ -47,11 +47,12 @@
 			</small>
 		</div>
 	</div>
-	<ArrowRightIcon class="resource_item__icon" width="70" height="70" />
+	<ArrowRightIcon class="resource_item__icon show_on_md_and_up" width="70" height="70" />
 </a>
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
+	$sm: map-get($grid-breakpoints, 'sm');
 
 	.resource_item {
 		display: flex;
@@ -112,6 +113,8 @@
 
 			@media screen and (max-width: $md) {
 				padding-left: 0;
+				padding-bottom: 0;
+				margin-right: 0;
 			}
 
 			h4 {
@@ -120,6 +123,10 @@
 				-webkit-line-clamp: 2;
 				overflow: hidden;
 				text-overflow: ellipsis;
+				font-weight: 500;
+				@media screen and (max-width: $md) {
+					font-size: pxToRem(14);
+				}
 			}
 			small {
 				display: flex;

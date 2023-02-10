@@ -166,9 +166,9 @@
 
 	.resource_list_section {
 		padding-top: 0 !important;
-		@media screen and (max-width: $md) {
-			padding-top: 1rem !important;
-		}
+		// @media screen and (max-width: $md) {
+		// 	padding-top: 1rem !important;
+		// }
 
 		.divider {
 			width: 100% !important;
