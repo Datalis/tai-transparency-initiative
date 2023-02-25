@@ -9,7 +9,12 @@
 
 <section id="resources" class="resources_section section bg_light">
 	<div class="container">
-		<h2 class="mb_4">{data?.title}</h2>
+		<div class="display_flex align_center">
+			<div class="flex-grow_1">
+				<h2 class="mb_4 w_75">{data?.title}</h2>
+			</div>
+			<a href="/resources" class="btn btn_outline_blue text_blue">Explore Our Resources</a>
+		</div>
 		<div class="divider divider_2 divider_green" />
 		<div class="row mt_4">
 			{#each resources as resItem}
