@@ -9,7 +9,7 @@
 
 <section id="resources" class="resources_section section bg_light">
 	<div class="container">
-		<div class="display_flex align_center">
+		<div class="title align_center">
 			<div class="flex-grow_1">
 				<h2 class="mb_4 w_75">{data?.title}</h2>
 			</div>
@@ -31,7 +31,19 @@
 
 	.resources_section {
 		display: flex;
+
+		.title {
+			display: flex;
+		}
+
 		@media (max-width: $sm) {
+
+			.title {
+				flex-direction: column;
+				margin-bottom: 2rem;
+				align-items: start;
+			}
+
 			.col + .col {
 				margin-top: 2rem;
 			}
