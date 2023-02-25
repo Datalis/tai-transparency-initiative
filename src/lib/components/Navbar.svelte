@@ -7,9 +7,10 @@
 	import CloseIcon from '$lib/assets/icons/close.svg?component';
 	import ArrowRightIcon from '$lib/assets/icons/arrow-right.svg?component';
 	import { page } from '$app/stores';
-	import { afterNavigate } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
+	import ResourceFilters from './ResourceFilters.svelte';
 
 	let isMenuOpen = false;
 
@@ -26,6 +27,12 @@
 	const toggleMenu = () => {
 		isMenuOpen = !isMenuOpen;
 	};
+
+	$: currentFilter = +($page.url.searchParams.get('type') || 0);;
+
+	const onFilterChange = (/** @type {any} */ e) => {
+		goto(`/resources?type=${e.target.value}`, { replaceState: false })
+	}
 
 	$: {
 		isMenuOpen ? menuAnim.play() : menuAnim.reverse();
@@ -73,41 +80,6 @@
 			.to('.header .navbar .navbar_brand svg', { height: 35 })
 			.to('.header .navbar', { padding: '0.4rem 0' })
 			.to('.header .navbar .navbar_nav', { opacity: 0 })
-			
-		// gsap
-		// 	.timeline({
-		// 		scrollTrigger: {
-		// 			trigger: '.header',
-		// 			start: 'bottom -10px',
-		// 			scrub: 1
-		// 		}
-		// 	})
-
-		// 	.to('.header .navbar .navbar_nav', {
-		// 		opacity: 0
-		// 		// duration: 0.1
-		// 	})
-
-		// 	.to('.header .navbar .navbar_brand svg', {
-		// 		height: 35
-		// 	})
-
-		// 	.to('header', {
-		// 		backgroundColor: 'rgba(250, 250, 250, 0.90)',
-		// 		backdropFilter: 'blur(3px)',
-		// 		duration: 0.5
-		// 	})
-
-		// 	// .to('.header', {
-		// 	// 	position: 'fixed',
-		// 	// 	opacity: 1,
-		// 	// 	// duration: 0.3
-		// 	// })
-
-		// 	.to('.header .navbar', {
-		// 		padding: '0.4rem 0'
-		// 		// duration: 0.4
-		// 	});
 	});
 </script>
 
@@ -193,6 +165,57 @@
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_1 my_4" />
+						<div class="resource_filters display_flex bg_blue pb_2 show_on_md_and_up mx_2">
+							<div class="form_control form_control_radio mr_4">
+								<label>
+									<input type="radio" bind:group={currentFilter} name="" value={1} on:change={onFilterChange} />
+									TAI Weekly
+								</label>
+							</div>
+							<div class="form_control form_control_radio mr_4">
+								<label>
+									<input type="radio" bind:group={currentFilter} name="" value={3} on:change={onFilterChange} />
+									Collaboration case note
+								</label>
+							</div>
+							<div class="form_control form_control_radio mr_4">
+								<label>
+									<input type="radio" bind:group={currentFilter} name="" value={5} on:change={onFilterChange} />
+									Think pieces
+								</label>
+							</div>
+							<div class="form_control form_control_radio mr_4">
+								<label>
+									<input type="radio" bind:group={currentFilter} name="" value={8} on:change={onFilterChange} />
+									Blogs
+								</label>
+							</div>
+							<div class="form_control form_control_radio mr_4">
+								<label>
+									<input type="radio" bind:group={currentFilter} name="" value={16} on:change={onFilterChange} />
+									Reports
+								</label>
+							</div>
+							<div class="form_control form_control_radio mr_4">
+								<label>
+									<input type="radio" bind:group={currentFilter} name="" value={18} on:change={onFilterChange} />
+									Full Disclosure Series
+								</label>
+							</div>
+							<div class="form_control form_control_radio mr_4">
+								<label>
+									<input type="radio" bind:group={currentFilter} name="" value={7} on:change={onFilterChange} />
+									Library
+								</label>
+							</div>
+						</div>
+						<!-- <div class="resource_filters_mobile bg_blue pb_2 show_on_md_and_down">
+							<ResourceFiltersMobile
+								options={types}
+								bind:currentFilter={typeParam}
+								on:onChange={() => (currentPage = 1)}
+							/>
+						</div> -->
 					</nav>
 					<nav class="navbar_menu__links mt_5">
 						<a href="https://www.facebook.com/TAInitiative/" class="mr_3 link-icon">
@@ -207,9 +230,7 @@
 						>
 							<LinkedInIcon width="20" height="20" />
 						</a>
-						<!-- <a href="/" class="mr_3">
-							<XIcon width="42" height="42" />
-						</a> -->
+						
 					</nav>
 				</div>
 			</div>
@@ -269,6 +290,17 @@
 
 			&__nav {
 				margin-top: 3rem;
+
+				.resource_filters {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					margin-top: 2rem;
+					label {
+						cursor: pointer;
+						font-size: pxToRem(12);
+					}
+				}
 
 				@media screen and (max-width: $sm) {
 					margin-top: 2rem;

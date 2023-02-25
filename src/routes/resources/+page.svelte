@@ -5,7 +5,7 @@
 	import SearchThick from '$lib/assets/icons/search_thick.svg?component';
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 	import ResourceFiltersMobile from '$lib/components/ResourceFiltersMobile.svelte';
 	import ResourceLibraryItem from '$lib/components/ResourceLibraryItem.svelte';
@@ -19,7 +19,7 @@
 
 	export let data: PageData;
 
-	let typeParam: number = +($page.url.searchParams.get('type') || 1);
+	let typeParam = +($page.url.searchParams.get('type') || 1);
 	let searchParam: string | null = $page.url.searchParams.get('search');
 	let sortByParam: string | null = $page.url.searchParams.get('sortBy');
 
@@ -35,6 +35,13 @@
 	$: pageSize = resourcesPagination?.pageSize || 6;
 
 	$: types = data.types.data || [];
+
+	afterNavigate(() => {
+		let current = +($page.url.searchParams.get('type') || 1)
+		if (current !== typeParam) {
+			typeParam = current;
+		}
+	})
 
 	$: {
 		let params = new URLSearchParams();
