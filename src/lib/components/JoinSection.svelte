@@ -1,19 +1,17 @@
 <script lang="ts">
-	import JoinImg from '$lib/assets/images/news1.png';
+	import JoinImg from '$lib/assets/images/news1.1.webp';
 	import IntersectionObserver from './IntersectionObserver.svelte';
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 
 	export let form: any;
 
-	let formData: { name: string, email: string, subscribe: boolean } = {
-		name: "",
-		email: "",
+	let formData: { name: string; email: string; subscribe: boolean } = {
+		name: '',
+		email: '',
 		subscribe: true
-	}
-
+	};
 </script>
-
 
 <section id="join" class="join_section section">
 	<IntersectionObserver let:top>
