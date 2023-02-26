@@ -41,6 +41,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-node": "^1.2.0",
 		"open-graph-scraper": "^5.0.2"
 	}
 }

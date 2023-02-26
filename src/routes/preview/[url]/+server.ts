@@ -1,5 +1,4 @@
 import type { RequestHandler } from "@sveltejs/kit";
-import { LIVE_PREVIEW_TOKEN } from '$env/static/private';
 
 
 const defaultData = {
@@ -9,7 +8,7 @@ const defaultData = {
 export const GET: RequestHandler = async ({ params }) => {
 	try {
 		const url = decodeURIComponent(params.url || "").replace(/()/,"");
-		const res = await fetch(`http://api.linkpreview.net/?key=${LIVE_PREVIEW_TOKEN}&q=${url}`, {
+		const res = await fetch(`http://api.linkpreview.net/?key=&q=${url}`, {
 			cache: 'default'
 		})
 		const data = await res.json();
