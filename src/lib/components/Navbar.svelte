@@ -148,20 +148,20 @@
 						</a>
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
-							href="/resources"
-							class="display_flex align_center text_gray"
-							class:active={$page.url.pathname.includes('resources')}
+								href="/about-us"
+								class="display_flex align_center text_gray"
+								class:active={$page.url.pathname.includes('about-us')}
 						>
-							<h2 class=" m_0">Resources</h2>
+							<h2 class="m_0">About us</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
-							href="/about-us"
-							class="display_flex align_center text_gray"
-							class:active={$page.url.pathname.includes('about-us')}
+								href="/resources"
+								class="display_flex align_center text_gray"
+								class:active={$page.url.pathname.includes('resources')}
 						>
-							<h2 class="m_0">About us</h2>
+							<h2 class=" m_0">Resources</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_1 my_4" />
@@ -230,7 +230,7 @@
 						>
 							<LinkedInIcon width="20" height="20" />
 						</a>
-						
+
 					</nav>
 				</div>
 			</div>
