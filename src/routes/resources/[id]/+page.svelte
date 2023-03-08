@@ -10,20 +10,24 @@
 	import { onMount } from 'svelte';
 	import type { Response } from '$lib/types/data';
 	import Image from '$lib/components/Image.svelte';
+	import type { PageData } from './$types';
 
-	export let data: Response<Resource>;
+	export let data: PageData;
 
-	$: resource = data.data;
-	$: meta = data.meta;
+	$: resource = data.detail.data;
+	$: meta = data.detail.meta;
+
+	$: related = data.related.data;
 
 	function gotoSub() {
 		// Get the email address from the input field
 		// Add the email address to the subscription url
-		let URI = "https://transparency-initiative.us8.list-manage.com/subscribe?u=3225c2c32fc6c7023ca721588&id=1a5ff28f1e"
+		let URI =
+			'https://transparency-initiative.us8.list-manage.com/subscribe?u=3225c2c32fc6c7023ca721588&id=1a5ff28f1e';
 		// @ts-ignore
-		const subemail = document?.getElementById("subemail").value;
-		if(subemail){
-			URI = URI + "&MERGE0=" + subemail
+		const subemail = document?.getElementById('subemail').value;
+		if (subemail) {
+			URI = URI + '&MERGE0=' + subemail;
 		}
 		// Open the subscription url in a new tab
 		window.open(URI, '_blank');
@@ -65,7 +69,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col col_8 col_sm_12">
-
 					<div class="content_img"><Image size="medium" priority image={resource?.image} /></div>
 
 					<div class="post_content">
@@ -123,7 +126,23 @@
 					<h4 class="mt_5 mb_4">You may also like</h4>
 					<div class="divider divider_green divider_2 mb_4" />
 					<div class="related_articles_list">
-						<a href="/" class="related_article_item">
+						{#each related as r}
+							<a href="/resources/{r.id}" class="related_article_item">
+								<div class="img_wrapper">
+									<Image size="medium" image={r.image}></Image>
+								</div>
+								<span class="text_dark my_3 font_bold">
+									{r.title}
+								</span>
+								<small>
+									<a href="/resources/{r.id}" class="text_gray display_flex align_center green_text"
+										>Read More <LinkIcon class="ml_1" style="fill: #00DEB3" /></a
+									>
+								</small>
+							</a>
+						{/each}
+
+						<!-- <a href="/" class="related_article_item">
 							<div class="img_wrapper">
 								<img alt="" />
 							</div>
@@ -136,21 +155,7 @@
 									>Read More <LinkIcon class="ml_1" style="fill: #00DEB3" /></a
 								>
 							</small>
-						</a>
-						<a href="/" class="related_article_item">
-							<div class="img_wrapper">
-								<img alt="" />
-							</div>
-							<span class="text_dark my_3 font_bold">
-								Katharine Knox on movement- building in the TPA (transparency, participation, and
-								accountability) sector
-							</span>
-							<small>
-								<a href="/" class="text_gray display_flex align_center green_text"
-									>Read More <LinkIcon class="ml_1" style="fill: #00DEB3" /></a
-								>
-							</small>
-						</a>
+						</a> -->
 					</div>
 				</div>
 			</div>
@@ -308,8 +313,16 @@
 			}
 			.img_wrapper {
 				border-radius: 10px;
-				height: 150px;
+				overflow: hidden;
+				height: 220px;
 				background-color: map-get($colors, 'panel');
+				:global {
+					img {
+						height: 100%;
+						object-fit: contain;
+						object-position: center;
+					}
+				}
 			}
 		}
 	}
