@@ -11,6 +11,7 @@
 	import type { Response } from '$lib/types/data';
 	import Image from '$lib/components/Image.svelte';
 	import type { PageData } from './$types';
+	import Seo from '$lib/components/Seo.svelte';
 
 	export let data: PageData;
 
@@ -33,6 +34,16 @@
 		window.open(URI, '_blank');
 	}
 </script>
+
+<svelte:head>
+	<Seo
+		title={resource.title}
+		img="https://www.transparency-initiative.org{resource.image.url}"
+		description={resource.summary}
+		url="/resources/{resource.id}"
+		type="article"
+	/>
+</svelte:head>
 
 <article id="resource" class="page">
 	<section class="heading_section section bg_blue">
@@ -129,7 +140,7 @@
 						{#each related as r}
 							<a href="/resources/{r.id}" class="related_article_item">
 								<div class="img_wrapper">
-									<Image size="medium" image={r.image}></Image>
+									<Image size="medium" image={r.image} />
 								</div>
 								<span class="text_dark my_3 font_bold">
 									{r.title}

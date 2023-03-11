@@ -20,6 +20,7 @@
 	// import HeroImg2 from '$lib/assets/images/hero/2.2.png'
 
 	import ParticipatoryVideoPoster from '$lib/assets/images/participatory-video-poster.webp';
+	import Seo from '$lib/components/Seo.svelte';
 
 	let partnersSlide: HTMLElement;
 	let windowWidth: number;
@@ -131,6 +132,12 @@
 		// }
 	});
 </script>
+
+
+<svelte:head>
+	<Seo
+		title='Transparency & Accountability Initiative - How we fund' url="/how-we-fund"></Seo>
+</svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
 

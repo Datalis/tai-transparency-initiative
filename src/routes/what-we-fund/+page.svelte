@@ -19,6 +19,7 @@
 
 	import 'swiper/css';
 	import 'swiper/css/pagination';
+	import Seo from '$lib/components/Seo.svelte';
 
 	export let data: PageData;
 
@@ -55,6 +56,10 @@
 		}
 	});
 </script>
+
+<svelte:head>
+	<Seo title="Transparency & Accountability Initiative - What we fund" url="/what-we-fund" />
+</svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
 
@@ -160,7 +165,12 @@
 				</div>
 			</div>
 			<div class="show_on_md_and_down swiper_container">
-				<Swiper class="slider" pagination={{clickable: true}} modules={[Pagination]} spaceBetween={25}>
+				<Swiper
+					class="slider"
+					pagination={{ clickable: true }}
+					modules={[Pagination]}
+					spaceBetween={25}
+				>
 					<SwiperSlide>
 						<div class="funding_item mx_auto">
 							<span class="funding_item__icon">
@@ -178,8 +188,8 @@
 								<HandsIcon class="hands_icon" />
 							</span>
 							<p>
-								<strong>GRASSROOTS ORGANIZERS</strong> working with indigenous groups to document the plunder
-								of their lands and assert their rights in the courts.
+								<strong>GRASSROOTS ORGANIZERS</strong> working with indigenous groups to document the
+								plunder of their lands and assert their rights in the courts.
 							</p>
 						</div>
 					</SwiperSlide>
@@ -211,8 +221,8 @@
 								<LightBulbIcon class="light_bulb_icon" />
 							</span>
 							<p>
-								<strong>TECHNOLOGISTS</strong> guiding civil society groups to use data from multiple sources
-								to back up their policy asks.
+								<strong>TECHNOLOGISTS</strong> guiding civil society groups to use data from multiple
+								sources to back up their policy asks.
 							</p>
 						</div>
 					</SwiperSlide>
@@ -222,8 +232,8 @@
 								<ChartIcon class="chart_icon" />
 							</span>
 							<p>
-								<strong>THINK TANKS</strong> pinpointing government revenues lost due to loopholes in international
-								tax agreements.
+								<strong>THINK TANKS</strong> pinpointing government revenues lost due to loopholes in
+								international tax agreements.
 							</p>
 						</div>
 					</SwiperSlide>
@@ -335,7 +345,6 @@
 		display: flex !important;
 		flex-direction: column !important;
 		min-height: 100vh;
-
 
 		@media screen and (max-width: $md) {
 			min-height: unset;

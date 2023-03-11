@@ -2,6 +2,7 @@
 	import { Accordion, AccordionItem } from 'svelte-collapsible';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ViewMoreIcon from '$lib/components/ViewMoreIcon.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 
 	let currentFAQ = 0;
 
@@ -9,6 +10,11 @@
 
 	$: faqs = data.FAQItem || [];
 </script>
+
+<svelte:head>
+	<Seo
+		title='Transparency & Accountability Initiative - FAQs' url="/faq"></Seo>
+</svelte:head>
 
 <div class="page">
 	<section class="landing_section section bg_blue">
