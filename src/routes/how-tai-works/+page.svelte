@@ -23,6 +23,7 @@
 	// import Image from '$lib/components/Image.svelte';
 
 	import HeroImg1 from '$lib/assets/images/hero/3.2.webp';
+	import Seo from '$lib/components/Seo.svelte';
 	// import HeroImg1 from '$lib/assets/images/hero/3.2.png';
 	// import HeroImg2 from '$lib/assets/images/hero/3.1.png';
 	let videoPlayer: HTMLVideoElement;
@@ -143,6 +144,11 @@
 		}
 	});
 </script>
+
+<svelte:head>
+	<Seo
+		title='Transparency & Accountability Initiative - How TAI works' url="/how-tai-works"></Seo>
+</svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
 

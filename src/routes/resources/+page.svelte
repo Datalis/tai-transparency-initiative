@@ -10,6 +10,7 @@
 	import ResourceFiltersMobile from '$lib/components/ResourceFiltersMobile.svelte';
 	import ResourceLibraryItem from '$lib/components/ResourceLibraryItem.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 
 	let showSearchInput = true;
 
@@ -37,11 +38,11 @@
 	$: types = data.types.data || [];
 
 	afterNavigate(() => {
-		let current = +($page.url.searchParams.get('type') || 1)
+		let current = +($page.url.searchParams.get('type') || 1);
 		if (current !== typeParam) {
 			typeParam = current;
 		}
-	})
+	});
 
 	$: {
 		let params = new URLSearchParams();
@@ -72,6 +73,10 @@
 		else currentTopic = topic;
 	}
 </script>
+
+<svelte:head>
+	<Seo title="Transparency & Accountability Initiative - Resources" url="/resources" />
+</svelte:head>
 
 <div id="resources" class="page">
 	<div class="resource_filters bg_blue pb_2 show_on_md_and_up">
@@ -183,7 +188,7 @@
 			line-height: 1.5 !important;
 			font-size: pxToRem(14);
 			@media screen and (max-width: $md) {
-				line-height: 1.2!important;
+				line-height: 1.2 !important;
 				font-size: pxToRem(12);
 			}
 		}

@@ -13,6 +13,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import gsap from 'gsap/dist/gsap';
+	import Seo from '$lib/components/Seo.svelte';
 
 	export let data: PageData;
 	export let form: ActionData;
@@ -36,6 +37,11 @@
 	// 	});
 	// });
 </script>
+
+<svelte:head>
+	<Seo
+		title='Transparency & Accountability Initiative - About Us' url="/about-us"></Seo>
+</svelte:head>
 
 <div class="about_us_page page">
 	<section class="landing_section section bg_blue">

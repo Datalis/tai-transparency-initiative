@@ -28,6 +28,7 @@
 	import type { ActionData, PageData } from './$types';
 	import CardsSection from '$lib/components/CardsSection.svelte';
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+	import Seo from '$lib/components/Seo.svelte';
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
@@ -93,6 +94,8 @@
 	<link rel="preconnect" href={HeroImgLayer0} />
 	<link rel="preconnect" href={hero1_img} />
 	<link rel="preconnect" href={hero2_img} />
+
+	<Seo></Seo>
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
