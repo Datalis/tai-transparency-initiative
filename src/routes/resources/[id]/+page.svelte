@@ -1,14 +1,10 @@
 <script lang="ts">
-	import PlaceholderImg from '$lib/assets/images/placeholder-1.png';
-	import ArticleImg from '$lib/assets/images/article-img.jpg';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import FacebookIcon from '$lib/assets/icons/facebook.svg?component';
 	import TwitterIcon from '$lib/assets/icons/twitter.svg?component';
 	import LinkedInIcon from '$lib/assets/icons/linkedin.svg?component';
+	import WhatsappIcon from '$lib/assets/icons/whatsapp.svg?component';
 	import LinkIcon from '$lib/assets/icons/link.svg?component';
-	import type { Resource } from '$lib/types/resources';
-	import { onMount } from 'svelte';
-	import type { Response } from '$lib/types/data';
 	import Image from '$lib/components/Image.svelte';
 	import type { PageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
@@ -19,6 +15,8 @@
 	$: meta = data.detail.meta;
 
 	$: related = data.related.data;
+
+	$: share_url = `https://www.transparency-initiative.org/resources/${resource.id}`;
 
 	function gotoSub() {
 		// Get the email address from the input field
@@ -93,7 +91,7 @@
 					<div class="share_block">
 						<h5 class="mr_3">Share this article</h5>
 						<div class="divider divider_dark divider_1 mr_3" />
-						{#each resource.links as link}
+						<!-- {#each resource.links as link}
 							{#if link.type == 'facebook'}
 								<a href={link.url} class="share_icon mr_2">
 									<FacebookIcon width="14" height="14" />
@@ -109,17 +107,19 @@
 									<LinkedInIcon width="14" height="14" />
 								</a>
 							{/if}
-						{/each}
-						<!-- 
-						<span class="share_icon">
+						{/each} -->
+						<a href="https://api.whatsapp.com/send?text={share_url}" target="_blank" rel="noreferrer" class="share_icon">
+							<WhatsappIcon width="14" height="14" fill="#fff" />
+						</a>
+						<a href="https://www.facebook.com/sharer.php?u={share_url}" class="share_icon ml_2" target="_blank" rel="noreferrer">
 							<FacebookIcon width="14" height="14" fill="#fff" />
-						</span>
-						<span class="share_icon ml_2">
+						</a>
+						<a href="https://twitter.com/intent/tweet?url={share_url}" class="share_icon ml_2" target="_blank" rel="noreferrer">
 							<TwitterIcon width="14" height="14" fill="#fff" />
-						</span>
-						<span class="share_icon ml_2">
+						</a>
+						<a href="https://www.linkedin.com/sharing/share-offsite/?url={share_url}" class="share_icon ml_2" target="_blank" rel="noreferrer">
 							<LinkedInIcon width="14" height="14" fill="#fff" />
-						</span> -->
+						</a>
 					</div>
 				</div>
 				<div class="col col_4 col_sm_12">
@@ -220,11 +220,11 @@
 	.content_section a {
 		text-decoration: underline;
 	}
-	.content_section img {
-		margin-top: 2rem;
-		margin-bottom: 2rem;
-		box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.075);
-	}
+	// .content_section img {
+	// 	margin-top: 2rem;
+	// 	margin-bottom: 2rem;
+	// 	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.075);
+	// }
 
 	.content_section .post_content {
 		:global {
