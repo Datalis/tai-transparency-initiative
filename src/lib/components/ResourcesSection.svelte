@@ -1,9 +1,7 @@
 <script lang="ts">
 	import ResourceItem from './ResourceItem.svelte';
 
-	export let data: any;
-
-	$: resources = data?.resources || [];
+	export let resources: any;
 
 </script>
 
@@ -11,7 +9,7 @@
 	<div class="container">
 		<div class="title align_center">
 			<div class="flex-grow_1">
-				<h2 class="mb_4 w_75">{data?.title}</h2>
+				<h2 class="mb_4 w_75">Transparency and Accountability Initiative Resources</h2>
 			</div>
 			<a href="/resources" class="btn btn_outline_blue text_blue">Explore Our Resources</a>
 		</div>

@@ -12,24 +12,39 @@ export const load: PageServerLoad = async () => {
 					}
 				}
 			},
-			resources: {
-				fields: ['title'],
-				populate: {
-					resources: {
-						fields: ['id', 'summary', 'title'],
-						populate: {
-							image: {
-								populate: '*'
-							},
-							type: {
-								fields: ['id', 'label']
-							}
-						}
-					}
-				}
-			},
+			// resources: {
+			// 	fields: ['title'],
+			// 	populate: {
+			// 		resources: {
+			// 			fields: ['id', 'summary', 'title'],
+			// 			populate: {
+			// 				image: {
+			// 					populate: '*'
+			// 				},
+			// 				type: {
+			// 					fields: ['id', 'label']
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// },
 		}
 	}
 	const { data } = await get('how-we-fund-page', params);
-	return data;
+	const { data: resources } = await get('wc-resources', {
+		fields: ['id', 'summary', 'title'],
+		sort: 'date:DESC',
+		pagination: {
+			limit: 3
+		},
+		populate: {
+			image: {
+				populate: '*'
+			},
+			type: {
+				fields: ['id', 'label']
+			}
+		}
+	});
+	return { ...data, resources };
 }

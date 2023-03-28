@@ -264,7 +264,7 @@
 			</div>
 		</div>
 	</section>
-	<ResourcesSection data={resources} />
+	<ResourcesSection resources={resources} />
 	<SubscribeSection />
 </div>
 

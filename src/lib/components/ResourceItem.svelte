@@ -48,6 +48,7 @@
 			align-items: center;
 			:global {
 				img {
+					aspect-ratio: 4/2;
 					width: 95%;
 					height: 95%;
 					margin: auto;
@@ -111,6 +112,7 @@
 			border-radius: 15px;
 			min-height: 200px;
 			:global(img) {
+				aspect-ratio: 4/2;
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
