@@ -65,7 +65,7 @@
 		clearTimeout(timer);
 		timer = setTimeout(() => {
 			searchParam = v;
-		}, 300);
+		}, 500);
 	};
 
 	function filterByTopic(topic: number) {
