@@ -279,7 +279,7 @@
 	</section>
 	<WhyItMattersSection data={whyItMatters} />
 	<PathwaysSection />
-	<ResourcesSection data={resources} />
+	<ResourcesSection resources={resources} />
 	<SubscribeSection />
 </div>
 

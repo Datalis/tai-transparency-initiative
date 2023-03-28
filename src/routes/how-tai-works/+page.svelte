@@ -382,7 +382,7 @@
 			</div>
 		</IntersectionObserver>
 	</section>
-	<ResourcesSection data={resources} />
+	<ResourcesSection resources={resources} />
 	<SubscribeSection />
 </div>
 

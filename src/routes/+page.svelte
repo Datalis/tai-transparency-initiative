@@ -40,7 +40,8 @@
 	export let form: ActionData;
 
 	$: hero = data.hero;
-	$: resources = data.ResourcesSection;
+	// $: resources = data.ResourcesSection;
+	$: res = data.resources;
 
 	function setupAnimations() {
 		const offset = brandSlide.getBoundingClientRect().left - 100;
@@ -181,7 +182,7 @@
 	</section>
 	<CardsSection />
 	<JoinSection {form} />
-	<ResourcesSection data={resources} />
+	<ResourcesSection resources={res} />
 	<SubscribeSection />
 </div>
 
