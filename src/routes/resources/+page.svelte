@@ -60,13 +60,21 @@
 		if (browser) goto('/resources?' + params.toString());
 	}
 
-	let timer: string | number | NodeJS.Timeout | undefined;
-	const debounce = (v: any) => {
-		clearTimeout(timer);
-		timer = setTimeout(() => {
-			searchParam = v;
-		}, 500);
-	};
+	// let timer: string | number | NodeJS.Timeout | undefined;
+	// const debounce = (v: any) => {
+	// 	clearTimeout(timer);
+	// 	timer = setTimeout(() => {
+	// 		searchParam = v;
+	// 	}, 500);
+	// };
+	function onSearch(e: any) {
+		let s = e.target.value;
+		if (e.key == 'Enter')
+			searchParam = s;
+		else if (s == '')
+			searchParam = null;
+		
+	}
 
 	function filterByTopic(topic: number) {
 		if (currentTopic == topic) currentTopic = null;
@@ -137,12 +145,7 @@
 							type="search"
 							placeholder="Search..."
 							value={searchParam}
-							on:keyup={({
-								target: {
-									// @ts-ignore
-									value
-								}
-							}) => debounce(value)}
+							on:keyup={(e) => onSearch(e)}
 						/>
 					</div>
 				</div>
