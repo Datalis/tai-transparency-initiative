@@ -39,8 +39,7 @@
 </script>
 
 <svelte:head>
-	<Seo
-		title='Transparency & Accountability Initiative - About Us' url="/about-us"></Seo>
+	<Seo title="Transparency & Accountability Initiative - About Us" url="/about-us" />
 </svelte:head>
 
 <div class="about_us_page page">
@@ -52,7 +51,9 @@
 				<h1 class="text_green mt_4 mb_3">About Us</h1>
 				<div class="divider divider_light divider_2 w_15" />
 				<p class="text_center mx_auto w_75">
-					The Transparency and Accountability Initiative (TAI) is a donor collaborative working toward a democratic world where power and resources are more equally distributed; people are informed and empowered, governments and the corporate sector are open and responsive, and collective action advances the public good.
+					The Transparency and Accountability Initiative (TAI) is a collaborative for funder
+					learning and action in support of participation, openness and accountability around the
+					world. Our members have over USD 500 million in active grants in support of those goals
 				</p>
 			</div>
 		</div>
@@ -88,7 +89,13 @@
 				</div>
 			</div>
 			<div class="text_center mt_5">
-				<a href="https://api.tai.datalis.dev/uploads/tai_strategy_document_2020_2024_45f7b393f2.pdf" target="blank" class="btn btn_outline_green text_dark"> Read More </a>
+				<a
+					href="https://api.tai.datalis.dev/uploads/tai_strategy_document_2020_2024_45f7b393f2.pdf"
+					target="blank"
+					class="btn btn_outline_green text_dark"
+				>
+					Read More
+				</a>
 			</div>
 		</div>
 	</section>
@@ -135,7 +142,8 @@
 					<div class="divider divider_green divider_1" />
 					<StaffItem
 						data={commiteeItem}
-						on:toggle={() => (index == activeCommittee ? (activeCommittee = -1) : (activeCommittee = index))}
+						on:toggle={() =>
+							index == activeCommittee ? (activeCommittee = -1) : (activeCommittee = index)}
 						isExpanded={index == activeCommittee}
 					/>
 				{/each}
@@ -149,7 +157,7 @@
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
 	.green_text {
-		color: #00DEB3;
+		color: #00deb3;
 	}
 	.landing_section {
 		padding: 0 !important;
