@@ -51,9 +51,7 @@
 				<h1 class="text_green mt_4 mb_3">About Us</h1>
 				<div class="divider divider_light divider_2 w_15" />
 				<p class="text_center mx_auto w_75">
-					The Transparency and Accountability Initiative (TAI) is a collaborative for funder
-					learning and action in support of participation, openness and accountability around the
-					world. Our members have over USD 500 million in active grants in support of those goals
+					The Transparency and Accountability Initiative (TAI) is a collaborative for funder learning and action in support of participation, openness and accountability around the world. Our members have over USD500 million in active grants in support of those goals
 				</p>
 			</div>
 		</div>
