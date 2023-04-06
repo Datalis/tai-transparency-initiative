@@ -176,6 +176,7 @@
 </article>
 
 <style lang="scss">
+	$md: map-get($grid-breakpoints, 'md');
 	$green_light: #59ebcf;
 	.green_text {
 		color: #00deb3;
@@ -207,7 +208,16 @@
 		align-items: center;
 	}
 
+	.content_section {
+		@media screen and (max-width: $md) {
+			padding-top: 0 !important;
+		}
+	}
+
 	.content_section .content_img {
+		@media screen and (max-width: $md) {
+			padding: 0 1rem;
+		}
 		:global {
 			img {
 				background-color: transparent;
@@ -227,6 +237,10 @@
 	// }
 
 	.content_section .post_content {
+		@media screen and (max-width: $md) {
+			padding: 0 1rem;
+		}
+
 		:global {
 			p {
 				letter-spacing: normal;
