@@ -6,7 +6,6 @@
 	import HeroImgLayer2 from '$lib/assets/images/home/group_2.webp';
 	import HeroImgLayer2Mobile from '$lib/assets/images/home/group_2_sm.webp';
 
-
 	import MacArthurLogo from '$lib/assets/icons/mac-arthur.svg?component';
 	import FordLogo from '$lib/assets/icons/ford.svg?component';
 	import HewlettLogo from '$lib/assets/icons/hewlett.svg?component';
@@ -22,7 +21,7 @@
 
 	import { gsap } from 'gsap/dist/gsap';
 
-	gsap.registerPlugin(ScrollTrigger)
+	gsap.registerPlugin(ScrollTrigger);
 
 	import { onMount } from 'svelte';
 	import type { ActionData, PageData } from './$types';
@@ -62,7 +61,6 @@
 				}
 			});
 
-
 		const parallax = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.landing_section',
@@ -96,7 +94,7 @@
 	<link rel="preconnect" href={hero1_img} />
 	<link rel="preconnect" href={hero2_img} />
 
-	<Seo></Seo>
+	<Seo />
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -113,11 +111,11 @@
 					</div>
 				</div>
 
-				<div class="col col_5 col_md_12 ">
+				<div class="col col_5 col_md_12">
 					<div class="landing_section__content">
 						<h1 class="text_green mb_3 mt_0">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light" />
-						<div class="font_light">
+						<div class="landing_section__content__message font_light">
 							{@html hero?.message}
 						</div>
 						<a href="/about-us" class="btn btn_outline_green mt_4 mb_4">Read More</a>
@@ -143,9 +141,14 @@
 			<a href="https://www.fordfoundation.org/" target="blank"><FordLogo width="300" /></a>
 			<a href="https://hewlett.org/" target="blank"><HewlettLogo width="300" /></a>
 			<a href="https://luminategroup.com/" target="blank"><LuminateLogo width="300" /></a>
-			<a href="https://www.opensocietyfoundations.org/" target="blank"><OpenSocietyLogo width="300" /></a>
+			<a href="https://www.opensocietyfoundations.org/" target="blank"
+				><OpenSocietyLogo width="300" /></a
+			>
 			<a href="https://skoll.org/" target="blank"><SkollLogo height="80" /></a>
-			<a href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office" target="blank"><FCDOLogo width="300" /></a>
+			<a
+				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
+				target="blank"><FCDOLogo width="300" /></a
+			>
 			<a href="https://www.chandlerfoundation.org/" target="blank"><ChandlerLogo width="300" /></a>
 		</div>
 	</section>
@@ -172,7 +175,10 @@
 			<a href="https://skoll.org/" target="blank">
 				<SkollLogo height="50" width="50%" class="mt_4" />
 			</a>
-			<a href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office" target="blank">
+			<a
+				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
+				target="blank"
+			>
 				<FCDOLogo height="50" width="50%" class="mt_4" />
 			</a>
 			<a href="https://www.chandlerfoundation.org/" target="blank">
@@ -285,6 +291,15 @@
 			flex-direction: column;
 			align-items: flex-start;
 			justify-content: flex-end;
+
+			&__message {
+				:global {
+					strong {
+						font-weight: 900;
+					}
+				}
+			}
+
 			@media (max-width: $md) {
 				a {
 					width: 100%;
@@ -301,17 +316,15 @@
 			// 		width: 265px !important;
 			// 	}
 
-
-
 			// 	// h1 {
 			// 	// 	text-decoration: underline;
 			// 	// }
 			// }
 
 			.btn:hover {
-					background-color: map-get($colors, 'green');
-					color: map-get($colors, 'dark');
-				}
+				background-color: map-get($colors, 'green');
+				color: map-get($colors, 'dark');
+			}
 
 			// @media (max-width: $md) {
 			// 	width: 100%;
@@ -373,6 +386,4 @@
 			}
 		}
 	}
-
-
 </style>
