@@ -24,7 +24,13 @@
 				}
 			});
 		}
+
 	});
+
+
+	let cContent1 = 0;
+	let cContent2 = 0;
+	let cContent3 = 0;
 </script>
 
 <svelte:head>
@@ -39,11 +45,11 @@
 			<div class="row">
 				<div class="col col_4 col_lg_12">
 					<div class="card" id="card-1">
-						<a class="overlay" href="/what-we-fund">
+						<a class="overlay" href="/what-we-fund" style="--content-height: {cContent1}px;">
 							<img src={CardBg} alt="" />
 							<img class="overlay__img" src={Card1Img} alt="" />
 						</a>
-						<div class="content">
+						<div class="content" bind:clientHeight={cContent1} >
 							<a href="/what-we-fund"><h3 class="text_dark">What we fund</h3></a>
 							<div class="divider divider_light divider_2" />
 							<div class="content__text">
@@ -65,11 +71,11 @@
 				</div>
 				<div class="col col_4 col_lg_12">
 					<div class="card" id="card-2">
-						<a class="overlay" href="/how-we-fund">
+						<a class="overlay" href="/how-we-fund" style="--content-height: {cContent2}px;">
 							<img src={CardBg} alt="" />
 							<img class="overlay__img" src={Card2Img} alt="" />
 						</a>
-						<div class="content">
+						<div class="content" bind:clientHeight={cContent2} >
 							<a href="/how-we-fund">
 								<h3 class="text_dark">How we fund</h3>
 							</a>
@@ -93,11 +99,11 @@
 				</div>
 				<div class="col col_4 col_lg_12">
 					<div class="card" id="card-3">
-						<a class="overlay" href="/how-tai-works">
+						<a class="overlay" href="/how-tai-works" style="--content-height: {cContent3}px;">
 							<img src={CardBg} alt="" />
 							<img class="overlay__img" src={Card3Img} alt="" />
 						</a>
-						<div class="content">
+						<div class="content" bind:clientHeight={cContent3}>
 							<a href="/how-tai-works">
 								<h3 class="text_dark">How TAI works</h3>
 							</a>
@@ -162,6 +168,7 @@
 				height: calc(100% - pxToRem(20));
 				margin: auto;
 				position: relative;
+				/* transition: height 1s cubic-bezier(0.075, 0.82, 0.165, 1); */
 
 				@media (max-width: $md) {
 					height: 85vh;
@@ -169,7 +176,7 @@
 
 				.overlay,
 				.content {
-					transition: height 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+					transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 				}
 
 				.overlay {
@@ -234,7 +241,8 @@
 				@media (hover: hover) {
 					&:hover {
 						.overlay {
-							height: 50%;
+							height: calc(100% - 100px - var(--content-height));
+							/* height: 50%; */
 						}
 						.content .divider {
 							width: 100px !important;
@@ -244,7 +252,7 @@
 
 				@media (hover: none) {
 					.overlay {
-						height: 50%;
+						height: calc(100% - var(--content-height));
 					}
 					.content .divider {
 						width: 100px !important;
