@@ -48,7 +48,7 @@
 		<div class="container">
 			<div class="row">
 				{#if resource.type.id == 2}
-					<div class="text_center col col_7 col_sm_12 ">
+					<div class="text_center col col_7 col_sm_12">
 						<span class="text_light font_bold text_uppercase">{resource.type.label}</span>
 						<h1 class="text_green">
 							{resource.title}
@@ -108,18 +108,40 @@
 								</a>
 							{/if}
 						{/each} -->
-						<a href="https://api.whatsapp.com/send?text={share_url}" target="_blank" rel="noreferrer" class="share_icon">
-							<WhatsappIcon width="14" height="14" fill="#fff" />
-						</a>
-						<a href="https://www.facebook.com/sharer.php?u={share_url}" class="share_icon ml_2" target="_blank" rel="noreferrer">
-							<FacebookIcon width="14" height="14" fill="#fff" />
-						</a>
-						<a href="https://twitter.com/intent/tweet?url={share_url}" class="share_icon ml_2" target="_blank" rel="noreferrer">
-							<TwitterIcon width="14" height="14" fill="#fff" />
-						</a>
-						<a href="https://www.linkedin.com/sharing/share-offsite/?url={share_url}" class="share_icon ml_2" target="_blank" rel="noreferrer">
-							<LinkedInIcon width="14" height="14" fill="#fff" />
-						</a>
+						<div class="display_flex">
+							<a
+								href="https://api.whatsapp.com/send?text={share_url}"
+								target="_blank"
+								rel="noreferrer"
+								class="share_icon"
+							>
+								<WhatsappIcon width="14" height="14" fill="#fff" />
+							</a>
+							<a
+								href="https://www.facebook.com/sharer.php?u={share_url}"
+								class="share_icon ml_2"
+								target="_blank"
+								rel="noreferrer"
+							>
+								<FacebookIcon width="14" height="14" fill="#fff" />
+							</a>
+							<a
+								href="https://twitter.com/intent/tweet?url={share_url}"
+								class="share_icon ml_2"
+								target="_blank"
+								rel="noreferrer"
+							>
+								<TwitterIcon width="14" height="14" fill="#fff" />
+							</a>
+							<a
+								href="https://www.linkedin.com/sharing/share-offsite/?url={share_url}"
+								class="share_icon ml_2"
+								target="_blank"
+								rel="noreferrer"
+							>
+								<LinkedInIcon width="14" height="14" fill="#fff" />
+							</a>
+						</div>
 					</div>
 				</div>
 				<div class="col col_4 col_sm_12">
@@ -280,8 +302,10 @@
 	}
 
 	.content_section .share_block {
+		padding: 0 1rem;
 		display: flex;
 		align-items: center;
+
 		.share_icon {
 			width: 42px;
 			height: 42px;
