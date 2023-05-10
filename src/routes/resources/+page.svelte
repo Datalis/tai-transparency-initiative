@@ -20,7 +20,7 @@
 
 	export let data: PageData;
 
-	let typeParam = +($page.url.searchParams.get('type') || 1);
+	let typeParam = $page.url.searchParams.get('type');
 	let searchParam: string | null = $page.url.searchParams.get('search');
 	let sortByParam: string | null = $page.url.searchParams.get('sortBy');
 
@@ -38,19 +38,19 @@
 	$: types = data.types.data || [];
 
 	afterNavigate(() => {
-		let current = +($page.url.searchParams.get('type') || 1);
-		if (current !== typeParam) {
-			typeParam = current;
-		}
+		// let current = +($page.url.searchParams.get('type') || 1);
+		// if (current !== typeParam) {
+		// 	typeParam = current;
+		// }
 	});
 
 	$: {
 		let params = new URLSearchParams();
-		params.set('type', typeParam.toString());
+		if (typeParam) params.set('type', typeParam.toString());
 		params.set('page', currentPage.toString());
 		params.set('pageSize', pageSize.toString());
 
-		if (typeParam == 7 && currentTopic) {
+		if (typeParam && +typeParam == 7 && currentTopic) {
 			params.set('topic', currentTopic.toString());
 		}
 
@@ -104,7 +104,7 @@
 		/>
 	</div>
 	<section class="resource_list_section section bg_light">
-		{#if typeParam == 7}
+		{#if typeParam && +typeParam == 7}
 			<div class="library_summary py_2">
 				<div class="container">
 					<div class="col-12">
@@ -124,7 +124,7 @@
 						<!-- <h4 class="sort_by_btn mb_1 mr_3 mt_1">Sort By</h4>
 						<ArrowThick width="24" height="24" /> -->
 
-						{#if typeParam == 7}
+						{#if typeParam && +typeParam == 7}
 							{#each libTopics as topic}
 								<!-- svelte-ignore a11y-click-events-have-key-events -->
 								<small
