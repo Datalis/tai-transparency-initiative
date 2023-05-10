@@ -4,7 +4,7 @@
 
 	let emit = createEventDispatcher();
 
-	export let currentFilter = 1;
+	export let currentFilter: string | null = null;
 
 	function onFilterChange(e: any) {
 		emit('onChange', e.target.value);

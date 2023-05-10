@@ -11,7 +11,7 @@ export const load: PageServerLoad = async ({ url }) => {
 
 		const sortBy = url.searchParams.get('sortBy') || 'date:DESC';
 		const search = url.searchParams.get('search');
-		const type = url.searchParams.get('type') || 1;
+		const type = url.searchParams.get('type');
 		const topic = url.searchParams.get('topic') || null;
 
 		let tipo: any = {
@@ -33,7 +33,7 @@ export const load: PageServerLoad = async ({ url }) => {
 		}
 		const params: any = {
 			filters: {
-				type: tipo,
+				// type: tipo,
 				$or: [
 					{
 						title: {
@@ -65,6 +65,10 @@ export const load: PageServerLoad = async ({ url }) => {
 				}
 			}
 		};
+
+		if (type) {
+			params.filters['type'] = tipo;
+		}
 
 		if (topic) {
 			params.filters['library_topic'] = {

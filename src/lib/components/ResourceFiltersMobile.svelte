@@ -6,13 +6,13 @@
 
 	let emit = createEventDispatcher();
 
-	export let currentFilter = 1;
+	export let currentFilter: string | null = null;
 
 	export let options: ResourceType[] = [];
 
 	let isOpen = false;
 
-	$: current = options?.find(e => e.id == currentFilter);
+	$: current = options?.find(e => e.id?.toString() == currentFilter);
 
 	function onFilterChange(e: any) {
 		isOpen = false;
@@ -24,7 +24,7 @@
 <div class="resource_filters px_4">
 	<CollapsibleCard bind:open={isOpen}>
 		<div class="resource_filters__menu header"  slot="header">
-			<small class="text_green font_bold mr_2">{current?.label}</small>
+			<small class="text_green font_bold mr_2">{current?.label || 'Select a category'}</small>
 			<FiltersIcon width="24" height="24" />
 		</div>
 		<div class="resource_filters__options body" slot="body">
