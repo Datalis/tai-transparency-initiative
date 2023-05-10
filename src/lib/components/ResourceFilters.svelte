@@ -18,7 +18,7 @@
 		{#if opt.id !== 7}
 			<div class="form_control form_control_radio">
 				<label>
-					<input type="radio" bind:group={currentFilter} name="" value={opt.id} on:change={onFilterChange} />
+					<input type="radio" bind:group={currentFilter} name="" value={opt.id?.toString()} on:change={onFilterChange} />
 					{opt.label}
 				</label>
 			</div>

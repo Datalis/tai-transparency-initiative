@@ -38,10 +38,10 @@
 	$: types = data.types.data || [];
 
 	afterNavigate(() => {
-		// let current = +($page.url.searchParams.get('type') || 1);
-		// if (current !== typeParam) {
-		// 	typeParam = current;
-		// }
+		let current = $page.url.searchParams.get('type');
+		if (current !== typeParam) {
+			typeParam = current;
+		}
 	});
 
 	$: {
@@ -196,10 +196,10 @@
 			}
 		}
 
-		.divider {
+		/* .divider {
 			width: 100% !important;
 			opacity: 0.65 !important;
-		}
+		} */
 
 		.toolbar_wrapper {
 			@media screen and (max-width: $md) {
