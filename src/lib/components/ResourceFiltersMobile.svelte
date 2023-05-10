@@ -31,7 +31,7 @@
 			{#each options as opt}
 				<div class="form_control form_control_radio">
 					<label>
-						<input type="radio" bind:group={currentFilter} name="filter" value={opt.id} on:change={onFilterChange} />
+						<input type="radio" bind:group={currentFilter} name="filter" value={opt.id?.toString()} on:change={onFilterChange} />
 						{opt.label}
 					</label>
 				</div>

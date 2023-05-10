@@ -40,7 +40,7 @@
 			<small class="text_gray font_regular"
 				>By <a href="/" class="text_gray">{data?.author?.name}</a> ({data?.author?.role})</small
 			>
-			<div class="text_dark">
+			<div class="text_dark summary">
 				{@html data?.summary}
 			</div>
 		</div>
@@ -164,7 +164,9 @@
 				a {
 					text-decoration: underline;
 				}
-				p {
+
+				.summary,
+				:global(.summary p) {
 					margin-top: auto;
 					padding-top: 1rem;
 					font-size: pxToRem(14);
