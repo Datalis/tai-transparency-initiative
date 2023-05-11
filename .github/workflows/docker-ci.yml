@@ -1,0 +1,65 @@
+name: Docker Image CI
+on:
+    push:
+        branches: ['dev']
+    pull_request:
+        branches: ['main']
+env:
+    TAG: ''
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - 
+                name: Checkout
+                uses: actions/checkout@v3
+            - 
+                name: Checkout
+                uses: actions/checkout@v3
+            - 
+                name: Set build tag
+                shell: bash
+                run: |
+                    event="${{github.event_name}}"
+                    tag="${{github.ref_name}}"
+    
+                    if [ "$event" = "pull_request" ]; then
+                        tag="latest"
+                    fi
+    
+                    echo "::set-env name=TAG::$(echo "$tag")"
+            -
+                name: Set up Docker Buildx
+                uses: docker/setup-buildx-action@v2
+            -
+                name: Cache Docker layers
+                uses: actions/cache@v3
+                with:
+                    path: /tmp/.buildx-cache
+                    key: ${{ runner.os }}-buildx-${{ github.sha }}
+                    restore-keys: |
+                        ${{ runner.os }}-buildx-${{ github.sha }}
+            -
+                name: Login to Docker Hub
+                uses: docker/login-action@v2
+                with:
+                    username: lexzzz
+                    password: dckr_pat_yWKODlKDb0d1gsLDnYX13n5WTmE
+            -
+                name: Build Docker image & push
+                uses: docker/build-push-action@v4
+                with:
+                    context: .
+                    push: true
+                    tags: dogcalas/tai-mainsite:${{env.TAG}}
+                    cache-from: type=local,src=/tmp/.buildx-cache
+                    cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+            -
+                # Temp fix
+                # https://github.com/docker/build-push-action/issues/252
+                # https://github.com/moby/buildkit/issues/1896
+                name: Move cache
+                run: |
+                    rm -rf /tmp/.buildx-cache
+                    mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+
