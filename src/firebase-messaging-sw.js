@@ -1,16 +1,14 @@
 /* eslint-disable no-undef */
-
-import { PUBLIC_FIREBASE_API_KEY, PUBLIC_FIREBASE_APP_ID, PUBLIC_FIREBASE_AUTH_DOMAIN, PUBLIC_FIREBASE_MESSAGING_SENDER_ID, PUBLIC_FIREBASE_PROJECT_ID, PUBLIC_FIREBASE_STORAGE_BUCKET } from '$env/static/public';
 import { initializeApp } from 'firebase/app';
 import { getMessaging, onBackgroundMessage } from "firebase/messaging/sw";
 
 const firebase = initializeApp({
-    apiKey: PUBLIC_FIREBASE_API_KEY,
-    authDomain: PUBLIC_FIREBASE_AUTH_DOMAIN,
-    projectId: PUBLIC_FIREBASE_PROJECT_ID,
-    storageBucket: PUBLIC_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-    appId: PUBLIC_FIREBASE_APP_ID
+    apiKey: 'AIzaSyDDRHEv2Y1OoJ2jiOpXvNgHXYX3XsfCj08',
+    authDomain: 'transparency-cd0a3.firebaseapp.com',
+    projectId: 'transparency-cd0a3',
+    storageBucket: 'transparency-cd0a3.appspot.com',
+    messagingSenderId: '744067165946',
+    appId: '1:744067165946:web:26d45096b1b40af712a343'
 });
 
 
