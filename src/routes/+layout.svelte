@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import PageTransition from '$lib/components/PageTransition.svelte';
@@ -12,8 +12,13 @@
 	import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	
+	import PushNotificationSubscription from '$lib/components/PushNotificationSubscription.svelte';
+	import type { NavigationTarget } from '@sveltejs/kit';
+	import { onMount } from 'svelte';
+	import { onMessagingListener } from '$lib/api/firebase';
+
 	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
 
 	NProgress.configure({
 		minimum: 0.16,
@@ -27,11 +32,13 @@
 			NProgress.done();
 		}
 	}
+	
+	let scrollHistory: {
+		to: NavigationTarget | null,
+		from: NavigationTarget | null,
+		scrollY: number | undefined
+	}[] = [];
 
-	/**
-	 * @type {{ to: import("@sveltejs/kit").NavigationTarget | null; from: import("@sveltejs/kit").NavigationTarget | null; scrollY: number | undefined; }[]}
-	 */
-	let scrollHistory = [];
 
 	beforeNavigate((navigation) => {
 		scrollHistory.push({
@@ -60,9 +67,16 @@
 			// main?.scrollTo(0, 0);
 			gsap.to(window, {
 				scrollTo: 0
-			})
+			});
 		}
 	});
+
+	onMount(() => {
+		const unsub = onMessagingListener((payload) => {
+			console.log(payload);
+		})
+		return () => unsub();
+	})
 </script>
 
 <svelte:head />
@@ -73,6 +87,7 @@
 </PageTransition>
 <Footer />
 <ScrollToTop />
+<PushNotificationSubscription />
 
 <style lang="scss" global>
 	@import '../lib/theme/index.scss';

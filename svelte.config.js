@@ -22,6 +22,12 @@ const config = {
 		adapter: adapter({
 			edge: false
 		}),
+		files: {
+			serviceWorker: 'src/firebase-messaging-sw.js',
+		},
+		serviceWorker: {
+			register: true
+		}
 	}
 };
 
