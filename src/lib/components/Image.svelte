@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	// import type { Image } from '$lib/types/image';
 	import { Image } from 'svelte-lazy-loader';
 
@@ -9,7 +11,9 @@
 	export let size: 'thumbnail' | 'small' | 'medium' | 'large' = 'large';
 	export let priority: boolean = false;
 
-	$: img = size && image?.formats ? image.formats[size] : image;
+	$: img = image?.formats && image.formats[size] ? image.formats[size] : image;
+
+	onMount(() => console.log(img))
 </script>
 
 <svelte:head>
@@ -37,8 +41,8 @@
 /> -->
 
 <style lang="scss">
-	img {
+	/* img {
 		background-size: cover;
 		background-color: map-get($colors, 'blue');
-	}
+	} */
 </style>

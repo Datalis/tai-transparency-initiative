@@ -78,7 +78,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col col_8 col_sm_12">
-					<div class="content_img"><Image size="medium" priority image={resource?.image} /></div>
+					<div class="content_img"><Image size="large" priority image={resource?.image} /></div>
 
 					<div class="post_content">
 						{@html resource.content}
@@ -368,7 +368,7 @@
 				:global {
 					img {
 						height: 100%;
-						object-fit: contain;
+						object-fit: cover;
 						object-position: center;
 					}
 				}
