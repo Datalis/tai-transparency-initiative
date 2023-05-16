@@ -1,7 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
-	// import type { Image } from '$lib/types/image';
 	import { Image } from 'svelte-lazy-loader';
 
 	export let image: any;
@@ -12,8 +9,6 @@
 	export let priority: boolean = false;
 
 	$: img = image?.formats && image.formats[size] ? image.formats[size] : image;
-
-	onMount(() => console.log(img))
 </script>
 
 <svelte:head>
