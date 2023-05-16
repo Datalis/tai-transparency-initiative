@@ -46,6 +46,7 @@
 
     const dismiss = async () => {
         localStorage.setItem(NOTIFICATION_DISMISSED_KEY, 'true');
+        showSubscriptionPopup = false;
     }
  
     onMount(() => init());
@@ -53,9 +54,9 @@
 
 <div class="subscription-popup bg_green" class:show={showSubscriptionPopup}>
     <div class="subscription-message">
-        <span class="font_bold">Subscribe to our notifications!</span>
+        <span class="font_bold">Don't miss our latest publications</span>
         <small class="text_dark">
-            Keep up to date with our content.
+            Subscribe now to get our notifications
         </small>
     </div>
     <div class="subscription-buttons">
