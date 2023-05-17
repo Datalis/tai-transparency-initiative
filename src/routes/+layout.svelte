@@ -1,10 +1,7 @@
-<script>
+<script lang="ts">
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import PageTransition from '$lib/components/PageTransition.svelte';
-
 	import NProgress from 'nprogress';
-	// import 'nprogress/nprogress.css';
 
 	import { navigating } from '$app/stores';
 	import { gsap } from 'gsap/dist/gsap';
@@ -12,7 +9,11 @@
 	import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	
+	import PushNotificationSubscription from '$lib/components/PushNotificationSubscription.svelte';
+	import type { NavigationTarget } from '@sveltejs/kit';
+	import { onMount } from 'svelte';
+	import { onMessagingListener } from '$lib/api/firebase';
+
 	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 	NProgress.configure({
@@ -28,10 +29,11 @@
 		}
 	}
 
-	/**
-	 * @type {{ to: import("@sveltejs/kit").NavigationTarget | null; from: import("@sveltejs/kit").NavigationTarget | null; scrollY: number | undefined; }[]}
-	 */
-	let scrollHistory = [];
+	let scrollHistory: {
+		to: NavigationTarget | null;
+		from: NavigationTarget | null;
+		scrollY: number | undefined;
+	}[] = [];
 
 	beforeNavigate((navigation) => {
 		scrollHistory.push({
@@ -60,19 +62,37 @@
 			// main?.scrollTo(0, 0);
 			gsap.to(window, {
 				scrollTo: 0
-			})
+			});
 		}
+	});
+
+	onMount(() => {
+		const unsub = onMessagingListener((payload) => {
+			const { notification, data } = payload;
+			const n = new Notification(notification?.title ?? 'New content available', {
+				body: notification?.body,
+				icon: notification?.icon,
+				image: notification?.image,
+				data: data
+			});
+			n.onclick = function () {
+				data?.url && window.open(data.url);
+				n.close();
+			};
+		});
+		return () => unsub();
 	});
 </script>
 
 <svelte:head />
 
 <Navbar />
-<PageTransition>
+<main>
 	<slot />
-</PageTransition>
+</main>
 <Footer />
 <ScrollToTop />
+<PushNotificationSubscription />
 
 <style lang="scss" global>
 	@import '../lib/theme/index.scss';

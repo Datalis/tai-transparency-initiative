@@ -27,7 +27,7 @@ jobs:
                         tag="latest"
                     fi
     
-                    echo "::set-env name=TAG::$(echo "$tag")"
+                    echo "TAG=$tag" >> "$GITHUB_ENV"
             -
                 name: Set up Docker Buildx
                 uses: docker/setup-buildx-action@v2

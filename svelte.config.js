@@ -1,6 +1,9 @@
-import adapter from '@sveltejs/adapter-node';
+import adapterNode from '@sveltejs/adapter-node';
+import adapterNetlify from '@sveltejs/adapter-netlify';
 import sveltePreprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
+
+const adapter = process.env.NETLIFY ? adapterNetlify : adapterNode
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -22,6 +25,12 @@ const config = {
 		adapter: adapter({
 			edge: false
 		}),
+		files: {
+			serviceWorker: 'src/firebase-messaging-sw.js',
+		},
+		serviceWorker: {
+			register: true
+		}
 	}
 };
 
