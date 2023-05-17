@@ -79,9 +79,10 @@
 					image: notification?.image,
 					data: data
 				});
-				// n.onclick = function () {
-				// 	window.open()
-				// }
+				n.onclick = function () {
+					data?.url && window.open(data.url);
+					n.close();
+				}
 			}
 		})
 		return () => unsub();
