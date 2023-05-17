@@ -1,10 +1,7 @@
 <script lang="ts">
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import PageTransition from '$lib/components/PageTransition.svelte';
-
 	import NProgress from 'nprogress';
-	// import 'nprogress/nprogress.css';
 
 	import { navigating } from '$app/stores';
 	import { gsap } from 'gsap/dist/gsap';
@@ -73,7 +70,19 @@
 
 	onMount(() => {
 		const unsub = onMessagingListener((payload) => {
-			console.log(payload);
+			if (Notification.permission == 'granted') {
+				// console.log(payload);
+				const { notification, data } = payload;
+				const n = new Notification(notification?.title ?? "New content available", {
+					body: notification?.body,
+					icon: notification?.icon,
+					image: notification?.image,
+					data: data
+				});
+				// n.onclick = function () {
+				// 	window.open()
+				// }
+			}
 		})
 		return () => unsub();
 	})
@@ -82,9 +91,9 @@
 <svelte:head />
 
 <Navbar />
-<PageTransition>
+<main>
 	<slot />
-</PageTransition>
+</main>
 <Footer />
 <ScrollToTop />
 <PushNotificationSubscription />
