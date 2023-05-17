@@ -71,7 +71,6 @@
 	onMount(() => {
 		const unsub = onMessagingListener((payload) => {
 			if (Notification.permission == 'granted') {
-				// console.log(payload);
 				const { notification, data } = payload;
 				const n = new Notification(notification?.title ?? "New content available", {
 					body: notification?.body,
