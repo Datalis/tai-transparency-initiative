@@ -16,7 +16,6 @@
 
 	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-
 	NProgress.configure({
 		minimum: 0.16,
 		showSpinner: false
@@ -29,13 +28,12 @@
 			NProgress.done();
 		}
 	}
-	
-	let scrollHistory: {
-		to: NavigationTarget | null,
-		from: NavigationTarget | null,
-		scrollY: number | undefined
-	}[] = [];
 
+	let scrollHistory: {
+		to: NavigationTarget | null;
+		from: NavigationTarget | null;
+		scrollY: number | undefined;
+	}[] = [];
 
 	beforeNavigate((navigation) => {
 		scrollHistory.push({
@@ -70,22 +68,20 @@
 
 	onMount(() => {
 		const unsub = onMessagingListener((payload) => {
-			if (Notification.permission == 'granted') {
-				const { notification, data } = payload;
-				const n = new Notification(notification?.title ?? "New content available", {
-					body: notification?.body,
-					icon: notification?.icon,
-					image: notification?.image,
-					data: data
-				});
-				n.onclick = function () {
-					data?.url && window.open(data.url);
-					n.close();
-				}
-			}
-		})
+			const { notification, data } = payload;
+			const n = new Notification(notification?.title ?? 'New content available', {
+				body: notification?.body,
+				icon: notification?.icon,
+				image: notification?.image,
+				data: data
+			});
+			n.onclick = function () {
+				data?.url && window.open(data.url);
+				n.close();
+			};
+		});
 		return () => unsub();
-	})
+	});
 </script>
 
 <svelte:head />

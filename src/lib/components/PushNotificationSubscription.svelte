@@ -20,6 +20,8 @@
     }
 
     const init = async () => {
+        const isSupported = 'serviceWorker' in navigator && 'Notification' in window;
+        !isSupported && console.log('Service Worker not supported. Skipping notifications.');
         let uuid = localStorage.getItem(NOTIFICATION_UUID_KEY);
         if (!uuid) {
             uuid = uuidV4();
@@ -27,7 +29,7 @@
         }
         const token = localStorage.getItem(NOTIFICATION_TOKEN_KEY);
         const dismissed = localStorage.getItem(NOTIFICATION_DISMISSED_KEY);
-        if (!dismissed && !token) {
+        if (isSupported && !dismissed && !token) {
             showSubscriptionPopup = true;
         }
     }
