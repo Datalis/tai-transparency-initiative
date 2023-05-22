@@ -281,15 +281,16 @@
 		padding-right: 2rem;
 		@media screen and (max-width: $md) {
 			max-width: 100vw;
+			padding-right: 0;
 		}
 	}
 
 	
 
 	.content_section .content_img {
-		@media screen and (max-width: $md) {
+		/* @media screen and (max-width: $md) {
 			padding: 0 1rem;
-		}
+		} */
 		:global {
 			img {
 				background-color: transparent;
@@ -309,9 +310,9 @@
 	// }
 
 	.content_section .post_content {
-		@media screen and (max-width: $md) {
+		/* @media screen and (max-width: $md) {
 			padding: 0 1rem;
-		}
+		} */
 
 		:global {
 			p {

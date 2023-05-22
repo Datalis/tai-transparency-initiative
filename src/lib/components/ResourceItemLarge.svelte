@@ -11,7 +11,9 @@
 		<div class="resource_item__wrapper--left">
 			<div class="img_wrapper">
 				<!-- <span class="category_tag category_{data?.type?.id}">{data?.type?.label}</span> -->
-				<Image size="small" image={data?.image} />
+				{#key data.id}
+					<Image size="small" image={data?.image} />
+				{/key}
 			</div>
 			{#if data?.links}
 				<div class="social_links">
