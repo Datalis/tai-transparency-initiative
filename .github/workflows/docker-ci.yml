@@ -1,9 +1,9 @@
 name: Docker Image CI
 on:
     push:
-        branches: ['dev']
-    pull_request:
-        branches: ['main']
+        branches: ['main', 'dev']
+    # pull_request:
+    #     branches: ['main']
 env:
     TAG: ''
 jobs:
@@ -20,10 +20,9 @@ jobs:
                 name: Set build tag
                 shell: bash
                 run: |
-                    event="${{github.event_name}}"
                     tag="${{github.ref_name}}"
     
-                    if [ "$event" = "pull_request" ]; then
+                    if [ "$tag" = "main" ]; then
                         tag="latest"
                     fi
     
