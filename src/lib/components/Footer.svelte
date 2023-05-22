@@ -3,7 +3,7 @@
 	import FacebookIcon from '$lib/assets/icons/facebook.svg?component';
 	import TwitterIcon from '$lib/assets/icons/twitter.svg?component';
 	import LinkedInIcon from '$lib/assets/icons/linkedin.svg?component';
-	import LinkIcon from '$lib/assets/icons/link.svg?component';
+	// import LinkIcon from '$lib/assets/icons/link.svg?component';
 </script>
 
 <footer class="footer bg_light">
@@ -133,10 +133,10 @@
 								<a href="/resources?type=1" class="text_gray">TAI weekly</a>
 							</li>
 							<li>
-								<a href="/resources?type=6" class="text_gray">Blogs</a>
+								<a href="/resources?type=8" class="text_gray">Blogs</a>
 							</li>
 							<li>
-								<a href="/resources?type=2" class="text_gray">Reports</a>
+								<a href="/resources?type=16" class="text_gray">Reports</a>
 							</li>
 							<li>
 								<a href="/resources?type=3" class="text_gray">Collaboration cases</a>
@@ -159,10 +159,10 @@
 							<a href="/resources?type=1" class="text_gray">TAI weekly</a>
 						</li>
 						<li>
-							<a href="/resources?type=6" class="text_gray">Blogs</a>
+							<a href="/resources?type=8" class="text_gray">Blogs</a>
 						</li>
 						<li>
-							<a href="/resources?type=2" class="text_gray">Reports</a>
+							<a href="/resources?type=16" class="text_gray">Reports</a>
 						</li>
 						<li>
 							<a href="/resources?type=3" class="text_gray">Collaboration cases</a>
