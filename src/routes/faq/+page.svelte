@@ -55,5 +55,9 @@
 		.divider {
 			width: 100% !important;
 		}
+
+		:global(.accordion-item-header) {
+			width: 100%;
+		}
 	}
 </style>
