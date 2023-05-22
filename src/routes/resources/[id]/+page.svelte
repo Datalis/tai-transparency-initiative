@@ -277,10 +277,10 @@
 	}
 
 	.content_section .content {
-		max-width: 60vw;
+		max-width: 65%;
 		padding-right: 2rem;
 		@media screen and (max-width: $md) {
-			max-width: 100vw;
+			max-width: 100%;
 			padding-right: 0;
 		}
 	}
@@ -414,10 +414,11 @@
 			.img_wrapper {
 				border-radius: 10px;
 				overflow: hidden;
-				height: 220px;
+				/* height: 220px; */
 				background-color: map-get($colors, 'panel');
 				:global {
 					img {
+						aspect-ratio: 4/2.2;
 						height: 100%;
 						object-fit: cover;
 						object-position: center;
