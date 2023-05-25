@@ -23,6 +23,7 @@ export type Resource = {
 	type: ResourceType;
 	links: { [key: string]: any }[];
 	url?: string;
+	slug?: string;
 }
 
 export type ResourceFilter = {

@@ -60,7 +60,7 @@ export const load: PageServerLoad = async ({ url }) => {
 				page,
 				pageSize
 			},
-			fields: ['id', 'summary', 'title', 'date', 'url'],
+			fields: ['id', 'summary', 'title', 'date', 'url', 'slug'],
 			populate: {
 				image: {
 					populate: '*'

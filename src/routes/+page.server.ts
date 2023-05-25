@@ -32,42 +32,12 @@ export const load: PageServerLoad = async () => {
 		populate: {
 			hero: {
 				fields: ['title', 'message']
-			},
-			// ResourcesSection: {
-			// 	fields: ['title'],
-			// 	populate: {
-			// 		resources: {
-			// 			fields: ['id', 'summary', 'title'],
-			// 			populate: {
-			// 				image: {
-			// 					populate: '*'
-			// 				},
-			// 				type: {
-			// 					fields: ['id', 'label']
-			// 				}
-			// 			}
-			// 		}
-			// 	}
-			// },
-			// resources: {
-			// 	fields: ['id', 'summary', 'title'],
-			// 	pagination: {
-			// 		limit: 3
-			// 	},
-			// 	populate: {
-			// 		image: {
-			// 			populate: '*'
-			// 		},
-			// 		type: {
-			// 			fields: ['id', 'label']
-			// 		}
-			// 	}
-			// }
+			}
 		},
 	}
 	const { data } = await get('home-page', params);
 	const { data: resources } = await get('wc-resources', {
-		fields: ['id', 'summary', 'title'],
+		fields: ['id', 'summary', 'title', 'slug'],
 		sort: 'date:DESC',
 		pagination: {
 			limit: 3

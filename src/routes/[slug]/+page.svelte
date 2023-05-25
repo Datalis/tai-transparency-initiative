@@ -16,12 +16,9 @@
 
 	export let data: PageData;
 
-	$: resource = data.detail.data;
-	$: meta = data.detail.meta;
-
-	$: related = data.related.data;
-
-	$: share_url = `https://www.transparency-initiative.org/resources/${resource.id}`;
+	$: resource = data.resource;
+	$: related = data.related;
+	$: share_url = `https://www.transparency-initiative.org/${resource.slug}`;
 
 	function gotoSub() {
 		// Get the email address from the input field
@@ -60,7 +57,7 @@
 		title={resource.title}
 		img="https://www.transparency-initiative.org{resource.image.url}"
 		description={resource.summary}
-		url="/resources/{resource.id}"
+		url="/{resource.slug}"
 		type="article"
 	/>
 </svelte:head>
@@ -181,7 +178,7 @@
 				<div class="divider divider_green divider_2 mb_4" />
 				<div class="related_articles_list">
 					{#each related as r}
-						<a href="/resources/{r.id}" class="related_article_item">
+						<a href="/{r.slug}" class="related_article_item">
 							<div class="img_wrapper">
 								<Image size="medium" image={r.image} />
 							</div>

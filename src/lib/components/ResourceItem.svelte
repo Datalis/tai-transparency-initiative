@@ -5,7 +5,7 @@
 	export let data: any;
 </script>
 
-<a href="/resources/{data?.id}" class="resource_item resource_item_{data?.type?.id}">
+<a href="/{data?.slug}" class="resource_item resource_item_{data?.type?.id}">
 	<div class="resource_item__image">
 		<Image image={data?.image} size="small" />
 	</div>
@@ -70,6 +70,7 @@
 
 		// TPA Full Disclosure
 
+		.resource_item__summary :global(p),
 		.resource_item__summary {
 			font-size: pxToRem(14);
 			display: -webkit-box;
@@ -82,8 +83,7 @@
 		}
 
 		.divider {
-			width: 100% !important;
-			margin-top: auto !important;
+			width: 100% !important;	
 		}
 
 		.resource_item__type:hover {
@@ -112,7 +112,7 @@
 			border-radius: 15px;
 			min-height: 200px;
 			:global(img) {
-				aspect-ratio: 4/2;
+				aspect-ratio: 4/2.2;
 				width: 100%;
 				height: 100%;
 				object-fit: cover;

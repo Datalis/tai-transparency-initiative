@@ -33,27 +33,11 @@ export const load: PageServerLoad = async () => {
 					}
 				}
 			},
-			// resources: {
-			// 	fields: ['title'],
-			// 	populate: {
-			// 		resources: {
-			// 			fields: ['id','summary', 'title'],
-			// 			populate: {
-			// 				image: {
-			// 					populate: '*'
-			// 				},
-			// 				type: {
-			// 					fields: ['id', 'label']
-			// 				}
-			// 			}
-			// 		}
-			// 	}
-			// }
 		}
 	}
 
 	const { data: resources } = await get('wc-resources', {
-		fields: ['id', 'summary', 'title'],
+		fields: ['id', 'summary', 'title', 'slug'],
 		sort: 'date:DESC',
 		pagination: {
 			limit: 3
