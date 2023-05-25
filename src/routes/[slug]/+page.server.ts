@@ -1,8 +1,5 @@
 import { API_SERVER } from "$env/static/private";
 import { get } from "$lib/api";
-import type { Response } from "$lib/types/data";
-import type { Resource } from "$lib/types/resources";
-import { redirect } from "@sveltejs/kit";
 import { error } from "@sveltejs/kit";
 import { parse } from 'node-html-parser';
 
