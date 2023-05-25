@@ -67,7 +67,7 @@
 			}
 
 			&--left {
-				width: 35%;
+				width: 30%;
 				flex-shrink: 0;
 				display: flex;
 				flex-direction: column;
