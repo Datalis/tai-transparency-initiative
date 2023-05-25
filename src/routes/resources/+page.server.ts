@@ -27,21 +27,9 @@ export const load: PageServerLoad = async ({ url }) => {
 				]
 			}
 		}
-		// if (type === '8') {
-		// 	tipo = {
-		// 		id: {
-		// 			$eq: type
-		// 		},
-		// 		$or: [
-		// 			{show_front: {
-		// 				$eq: false
-		// 			}}],
-
-		// 	};
-		// }
+		
 		const params: any = {
 			filters: {
-				// type: tipo,
 				$or: [
 					{
 						title: {

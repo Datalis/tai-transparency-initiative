@@ -7,6 +7,7 @@ export type ResourceType = {
 	createdAt: string;
 	updatedAt: string;
 	publishedAt: string;
+	description: string;
 }
 
 export type Resource = {

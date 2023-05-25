@@ -37,6 +37,8 @@
 
 	$: types = data.types.data || [];
 
+	$: typeDescription = types?.find(t => t.id.toString() == typeParam)?.description;
+
 	afterNavigate(() => {
 		let current = $page.url.searchParams.get('type');
 		if (current !== typeParam) {
@@ -59,14 +61,7 @@
 
 		if (browser) goto('/resources?' + params.toString());
 	}
-
-	// let timer: string | number | NodeJS.Timeout | undefined;
-	// const debounce = (v: any) => {
-	// 	clearTimeout(timer);
-	// 	timer = setTimeout(() => {
-	// 		searchParam = v;
-	// 	}, 500);
-	// };
+	
 	function onSearch(e: any) {
 		let s = e.target.value;
 		if (e.key == 'Enter')
@@ -80,6 +75,8 @@
 		if (currentTopic == topic) currentTopic = null;
 		else currentTopic = topic;
 	}
+	
+
 </script>
 
 <svelte:head>
@@ -104,16 +101,12 @@
 		/>
 	</div>
 	<section class="resource_list_section section bg_light">
-		{#if typeParam && +typeParam == 7}
+		{#if typeParam}
 			<div class="library_summary py_2">
-				<div class="container">
-					<div class="col-12">
-						<p class="m_0">
-							In this library you will find articles with tools, tips and reflections for the donor
-							community that have been published in our Weekly Newsletter. Use the filters or type
-							keywords in the search box. We hope you find it useful. Good search!
-						</p>
-					</div>
+				<div class="container display_flex align_center">
+					<p class="m_0">
+						{ typeDescription }
+					</p>
 				</div>
 			</div>
 		{/if}
