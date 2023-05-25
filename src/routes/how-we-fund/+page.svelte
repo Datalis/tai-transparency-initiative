@@ -135,6 +135,7 @@
 
 
 <svelte:head>
+	<link rel="preload" href={HeroImg1} as="image">
 	<Seo
 		title='Transparency & Accountability Initiative - How we fund' url="/how-we-fund"></Seo>
 </svelte:head>
@@ -161,10 +162,8 @@
 						decoding="sync"
 						loading="eager"
 						src={HeroImg1}
-						alt=""
+						alt="How we fund"
 					/>
-					<!-- <img class="img_wrapper_2 parallax" decoding="sync" loading="eager" src={HeroImg2} alt=""> -->
-					<!-- <Image image={hero?.image} size="medium" priority /> -->
 				</div>
 			</div>
 		</div>
@@ -308,13 +307,17 @@
 		}
 		.img_wrapper img {
 			margin: auto;
-			position: absolute;
-			top: 0;
+			position: relative;
+			/* top: 0;
 			bottom: 0;
 			right: -14%;
+			@media screen and (max-width: $lg) {
+				right: -30%;
+			}
 			@media screen and (max-width: $md) {
 				position: relative;
-			}
+				right: 0;
+			} */
 		}
 	}
 	.partners_section {

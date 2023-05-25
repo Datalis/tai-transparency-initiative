@@ -13,22 +13,6 @@ export const load: PageServerLoad = async () => {
 					}
 				}
 			},
-			// resources: {
-			// 	fields: ['title'],
-			// 	populate: {
-			// 		resources: {
-			// 			fields: ['id', 'summary', 'title'],
-			// 			populate: {
-			// 				image: {
-			// 					populate: '*'
-			// 				},
-			// 				type: {
-			// 					fields: ['id', 'label']
-			// 				}
-			// 			}
-			// 		}
-			// 	}
-			// },
 			WhyItMatters: {
 				fields: ['title', 'message'],
 				populate: {
@@ -50,7 +34,7 @@ export const load: PageServerLoad = async () => {
 
 	const { data } = await get('what-we-fund-page', params);
 	const { data: resources } = await get('wc-resources', {
-		fields: ['id', 'summary', 'title'],
+		fields: ['id', 'summary', 'title', 'slug'],
 		sort: 'date:DESC',
 		pagination: {
 			limit: 3

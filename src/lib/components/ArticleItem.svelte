@@ -8,9 +8,6 @@
 
 <div class="article_item">
 	<div class="article_item__image">
-		<!-- <div class="article_item__image--title">
-			<h6 class="my_2 text_green">{data?.name}</h6>
-		</div> -->
 		<Image size="small" image={data?.image} />
 	</div>
 	<h6 class="my_3">{data?.name}</h6>
@@ -51,14 +48,6 @@
 		&__image {
 			min-height: 250px;
 			background-color: map-get($colors, 'blue');
-			// &--title {
-			// 	display: flex;
-			// 	align-items: center;
-			// 	justify-content: center;
-			// 	h6 {
-			// 		font-size: pxToRem(14);
-			// 	}
-			// }
 			:global {
 				img {
 					aspect-ratio: 4/2;

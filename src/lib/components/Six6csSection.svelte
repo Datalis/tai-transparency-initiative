@@ -189,6 +189,7 @@
 			&__count {
 				width: 60px;
 				height: 60px;
+				min-width: 60px;
 				background-color: $green_light;
 				border-radius: 50%;
 				display: flex;

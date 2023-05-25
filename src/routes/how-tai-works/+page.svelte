@@ -146,6 +146,7 @@
 </script>
 
 <svelte:head>
+	<link rel="preload" as="image" href={HeroImg1}> 
 	<Seo
 		title='Transparency & Accountability Initiative - How TAI works' url="/how-tai-works"></Seo>
 </svelte:head>
@@ -166,24 +167,8 @@
 					</div>
 				</div>
 				<div class="img_wrapper col col_7 col_md_12 h_100">
-					<img src={HeroImg1} class="img_wrapper_2" alt="" />
-					<!-- <Image size="medium" image={hero?.image} priority /> -->
-					<!-- <img
-						class="img_wrapper_1 parallax"
-						data-depth="0.15"
-						decoding="sync"
-						loading="eager"
-						src={HeroImg1}
-						alt=""
-					/>
-					<img
-						class="img_wrapper_2 parallax"
-						data-depth="0"
-						decoding="sync"
-						loading="eager"
-						src={HeroImg2}
-						alt=""
-					/> -->
+					<img src={HeroImg1} class="img_wrapper_2" alt="How TAI works"
+						decoding="sync" loading="eager" />
 				</div>
 			</div>
 		</div>
@@ -461,25 +446,8 @@
 			// margin-bottom: 0 !important;
 			position: relative;
 
-			min-height: 25vh;
-
-			img.img_wrapper_1 {
-				bottom: 16%;
-				max-width: 59%;
-				margin: auto;
-			}
-			img.img_wrapper_2 {
-				bottom: 0;
-				@media screen and (max-width: $md) {
-					margin: auto;
-				}
-			}
 			img {
-				position: absolute;
-				max-width: 100%;
-				max-height: 100%;
-				left: 0;
-				right: 0;
+				position: relative;
 			}
 		}
 	}

@@ -7,6 +7,7 @@ export type ResourceType = {
 	createdAt: string;
 	updatedAt: string;
 	publishedAt: string;
+	description: string;
 }
 
 export type Resource = {
@@ -23,6 +24,7 @@ export type Resource = {
 	type: ResourceType;
 	links: { [key: string]: any }[];
 	url?: string;
+	slug?: string;
 }
 
 export type ResourceFilter = {

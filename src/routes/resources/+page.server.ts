@@ -27,21 +27,9 @@ export const load: PageServerLoad = async ({ url }) => {
 				]
 			}
 		}
-		// if (type === '8') {
-		// 	tipo = {
-		// 		id: {
-		// 			$eq: type
-		// 		},
-		// 		$or: [
-		// 			{show_front: {
-		// 				$eq: false
-		// 			}}],
-
-		// 	};
-		// }
+		
 		const params: any = {
 			filters: {
-				// type: tipo,
 				$or: [
 					{
 						title: {
@@ -60,7 +48,7 @@ export const load: PageServerLoad = async ({ url }) => {
 				page,
 				pageSize
 			},
-			fields: ['id', 'summary', 'title', 'date', 'url'],
+			fields: ['id', 'summary', 'title', 'date', 'url', 'slug'],
 			populate: {
 				image: {
 					populate: '*'

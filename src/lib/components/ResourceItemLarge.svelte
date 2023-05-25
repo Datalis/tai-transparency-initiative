@@ -7,12 +7,11 @@
 </script>
 
 <div class="resource_item">
-	<a href="/resources/{data?.id}" class="resource_item__wrapper">
+	<a href="/{data?.slug}" class="resource_item__wrapper">
 		<div class="resource_item__wrapper--left">
 			<div class="img_wrapper">
-				<!-- <span class="category_tag category_{data?.type?.id}">{data?.type?.label}</span> -->
 				{#key data.id}
-					<Image size="small" image={data?.image} />
+					<Image size="medium" image={data?.image} />
 				{/key}
 			</div>
 			{#if data?.links}
@@ -22,15 +21,6 @@
 							<FacebookIcon width="18" height="18" fill="white" />
 						</span>
 					{/each}
-					<!-- <span class="icon">
-					<FacebookIcon width="18" height="18" fill="white" />
-				</span>
-				<span class="icon">
-					<FacebookIcon width="18" height="18" fill="white" />
-				</span>
-				<span class="icon">
-					<FacebookIcon width="18" height="18" fill="white" />
-				</span> -->
 				</div>
 			{/if}
 		</div>
@@ -99,39 +89,6 @@
 							max-height: 100%;
 						}
 					}
-
-					// .category_tag {
-					// 	min-width: 140px;
-					// 	position: absolute;
-					// 	left: 0;
-					// 	top: 0;
-					// 	background-color: map-get($colors, 'green');
-					// 	padding: 0.25rem 1rem;
-					// 	text-transform: uppercase;
-					// 	font-weight: 800 !important;
-					// 	font-size: pxToRem(12);
-					// 	color: #fafafa;
-					// 	display: flex;
-					// 	justify-content: center;
-					// 	&.category_1 {
-					// 		background-color: map-get($colors, 'green');
-					// 	}
-					// 	&.category_2 {
-					// 		background-color: map-get($colors, 'gray');
-					// 	}
-					// 	&.category_3 {
-					// 		background-color: map-get($colors, 'dark');
-					// 	}
-					// 	&.category_4 {
-					// 		background-color: map-get($colors, 'danger');
-					// 	}
-					// 	&.category_5 {
-					// 		background-color: map-get($colors, 'blue_light');
-					// 	}
-					// 	&.category_6 {
-					// 		background-color: #bcbc00;
-					// 	}
-					// }
 				}
 				.social_links {
 					display: flex;

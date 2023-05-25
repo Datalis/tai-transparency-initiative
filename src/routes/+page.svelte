@@ -90,9 +90,9 @@
 </script>
 
 <svelte:head>
-	<link rel="preconnect" href={HeroImgLayer0} />
-	<link rel="preconnect" href={hero1_img} />
-	<link rel="preconnect" href={hero2_img} />
+	<link rel="preconnect" as="image" href={HeroImgLayer0} />
+	<link rel="preconnect" as="image" href={hero1_img} />
+	<link rel="preconnect" as="image" href={hero2_img} />
 
 	<Seo />
 </svelte:head>
@@ -105,9 +105,9 @@
 			<div class="row">
 				<div class="landing_section__hero--wrapper col col_12 show_on_md_and_down">
 					<div class="landing_section__hero landing_section__hero--mobile">
-						<img class="parallax" data-depth="0.15" src={HeroImgLayer0} alt="" />
-						<img class="parallax" data-depth="-0.15" src={hero2_img} alt="" />
-						<img class="parallax" data-depth="0.10" src={hero1_img} alt="" />
+						<img class="parallax" loading="eager" data-depth="0.15" src={HeroImgLayer0} alt="" />
+						<img class="parallax" loading="eager" data-depth="-0.15" src={hero2_img} alt="" />
+						<img class="parallax" loading="eager" data-depth="0.10" src={hero1_img} alt="" />
 					</div>
 				</div>
 
@@ -229,10 +229,6 @@
 			position: relative;
 			height: 100%;
 
-			// &--wrapper {
-			// 	// padding-top: 180px;
-			// }
-
 			&--mobile {
 				margin-top: 80px;
 				min-height: 50vh;
@@ -270,7 +266,7 @@
 					margin: auto;
 				}
 				&:nth-child(3) {
-					top: calc(100% - 500px);
+					top: calc(100% - 450px);
 					max-width: 700px;
 					// left: 0;
 					right: 0;
