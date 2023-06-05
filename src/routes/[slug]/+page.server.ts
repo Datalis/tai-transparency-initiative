@@ -68,6 +68,16 @@ const htmlContentParser = (content: string) => {
 			slider.replaceWith(swiper);
 		}
 	}
+
+	const images = root.querySelectorAll('img');
+	for (const img of images) {
+		const src = img.getAttribute('src');
+		if (src && src?.indexOf('wp-content') !== -1) {
+			img.removeAttribute('srcset');
+			img.setAttribute('src', src.replace('www.transparency-initiative.org', 'old.transparency-initiative.org'));
+		}
+	}
+
 	return root.toString();
 }
 

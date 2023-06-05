@@ -154,9 +154,9 @@
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
-	.green_text {
+	/* .green_text {
 		color: #00deb3;
-	}
+	} */
 	.landing_section {
 		padding: 0 !important;
 		min-height: 100vh;
@@ -227,7 +227,7 @@
 		position: relative;
 		z-index: 1;
 		background-color: #5c4aff;
-		.staff_list {
+		/* .staff_list {
 			.divider {
 				width: 100% !important;
 				margin-top: 0.5rem !important;
@@ -236,20 +236,20 @@
 			.divider.divider_blue {
 				opacity: 0.5;
 			}
-		}
+		} */
 	}
 	.committee_section {
 		background-color: #5c4aff;
 		position: relative;
 		z-index: 1;
-		.divider {
+		/* .divider {
 			width: 100% !important;
 			margin-top: 0.5rem !important;
 			margin-bottom: 0.5rem !important;
 		}
 		.divider.divider_blue {
 			opacity: 0.5;
-		}
+		} */
 	}
 	.about_us_page {
 		:global {
