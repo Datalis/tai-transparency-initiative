@@ -7,7 +7,7 @@
 
 <a href="/{data?.slug}" class="resource_item resource_item_{data?.type?.id}">
 	<div class="resource_item__image">
-		<Image image={data?.image} size="small" />
+		<Image image={data?.image} width={300} />
 	</div>
 	<a href="/resources?type={data?.type?.id}" class="mt_2"
 		><small class="resource_item__type text_gray text_uppercase font_regular"

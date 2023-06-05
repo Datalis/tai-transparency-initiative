@@ -96,7 +96,7 @@
 	<section class="content_section section bg_light">
 		<div class="container">
 			<div class="content">
-				<div class="content_img"><Image size="large" priority image={resource?.image} /></div>
+				<div class="content_img"><Image priority image={resource?.image} /></div>
 
 				<div class="post_content">
 					{@html resource.content}
@@ -180,7 +180,7 @@
 					{#each related as r}
 						<a href="/{r.slug}" class="related_article_item">
 							<div class="img_wrapper">
-								<Image size="medium" image={r.image} />
+								<Image width={300} image={r.image} />
 							</div>
 							<span class="text_dark my_3 font_bold">
 								{r.title}
@@ -411,11 +411,11 @@
 			.img_wrapper {
 				border-radius: 10px;
 				overflow: hidden;
-				/* height: 220px; */
+				aspect-ratio: 4/2.2;
 				background-color: map-get($colors, 'panel');
 				:global {
 					img {
-						aspect-ratio: 4/2.2;
+						width: 100%;
 						height: 100%;
 						object-fit: cover;
 						object-position: center;

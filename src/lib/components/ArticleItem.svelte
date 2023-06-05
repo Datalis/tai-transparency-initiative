@@ -8,7 +8,7 @@
 
 <div class="article_item">
 	<div class="article_item__image">
-		<Image size="small" image={data?.image} />
+		<Image image={data?.image} />
 	</div>
 	<h6 class="my_3">{data?.name}</h6>
 	<div class="divider divider_green" style="width: 100%" />

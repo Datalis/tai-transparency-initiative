@@ -1,29 +1,43 @@
 <script lang="ts">
+	import imageLoader from '$lib/utils/imageLoader';
 	import { Image } from 'svelte-lazy-loader';
 
 	export let image: any;
 	export let alt: string | undefined = undefined;
 	export let width: number | undefined = undefined;
 	export let height: number | undefined = undefined;
+	export let quality: number = 90;
 	export let size: 'thumbnail' | 'small' | 'medium' | 'large' = 'large';
 	export let priority: boolean = false;
+	export let sizes: string = '100vw';
 
-	$: img = image?.formats && image.formats[size] ? image.formats[size] : image;
+	$: img = image;
+	$: imgWidth = width || img?.width;
+	$: imgHeight = height || img?.height;
+
+	const getImage = (src: string, width: number, quality: number) =>
+		imageLoader({ src, width, quality });
+
+	const getSourceSet = (src: string, width: number, quality: number) => {
+		return `${imageLoader({src, width, quality})} 1x, ${imageLoader({src, width: width*2, quality})} 2x`;
+	}
 </script>
 
 <svelte:head>
 	{#if priority}
-		<link rel="preconnect" as="image" href={img?.url} />
+		<link rel="preconnect" as="image" href={getImage(img?.url, imgWidth, quality)} />
 	{/if}
 </svelte:head>
 
 <Image
-	sizes="100vw"
-	src={img?.url}
-	width={width?.toString() ?? img?.width}
-	height={height?.toString() ?? img?.height}
+	sizes={sizes}
+	src={getImage(img?.url, imgWidth, quality)}
+	srcset={getSourceSet(img?.url, imgWidth, quality)}
+	width={imgWidth}
+	height={imgHeight}
 	loading={priority ? 'eager' : 'lazy'}
-	alt={alt ?? img?.alternativeText}/>
+	alt={alt ?? img?.alternativeText}
+/>
 
 <!-- <img
 	loading={ priority ? 'eager' : 'lazy' }q

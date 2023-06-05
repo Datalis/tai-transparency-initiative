@@ -27,7 +27,7 @@
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div class="img_wrapper" on:click={toggleSwipe}>
 		<!-- <img src={FordImg} alt="" /> -->
-		<Image image={data?.image} size="small" />
+		<Image image={data?.image} width={400} />
 	</div>
 
 	<div class="content_wrapper">
@@ -35,12 +35,13 @@
 			<Swiper modules={[Pagination]} pagination={true}>
 				<SwiperSlide>
 					<div class="content_wrapper__slider--item">
-						<span
-							class="small font_bold"
+						<button
+							class="btn btn_small mr_3"
+							class:btn_blue={selectedTab == 'strategy'}
 							on:click={() => setCurrentTab('strategy')}
 						>
 							STRATEGY
-						</span>
+						</button>
 						<p>
 							Itʼs only when people become aware, have pathways for action, and engage, that
 							governments are held in account. Our three interconnected strategies focus on expanded

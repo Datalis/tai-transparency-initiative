@@ -11,7 +11,7 @@
 		<div class="resource_item__wrapper--left">
 			<div class="img_wrapper">
 				{#key data.id}
-					<Image size="medium" image={data?.image} />
+					<Image width={320} image={data?.image} />
 				{/key}
 			</div>
 			{#if data?.links}
