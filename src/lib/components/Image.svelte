@@ -7,7 +7,7 @@
 	export let width: number | undefined = undefined;
 	export let height: number | undefined = undefined;
 	export let quality: number = 90;
-	export let size: 'thumbnail' | 'small' | 'medium' | 'large' = 'large';
+	// export let size: 'thumbnail' | 'small' | 'medium' | 'large' = 'large';
 	export let priority: boolean = false;
 	export let sizes: string = '100vw';
 
@@ -25,7 +25,7 @@
 
 <svelte:head>
 	{#if priority}
-		<link rel="preconnect" as="image" href={getImage(img?.url, imgWidth, quality)} />
+		<link rel="preconnect" imagesrcset={getSourceSet(img?.url, imgWidth, quality)} as="image" href={getImage(img?.url, imgWidth, quality)} />
 	{/if}
 </svelte:head>
 
