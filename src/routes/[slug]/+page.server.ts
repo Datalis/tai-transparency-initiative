@@ -1,5 +1,6 @@
 import { API_SERVER } from "$env/static/private";
 import { get } from "$lib/api";
+import imageLoader from "$lib/utils/imageLoader";
 import { error } from "@sveltejs/kit";
 import { parse } from 'node-html-parser';
 
@@ -46,9 +47,10 @@ const htmlContentParser = (content: string) => {
 		const images = imagesAttr?.split('|') || [];
 		if (images.length) {
 			const slideMarkup = images?.map(i => {
+				const imgSrc = imageLoader({src: i, width: 2048, quality: 100});
 				const slide = `
 						<div class="swiper-slide">
-							<img src="${API_SERVER}${i}" alt="${i}" loading="lazy" decoding="async">
+							<img src="${imgSrc}" alt="${i}" loading="lazy" decoding="async" sizes="100vw">
 						</div>
 					`;
 				return slide;
@@ -66,6 +68,16 @@ const htmlContentParser = (content: string) => {
 			slider.replaceWith(swiper);
 		}
 	}
+
+	const images = root.querySelectorAll('img');
+	for (const img of images) {
+		const src = img.getAttribute('src');
+		if (src && src?.indexOf('wp-content') !== -1) {
+			img.removeAttribute('srcset');
+			img.setAttribute('src', src.replace('www.transparency-initiative.org', 'old.transparency-initiative.org'));
+		}
+	}
+
 	return root.toString();
 }
 

@@ -20,7 +20,7 @@
 		<div class="display_flex">
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div on:click={toggle} class="img_wrapper">
-				<Image image={data.image} size="thumbnail" />
+				<Image image={data.image} width={150} />
 			</div>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div on:click={toggle} class="content_wrapper display_flex flex_column">
