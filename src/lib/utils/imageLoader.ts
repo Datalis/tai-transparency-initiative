@@ -5,6 +5,7 @@ type ImageLoaderOptions = {
 }
 
 export default function imageLoader({src, width, quality}: ImageLoaderOptions): string {
+	if (!src) return 'https://placehold.co/600x400';
     const imageUrl = src.split('/');
 	let imageId;
 	if (src.indexOf('imagedelivery.net') !== -1) {
