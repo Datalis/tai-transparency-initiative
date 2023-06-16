@@ -36,7 +36,7 @@
 	width={imgWidth}
 	height={imgHeight}
 	loading={priority ? 'eager' : 'lazy'}
-	alt={alt ?? img?.alternativeText}
+	alt={alt || img?.alternativeText || img?.name}
 />
 
 <!-- <img

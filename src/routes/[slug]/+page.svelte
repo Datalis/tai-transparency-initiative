@@ -96,7 +96,7 @@
 	<section class="content_section section bg_light">
 		<div class="container">
 			<div class="content">
-				<div class="content_img"><Image priority image={resource?.image} /></div>
+				<div class="content_img"><Image priority image={resource?.image} alt={resource?.image_alt} /></div>
 
 				<div class="post_content">
 					{@html resource.content}
