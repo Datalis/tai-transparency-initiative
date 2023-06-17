@@ -274,10 +274,11 @@
 	}
 
 	.content_section .content {
-		max-width: 65%;
+		min-width: 65vw;
 		padding-right: 2rem;
 		@media screen and (max-width: $md) {
 			max-width: 100%;
+			min-height: 100%;
 			padding-right: 0;
 		}
 	}

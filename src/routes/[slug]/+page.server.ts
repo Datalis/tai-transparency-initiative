@@ -78,6 +78,15 @@ const htmlContentParser = (content: string) => {
 		}
 	}
 
+	const prose = root.querySelector('.tai-prose-html');
+	if (prose) {
+		const data = prose.getAttribute('inner');
+		if (data) {
+			const html = decodeURIComponent(atob(data));
+			prose.innerHTML = html;
+		}
+	}
+
 	return root.toString();
 }
 
