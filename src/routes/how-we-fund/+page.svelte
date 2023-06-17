@@ -307,8 +307,9 @@
 		}
 		.img_wrapper img {
 			margin: auto;
-			position: relative;
-			/* top: 0;
+			/* position: relative; */
+			position: absolute;
+			top: 0;
 			bottom: 0;
 			right: -14%;
 			@media screen and (max-width: $lg) {
@@ -317,7 +318,7 @@
 			@media screen and (max-width: $md) {
 				position: relative;
 				right: 0;
-			} */
+			}
 		}
 	}
 	.partners_section {

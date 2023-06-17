@@ -324,20 +324,25 @@
 			margin: auto !important;
 			// margin-bottom: 0 !important;
 			position: relative;
-			display: flex;
+			/* display: flex; */
 
 			img {
-				position: relative;
+				/* position: relative; */
+				position: absolute;
 				max-width: 75%;
-				height: 100%;
+				/* height: 100%; */
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
 				
 				margin: auto;
 				
-				/* @media screen and (max-width: $md) {
+				@media screen and (max-width: $md) {
 					position: relative;
 					max-width: 100%;
 					margin-top: 1rem;
-				} */
+				}
 			}
 		}
 	}
