@@ -1,4 +1,3 @@
-import { API_SERVER } from "$env/static/private";
 import { get } from "$lib/api";
 import imageLoader from "$lib/utils/imageLoader";
 import { error } from "@sveltejs/kit";
@@ -47,7 +46,7 @@ const htmlContentParser = (content: string) => {
 		const images = imagesAttr?.split('|') || [];
 		if (images.length) {
 			const slideMarkup = images?.map(i => {
-				const imgSrc = imageLoader({src: i, width: 2048, quality: 100});
+				const imgSrc = imageLoader({ src: i, width: 2048, quality: 100 });
 				const slide = `
 						<div class="swiper-slide">
 							<img src="${imgSrc}" alt="${i}" loading="lazy" decoding="async" sizes="100vw">
@@ -78,15 +77,25 @@ const htmlContentParser = (content: string) => {
 		}
 	}
 
-	const prose = root.querySelector('.tai-prose-html');
-	if (prose) {
-		const data = prose.getAttribute('inner');
-		if (data) {
-			const html = decodeURIComponent(atob(data));
-			prose.innerHTML = html;
+	const proses = root.querySelectorAll('.tai-prose-html');
+	if (proses && proses.length) {
+		for (const p of proses) {
+			const data = p.getAttribute('inner');
+			if (data) {
+				const html = decodeURIComponent(atob(data));
+				p.innerHTML = html;
+			}
 		}
 	}
 
+	const pdfs = root.querySelectorAll('.tai-embed-pdf-iframe');
+	if (pdfs.length) {
+		for (const pdf of pdfs) {
+			const url = pdf.getAttribute('src');
+			pdf.replaceWith(`
+			<a href="${url}" target="_blank" class="pdf-viewer" data-pdf-url="${url}"></a>`);
+		}
+	}
 	return root.toString();
 }
 

@@ -13,6 +13,7 @@
 	import 'swiper/css';
 	import 'swiper/css/pagination';
 	import 'swiper/css/navigation';
+	import { renderPdfViewer } from '$lib/utils/pdfjs';
 
 	export let data: PageData;
 
@@ -49,6 +50,8 @@
 				prevEl: '.swiper-button-prev'
 			}
 		});
+
+		renderPdfViewer('.pdf-viewer');
 	});
 </script>
 
@@ -96,7 +99,9 @@
 	<section class="content_section section bg_light">
 		<div class="container">
 			<div class="content">
-				<div class="content_img"><Image priority image={resource?.image} alt={resource?.image_alt} /></div>
+				<div class="content_img">
+					<Image priority image={resource?.image} alt={resource?.image_alt} />
+				</div>
 
 				<div class="post_content">
 					{@html resource.content}
@@ -283,8 +288,6 @@
 		}
 	}
 
-	
-
 	.content_section .content_img {
 		/* @media screen and (max-width: $md) {
 			padding: 0 1rem;
@@ -346,6 +349,10 @@
 
 			blockquote a {
 				color: currentColor;
+			}
+
+			.pdf-viewer {
+				min-height: 400px;
 			}
 		}
 	}
