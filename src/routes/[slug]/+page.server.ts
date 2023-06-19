@@ -1,5 +1,6 @@
 import { get } from "$lib/api";
 import imageLoader from "$lib/utils/imageLoader";
+import { generatePdfPreview } from "$lib/utils/pdfjs";
 import { error } from "@sveltejs/kit";
 import { parse } from 'node-html-parser';
 
@@ -38,7 +39,7 @@ const loadRelatedResources = async (resource: any) => {
 	return data;
 }
 
-const htmlContentParser = (content: string) => {
+const htmlContentParser = async (content: string) => {
 	const root = parse(content);
 	const slider = root.querySelector('.tai-prose-carousel');
 	if (slider) {
@@ -92,8 +93,15 @@ const htmlContentParser = (content: string) => {
 	if (pdfs.length) {
 		for (const pdf of pdfs) {
 			const url = pdf.getAttribute('src');
-			pdf.replaceWith(`
-			<a href="${url}" target="_blank" class="pdf-viewer" data-pdf-url="${url}"></a>`);
+			if (url) {
+				const preview = await generatePdfPreview(url);
+				pdf.replaceWith(`
+					<a href="${url}" target="_blank" rel="noopener" class="pdf-viewer">
+						<img src="${preview}" alt="PDF Preview" loading="lazy" decoding="async" sizes="100vw">
+					</a>`);
+			}
+			// pdf.replaceWith(`
+			// <a href="${url}" target="_blank" class="pdf-viewer" data-pdf-url="${url}"></a>`);
 		}
 	}
 	return root.toString();
@@ -117,7 +125,7 @@ export async function load({ params }: { [key: string]: any }) {
 		const { data } = await get('wc-resources', queryParams);
 		if (data && data.length) {
 			const resource = data[0];
-			resource.content = htmlContentParser(resource.content);
+			resource.content = await htmlContentParser(resource.content);
 			const related = loadRelatedResources(resource);
 
 			return {

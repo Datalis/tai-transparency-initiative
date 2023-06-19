@@ -30,7 +30,7 @@ const config = {
 		},
 		serviceWorker: {
 			register: true
-		}
+		},
 	}
 };
 

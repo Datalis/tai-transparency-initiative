@@ -5,8 +5,11 @@ import { imagetools } from 'vite-imagetools';
 
 /** @type {import('vite').UserConfig} */
 const config = {
+	esbuild: {
+		exclude: ['canvas'],
+	},
 	plugins: [
-		sveltekit(),
+		sveltekit({}),
 		imagetools({
 			removeMetadata: true
 		}),
