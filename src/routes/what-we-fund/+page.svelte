@@ -345,6 +345,10 @@
 				}
 			}
 		}
+
+		:global(p) {
+			text-align: left;
+		}
 	}
 	.funding_section {
 		display: flex !important;

@@ -320,6 +320,10 @@
 				right: 0;
 			}
 		}
+
+		:global(p) {
+			text-align: left;
+		}
 	}
 	.partners_section {
 		position: relative;

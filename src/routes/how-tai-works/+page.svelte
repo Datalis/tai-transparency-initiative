@@ -450,6 +450,10 @@
 				position: relative;
 			}
 		}
+
+		:global(p) {
+			text-align: left;
+		}
 	}
 
 	.progress_model_section {
