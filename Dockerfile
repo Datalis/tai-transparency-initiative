@@ -1,5 +1,8 @@
 # stage build
-FROM node:lts-alpine as base
+FROM node:lts-slim as base
+
+RUN apt update
+RUN apt install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev -y
 
 FROM base as builder
 
@@ -27,7 +30,7 @@ WORKDIR /usr/local/app
 COPY --from=builder /usr/local/app/package*.json ./
 
 # clean install dependencies, no devDependencies, no prepare script
-RUN npm ci --production --ignore-scripts
+RUN npm ci --production
 
 # remove potential security issues
 RUN npm audit fix
