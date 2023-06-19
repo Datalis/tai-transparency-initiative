@@ -10,7 +10,14 @@ export const generatePdfPreview = async (url: string) => {
       cache: 'force-cache'
     }).then(res => res.arrayBuffer());
 
-    const pdfjsLib = require('pdfjs-dist');
+    let pdfjsLib: any;
+
+    if (!process.env.NETLIFY) {
+      pdfjsLib = require('pdfjs-dist');
+    } else {
+      pdfjsLib = (await import('pdfjs-dist')).default;
+    }
+
     const pdf = await pdfjsLib.getDocument({
       data
     }).promise;
