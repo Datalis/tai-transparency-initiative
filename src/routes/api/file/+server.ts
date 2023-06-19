@@ -9,7 +9,7 @@ export const GET = async ({ url }: RequestEvent) => {
         return error(400, 'Missing url parameter');
     }
 
-    const data = await fetch(decodeURIComponent(fileUrl)).then(res => res.arrayBuffer());
+    const data = await fetch(fileUrl).then(res => res.arrayBuffer());
 
     return new Response(data);
 }

@@ -13,6 +13,7 @@
 	import 'swiper/css';
 	import 'swiper/css/pagination';
 	import 'swiper/css/navigation';
+	import { renderPdfViewer } from '$lib/utils/pdfjs';
 
 	export let data: PageData;
 
@@ -50,7 +51,7 @@
 			}
 		});
 
-		// renderPdfViewer('.pdf-viewer');
+		renderPdfViewer('.pdf-viewer');
 	});
 </script>
 
