@@ -2,6 +2,8 @@ import { createCanvas } from 'canvas';
 import { createRequire } from 'module';
 import pdfjsLib from 'pdfjs-dist';
 
+pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.js';
+
 const require = createRequire(import.meta.url);
 
 export const generatePdfPreview = async (url: string) => {
