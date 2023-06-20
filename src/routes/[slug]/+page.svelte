@@ -178,7 +178,7 @@
 					{/each}
 				</div>
 				<div class="social">
-					<h4 class="mb_4">Follow us</h4>
+					<h4 class="mb_4">Follow us!</h4>
 					<div class="divider divider_green divider_2 mb_4" />
 
 					<div class="twitter-feed">
@@ -196,7 +196,7 @@
 										<small class="text_dark font_bold">{twit.user.name}</small>
 									</a>
 								</div>
-								<small>
+								<small class="mt_2">
 									{@html parseTwitterText(twit.full_text)}
 								</small>
 							</div>
@@ -434,7 +434,7 @@
 	}
 	.content_section .social {
 		.twitter-feed {
-			margin: 0 auto;
+			margin-top: 2rem;
 		}
 		.twitter-feed .twit {
 			margin-bottom: 1rem;
@@ -455,7 +455,7 @@
 		}
 
 		.youtube-latest {
-			margin-top: 2rem;
+			margin-top: 3rem;
 			display: flex;
 			flex-direction: column;
 			text-decoration: none;

@@ -17,7 +17,7 @@ export const getLatestPostsFromTwitter = async () => {
 
     const data = await twitter.tweets.statusesUserTimeline({
         screen_name: 'TAInitiative',
-        count: 7,
+        count: 1,
         exclude_replies: true,
         include_rts: false,
         tweet_mode: 'extended'
