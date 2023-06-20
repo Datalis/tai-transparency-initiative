@@ -17,10 +17,12 @@ export const actions: Actions = {
 				data: { Name: name, Email: email, Subscription: subscribe ? 'yes' : 'no' }
 			});
 			if (result.error) {
-				return fail(400, JSON.parse(result.err));
+				console.error(result.error);
+				return fail(400, { email, name });
 			}
-			return JSON.parse(result);
+			return { status: 200, body: { email, name } };
 		} catch (error) {
+			console.error(error);
 			return fail(400);
 		}
 	}

@@ -1,4 +1,8 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
+	import { page } from '$app/stores';
+
+	export let form: any;
 </script>
 
 <section id="founders-exits" class="founders_section section mt_5">
@@ -8,7 +12,7 @@
 				<div class="col col_6 col_lg_12">
 					<div class="display_flex flex_column justify_center box">
 						<h6 class="mb_4">Let the TAI Secretariat know how we can help.</h6>
-						<form action="">
+						<form action="{$page.url.pathname}?/join" method="post" use:enhance>
 							<div class="form_control">
 								<input
 									type="text"
@@ -16,16 +20,24 @@
 									name="name"
 									id="name"
 									placeholder="Full name"
+									value={form?.name ?? ''}
 								/>
+								{#if form?.nameError}
+									<small class="text_danger">The name field is required</small>
+								{/if}
 							</div>
 							<div class="form_control mt_4">
 								<input
 									type="email"
 									class="form_control__input"
-									name="name"
-									id="name"
+									name="email"
+									id="email"
 									placeholder="Email"
+									value={form?.email ?? ''}
 								/>
+								{#if form?.emailError}
+									<small class="text_danger">The email field is required</small>
+								{/if}
 							</div>
 							<div class="form_control form_control_check mt_4">
 								<label for="subscribe">
@@ -39,7 +51,7 @@
 									Subscribe to TAI's Weekly
 								</label>
 							</div>
-							<button class="btn btn_blue mt_4">Get in Touch</button>
+							<button class="btn btn_blue mt_4" type="submit">Get in Touch</button>
 						</form>
 					</div>
 				</div>

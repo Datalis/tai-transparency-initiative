@@ -21,6 +21,7 @@
 
 	import ParticipatoryVideoPoster from '$lib/assets/images/participatory-video-poster.webp';
 	import Seo from '$lib/components/Seo.svelte';
+	import type { ActionData } from './$types';
 
 	let partnersSlide: HTMLElement;
 	let windowWidth: number;
@@ -29,6 +30,7 @@
 	let partnersSlideWidth = 0;
 
 	export let data: PageData;
+	export let form: ActionData;
 
 	$: hero = data?.hero;
 	$: resources = data?.resources;
@@ -244,7 +246,7 @@
 			</div>
 		</div>
 	</section>
-	<FoundersExitsSection />
+	<FoundersExitsSection {form} />
 	<section id="participatory-strategy">
 		<div class="participatory_section section">
 			<div class="container">
