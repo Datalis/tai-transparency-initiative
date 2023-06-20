@@ -1,5 +1,5 @@
-import type { Author } from "./author";
-import type { Image } from "./image";
+import type { Author } from './author';
+import type { Image } from './image';
 
 export type ResourceType = {
 	id: number;
@@ -8,7 +8,7 @@ export type ResourceType = {
 	updatedAt: string;
 	publishedAt: string;
 	description: string;
-}
+};
 
 export type Resource = {
 	id: number;
@@ -25,11 +25,11 @@ export type Resource = {
 	links: { [key: string]: any }[];
 	url?: string;
 	slug?: string;
-}
+};
 
 export type ResourceFilter = {
 	search?: string;
 	type?: number;
 	sortBy?: string;
 	page?: number;
-}
+};

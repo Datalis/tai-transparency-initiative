@@ -49,6 +49,8 @@
 				prevEl: '.swiper-button-prev'
 			}
 		});
+
+		// renderPdfViewer('.pdf-viewer');
 	});
 </script>
 
@@ -96,7 +98,9 @@
 	<section class="content_section section bg_light">
 		<div class="container">
 			<div class="content">
-				<div class="content_img"><Image priority image={resource?.image} /></div>
+				<div class="content_img">
+					<Image priority image={resource?.image} alt={resource?.image_alt} />
+				</div>
 
 				<div class="post_content">
 					{@html resource.content}
@@ -274,15 +278,14 @@
 	}
 
 	.content_section .content {
-		max-width: 65%;
+		min-width: 65vw;
 		padding-right: 2rem;
 		@media screen and (max-width: $md) {
 			max-width: 100%;
+			min-height: 100%;
 			padding-right: 0;
 		}
 	}
-
-	
 
 	.content_section .content_img {
 		/* @media screen and (max-width: $md) {
@@ -345,6 +348,10 @@
 
 			blockquote a {
 				color: currentColor;
+			}
+
+			.pdf-viewer {
+				min-height: 400px;
 			}
 		}
 	}

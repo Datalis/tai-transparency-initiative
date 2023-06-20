@@ -2,7 +2,6 @@
 	import ResourceItem from './ResourceItem.svelte';
 
 	export let resources: any;
-
 </script>
 
 <section id="resources" class="resources_section section bg_light">
@@ -35,7 +34,6 @@
 		}
 
 		@media (max-width: $sm) {
-
 			.title {
 				flex-direction: column;
 				margin-bottom: 2rem;

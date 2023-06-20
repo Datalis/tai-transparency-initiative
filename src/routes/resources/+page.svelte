@@ -37,7 +37,7 @@
 
 	$: types = data.types.data || [];
 
-	$: typeDescription = types?.find(t => t.id.toString() == typeParam)?.description;
+	$: typeDescription = types?.find((t) => t.id.toString() == typeParam)?.description;
 
 	afterNavigate(() => {
 		let current = $page.url.searchParams.get('type');
@@ -61,22 +61,17 @@
 
 		if (browser) goto('/resources?' + params.toString());
 	}
-	
+
 	function onSearch(e: any) {
 		let s = e.target.value;
-		if (e.key == 'Enter')
-			searchParam = s;
-		else if (s == '')
-			searchParam = null;
-		
+		if (e.key == 'Enter') searchParam = s;
+		else if (s == '') searchParam = null;
 	}
 
 	function filterByTopic(topic: number) {
 		if (currentTopic == topic) currentTopic = null;
 		else currentTopic = topic;
 	}
-	
-
 </script>
 
 <svelte:head>
@@ -105,7 +100,7 @@
 			<div class="library_summary py_2">
 				<div class="container display_flex align_center">
 					<p class="m_0">
-						{ typeDescription }
+						{typeDescription}
 					</p>
 				</div>
 			</div>

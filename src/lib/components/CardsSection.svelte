@@ -4,7 +4,6 @@
 	import Card2Img from '$lib/assets/images/home/cards/2.webp';
 	import Card3Img from '$lib/assets/images/home/cards/3.webp';
 
-
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap/dist/gsap';
 
@@ -24,18 +23,14 @@
 				}
 			});
 		}
-
 	});
-
 
 	let cContent1 = 0;
 	let cContent2 = 0;
 	let cContent3 = 0;
 </script>
 
-<svelte:head>
-	
-</svelte:head>
+<svelte:head />
 
 <svelte:window bind:innerWidth={windowWidth} />
 
@@ -49,7 +44,7 @@
 							<img src={CardBg} alt="" />
 							<img class="overlay__img" src={Card1Img} alt="" />
 						</a>
-						<div class="content" bind:clientHeight={cContent1} >
+						<div class="content" bind:clientHeight={cContent1}>
 							<a href="/what-we-fund"><h3 class="text_dark">What we fund</h3></a>
 							<div class="divider divider_light divider_2" />
 							<div class="content__text">
@@ -75,7 +70,7 @@
 							<img src={CardBg} alt="" />
 							<img class="overlay__img" src={Card2Img} alt="" />
 						</a>
-						<div class="content" bind:clientHeight={cContent2} >
+						<div class="content" bind:clientHeight={cContent2}>
 							<a href="/how-we-fund">
 								<h3 class="text_dark">How we fund</h3>
 							</a>
@@ -90,9 +85,7 @@
 								<a href="/how-we-fund#participatory-strategy" class="text_dark display_block"
 									>Participatory Strategy</a
 								>
-								<a href="/how-we-fund#resources" class="text_dark display_block">
-									Resources
-								</a>
+								<a href="/how-we-fund#resources" class="text_dark display_block"> Resources </a>
 							</div>
 						</div>
 					</div>
@@ -187,7 +180,7 @@
 					border-bottom-right-radius: 15px;
 					overflow: hidden;
 					position: relative;
-					box-shadow: 1px 10px 22px -9px rgba(0,0,0,0.75);
+					box-shadow: 1px 10px 22px -9px rgba(0, 0, 0, 0.75);
 					img {
 						width: 100%;
 						height: 100%;
@@ -234,7 +227,7 @@
 					margin: 0;
 					line-height: 80px;
 					font-weight: 600;
-					
+
 					font-size: pxToRem(30);
 				}
 

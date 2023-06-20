@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: / 
+sitemap: https://www.transparency-initiative.org/sitemap
+sitemap: https://www.transparency-initiative.org/sitemap/latest

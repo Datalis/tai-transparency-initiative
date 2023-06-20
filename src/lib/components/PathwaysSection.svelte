@@ -181,7 +181,8 @@
 			<div class="divider divider_green divider_2 my_4" />
 			<p class="mt_4 w_50">
 				This represents critical causal pathways common to TAI donor members’ theories of change. It
-				is in no way a representation of pathways to change for the Transparency, Participation and Accountability field as a whole.
+				is in no way a representation of pathways to change for the Transparency, Participation and
+				Accountability field as a whole.
 			</p>
 
 			{#if windowWidth < 768}

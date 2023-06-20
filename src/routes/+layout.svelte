@@ -2,7 +2,6 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import NProgress from 'nprogress';
-
 	import { navigating } from '$app/stores';
 	import { gsap } from 'gsap/dist/gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';

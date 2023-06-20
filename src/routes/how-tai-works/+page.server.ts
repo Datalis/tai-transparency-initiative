@@ -1,5 +1,5 @@
-import { get } from "$lib/api";
-import type { PageServerLoad } from ".svelte-kit/types/src/routes/$types";
+import { get } from '$lib/api';
+import type { PageServerLoad } from '.svelte-kit/types/src/routes/$types';
 
 export const load: PageServerLoad = async () => {
 	let params = {
@@ -8,7 +8,7 @@ export const load: PageServerLoad = async () => {
 				fields: ['title', 'message'],
 				populate: {
 					image: {
-						populate: "*"
+						populate: '*'
 					}
 				}
 			},
@@ -32,9 +32,9 @@ export const load: PageServerLoad = async () => {
 						}
 					}
 				}
-			},
+			}
 		}
-	}
+	};
 
 	const { data: resources } = await get('wc-resources', {
 		fields: ['id', 'summary', 'title', 'slug'],
@@ -54,4 +54,4 @@ export const load: PageServerLoad = async () => {
 
 	const { data } = await get('how-we-work-page', params);
 	return { ...data, resources };
-}
+};

@@ -4,4 +4,4 @@ export type Author = {
 	createdAt: string;
 	updatedAt: string;
 	publishedAt: string;
-}
+};

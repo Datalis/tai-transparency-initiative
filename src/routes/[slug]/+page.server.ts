@@ -1,7 +1,7 @@
-import { API_SERVER } from "$env/static/private";
-import { get } from "$lib/api";
-import imageLoader from "$lib/utils/imageLoader";
-import { error } from "@sveltejs/kit";
+import { get } from '$lib/api';
+import imageLoader from '$lib/utils/imageLoader';
+import { generatePdfPreview } from '$lib/utils/pdfjs';
+import { error } from '@sveltejs/kit';
 import { parse } from 'node-html-parser';
 
 const loadRelatedResources = async (resource: any) => {
@@ -11,15 +11,15 @@ const loadRelatedResources = async (resource: any) => {
 		filters: {
 			type: {
 				id: {
-					$eq: resource?.type?.id,
+					$eq: resource?.type?.id
 				}
 			},
 			id: {
-				$not: resource?.id,
+				$not: resource?.id
 			}
 		},
 		pagination: {
-			limit: 2,
+			limit: 2
 		},
 		populate: {
 			image: {
@@ -32,29 +32,31 @@ const loadRelatedResources = async (resource: any) => {
 				fields: ['name', 'role']
 			}
 		}
-	}
+	};
 
 	const { data } = await get('wc-resources', queryParams);
 
 	return data;
-}
+};
 
-const htmlContentParser = (content: string) => {
+const htmlContentParser = async (content: string) => {
 	const root = parse(content);
 	const slider = root.querySelector('.tai-prose-carousel');
 	if (slider) {
 		const imagesAttr = slider.getAttribute('images');
 		const images = imagesAttr?.split('|') || [];
 		if (images.length) {
-			const slideMarkup = images?.map(i => {
-				const imgSrc = imageLoader({src: i, width: 2048, quality: 100});
-				const slide = `
+			const slideMarkup = images
+				?.map((i) => {
+					const imgSrc = imageLoader({ src: i, width: 2048, quality: 100 });
+					const slide = `
 						<div class="swiper-slide">
 							<img src="${imgSrc}" alt="${i}" loading="lazy" decoding="async" sizes="100vw">
 						</div>
 					`;
-				return slide;
-			}).join('\n');
+					return slide;
+				})
+				.join('\n');
 			const swiper = parse(`
 					<div class="swiper">
 						<div class="swiper-wrapper">
@@ -74,16 +76,43 @@ const htmlContentParser = (content: string) => {
 		const src = img.getAttribute('src');
 		if (src && src?.indexOf('wp-content') !== -1) {
 			img.removeAttribute('srcset');
-			img.setAttribute('src', src.replace('www.transparency-initiative.org', 'old.transparency-initiative.org'));
+			img.setAttribute(
+				'src',
+				src.replace('www.transparency-initiative.org', 'old.transparency-initiative.org')
+			);
 		}
 	}
 
-	return root.toString();
-}
+	const proses = root.querySelectorAll('.tai-prose-html');
+	if (proses && proses.length) {
+		for (const p of proses) {
+			const data = p.getAttribute('inner');
+			if (data) {
+				const html = decodeURIComponent(atob(data));
+				p.innerHTML = html;
+			}
+		}
+	}
 
+	const pdfs = root.querySelectorAll('.tai-embed-pdf-iframe');
+	if (pdfs.length) {
+		for (const pdf of pdfs) {
+			const url = pdf.getAttribute('src');
+			if (url) {
+				const preview = await generatePdfPreview(url);
+				pdf.replaceWith(`
+					<a href="${url}" target="_blank" rel="noopener" class="pdf-viewer">
+						<img src="${preview}" alt="PDF Preview" loading="lazy" decoding="async" sizes="100vw">
+					</a>`);
+			}
+			// pdf.replaceWith(`
+			// <a href="${url}" target="_blank" class="pdf-viewer" data-pdf-url="${url}"></a>`);
+		}
+	}
+	return root.toString();
+};
 
 export async function load({ params }: { [key: string]: any }) {
-
 	const { slug } = params;
 
 	const queryParams = {
@@ -99,18 +128,17 @@ export async function load({ params }: { [key: string]: any }) {
 		const { data } = await get('wc-resources', queryParams);
 		if (data && data.length) {
 			const resource = data[0];
-			resource.content = htmlContentParser(resource.content);
+			resource.content = await htmlContentParser(resource.content);
 			const related = loadRelatedResources(resource);
 
 			return {
 				resource,
 				related
-			}
-
+			};
 		} else {
 			throw error(404, 'Not found');
 		}
 	} catch (e: any) {
-		throw error(e?.status || 500, `${e?.body || ""}`);
+		throw error(e?.status || 500, `${e?.body || ''}`);
 	}
 }

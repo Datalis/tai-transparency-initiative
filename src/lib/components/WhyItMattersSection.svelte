@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ResourceItem from "./ResourceItem.svelte";
+	import ResourceItem from './ResourceItem.svelte';
 
 	export let data: any;
 
@@ -21,12 +21,13 @@
 		<div class="articles_row row">
 			{#each resources as res}
 				<div class="col col_4 col_md_12">
-					<ResourceItem data={res}></ResourceItem>
+					<ResourceItem data={res} />
 				</div>
 			{/each}
 		</div>
 	</div>
 </section>
+
 <style lang="scss" scoped>
 	$md: map-get($grid-breakpoints, 'md');
 	.why_matters_section {

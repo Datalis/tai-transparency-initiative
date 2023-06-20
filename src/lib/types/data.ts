@@ -4,10 +4,10 @@ export type Meta = {
 		pageSize: number;
 		pageCount: number;
 		total: number;
-	}
-}
+	};
+};
 
 export type Response<T> = {
 	data: T;
-	meta: Meta,
-}
+	meta: Meta;
+};

@@ -12,8 +12,7 @@
 </script>
 
 <svelte:head>
-	<Seo
-		title='Transparency & Accountability Initiative - FAQs' url="/faq"></Seo>
+	<Seo title="Transparency & Accountability Initiative - FAQs" url="/faq" />
 </svelte:head>
 
 <div class="page">

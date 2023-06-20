@@ -30,7 +30,6 @@
 </a>
 
 <style lang="scss">
-
 	.resource_item.resource_item_4 {
 		.divider,
 		.resource_item__type,
@@ -79,21 +78,21 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 			line-height: 28px;
-			margin: .75rem 0;
+			margin: 0.75rem 0;
 		}
 
 		.divider {
-			width: 100% !important;	
+			width: 100% !important;
 		}
 
 		.resource_item__type:hover {
 			color: map-get($colors, 'green');
 		}
 		&__link {
-			color: #00DEB3;
+			color: #00deb3;
 		}
 		&__link:hover {
-			color: #43B79E;
+			color: #43b79e;
 		}
 
 		&__type {

@@ -1,4 +1,4 @@
-import type { Image } from "./image";
+import type { Image } from './image';
 
 export type Member = {
 	id: number;
@@ -8,4 +8,4 @@ export type Member = {
 	contact?: string;
 	project?: string;
 	[key: string]: any;
-}
+};

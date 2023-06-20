@@ -58,8 +58,8 @@
 						practice, and to manage the knock on effects for a field. We have been trying to document
 						learnings as in this
 						<a
-								class="text_green font_regular"
-								href="https://cep.org/heading-for-the-exit-5-considerations/">blog</a
+							class="text_green font_regular"
+							href="https://cep.org/heading-for-the-exit-5-considerations/">blog</a
 						>. Are you planning a funding exit? Interested in how other funder approaches? Donʼt
 						hesitate to get in touch.
 					</p>
@@ -72,13 +72,13 @@
 <style lang="scss" scoped>
 	$lg: map-get($grid-breakpoints, 'lg');
 	.box {
-		background-color: #00DEB3;
+		background-color: #00deb3;
 		border-radius: 15px;
 		padding: 2rem 4rem;
 		color: #0a132d;
 		margin: 0px 2rem 0px 0px;
 		// shadow to box
-		box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.90);
+		box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.9);
 		@media (max-width: $lg) {
 			height: auto;
 			margin: 1rem;

@@ -133,11 +133,9 @@
 	});
 </script>
 
-
 <svelte:head>
-	<link rel="preload" href={HeroImg1} as="image">
-	<Seo
-		title='Transparency & Accountability Initiative - How we fund' url="/how-we-fund"></Seo>
+	<link rel="preload" href={HeroImg1} as="image" />
+	<Seo title="Transparency & Accountability Initiative - How we fund" url="/how-we-fund" />
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -263,7 +261,7 @@
 			</div>
 		</div>
 	</section>
-	<ResourcesSection resources={resources} />
+	<ResourcesSection {resources} />
 	<SubscribeSection />
 </div>
 
@@ -307,8 +305,9 @@
 		}
 		.img_wrapper img {
 			margin: auto;
-			position: relative;
-			/* top: 0;
+			/* position: relative; */
+			position: absolute;
+			top: 0;
 			bottom: 0;
 			right: -14%;
 			@media screen and (max-width: $lg) {
@@ -317,7 +316,11 @@
 			@media screen and (max-width: $md) {
 				position: relative;
 				right: 0;
-			} */
+			}
+		}
+
+		:global(p) {
+			text-align: left;
 		}
 	}
 	.partners_section {

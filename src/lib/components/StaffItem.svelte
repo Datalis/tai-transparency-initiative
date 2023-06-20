@@ -44,7 +44,7 @@
 	$transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 	$sm: map-get($grid-breakpoints, 'sm');
 	.green_text {
-		color: #00DEB3;
+		color: #00deb3;
 	}
 	.staff_item {
 		display: flex;
@@ -125,7 +125,6 @@
 				}
 			}
 
-			
 			&__text {
 				:global(p) {
 					font-weight: 400 !important;

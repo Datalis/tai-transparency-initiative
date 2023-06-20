@@ -12,18 +12,17 @@
 
 	let isOpen = false;
 
-	$: current = options?.find(e => e.id?.toString() == currentFilter);
+	$: current = options?.find((e) => e.id?.toString() == currentFilter);
 
 	function onFilterChange(e: any) {
 		isOpen = false;
-		emit('onChange', e.target.value)
+		emit('onChange', e.target.value);
 	}
-
 </script>
 
 <div class="resource_filters px_4">
 	<CollapsibleCard bind:open={isOpen}>
-		<div class="resource_filters__menu header"  slot="header">
+		<div class="resource_filters__menu header" slot="header">
 			<small class="text_green font_bold mr_2">{current?.label || 'Select a category'}</small>
 			<FiltersIcon width="24" height="24" />
 		</div>
@@ -31,7 +30,13 @@
 			{#each options as opt}
 				<div class="form_control form_control_radio">
 					<label>
-						<input type="radio" bind:group={currentFilter} name="filter" value={opt.id?.toString()} on:change={onFilterChange} />
+						<input
+							type="radio"
+							bind:group={currentFilter}
+							name="filter"
+							value={opt.id?.toString()}
+							on:change={onFilterChange}
+						/>
 						{opt.label}
 					</label>
 				</div>

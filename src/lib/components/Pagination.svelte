@@ -29,8 +29,10 @@
 </div>
 
 <style lang="scss">
-
-	$md: map-get($map: $grid-breakpoints, $key: 'md');
+	$md: map-get(
+		$map: $grid-breakpoints,
+		$key: 'md'
+	);
 
 	.pagination_wrapper {
 		width: 100%;
