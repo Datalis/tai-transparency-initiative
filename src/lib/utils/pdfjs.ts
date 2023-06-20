@@ -1,16 +1,15 @@
 import { createCanvas } from 'canvas';
-import { createRequire } from 'module';
-// import pdfjsLib from 'pdfjs-dist';
+// import { createRequire } from 'module';
+import pdfjsLib from 'pdfjs-dist';
 
-const require = createRequire(import.meta.url);
-
-// @ts-ignore
-// pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs-dist/build/pdf.worker.js'
+// const require = createRequire(import.meta.url);
 
 
 export const generatePdfPreview = async (url: string) => {
 	try {
-		const pdfjsLib = require('pdfjs-dist');
+		
+		if (process.env.NETLIFY) {
+		}
 
 		const data = await fetch(url, {
 			cache: 'force-cache'
