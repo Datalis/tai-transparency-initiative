@@ -1,4 +1,5 @@
 import { get } from '$lib/api';
+import { getLatestPostsFromTwitter, getLatestPostsFromYoutube } from '$lib/api/social';
 import imageLoader from '$lib/utils/imageLoader';
 import { generatePdfPreview } from '$lib/utils/pdfjs';
 import { error } from '@sveltejs/kit';
@@ -109,6 +110,21 @@ const htmlContentParser = async (content: string) => {
 			// <a href="${url}" target="_blank" class="pdf-viewer" data-pdf-url="${url}"></a>`);
 		}
 	}
+
+	const videos = root.querySelectorAll('video');
+	if (videos.length) {
+		for (const video of videos) {
+			const src = video.getAttribute('src');
+			if (src) {
+				video.setAttribute('src', `${src}#t=0.5`);
+				video.setAttribute('preload', 'auto');
+				video.setAttribute('controls', 'controls');
+				video.setAttribute('playsinline', 'playsinline');
+				video.setAttribute('style', 'aspect-ratio: 16/9; width: 100%;');
+			}
+		}
+	}
+
 	return root.toString();
 };
 
@@ -131,9 +147,15 @@ export async function load({ params }: { [key: string]: any }) {
 			resource.content = await htmlContentParser(resource.content);
 			const related = loadRelatedResources(resource);
 
+			const social = {
+				youtube: await getLatestPostsFromYoutube(),
+				twitter: await getLatestPostsFromTwitter(),
+			}
+
 			return {
 				resource,
-				related
+				related,
+				social
 			};
 		} else {
 			throw error(404, 'Not found');

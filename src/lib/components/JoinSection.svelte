@@ -5,12 +5,6 @@
 	import { page } from '$app/stores';
 
 	export let form: any;
-
-	let formData: { name: string; email: string; subscribe: boolean } = {
-		name: '',
-		email: '',
-		subscribe: true
-	};
 </script>
 
 <section id="join" class="join_section section">
@@ -62,7 +56,6 @@
 								<div class="form_control form_control_check mt_4 text_dark">
 									<label for="subscribe">
 										<input
-											bind:checked={formData.subscribe}
 											name="subscribe"
 											class="form_control__input"
 											id="subscribe"

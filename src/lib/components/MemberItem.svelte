@@ -142,12 +142,13 @@
 			:global {
 				img {
 					width: 100%;
+					object-fit: cover;
 				}
 			}
 
 			@media (max-width: $lg) {
 				width: 40%;
-				min-width: 280px;
+				/* min-width: 280px; */
 			}
 
 			@media (max-width: $md) {

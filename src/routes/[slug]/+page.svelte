@@ -13,11 +13,13 @@
 	import 'swiper/css';
 	import 'swiper/css/pagination';
 	import 'swiper/css/navigation';
+	import { parseTwitterText } from '$lib/utils/twitter';
 
 	export let data: PageData;
 
 	$: resource = data.resource;
 	$: related = data.related;
+	$: social = data.social;
 	$: share_url = `https://www.transparency-initiative.org/${resource.slug}`;
 
 	function gotoSub() {
@@ -49,8 +51,6 @@
 				prevEl: '.swiper-button-prev'
 			}
 		});
-
-		// renderPdfViewer('.pdf-viewer');
 	});
 </script>
 
@@ -88,7 +88,7 @@
 							By <a href="/" class="text_gray">{resource.author.name}</a> ({resource.author.role})
 						</small>
 					</div>
-					<div class="col col_5 col_sm_12">
+					<div class="col col_5 col_sm_12" style="margin-top: 0;margin-bottom: 0;">
 						<!-- <Image size="medium" priority image={resource?.image} /> -->
 					</div>
 				{/if}
@@ -105,31 +105,11 @@
 				<div class="post_content">
 					{@html resource.content}
 				</div>
-				<!-- <div class="connect_block mt_5 text_center">
-					Love to hear more from Killian and Ted? Connect with Killian on Twitter at
-					@dorier_killian and Ted at @piccone_ted. You can also follow-up with World Justice
-					Project on Twitter at @The WJP
-				</div> -->
+
 				<div class="share_block">
 					<h5 class="mr_3">Share this article</h5>
 					<div class="divider divider_dark divider_1 mr_3" />
-					<!-- {#each resource.links as link}
-						{#if link.type == 'facebook'}
-							<a href={link.url} class="share_icon mr_2">
-								<FacebookIcon width="14" height="14" />
-							</a>
-						{/if}
-						{#if link.type == 'twitter'}
-							<a href={link.url} class="share_icon mr_2">
-								<TwitterIcon width="14" height="14" />
-							</a>
-						{/if}
-						{#if link.type == 'linkedin'}
-							<a href={link.url} class="share_icon mr_2">
-								<LinkedInIcon width="14" height="14" />
-							</a>
-						{/if}
-					{/each} -->
+
 					<div class="display_flex">
 						<a
 							href="https://api.whatsapp.com/send?text={share_url}"
@@ -196,21 +176,42 @@
 							</small>
 						</a>
 					{/each}
+				</div>
+				<div class="social">
+					<h4 class="mb_4">Follow us!</h4>
+					<div class="divider divider_green divider_2 mb_4" />
 
-					<!-- <a href="/" class="related_article_item">
-						<div class="img_wrapper">
-							<img alt="" />
-						</div>
-						<span class="text_dark my_3 font_bold">
-							Katharine Knox on movement- building in the TPA (transparency, participation, and
-							accountability) sector
-						</span>
-						<small>
-							<a href="/" class="text_gray display_flex align_center green_text"
-								>Read More <LinkIcon class="ml_1" style="fill: #00DEB3" /></a
-							>
-						</small>
-					</a> -->
+					<div class="twitter-feed">
+						{#each social.twitter as twit}
+							<div class="twit">
+								<div class="display_flex align_center">
+									<a
+										class="display_flex"
+										href={`https://twitter.com/${twit.user.screen_name}`}
+										target="_blank"
+									>
+										<img class="profile_img" src={twit.user.profile_image_url} alt="" />
+									</a>
+									<a class="text_dark font_bold" href={`https://twitter.com/${twit.user.screen_name}`} target="_blank">
+										<small class="text_dark font_bold">{twit.user.name}</small>
+									</a>
+								</div>
+								<small class="mt_2">
+									{@html parseTwitterText(twit.full_text)}
+								</small>
+							</div>
+						{/each}
+					</div>
+
+					<a class="youtube-latest" target="_blank" rel="noopener" href="https://youtube.com/watch?v={social.youtube?.videoId}">
+						<img 
+							src={social.youtube?.thumbnailHigh?.url} 
+							width={social.youtube?.thumbnailHigh?.width} 
+							height={social.youtube?.thumbnailHigh?.height} 
+							alt={social.youtube?.title} />
+						<span class="font_bold text_dark mt_2">{social.youtube?.title}</span>
+						<small class="text_dark mt_2">{social.youtube?.description}</small>
+					</a>
 				</div>
 			</aside>
 		</div>
@@ -281,6 +282,7 @@
 		min-width: 65vw;
 		padding-right: 2rem;
 		@media screen and (max-width: $md) {
+			margin-top: 1.5rem;
 			max-width: 100%;
 			min-height: 100%;
 			padding-right: 0;
@@ -428,6 +430,40 @@
 						object-position: center;
 					}
 				}
+			}
+		}
+	}
+	.content_section .social {
+		.twitter-feed {
+			margin-top: 2rem;
+		}
+		.twitter-feed .twit {
+			margin-bottom: 1rem;
+
+			a {
+				text-decoration: none;
+			}
+			small {
+				display: block;
+				line-height: 1.5;
+			}
+			.profile_img {
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+				margin-right: 0.5rem;
+			}
+		}
+
+		.youtube-latest {
+			margin-top: 3rem;
+			display: flex;
+			flex-direction: column;
+			text-decoration: none;
+			img {
+				aspect-ratio: 16/9;
+				object-fit: cover;
+				border-radius: 15px;
 			}
 		}
 	}

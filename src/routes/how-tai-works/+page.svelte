@@ -22,7 +22,7 @@
 	import SpeakerIcon from '$lib/assets/icons/Speaker_Icon.svg?component';
 	// import Image from '$lib/components/Image.svelte';
 
-	import HeroImg1 from '$lib/assets/images/hero/3.2.webp';
+	import HeroImg from '$lib/assets/images/heroes/how-tai-works.webp';
 	import Seo from '$lib/components/Seo.svelte';
 	// import HeroImg1 from '$lib/assets/images/hero/3.2.png';
 	// import HeroImg2 from '$lib/assets/images/hero/3.1.png';
@@ -146,7 +146,7 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" as="image" href={HeroImg1} />
+	<link rel="preload" as="image" href={HeroImg} />
 	<Seo title="Transparency & Accountability Initiative - How TAI works" url="/how-tai-works" />
 </svelte:head>
 
@@ -154,7 +154,27 @@
 
 <div id="how-we-fund" class="page">
 	<section class="landing_section section bg_blue">
-		<div class="container h-100">
+		<div class="container">
+			<div class="content">
+				<div class="content-left">
+					<h1 class="text_green mb_4">{hero?.title}</h1>
+					<span class="divider divider_2 divider_light mb_3" />
+					<div class="font_light">
+						{@html hero?.message}
+					</div>
+				</div>
+				<div class="content-right">
+					<img
+						src={HeroImg}
+						class="img_wrapper_2"
+						alt="How TAI works"
+						decoding="sync"
+						loading="eager"
+					/>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="container h-100">
 			<div class="row">
 				<div class="col col_5 col_md_12 pb_5">
 					<div class="display_flex flex_column h_100 justify_center">
@@ -175,7 +195,7 @@
 					/>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</section>
 	<Six6csSection data={six_data} />
 	<section id="progress-model" class="progress_model_section section bg_light">
@@ -416,7 +436,61 @@
 			}
 		}
 	}
+
 	.landing_section {
+		background-image: url(/src/lib/assets/images/hero.webp);
+		background-size: cover;
+		z-index: 1;
+
+		min-height: 100vh;
+		min-height: 100svh;
+
+		padding-top: 100px !important;
+		padding-bottom: 0 !important;
+		display: flex !important;
+		flex-direction: column;
+		.container {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+		}
+		.content {
+			flex-grow: 1;
+			height: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 1rem;
+
+			@media screen and (max-width: $md) {
+				display: flex;
+				flex-direction: column;
+				.content-right img {
+					position: relative !important;
+				}
+			}
+		}
+
+		.content .content-right {
+			position: relative;
+			img {
+				position: absolute;
+				bottom: 0;
+				object-fit: contain;
+			}
+		}
+		.content .content-left {
+			max-width: 90%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			@media screen and (max-width: $md) {
+				max-width: 100% !important;
+			}
+		}
+	}
+
+	/* .landing_section {
 		z-index: 1;
 		padding-top: 100px !important;
 		padding-bottom: 0 !important;
@@ -458,7 +532,7 @@
 		:global(p) {
 			text-align: left;
 		}
-	}
+	} */
 
 	.progress_model_section {
 		margin-top: -2px;

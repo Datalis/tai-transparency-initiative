@@ -8,7 +8,7 @@
 	import FundingImg from '$lib/assets/images/funding_data_library.webp';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
-	import HeroImg from '$lib/assets/images/hero/1.1.png';
+	import HeroImg from '$lib/assets/images/heroes/what-we-fund.png?webp';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
 	import { Pagination } from 'swiper';
 	import PathwaysSection from '$lib/components/PathwaysSection.svelte';
@@ -67,6 +67,26 @@
 <div id="what-we-fund" class="page">
 	<section class="landing_section section bg_blue">
 		<div class="container">
+			<div class="content">
+				<div class="content-left">
+					<h1 class="text_green mb_4">{hero?.title}</h1>
+					<span class="divider divider_2 divider_light mb_3" />
+					<div class="font_light">
+						{@html hero?.message}
+					</div>
+				</div>
+				<div class="content-right">
+					<img
+						src={HeroImg}
+						class="img_wrapper_2"
+						alt="How TAI works"
+						decoding="sync"
+						loading="eager"
+					/>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="container">
 			<div class="row">
 				<div class="col col_5 col_md_12">
 					<div class="display_flex flex_column justify_center h_100">
@@ -88,7 +108,7 @@
 					/>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</section>
 	<section id="funding" class="funding_section section bg_light">
 		<div class="container">
@@ -291,6 +311,67 @@
 	$md: map-get($grid-breakpoints, 'md');
 
 	.landing_section {
+		background-image: url(/src/lib/assets/images/hero.webp);
+		background-size: cover;
+		z-index: 1;
+
+		height: 100vh;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		display: flex !important;
+		flex-direction: column;
+
+		@media screen and (max-width: $md) {
+			height: unset !important;
+		}
+
+
+		.container {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+		}
+		.content {
+			margin: auto;
+			height: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 100%;
+			grid-gap: 1rem;
+			padding-top: 100px;
+
+			@media screen and (max-width: $md) {
+				padding-bottom: 2rem;
+				display: flex;
+				flex-direction: column;
+				.content-right img {
+					position: relative !important;
+				}
+			}
+		}
+
+		.content .content-right {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img {
+				height: calc(100% - 100px);
+				object-fit: contain;
+			}
+		}
+		.content .content-left {
+			max-width: 90%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			@media screen and (max-width: $md) {
+				max-width: 100% !important;
+			}
+		}
+	}
+
+	/* .landing_section {
 		z-index: 1;
 		padding-top: 100px !important;
 		min-height: 100vh;
@@ -322,15 +403,15 @@
 
 		.img_wrapper {
 			margin: auto !important;
-			// margin-bottom: 0 !important;
+			
 			position: relative;
-			/* display: flex; */
+			
 
 			img {
-				/* position: relative; */
+				
 				position: absolute;
 				max-width: 75%;
-				/* height: 100%; */
+				
 				left: 0;
 				right: 0;
 				bottom: 0;
@@ -349,7 +430,7 @@
 		:global(p) {
 			text-align: left;
 		}
-	}
+	} */
 	.funding_section {
 		display: flex !important;
 		flex-direction: column !important;
