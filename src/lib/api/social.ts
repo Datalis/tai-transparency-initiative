@@ -1,4 +1,4 @@
-import Twit from 'twit';
+import { TwitterClient } from 'twitter-api-client';
 
 export const getLatestPostsFromTwitter = async () => {
     const tokens = {
@@ -7,15 +7,22 @@ export const getLatestPostsFromTwitter = async () => {
         access_token: '294015135-DC5ery6TeRbgv2X8m97IsDCM5MbDIjV8M3HKOSgW',
         access_token_secret: 'iReTwjuBfoX6PJ9deia1krPvL3j5BNCRQBpXVqDmqpKfr'
     };
+    
+    const twitter = new TwitterClient({
+        apiKey: tokens.consumer_key,
+        apiSecret: tokens.consumer_secret,
+        accessToken: tokens.access_token,
+        accessTokenSecret: tokens.access_token_secret
+    });
 
-    const twitter = new Twit(tokens);
-    const { data } = await twitter.get('statuses/user_timeline', {
+    const data = await twitter.tweets.statusesUserTimeline({
         screen_name: 'TAInitiative',
         count: 7,
         exclude_replies: true,
         include_rts: false,
         tweet_mode: 'extended'
     });
+
 
     return data;
 }
