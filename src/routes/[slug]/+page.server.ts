@@ -110,6 +110,21 @@ const htmlContentParser = async (content: string) => {
 			// <a href="${url}" target="_blank" class="pdf-viewer" data-pdf-url="${url}"></a>`);
 		}
 	}
+
+	const videos = root.querySelectorAll('video');
+	if (videos.length) {
+		for (const video of videos) {
+			const src = video.getAttribute('src');
+			if (src) {
+				video.setAttribute('src', `${src}#t=0.5`);
+				video.setAttribute('preload', 'auto');
+				video.setAttribute('controls', 'controls');
+				video.setAttribute('playsinline', 'playsinline');
+				video.setAttribute('style', 'aspect-ratio: 16/9; width: 100%;');
+			}
+		}
+	}
+
 	return root.toString();
 };
 

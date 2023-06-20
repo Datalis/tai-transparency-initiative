@@ -88,7 +88,7 @@
 							By <a href="/" class="text_gray">{resource.author.name}</a> ({resource.author.role})
 						</small>
 					</div>
-					<div class="col col_5 col_sm_12">
+					<div class="col col_5 col_sm_12" style="margin-top: 0;margin-bottom: 0;">
 						<!-- <Image size="medium" priority image={resource?.image} /> -->
 					</div>
 				{/if}
@@ -282,6 +282,7 @@
 		min-width: 65vw;
 		padding-right: 2rem;
 		@media screen and (max-width: $md) {
+			margin-top: 1.5rem;
 			max-width: 100%;
 			min-height: 100%;
 			padding-right: 0;
