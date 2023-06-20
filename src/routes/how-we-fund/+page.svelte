@@ -16,7 +16,7 @@
 	import FoundersExitsSection from '$lib/components/FoundersExitsSection.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 
-	import HeroImg1 from '$lib/assets/images/hero/art1.png';
+	import HeroImg from '$lib/assets/images/heroes/how-we-fund.png?webp';
 	// import HeroImg2 from '$lib/assets/images/hero/2.2.png'
 
 	import ParticipatoryVideoPoster from '$lib/assets/images/participatory-video-poster.webp';
@@ -134,7 +134,7 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" href={HeroImg1} as="image" />
+	<link rel="preload" href={HeroImg} as="image" />
 	<Seo title="Transparency & Accountability Initiative - How we fund" url="/how-we-fund" />
 </svelte:head>
 
@@ -142,7 +142,27 @@
 
 <div id="how-we-fund" class="page">
 	<section class="landing_section section bg_blue">
-		<div class="container h-100">
+		<div class="container">
+			<div class="content">
+				<div class="content-left">
+					<h1 class="text_green mb_4">{hero?.title}</h1>
+					<span class="divider divider_2 divider_light mb_3" />
+					<div class="font_light">
+						{@html hero?.message}
+					</div>
+				</div>
+				<div class="content-right">
+					<img
+						src={HeroImg}
+						class="img_wrapper_2"
+						alt="How TAI works"
+						decoding="sync"
+						loading="eager"
+					/>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="container h-100">
 			<div class="row">
 				<div class="col col_5 col_md_12">
 					<div class="display_flex flex_column h_100 justify_center">
@@ -164,7 +184,7 @@
 					/>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</section>
 	<section id="partner-support" class="partners_section section bg_light">
 		<div class="container">
@@ -270,7 +290,7 @@
 	$lg: map-get($grid-breakpoints, 'lg');
 	$xl: map-get($grid-breakpoints, 'xl');
 
-	.landing_section {
+	/* .landing_section {
 		z-index: 1;
 		padding-top: 100px !important;
 		min-height: 100vh;
@@ -305,7 +325,7 @@
 		}
 		.img_wrapper img {
 			margin: auto;
-			/* position: relative; */
+			
 			position: absolute;
 			top: 0;
 			bottom: 0;
@@ -322,7 +342,69 @@
 		:global(p) {
 			text-align: left;
 		}
+	} */
+
+	.landing_section {
+		background-image: url(/src/lib/assets/images/hero.webp);
+		background-size: cover;
+		z-index: 1;
+
+		height: 100vh;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		display: flex !important;
+		flex-direction: column;
+
+		@media screen and (max-width: $md) {
+			height: unset !important;
+		}
+
+		.container {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+		}
+		.content {
+			margin: auto;
+			height: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 100%;
+			grid-gap: 1rem;
+			padding-top: 100px;
+
+			@media screen and (max-width: $md) {
+				padding-bottom: 2rem;
+				display: flex;
+				flex-direction: column;
+				.content-right img {
+					position: relative !important;
+				}
+			}
+		}
+
+		.content .content-right {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img {
+				height: calc(100% - 100px);
+				object-fit: contain;
+			}
+		}
+		.content .content-left {
+			max-width: 90%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			@media screen and (max-width: $md) {
+				max-width: 100% !important;
+			}
+		}
 	}
+
 	.partners_section {
 		position: relative;
 		min-height: 100vh !important;
