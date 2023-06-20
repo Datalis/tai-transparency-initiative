@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import ScrollToTopIcon from '$lib/assets/icons/chevron-up.svg';
+	import ScrollToTopIcon from '$lib/assets/icons/chevron-up.svg?component';
 
 	let scrollTotal;
 	let show = false;
@@ -38,7 +38,7 @@
 		position: fixed;
 		bottom: 6%;
 		right: 2.5%;
-		z-index: 999999;
+		z-index: 9;
 		cursor: pointer;
 		background-color: map-get($colors, 'green');
 		visibility: collapse;

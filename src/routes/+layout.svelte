@@ -96,7 +96,7 @@
 <style lang="scss" global>
 	@import '../lib/theme/index.scss';
 
-	html,
+	/* html,
 	body {
 		overflow-x: hidden;
 		scroll-behavior: unset !important;
@@ -113,6 +113,14 @@
 		&::-webkit-scrollbar-track {
 			background: #333;
 		}
+	} */
+
+	html {
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body {
+		overflow-x: hidden;
 	}
 
 	/* Make clicks pass-through */
