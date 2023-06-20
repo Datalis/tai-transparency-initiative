@@ -18,6 +18,8 @@ export const generatePdfPreview = async (url: string) => {
       pdfjsLib = (await import('pdfjs-dist')).default;
     }
 
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs-dist/build/pdf.worker.js';
+
     const pdf = await pdfjsLib.getDocument({
       data
     }).promise;
