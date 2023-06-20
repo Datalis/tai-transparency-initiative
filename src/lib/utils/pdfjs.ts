@@ -16,9 +16,10 @@ export const generatePdfPreview = async (url: string) => {
       pdfjsLib = require('pdfjs-dist');
     } else {
       pdfjsLib = (await import('pdfjs-dist')).default;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.js';
     }
 
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs-dist/build/pdf.worker.js';
+    
 
     const pdf = await pdfjsLib.getDocument({
       data
