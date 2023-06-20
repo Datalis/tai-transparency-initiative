@@ -1,4 +1,5 @@
 import { get, post } from '$lib/api';
+import { getLatestPostsFromTwitter, getLatestPostsFromYoutube } from '$lib/api/social';
 import type { PageServerLoad } from '.svelte-kit/types/src/routes/resources/$types';
 import type { Actions } from '@sveltejs/kit';
 import { fail } from '@sveltejs/kit';
@@ -59,5 +60,6 @@ export const load: PageServerLoad = async () => {
 			}
 		}
 	});
+
 	return { ...data, resources };
 };

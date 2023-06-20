@@ -1,4 +1,5 @@
 import { get } from '$lib/api';
+import { getLatestPostsFromTwitter, getLatestPostsFromYoutube } from '$lib/api/social';
 import imageLoader from '$lib/utils/imageLoader';
 import { generatePdfPreview } from '$lib/utils/pdfjs';
 import { error } from '@sveltejs/kit';
@@ -131,9 +132,15 @@ export async function load({ params }: { [key: string]: any }) {
 			resource.content = await htmlContentParser(resource.content);
 			const related = loadRelatedResources(resource);
 
+			const social = {
+				youtube: await getLatestPostsFromYoutube(),
+				twitter: await getLatestPostsFromTwitter(),
+			}
+
 			return {
 				resource,
-				related
+				related,
+				social
 			};
 		} else {
 			throw error(404, 'Not found');
