@@ -1,47 +1,36 @@
 import { createCanvas } from 'canvas';
-
 import { createRequire } from 'module';
+import pdfjsLib from 'pdfjs-dist';
 
 const require = createRequire(import.meta.url);
 
 export const generatePdfPreview = async (url: string) => {
-  try {
-    const data = await fetch(url, {
-      cache: 'force-cache'
-    }).then(res => res.arrayBuffer());
+	try {
+		const data = await fetch(url, {
+			cache: 'force-cache'
+		}).then((res) => res.arrayBuffer());
 
-    let pdfjsLib: any;
+		const pdf = await pdfjsLib.getDocument({
+			data
+		}).promise;
 
-    if (!process.env.NETLIFY) {
-      pdfjsLib = require('pdfjs-dist');
-    } else {
-      pdfjsLib = (await import('pdfjs-dist')).default;
-      pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.js';
-    }
+		const page = await pdf.getPage(1);
 
-    
+		const viewport = page.getViewport({
+			scale: 1
+		});
 
-    const pdf = await pdfjsLib.getDocument({
-      data
-    }).promise;
+		const canvas = createCanvas(viewport.width, viewport.height);
+		const context = canvas.getContext('2d');
 
-    const page = await pdf.getPage(1);
+		await page.render({
+			canvasContext: context as any,
+			viewport
+		}).promise;
 
-    const viewport = page.getViewport({
-      scale: 1
-    });
-
-    const canvas = createCanvas(viewport.width, viewport.height);
-    const context = canvas.getContext('2d');
-
-    await page.render({
-      canvasContext: context as any,
-      viewport
-    }).promise;
-
-    return canvas.toDataURL();
-  } catch (e) {
-    console.error(e);
-    return '';
-  }
-}
+		return canvas.toDataURL();
+	} catch (e) {
+		console.error(e);
+		return '';
+	}
+};

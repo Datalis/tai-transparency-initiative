@@ -133,11 +133,9 @@
 	});
 </script>
 
-
 <svelte:head>
-	<link rel="preload" href={HeroImg1} as="image">
-	<Seo
-		title='Transparency & Accountability Initiative - How we fund' url="/how-we-fund"></Seo>
+	<link rel="preload" href={HeroImg1} as="image" />
+	<Seo title="Transparency & Accountability Initiative - How we fund" url="/how-we-fund" />
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -263,7 +261,7 @@
 			</div>
 		</div>
 	</section>
-	<ResourcesSection resources={resources} />
+	<ResourcesSection {resources} />
 	<SubscribeSection />
 </div>
 

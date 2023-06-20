@@ -177,7 +177,9 @@
 				</div>
 				<div class="col full-width">
 					<h6 class="text_uppercase text_blue mt_0 mb_4">Contact us</h6>
-					<a href="mailto:contact@transparency-initiative.org" class="display_block text_gray">contact@transparency-initiative.org</a>
+					<a href="mailto:contact@transparency-initiative.org" class="display_block text_gray"
+						>contact@transparency-initiative.org</a
+					>
 					<span class="display_block mt_4 text_gray"
 						>1100 13th St NW, Suite 800 Washington, DC 20005, United States</span
 					>
@@ -191,7 +193,10 @@
 						<a href="https://twitter.com/TAInitiative" class="link-icon mr_2">
 							<TwitterIcon class="" width="24" height="24" />
 						</a>
-						<a href="https://www.linkedin.com/organization-guest/company/transparency-and-accountability-initiative?challengeId=AQFexlD2lTMqaAAAAXDvHIOa1MJGYXZxIQdXCoyqun-gbymyAqHKYz4JTJMObstoYl_5nPPpDIzLiS_jaiczyjYN6ze8lOTtlQ&submissionId=ec1285b6-8c7c-fd15-bcd2-b963fa594427" class="link-icon">
+						<a
+							href="https://www.linkedin.com/organization-guest/company/transparency-and-accountability-initiative?challengeId=AQFexlD2lTMqaAAAAXDvHIOa1MJGYXZxIQdXCoyqun-gbymyAqHKYz4JTJMObstoYl_5nPPpDIzLiS_jaiczyjYN6ze8lOTtlQ&submissionId=ec1285b6-8c7c-fd15-bcd2-b963fa594427"
+							class="link-icon"
+						>
 							<LinkedInIcon class="" width="24" height="24" />
 						</a>
 						<!-- <XIcon width="32" height="32" /> -->

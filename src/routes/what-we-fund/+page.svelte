@@ -58,7 +58,7 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" as="image" href={HeroImg}>
+	<link rel="preload" as="image" href={HeroImg} />
 	<Seo title="Transparency & Accountability Initiative - What we fund" url="/what-we-fund" />
 </svelte:head>
 
@@ -279,7 +279,7 @@
 	</section>
 	<WhyItMattersSection data={whyItMatters} />
 	<PathwaysSection />
-	<ResourcesSection resources={resources} />
+	<ResourcesSection {resources} />
 	<SubscribeSection />
 </div>
 
@@ -335,9 +335,9 @@
 				right: 0;
 				bottom: 0;
 				top: 0;
-				
+
 				margin: auto;
-				
+
 				@media screen and (max-width: $md) {
 					position: relative;
 					max-width: 100%;

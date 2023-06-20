@@ -6,7 +6,7 @@
 }
 
 @function strip-unit($number) {
-	@if type-of($number)=='number' and not unitless($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
 		@return math.div($number, $number * 0 + 1);
 	}
 
@@ -23,8 +23,8 @@
 }
 
 @function contrast-ratio($fg, $bg) {
-	$luminance1: luminance($fg)+0.05;
-	$luminance2: luminance($bg)+0.05;
+	$luminance1: luminance($fg) + 0.05;
+	$luminance2: luminance($bg) + 0.05;
 	$ratio: calc($luminance1 / $luminance2);
 
 	@if $luminance2 >$luminance1 {
@@ -37,25 +37,22 @@
 }
 
 @function validate-font-size($size) {
-	@if unit($size)=='em' or unit($size)=='rem' or unit($size)=='px' or unit($size)=='' {
-
+	@if unit($size) == 'em' or unit($size) == 'rem' or unit($size) == 'px' or unit($size) == '' {
 		// Check if a flexible unit
-		@if unit($size)=='em' or unit($size)=='rem' {
+		@if unit($size) == 'em' or unit($size) == 'rem' {
 			// Need to convert to a pixel value. Let's not overcomplicate it with possible EM inheritence scale factors
 			@return strip-unit($size * 16);
 		}
 
-		@if unit($size)=='px' {
+		@if unit($size) == 'px' {
 			// We expect PX, so strip the value and return it
 			@return strip-unit($size);
 		}
 
-		@if unit($size)=='' {
+		@if unit($size) == '' {
 			@return $size;
 		}
-	}
-
-	@else {
+	} @else {
 		@error 'validate-font-size(): An unexpected font size unit was supplied.';
 	}
 }
@@ -64,7 +61,7 @@
 	// Default ratio
 	$ratio: 4.5;
 
-	@if $level =='AAA' {
+	@if $level == 'AAA' {
 		$ratio: 7;
 	}
 
@@ -73,27 +70,21 @@
 
 	// Check font size
 	@if $size < 24 {
-
 		// Small text, use defaults
 		// But:
 		@if $size >=19 and $bold ==true {
-
 			// Special case: Small text but also bold
-			@if $level =='AAA' {
+			@if $level == 'AAA' {
 				$ratio: 4.5;
-			}
-
-			@else {
+			} @else {
 				$ratio: 3;
 			}
 		}
-	}
-
-	@else {
+	} @else {
 		// Larger than 24
 		$ratio: 3;
 
-		@if $level =='AAA' {
+		@if $level == 'AAA' {
 			$ratio: 4.5;
 		}
 	}
@@ -108,9 +99,7 @@
 	@if $light-contrast >$dark-contrast {
 		// Contrast against white is higher than against black, so, this is a dark color
 		@return 'dark';
-	}
-
-	@else {
+	} @else {
 		@return 'light';
 	}
 }
@@ -118,11 +107,9 @@
 @function color-contrast($color) {
 	$color-lod: light-or-dark($color);
 
-	@if ($color-lod =='dark') {
+	@if ($color-lod == 'dark') {
 		@return $white;
-	}
-
-	@else {
+	} @else {
 		@return $black;
 	}
 }
@@ -138,9 +125,7 @@
 	@if $original-contrast >=$ratio {
 		// If we pass the ratio already, return the original color
 		@return $fg;
-	}
-
-	@else {
+	} @else {
 		// Doesn't pass. Time to get to work
 		// Should the color be lightened or darkened?
 		$fg-lod: light-or-dark($fg);
@@ -151,12 +136,10 @@
 		$step: 1%;
 
 		// Run through some cases where we want to darken, or use a negative step value
-		@if $fg-lod =='light' and $bg-lod =='light' {
+		@if $fg-lod == 'light' and $bg-lod == 'light' {
 			// Both are light colors, darken the fg
 			$step: -$step;
-		}
-
-		@else if $fg-lod =='dark' and $bg-lod =='light' {
+		} @else if $fg-lod == 'dark' and $bg-lod == 'light' {
 			// bg is light, fg is dark but does not pass, darken more
 			$step: -$step;
 		}
@@ -179,14 +162,12 @@
 			$sat-step: 0%;
 
 			@if $step < 100% {
-				@if saturation($fg)>10 {
+				@if saturation($fg) >10 {
 					$sat-step: $step;
 				}
 
 				$fg: scale-color($fg, $lightness: $step, $saturation: $sat-step);
-			}
-
-			@else {
+			} @else {
 				@warn 'The color has been darkened or lightened as much as possible and still will not meet the desired contrast ratio: #{$original-fg} vs. #{$bg}';
 			}
 		}

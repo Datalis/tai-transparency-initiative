@@ -3,7 +3,7 @@ import adapterNetlify from '@sveltejs/adapter-netlify';
 import sveltePreprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
 
-const adapter = process.env.NETLIFY ? adapterNetlify : adapterNode
+const adapter = process.env.NETLIFY ? adapterNetlify : adapterNode;
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,9 +13,7 @@ const config = {
 			prependData: "@import './src/lib/theme/src/_variables.scss';"
 		},
 		postcss: {
-			plugins: [
-				autoprefixer()
-			]
+			plugins: [autoprefixer()]
 		}
 	}),
 	kit: {
@@ -26,11 +24,11 @@ const config = {
 			edge: false
 		}),
 		files: {
-			serviceWorker: 'src/firebase-messaging-sw.js',
+			serviceWorker: 'src/firebase-messaging-sw.js'
 		},
 		serviceWorker: {
 			register: true
-		},
+		}
 	}
 };
 

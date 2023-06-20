@@ -43,7 +43,6 @@
 	$md: map-get($grid-breakpoints, 'md');
 
 	.resource_item {
-
 		border-top: 1px solid #c7ccd6;
 
 		&__wrapper {

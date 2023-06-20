@@ -22,12 +22,10 @@ export const load: PageServerLoad = async ({ url }) => {
 		if (type == '8') {
 			tipo = {
 				...tipo,
-				$or: [
-					
-				]
-			}
+				$or: []
+			};
 		}
-		
+
 		const params: any = {
 			filters: {
 				$or: [

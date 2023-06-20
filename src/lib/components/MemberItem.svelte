@@ -93,10 +93,17 @@
 			</Swiper>
 		</div>
 		<div class="content_wrapper__tabs px_5">
-
 			{@html data[selectedTab]}
-			<a href={data?.url} target="blank" class="display_flex align_center green_text font_bold mt_auto"
-				><small>Learn more </small><LinkIcon class="ml_2" width="18" height="18" style="fill: #00DEB3" />
+			<a
+				href={data?.url}
+				target="blank"
+				class="display_flex align_center green_text font_bold mt_auto"
+				><small>Learn more </small><LinkIcon
+					class="ml_2"
+					width="18"
+					height="18"
+					style="fill: #00DEB3"
+				/>
 			</a>
 		</div>
 	</div>
@@ -115,10 +122,10 @@
 			flex-direction: column;
 		}
 		.green_text {
-			color: #00DEB3;
+			color: #00deb3;
 		}
 		.green_text:hover {
-			color: #43B79E;
+			color: #43b79e;
 		}
 		.img_wrapper {
 			flex-grow: 1;

@@ -3,20 +3,24 @@
 	function gotoSub() {
 		// Get the email address from the input field
 		// Add the email address to the subscription url
-		let URI = "https://transparency-initiative.us8.list-manage.com/subscribe?u=3225c2c32fc6c7023ca721588&id=1a5ff28f1e"
+		let URI =
+			'https://transparency-initiative.us8.list-manage.com/subscribe?u=3225c2c32fc6c7023ca721588&id=1a5ff28f1e';
 		// @ts-ignore
-		const subemail = document?.getElementById("subemail").value;
-		if(subemail){
-			URI = URI + "&MERGE0=" + subemail
+		const subemail = document?.getElementById('subemail').value;
+		if (subemail) {
+			URI = URI + '&MERGE0=' + subemail;
 		}
 		// Open the subscription url in a new tab
 		window.open(URI, '_blank');
 	}
 </script>
+
 <section class="subscribe_section section bg_light">
 	<div class="container">
 		<div class="subscribe_section__panel">
-			<h2 class="text_center">Keep updated with <br /> <span class="font_black">TAI WEEKLY</span></h2>
+			<h2 class="text_center">
+				Keep updated with <br /> <span class="font_black">TAI WEEKLY</span>
+			</h2>
 			<span class="font_light text_center"
 				>Everything you need to know about transparency, accountability <br /> and participation, delivered
 				to your inbox.</span

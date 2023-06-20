@@ -21,10 +21,10 @@
 </section>
 
 <style lang="scss">
-.past_funding_section {
-	background-color: #5c4aff;
-	color: #f2f4f7;
-	min-height: 100vh;
-	z-index: 1;
-}
+	.past_funding_section {
+		background-color: #5c4aff;
+		color: #f2f4f7;
+		min-height: 100vh;
+		z-index: 1;
+	}
 </style>

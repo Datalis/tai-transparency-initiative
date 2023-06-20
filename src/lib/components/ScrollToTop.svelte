@@ -16,7 +16,7 @@
 		window.scrollTo({
 			top: 0,
 			behavior: 'smooth'
-		})
+		});
 	}
 
 	onMount(() => {
@@ -26,7 +26,9 @@
 	});
 </script>
 
-<button class="scroll_to_top" class:visible={show} on:click={scrollToTop}> <ScrollToTopIcon></ScrollToTopIcon> </button>
+<button class="scroll_to_top" class:visible={show} on:click={scrollToTop}>
+	<ScrollToTopIcon />
+</button>
 
 <style lang="scss">
 	.scroll_to_top {

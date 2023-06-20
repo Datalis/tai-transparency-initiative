@@ -21,19 +21,20 @@
 				font-size: $max-font-size;
 			}
 
-			@media	only screen and (-webkit-min-device-pixel-ratio: 1.3),
-			only screen and (-o-min-device-pixel-ratio: 13/10),
-			only screen and (min-resolution: 120dpi) {
-				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));	
+			@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+				only screen and (-o-min-device-pixel-ratio: 13/10),
+				only screen and (min-resolution: 120dpi) {
+				font-size: calc(
+					#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+						((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+				);
 			}
 		}
 	}
 }
 
 @mixin generate-color-utilities($colors, $contrasts) {
-
-	@each $key,
-	$value in $colors {
+	@each $key, $value in $colors {
 		.text_#{$key} {
 			color: $value;
 		}
@@ -54,8 +55,7 @@
 	$xl: map-get($breakpoints, 'xl');
 	$xxl: map-get($breakpoints, 'xxl');
 
-	@each $breakpoint,
-	$value in $breakpoints {
+	@each $breakpoint, $value in $breakpoints {
 		.show_on_#{$breakpoint}_and_down {
 			@media (min-width: $value) {
 				display: none !important;
@@ -107,8 +107,8 @@
 			flex-wrap: wrap;
 			justify-content: space-between;
 
-			margin-left: calc($gutter*-1);
-			margin-right: calc($gutter*-1);
+			margin-left: calc($gutter * -1);
+			margin-right: calc($gutter * -1);
 
 			& [class^='col'] {
 				float: left;
@@ -129,8 +129,7 @@
 						flex: 0 calc($i / 12 * 100% - $gutter * 2);
 					}
 
-					@each $bp,
-					$size in $breakpoints {
+					@each $bp, $size in $breakpoints {
 						&_#{$bp}_#{$i} {
 							@media (max-width: $size) {
 								flex: 0 calc($i / 12 * 100% - $gutter * 2);
@@ -138,7 +137,6 @@
 						}
 					}
 				}
-
 			}
 		}
 	}
@@ -156,8 +154,7 @@
 			}
 		}
 
-		@each $key,
-		$value in $colors {
+		@each $key, $value in $colors {
 			&_#{$key} {
 				background-color: $value;
 			}
@@ -166,23 +163,20 @@
 }
 
 @mixin generate-utilities($utilities) {
-
-	@each $name,
-	$u in $utilities {
+	@each $name, $u in $utilities {
 		$value: map-get($u, 'value');
 		$class: map-get($u, 'class');
 		$prop: map-get($u, 'prop');
 
-		@if type-of($value)=='string' or type-of(nth($value, 1)) !='list' {
+		@if type-of($value) == 'string' or type-of(nth($value, 1)) != 'list' {
 			$value: zip($value, $value);
 		}
 
-		@if type-of($prop)=='string' {
+		@if type-of($prop) == 'string' {
 			$prop: append((), $prop);
 		}
 
-		@each $k,
-		$v in $value {
+		@each $k, $v in $value {
 			.#{$class}_#{$k} {
 				@each $p in $prop {
 					#{$p}: $v;

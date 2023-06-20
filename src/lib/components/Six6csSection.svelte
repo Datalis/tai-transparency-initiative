@@ -88,7 +88,9 @@
 			<SwiperSlide>
 				<div class="_6Cs_item bg_blue_light">
 					<span class="_6Cs_item__count">{item?.order}</span>
-					<span class="_6Cs_item__title text_uppercase font_bold text_light my_3">{item?.title}</span>
+					<span class="_6Cs_item__title text_uppercase font_bold text_light my_3"
+						>{item?.title}</span
+					>
 					<p class="_6Cs_item__text text_light">
 						{item?.message}
 					</p>

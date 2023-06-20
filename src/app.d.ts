@@ -15,10 +15,10 @@ declare module 'gsap/dist/gsap';
 
 declare namespace svelte.JSX {
 	interface HTMLAttributes<T> {
-		onclick_outside?: (e: CustomEvent) => void
+		onclick_outside?: (e: CustomEvent) => void;
 	}
 	interface SVGProps<T> {
-		onclick_outside?: (e: CustomEvent) => void
+		onclick_outside?: (e: CustomEvent) => void;
 	}
 }
 

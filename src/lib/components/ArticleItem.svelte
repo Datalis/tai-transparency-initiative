@@ -42,7 +42,7 @@
 
 		&__link {
 			margin-top: auto;
-			color: #00DEB3;
+			color: #00deb3;
 		}
 
 		&__image {

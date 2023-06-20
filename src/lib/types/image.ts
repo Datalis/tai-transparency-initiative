@@ -5,7 +5,7 @@ export type Image = {
 	caption: string;
 	width: number;
 	height: number;
-	formats: { [key: string]: any }
+	formats: { [key: string]: any };
 	hash: string;
 	ext: string;
 	mime: string;
@@ -16,4 +16,4 @@ export type Image = {
 	provider_metadata: string;
 	createdAt: string;
 	updatedAt: string;
-}
+};

@@ -3,8 +3,8 @@
 	export let description =
 		'The Transparency and Accountability Initiative (TAI) is a donor collaborative working toward a democratic world where power and resources are more equally distributed; people are informed and empowered, governments and the corporate sector are open and responsive, and collective action advances the public good.';
 	export let img = 'https://www.transparency-initiative.org/seo.jpg';
-    export let url = '/';
-    export let type = 'website';
+	export let url = '/';
+	export let type = 'website';
 </script>
 
 <title>{title}</title>

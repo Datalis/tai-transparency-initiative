@@ -1,12 +1,12 @@
 type ImageLoaderOptions = {
-    src: string,
-    width: number,
-    quality?: number
-}
+	src: string;
+	width: number;
+	quality?: number;
+};
 
-export default function imageLoader({src, width, quality}: ImageLoaderOptions): string {
+export default function imageLoader({ src, width, quality }: ImageLoaderOptions): string {
 	if (!src) return 'https://placehold.co/600x400';
-    const imageUrl = src.split('/');
+	const imageUrl = src.split('/');
 	let imageId;
 	if (src.indexOf('imagedelivery.net') !== -1) {
 		imageId = imageUrl[imageUrl.length - 2];
@@ -15,7 +15,11 @@ export default function imageLoader({src, width, quality}: ImageLoaderOptions): 
 	}
 
 	// Temp fixes
-	if (imageId.startsWith('thumbnail') || imageId.startsWith('large') || imageId.indexOf('.gif') !== -1) {
+	if (
+		imageId.startsWith('thumbnail') ||
+		imageId.startsWith('large') ||
+		imageId.indexOf('.gif') !== -1
+	) {
 		return `https://api.transparency-initiative.org/uploads/${imageId}`;
 	}
 

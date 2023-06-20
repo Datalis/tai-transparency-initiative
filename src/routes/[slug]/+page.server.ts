@@ -1,7 +1,7 @@
-import { get } from "$lib/api";
-import imageLoader from "$lib/utils/imageLoader";
-import { generatePdfPreview } from "$lib/utils/pdfjs";
-import { error } from "@sveltejs/kit";
+import { get } from '$lib/api';
+import imageLoader from '$lib/utils/imageLoader';
+import { generatePdfPreview } from '$lib/utils/pdfjs';
+import { error } from '@sveltejs/kit';
 import { parse } from 'node-html-parser';
 
 const loadRelatedResources = async (resource: any) => {
@@ -11,15 +11,15 @@ const loadRelatedResources = async (resource: any) => {
 		filters: {
 			type: {
 				id: {
-					$eq: resource?.type?.id,
+					$eq: resource?.type?.id
 				}
 			},
 			id: {
-				$not: resource?.id,
+				$not: resource?.id
 			}
 		},
 		pagination: {
-			limit: 2,
+			limit: 2
 		},
 		populate: {
 			image: {
@@ -32,12 +32,12 @@ const loadRelatedResources = async (resource: any) => {
 				fields: ['name', 'role']
 			}
 		}
-	}
+	};
 
 	const { data } = await get('wc-resources', queryParams);
 
 	return data;
-}
+};
 
 const htmlContentParser = async (content: string) => {
 	const root = parse(content);
@@ -46,15 +46,17 @@ const htmlContentParser = async (content: string) => {
 		const imagesAttr = slider.getAttribute('images');
 		const images = imagesAttr?.split('|') || [];
 		if (images.length) {
-			const slideMarkup = images?.map(i => {
-				const imgSrc = imageLoader({ src: i, width: 2048, quality: 100 });
-				const slide = `
+			const slideMarkup = images
+				?.map((i) => {
+					const imgSrc = imageLoader({ src: i, width: 2048, quality: 100 });
+					const slide = `
 						<div class="swiper-slide">
 							<img src="${imgSrc}" alt="${i}" loading="lazy" decoding="async" sizes="100vw">
 						</div>
 					`;
-				return slide;
-			}).join('\n');
+					return slide;
+				})
+				.join('\n');
 			const swiper = parse(`
 					<div class="swiper">
 						<div class="swiper-wrapper">
@@ -74,7 +76,10 @@ const htmlContentParser = async (content: string) => {
 		const src = img.getAttribute('src');
 		if (src && src?.indexOf('wp-content') !== -1) {
 			img.removeAttribute('srcset');
-			img.setAttribute('src', src.replace('www.transparency-initiative.org', 'old.transparency-initiative.org'));
+			img.setAttribute(
+				'src',
+				src.replace('www.transparency-initiative.org', 'old.transparency-initiative.org')
+			);
 		}
 	}
 
@@ -105,11 +110,9 @@ const htmlContentParser = async (content: string) => {
 		}
 	}
 	return root.toString();
-}
-
+};
 
 export async function load({ params }: { [key: string]: any }) {
-
 	const { slug } = params;
 
 	const queryParams = {
@@ -131,12 +134,11 @@ export async function load({ params }: { [key: string]: any }) {
 			return {
 				resource,
 				related
-			}
-
+			};
 		} else {
 			throw error(404, 'Not found');
 		}
 	} catch (e: any) {
-		throw error(e?.status || 500, `${e?.body || ""}`);
+		throw error(e?.status || 500, `${e?.body || ''}`);
 	}
 }

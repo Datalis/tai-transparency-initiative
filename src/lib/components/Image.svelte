@@ -19,18 +19,27 @@
 		imageLoader({ src, width, quality });
 
 	const getSourceSet = (src: string, width: number, quality: number) => {
-		return `${imageLoader({src, width, quality})} 1x, ${imageLoader({src, width: width*2, quality})} 2x`;
-	}
+		return `${imageLoader({ src, width, quality })} 1x, ${imageLoader({
+			src,
+			width: width * 2,
+			quality
+		})} 2x`;
+	};
 </script>
 
 <svelte:head>
 	{#if priority}
-		<link rel="preconnect" imagesrcset={getSourceSet(img?.url, imgWidth, quality)} as="image" href={getImage(img?.url, imgWidth, quality)} />
+		<link
+			rel="preconnect"
+			imagesrcset={getSourceSet(img?.url, imgWidth, quality)}
+			as="image"
+			href={getImage(img?.url, imgWidth, quality)}
+		/>
 	{/if}
 </svelte:head>
 
 <Image
-	sizes={sizes}
+	{sizes}
 	src={getImage(img?.url, imgWidth, quality)}
 	srcset={getSourceSet(img?.url, imgWidth, quality)}
 	width={imgWidth}
@@ -48,7 +57,6 @@
 	height={img?.height}
 	src={img?.url}
 /> -->
-
 <style lang="scss">
 	/* img {
 		background-size: cover;

@@ -28,11 +28,11 @@
 		isMenuOpen = !isMenuOpen;
 	};
 
-	$: currentFilter = +($page.url.searchParams.get('type') || 0);;
+	$: currentFilter = +($page.url.searchParams.get('type') || 0);
 
 	const onFilterChange = (/** @type {any} */ e) => {
-		goto(`/resources?type=${e.target.value}`, { replaceState: false })
-	}
+		goto(`/resources?type=${e.target.value}`, { replaceState: false });
+	};
 
 	$: {
 		isMenuOpen ? menuAnim.play() : menuAnim.reverse();
@@ -70,7 +70,6 @@
 
 		// TODO
 
-
 		navbarAnim
 			.to('.header', {
 				backgroundColor: 'rgba(250, 250, 250, 0.95)',
@@ -79,7 +78,7 @@
 			})
 			.to('.header .navbar .navbar_brand svg', { height: 35 })
 			.to('.header .navbar', { padding: '0.4rem 0' })
-			.to('.header .navbar .navbar_nav', { opacity: 0 })
+			.to('.header .navbar .navbar_nav', { opacity: 0 });
 	});
 </script>
 
@@ -148,18 +147,18 @@
 						</a>
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
-								href="/about-us"
-								class="display_flex align_center text_gray"
-								class:active={$page.url.pathname.includes('about-us')}
+							href="/about-us"
+							class="display_flex align_center text_gray"
+							class:active={$page.url.pathname.includes('about-us')}
 						>
 							<h2 class="m_0">About us</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
 						</a>
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
-								href="/resources"
-								class="display_flex align_center text_gray"
-								class:active={$page.url.pathname.includes('resources')}
+							href="/resources"
+							class="display_flex align_center text_gray"
+							class:active={$page.url.pathname.includes('resources')}
 						>
 							<h2 class=" m_0">Resources</h2>
 							<ArrowRightIcon width="42" height="42" class="ml_auto" />
@@ -168,43 +167,85 @@
 						<div class="resource_filters display_flex bg_blue pb_2 show_on_md_and_up mx_2">
 							<div class="form_control form_control_radio mr_4">
 								<label>
-									<input type="radio" bind:group={currentFilter} name="" value={1} on:change={onFilterChange} />
+									<input
+										type="radio"
+										bind:group={currentFilter}
+										name=""
+										value={1}
+										on:change={onFilterChange}
+									/>
 									TAI Weekly
 								</label>
 							</div>
 							<div class="form_control form_control_radio mr_4">
 								<label>
-									<input type="radio" bind:group={currentFilter} name="" value={3} on:change={onFilterChange} />
+									<input
+										type="radio"
+										bind:group={currentFilter}
+										name=""
+										value={3}
+										on:change={onFilterChange}
+									/>
 									Collaboration case note
 								</label>
 							</div>
 							<div class="form_control form_control_radio mr_4">
 								<label>
-									<input type="radio" bind:group={currentFilter} name="" value={5} on:change={onFilterChange} />
+									<input
+										type="radio"
+										bind:group={currentFilter}
+										name=""
+										value={5}
+										on:change={onFilterChange}
+									/>
 									Think pieces
 								</label>
 							</div>
 							<div class="form_control form_control_radio mr_4">
 								<label>
-									<input type="radio" bind:group={currentFilter} name="" value={8} on:change={onFilterChange} />
+									<input
+										type="radio"
+										bind:group={currentFilter}
+										name=""
+										value={8}
+										on:change={onFilterChange}
+									/>
 									Blogs
 								</label>
 							</div>
 							<div class="form_control form_control_radio mr_4">
 								<label>
-									<input type="radio" bind:group={currentFilter} name="" value={16} on:change={onFilterChange} />
+									<input
+										type="radio"
+										bind:group={currentFilter}
+										name=""
+										value={16}
+										on:change={onFilterChange}
+									/>
 									Reports
 								</label>
 							</div>
 							<div class="form_control form_control_radio mr_4">
 								<label>
-									<input type="radio" bind:group={currentFilter} name="" value={18} on:change={onFilterChange} />
+									<input
+										type="radio"
+										bind:group={currentFilter}
+										name=""
+										value={18}
+										on:change={onFilterChange}
+									/>
 									Full Disclosure Series
 								</label>
 							</div>
 							<div class="form_control form_control_radio mr_4">
 								<label>
-									<input type="radio" bind:group={currentFilter} name="" value={7} on:change={onFilterChange} />
+									<input
+										type="radio"
+										bind:group={currentFilter}
+										name=""
+										value={7}
+										on:change={onFilterChange}
+									/>
 									Library
 								</label>
 							</div>
@@ -230,7 +271,6 @@
 						>
 							<LinkedInIcon width="20" height="20" />
 						</a>
-
 					</nav>
 				</div>
 			</div>

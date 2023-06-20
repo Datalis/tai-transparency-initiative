@@ -12,7 +12,9 @@
 			{data?.summary}
 		</h4>
 		<div class="display_flex">
-			<small class="text_gray text_uppercase mr_4">{new Date(data?.date || '').toDateString()}</small>
+			<small class="text_gray text_uppercase mr_4"
+				>{new Date(data?.date || '').toDateString()}</small
+			>
 			<small class="text_dark resource_item__link mt_auto font_bold"
 				>Read More <LinkIcon class="ml_1" width="18" height="18" style="fill: var(--gray)" />
 			</small>
@@ -45,7 +47,7 @@
 				flex-shrink: 0;
 				path {
 					stroke-width: 1px !important;
-					stroke: #c7ccd6  !important;
+					stroke: #c7ccd6 !important;
 				}
 			}
 		}

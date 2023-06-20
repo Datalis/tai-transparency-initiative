@@ -146,9 +146,8 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" as="image" href={HeroImg1}> 
-	<Seo
-		title='Transparency & Accountability Initiative - How TAI works' url="/how-tai-works"></Seo>
+	<link rel="preload" as="image" href={HeroImg1} />
+	<Seo title="Transparency & Accountability Initiative - How TAI works" url="/how-tai-works" />
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -167,8 +166,13 @@
 					</div>
 				</div>
 				<div class="img_wrapper col col_7 col_md_12 h_100">
-					<img src={HeroImg1} class="img_wrapper_2" alt="How TAI works"
-						decoding="sync" loading="eager" />
+					<img
+						src={HeroImg1}
+						class="img_wrapper_2"
+						alt="How TAI works"
+						decoding="sync"
+						loading="eager"
+					/>
 				</div>
 			</div>
 		</div>
@@ -367,7 +371,7 @@
 			</div>
 		</IntersectionObserver>
 	</section>
-	<ResourcesSection resources={resources} />
+	<ResourcesSection {resources} />
 	<SubscribeSection />
 </div>
 
@@ -461,11 +465,11 @@
 		min-height: 100vh !important;
 		z-index: 1;
 
-		@media (max-width: $md) {
+		/* @media (max-width: $md) {
 			button {
 				width: 100%;
 			}
-		}
+		} */
 
 		.model_items {
 			display: flex;

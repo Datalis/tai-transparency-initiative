@@ -1,4 +1,4 @@
-import type { Image } from "./image";
+import type { Image } from './image';
 
 export type Staff = {
 	id: number;
@@ -7,4 +7,4 @@ export type Staff = {
 	role: string;
 	description: string;
 	steering_commitee: boolean;
-}
+};

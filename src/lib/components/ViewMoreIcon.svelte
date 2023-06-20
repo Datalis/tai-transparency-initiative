@@ -15,7 +15,7 @@
 	.view_more {
 		width: 35px;
 		height: 35px;
-		background-color: #00DEB3;
+		background-color: #00deb3;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -34,7 +34,7 @@
 				transform: rotate(45deg) !important;
 			}
 			:global(.view_more__icon path) {
-				stroke: #00DEB3 !important;
+				stroke: #00deb3 !important;
 			}
 		}
 	}
