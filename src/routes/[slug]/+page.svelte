@@ -434,6 +434,7 @@
 		}
 	}
 	.content_section .social {
+		margin-top: 3rem;
 		.twitter-feed {
 			margin-top: 2rem;
 		}

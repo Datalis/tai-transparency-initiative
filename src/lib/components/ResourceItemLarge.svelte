@@ -72,10 +72,10 @@
 				flex-direction: column;
 				.img_wrapper {
 					position: relative;
-					background-color: map-get($colors, 'panel');
-					height: 100%;
+					/* background-color: map-get($colors, 'panel'); */
+					/* height: 100%; */
 					border-radius: 15px;
-					height: 240px;
+					/* height: 240px; */
 					overflow: hidden;
 
 					:global {
@@ -86,6 +86,7 @@
 							object-fit: cover;
 							object-position: center;
 							max-height: 100%;
+							aspect-ratio: 4/3;
 						}
 					}
 				}
