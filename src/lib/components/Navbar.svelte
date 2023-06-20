@@ -9,10 +9,13 @@
 	import { page } from '$app/stores';
 	import { afterNavigate, goto } from '$app/navigation';
 	import { gsap } from 'gsap/dist/gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
-	import ResourceFilters from './ResourceFilters.svelte';
+	// import ResourceFilters from './ResourceFilters.svelte';
 
 	let isMenuOpen = false;
+
+	gsap.registerPlugin(ScrollTrigger);
 
 	let menuAnim = gsap.timeline({ paused: true });
 

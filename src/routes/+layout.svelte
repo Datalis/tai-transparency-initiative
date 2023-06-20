@@ -13,8 +13,6 @@
 	import { onMount } from 'svelte';
 	import { onMessagingListener } from '$lib/api/firebase';
 
-	import 'pdfjs-dist/web/pdf_viewer.css';
-
 	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 	NProgress.configure({
