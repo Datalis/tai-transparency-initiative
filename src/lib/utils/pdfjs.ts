@@ -4,7 +4,7 @@ import pdfjsLib from 'pdfjs-dist';
 const require = createRequire(import.meta.url);
 
 // @ts-ignore
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs-dist/build/pdf.worker.js'
+// pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs-dist/build/pdf.worker.js'
 
 
 
