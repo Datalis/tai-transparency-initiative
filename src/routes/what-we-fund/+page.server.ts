@@ -16,7 +16,7 @@ export const load: PageServerLoad = async () => {
 				fields: ['title', 'message'],
 				populate: {
 					resources: {
-						fields: ['id', 'summary', 'title'],
+						fields: ['id', 'summary', 'title', 'slug'],
 						populate: {
 							image: {
 								populate: '*'
