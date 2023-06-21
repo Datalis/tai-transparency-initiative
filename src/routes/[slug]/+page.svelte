@@ -418,14 +418,15 @@
 				text-decoration: none;
 			}
 			.img_wrapper {
-				border-radius: 10px;
 				overflow: hidden;
-				aspect-ratio: 4/2.2;
-				background-color: map-get($colors, 'panel');
+				
+				/* background-color: map-get($colors, 'panel'); */
 				:global {
 					img {
+						border-radius: 15px;
+						aspect-ratio: 16/9;
 						width: 100%;
-						height: 100%;
+						height: auto;
 						object-fit: cover;
 						object-position: center;
 					}

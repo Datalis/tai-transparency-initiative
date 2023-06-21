@@ -116,14 +116,15 @@
 					font-size: pxToRem(20);
 				}
 
-				a {
-					text-decoration: underline;
+				.summary {
+					padding-top: 1rem;
 				}
 
 				.summary,
 				:global(.summary p) {
 					/* margin-top: auto; */
-					padding-top: 1rem;
+					/* padding-top: 1rem; */
+					margin: 0;
 					font-size: pxToRem(13);
 					display: -webkit-box;
 					-webkit-box-orient: vertical;
