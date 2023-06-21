@@ -203,7 +203,7 @@
 						{/each}
 					</div>
 
-					<a class="youtube-latest" target="_blank" rel="noopener" href="https://youtube.com/watch?v={social.youtube?.videoId}">
+					<!-- <a class="youtube-latest" target="_blank" rel="noopener" href="https://youtube.com/watch?v={social.youtube?.videoId}">
 						<img 
 							src={social.youtube?.thumbnailHigh?.url} 
 							width={social.youtube?.thumbnailHigh?.width} 
@@ -211,7 +211,7 @@
 							alt={social.youtube?.title} />
 						<span class="font_bold text_dark mt_2">{social.youtube?.title}</span>
 						<small class="text_dark mt_2">{social.youtube?.description}</small>
-					</a>
+					</a> -->
 				</div>
 			</aside>
 		</div>
@@ -457,7 +457,7 @@
 			}
 		}
 
-		.youtube-latest {
+		/* .youtube-latest {
 			margin-top: 3rem;
 			display: flex;
 			flex-direction: column;
@@ -467,6 +467,6 @@
 				object-fit: cover;
 				border-radius: 15px;
 			}
-		}
+		} */
 	}
 </style>
