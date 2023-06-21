@@ -1,5 +1,5 @@
 import { get } from '$lib/api';
-import { getLatestPostsFromTwitter, getLatestPostsFromYoutube } from '$lib/api/social';
+import { getLatestPostsFromTwitter } from '$lib/api/social';
 import imageLoader from '$lib/utils/imageLoader';
 import { generatePdfPreview } from '$lib/utils/pdfjs';
 import { error } from '@sveltejs/kit';
@@ -148,7 +148,7 @@ export async function load({ params }: { [key: string]: any }) {
 			const related = loadRelatedResources(resource);
 
 			const social = {
-				youtube: await getLatestPostsFromYoutube(),
+				// youtube: await getLatestPostsFromYoutube(),
 				twitter: await getLatestPostsFromTwitter(),
 			}
 

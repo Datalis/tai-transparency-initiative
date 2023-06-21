@@ -108,12 +108,12 @@
 
 		&__image {
 			overflow: hidden;
-			border-radius: 15px;
-			min-height: 200px;
+			/* min-height: 200px; */
 			:global(img) {
-				aspect-ratio: 4/2.2;
+				border-radius: 15px;
+				aspect-ratio: 16/9;
 				width: 100%;
-				height: 100%;
+				height: auto;
 				object-fit: cover;
 				object-position: center;
 			}

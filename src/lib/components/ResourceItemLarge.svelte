@@ -30,7 +30,7 @@
 			>
 			<h3 class="text_green mt_2 mb_2">{data?.title}</h3>
 			<small class="text_gray font_regular"
-				>By <a href="/" class="text_gray">{data?.author?.name}</a> ({data?.author?.role})</small
+				>By <span class="text_gray">{data?.author?.name}</span> {data?.author?.role == 'Role at TAI' ? '' : `(${data?.author?.role})`}	</small
 			>
 			<div class="text_dark summary">
 				{@html data?.summary}
@@ -72,21 +72,17 @@
 				flex-direction: column;
 				.img_wrapper {
 					position: relative;
-					/* background-color: map-get($colors, 'panel'); */
-					/* height: 100%; */
-					border-radius: 15px;
-					/* height: 240px; */
 					overflow: hidden;
 
 					:global {
 						img {
-							// background-color: transparent !important;
-							height: 100%;
+							border-radius: 15px;
+							height: auto;
 							width: 100%;
 							object-fit: cover;
 							object-position: center;
 							max-height: 100%;
-							aspect-ratio: 4/3;
+							aspect-ratio: 16/9;
 						}
 					}
 				}
@@ -117,21 +113,22 @@
 				h3 {
 					line-height: 1;
 					text-align: left;
-					font-size: pxToRem(24);
+					font-size: pxToRem(20);
 				}
 
-				a {
-					text-decoration: underline;
+				.summary {
+					padding-top: 1rem;
 				}
 
 				.summary,
 				:global(.summary p) {
-					margin-top: auto;
-					padding-top: 1rem;
-					font-size: pxToRem(14);
+					/* margin-top: auto; */
+					/* padding-top: 1rem; */
+					margin: 0;
+					font-size: pxToRem(13);
 					display: -webkit-box;
 					-webkit-box-orient: vertical;
-					-webkit-line-clamp: 4;
+					-webkit-line-clamp: 3;
 					overflow: hidden;
 					text-overflow: ellipsis;
 				}
