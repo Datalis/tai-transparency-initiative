@@ -15,7 +15,8 @@ COPY . .
 RUN npm i
 
 # remove potential security issues
-RUN npm audit fix
+# Temp disabled due to security issues with some packages
+# RUN npm audit fix
 
 # build SvelteKit app
 RUN npm run build
