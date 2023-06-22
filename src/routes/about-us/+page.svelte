@@ -94,7 +94,7 @@
 					target="blank"
 					class="btn btn_outline_green text_dark"
 				>
-					Read More
+					TAI Strategy
 				</a>
 			</div>
 		</div>

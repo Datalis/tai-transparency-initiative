@@ -355,6 +355,21 @@
 			.pdf-viewer {
 				min-height: 400px;
 			}
+
+			ul {
+				list-style: disc;
+				padding-left: 40px;
+			}
+			ol {
+				list-style: decimal;
+				padding-left: 40px;
+			}
+
+			ul,ol {
+				p {
+					margin: 0;
+				}
+			}
 		}
 	}
 

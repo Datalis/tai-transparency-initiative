@@ -15,7 +15,8 @@ COPY . .
 RUN npm i
 
 # remove potential security issues
-RUN npm audit fix
+# Temp disabled due to security issues with some packages
+# RUN npm audit fix
 
 # build SvelteKit app
 RUN npm run build
@@ -33,7 +34,7 @@ COPY --from=builder /usr/local/app/package*.json ./
 RUN npm ci --production
 
 # remove potential security issues
-RUN npm audit fix
+# RUN npm audit fix
 
 # copy built SvelteKit app to /app
 COPY --from=builder /usr/local/app/build ./
