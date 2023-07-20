@@ -370,6 +370,12 @@
 					margin: 0;
 				}
 			}
+
+			iframe {
+				width: 100%;
+				height: auto;
+				min-height: 500px;
+			}
 		}
 	}
 

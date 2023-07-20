@@ -100,11 +100,14 @@ const htmlContentParser = async (content: string) => {
 		for (const pdf of pdfs) {
 			const url = pdf.getAttribute('src');
 			if (url) {
-				const preview = await generatePdfPreview(url);
+				// const preview = await generatePdfPreview(url);
+				// pdf.replaceWith(`
+				// 	<a href="${url}" target="_blank" rel="noopener" class="pdf-viewer">
+				// 		<img src="${preview}" alt="PDF Preview" loading="lazy" decoding="async" sizes="100vw">
+				// 	</a>`);
 				pdf.replaceWith(`
-					<a href="${url}" target="_blank" rel="noopener" class="pdf-viewer">
-						<img src="${preview}" alt="PDF Preview" loading="lazy" decoding="async" sizes="100vw">
-					</a>`);
+					<iframe src="${url}" frameborder="0" class="tai-embed-pdf-iframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+				`);
 			}
 			// pdf.replaceWith(`
 			// <a href="${url}" target="_blank" class="pdf-viewer" data-pdf-url="${url}"></a>`);
