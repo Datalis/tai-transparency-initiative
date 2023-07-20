@@ -1,6 +1,7 @@
 import { get } from '$lib/api';
 import { getLatestPostsFromTwitter } from '$lib/api/social';
 import imageLoader from '$lib/utils/imageLoader';
+import { generatePdfPreview } from '$lib/utils/pdfjs';
 import { error } from '@sveltejs/kit';
 import { parse } from 'node-html-parser';
 
@@ -99,21 +100,23 @@ const htmlContentParser = async (content: string) => {
 		for (const pdf of pdfs) {
 			const url = pdf.getAttribute('src');
 			if (url) {
-				// const preview = await generatePdfPreview(url);
+				const preview = await generatePdfPreview(url);
 				// pdf.replaceWith(`
 				// 	<a href="${url}" target="_blank" rel="noopener" class="pdf-viewer">
 				// 		<img src="${preview}" alt="PDF Preview" loading="lazy" decoding="async" sizes="100vw">
 				// 	</a>`);
-				// pdf.replaceWith(`
-				// 	<iframe src="${url}" frameborder="0" class="tai-embed-pdf-iframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-				// `);
-				pdf.replaceWith(
-					`
-						<object data="https://drive.google.com/viewerng/viewer?embedded=true&url=${url}" type="application/pdf">
-							<embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=${url}" type='application/pdf'>
-						</object>
-					`
-				)
+				pdf.replaceWith(`
+					<div class="embed-pdf">
+						<iframe src="${url}" frameborder="0" class="tai-embed-pdf-iframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+						<div class="mobile-embed">
+							<img src="${preview}" alt="PDF Preview" loading="lazy" decoding="async" sizes="100vw">
+							<a href="${url}" target="_blank" rel="noopener" class="controls">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAatJREFUaEPtme1xgzAMhuXuwCBsQLZoukySZZJs0WzAIAzhnDiU07m2cZGMzZ3zj/gDPeiVbV4MHPxnDh4/NIDSGUzOwM80Xi3ARRqwAbjdu/4qnYfGrwJ8T+NgAH61bojzaEKsApynEYMfNAE0IVIArHbwLP1iOe0GgLLx1ZBUTrsBPLrehBYCCcSuACgdbYjdAbQhigBoQhQD0IIoCqABURxAClEFQAwCl9/YRloNQAiiGoCtx5EGcJ7GbIe5lKy0DLQMpOgk0qdJqEmoSSjTUYIXF1ovXwADvfO6bYsLgZ7S7G74CjMk1WxFTBPjKyIGhWYVvS762rAPWTRuO7aFTLOsAMz0ej26/kTXeFPHEJvbXcCUBWIPgIsFuD27/sWfsA9gyYKloLAP/sfl59Z8VgB+M+42eDIw655nCMcWB1gC+hQnAbkA5Pu4ALVI6I/xywA+8vIVcdUAIXnxZbQogHCDTR6erYiTIxB2bAApOhU+5OjwlgGtj3sbszQfQUTGFm3/GwMQDbMAJzyiiAFCO64ousjg/3yxWbUWcwWpNW8D0HqSW+c5fAbedzF1QA/s6LIAAAAASUVORK5CYII="/>
+								<span>Click to view PDF</span>
+							</a>
+						</div>
+					</div>
+				`);
 			}
 			// pdf.replaceWith(`
 			// <a href="${url}" target="_blank" class="pdf-viewer" data-pdf-url="${url}"></a>`);

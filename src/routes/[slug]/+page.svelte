@@ -371,11 +371,53 @@
 				}
 			}
 
-			iframe,
-			object {
+			iframe
+			{
 				width: 100%;
 				height: auto;
 				min-height: 650px;
+			}
+
+			.embed-pdf {
+				width: 100%;
+				height: auto;
+				@media screen and (max-width: $md) {
+					.tai-embed-pdf-iframe {
+						display: none;
+					}
+				}
+				.mobile-embed {
+					position: relative;
+					display: none;
+					@media screen and (max-width: $md) {
+						display: block;
+					}
+
+					.controls {
+						background-color: rgba($color: #000000, $alpha: 0.6);
+						position: absolute;
+						left: 0;
+						top: 0;
+						height: 100%;
+						width: 100%;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						img {
+							width: 24px;
+							height: 24px;
+						}
+
+						span {
+							color:  map-get($colors, 'green_light');
+							font-size: 14px;
+							margin-top: 0.5rem;
+							/* text-transform: uppercase; */
+							text-decoration: underline;
+						}
+					}
+				}
 			}
 		}
 	}
