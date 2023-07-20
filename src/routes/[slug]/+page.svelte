@@ -371,10 +371,11 @@
 				}
 			}
 
-			iframe {
+			iframe,
+			object {
 				width: 100%;
 				height: auto;
-				min-height: 500px;
+				min-height: 650px;
 			}
 		}
 	}

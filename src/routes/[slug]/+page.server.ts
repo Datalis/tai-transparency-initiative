@@ -104,9 +104,16 @@ const htmlContentParser = async (content: string) => {
 				// 	<a href="${url}" target="_blank" rel="noopener" class="pdf-viewer">
 				// 		<img src="${preview}" alt="PDF Preview" loading="lazy" decoding="async" sizes="100vw">
 				// 	</a>`);
-				pdf.replaceWith(`
-					<iframe src="${url}" frameborder="0" class="tai-embed-pdf-iframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-				`);
+				// pdf.replaceWith(`
+				// 	<iframe src="${url}" frameborder="0" class="tai-embed-pdf-iframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+				// `);
+				pdf.replaceWith(
+					`
+						<object data="https://drive.google.com/viewerng/viewer?embedded=true&url=${url}" type="application/pdf">
+							<embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=${url}" type='application/pdf'>
+						</object>
+					`
+				)
 			}
 			// pdf.replaceWith(`
 			// <a href="${url}" target="_blank" class="pdf-viewer" data-pdf-url="${url}"></a>`);
