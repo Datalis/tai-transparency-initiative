@@ -57,7 +57,7 @@
 <svelte:head>
 	<Seo
 		title={resource.title}
-		img="https://www.transparency-initiative.org{resource.image.url}"
+		img="https://www.transparency-initiative.org{resource?.image?.url}"
 		description={resource.summary}
 		url="/{resource.slug}"
 		type="article"
