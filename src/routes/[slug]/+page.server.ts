@@ -1,7 +1,6 @@
 import { get } from '$lib/api';
 import { getLatestPostsFromTwitter } from '$lib/api/social';
 import imageLoader from '$lib/utils/imageLoader';
-import { generatePdfPreview } from '$lib/utils/pdfjs';
 import { error } from '@sveltejs/kit';
 import { parse } from 'node-html-parser';
 
