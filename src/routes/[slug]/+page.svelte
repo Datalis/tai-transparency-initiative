@@ -97,123 +97,129 @@
 	</section>
 	<section class="content_section section bg_light">
 		<div class="container">
-			<div class="content">
-				<div class="content_img">
-					<Image priority image={resource?.image} alt={resource?.image_alt} />
-				</div>
-
-				<div class="post_content">
-					{@html resource.content}
-				</div>
-
-				<div class="share_block">
-					<h5 class="mr_3">Share this article</h5>
-					<div class="divider divider_dark divider_1 mr_3" />
-
-					<div class="display_flex">
-						<a
-							href="https://api.whatsapp.com/send?text={share_url}"
-							target="_blank"
-							rel="noreferrer"
-							class="share_icon"
-						>
-							<WhatsappIcon width="14" height="14" fill="#fff" />
-						</a>
-						<a
-							href="https://www.facebook.com/sharer.php?u={share_url}"
-							class="share_icon ml_2"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<FacebookIcon width="14" height="14" fill="#fff" />
-						</a>
-						<a
-							href="https://twitter.com/intent/tweet?url={share_url}"
-							class="share_icon ml_2"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<TwitterIcon width="14" height="14" fill="#fff" />
-						</a>
-						<a
-							href="https://www.linkedin.com/sharing/share-offsite/?url={share_url}"
-							class="share_icon ml_2"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<LinkedInIcon width="14" height="14" fill="#fff" />
-						</a>
+			<div class="row">
+				<div class="col col_8 col_sm_12">
+					<div class="content">
+						<div class="content_img">
+							<Image priority image={resource?.image} alt={resource?.image_alt} />
+						</div>
+		
+						<div class="post_content">
+							{@html resource.content}
+						</div>
+		
+						<div class="share_block">
+							<h5 class="mr_3">Share this article</h5>
+							<div class="divider divider_dark divider_1 mr_3" />
+		
+							<div class="display_flex">
+								<a
+									href="https://api.whatsapp.com/send?text={share_url}"
+									target="_blank"
+									rel="noreferrer"
+									class="share_icon"
+								>
+									<WhatsappIcon width="14" height="14" fill="#fff" />
+								</a>
+								<a
+									href="https://www.facebook.com/sharer.php?u={share_url}"
+									class="share_icon ml_2"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FacebookIcon width="14" height="14" fill="#fff" />
+								</a>
+								<a
+									href="https://twitter.com/intent/tweet?url={share_url}"
+									class="share_icon ml_2"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<TwitterIcon width="14" height="14" fill="#fff" />
+								</a>
+								<a
+									href="https://www.linkedin.com/sharing/share-offsite/?url={share_url}"
+									class="share_icon ml_2"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<LinkedInIcon width="14" height="14" fill="#fff" />
+								</a>
+							</div>
+						</div>
 					</div>
+				</div>
+				<div class="col col_4 col_sm_12">
+					<aside class="releated">
+						<div class="subscribe_block">
+							<h4 class="font_bold mb_3 mt_0">Keep updated with TAI weekly</h4>
+							<p>
+								Everything you need to know about transparency, accountability and participation,
+								delivered to your inbox.
+							</p>
+							<div class="form_control mt_4">
+								<input type="email" placeholder="Email Address" id="subemail" />
+							</div>
+							<button class="btn btn_blue mt_3" on:click={gotoSub}>Subscribe</button>
+						</div>
+						<h4 class="mt_5 mb_4">You may also like</h4>
+						<div class="divider divider_green divider_2 mb_4" />
+						<div class="related_articles_list">
+							{#each related as r}
+								<a href="/{r.slug}" class="related_article_item">
+									<div class="img_wrapper">
+										<Image width={300} image={r.image} />
+									</div>
+									<span class="text_dark my_3 font_bold">
+										{r.title}
+									</span>
+									<small>
+										<a href="/resources/{r.id}" class="text_gray display_flex align_center green_text"
+											>Read More <LinkIcon class="ml_1" style="fill: #00DEB3" /></a
+										>
+									</small>
+								</a>
+							{/each}
+						</div>
+						<div class="social">
+							<h4 class="mb_4">Follow us!</h4>
+							<div class="divider divider_green divider_2 mb_4" />
+		
+							<div class="twitter-feed">
+								{#each social.twitter as twit}
+									<div class="twit">
+										<div class="display_flex align_center">
+											<a
+												class="display_flex"
+												href={`https://twitter.com/${twit.user.screen_name}`}
+												target="_blank"
+											>
+												<img class="profile_img" src={twit.user.profile_image_url} alt="" />
+											</a>
+											<a class="text_dark font_bold" href={`https://twitter.com/${twit.user.screen_name}`} target="_blank">
+												<small class="text_dark font_bold">{twit.user.name}</small>
+											</a>
+										</div>
+										<small class="mt_2">
+											{@html parseTwitterText(twit.full_text)}
+										</small>
+									</div>
+								{/each}
+							</div>
+		
+							<!-- <a class="youtube-latest" target="_blank" rel="noopener" href="https://youtube.com/watch?v={social.youtube?.videoId}">
+								<img 
+									src={social.youtube?.thumbnailHigh?.url} 
+									width={social.youtube?.thumbnailHigh?.width} 
+									height={social.youtube?.thumbnailHigh?.height} 
+									alt={social.youtube?.title} />
+								<span class="font_bold text_dark mt_2">{social.youtube?.title}</span>
+								<small class="text_dark mt_2">{social.youtube?.description}</small>
+							</a> -->
+						</div>
+					</aside>
 				</div>
 			</div>
-			<aside class="releated">
-				<div class="subscribe_block">
-					<h4 class="font_bold mb_3 mt_0">Keep updated with TAI weekly</h4>
-					<p>
-						Everything you need to know about transparency, accountability and participation,
-						delivered to your inbox.
-					</p>
-					<div class="form_control mt_4">
-						<input type="email" placeholder="Email Address" id="subemail" />
-					</div>
-					<button class="btn btn_blue mt_3" on:click={gotoSub}>Subscribe</button>
-				</div>
-				<h4 class="mt_5 mb_4">You may also like</h4>
-				<div class="divider divider_green divider_2 mb_4" />
-				<div class="related_articles_list">
-					{#each related as r}
-						<a href="/{r.slug}" class="related_article_item">
-							<div class="img_wrapper">
-								<Image width={300} image={r.image} />
-							</div>
-							<span class="text_dark my_3 font_bold">
-								{r.title}
-							</span>
-							<small>
-								<a href="/resources/{r.id}" class="text_gray display_flex align_center green_text"
-									>Read More <LinkIcon class="ml_1" style="fill: #00DEB3" /></a
-								>
-							</small>
-						</a>
-					{/each}
-				</div>
-				<div class="social">
-					<h4 class="mb_4">Follow us!</h4>
-					<div class="divider divider_green divider_2 mb_4" />
-
-					<div class="twitter-feed">
-						{#each social.twitter as twit}
-							<div class="twit">
-								<div class="display_flex align_center">
-									<a
-										class="display_flex"
-										href={`https://twitter.com/${twit.user.screen_name}`}
-										target="_blank"
-									>
-										<img class="profile_img" src={twit.user.profile_image_url} alt="" />
-									</a>
-									<a class="text_dark font_bold" href={`https://twitter.com/${twit.user.screen_name}`} target="_blank">
-										<small class="text_dark font_bold">{twit.user.name}</small>
-									</a>
-								</div>
-								<small class="mt_2">
-									{@html parseTwitterText(twit.full_text)}
-								</small>
-							</div>
-						{/each}
-					</div>
-
-					<!-- <a class="youtube-latest" target="_blank" rel="noopener" href="https://youtube.com/watch?v={social.youtube?.videoId}">
-						<img 
-							src={social.youtube?.thumbnailHigh?.url} 
-							width={social.youtube?.thumbnailHigh?.width} 
-							height={social.youtube?.thumbnailHigh?.height} 
-							alt={social.youtube?.title} />
-						<span class="font_bold text_dark mt_2">{social.youtube?.title}</span>
-						<small class="text_dark mt_2">{social.youtube?.description}</small>
-					</a> -->
-				</div>
-			</aside>
 		</div>
 	</section>
 	<SubscribeSection />
@@ -256,6 +262,14 @@
 		@media screen and (max-width: $md) {
 			padding-top: 0 !important;
 		}
+
+		.col_8 {
+			max-width: calc(66.666666% - 2.5rem);
+			@media screen and (max-width: $md) {
+				max-width: 100%;
+			}
+
+		}
 	}
 
 	:global(.content_section .swiper) {
@@ -270,22 +284,23 @@
 		object-fit: contain;
 	}
 
-	.content_section .container {
+	.content_section .row {
+		display: flex;
+		flex-wrap: nowrap !important;
+	}
+
+	/* .content_section .container {
 		display: flex;
 
 		@media screen and (max-width: $md) {
 			flex-direction: column;
 		}
-	}
+	} */
 
 	.content_section .content {
-		min-width: 65vw;
-		padding-right: 2rem;
+		
 		@media screen and (max-width: $md) {
-			margin-top: 1.5rem;
-			max-width: 100%;
-			min-height: 100%;
-			padding-right: 0;
+			padding: 0 1rem;
 		}
 	}
 
