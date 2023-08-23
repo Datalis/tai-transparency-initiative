@@ -182,10 +182,10 @@
 							{/each}
 						</div>
 						<div class="social">
-							<h4 class="mb_4">Follow us!</h4>
-							<div class="divider divider_green divider_2 mb_4" />
+							<!-- <h4 class="mb_4">Follow us!</h4>
+							<div class="divider divider_green divider_2 mb_4" /> -->
 		
-							<div class="twitter-feed">
+							<!-- <div class="twitter-feed">
 								{#each social.twitter as twit}
 									<div class="twit">
 										<div class="display_flex align_center">
@@ -206,7 +206,7 @@
 									</div>
 								{/each}
 							</div>
-		
+		 -->
 							<!-- <a class="youtube-latest" target="_blank" rel="noopener" href="https://youtube.com/watch?v={social.youtube?.videoId}">
 								<img 
 									src={social.youtube?.thumbnailHigh?.url} 
@@ -513,7 +513,7 @@
 			}
 		}
 	}
-	.content_section .social {
+	/* .content_section .social {
 		margin-top: 3rem;
 		.twitter-feed {
 			margin-top: 2rem;
@@ -536,16 +536,6 @@
 			}
 		}
 
-		/* .youtube-latest {
-			margin-top: 3rem;
-			display: flex;
-			flex-direction: column;
-			text-decoration: none;
-			img {
-				aspect-ratio: 16/9;
-				object-fit: cover;
-				border-radius: 15px;
-			}
-		} */
-	}
+		
+	} */
 </style>
