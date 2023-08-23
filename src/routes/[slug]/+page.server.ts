@@ -161,7 +161,7 @@ export async function load({ params }: { [key: string]: any }) {
 
 			const social = {
 				// youtube: await getLatestPostsFromYoutube(),
-				twitter: await getLatestPostsFromTwitter(),
+				// twitter: await getLatestPostsFromTwitter(),
 			}
 
 			return {
@@ -173,6 +173,7 @@ export async function load({ params }: { [key: string]: any }) {
 			throw error(404, 'Not found');
 		}
 	} catch (e: any) {
+		console.error(e);
 		throw error(e?.status || 500, `${e?.body || ''}`);
 	}
 }
