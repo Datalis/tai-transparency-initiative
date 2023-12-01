@@ -35,6 +35,13 @@ export const load: PageServerLoad = async () => {
 	const { data: resources } = await get('wc-resources', {
 		fields: ['id', 'summary', 'title', 'slug'],
 		sort: 'date:DESC',
+		filters: {
+			type: {
+				id: {
+					$not: 7 // No Library items
+				}
+			}
+		},
 		pagination: {
 			limit: 3
 		},
