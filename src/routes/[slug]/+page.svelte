@@ -259,6 +259,13 @@
 	}
 
 	.content_section {
+
+		@media (max-width: 576px) {
+			.row {
+				flex-direction: column;
+			}
+		}
+
 		@media screen and (max-width: $md) {
 			padding-top: 0 !important;
 		}
@@ -297,7 +304,8 @@
 		}
 	} */
 
-	.content_section .content {
+	.content_section .content,
+	.content_section .releated  {
 		
 		@media screen and (max-width: $md) {
 			padding: 0 1rem;
@@ -396,6 +404,11 @@
 			.embed-pdf {
 				width: 100%;
 				height: auto;
+
+				iframe {
+					aspect-ratio: 8.5/11;
+				}
+
 				@media screen and (max-width: $md) {
 					.tai-embed-pdf-iframe {
 						display: none;
