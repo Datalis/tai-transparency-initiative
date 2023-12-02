@@ -30,7 +30,7 @@ WORKDIR /usr/local/app
 COPY --from=builder /usr/local/app/package*.json ./
 
 # clean install dependencies, no devDependencies, no prepare script
-RUN npm ci --production
+RUN npm ci --development
 
 # remove potential security issues
 # RUN npm audit fix
