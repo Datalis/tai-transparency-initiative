@@ -1,8 +1,8 @@
 <script lang="ts">
 	import CardBg from '$lib/assets/images/home/cards/fondo.webp';
-	import Card1Img from '$lib/assets/images/home/cards/1.webp';
-	import Card2Img from '$lib/assets/images/home/cards/2.webp';
-	import Card3Img from '$lib/assets/images/home/cards/3.webp';
+	import Card1Img from '$lib/assets/images/home/cards/What we fund - TAI.png';
+	import Card2Img from '$lib/assets/images/home/cards/How we fund - TAI.png';
+	import Card3Img from '$lib/assets/images/home/cards/How TAI works - TAI.png';
 
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap/dist/gsap';

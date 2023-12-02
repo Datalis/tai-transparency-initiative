@@ -1,5 +1,5 @@
 <script>
-	import LogoIcon from '$lib/assets/images/logo_icon.svg?component';
+	import LogoIcon from '$lib/assets/images/logo-footer.svg?component';
 	import FacebookIcon from '$lib/assets/icons/facebook.svg?component';
 	import TwitterIcon from '$lib/assets/icons/twitter.svg?component';
 	import LinkedInIcon from '$lib/assets/icons/linkedin.svg?component';
