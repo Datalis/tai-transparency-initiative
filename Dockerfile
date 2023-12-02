@@ -12,7 +12,7 @@ WORKDIR /usr/local/app
 COPY . .
 
 # clean install all dependencies
-RUN npm i
+RUN NODE_ENV=development npm i
 
 # remove potential security issues
 # Temp disabled due to security issues with some packages
@@ -20,7 +20,6 @@ RUN npm i
 
 # build SvelteKit app
 RUN npm run build
-
 
 # stage run
 FROM base as runner
