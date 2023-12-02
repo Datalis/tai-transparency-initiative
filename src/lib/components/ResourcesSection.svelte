@@ -4,7 +4,7 @@
 	export let resources: any;
 </script>
 
-<section id="resources" class="resources_section section bg_light">
+<section id="resources" class="resources_section section">
 	<div class="container">
 		<div class="title align_center">
 			<div class="flex-grow_1">
@@ -12,7 +12,7 @@
 			</div>
 			<a href="/resources" class="btn btn_outline_blue text_blue">Explore Our Resources</a>
 		</div>
-		<div class="divider divider_2 divider_green" />
+		<div class="divider divider_2 divider_blue_light" />
 		<div class="row mt_4">
 			{#each resources as resItem}
 				<div class="col col_4 col_md_6 col_sm_12">

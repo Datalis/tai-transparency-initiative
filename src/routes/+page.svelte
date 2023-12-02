@@ -99,8 +99,8 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<div id="home" class="page bg_blue">
-	<section class="landing_section section bg_blue">
+<div id="home" class="page bg_white">
+	<section class="landing_section section bg_white">
 		<div class="container">
 			<div class="row">
 				<div class="landing_section__hero--wrapper col col_12 show_on_md_and_down">
@@ -113,12 +113,12 @@
 
 				<div class="col col_5 col_md_12">
 					<div class="landing_section__content">
-						<h1 class="text_green mb_3 mt_0">{hero?.title}</h1>
+						<h1 class="text_blue_light mb_3 mt_0">{hero?.title}</h1>
 						<span class="divider divider_2 divider_light" />
 						<div class="landing_section__content__message font_light">
 							{@html hero?.message}
 						</div>
-						<a href="/about-us" class="btn btn_outline_green mt_4 mb_4">Read More</a>
+						<a href="/about-us" class="btn btn_dark mt_4 mb_4">Read More</a>
 					</div>
 				</div>
 
@@ -132,7 +132,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="brands_section section bg_blue show_on_lg_and_up">
+	<section class="brands_section section bg_white show_on_lg_and_up">
 		<div class="container">
 			<span class="brands_section__title">OUR MEMBERS</span>
 		</div>
@@ -152,11 +152,11 @@
 			<a href="https://www.chandlerfoundation.org/" target="blank"><ChandlerLogo width="300" /></a>
 		</div>
 	</section>
-	<section class="brands_section_mobile section bg_blue show_on_lg_and_down">
+	<section class="brands_section_mobile section bg_white show_on_lg_and_down">
 		<div class="container">
 			<span class="brands_section__title">OUR MEMBERS</span>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper blue">
 			<a href="https://www.macfound.org/" target="blank">
 				<MacArthurLogo height="50" width="50%" />
 			</a>
@@ -187,9 +187,12 @@
 		</div>
 	</section>
 	<CardsSection />
-	<JoinSection {form} />
-	<ResourcesSection resources={res} />
-	<SubscribeSection />
+	<div class="linear-gradient_gray">
+		<JoinSection {form} />
+		<ResourcesSection resources={res} />
+		<SubscribeSection />
+	</div>
+	
 </div>
 
 <style lang="scss">
@@ -318,8 +321,8 @@
 			// }
 
 			.btn:hover {
-				background-color: map-get($colors, 'green');
-				color: map-get($colors, 'dark');
+				background-color: map-get($colors, 'blue_light');
+				color: map-get($colors, 'white');
 			}
 
 			// @media (max-width: $md) {
@@ -335,17 +338,21 @@
 		}
 	}
 
+	.linear-gradient_gray{
+		background: linear-gradient(180deg, map-get($colors, 'gray_light'), white);
+	}
+
 	.brands_section {
 		padding-top: 2rem !important;
 		padding-bottom: 0 !important;
-		background: map-get($colors, 'blue');
+		background: map-get($colors, 'white');
 		position: relative;
 		z-index: 1;
 
 		&__title {
 			font-size: pxToRem(14);
 			font-weight: 500;
-			color: map-get($colors, 'green');
+			color: map-get($colors, 'blue_light');
 			display: block;
 		}
 
@@ -358,6 +365,10 @@
 				max-width: 350px;
 				padding-left: 2rem;
 				padding-right: 3rem;
+			}
+
+			:global(path){
+				fill: map-get($colors, "gray" ) !important;
 			}
 		}
 

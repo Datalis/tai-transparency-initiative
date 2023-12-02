@@ -20,7 +20,7 @@
 					<div class="col col_5 col_lg_12">
 						<div class="display_flex flex_column justify_center h_100">
 							<h2 class="mb_4 font_bold mt_0 text_dark">Join TAI</h2>
-							<div class="divider divider_light divider_2" />
+							<div class="divider divider_blue_light divider_2" />
 							<p class="mt_4 font_light text_dark">
 								We invite <strong>FUNDERS</strong> to join our conversations. If you are new to this
 								field or looking to complement your portfolio, we are here to help.
@@ -64,7 +64,7 @@
 										Subscribe to TAI's Weekly
 									</label>
 								</div>
-								<button class="btn btn_blue mt_4" type="submit">Get in Touch</button>
+								<button class="btn btn_dark mt_4" type="submit">Get in Touch</button>
 							</form>
 						</div>
 					</div>
@@ -78,7 +78,7 @@
 	$lg: map-get($grid-breakpoints, 'lg');
 
 	.join_section {
-		background: #59ebcf;
+		//background: #59ebcf;
 		position: relative;
 		z-index: 0;
 		padding-top: 0 !important;

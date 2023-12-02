@@ -473,6 +473,14 @@
 					justify-content: center;
 				}
 			}
+
+			
+		}
+
+		.navbar_toggler{
+			:global(path){
+				stroke: map-get($colors, "blue_light" ) !important;
+			}
 		}
 
 		&.hidden {
@@ -481,7 +489,7 @@
 		}
 
 		&.pinned {
-			background-color: rgba($blue, 0.9);
+			background-color: rgba(white, 0.9);
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 			max-height: 70px;
 			backdrop-filter: blur(10px);

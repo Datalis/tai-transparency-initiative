@@ -34,7 +34,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<section class="cards_section section bg_blue">
+<section class="cards_section section bg_white">
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
@@ -156,7 +156,7 @@
 				border: none;
 				overflow: hidden;
 				padding: 0;
-				background: $card-green;
+				background: map-get($colors, "green_light");
 				border-radius: 15px;
 				height: calc(100% - pxToRem(20));
 				margin: auto;
@@ -180,7 +180,7 @@
 					border-bottom-right-radius: 15px;
 					overflow: hidden;
 					position: relative;
-					box-shadow: 1px 10px 22px -9px rgba(0, 0, 0, 0.75);
+					/*box-shadow: 1px 10px 22px -9px rgba(0, 0, 0, 0.75);*/
 					img {
 						width: 100%;
 						height: 100%;

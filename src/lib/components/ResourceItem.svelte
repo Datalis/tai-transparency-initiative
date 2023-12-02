@@ -24,7 +24,7 @@
 			class="ml_1"
 			width="18"
 			height="18"
-			style="fill: #00DEB3"
+			style="fill: #5c4aff"
 		/></span
 	>
 </a>
@@ -89,10 +89,10 @@
 			color: map-get($colors, 'green');
 		}
 		&__link {
-			color: #00deb3;
+			color: map-get($colors, 'blue_light');
 		}
 		&__link:hover {
-			color: #43b79e;
+			color: #9b8eff;
 		}
 
 		&__type {
