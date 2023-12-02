@@ -12,7 +12,7 @@ WORKDIR /usr/local/app
 COPY . .
 
 # clean install all dependencies
-RUN NODE_ENV=development npm i
+RUN npm i
 
 # remove potential security issues
 # Temp disabled due to security issues with some packages
@@ -30,7 +30,7 @@ WORKDIR /usr/local/app
 COPY --from=builder /usr/local/app/package*.json ./
 
 # clean install dependencies, no devDependencies, no prepare script
-RUN npm ci --development
+RUN npm ci --production
 
 # remove potential security issues
 # RUN npm audit fix

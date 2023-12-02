@@ -1,6 +1,6 @@
 <script lang="ts">
 	import WorldImg from '$lib/assets/images/home/group_3.webp';
-	import LogoIcon from '$lib/assets/images/logo_icon.svg?component';
+	import LogoIcon from '$lib/assets/images/logo-footer.svg?component';
 
 	import EnvisionImg1 from '$lib/assets/images/envision_1.webp';
 	import EnvisionImg2 from '$lib/assets/images/envision_2.webp';
