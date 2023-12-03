@@ -360,6 +360,7 @@
 			margin-top: 2rem;
 			width: max-content;
 			display: flex;
+			align-items: center;
 			:global(svg) {
 				flex-shrink: 0;
 				max-width: 350px;

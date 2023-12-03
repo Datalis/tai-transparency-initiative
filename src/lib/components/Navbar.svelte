@@ -327,12 +327,6 @@
 		width: 100%;
 		transition: all 0.3s ease-in-out;
 
-		:global(.logo){
-			:global(.cls-2){
-				fill: #1e3653;
-			}
-		}
-
 		.navbar,
 		.navbar .navbar_nav {
 			transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -352,8 +346,11 @@
 			height: 50px;
 			transition: all 0.3s ease-in-out;
 			:global(svg) {
-				width: 100%;
+				//width: 100%;
 				height: 100%;
+				:global(.cls-2){
+					fill: #1e3653;
+				}
 			}
 		}
 
