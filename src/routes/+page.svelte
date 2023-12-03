@@ -187,7 +187,7 @@
 		</div>
 	</section>
 	<CardsSection />
-	<div class="linear-gradient_gray">
+	<div class="gradient_lg_gray_light">
 		<JoinSection {form} />
 		<ResourcesSection resources={res} />
 		<SubscribeSection />
@@ -338,9 +338,7 @@
 		}
 	}
 
-	.linear-gradient_gray{
-		background: linear-gradient(180deg, map-get($colors, 'gray_light'), white);
-	}
+	
 
 	.brands_section {
 		padding-top: 2rem !important;

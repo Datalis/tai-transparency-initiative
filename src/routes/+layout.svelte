@@ -222,7 +222,7 @@
 		.link-icon {
 			width: 40px;
 			height: 40px;
-			border: 1px solid #c8ccd5;
+			border: 1px solid map-get($colors, "dark");
 			border-radius: 50%;
 			display: flex;
 			align-items: center;

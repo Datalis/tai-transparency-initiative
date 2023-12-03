@@ -17,7 +17,7 @@
 	</p>
 	<a href={data?.url} class="article_item__link font_bold mt_2 display_flex align_center"
 		><small>Read More</small>
-		<LinkIcon class="ml_1" width="18" height="18" style="fill: #00DEB3" /></a
+		<LinkIcon class="ml_1" width="18" height="18" style="fill: #8f8bff" /></a
 	>
 </div>
 
