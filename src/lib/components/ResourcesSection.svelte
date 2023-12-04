@@ -10,7 +10,7 @@
 			<div class="flex-grow_1">
 				<h2 class="mb_4 w_75">Transparency and Accountability Initiative Resources</h2>
 			</div>
-			<a href="/resources" class="btn btn_outline_blue text_blue">Explore Our Resources</a>
+			<a href="/resources" class="btn bg_dark">Explore Our Resources</a>
 		</div>
 		<div class="divider divider_2 divider_blue_light" />
 		<div class="row mt_4">

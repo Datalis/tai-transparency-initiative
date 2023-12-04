@@ -41,20 +41,7 @@
 			font-size: pxToRem(16) !important;
 		}
 
-		.resource_item__image {
-			background: map-get($colors, 'blue');
-			display: flex;
-			align-items: center;
-			:global {
-				img {
-					aspect-ratio: 4/2;
-					width: 95%;
-					height: 95%;
-					margin: auto;
-					object-fit: contain;
-				}
-			}
-		}
+		
 		.resource_item__link {
 			margin-top: auto;
 		}
@@ -79,6 +66,11 @@
 			text-overflow: ellipsis;
 			line-height: 28px;
 			margin: 0.75rem 0;
+		}
+
+		.resource_item__image{
+			background: map-get($colors, 'blue_dark');
+			border-radius: 0.8rem;
 		}
 
 		.divider {

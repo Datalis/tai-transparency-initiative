@@ -174,7 +174,7 @@
 	</div>
 {/if}
 
-<section id="pathways-to-change" class="pathways_section section bg_blue_light">
+<section id="pathways-to-change" class="pathways_section section bg_blue_dark">
 	<div class="wrapper">
 		<div class="container">
 			<h2>Pathways to change</h2>
@@ -1332,6 +1332,8 @@
 <style lang="scss" scoped>
 	$md: map-get($grid-breakpoints, 'md');
 
+	
+
 	.pathways_section--overlay {
 		position: fixed;
 		top: 0;
@@ -1380,6 +1382,21 @@
 	}
 	.pathways_section {
 		min-height: 100vh;
+
+		:global(svg){
+			:global(circle), :global(text), :global(polygon){
+				fill: map-get($colors, "gray_light") !important;
+			}
+			:global(.cls-5){
+				fill: map-get($colors, "gray") !important;
+			}
+			:global(tspan){
+				fill: map-get($colors, "dark") !important;
+			}
+			:global(line){
+				stroke: map-get($colors, "gray_light") !important;
+			}
+		}
 
 		@media screen and (max-width: $md) {
 			p {
@@ -1453,8 +1470,11 @@
 			&:hover {
 				path {
 					animation: rotating 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-					stroke: #3d30bf !important;
-					fill: #3d30bf !important;
+					stroke: map-get($colors, "gray") !important; 
+					fill: map-get($colors, "gray") !important;
+				}
+				text{
+					fill: white !important;
 				}
 			}
 			&.active {
