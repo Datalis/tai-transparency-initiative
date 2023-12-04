@@ -234,7 +234,7 @@
 				@media (hover: hover) {
 					&:hover {
 						.overlay {
-							height: calc(100% - 100px - var(--content-height));
+							height: calc(100% - 5vh - var(--content-height));
 							/* height: 50%; */
 						}
 						.content .divider {

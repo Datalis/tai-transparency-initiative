@@ -174,7 +174,7 @@
 	</div>
 {/if}
 
-<section id="pathways-to-change" class="pathways_section section bg_blue_dark">
+<section id="pathways-to-change" class="pathways_section section bg_blue">
 	<div class="wrapper">
 		<div class="container">
 			<h2>Pathways to change</h2>
@@ -1340,7 +1340,7 @@
 		left: 0;
 		bottom: 0;
 		right: 0;
-		background-color: rgba(#051231, 0.8);
+		background-color: #1E3653;
 		backdrop-filter: blur(25.2px);
 		display: flex;
 		z-index: 99999;
@@ -1387,15 +1387,19 @@
 			:global(circle), :global(text), :global(polygon){
 				fill: map-get($colors, "gray_light") !important;
 			}
-			:global(.cls-5){
-				fill: map-get($colors, "gray") !important;
-			}
-			:global(tspan){
-				fill: map-get($colors, "dark") !important;
-			}
 			:global(line){
 				stroke: map-get($colors, "gray_light") !important;
 			}
+			:global(.pathways-circle){
+				:global(.cls-5){
+					fill: #8F8BFF !important;
+				}
+			}
+			
+			:global(tspan){
+				fill: map-get($colors, "dark") !important;
+			}
+			
 		}
 
 		@media screen and (max-width: $md) {
@@ -1498,7 +1502,7 @@
 				}
 				circle {
 					r: 40px;
-					fill: #051231;
+					fill: #8F8BFF !important;
 				}
 			}
 		}

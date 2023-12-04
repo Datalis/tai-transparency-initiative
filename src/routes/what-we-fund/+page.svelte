@@ -8,7 +8,7 @@
 	import FundingImg from '$lib/assets/images/funding_data_library.webp';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
-	import HeroImg from '$lib/assets/images/heroes/what-we-fund.png?webp';
+	import HeroImg from '$lib/assets/images/heroes/what-we-fund-inside.png?webp';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
 	import { Pagination } from 'swiper';
 	import PathwaysSection from '$lib/components/PathwaysSection.svelte';
@@ -110,7 +110,7 @@
 			</div>
 		</div> -->
 	</section>
-	<section id="funding" class="funding_section section bg_light">
+	<section id="funding" class="funding_section section">
 		<div class="container">
 			<h2 class="text_dark mt_0">What does TAI funding look like?</h2>
 			<span class="divider divider_2 divider_blue_light mb_5" />

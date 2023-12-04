@@ -16,7 +16,7 @@
 	import FoundersExitsSection from '$lib/components/FoundersExitsSection.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 
-	import HeroImg from '$lib/assets/images/heroes/how-we-fund.png?webp';
+	import HeroImg from '$lib/assets/images/heroes/how-we-fund-inside.png?webp';
 	// import HeroImg2 from '$lib/assets/images/hero/2.2.png'
 
 	import ParticipatoryVideoPoster from '$lib/assets/images/participatory-video-poster.webp';

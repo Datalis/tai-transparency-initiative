@@ -43,13 +43,11 @@
 </svelte:head>
 
 <div class="about_us_page page">
-	<section class="landing_section section bg_blue">
+	<section class="landing_section section gradient_lg_gray_light">
 		<div class="container">
 			<img class="wrapper_bg" alt="" src={WorldImg} />
 			<div class="wrapper display_flex flex_column align_center justify_center">
-				<LogoIcon width="72" height="72" />
-				<h1 class="text_green mt_4 mb_3">About Us</h1>
-				<div class="divider divider_light divider_2 w_15" />
+				<h1 class="text_blue_dark mt_4 mb_3">About Us</h1>
 				<p class="text_center mx_auto w_75">
 					The Transparency and Accountability Initiative (TAI) is a collaborative for funder
 					learning and action in support of participation, openness and accountability around the
@@ -58,10 +56,10 @@
 			</div>
 		</div>
 	</section>
-	<section id="goals" class="envision_section section bg_light">
+	<section id="goals" class="envision_section section">
 		<div class="container">
-			<h2>We envision a society where</h2>
-			<div class="divider divider_green divider_2" />
+			<h2 class="text_center">We envision a society where</h2>
+			<div class="divider divider_blue_light divider_2" />
 			<div class="row mt_5">
 				<div class="col col_4 col_md_12">
 					<div class="envision_section__item display_flex flex_column align_center">
@@ -92,7 +90,7 @@
 				<a
 					href="https://api.tai.datalis.dev/uploads/tai_strategy_document_2020_2024_45f7b393f2.pdf"
 					target="blank"
-					class="btn btn_outline_green text_dark"
+					class="btn bg_blue_dark"
 				>
 					TAI Strategy
 				</a>
@@ -102,7 +100,7 @@
 	<section id="members" class="members_section section">
 		<div class="container">
 			<h3 class="mb_4">{members.title}</h3>
-			<div class="divider divider_green divider_2" />
+			<div class="divider divider_blue_light divider_2" />
 			<p class="mt_4 w_75">
 				{@html members.message}
 			</p>
@@ -134,7 +132,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="committee_section section bg_panel text_light">
+	<section class="committee_section section bg_white text_light">
 		<div class="container">
 			<div class="committee_list mt_4">
 				<h4 class="mb_4 mt_4 text_light">Steering Committee</h4>
@@ -160,27 +158,36 @@
 		color: #00deb3;
 	} */
 	.landing_section {
-		padding: 0 !important;
 		min-height: 100vh;
+		
 		position: relative;
 		z-index: 1;
 		padding-top: 100px !important;
+		padding-bottom: 200vh !important;
+		margin-bottom: -200vh;
 		display: flex !important;
 		flex-direction: column !important;
 		justify-content: center;
+		height: fit-content;
+		
 		.wrapper_bg {
 			z-index: -1;
 			position: absolute;
-			top: 0;
-			bottom: 0;
+			top: 4rem;
 			left: 0;
 			right: 0;
+
 			object-fit: contain;
 			margin: auto;
-			width: 70%;
+			height: calc(100vh - 4rem);
+			max-height: 30rem;
 		}
 		.wrapper {
-			height: 100%;
+			height: calc(100vh - 4rem);
+			margin-top: -5rem;
+			max-height: 30rem;
+			background-image: "lib/assets/images/home/group_3.webp";
+
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;
@@ -190,6 +197,10 @@
 		min-height: 100vh;
 		position: relative;
 		z-index: 1;
+
+		.divider{
+			margin-inline: auto;
+		}
 
 		&__item {
 			max-width: 300px;
@@ -208,7 +219,7 @@
 		}
 	}
 	.members_section {
-		background: #fafafa;
+		background: white;
 		position: relative;
 		z-index: 1;
 		padding-bottom: 0 !important;
@@ -223,6 +234,8 @@
 				opacity: 0.5;
 			}
 		}
+
+		
 	}
 	.team_section {
 		padding-top: 120px !important;

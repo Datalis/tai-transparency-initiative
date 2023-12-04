@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Logo from '$lib/assets/images/logo.svg?component';
+	import LogoFooter from '$lib/assets/images/logo-footer.svg?component';
 	import FacebookIcon from '$lib/assets/icons/facebook.svg?component';
 	import TwitterIcon from '$lib/assets/icons/twitter.svg?component';
 	import LinkedInIcon from '$lib/assets/icons/linkedin.svg?component';
@@ -148,7 +149,7 @@
 				<div class="container">
 					<div class="display_flex align_center mt_3">
 						<a href="/" class="navbar_menu_brand">
-							<Logo class="logo" />
+							<LogoFooter class="logo" />
 						</a>
 						<button class="navbar_menu__close ml_auto" on:click={() => toggleMenu()}>
 							<CloseIcon width="24" height="24" />
@@ -405,7 +406,7 @@
 				height: 50px;
 				transition: all 0.3s ease-in-out;
 				:global(svg) {
-					width: 100%;
+					//width: 100%;
 					height: 100%;
 				}
 			}
@@ -421,6 +422,7 @@
 						min-width: 42px;
 					}
 					:global(svg path) {
+						stroke: map-get($colors, "gray" ) !important;
 						stroke-width: 1px !important;
 					}
 					h2 {
@@ -433,12 +435,12 @@
 				a.active {
 					h2 {
 						font-weight: 600 !important;
-						color: $green;
+						color: map-get($colors, "green" );
 					}
 					:global(svg path) {
 						transition: all 0.1s ease;
 						stroke-width: 2px !important;
-						stroke: $green !important;
+						stroke: map-get($colors, "green" ) !important;
 					}
 				}
 				@media (max-width: $sm) {

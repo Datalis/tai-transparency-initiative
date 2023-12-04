@@ -1,4 +1,4 @@
-<script lang="ts">
+ <script lang="ts">
 	import MacArthurLogo from '$lib/assets/icons/mac-arthur.svg?component';
 	import FordLogo from '$lib/assets/icons/ford.svg?component';
 	import HewlettLogo from '$lib/assets/icons/hewlett.svg?component';
@@ -22,7 +22,7 @@
 	import SpeakerIcon from '$lib/assets/icons/Speaker_Icon.svg?component';
 	// import Image from '$lib/components/Image.svelte';
 
-	import HeroImg from '$lib/assets/images/heroes/how-tai-works.webp';
+	import HeroImg from '$lib/assets/images/heroes/how-tai-works-inside.png';
 	import Seo from '$lib/components/Seo.svelte';
 	// import HeroImg1 from '$lib/assets/images/hero/3.2.png';
 	// import HeroImg2 from '$lib/assets/images/hero/3.1.png';
@@ -597,7 +597,7 @@
 				flex-grow: 1;
 				justify-content: space-between;
 				// background-color: #c7ccd6 !important;
-				background-color: #e4e8ef !important;
+				//background-color: #e4e8ef !important;
 				span {
 					font-size: pxToRem(15);
 					font-weight: 400;
@@ -732,7 +732,7 @@
 			display: flex;
 			&__left {
 				width: 55%;
-				background-color: #f2f4f7;
+				background-color: white;
 			}
 			&__right {
 				width: 45%;

@@ -57,7 +57,7 @@
 				</div>
 				<div class="col col_6 col_lg_12">
 					<h2 class="mt_0 text_blue_dark">Funder exits</h2>
-					<div class="divider divider_green divider_2" />
+					<div class="divider divider_white divider_2" />
 					<p class="mt_4 text_blue_dark">
 						Funders regularly adapt their strategies, which often prompt investment in new issue
 						areas, but also the tough decision to scale back or fully wind down funding for existing

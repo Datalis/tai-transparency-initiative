@@ -1,10 +1,10 @@
 <script lang="ts">
-	import HeroImgLayer0 from '$lib/assets/images/home/group_3.webp';
+	import HeroImgLayer0 from '$lib/assets/images/home/map.png';
 	// import HeroImgLayer1 from '$lib/assets/images/home/group_1.webp';
-	import HeroImgLayer1 from '$lib/assets/images/home/gente.png';
+	import HeroImgLayer1 from '$lib/assets/images/home/people.png';
 	import HeroImgLayer1Mobile from '$lib/assets/images/home/group_1_sm.webp';
-	import HeroImgLayer2 from '$lib/assets/images/home/group_2.webp';
-	import HeroImgLayer2Mobile from '$lib/assets/images/home/group_2_sm.webp';
+	import HeroImgLayer2 from '$lib/assets/images/home/group_2.png';
+	import HeroImgLayer2Mobile from '$lib/assets/images/home/group_2.png';
 
 	import MacArthurLogo from '$lib/assets/icons/mac-arthur.svg?component';
 	import FordLogo from '$lib/assets/icons/ford.svg?component';
@@ -114,7 +114,7 @@
 				<div class="col col_5 col_md_12">
 					<div class="landing_section__content">
 						<h1 class="text_blue_light mb_3 mt_0">{hero?.title}</h1>
-						<span class="divider divider_2 divider_light" />
+						<span class="divider divider_2 divider_blue_light" />
 						<div class="landing_section__content__message font_light">
 							{@html hero?.message}
 						</div>
@@ -189,8 +189,8 @@
 	<CardsSection />
 	<div class="gradient_lg_gray_light">
 		<JoinSection {form} />
-		<ResourcesSection resources={res} />
 		<SubscribeSection />
+		<ResourcesSection resources={res} />
 	</div>
 	
 </div>
@@ -262,7 +262,7 @@
 					margin: auto;
 				}
 				&:nth-child(2) {
-					top: -100px;
+					top: -2rem;
 					max-width: 550px;
 					left: 0;
 					right: 0;
@@ -289,7 +289,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			justify-content: flex-end;
+			justify-content: center;
 
 			&__message {
 				:global {
