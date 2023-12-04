@@ -143,17 +143,17 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 <div id="how-we-fund" class="page">
-	<section class="landing_section section bg_blue">
+	<section class="landing_section section">
 		<div class="container">
 			<div class="content">
 				<div class="content-left">
-					<h1 class="text_green mb_4">{hero?.title}</h1>
-					<span class="divider divider_2 divider_light mb_3" />
+					<h1 class="text_blue_light mb_4">{hero?.title}</h1>
+					<span class="divider divider_2 divider_blue_light mb_3" />
 					<div class="font_light">
 						{@html hero?.message}
 					</div>
 				</div>
-				<div class="content-right">
+				<div class="content-right gradient_sm_green_light">
 					<img
 						src={HeroImg}
 						class="img_wrapper_2"
@@ -191,7 +191,7 @@
 	<section id="partner-support" class="partners_section section bg_light">
 		<div class="container">
 			<h2 class="font_bold mb_4 mt_0">Partner support</h2>
-			<div class="divider divider_2 divider_green" />
+			<div class="divider divider_2 divider_blue_light" />
 			<p class="mt_4">
 				We help donor members work together to improve grant making practice and <br />
 				boost collective impact. Specifically, TAI aims to accomplish the following:
@@ -247,13 +247,14 @@
 		</div>
 	</section>
 	<FoundersExitsSection {form} />
+	<!--
 	<section id="participatory-strategy">
 		<div class="participatory_section section">
 			<div class="container">
 				<div class="participatory_section__content">
 					<div class="content_wrapper pl_3">
 						<h2 class="font_bold mb_4">Participatory Strategy</h2>
-						<div class="divider divider_2 divider_green" />
+						<div class="divider divider_2 divider_blue_light" />
 						<p class="mt_4">
 							TAI offers a platform for candid, constructive exchange around grantmaking practices.
 							Our members learn from each other and hold each other accountable to be more
@@ -282,9 +283,8 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<ResourcesSection {resources} />
-	<SubscribeSection />
 </div>
 
 <style lang="scss">
@@ -347,7 +347,7 @@
 	} */
 
 	.landing_section {
-		background-image: url(/src/lib/assets/images/hero.webp);
+		//background-image: url(/src/lib/assets/images/hero.webp);
 		background-size: cover;
 		z-index: 1;
 
@@ -387,6 +387,11 @@
 
 		.content .content-right {
 			position: relative;
+			margin-top: -8rem;
+			padding-top: 8rem;
+			margin-right: -100vw;
+			padding-right: 100vw;
+			
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -437,11 +442,11 @@
 				width: 100%;
 				height: 300px;
 				z-index: 1;
-				background: url(/src/lib/assets/images/green_line.svg);
+				background: url(/src/lib/assets/images/blue_line.svg);
 				background-repeat: no-repeat;
-				background-size: 110% 100%;
+				background-size: 110% 120%;
 				background-attachment: local;
-				background-position-x: center;
+				background-position-x: left;
 				-webkit-overflow-scrolling: touch;
 				margin-top: -30px;
 
