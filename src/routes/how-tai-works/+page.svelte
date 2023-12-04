@@ -153,17 +153,17 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 <div id="how-we-fund" class="page">
-	<section class="landing_section section bg_blue">
+	<section class="landing_section section bg_white">
 		<div class="container">
 			<div class="content">
 				<div class="content-left">
-					<h1 class="text_green mb_4">{hero?.title}</h1>
-					<span class="divider divider_2 divider_light mb_3" />
+					<h1 class="text_blue_light mb_4">{hero?.title}</h1>
+					<span class="divider divider_2 divider_blue_light mb_3" />
 					<div class="font_light">
 						{@html hero?.message}
 					</div>
 				</div>
-				<div class="content-right">
+				<div class="content-right gradient_lg_green_light">
 					<img
 						src={HeroImg}
 						class="img_wrapper_2"
@@ -198,17 +198,17 @@
 		</div> -->
 	</section>
 	<Six6csSection data={six_data} />
-	<section id="progress-model" class="progress_model_section section bg_light">
+	<section id="progress-model" class="progress_model_section section bg_white">
 		<div class="container">
 			<h2 class="mt_0">Our Model for Field-Level Progress</h2>
-			<div class="divider divider_green divider_2" />
+			<div class="divider divider_blue_light divider_2" />
 			<span class="mt_4 display_block"
 				>At every stage, we monitor and evaluate what works, when, how and why.</span
 			>
 			<div class="model_items mt_5">
 				<div class="model_item">
-					<div class="model_item__header bg_blue py_3 px_4">
-						<h5 class="text_uppercase text_green m_0">Learning</h5>
+					<div class="model_item__header bg_blue_dark py_3 px_4">
+						<h5 class="text_uppercase text_blue_light m_0">Learning</h5>
 					</div>
 					<div class="model_item_body bg_gray p_4 display_flex flex_column justify_evenly">
 						<div>
@@ -229,8 +229,8 @@
 					<ChevronRightIcon width="52" height="52" />
 				</div>
 				<div class="model_item">
-					<div class="model_item__header bg_blue py_3 px_4">
-						<h5 class="text_uppercase text_green m_0">Collaboration</h5>
+					<div class="model_item__header bg_blue_dark py_3 px_4">
+						<h5 class="text_uppercase text_blue_light m_0">Collaboration</h5>
 					</div>
 					<div class="model_item_body bg_gray p_4 display_flex flex_column justify_evenly">
 						<div>
@@ -255,8 +255,8 @@
 					<ChevronRightIcon width="52" height="52" />
 				</div>
 				<div class="model_item">
-					<div class="model_item__header bg_blue py_3 px_4">
-						<h5 class="text_uppercase text_green m_0">Impact</h5>
+					<div class="model_item__header bg_blue_dark py_3 px_4">
+						<h5 class="text_uppercase text_blue_light m_0">Impact</h5>
 					</div>
 					<div class="model_item_body bg_gray p_4 display_flex flex_column justify_evenly">
 						<div>
@@ -278,17 +278,17 @@
 				<a
 					href="https://api.tai.datalis.dev/uploads/tai_strategy_document_2020_2024_45f7b393f2.pdf"
 					target="blank"
-					class="btn btn_outline_green text_dark">Full 2020-2024 Strategy</a
+					class="btn bg_dark text_dark">Full 2020-2024 Strategy</a
 				>
 			</div>
 		</div>
 	</section>
-	<section id="featured-topics" class="featured_section section bg_blue_light">
+	<section id="featured-topics" class="featured_section section bg_gray_light">
 		<div class="container">
 			<div class="featured_section__content">
 				<div class="content_wrapper">
 					<h2>Featured topics</h2>
-					<div class="divider divider_green divider_2" />
+					<div class="divider divider_blue_light divider_2" />
 					<p class="mt_4 w_75">
 						TAI members evolve their priorities in line with the global context and TAI collective
 						conversations evolve similarly. One current priority is how to strengthen transparency,
@@ -319,8 +319,8 @@
 			</div>
 		</div>
 	</section>
-	<PastFundingSection data={past_funding} />
-	<section id="working-with-others" class="other_groups_section section bg_blue">
+	<!--<PastFundingSection data={past_funding} />-->
+	<section id="working-with-others" class="other_groups_section section gradient_sm_green_light">
 		<IntersectionObserver let:top>
 			<div class="wrapper" class:pinned={top > 0}>
 				<div class="brands_container show_on_md_and_up">
@@ -358,7 +358,7 @@
 					<div class="row">
 						<div class="col col_6 col_md_12 display_flex flex_column justify_center text_dark py_5">
 							<h2>Working with other groups</h2>
-							<div class="divider divider_green divider_2" />
+							<div class="divider divider_blue_light divider_2" />
 							<p class="mt_4">
 								Transparency, participation and accountability are essential to deliver positive
 								societal outcomes, be that a stellar education service, effective regulation of new
@@ -392,7 +392,7 @@
 		</IntersectionObserver>
 	</section>
 	<ResourcesSection {resources} />
-	<SubscribeSection />
+	<!--<SubscribeSection />-->
 </div>
 
 <style lang="scss">
@@ -438,7 +438,7 @@
 	}
 
 	.landing_section {
-		background-image: url(/src/lib/assets/images/hero.webp);
+		//background-image: url(/src/lib/assets/images/hero.webp);
 		background-size: cover;
 		z-index: 1;
 
@@ -472,10 +472,15 @@
 
 		.content .content-right {
 			position: relative;
+			margin-top: -8rem;
+			margin-right: -100vw;
+			padding-top: 8rem;
+			padding-right: 100vw;
 			img {
 				position: absolute;
 				bottom: 0;
 				object-fit: contain;
+				height: calc(100% - 100px);
 			}
 		}
 		.content .content-left {
@@ -559,6 +564,10 @@
 			margin-bottom: 1rem;
 			@media (max-width: $md) {
 				transform: rotate(90deg);
+			}
+
+			:global(path){
+				stroke: map-get($colors, "blue_light" ) !important;
 			}
 		}
 
@@ -762,7 +771,12 @@
 						svg {
 							transform: rotate(45deg);
 							display: block;
+
+							path{
+								fill: map-get($colors, "dark") !important;
+							}
 						}
+
 					}
 				}
 			}

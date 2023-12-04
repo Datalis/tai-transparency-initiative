@@ -53,12 +53,12 @@
 	});
 </script>
 
-<section id="sixcs" class="_6Cs_section section bg_light show_on_md_and_up">
+<section id="sixcs" class="_6Cs_section section bg_white show_on_md_and_up">
 	<div class="container">
 		<div class="_6Cs_wrapper">
 			<div class="_6Cs_section_title">
 				<h3 class="font_regular mb_4 mt_0 text_light">{data?.title}</h3>
-				<div class="divider divider_2 divider_green_light" />
+				<div class="divider divider_2 divider_white" />
 			</div>
 			<div class="_6Cs_section_slide" bind:this={_6CsSectionSlider}>
 				{#each items as item}
@@ -81,14 +81,14 @@
 <section class="_6Cs_section _6Cs_section__mobile section bg_light show_on_md_and_down">
 	<div class="_6Cs_section_title">
 		<h2 class=" mb_4 mt_0 text_dark">{data?.title}</h2>
-		<div class="divider divider_2 divider_green_light" />
+		<div class="divider divider_2 divider_white" />
 	</div>
 	<Swiper class="slider" pagination={true} modules={[Pagination]}>
 		{#each items as item}
 			<SwiperSlide>
-				<div class="_6Cs_item bg_blue_light">
+				<div class="_6Cs_item bg_white">
 					<span class="_6Cs_item__count">{item?.order}</span>
-					<span class="_6Cs_item__title text_uppercase font_bold text_light my_3"
+					<span class="_6Cs_item__title text_uppercase font_bold my_3"
 						>{item?.title}</span
 					>
 					<p class="_6Cs_item__text text_light">
@@ -138,7 +138,7 @@
 		}
 
 		._6Cs_wrapper {
-			background-color: $blue_light;
+			background-color: #50BFC2;
 			border-radius: 15px;
 			//padding: 2rem;
 			max-height: 85vh;
@@ -164,7 +164,7 @@
 			align-items: flex-start;
 			padding-top: 1rem;
 			padding-left: 3rem;
-			background: url(/src/lib/assets/images/purple_line.svg);
+			background: url(/src/lib/assets/images/green_line.svg);
 			background-repeat: no-repeat;
 			background-size: 110% auto;
 			background-position: center;
@@ -192,12 +192,12 @@
 				width: 60px;
 				height: 60px;
 				min-width: 60px;
-				background-color: $green_light;
+				background-color: white;
 				border-radius: 50%;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				color: $blue_light;
+				color: #50BFC2;
 				font-size: pxToRem(38);
 				line-height: 1;
 				font-weight: 900;
