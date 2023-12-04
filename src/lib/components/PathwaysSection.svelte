@@ -1397,7 +1397,7 @@
 			}
 			
 			:global(tspan){
-				fill: map-get($colors, "dark") !important;
+				fill: map-get($colors, "blue") !important;
 			}
 			
 		}
