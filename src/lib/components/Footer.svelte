@@ -15,7 +15,7 @@
 				</div>
 				<div class="col col_lg_3 col_2">
 					<h6 class="text_uppercase mt_0 mb_4">
-						<a href="/about-us" class="text_blue_light">About us</a>
+						<a href="/about-us" class="">About us</a>
 					</h6>
 					<ul>
 						<li>
@@ -39,8 +39,8 @@
 					</ul>
 				</div>
 				<div class="col col_lg_5">
-					<h6 class="text_uppercase text_blue_light mt_0 mb_4">
-						<a href="/what-we-fund" class="text_blue_light">What we fund and why</a>
+					<h6 class="text_uppercase  mt_0 mb_4">
+						<a href="/what-we-fund" class="">What we fund and why</a>
 					</h6>
 					<ul>
 						<li class="">
@@ -58,8 +58,8 @@
 						</li>
 					</ul>
 					<div class="show_on_sm_and_up">
-						<h6 class="text_uppercase text_blue_light mb_4">
-							<a href="/how-we-fund" class="text_blue_light">How we fund</a>
+						<h6 class="text_uppercase  mb_4">
+							<a href="/how-we-fund" class="">How we fund</a>
 						</h6>
 						<ul>
 							<li>
@@ -80,8 +80,8 @@
 					</div>
 				</div>
 				<div class="col show_on_sm_and_down">
-					<h6 class="text_uppercase text_blue_light mb_4 mt_0">
-						<a href="/how-we-fund" class="text_blue_light">How we fund</a>
+					<h6 class="text_uppercase  mb_4 mt_0">
+						<a href="/how-we-fund" class="">How we fund</a>
 					</h6>
 					<ul>
 						<!-- <li>
@@ -101,8 +101,8 @@
 					</ul>
 				</div>
 				<div class="col col_lg_5">
-					<h6 class="text_uppercase text_blue_light mt_0 mb_4">
-						<a href="/how-tai-works" class="text_blue_light">How we work together</a>
+					<h6 class="text_uppercase  mt_0 mb_4">
+						<a href="/how-tai-works" class="">How we work together</a>
 					</h6>
 					<ul>
 						<li>
@@ -125,8 +125,8 @@
 						</li>
 					</ul>
 					<div class="show_on_sm_and_up">
-						<h6 class="text_uppercase text_blue_light mb_4">
-							<a href="/resources" class="text_blue_light">Resources</a>
+						<h6 class="text_uppercase  mb_4">
+							<a href="/resources" class="">Resources</a>
 						</h6>
 						<ul>
 							<li>
@@ -151,8 +151,8 @@
 					</div>
 				</div>
 				<div class="col full-width show_on_sm_and_down">
-					<h6 class="text_uppercase text_blue_light mb_4 mt_0">
-						<a href="/resources" class="text_blue_light">Resources</a>
+					<h6 class="text_uppercase  mb_4 mt_0">
+						<a href="/resources" class="">Resources</a>
 					</h6>
 					<ul>
 						<li>
@@ -176,7 +176,7 @@
 					</ul>
 				</div>
 				<div class="col full-width">
-					<h6 class="text_uppercase text_blue_light mt_0 mb_4">Contact us</h6>
+					<h6 class="text_uppercase  mt_0 mb_4">Contact us</h6>
 					<a href="mailto:contact@transparency-initiative.org" class="display_block text_white"
 						>contact@transparency-initiative.org</a
 					>
@@ -206,7 +206,7 @@
 		</div>
 		<div class="footer_copyright">
 			<div class="display_flex">
-				<a href="/" class="text_blue_light font_bold">Privacy Policy / Photo Credits</a>
+				<a href="/" class=" font_bold">Privacy Policy / Photo Credits</a>
 				<small class="text_white ml_auto"
 					>&copy; 2020 Transparency and Accountability Initiative, some rights reserved</small
 				>
@@ -264,6 +264,7 @@
 				line-height: 1;
 				letter-spacing: normal;
 				font-weight: 500;
+				color: #8F8BFF;
 				@media screen and (max-width: $sm) {
 					font-size: pxToRem(12);
 				}
@@ -292,6 +293,7 @@
 				}
 			}
 			a {
+				color: #8F8BFF;
 				font-size: pxToRem(13);
 			}
 		}

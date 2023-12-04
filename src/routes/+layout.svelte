@@ -230,15 +230,15 @@
 			transition: all 0.25s ease;
 
 			&:hover {
-				background-color: map-get($colors, 'blue_light');
-				border: 1px solid map-get($colors, 'blue_light');
+				background-color: #8F8BFF;
+				border: 1px solid #8F8BFF;
 				svg {
 					fill: map-get($colors, 'dark') !important;
 				}
 			}
 
 			svg {
-				fill: map-get($colors, 'blue_light') !important;
+				fill: #8F8BFF !important;
 			}
 		}
 	}
