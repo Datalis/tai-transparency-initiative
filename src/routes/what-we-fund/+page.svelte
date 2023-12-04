@@ -352,16 +352,18 @@
 		}
 
 		.content .content-right {
-			margin-top: -8rem;
-			margin-right: -100vw;
-			padding-top: 8rem;
-			padding-right: 100vw;;
 			position: relative;
+			margin-top: -8rem;
+			padding-top: 8rem;
+			margin-right: -100vw;
+			padding-right: 100vw;
+			
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			height: 100vh;
 			img {
-				height: calc(100% - 100px);
+				height: 100%;
 				object-fit: contain;
 			}
 		}

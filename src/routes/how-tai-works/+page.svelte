@@ -163,7 +163,7 @@
 						{@html hero?.message}
 					</div>
 				</div>
-				<div class="content-right gradient_lg_green_light">
+				<div class="content-right gradient_sm_green_light">
 					<img
 						src={HeroImg}
 						class="img_wrapper_2"
@@ -473,14 +473,17 @@
 		.content .content-right {
 			position: relative;
 			margin-top: -8rem;
-			margin-right: -100vw;
 			padding-top: 8rem;
+			margin-right: -100vw;
 			padding-right: 100vw;
+			
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100svh;
 			img {
-				position: absolute;
-				bottom: 0;
+				height: 100%;
 				object-fit: contain;
-				height: calc(100% - 100px);
 			}
 		}
 		.content .content-left {

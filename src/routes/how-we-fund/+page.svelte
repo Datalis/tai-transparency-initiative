@@ -188,7 +188,7 @@
 			</div>
 		</div> -->
 	</section>
-	<section id="partner-support" class="partners_section section bg_light">
+	<section id="partner-support" class="partners_section section">
 		<div class="container">
 			<h2 class="font_bold mb_4 mt_0">Partner support</h2>
 			<div class="divider divider_2 divider_blue_light" />
@@ -395,8 +395,9 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			height: 100svh;
 			img {
-				height: calc(100% - 100px);
+				height: 100%;
 				object-fit: contain;
 			}
 		}
