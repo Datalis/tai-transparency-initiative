@@ -174,11 +174,11 @@
 	</div>
 {/if}
 
-<section id="pathways-to-change" class="pathways_section section bg_blue">
+<section id="pathways-to-change" class="pathways_section section bg_green">
 	<div class="wrapper">
 		<div class="container">
 			<h2>Pathways to change</h2>
-			<div class="divider divider_green divider_2 my_4" />
+			<div class="divider divider_green_light divider_2 my_4" />
 			<p class="mt_4 w_50">
 				This represents critical causal pathways common to TAI donor members’ theories of change. It
 				is in no way a representation of pathways to change for the Transparency, Participation and
@@ -229,7 +229,7 @@
 							}
 							.cls-15,
 							.cls-6 {
-								fill: #2bf9d1;
+								fill: #ffffff;
 							}
 							.cls-15,
 							.cls-7,
@@ -764,7 +764,7 @@
 							}
 							.cls-14,
 							.cls-6 {
-								fill: #2bf9d1;
+								fill: #ffffff;
 							}
 							.cls-14,
 							.cls-7 {
@@ -1332,8 +1332,6 @@
 <style lang="scss" scoped>
 	$md: map-get($grid-breakpoints, 'md');
 
-	
-
 	.pathways_section--overlay {
 		position: fixed;
 		top: 0;
@@ -1384,7 +1382,7 @@
 		min-height: 100vh;
 
 		:global(svg){
-			:global(circle), :global(text), :global(polygon){
+			:global(circle), :global(polygon){
 				fill: map-get($colors, "gray_light") !important;
 			}
 			:global(line){
@@ -1395,7 +1393,6 @@
 					fill: #8F8BFF !important;
 				}
 			}
-			
 			:global(tspan){
 				fill: map-get($colors, "blue") !important;
 			}
@@ -1435,12 +1432,11 @@
 					user-select: none;
 					&::selection {
 						background: none;
-						color: #2bf9d1;
 					}
 				}
 				path {
-					stroke: #3d30bf !important;
-					fill: #3d30bf !important;
+					stroke: map-get($colors, "green_light") !important;
+					fill: map-get($colors, "green_light") !important;
 					transform-origin: center;
 					transform-box: fill-box;
 					// animation: rotating 25s linear infinite;
@@ -1461,6 +1457,7 @@
 			}
 
 			text {
+				fill: white;
 				user-select: none;
 			}
 			path {
@@ -1469,16 +1466,17 @@
 				transform-box: fill-box;
 				animation-fill-mode: both;
 				fill: transparent;
+				stroke: map-get($colors, "gray_light");
 				transform: rotate(0);
 			}
 			&:hover {
 				path {
 					animation: rotating 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-					stroke: map-get($colors, "gray") !important; 
-					fill: map-get($colors, "gray") !important;
+					stroke: map-get($colors, "white") !important; 
+					fill: map-get($colors, "white") !important;
 				}
 				text{
-					fill: white !important;
+					fill: map-get($colors, "green") !important;
 				}
 			}
 			&.active {
