@@ -158,7 +158,7 @@
 					<nav class="navbar_menu__nav">
 						<a
 							href="/what-we-fund"
-							class="display_flex align_center text_gray mt_2"
+							class="display_flex align_center text_white mt_2"
 							class:active={$page.url.pathname.includes('what-we-fund')}
 						>
 							<h2 class=" m_0">What we fund and why</h2>
@@ -167,7 +167,7 @@
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/how-we-fund"
-							class="display_flex align_center text_gray"
+							class="display_flex align_center text_white"
 							class:active={$page.url.pathname.includes('how-we-fund')}
 						>
 							<h2 class=" m_0">How we fund</h2>
@@ -176,7 +176,7 @@
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/how-tai-works"
-							class="display_flex align_center text_gray"
+							class="display_flex align_center text_white"
 							class:active={$page.url.pathname.includes('how-tai-works')}
 						>
 							<h2 class=" m_0">How TAI works</h2>
@@ -185,7 +185,7 @@
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/about-us"
-							class="display_flex align_center text_gray"
+							class="display_flex align_center text_white"
 							class:active={$page.url.pathname.includes('about-us')}
 						>
 							<h2 class="m_0">About us</h2>
@@ -194,7 +194,7 @@
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/resources"
-							class="display_flex align_center text_gray"
+							class="display_flex align_center text_white"
 							class:active={$page.url.pathname.includes('resources')}
 						>
 							<h2 class=" m_0">Resources</h2>
@@ -422,7 +422,7 @@
 						min-width: 42px;
 					}
 					:global(svg path) {
-						stroke: map-get($colors, "gray" ) !important;
+						stroke: map-get($colors, "white" ) !important;
 						stroke-width: 1px !important;
 					}
 					h2 {
@@ -435,12 +435,12 @@
 				a.active {
 					h2 {
 						font-weight: 600 !important;
-						color: map-get($colors, "green" );
+						color: map-get($colors, "blue_light" );
 					}
 					:global(svg path) {
 						transition: all 0.1s ease;
 						stroke-width: 2px !important;
-						stroke: map-get($colors, "green" ) !important;
+						stroke: map-get($colors, "blue_light" ) !important;
 					}
 				}
 				@media (max-width: $sm) {
