@@ -11,7 +11,9 @@
 		<div class="footer_content">
 			<div class="row">
 				<div class="col col_2 col_lg_12">
-					<LogoIcon width="72" height="72" />
+					<a href="/" class="navbar_brand display_flex mr_auto">
+						<LogoIcon width="72" height="72" />
+					</a>
 				</div>
 				<div class="col col_lg_3 col_2">
 					<h6 class="text_uppercase mt_0 mb_4">
@@ -217,6 +219,10 @@
 
 <style lang="scss">
 	$sm: map-get($grid-breakpoints, 'sm');
+
+	.link-icon{
+		border: 1px solid map-get($colors, "white") !important;
+	}
 
 	.footer {
 		position: relative;
