@@ -84,7 +84,7 @@
 			color: map-get($colors, 'blue_light');
 		}
 		&__link:hover {
-			color: #9b8eff;
+			color: map-get($colors, 'green' );
 		}
 
 		&__type {

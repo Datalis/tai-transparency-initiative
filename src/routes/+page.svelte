@@ -187,7 +187,7 @@
 		</div>
 	</section>
 	<CardsSection />
-	<div class="gradient_lg_gray_light">
+	<div class="gradient_sm_gray_light">
 		<JoinSection {form} />
 		<SubscribeSection />
 		<ResourcesSection resources={res} />

@@ -47,8 +47,8 @@
 							governments are held in account. Our three interconnected strategies focus on expanded
 							participation, equitable resources and powerful engagement.
 						</p>
-						<a href="/" class="display_flex align_center green_text font_bold"
-							>Learn more <LinkIcon class="ml_2" width="24" height="24" style="fill: #00DEB3" />
+						<a href="/" class="display_flex align_center text_blue_light font_bold"
+							>Learn more <LinkIcon class="ml_2" width="24" height="24" style="fill: #736EFF" />
 						</a>
 					</div>
 				</SwiperSlide>
@@ -66,8 +66,8 @@
 							governments are held in account. Our three interconnected strategies focus on expanded
 							participation, equitable resources and powerful engagement.
 						</p>
-						<a href="/" class="display_flex align_center green_text font_bold"
-							>Learn more <LinkIcon class="ml_2" width="24" style="fill: #00DEB3" height="24" />
+						<a href="/" class="display_flex align_center text_blue_light font_bold"
+							>Learn more <LinkIcon class="ml_2" width="24" style="fill: #736EFF" height="24" />
 						</a>
 					</div>
 				</SwiperSlide>
@@ -85,8 +85,8 @@
 							governments are held in account. Our three interconnected strategies focus on expanded
 							participation, equitable resources and powerful engagement.
 						</p>
-						<a href="/" class="display_flex align_center green_text font_bold"
-							>Learn more <LinkIcon class="ml_2" width="24" height="24" style="fill: #00DEB3" />
+						<a href="/" class="display_flex align_center text_blue_light font_bold"
+							>Learn more <LinkIcon class="ml_2" width="24" height="24" style="fill: #736EFF" />
 						</a>
 					</div>
 				</SwiperSlide>
@@ -97,12 +97,12 @@
 			<a
 				href={data?.url}
 				target="blank"
-				class="display_flex align_center green_text font_bold mt_auto"
+				class="display_flex align_center text_blue_light font_bold mt_auto"
 				><small>Learn more </small><LinkIcon
 					class="ml_2"
 					width="18"
 					height="18"
-					style="fill: #00DEB3"
+					style="fill: #736EFF"
 				/>
 			</a>
 		</div>
@@ -121,11 +121,8 @@
 		@media (max-width: $md) {
 			flex-direction: column;
 		}
-		.green_text {
-			color: #00deb3;
-		}
-		.green_text:hover {
-			color: #43b79e;
+		.text_blue_light:hover {
+			color: map-get($colors, "green" );
 		}
 		.img_wrapper {
 			flex-grow: 1;

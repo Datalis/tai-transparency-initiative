@@ -1,5 +1,5 @@
 <script lang="ts">
-	import WorldImg from '$lib/assets/images/home/group_3.webp';
+	import WorldImg from '$lib/assets/images/home/map-about-us.png';
 	import LogoIcon from '$lib/assets/images/logo-footer.svg?component';
 
 	import EnvisionImg1 from '$lib/assets/images/envision_1.webp';
@@ -14,12 +14,16 @@
 	import { page } from '$app/stores';
 	import gsap from 'gsap/dist/gsap';
 	import Seo from '$lib/components/Seo.svelte';
+	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
+	
 
 	export let data: PageData;
 	export let form: ActionData;
 
 	let activeStaff = -1;
 	let activeCommittee = -1;
+
+	$: res = data.resources || [];
 
 	$: members = data?.Members;
 	$: memberList = members?.MemberItem || [];
@@ -47,8 +51,8 @@
 		<div class="container">
 			<img class="wrapper_bg" alt="" src={WorldImg} />
 			<div class="wrapper display_flex flex_column align_center justify_center">
-				<h1 class="text_blue_dark mt_4 mb_3">About Us</h1>
-				<p class="text_center mx_auto w_75">
+				<h1 class="text_blue mt_4 mb_3">About Us</h1>
+				<p class="text_blue text_center mx_auto w_75">
 					The Transparency and Accountability Initiative (TAI) is a collaborative for funder
 					learning and action in support of participation, openness and accountability around the
 					world. Our members have over USD500 million in active grants in support of those goals
@@ -58,7 +62,7 @@
 	</section>
 	<section id="goals" class="envision_section section">
 		<div class="container">
-			<h2 class="text_center">We envision a society where</h2>
+			<h2 class="text_dark text_center">We envision a society where</h2>
 			<div class="divider divider_blue_light divider_2" />
 			<div class="row mt_5">
 				<div class="col col_4 col_md_12">
@@ -90,7 +94,7 @@
 				<a
 					href="https://api.tai.datalis.dev/uploads/tai_strategy_document_2020_2024_45f7b393f2.pdf"
 					target="blank"
-					class="btn bg_blue_dark"
+					class="btn bg_blue"
 				>
 					TAI Strategy
 				</a>
@@ -115,14 +119,14 @@
 	<section id="team" class="team_section section text_light">
 		<div class="container">
 			<h3 class="mt_0">{staff.title}</h3>
-			<div class="divider divider_green divider_2" />
+			<div class="divider divider_white divider_2" />
 			<p class="mt_4 w_75">
 				{@html staff.message}
 			</p>
 			<div class="staff_list mt_4">
 				<h4 class="mb_4">Staff</h4>
 				{#each staffList as staffItem, index}
-					<div class="divider divider_green divider_1" />
+					<div class="divider divider_dark divider_1" />
 					<StaffItem
 						data={staffItem}
 						on:toggle={() => (index == activeStaff ? (activeStaff = -1) : (activeStaff = index))}
@@ -132,12 +136,12 @@
 			</div>
 		</div>
 	</section>
-	<section class="committee_section section bg_white text_light">
+	<section class="committee_section section text_light">
 		<div class="container">
 			<div class="committee_list mt_4">
-				<h4 class="mb_4 mt_4 text_light">Steering Committee</h4>
+				<h4 class="mb_4 mt_4 text_dark">Steering Committee</h4>
 				{#each commiteeList as commiteeItem, index}
-					<div class="divider divider_green divider_1" />
+					<div class="divider divider_dark divider_1" />
 					<StaffItem
 						data={commiteeItem}
 						on:toggle={() =>
@@ -148,8 +152,14 @@
 			</div>
 		</div>
 	</section>
-	<JoinSection {form} />
-	<SubscribeSection />
+	<div class="gradient_sm_gray_light">
+		<JoinSection {form} />
+		<div class="purple_subscribe">
+			<SubscribeSection />
+		</div>
+		<ResourcesSection resources={res} />
+	</div>
+	
 </div>
 
 <style lang="scss">
@@ -233,43 +243,55 @@
 			.divider.divider_blue {
 				opacity: 0.5;
 			}
+			
 		}
-
 		
 	}
 	.team_section {
+		background-color: #73C5C7;
 		padding-top: 120px !important;
 		position: relative;
 		z-index: 1;
-		background-color: #5c4aff;
-		/* .staff_list {
+		 .staff_list {
 			.divider {
 				width: 100% !important;
 				margin-top: 0.5rem !important;
 				margin-bottom: 0.5rem !important;
 			}
-			.divider.divider_blue {
-				opacity: 0.5;
-			}
-		} */
+		} 
 	}
 	.committee_section {
-		background-color: #5c4aff;
+		background-color: #73C5C7;
 		position: relative;
 		z-index: 1;
-		/* .divider {
+		.divider {
 			width: 100% !important;
 			margin-top: 0.5rem !important;
 			margin-bottom: 0.5rem !important;
 		}
-		.divider.divider_blue {
-			opacity: 0.5;
-		} */
 	}
+
+	.purple_subscribe{
+		:global{
+			.subscribe_section__panel{
+				background-color: map-get($colors, "blue_light" );
+			}
+			h2, span, input{
+				color: white;
+				border-color: white;
+			}
+			button{
+				color: map-get($colors, "blue_light" );
+				background-color: map-get($colors, "dark" );
+			}
+			
+		}
+	}
+
 	.about_us_page {
 		:global {
 			.join_section {
-				background-color: map-get($colors, 'light') !important;
+				//background-color: map-get($colors, 'light') !important;
 				.divider {
 					background-color: map-get($colors, 'green');
 				}
