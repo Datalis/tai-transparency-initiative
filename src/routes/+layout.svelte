@@ -231,7 +231,7 @@
 
 			&:hover {
 				background-color: map-get($colors, "blue_light");
-				border: 1px solid map-get($colors, "blue_light");
+				border: 1px solid map-get($colors, "blue_light") !important;
 				svg {
 					fill: map-get($colors, 'dark') !important;
 				}
