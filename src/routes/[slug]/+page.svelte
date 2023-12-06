@@ -64,8 +64,8 @@
 	/>
 </svelte:head>
 
-<article id="resource" class="page gradient_sm_gray_light">
-	<section class="heading_section section">
+<article id="resource" class="page">
+	<section class="heading_section section gradient_sm_gray_light">
 		<div class="container">
 			<div class="row m_auto">
 				{#if resource.type.id == 2}
@@ -222,7 +222,10 @@
 			</div>
 		</div>
 	</section>
-	<SubscribeSection />
+	<div class="full-width">
+		<SubscribeSection />
+	</div>
+	
 </article>
 
 <style lang="scss">
@@ -484,9 +487,9 @@
 		}
 	}
 
-	:global(.subscribe_section__panel){
+	.full-width{
+		background-color: map-get($colors, "green_light" );
 		margin-inline: -100vw;
-		margin-bottom: -3.1rem;
 	}
 
 	.content_section .subscribe_block {
