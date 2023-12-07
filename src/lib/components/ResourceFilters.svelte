@@ -32,7 +32,7 @@
 	{/each}
 	<div class="form_control form_control_radio">
 		<label>
-			<input type="radio" bind:group={currentFilter} name="" value={7} on:change={onFilterChange} />
+			<input type="radio" bind:group={currentFilter} name="" value={"7"} on:change={onFilterChange} />
 			Library
 		</label>
 	</div>
