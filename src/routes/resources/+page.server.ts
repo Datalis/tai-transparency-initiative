@@ -62,6 +62,12 @@ export const load: PageServerLoad = async ({ url }) => {
 
 		if (type) {
 			params.filters['type'] = tipo;
+		} else {
+			params.filters['type'] = {
+				id: {
+					$ne: 7
+				}
+			};
 		}
 
 		if (topic) {
