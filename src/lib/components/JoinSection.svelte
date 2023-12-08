@@ -1,5 +1,5 @@
 <script lang="ts">
-	import JoinImg from '$lib/assets/images/news1.1.webp';
+	import JoinImg from '$lib/assets/images/join-tai-2.webp';
 	import IntersectionObserver from './IntersectionObserver.svelte';
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
@@ -22,8 +22,7 @@
 							<h2 class="mb_4 font_bold mt_0 text_dark">Join TAI</h2>
 							<div class="divider divider_blue_light divider_2" />
 							<p class="mt_4 font_light text_dark">
-								We invite <strong>FUNDERS</strong> to join our conversations. If you are new to this
-								field or looking to complement your portfolio, we are here to help.
+								The TAI secretariat is here to help and can explain all that is on offer. If you are new to this field, scoping potential new investments, looking for evidence of what's working, or simply looking for a space to compare notes with fellow funders of all types, please reach out.
 							</p>
 							<h6 class="mb_4 text_dark">Let the TAI Secretariat know how we can help</h6>
 							<form action="{$page.url.pathname}?/join" method="post" use:enhance>
