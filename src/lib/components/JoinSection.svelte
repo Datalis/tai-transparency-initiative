@@ -104,7 +104,11 @@
 		}
 
 		.join_img {
-			width: 75%;
+			width: 100%;
+
+			@media (min-width: $lg){
+				padding-right: 2rem;	
+			}
 		}
 
 		&.pinned {
