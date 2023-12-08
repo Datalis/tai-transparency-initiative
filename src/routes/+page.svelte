@@ -116,7 +116,10 @@
 						<h1 class="text_blue_light mb_3 mt_0">{hero?.title}</h1>
 						<span class="divider divider_2 divider_blue_light" />
 						<div class="landing_section__content__message font_light">
-							{@html hero?.message}
+							<p>The Trust, Accountability, and Inclusion Collaborative is a network of funders committed to advancing a world where power and resources are distributed more equitably, communities are informed and empowered, and governments and the corporate sector act with integrity for the good of people and planet.
+
+								We firmly believe that fostering trust, accountability, and inclusion is crucial for ensuring effective democratic governance and addressing the urgent global challenges of today.</p>
+							<!--{@html hero?.message}-->
 						</div>
 						<a href="/about-us" class="btn btn_dark mt_4 mb_4">Read More</a>
 					</div>

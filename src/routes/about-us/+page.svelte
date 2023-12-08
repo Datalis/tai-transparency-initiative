@@ -104,7 +104,8 @@
 			<h3 class="mb_4">{members.title}</h3>
 			<div class="divider divider_blue_light divider_2" />
 			<p class="mt_4 w_75">
-				{@html members.message}
+				Both private foundations and public funders - recognize that governance challenges are complex and cross-cutting. They warrant a collaborative approach. TAI donors work together to strengthen transparency, participation and accountability around the world. Learn more about each member below
+				<!--{@html members.message}-->
 			</p>
 			<div class="member_list mt_4 display_flex flex_column">
 				{#each memberList as member}

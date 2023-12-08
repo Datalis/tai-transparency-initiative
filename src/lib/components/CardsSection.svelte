@@ -49,7 +49,7 @@
 							<div class="divider divider_light divider_2" />
 							<div class="content__text">
 								<a href="/what-we-fund#funding" class="text_dark display_block"
-									>What TPA funding looks like?</a
+									>What TAI funding looks like?</a
 								>
 								<a href="/what-we-fund#funding-data-library" class="text_dark display_block"
 									>Funding Data Library</a
