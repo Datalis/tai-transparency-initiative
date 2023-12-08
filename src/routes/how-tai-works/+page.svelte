@@ -319,7 +319,7 @@
 			</div>
 		</div>
 	</section>
-	<!--<PastFundingSection data={past_funding} />-->
+	<PastFundingSection data={past_funding} />
 	<section id="working-with-others" class="other_groups_section section gradient_sm_green_light">
 		<IntersectionObserver let:top>
 			<div class="wrapper" class:pinned={top > 0}>
@@ -464,6 +464,7 @@
 			@media screen and (max-width: $md) {
 				display: flex;
 				flex-direction: column;
+				
 				.content-right img {
 					position: relative !important;
 				}

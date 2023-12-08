@@ -116,7 +116,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="team" class="team_section section text_light">
+	<section id="team" class="team_section section text_dark">
 		<div class="container">
 			<h3 class="mt_0">{staff.title}</h3>
 			<div class="divider divider_white divider_2" />

@@ -247,7 +247,6 @@
 		</div>
 	</section>
 	<FoundersExitsSection {form} />
-	<!--
 	<section id="participatory-strategy">
 		<div class="participatory_section section">
 			<div class="container">
@@ -263,7 +262,7 @@
 						<a
 							href="https://participatorystrategy.org/"
 							target="blank"
-							class="btn btn_outline_green text_dark mt_4"
+							class="btn bg_dark mt_4"
 						>
 							Learn more
 						</a>
@@ -283,7 +282,7 @@
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 	<ResourcesSection {resources} />
 </div>
 
