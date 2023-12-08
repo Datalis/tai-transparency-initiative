@@ -28,6 +28,7 @@
 	import CardsSection from '$lib/components/CardsSection.svelte';
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 	import Seo from '$lib/components/Seo.svelte';
+	import Popup from '$lib/components/Popup.svelte';
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
@@ -192,9 +193,9 @@
 		<SubscribeSection />
 		<ResourcesSection resources={res} />
 	</div>
-	
-</div>
 
+</div>
+<Popup />
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
 	$lg: map-get($grid-breakpoints, 'lg');
@@ -338,7 +339,7 @@
 		}
 	}
 
-	
+
 
 	.brands_section {
 		padding-top: 2rem !important;
