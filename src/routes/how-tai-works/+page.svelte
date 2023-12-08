@@ -360,11 +360,7 @@
 							<h2>Working with other groups</h2>
 							<div class="divider divider_blue_light divider_2" />
 							<p class="mt_4">
-								Transparency, participation and accountability are essential to deliver positive
-								societal outcomes, be that a stellar education service, effective regulation of new
-								technologies or accessible, affordable renewable energy. Our work is intersectional
-								in its nature and it is important we work with those championing change on related
-								issues. That includes partnering with other funder networks.
+								Our work is intersectional and we must work with those championing change on related issues. That includes partnering with other funder networks.
 							</p>
 							<p class="">
 								The good news is that there is a growing list of progressive funder groups to

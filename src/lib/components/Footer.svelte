@@ -46,7 +46,7 @@
 					</h6>
 					<ul>
 						<li class="">
-							<a href="/what-we-fund#funding" class="text_white">What does TPA funding look like?</a>
+							<a href="/what-we-fund#funding" class="text_white">What TPA funding looks like?</a>
 						</li>
 						<li>
 							<a href="/what-we-fund#funding-data-library" class="text_white">Funding data library</a

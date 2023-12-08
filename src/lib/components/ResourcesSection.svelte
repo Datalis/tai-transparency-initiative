@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="title align_center">
 			<div class="flex-grow_1">
-				<h2 class="mb_4 w_75">Transparency and Accountability Initiative Resources</h2>
+				<h2 class="mb_4 w_75">TAI Resources</h2>
 			</div>
 			<a href="/resources" class="btn bg_dark">Explore Our Resources</a>
 		</div>
