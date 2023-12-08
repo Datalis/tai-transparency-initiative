@@ -86,10 +86,10 @@
         font-family: Lato;
         font-size: 40px;
         font-weight: 600;
-        line-height: 62px;
+        /* line-height: 62px; */
         letter-spacing: -0.035em;
         text-align: center;
-        margin: 10px auto 10px;
+        margin: 20px auto 20px;
         color: #736EFF;
 
     }
@@ -98,9 +98,16 @@
         font-family: Lato;
         text-align: center;
         font-size: 17px;
-        line-height: 30px;
+        line-height: 1.5;
         letter-spacing: 0em;
         text-align: center;
+        @media (max-width: 767px) {
+            font-size: 14px;
+        }
+
+        @media (max-width: 479px) {
+            font-size: 12px;
+        }
     }
 
     .close-button {
