@@ -210,7 +210,7 @@
 					<div class="model_item__header bg_blue_dark py_3 px_4">
 						<h5 class="text_uppercase text_blue_light m_0">Learning</h5>
 					</div>
-					<div class="model_item_body bg_gray p_4 display_flex flex_column justify_evenly">
+					<div class="model_item_body bg_surface p_4 display_flex flex_column justify_evenly">
 						<div>
 							<span class="display_block font_bold">CONSOLIDATE</span>
 							<span class="display_block mt_1">evidence base</span>
@@ -601,7 +601,7 @@
 				flex-grow: 1;
 				justify-content: space-between;
 				// background-color: #c7ccd6 !important;
-				//background-color: #e4e8ef !important;
+				background-color: #E9E8FB !important;
 				span {
 					font-size: pxToRem(15);
 					font-weight: 400;
