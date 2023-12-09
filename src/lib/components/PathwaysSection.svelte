@@ -898,10 +898,6 @@
 									<tspan x="443.37" dy="1.2em">Officials</tspan>
 								</text>
 							</g>
-							
-							<line class="cls-9" x1="174" y1="35.72" x2="174" y2="53.83" />
-							<polygon class="cls-5" 
-							points="171 56.08 174 61.43 177 56.08 171 56.08"></polygon>
 
 							<line class="cls-9" x1="214.26" y1="107.47" x2="255.51" y2="107.47" />
 							<line class="cls-1" x1="257.04" y1="107.47" x2="258.54" y2="107.47" />
@@ -1385,19 +1381,19 @@
 	.pathways_section {
 		min-height: 100vh;
 
-		:global(svg){
-			:global(circle), :global(polygon){
+		svg{
+			circle, polygon{
 				fill: map-get($colors, "gray_light") !important;
 			}
-			:global(line){
+			line, polyline{
 				stroke: map-get($colors, "gray_light") !important;
 			}
-			:global(.pathways-circle){
-				:global(.cls-5){
+			.pathways-circle{
+				.cls-5{
 					fill: #8F8BFF !important;
 				}
 			}
-			:global(tspan){
+			tspan{
 				fill: map-get($colors, "blue") !important;
 			}
 			
