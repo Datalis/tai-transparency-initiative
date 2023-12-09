@@ -189,7 +189,7 @@ ul {
 		color: currentColor;
 		width: 1.15rem;
 		height: 1.15rem;
-		border: 2px solid map-get($colors, 'green');
+		border: 2px solid map-get($colors, 'blue_light');
 		border-radius: 50%;
 		transform: translate(-0.5rem);
 		display: grid;
@@ -268,6 +268,9 @@ ul {
 			border: 2px solid $color;
 			color: map-get($colors, 'light');
 		}
+	}
+	&_dark:hover{
+		background-color: map-get($colors, "blue_light" );
 	}
 
 	&_blue:hover {
