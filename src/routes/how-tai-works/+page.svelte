@@ -469,18 +469,21 @@
 
 		.content .content-right {
 			position: relative;
-			margin-top: -8rem;
-			padding-top: 8rem;
-			margin-right: -100vw;
-			padding-right: 100vw;
-			
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			height: 100svh;
+			
 			img {
 				height: 100%;
 				object-fit: contain;
+			}
+			
+			@media screen and (min-width: $md) {
+				margin-top: -8rem;
+				padding-top: 8rem;
+				margin-right: -100vw;
+				padding-right: 100vw;
+				height: 100svh;
 			}
 		}
 		.content .content-left {
@@ -708,7 +711,7 @@
 		@media (max-width: 768px) {
 			.wrapper .container p,
 			.wrapper .container h2 {
-				color: map-get($map: $colors, $key: 'light');
+				color: map-get($map: $colors, $key: 'dark');
 			}
 		}
 
@@ -720,6 +723,10 @@
 				justify-content: space-around;
 				align-items: center;
 				grid-gap: 1rem;
+
+				:global(path){
+					fill: map-get($colors, "dark" ) !important;
+				}
 			}
 		}
 

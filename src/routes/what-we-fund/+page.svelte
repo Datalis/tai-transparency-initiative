@@ -74,7 +74,7 @@
 					<div class="font_light">
 						<p>When TAI started in 2010, there was no established international accountability field. The number and capacity of organizations working for greater accountability and related goals has grown fast, many with support from TAI members.
 
-							Today, our members support a broad range of organizations at global and local level that work at the intersection of rights, participation, and accountability to advance more just, equal, inclusive, open, and green societies.</p>
+						Today, our members support a broad range of organizations at global and local level that work at the intersection of rights, participation, and accountability to advance more just, equal, inclusive, open, and green societies.</p>
 						<!--{@html hero?.message}-->
 					</div>
 				</div>
@@ -356,18 +356,21 @@
 
 		.content .content-right {
 			position: relative;
-			margin-top: -8rem;
-			padding-top: 8rem;
-			margin-right: -100vw;
-			padding-right: 100vw;
-			
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			height: 100vh;
+			
 			img {
 				height: 100%;
 				object-fit: contain;
+			}
+
+			@media screen and (min-width: $md) {
+				margin-top: -8rem;
+				padding-top: 8rem;
+				margin-right: -100vw;
+				padding-right: 100vw;
+				height: 100vh;
 			}
 		}
 		.content .content-left {
@@ -452,7 +455,7 @@
 
 		:global {
 			.slider {
-				height: 400px;
+				height: 260px;
 				--swiper-pagination-color: #7a879f;
 				.funding_item {
 					margin-top: 35px;

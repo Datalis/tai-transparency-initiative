@@ -78,7 +78,7 @@
 		</div>
 	</div>
 </section>
-<section class="_6Cs_section _6Cs_section__mobile section bg_light show_on_md_and_down">
+<section class="_6Cs_section _6Cs_section__mobile section bg_white show_on_md_and_down">
 	<div class="_6Cs_section_title">
 		<h2 class=" mb_4 mt_0 text_dark">{data?.title}</h2>
 		<div class="divider divider_2 divider_white" />
@@ -86,9 +86,9 @@
 	<Swiper class="slider" pagination={true} modules={[Pagination]}>
 		{#each items as item}
 			<SwiperSlide>
-				<div class="_6Cs_item bg_white">
+				<div class="_6Cs_item bg_green_light">
 					<span class="_6Cs_item__count">{item?.order}</span>
-					<span class="_6Cs_item__title text_uppercase font_bold my_3"
+					<span class="_6Cs_item__title text_uppercase text_light font_bold my_3"
 						>{item?.title}</span
 					>
 					<p class="_6Cs_item__text text_light">
@@ -110,7 +110,7 @@
 	._6Cs_section {
 		position: relative;
 		// height: 100vh;
-		min-height: 100vh !important;
+		//min-height: 100vh !important;
 		z-index: 1;
 		> .container {
 			// height: 70% !important;
@@ -124,11 +124,11 @@
 				margin: auto;
 				border-radius: 25px;
 				max-width: 100% !important;
-				height: 50vh;
+				height: 30vh;
 				padding: 2rem;
 				display: flex !important;
 				flex-direction: column;
-				justify-content: center;
+				//justify-content: center;
 				margin-bottom: 3rem;
 				&__text {
 					padding-left: 0 !important;
@@ -141,7 +141,7 @@
 			background-color: #50BFC2;
 			border-radius: 15px;
 			//padding: 2rem;
-			max-height: 85vh;
+			max-height: 90vh;
 			min-height: 55vh;
 			padding-bottom: 100px;
 			width: 100%;

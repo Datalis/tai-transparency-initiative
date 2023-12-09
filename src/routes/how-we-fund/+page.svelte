@@ -386,18 +386,23 @@
 
 		.content .content-right {
 			position: relative;
-			margin-top: -8rem;
-			padding-top: 8rem;
-			margin-right: -100vw;
-			padding-right: 100vw;
+			
 			
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			height: 100svh;
+			
 			img {
 				height: 100%;
 				object-fit: contain;
+			}
+
+			@media screen and (min-width: $md) {
+				margin-top: -8rem;
+				padding-top: 8rem;
+				margin-right: -100vw;
+				padding-right: 100vw;
+				height: 100svh;
 			}
 		}
 		.content .content-left {

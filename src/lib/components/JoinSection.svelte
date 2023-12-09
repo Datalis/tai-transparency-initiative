@@ -20,6 +20,7 @@
 					<div class="col col_5 col_lg_12">
 						<div class="display_flex flex_column justify_center h_100">
 							<h2 class="mb_4 font_bold mt_0 text_dark">Join TAI</h2>
+							<img class="join_img__mobile my_auto" src={JoinImg} alt="" />
 							<div class="divider divider_blue_light divider_2" />
 							<p class="mt_4 font_light text_dark">
 								The TAI secretariat is here to help and can explain all that is on offer. If you are new to this field, scoping potential new investments, looking for evidence of what's working, or simply looking for a space to compare notes with fellow funders of all types, please reach out.
@@ -105,9 +106,20 @@
 
 		.join_img {
 			width: 100%;
+			display: none;
+			padding-right: 2rem;
 
 			@media (min-width: $lg){
-				padding-right: 2rem;	
+				display: block;
+			}
+		}
+
+		.join_img__mobile {
+			width: 100%;
+			display: block;
+
+			@media (min-width: $lg){
+				display: none;
 			}
 		}
 

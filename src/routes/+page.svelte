@@ -394,6 +394,9 @@
 					justify-content: center;
 				}
 			}
+			:global(path){
+				fill: map-get($colors, "gray" ) !important;
+			}
 		}
 	}
 </style>
