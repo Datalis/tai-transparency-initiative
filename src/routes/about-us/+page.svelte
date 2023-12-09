@@ -166,6 +166,13 @@
 	/* .green_text {
 		color: #00deb3;
 	} */
+
+	.w_75{
+		width: auto;
+		@media (min-width: $md){
+			width: 75%;
+		}
+	}
 	.landing_section {
 		min-height: 100vh;
 		
@@ -200,6 +207,8 @@
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;
+
+			
 		}
 	}
 	.envision_section {
@@ -273,7 +282,7 @@
 	.purple_subscribe{
 		:global{
 			.subscribe_section__panel{
-				background-color: map-get($colors, "blue_light" );
+				background-color: map-get($colors, "blue_light" ) !important;
 			}
 			h2, span, input{
 				color: white;

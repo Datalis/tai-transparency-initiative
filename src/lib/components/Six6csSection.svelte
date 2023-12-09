@@ -124,7 +124,7 @@
 				margin: auto;
 				border-radius: 25px;
 				max-width: 100% !important;
-				height: 30vh;
+				min-height: 20rem;
 				padding: 2rem;
 				display: flex !important;
 				flex-direction: column;

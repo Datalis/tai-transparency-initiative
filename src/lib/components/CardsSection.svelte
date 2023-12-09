@@ -202,13 +202,15 @@
 					flex-direction: column;
 					text-align: center;
 					.divider {
-						margin: auto;
+						margin-inline: auto;
 						flex-shrink: 0 !important;
 						width: 0 !important;
 						transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+						
 					}
 					&__text {
-						flex-grow: 1;
+						//flex-grow: 1;
 						margin-top: 25px;
 						margin-bottom: 25px;
 						display: flex;
@@ -220,7 +222,12 @@
 							&:hover {
 								font-weight: 600 !important;
 							}
+
+							@media (max-width: 900px){
+								padding-bottom: 0.4rem;
+							}
 						}
+						
 					}
 				}
 				.content h3 {

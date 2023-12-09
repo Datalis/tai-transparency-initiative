@@ -295,7 +295,7 @@
 						<a
 							href="https://grants.transparency-initiative.org/"
 							target="blank"
-							class="btn bg_dark mt_4">Read More</a
+							class="btn btn_dark mt_4">Read More</a
 						>
 					</div>
 				</div>

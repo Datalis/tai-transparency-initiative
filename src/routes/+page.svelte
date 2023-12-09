@@ -382,6 +382,11 @@
 			padding-top: 0 !important;
 			padding-bottom: 0 !important;
 
+			.brands_section__title{
+				margin-inline: auto;
+				width: fit-content;
+			}
+
 			.wrapper {
 				display: flex;
 				flex-wrap: wrap;
@@ -390,8 +395,13 @@
 				padding: 1rem;
 				a {
 					width: 50%;
+					height: 100px;
 					display: flex;
 					justify-content: center;
+
+					:global(svg){
+						height: 100%;
+					}
 				}
 			}
 			:global(path){

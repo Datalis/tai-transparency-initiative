@@ -262,7 +262,7 @@
 						<a
 							href="https://participatorystrategy.org/"
 							target="blank"
-							class="btn bg_dark mt_4"
+							class="btn btn_dark mt_4 show_on_md_and_up"
 						>
 							Learn more
 						</a>
@@ -279,6 +279,13 @@
 							<track kind="captions" />
 						</video>
 					</div>
+					<a
+						href="https://participatorystrategy.org/"
+						target="blank"
+						class="btn btn_dark mt_4 show_on_md_and_down"
+					>
+						Learn more
+					</a>
 				</div>
 			</div>
 		</div>
@@ -562,6 +569,7 @@
 				@media screen and (max-width: $md) {
 					flex-basis: 100%;
 					padding-right: 0 !important;
+					padding: 0;
 				}
 			}
 

@@ -278,7 +278,7 @@
 				<a
 					href="https://api.tai.datalis.dev/uploads/tai_strategy_document_2020_2024_45f7b393f2.pdf"
 					target="blank"
-					class="btn bg_dark text_dark">Full 2020-2024 Strategy</a
+					class="btn btn_dark text_dark">Full 2020-2024 Strategy</a
 				>
 			</div>
 		</div>
@@ -586,6 +586,8 @@
 			@media (max-width: $md) {
 				width: 100% !important;
 				height: 300px;
+				
+				text-align: center;
 			}
 
 			&__header {

@@ -128,8 +128,17 @@
 		@media (max-width: $lg) {
 			height: auto;
 
+			.row{
+				flex-direction: column-reverse;
+				margin: 0rem;
+			}
 			.col {
-				margin-top: 2rem;
+				margin-top: 1rem;
+				width: 100%;
+			}
+
+			.box{
+				margin: 0;
 			}
 
 			button {
