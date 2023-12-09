@@ -121,11 +121,15 @@
 
 <svelte:window on:scroll={onScroll} />
 
-<header class="header" class:pinned={isPinned} class:hidden={isHidden}>
+<header class="header" class:pinned={isPinned} class:white_pinned={isPinned && !$page.url.pathname.includes('resources')} class:blue_pinned={$page.url.pathname.includes('resources')} class:hidden={isHidden}>
 	<div class="container">
 		<div class="navbar">
 			<a href="/" class="navbar_brand display_flex mr_auto">
+				{#if $page.url.pathname.includes('resources')}
+				<LogoFooter class="logo" />
+				{:else}
 				<Logo class="logo" />
+				{/if}
 			</a>
 			<nav class="navbar_nav hide_on_md_and_down">
 				<a href="https://www.facebook.com/TAInitiative/" target="_blank" class="link-icon">
@@ -493,8 +497,15 @@
 			transform: translate3d(0, -100%, 0);
 		}
 
-		&.pinned {
+		&.white_pinned{
 			background-color: rgba(white, 0.9);
+		}
+		&.blue_pinned{
+			background-color: rgba(30, 54, 83, 0.9);
+		}
+
+		&.pinned {
+			//background-color: rgba(white, 0.9);
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 			max-height: 70px;
 			backdrop-filter: blur(10px);
