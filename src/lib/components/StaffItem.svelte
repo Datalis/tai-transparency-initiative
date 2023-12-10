@@ -43,9 +43,7 @@
 <style lang="scss" scoped>
 	$transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 	$sm: map-get($grid-breakpoints, 'sm');
-	.green_text {
-		color: #00deb3;
-	}
+
 	.staff_item {
 		display: flex;
 		flex-direction: column;
@@ -103,7 +101,7 @@
 		}
 
 		.content_wrapper {
-			flex-shrink: 0;
+			//flex-shrink: 0;
 			width: 70%;
 			min-height: 100px;
 			padding-top: 2rem;
@@ -117,11 +115,11 @@
 				}
 				h5 {
 					font-size: pxToRem(14);
-					max-width: 70%;
+					//max-width: 70%;
 				}
 				small {
 					font-size: pxToRem(12);
-					max-width: 70%;
+					//max-width: 70%;
 				}
 			}
 

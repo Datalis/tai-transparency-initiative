@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="goals" class="envision_section section">
+	<section id="goals" class="envision_section section bg_white">
 		<div class="container">
 			<h2 class="text_dark text_center">We envision a society where</h2>
 			<div class="divider divider_blue_light divider_2" />
