@@ -25,7 +25,7 @@
 				</div>
 			{/each}
 		</div>
-		<a href="/resources?type=18" class="btn btn_dark ml_auto show_on_md_and_down mt_4">See All</a>
+		<a href="/resources?type=18" class="btn btn_dark show_on_md_and_down mt_2">See All</a>
 	</div>
 </section>
 

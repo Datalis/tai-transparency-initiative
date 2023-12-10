@@ -164,7 +164,7 @@
 				/* transition: height 1s cubic-bezier(0.075, 0.82, 0.165, 1); */
 
 				@media (max-width: $md) {
-					height: 85vh;
+					//height: 85vh;
 				}
 
 				.overlay,

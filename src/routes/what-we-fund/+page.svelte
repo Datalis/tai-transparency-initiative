@@ -456,7 +456,7 @@
 
 		:global {
 			.slider {
-				height: 260px;
+				height: 400px;
 				--swiper-pagination-color: #7a879f;
 				.funding_item {
 					margin-top: 35px;
@@ -494,7 +494,13 @@
 					width: 100% !important;
 					margin-left: 0 !important;
 					margin-right: 0 !important;
+					height: 80%;
+
+					p{
+						font-size: 20px !important;
+					}
 				}
+				
 			}
 		}
 

@@ -179,8 +179,8 @@
 				</div>
 				<div class="col full-width">
 					<h6 class="text_uppercase  mt_0 mb_4">Contact us</h6>
-					<a href="mailto:contact@transparency-initiative.org" class="display_block text_white"
-						>contact@transparency-initiative.org</a
+					<a href="mailto:ymgarcia@taicollaborative.org" class="display_block text_white"
+						>ymgarcia@taicollaborative.org</a
 					>
 					<span class="display_block mt_4 text_white"
 						>1100 13th St NW, Suite 800 Washington, DC 20005, United States</span

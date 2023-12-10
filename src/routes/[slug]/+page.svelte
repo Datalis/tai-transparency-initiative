@@ -151,7 +151,7 @@
 				</div>
 				<div class="col col_4 col_sm_12">
 					<aside class="releated">
-						<div class="subscribe_block">
+						<div class="subscribe_block show_on_md_and_up">
 							<h4 class="font_bold mb_3 mt_0">Keep updated with TAI weekly</h4>
 							<p>
 								Everything you need to know about accountability, inclusive participation and trust, delivered to your inbox.
@@ -221,7 +221,7 @@
 			</div>
 		</div>
 	</section>
-	<div class="full-width">
+	<div class="bg_green_light">
 		<SubscribeSection />
 	</div>
 	
@@ -486,11 +486,6 @@
 		}
 	}
 
-	.full-width{
-		background-color: map-get($colors, "green_light" );
-		margin-inline: -100vw;
-	}
-
 	.content_section .subscribe_block {
 		// margin-top: 1rem;
 		display: flex;
@@ -499,7 +494,7 @@
 		text-align: center;
 		background-color: map-get($colors, "green_light" );
 		padding: 2rem;
-		//border-radius: 15px;
+		border-radius: 15px;
 		.form_control,
 		.btn {
 			width: 100%;
