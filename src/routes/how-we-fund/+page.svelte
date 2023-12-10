@@ -400,7 +400,6 @@
 			justify-content: center;
 			
 			img {
-				height: 100%;
 				object-fit: contain;
 			}
 
@@ -410,6 +409,10 @@
 				margin-right: -100vw;
 				padding-right: 100vw;
 				height: 100svh;
+
+				img{
+					height: 100%;
+				}
 			}
 		}
 		.content .content-left {
