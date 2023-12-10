@@ -20,7 +20,7 @@
 				</div>
 			{/each}
 		</div>
-		<a href="/resources" class="btn btn_dark show_on_md_and_down w_100">Explore Our Resources</a>
+		<a href="/resources" class="btn btn_dark show_on_md_and_down w_100 mt_1">Explore Our Resources</a>
 	</div>
 </section>
 
