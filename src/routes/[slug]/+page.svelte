@@ -69,7 +69,7 @@
 		<div class="container">
 			<div class="row m_auto">
 				{#if resource.type.id == 2}
-					<div class="col col_7 col_sm_12">
+					<div class="header_block col col_7 col_sm_12">
 						<span class="text_blue_light font_bold text_uppercase text_center">{resource.type.label}</span>
 						<h1 class="text_blue text_center">
 							{resource.title}
@@ -79,7 +79,7 @@
 						</small>
 					</div>
 				{:else}
-					<div class="col col_7 col_sm_12">
+					<div class="header_block col col_7 col_sm_12">
 						<span class="text_blue_light font_bold text_uppercase text_center">{resource.type.label}</span>
 						<h1 class="text_blue text_center">
 							{resource.title}
@@ -154,13 +154,12 @@
 						<div class="subscribe_block">
 							<h4 class="font_bold mb_3 mt_0">Keep updated with TAI weekly</h4>
 							<p>
-								Everything you need to know about transparency, accountability and participation,
-								delivered to your inbox.
+								Everything you need to know about accountability, inclusive participation and trust, delivered to your inbox.
 							</p>
 							<div class="form_control mt_4">
 								<input type="email" placeholder="Email Address" id="subemail" />
 							</div>
-							<button class="btn btn_blue_dark mt_3" on:click={gotoSub}>Subscribe</button>
+							<button class="btn btn_dark text_green_light mt_3" on:click={gotoSub}>Subscribe</button>
 						</div>
 						<h4 class="mt_5 mb_4">You may also like</h4>
 						<div class="divider divider_blue_light divider_2 mb_4" />
@@ -257,7 +256,7 @@
 	.heading_section a {
 		text-decoration: underline;
 	}
-	.heading_section .row .col {
+	.header_block {
 		display: flex;
 		flex-direction: column;
 		flex-basis: 100%;

@@ -28,7 +28,7 @@
 			<small class="text_gray text_uppercase font_regular"
 				>{new Date(data?.date).toDateString()}</small
 			>
-			<h3 class="text_green mt_2 mb_2">{data?.title}</h3>
+			<h3 class="text_blue_light mt_2 mb_2">{data?.title}</h3>
 			<small class="text_gray font_regular"
 				>By <span class="text_gray">{data?.author?.name}</span> {data?.author?.role == 'Role at TAI' ? '' : `(${data?.author?.role})`}	</small
 			>
