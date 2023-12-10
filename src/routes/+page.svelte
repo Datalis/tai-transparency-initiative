@@ -14,6 +14,7 @@
 	import SkollLogo from '$lib/assets/icons/skoll.svg?component';
 	import ChandlerLogo from '$lib/assets/images/chandler.svg?component';
 	import FCDOLogo from '$lib/assets/images/fcdo.svg?component';
+	import Packard from '$lib/assets/icons/Packard.svg?component';
 
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
@@ -151,39 +152,31 @@
 				target="blank"><FCDOLogo width="300" /></a
 			>
 			<a href="https://www.chandlerfoundation.org/" target="blank"><ChandlerLogo width="300" /></a>
+			<a href="https://www.packard.org/" target="blank">
+				<Packard width="300" class="mt_4" />
+			</a>
 		</div>
 	</section>
 	<section class="brands_section_mobile section bg_white show_on_lg_and_down">
 		<div class="container">
 			<span class="brands_section__title">OUR MEMBERS</span>
 		</div>
-		<div class="wrapper blue">
-			<a href="https://www.macfound.org/" target="blank">
-				<MacArthurLogo height="50" width="50%" />
-			</a>
-			<a href="https://www.fordfoundation.org/" target="blank">
-				<FordLogo height="50" width="50%" />
-			</a>
-			<a href="https://hewlett.org/" target="blank">
-				<HewlettLogo height="50" width="50%" class="mt_4" />
-			</a>
-			<a href="https://luminategroup.com/" target="blank">
-				<LuminateLogo height="50" width="50%" class="mt_4" />
-			</a>
-			<a href="https://www.opensocietyfoundations.org/" target="blank">
-				<OpenSocietyLogo height="50" width="50%" class="mt_4" />
-			</a>
-			<a href="https://skoll.org/" target="blank">
-				<SkollLogo height="50" width="50%" class="mt_4" />
-			</a>
+		<div class="brands_grid show_on_md_and_down pb_4">
+			<a href="https://www.macfound.org/" target="blank"><MacArthurLogo width="150" /></a>
+			<a href="https://www.fordfoundation.org/" target="blank"><FordLogo width="150" /></a>
+			<a href="https://hewlett.org/" target="blank"><HewlettLogo width="150" /></a>
+			<a href="https://luminategroup.com/" target="blank"><LuminateLogo width="150" /></a>
+			<a href="https://www.opensocietyfoundations.org/" target="blank"
+				><OpenSocietyLogo width="150" /></a
+			>
+			<a href="https://skoll.org/" target="blank"><SkollLogo height="80" /></a>
 			<a
 				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
-				target="blank"
+				target="blank"><FCDOLogo width="150" /></a
 			>
-				<FCDOLogo height="50" width="50%" class="mt_4" />
-			</a>
-			<a href="https://www.chandlerfoundation.org/" target="blank">
-				<ChandlerLogo height="50" width="50%" class="mt_4" />
+			<a href="https://www.chandlerfoundation.org/" target="blank"><ChandlerLogo width="150" /></a>
+			<a href="https://www.packard.org/" target="blank">
+				<Packard width="150" height="60" class="mt_4" />
 			</a>
 		</div>
 	</section>
@@ -384,25 +377,18 @@
 				width: fit-content;
 			}
 
-			.wrapper {
-				display: flex;
-				flex-wrap: wrap;
+			.brands_grid {
+				display: grid;
+				grid-template-columns: repeat(2, auto);
+				grid-template-rows: repeat(1, 1fr);
+				justify-content: space-around;
 				align-items: center;
-				justify-content: center;
-				padding: 1rem;
-				a {
-					width: 50%;
-					height: 100px;
-					display: flex;
-					justify-content: center;
+				grid-gap: 1rem;
+				padding-block: 1rem;
 
-					:global(svg){
-						height: 100%;
-					}
+				:global(path){
+					fill: map-get($colors, "gray" ) !important;
 				}
-			}
-			:global(path){
-				fill: map-get($colors, "gray" ) !important;
 			}
 		}
 	}

@@ -7,6 +7,7 @@
 	import SkollLogo from '$lib/assets/icons/skoll.svg?component';
 	import ChandlerLogo from '$lib/assets/images/chandler.svg?component';
 	import FCDOLogo from '$lib/assets/images/fcdo.svg?component';
+	import Packard from '$lib/assets/icons/Packard.svg?component';
 
 	import ClimateVideoPoster from '$lib/assets/images/climate-video-poster.webp';
 
@@ -338,6 +339,8 @@
 									<FCDOLogo width="300" />
 									<ChandlerLogo width="300" />
 									<MacArthurLogo width="300" />
+									<Packard width="300" />
+									
 								</div>
 								<div class="marquee_item">
 									<MacArthurLogo width="300" />
@@ -349,6 +352,7 @@
 									<FCDOLogo width="300" />
 									<ChandlerLogo width="300" />
 									<MacArthurLogo width="300" />
+									<Packard width="300" />
 								</div>
 							</div>
 						</div>
@@ -380,6 +384,7 @@
 								<SkollLogo width="150" />
 								<FCDOLogo width="150" />
 								<ChandlerLogo width="150" />
+								<Packard width="150" height="100"/>
 							</div>
 						</div>
 					</div>
