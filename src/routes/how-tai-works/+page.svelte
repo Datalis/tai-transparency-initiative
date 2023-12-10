@@ -278,7 +278,7 @@
 				<a
 					href="https://api.tai.datalis.dev/uploads/tai_strategy_document_2020_2024_45f7b393f2.pdf"
 					target="blank"
-					class="btn btn_dark text_dark">Full 2020-2024 Strategy</a
+					class="btn btn_dark">Full 2020-2024 Strategy</a
 				>
 			</div>
 		</div>

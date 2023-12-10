@@ -72,10 +72,7 @@
 					<h1 class="text_blue_light mb_4">{hero?.title}</h1>
 					<span class="divider divider_2 divider_blue_light mb_3" />
 					<div class="font_light">
-						<p>When TAI started in 2010, there was no established international accountability field. The number and capacity of organizations working for greater accountability and related goals has grown fast, many with support from TAI members.
-
-						Today, our members support a broad range of organizations at global and local level that work at the intersection of rights, participation, and accountability to advance more just, equal, inclusive, open, and green societies.</p>
-						<!--{@html hero?.message}-->
+						{@html hero?.message}
 					</div>
 				</div>
 				<div class="content-right gradient_sm_green_light">
