@@ -8,7 +8,7 @@
 	import FundingImg from '$lib/assets/images/funding_data_library.webp';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
-	import HeroImg from '$lib/assets/images/heroes/what-we-fund.png?webp';
+	import HeroImg from '$lib/assets/images/heroes/what-we-fund-inside.png?webp';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
 	import { Pagination } from 'swiper';
 	import PathwaysSection from '$lib/components/PathwaysSection.svelte';
@@ -65,17 +65,20 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 <div id="what-we-fund" class="page">
-	<section class="landing_section section bg_blue">
+	<section class="landing_section section">
 		<div class="container">
 			<div class="content">
 				<div class="content-left">
-					<h1 class="text_green mb_4">{hero?.title}</h1>
-					<span class="divider divider_2 divider_light mb_3" />
+					<h1 class="text_blue_light mb_4">{hero?.title}</h1>
+					<span class="divider divider_2 divider_blue_light mb_3" />
 					<div class="font_light">
-						{@html hero?.message}
+						<p>When TAI started in 2010, there was no established international accountability field. The number and capacity of organizations working for greater accountability and related goals has grown fast, many with support from TAI members.
+
+						Today, our members support a broad range of organizations at global and local level that work at the intersection of rights, participation, and accountability to advance more just, equal, inclusive, open, and green societies.</p>
+						<!--{@html hero?.message}-->
 					</div>
 				</div>
-				<div class="content-right">
+				<div class="content-right gradient_sm_green_light">
 					<img
 						src={HeroImg}
 						class="img_wrapper_2"
@@ -110,10 +113,10 @@
 			</div>
 		</div> -->
 	</section>
-	<section id="funding" class="funding_section section bg_light">
+	<section id="funding" class="funding_section section">
 		<div class="container">
 			<h2 class="text_dark mt_0">What does TAI funding look like?</h2>
-			<span class="divider divider_2 divider_green mb_5" />
+			<span class="divider divider_2 divider_blue_light mb_5" />
 			<div class="show_on_md_and_up row">
 				<div class="col_4 col_lg_12">
 					<div class="funding_item mx_auto">
@@ -261,46 +264,47 @@
 			</div>
 		</div>
 	</section>
-	<section id="funding-data-library" class="funding_data_section section">
-		<div class="container">
-			<div class="row">
-				<div class="show_on_md_and_down col col_12">
-					<h2>Funding Data Library</h2>
-					<div class="divider divider_green divider_2" />
-				</div>
-				<div class="col col_7 col_md_12">
-					<img class="w_100" src={FundingImg} alt="" />
-				</div>
-				<div class="col col_5 col_md_12">
-					<div class="show_on_md_and_up">
+	<div class="gradient_lg_gray_light">
+		<section id="funding-data-library" class="funding_data_section section">
+			<div class="container">
+				<div class="row">
+					<div class="show_on_md_and_down col col_12">
 						<h2>Funding Data Library</h2>
-						<div class="divider divider_green divider_2" />
+						<div class="divider divider_blue_light divider_2" />
 					</div>
-					<p class="mt_4">
-						You can explore data related to over $500 million in active transparency and
-						accountability grants in TAI’s member funding database.
-					</p>
-					<p>
-						<strong>GRANTMAKERS</strong> find peers to engage around new portfolio thinking and new partners
-						you might want to connect with.
-					</p>
-					<p>
-						<strong>GRANT SEEKERS</strong> find out which funders are supporting your issues, or identify
-						new peer groups you might want to meet.
-					</p>
-					<a
-						href="https://grants.transparency-initiative.org/"
-						target="blank"
-						class="btn btn_outline_green text_dark mt_4">Read More</a
-					>
+					<div class="col col_7 col_md_12">
+						<img class="w_100" src={FundingImg} alt="" />
+					</div>
+					<div class="col col_5 col_md_12">
+						<div class="show_on_md_and_up">
+							<h2>Funding Data Library</h2>
+							<div class="divider divider_blue_light divider_2" />
+						</div>
+						<p class="mt_4">
+							You can explore data related to over $500 million in active transparency and
+							accountability grants in TAI’s member funding database.
+						</p>
+						<p>
+							<strong>GRANTMAKERS</strong> find peers to engage around new portfolio thinking and new partners
+							you might want to connect with.
+						</p>
+						<p>
+							<strong>GRANT SEEKERS</strong> find out which funders are supporting your issues, or identify
+							new peer groups you might want to meet.
+						</p>
+						<a
+							href="https://grants.transparency-initiative.org/"
+							target="blank"
+							class="btn btn_dark mt_4">Read More</a
+						>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<WhyItMattersSection data={whyItMatters} />
+		</section>
+		<WhyItMattersSection data={whyItMatters} />
+	</div>
 	<PathwaysSection />
 	<ResourcesSection {resources} />
-	<SubscribeSection />
 </div>
 
 <style lang="scss">
@@ -311,7 +315,7 @@
 	$md: map-get($grid-breakpoints, 'md');
 
 	.landing_section {
-		background-image: url(/src/lib/assets/images/hero.webp);
+		//background-image: url(/src/lib/assets/images/hero.webp);
 		background-size: cover;
 		z-index: 1;
 
@@ -355,9 +359,22 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			
 			img {
-				height: calc(100% - 100px);
+				
 				object-fit: contain;
+			}
+
+			@media screen and (min-width: $md) {
+				margin-top: -8rem;
+				padding-top: 8rem;
+				margin-right: -100vw;
+				padding-right: 100vw;
+				height: 100vh;
+
+				img{
+					height: 100%;
+				}
 			}
 		}
 		.content .content-left {
@@ -442,7 +459,7 @@
 
 		:global {
 			.slider {
-				height: 400px;
+				height: 260px;
 				--swiper-pagination-color: #7a879f;
 				.funding_item {
 					margin-top: 35px;
@@ -532,7 +549,7 @@
 			padding-bottom: 0.5rem;
 			padding-left: 3rem;
 			padding-right: 2.3rem;
-			background-color: $green;
+			background-color: map-get($colors, "gray_light" );
 
 			@media screen and (max-width: $md) {
 				height: 75%;
@@ -553,7 +570,6 @@
 		min-height: 100vh;
 		display: flex !important;
 		flex-direction: column !important;
-		background-color: #e4e8ef;
 
 		.container {
 			height: 100% !important;

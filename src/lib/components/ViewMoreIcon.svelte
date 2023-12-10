@@ -15,7 +15,7 @@
 	.view_more {
 		width: 35px;
 		height: 35px;
-		background-color: #00deb3;
+		background-color: #389A9D;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -26,15 +26,13 @@
 			scale: 0.85;
 		}
 		:global(.view_more__icon path) {
+			stroke: #73C5C7 !important;
 			stroke-width: 1px !important;
 		}
 		&.is-open {
-			background-color: $blue;
+			background-color: map-get($colors, "green" );
 			:global(.view_more__icon) {
 				transform: rotate(45deg) !important;
-			}
-			:global(.view_more__icon path) {
-				stroke: #00deb3 !important;
 			}
 		}
 	}

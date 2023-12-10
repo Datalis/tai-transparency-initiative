@@ -44,6 +44,14 @@
 			$fg: map-get($contrasts, $key);
 			color: a11y-color($fg, $value);
 		}
+
+		.gradient_lg_#{$key}{
+			background: linear-gradient(180deg, $value, white 60rem);
+		}
+
+		.gradient_sm_#{$key}{
+			background: linear-gradient(180deg, $value, white 90%);
+		}
 	}
 }
 

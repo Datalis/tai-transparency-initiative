@@ -139,7 +139,7 @@
 				</div>
 				<!-- <div class="divider divider_blue divider_1 my_2	" /> -->
 				{#if !resources.length}
-					<h6 class="w_100 text_center text_green">No results found</h6>
+					<h6 class="w_100 text_center text_blue_light">No results found</h6>
 				{/if}
 				{#each resources as resource}
 					{#if resource?.type?.id == 7}
@@ -252,6 +252,9 @@
 
 			&_toggler {
 				cursor: pointer;
+				:global(path){
+					stroke: map-get($colors, "blue_light" ) !important;
+				}
 			}
 
 			input {

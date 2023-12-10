@@ -24,7 +24,7 @@
 			class="ml_1"
 			width="18"
 			height="18"
-			style="fill: #00DEB3"
+			style="fill: #5c4aff"
 		/></span
 	>
 </a>
@@ -41,20 +41,7 @@
 			font-size: pxToRem(16) !important;
 		}
 
-		.resource_item__image {
-			background: map-get($colors, 'blue');
-			display: flex;
-			align-items: center;
-			:global {
-				img {
-					aspect-ratio: 4/2;
-					width: 95%;
-					height: 95%;
-					margin: auto;
-					object-fit: contain;
-				}
-			}
-		}
+		
 		.resource_item__link {
 			margin-top: auto;
 		}
@@ -81,6 +68,11 @@
 			margin: 0.75rem 0;
 		}
 
+		.resource_item__image{
+			background: map-get($colors, 'blue_dark');
+			border-radius: 0.8rem;
+		}
+
 		.divider {
 			width: 100% !important;
 		}
@@ -89,10 +81,10 @@
 			color: map-get($colors, 'green');
 		}
 		&__link {
-			color: #00deb3;
+			color: map-get($colors, 'blue_light');
 		}
 		&__link:hover {
-			color: #43b79e;
+			color: map-get($colors, 'green' );
 		}
 
 		&__type {

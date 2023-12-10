@@ -15,7 +15,7 @@
 	}
 </script>
 
-<section class="subscribe_section section bg_light">
+<section class="subscribe_section section">
 	<div class="container">
 		<div class="subscribe_section__panel">
 			<h2 class="text_center">
@@ -30,7 +30,7 @@
 				<div class="form_control mb_0">
 					<input type="email" placeholder="Email" name="" id="subemail" />
 				</div>
-				<button on:click={gotoSub} style="cursor: pointer" class="btn btn_blue">Subscribe</button>
+				<button on:click={gotoSub} style="cursor: pointer" class="btn btn_dark">Subscribe</button>
 			</form>
 		</div>
 	</div>

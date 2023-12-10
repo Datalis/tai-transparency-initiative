@@ -1,5 +1,5 @@
 <script lang="ts">
-	import JoinImg from '$lib/assets/images/news1.1.webp';
+	import JoinImg from '$lib/assets/images/join-tai-2.webp';
 	import IntersectionObserver from './IntersectionObserver.svelte';
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
@@ -20,10 +20,10 @@
 					<div class="col col_5 col_lg_12">
 						<div class="display_flex flex_column justify_center h_100">
 							<h2 class="mb_4 font_bold mt_0 text_dark">Join TAI</h2>
-							<div class="divider divider_light divider_2" />
+							<img class="join_img__mobile my_auto" src={JoinImg} alt="" />
+							<div class="divider divider_blue_light divider_2" />
 							<p class="mt_4 font_light text_dark">
-								We invite <strong>FUNDERS</strong> to join our conversations. If you are new to this
-								field or looking to complement your portfolio, we are here to help.
+								The TAI secretariat is here to help and can explain all that is on offer. If you are new to this field, scoping potential new investments, looking for evidence of what's working, or simply looking for a space to compare notes with fellow funders of all types, please reach out.
 							</p>
 							<h6 class="mb_4 text_dark">Let the TAI Secretariat know how we can help</h6>
 							<form action="{$page.url.pathname}?/join" method="post" use:enhance>
@@ -64,7 +64,7 @@
 										Subscribe to TAI's Weekly
 									</label>
 								</div>
-								<button class="btn btn_blue mt_4" type="submit">Get in Touch</button>
+								<button class="btn btn_dark mt_4" type="submit">Get in Touch</button>
 							</form>
 						</div>
 					</div>
@@ -78,7 +78,7 @@
 	$lg: map-get($grid-breakpoints, 'lg');
 
 	.join_section {
-		background: #59ebcf;
+		//background: #59ebcf;
 		position: relative;
 		z-index: 0;
 		padding-top: 0 !important;
@@ -105,7 +105,22 @@
 		}
 
 		.join_img {
-			width: 75%;
+			width: 100%;
+			display: none;
+			padding-right: 2rem;
+
+			@media (min-width: $lg){
+				display: block;
+			}
+		}
+
+		.join_img__mobile {
+			width: 100%;
+			display: block;
+
+			@media (min-width: $lg){
+				display: none;
+			}
 		}
 
 		&.pinned {

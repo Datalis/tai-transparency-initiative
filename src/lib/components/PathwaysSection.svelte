@@ -174,11 +174,11 @@
 	</div>
 {/if}
 
-<section id="pathways-to-change" class="pathways_section section bg_blue_light">
+<section id="pathways-to-change" class="pathways_section section bg_green">
 	<div class="wrapper">
 		<div class="container">
 			<h2>Pathways to change</h2>
-			<div class="divider divider_green divider_2 my_4" />
+			<div class="divider divider_green_light divider_2 my_4" />
 			<p class="mt_4 w_50">
 				This represents critical causal pathways common to TAI donor members’ theories of change. It
 				is in no way a representation of pathways to change for the Transparency, Participation and
@@ -229,7 +229,7 @@
 							}
 							.cls-15,
 							.cls-6 {
-								fill: #2bf9d1;
+								fill: #ffffff;
 							}
 							.cls-15,
 							.cls-7,
@@ -764,7 +764,7 @@
 							}
 							.cls-14,
 							.cls-6 {
-								fill: #2bf9d1;
+								fill: #ffffff;
 							}
 							.cls-14,
 							.cls-7 {
@@ -1338,7 +1338,7 @@
 		left: 0;
 		bottom: 0;
 		right: 0;
-		background-color: rgba(#051231, 0.8);
+		background-color: #1E3653;
 		backdrop-filter: blur(25.2px);
 		display: flex;
 		z-index: 99999;
@@ -1381,6 +1381,24 @@
 	.pathways_section {
 		min-height: 100vh;
 
+		svg{
+			circle, polygon{
+				fill: map-get($colors, "gray_light") !important;
+			}
+			line, polyline{
+				stroke: map-get($colors, "gray_light") !important;
+			}
+			.pathways-circle{
+				.cls-5{
+					fill: #8F8BFF !important;
+				}
+			}
+			tspan{
+				fill: map-get($colors, "blue") !important;
+			}
+			
+		}
+
 		@media screen and (max-width: $md) {
 			p {
 				width: 100% !important;
@@ -1414,12 +1432,11 @@
 					user-select: none;
 					&::selection {
 						background: none;
-						color: #2bf9d1;
 					}
 				}
 				path {
-					stroke: #3d30bf !important;
-					fill: #3d30bf !important;
+					stroke: map-get($colors, "green_light") !important;
+					fill: map-get($colors, "green_light") !important;
 					transform-origin: center;
 					transform-box: fill-box;
 					// animation: rotating 25s linear infinite;
@@ -1440,6 +1457,7 @@
 			}
 
 			text {
+				fill: white;
 				user-select: none;
 			}
 			path {
@@ -1448,13 +1466,17 @@
 				transform-box: fill-box;
 				animation-fill-mode: both;
 				fill: transparent;
+				stroke: map-get($colors, "gray_light");
 				transform: rotate(0);
 			}
 			&:hover {
 				path {
 					animation: rotating 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-					stroke: #3d30bf !important;
-					fill: #3d30bf !important;
+					stroke: map-get($colors, "white") !important; 
+					fill: map-get($colors, "white") !important;
+				}
+				text{
+					fill: map-get($colors, "green") !important;
 				}
 			}
 			&.active {
@@ -1478,7 +1500,7 @@
 				}
 				circle {
 					r: 40px;
-					fill: #051231;
+					fill: #8F8BFF !important;
 				}
 			}
 		}

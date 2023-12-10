@@ -1,8 +1,8 @@
 <script lang="ts">
 	import CardBg from '$lib/assets/images/home/cards/fondo.webp';
-	import Card1Img from '$lib/assets/images/home/cards/1.webp';
-	import Card2Img from '$lib/assets/images/home/cards/2.webp';
-	import Card3Img from '$lib/assets/images/home/cards/3.webp';
+	import Card1Img from '$lib/assets/images/home/cards/What we fund - TAI.png';
+	import Card2Img from '$lib/assets/images/home/cards/How we fund - TAI.png';
+	import Card3Img from '$lib/assets/images/home/cards/How TAI works - TAI.png';
 
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap/dist/gsap';
@@ -34,7 +34,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<section class="cards_section section bg_blue">
+<section class="cards_section section bg_white">
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
@@ -49,7 +49,7 @@
 							<div class="divider divider_light divider_2" />
 							<div class="content__text">
 								<a href="/what-we-fund#funding" class="text_dark display_block"
-									>What does TPA funding look like?</a
+									>What TAI funding looks like?</a
 								>
 								<a href="/what-we-fund#funding-data-library" class="text_dark display_block"
 									>Funding Data Library</a
@@ -156,7 +156,7 @@
 				border: none;
 				overflow: hidden;
 				padding: 0;
-				background: $card-green;
+				background: map-get($colors, "green_light");
 				border-radius: 15px;
 				height: calc(100% - pxToRem(20));
 				margin: auto;
@@ -180,7 +180,7 @@
 					border-bottom-right-radius: 15px;
 					overflow: hidden;
 					position: relative;
-					box-shadow: 1px 10px 22px -9px rgba(0, 0, 0, 0.75);
+					/*box-shadow: 1px 10px 22px -9px rgba(0, 0, 0, 0.75);*/
 					img {
 						width: 100%;
 						height: 100%;
@@ -202,13 +202,15 @@
 					flex-direction: column;
 					text-align: center;
 					.divider {
-						margin: auto;
+						margin-inline: auto;
 						flex-shrink: 0 !important;
 						width: 0 !important;
 						transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+						
 					}
 					&__text {
-						flex-grow: 1;
+						//flex-grow: 1;
 						margin-top: 25px;
 						margin-bottom: 25px;
 						display: flex;
@@ -220,7 +222,12 @@
 							&:hover {
 								font-weight: 600 !important;
 							}
+
+							@media (max-width: 900px){
+								padding-bottom: 0.4rem;
+							}
 						}
+						
 					}
 				}
 				.content h3 {
@@ -234,7 +241,7 @@
 				@media (hover: hover) {
 					&:hover {
 						.overlay {
-							height: calc(100% - 100px - var(--content-height));
+							height: calc(100% - 5vh - var(--content-height));
 							/* height: 50%; */
 						}
 						.content .divider {

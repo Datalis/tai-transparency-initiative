@@ -222,7 +222,7 @@
 		.link-icon {
 			width: 40px;
 			height: 40px;
-			border: 1px solid #c8ccd5;
+			border: 1px solid map-get($colors, "dark");
 			border-radius: 50%;
 			display: flex;
 			align-items: center;
@@ -230,15 +230,15 @@
 			transition: all 0.25s ease;
 
 			&:hover {
-				background-color: map-get($colors, 'green');
-				border: 1px solid map-get($colors, 'green');
+				background-color: map-get($colors, "blue_light");
+				border: 1px solid map-get($colors, "blue_light") !important;
 				svg {
-					fill: map-get($colors, 'blue') !important;
+					fill: map-get($colors, 'dark') !important;
 				}
 			}
 
 			svg {
-				fill: map-get($colors, 'green') !important;
+				fill: map-get($colors, "blue_light") !important;
 			}
 		}
 	}
