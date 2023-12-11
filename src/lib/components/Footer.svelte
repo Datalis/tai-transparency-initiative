@@ -210,7 +210,7 @@
 			<div class="display_flex">
 				<a href="/" class=" font_bold">Privacy Policy / Photo Credits</a>
 				<small class="text_white ml_auto"
-					>&copy; 2020 Transparency and Accountability Initiative, some rights reserved</small
+					>&copy; 2023 Trust, Accountability and Inclusion Collaborative, some rights reserved</small
 				>
 			</div>
 		</div>

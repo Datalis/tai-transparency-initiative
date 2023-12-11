@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<Seo title="Transparency & Accountability Initiative - FAQs" url="/faq" />
+	<Seo title="Trust, Accountability and Inclusion Collaborative - FAQs" url="/faq" />
 </svelte:head>
 
 <div class="page">
