@@ -110,7 +110,7 @@
 		
 						<div class="share_block">
 							<h5 class="mr_3">Share this article</h5>
-							<div class="divider divider_dark divider_1 mr_3" />
+							<div class="divider divider_dark divider_1 mr_3 show_on_md_and_up" />
 		
 							<div class="display_flex">
 								<a
@@ -471,18 +471,29 @@
 			:global(svg) {
 				width: 24px;
 				height: 24px;
-				:global(path){
-					fill: map-get($colors, "white");
+				:global(circle){
+					fill: map-get($colors, "white") !important;
 				}
-				
+				:global(path){
+					fill: map-get($colors, "white") !important;
+				}
 			}
 		}
+
 		.divider {
 			flex-grow: 1;
 		}
 		h5 {
 			font-size: pxToRem(20);
 			line-height: 1;
+
+			@media (max-width: $md){
+				margin-right: 0;
+			}
+		}
+
+		@media (max-width: $md){
+			flex-direction: column;
 		}
 	}
 
