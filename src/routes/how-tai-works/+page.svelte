@@ -148,7 +148,7 @@
 
 <svelte:head>
 	<link rel="preload" as="image" href={HeroImg} />
-	<Seo title="Transparency & Accountability Initiative - How TAI works" url="/how-tai-works" />
+	<Seo title="Trust, Accountability and Inclusion Collaborative - How TAI works" url="/how-tai-works" />
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -340,7 +340,7 @@
 									<ChandlerLogo width="300" />
 									<MacArthurLogo width="300" />
 									<Packard width="300" />
-									
+
 								</div>
 								<div class="marquee_item">
 									<MacArthurLogo width="300" />
@@ -465,7 +465,7 @@
 			@media screen and (max-width: $md) {
 				display: flex;
 				flex-direction: column;
-				
+
 				.content-right img {
 					position: relative !important;
 				}
@@ -477,11 +477,11 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			
+
 			img {
 				object-fit: contain;
 			}
-			
+
 			@media screen and (min-width: $md) {
 				margin-top: -8rem;
 				padding-top: 8rem;
@@ -594,7 +594,7 @@
 			@media (max-width: $md) {
 				width: 100% !important;
 				height: 300px;
-				
+
 				text-align: center;
 			}
 

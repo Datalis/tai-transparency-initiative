@@ -15,7 +15,7 @@
 	import gsap from 'gsap/dist/gsap';
 	import Seo from '$lib/components/Seo.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
-	
+
 
 	export let data: PageData;
 	export let form: ActionData;
@@ -43,7 +43,7 @@
 </script>
 
 <svelte:head>
-	<Seo title="Transparency & Accountability Initiative - About Us" url="/about-us" />
+	<Seo title="Trust, Accountability and Inclusion Collaborative - About Us" url="/about-us" />
 </svelte:head>
 
 <div class="about_us_page page">
@@ -155,7 +155,7 @@
 		</div>
 		<ResourcesSection resources={res} />
 	</div>
-	
+
 </div>
 
 <style lang="scss">
@@ -172,7 +172,7 @@
 	}
 	.landing_section {
 		min-height: 100vh;
-		
+
 		position: relative;
 		z-index: 1;
 		padding-top: 100px !important;
@@ -182,7 +182,7 @@
 		flex-direction: column !important;
 		justify-content: center;
 		height: fit-content;
-		
+
 		.wrapper_bg {
 			z-index: -1;
 			position: absolute;
@@ -205,7 +205,7 @@
 			background-position: center;
 			background-size: contain;
 
-			
+
 		}
 	}
 	.envision_section {
@@ -248,9 +248,9 @@
 			.divider.divider_blue {
 				opacity: 0.5;
 			}
-			
+
 		}
-		
+
 	}
 	.team_section {
 		background-color: #73C5C7;
@@ -263,7 +263,7 @@
 				margin-top: 0.5rem !important;
 				margin-bottom: 0.5rem !important;
 			}
-		} 
+		}
 	}
 	.committee_section {
 		background-color: #73C5C7;
@@ -289,7 +289,7 @@
 				color: map-get($colors, "blue_light" );
 				background-color: map-get($colors, "dark" );
 			}
-			
+
 		}
 	}
 

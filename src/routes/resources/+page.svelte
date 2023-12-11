@@ -75,7 +75,7 @@
 </script>
 
 <svelte:head>
-	<Seo title="Transparency & Accountability Initiative - Resources" url="/resources" />
+	<Seo title="Trust, Accountability and Inclusion Collaborative - Resources" url="/resources" />
 </svelte:head>
 
 <div id="resources" class="page">

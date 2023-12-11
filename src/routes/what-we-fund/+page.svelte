@@ -59,7 +59,7 @@
 
 <svelte:head>
 	<link rel="preload" as="image" href={HeroImg} />
-	<Seo title="Transparency & Accountability Initiative - What we fund" url="/what-we-fund" />
+	<Seo title="Trust, Accountability and Inclusion Collaborative - What we fund" url="/what-we-fund" />
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -356,9 +356,9 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			
+
 			img {
-				
+
 				object-fit: contain;
 			}
 
@@ -417,15 +417,15 @@
 
 		.img_wrapper {
 			margin: auto !important;
-			
+
 			position: relative;
-			
+
 
 			img {
-				
+
 				position: absolute;
 				max-width: 75%;
-				
+
 				left: 0;
 				right: 0;
 				bottom: 0;
@@ -500,7 +500,7 @@
 						font-size: 20px !important;
 					}
 				}
-				
+
 			}
 		}
 

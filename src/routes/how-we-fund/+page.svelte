@@ -137,7 +137,7 @@
 
 <svelte:head>
 	<link rel="preload" href={HeroImg} as="image" />
-	<Seo title="Transparency & Accountability Initiative - How we fund" url="/how-we-fund" />
+	<Seo title="Trust, Accountability and Inclusion Collaborative - How we fund" url="/how-we-fund" />
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -333,7 +333,7 @@
 		}
 		.img_wrapper img {
 			margin: auto;
-			
+
 			position: absolute;
 			top: 0;
 			bottom: 0;
@@ -393,12 +393,12 @@
 
 		.content .content-right {
 			position: relative;
-			
-			
+
+
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			
+
 			img {
 				object-fit: contain;
 			}
