@@ -25,6 +25,7 @@
 
 	import HeroImg from '$lib/assets/images/heroes/how-tai-works-inside.png';
 	import Seo from '$lib/components/Seo.svelte';
+	import ConnectingDots from '$lib/components/ConnectingDots.svelte';
 	// import HeroImg1 from '$lib/assets/images/hero/3.2.png';
 	// import HeroImg2 from '$lib/assets/images/hero/3.1.png';
 	let videoPlayer: HTMLVideoElement;
@@ -200,6 +201,13 @@
 	</section>
 	<Six6csSection data={six_data} />
 	<section id="progress-model" class="progress_model_section section bg_white">
+		<div class="connecting_dots">
+			<ConnectingDots height={200} dotSpeed={0.1} dotRadius={5} dotCount={36} dotConnectionDistance={140} color={{r: 229, g: 227, b: 255}}/>
+		</div>
+		<div class="connecting_dots">
+			<ConnectingDots height={200} dotSpeed={1} dotRadius={4} dotCount={16} dotConnectionDistance={230} color={{r: 199, g: 197, b: 255}}/>
+		</div>
+
 		<div class="container">
 			<h2 class="mt_0">Our Model for Field-Level Progress</h2>
 			<div class="divider divider_blue_light divider_2" />
@@ -207,6 +215,7 @@
 				>At every stage, we monitor and evaluate what works, when, how and why.</span
 			>
 			<div class="model_items mt_5">
+				
 				<div class="model_item">
 					<div class="model_item__header bg_blue_dark py_3 px_4">
 						<h5 class="text_uppercase text_blue_light m_0">Learning</h5>
@@ -551,6 +560,7 @@
 	} */
 
 	.progress_model_section {
+		position: relative;
 		margin-top: -2px;
 		min-height: 100vh !important;
 		z-index: 1;
@@ -568,6 +578,12 @@
 			@media (max-width: $md) {
 				flex-direction: column;
 			}
+		}
+
+		.connecting_dots{
+			position: absolute;
+			bottom: -1rem;
+			z-index: -1;
 		}
 
 		.model_item_arrow {

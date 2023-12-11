@@ -1,11 +1,19 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
+	import ConnectingDots from './ConnectingDots.svelte';
 
 	export let form: any;
 </script>
 
 <section id="founders-exits" class="founders_section section mt_5 bg_gray_light text_dark">
+	<div class="connecting_dots">
+		<ConnectingDots height={200} dotSpeed={0.1} dotRadius={8} dotCount={16} dotConnectionDistance={210} color={{r: 169, g: 170, b: 189}}/>
+	</div>
+	<div class="connecting_dots">
+		<ConnectingDots height={200} dotSpeed={1} dotRadius={5} dotCount={16} dotConnectionDistance={210} color={{r: 137, g: 134, b: 255}}/>
+	</div> 
+
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
@@ -113,6 +121,7 @@
 		display: flex !important;
 		flex-direction: column;
 		justify-content: center;
+		overflow-y: hidden;
 	}
 	.founders_section .wrapper {
 		// background: #59ebcf;
@@ -145,5 +154,11 @@
 				width: 100%;
 			}
 		}
+	}
+
+	.connecting_dots{
+		position: absolute;
+		bottom: -2rem;
+		z-index: -1;
 	}
 </style>
