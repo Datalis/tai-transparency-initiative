@@ -1,7 +1,7 @@
 <script>
 	export let title = 'Trust, Accountability and Inclusion Collaborative';
 	export let description =
-		'The Trust, Accountability and Inclusion Collaborative (TAI) is a donor collaborative working toward a democratic world where power and resources are more equally distributed; people are informed and empowered, governments and the corporate sector are open and responsive, and collective action advances the public good.';
+		'The Trust, Accountability, and Inclusion Collaborative - Funders for Participatory Governance is a network of funders committed to advancing a world where power and resources are distributed more equitably, communities are informed and empowered, and governments and the corporate sector act with integrity for the good of people and planet.';
 	export let img = 'https://taicollaborative.org/seo2.png';
 	export let url = '/';
 	export let type = 'website';
