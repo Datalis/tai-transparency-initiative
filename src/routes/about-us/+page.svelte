@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="goals" class="envision_section section bg_white">
+	<section id="goals" class="envision_section section">
 		<div class="container">
 			<h2 class="text_dark text_center">We envision a society where</h2>
 			<div class="divider divider_blue_light divider_2" />
@@ -176,40 +176,44 @@
 		position: relative;
 		z-index: 1;
 		padding-top: 100px !important;
-		padding-bottom: 200vh !important;
-		margin-bottom: -200vh;
+		padding-bottom: 600vh !important;
+		margin-bottom: -600vh;
 		display: flex !important;
 		flex-direction: column !important;
 		justify-content: center;
 		height: fit-content;
 
-		.wrapper_bg {
-			z-index: -1;
-			position: absolute;
-			top: 4rem;
-			left: 0;
-			right: 0;
+		.container{
+			height: calc(100svh - 10rem);
+			position: relative;
+			.wrapper_bg {
+				z-index: -1;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
 
-			object-fit: contain;
-			margin: auto;
-			height: calc(100vh - 4rem);
-			max-height: 30rem;
-		}
-		.wrapper {
-			height: calc(100vh - 4rem);
-			margin-top: -5rem;
-			max-height: 30rem;
-			background-image: "lib/assets/images/home/group_3.webp";
+				object-fit: contain;
+				margin: auto;
+				height: calc(100vh - 10rem);
+				max-height: 30rem;
+			}
+			.wrapper {
+				//height: calc(100vh - 4rem);
+				height: 100%;
+				margin-block: auto;
+				//max-height: 30rem;
+				//background-image: "lib/assets/images/home/group_3.webp";
 
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: contain;
-
-
+				//background-repeat: no-repeat;
+				//background-position: center;
+				//background-size: contain;
+			}
 		}
 	}
 	.envision_section {
-		min-height: 100vh;
+		min-height: 100svh;
 		position: relative;
 		z-index: 1;
 
