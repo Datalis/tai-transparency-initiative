@@ -8,7 +8,7 @@
 
 <section id="founders-exits" class="founders_section section mt_5 bg_gray_light text_dark">
 	<div class="connecting_dots">
-		<ConnectingDots height={200} dotSpeed={0.1} dotRadius={8} dotCount={16} dotConnectionDistance={210} color={{r: 169, g: 170, b: 189}}/>
+		<ConnectingDots height={200} dotSpeed={0.1} dotRadius={3} dotCount={26} dotConnectionDistance={180} color={{r: 170, g: 170, b: 240}}/>
 	</div>
 	<div class="connecting_dots">
 		<ConnectingDots height={200} dotSpeed={1} dotRadius={5} dotCount={16} dotConnectionDistance={210} color={{r: 137, g: 134, b: 255}}/>
