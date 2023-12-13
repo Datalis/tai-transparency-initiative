@@ -120,12 +120,17 @@
 
 		&__mobile {
 			--swiper-pagination-color: #50BFC2;
+			:global(.swiper-slide){
+				height: auto;
+			}
+
 			._6Cs_item {
 				width: 90% !important;
+				height: 90%;
 				margin: auto;
 				border-radius: 25px;
 				max-width: 100% !important;
-				min-height: 25rem;
+				//min-height: 25rem;
 				padding: 2rem;
 				display: flex !important;
 				flex-direction: column;
@@ -134,6 +139,7 @@
 				&__text {
 					padding-left: 0 !important;
 					margin-top: 0 !important;
+					font-size: 1.15rem;
 				}
 			}
 		}
