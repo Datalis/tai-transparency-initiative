@@ -95,7 +95,7 @@
 			on:onChange={() => (currentPage = 1)}
 		/>
 	</div>
-	<section class="resource_list_section section bg_light">
+	<section class="resource_list_section section">
 		{#if typeParam}
 			<div class="library_summary py_2">
 				<div class="container display_flex align_center">
@@ -161,6 +161,10 @@
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
+
+	#resources{
+		padding-bottom: 3rem;
+	}
 	.resource_filters {
 		padding-top: calc(100px + 1rem);
 	}
