@@ -156,7 +156,7 @@
 					<h6 class="text_uppercase  mb_4 mt_0">
 						<a href="/resources" class="">Resources</a>
 					</h6>
-					<ul>
+					<ul class="grid_2_col">
 						<li>
 							<a href="/resources?type=1" class="text_white">TAI weekly</a>
 						</li>
@@ -182,7 +182,7 @@
 					<a href="mailto:ymgarcia@taicollaborative.org" class="display_block text_white"
 						>ymgarcia@taicollaborative.org</a
 					>
-					<span class="display_block mt_4 text_white"
+					<span class="display_block mt_2 text_white"
 						>1100 13th St NW, Suite 800 Washington, DC 20005, United States</span
 					>
 					<!-- <a href="/" class="display_flex align_center mt_2 text_dark mt_3 font_bold"
@@ -224,9 +224,15 @@
 		border: 1px solid map-get($colors, "white") !important;
 	}
 
+	.grid_2_col{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
 	.footer {
 		position: relative;
 		z-index: 1;
+
 		&_content {
 			padding: 2rem 0rem;
 
