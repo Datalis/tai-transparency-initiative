@@ -197,9 +197,9 @@
 				.content {
 					padding-left: 1rem;
 					padding-right: 1rem;
-					height: 50%;
-					display: flex;
-					flex-direction: column;
+					//height: 50%;
+					//display: flex;
+					//flex-direction: column;
 					text-align: center;
 					.divider {
 						margin-inline: auto;
@@ -212,10 +212,10 @@
 					&__text {
 						//flex-grow: 1;
 						margin-top: 25px;
-						margin-bottom: 25px;
-						display: flex;
-						flex-direction: column;
-						justify-content: space-evenly;
+						//margin-bottom: 25px;
+						//display: flex;
+						//flex-direction: column;
+						//justify-content: space-evenly;
 						a {
 							font-weight: 400;
 							// font-size: pxToRem(12);
@@ -224,7 +224,7 @@
 							}
 
 							@media (max-width: 900px){
-								padding-bottom: 0.4rem;
+								//padding-bottom: 0.4rem;
 							}
 						}
 						
@@ -241,7 +241,7 @@
 				@media (hover: hover) {
 					&:hover {
 						.overlay {
-							height: calc(100% - 5vh - var(--content-height));
+							height: calc(100% - 1.5rem - var(--content-height));
 							/* height: 50%; */
 						}
 						.content .divider {
@@ -252,7 +252,7 @@
 
 				@media (hover: none) {
 					.overlay {
-						height: calc(100% - var(--content-height));
+						height: calc(100% - 1.5rem - var(--content-height));
 					}
 					.content .divider {
 						width: 100px !important;
