@@ -54,14 +54,14 @@
 	onMount(() => init());
 </script>
 
-<div class="subscription-popup bg_green" class:show={showSubscriptionPopup}>
+<div class="subscription-popup bg_blue" class:show={showSubscriptionPopup}>
 	<div class="subscription-message">
-		<span class="font_bold">Don't miss our latest publications</span>
-		<small class="text_dark"> Subscribe now to get our notifications </small>
+		<span class="font_bold text_green_light">Don't miss our latest publications</span>
+		<small class="text_white"> Subscribe now to get our notifications </small>
 	</div>
 	<div class="subscription-buttons">
-		<button class="btn btn_small btn_light mr_2" on:click={subscribe}>Subscribe now</button>
-		<button class="btn btn_small" on:click={dismiss}>I'm not interested</button>
+		<button class="btn btn_small btn_green_light text_blue mr_2" on:click={subscribe}>Subscribe now</button>
+		<button class="btn btn_small btn_outline_green_light text_green_light" on:click={dismiss}>I'm not interested</button>
 	</div>
 </div>
 

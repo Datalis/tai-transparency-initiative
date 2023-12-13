@@ -112,7 +112,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="team" class="team_section section text_dark">
+	<section id="team" class="team_section section">
 		<div class="container">
 			<h3 class="mt_0">{staff.title}</h3>
 			<div class="divider divider_white divider_2" />
@@ -132,7 +132,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="committee_section section text_light">
+	<section class="committee_section section">
 		<div class="container">
 			<div class="committee_list mt_4">
 				<h4 class="mb_4 mt_4 text_dark">Steering Committee</h4>
@@ -259,6 +259,11 @@
 	.team_section {
 		background-color: #73C5C7;
 		padding-top: 120px !important;
+		padding-bottom: 0 !important;
+		@media (max-width: $md){
+			padding-top: 2rem !important;
+		}
+
 		position: relative;
 		z-index: 1;
 		 .staff_list {
