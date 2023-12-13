@@ -94,7 +94,7 @@
         width = canvas.width = window.innerWidth;
         canvas.height = height;
   
-        dots = Array.from({ length: dotCount * width * 0.0007 }, createDot);
+        dots = Array.from({ length: dotCount * width * 0.0008 }, createDot);
   
         function draw() {
           scene.clearRect(0, 0, width, height);

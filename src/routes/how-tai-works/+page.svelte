@@ -202,10 +202,10 @@
 	<Six6csSection data={six_data} />
 	<section id="progress-model" class="progress_model_section section bg_white">
 		<div class="connecting_dots">
-			<ConnectingDots height={200} dotSpeed={0.1} dotRadius={5} dotCount={36} dotConnectionDistance={140} color={{r: 229, g: 227, b: 255}}/>
+			<ConnectingDots height={150} dotSpeed={0.1} dotRadius={4} dotCount={36} dotConnectionDistance={140} color={{r: 229, g: 227, b: 255}}/>
 		</div>
 		<div class="connecting_dots">
-			<ConnectingDots height={200} dotSpeed={1} dotRadius={4} dotCount={16} dotConnectionDistance={230} color={{r: 199, g: 197, b: 255}}/>
+			<ConnectingDots height={200} dotSpeed={1} dotRadius={5} dotCount={16} dotConnectionDistance={230} color={{r: 199, g: 197, b: 255}}/>
 		</div>
 
 		<div class="container">
@@ -393,7 +393,10 @@
 								<SkollLogo width="150" />
 								<FCDOLogo width="150" />
 								<ChandlerLogo width="150" />
-								<Packard width="150" height="100"/>
+								<div class="span_2" >
+									<Packard width="150" height="100"/>
+								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -752,6 +755,11 @@
 
 				:global(path){
 					fill: map-get($colors, "dark" ) !important;
+				}
+
+				.span_2{
+					grid-column: span 2;
+					justify-self: center;
 				}
 			}
 		}

@@ -175,7 +175,7 @@
 				target="blank"><FCDOLogo width="150" /></a
 			>
 			<a href="https://www.chandlerfoundation.org/" target="blank"><ChandlerLogo width="150" /></a>
-			<a href="https://www.packard.org/" target="blank">
+			<a href="https://www.packard.org/" target="blank" class="span_2">
 				<Packard width="150" height="60" class="mt_4" />
 			</a>
 		</div>
@@ -388,6 +388,11 @@
 
 				:global(path){
 					fill: map-get($colors, "gray" ) !important;
+				}
+
+				.span_2{
+					grid-column: span 2;
+					justify-self: center;
 				}
 			}
 		}

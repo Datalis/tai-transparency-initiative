@@ -60,7 +60,7 @@
 	</section>
 	<section id="goals" class="envision_section section">
 		<div class="container">
-			<h2 class="text_dark text_center">We envision a society where</h2>
+			<h3 class="text_dark text_center">We envision a society where</h3>
 			<div class="divider divider_blue_light divider_2" />
 			<div class="row mt_5">
 				<div class="col col_4 col_md_12">
