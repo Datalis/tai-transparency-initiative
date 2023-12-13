@@ -70,8 +70,8 @@
 
 		.resource_item__image{
 			background: map-get($colors, 'blue_dark');
-			border-radius: 0.8rem;
-			aspect-ratio: 16/9;
+			border-radius: 16px;
+			
 		}
 
 		.divider {
@@ -100,12 +100,13 @@
 		}
 
 		&__image {
-			overflow: hidden;
+			//overflow: hidden;
 			/* min-height: 200px; */
 			:global(img) {
-				//border-radius: 15px;
+				border-radius: 15px;
 				aspect-ratio: 16/9;
 				width: 100%;
+				height: 100%;
 				//height: auto;
 				object-fit: cover;
 				object-position: center;
