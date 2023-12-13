@@ -1,11 +1,23 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
+	import ConnectingDots from './ConnectingDots.svelte';
 
 	export let form: any;
 </script>
 
 <section id="founders-exits" class="founders_section section mt_5 bg_gray_light text_dark">
+	<div class="connecting_dots">
+		<ConnectingDots height={200} dotSpeed={0.1} dotRadius={6} dotCount={13} dotConnectionDistance={180} color={{r: 170, g: 170, b: 240}}/>
+	</div>
+	<div class="connecting_dots show_on_md_and_up">
+		<ConnectingDots height={200} dotSpeed={1} dotRadius={6} dotCount={18} dotConnectionDistance={210} color={{r: 137, g: 134, b: 255}}/>
+	</div> 
+
+	<div class="connecting_dots show_on_md_and_down">
+		<ConnectingDots height={100} dotSpeed={0.2} dotRadius={5} dotCount={35} dotConnectionDistance={140} color={{r: 137, g: 134, b: 255}}/>
+	</div> 	
+
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
@@ -105,14 +117,19 @@
 		//background: #5c4aff;
 		position: relative;
 		z-index: 0;
-		/*padding-top: 0 !important;
-		padding-bottom: 0 !important;*/
-		padding-block: 15rem;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		
+		@media (max-width: $lg){
+			padding-bottom: 3rem !important;
+		}
+
 		min-height: 100vh;
 		color: #fff;
 		display: flex !important;
 		flex-direction: column;
 		justify-content: center;
+		overflow-y: hidden;
 	}
 	.founders_section .wrapper {
 		// background: #59ebcf;
@@ -145,5 +162,11 @@
 				width: 100%;
 			}
 		}
+	}
+
+	.connecting_dots{
+		position: absolute;
+		bottom: -1rem;
+		z-index: -1;
 	}
 </style>

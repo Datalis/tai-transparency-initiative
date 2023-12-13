@@ -40,6 +40,7 @@
 
 	.subscribe_section {
 		min-height: 400px;
+		padding-bottom: 0 !important;
 
 		@media (max-width: $md) {
 			height: auto;

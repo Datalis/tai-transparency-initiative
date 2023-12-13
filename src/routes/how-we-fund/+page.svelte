@@ -428,6 +428,12 @@
 	}
 
 	.partners_section {
+
+		padding-bottom: 0 !important;
+		@media (max-width: $md){
+			padding-top: 0 !important;
+		}
+		
 		position: relative;
 		min-height: 100vh !important;
 
@@ -508,7 +514,7 @@
 			p {
 				margin-top: 1rem;
 				text-align: center;
-				font-size: pxToRem(14);
+				//font-size: pxToRem(14);
 				font-weight: 600;
 			}
 		}

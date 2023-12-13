@@ -461,7 +461,7 @@
 				.funding_item {
 					margin-top: 35px;
 					padding: 1rem !important;
-					padding-top: 1.5rem !important;
+					padding-top: 3rem !important;
 
 					&__icon {
 						position: absolute;
@@ -497,7 +497,7 @@
 					height: 80%;
 
 					p{
-						font-size: 20px !important;
+						font-size: 22px !important;
 					}
 				}
 
