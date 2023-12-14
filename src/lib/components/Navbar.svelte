@@ -300,15 +300,15 @@
 						</div> -->
 					</nav>
 					<nav class="navbar_menu__links mt_5">
-						<a href="https://www.facebook.com/TAInitiative/" class="mr_3 link-icon">
+						<a href="https://www.facebook.com/TAInitiative/" class="mr_3 link-icon border_white">
 							<FacebookIcon width="20" height="20" />
 						</a>
-						<a href="https://twitter.com/TAInitiative" class="mr_3 link-icon">
+						<a href="https://twitter.com/TAInitiative" class="mr_3 link-icon border_white">
 							<TwitterIcon width="20" height="20" />
 						</a>
 						<a
 							href="https://www.linkedin.com/organization-guest/company/transparency-and-accountability-initiative?challengeId=AQFexlD2lTMqaAAAAXDvHIOa1MJGYXZxIQdXCoyqun-gbymyAqHKYz4JTJMObstoYl_5nPPpDIzLiS_jaiczyjYN6ze8lOTtlQ&submissionId=ec1285b6-8c7c-fd15-bcd2-b963fa594427"
-							class="mr_3 link-icon"
+							class="mr_3 link-icon border_white"
 						>
 							<LinkedInIcon width="20" height="20" />
 						</a>
@@ -331,6 +331,10 @@
 		max-height: 100px;
 		width: 100%;
 		transition: all 0.3s ease-in-out;
+
+		.border_white{
+			border-color: white !important;
+		}
 
 		.navbar,
 		.navbar .navbar_nav {
