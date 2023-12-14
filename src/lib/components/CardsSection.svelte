@@ -150,6 +150,10 @@
 
 			@media screen and (max-width: $md) {
 				max-height: unset;
+
+				.col{
+					min-height: 30rem;
+				}
 			}
 
 			.card {

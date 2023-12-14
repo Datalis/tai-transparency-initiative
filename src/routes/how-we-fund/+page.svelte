@@ -487,6 +487,7 @@
 
 			width: calc(33.3333vw - 4rem);
 			max-width: calc(1400px / 3 - 4rem);
+			padding-bottom: 2rem;
 
 			img {
 				width: 90%;
