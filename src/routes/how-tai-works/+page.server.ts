@@ -20,19 +20,19 @@ export const load: PageServerLoad = async () => {
 					}
 				}
 			},
-			past_funding: {
-				fields: ['title'],
-				populate: {
-					PastFundingItem: {
-						fields: ['id', 'summary', 'url', 'name'],
-						populate: {
-							image: {
-								populate: '*'
-							}
-						}
-					}
-				}
-			}
+			// past_funding: {
+			// 	fields: ['title'],
+			// 	populate: {
+			// 		PastFundingItem: {
+			// 			fields: ['id', 'summary', 'url', 'name'],
+			// 			populate: {
+			// 				image: {
+			// 					populate: '*'
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// }
 		}
 	};
 

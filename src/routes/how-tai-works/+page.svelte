@@ -11,11 +11,11 @@
 
 	import ClimateVideoPoster from '$lib/assets/images/climate-video-poster.webp';
 
-	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
+	// import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 	import ChevronRightIcon from '$lib/assets/icons/chevron-right-thin.svg?component';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
-	import PastFundingSection from '$lib/components/PastFundingSection.svelte';
+	// import PastFundingSection from '$lib/components/PastFundingSection.svelte';
 	import Six6csSection from '$lib/components/Six6csSection.svelte';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap/dist/gsap';
@@ -35,7 +35,7 @@
 
 	$: hero = data.hero;
 	$: resources = data.resources;
-	$: past_funding = data.past_funding;
+	// $: past_funding = data.past_funding;
 	$: six_data = data.six_cs;
 
 	let isVideoMuted = true;
@@ -329,7 +329,7 @@
 			</div>
 		</div>
 	</section>
-	<PastFundingSection data={past_funding} />
+	<!-- <PastFundingSection data={past_funding} /> -->
 	<section id="working-with-others" class="other_groups_section section gradient_sm_green_light">
 		<IntersectionObserver let:top>
 			<div class="wrapper" class:pinned={top > 0}>
