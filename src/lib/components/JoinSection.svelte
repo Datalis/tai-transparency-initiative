@@ -9,7 +9,7 @@
 
 <section id="join" class="join_section section">
 	<IntersectionObserver let:top>
-		<div class="wrapper" class:pinned={top > 0}>
+		<div class="wrapper" class:pinned={false}>
 			<div class="container">
 				<div class="row">
 					<div class="col col_7 col_lg_12">

@@ -30,6 +30,7 @@
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 	import Seo from '$lib/components/Seo.svelte';
 	import Popup from '$lib/components/Popup.svelte';
+	import KnowledgeHubSection from '$lib/components/KnowledgeHubSection.svelte';
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
@@ -41,6 +42,7 @@
 	export let form: ActionData;
 
 	$: hero = data.hero;
+	$: knowledgeHub = data.knowledgehub;
 	// $: resources = data.ResourcesSection;
 	$: res = data.resources;
 
@@ -182,6 +184,7 @@
 	</section>
 	<CardsSection />
 	<div class="gradient_sm_gray_light">
+		<KnowledgeHubSection data={knowledgeHub}></KnowledgeHubSection>
 		<JoinSection {form} />
 		<SubscribeSection />
 		<ResourcesSection resources={res} />
