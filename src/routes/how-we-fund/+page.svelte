@@ -6,26 +6,26 @@
 	import PartnerImg5 from '$lib/assets/images/partner_support/5.webp';
 	import PartnerImg6 from '$lib/assets/images/partner_support/6.webp';
 
-	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
+	// import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
 	import { gsap } from 'gsap/dist/gsap';
 
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
+	// import { page } from '$app/stores';
 	import FoundersExitsSection from '$lib/components/FoundersExitsSection.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 
 	import HeroImg from '$lib/assets/images/heroes/how-we-fund-inside.png?webp';
 	// import HeroImg2 from '$lib/assets/images/hero/2.2.png'
 
-	import ParticipatoryVideoPoster from '$lib/assets/images/participatory-video-poster.webp';
+	// import ParticipatoryVideoPoster from '$lib/assets/images/participatory-video-poster.webp';
 	import Seo from '$lib/components/Seo.svelte';
 	import type { ActionData } from './$types';
 
 	let partnersSlide: HTMLElement;
 	let windowWidth: number;
-	let videoPlayer: HTMLVideoElement;
+	
 
 	let partnersSlideWidth = 0;
 
@@ -56,51 +56,6 @@
 					x: toScroll
 				});
 
-			gsap
-				.timeline({
-					scrollTrigger: {
-						trigger: '.participatory_section',
-						pin: true,
-						scrub: true,
-						start: 'top top',
-						end: '+=200%',
-						onUpdate: ({ progress }: any) => {
-							if (videoPlayer && progress > 0.8) {
-								videoPlayer.play();
-							}
-						},
-						onLeave: () => {
-							if (videoPlayer) {
-								videoPlayer.pause();
-							}
-						},
-						onEnterBack: () => {
-							if (videoPlayer) {
-								videoPlayer.play();
-							}
-						},
-						onLeaveBack: () => {
-							//reset video to end
-							if (videoPlayer) {
-								if (videoPlayer.duration && videoPlayer.duration > 0) {
-									videoPlayer.currentTime = videoPlayer.duration;
-								}
-								videoPlayer.pause();
-							}
-						}
-					}
-				})
-				.to('.participatory_section .participatory_section__content', {
-					yPercent: -5
-				})
-				.to('.participatory_section .participatory_section__content .video_wrapper', {
-					xPercent: -65,
-					flexBasis: '100%'
-					// ease: 'none'
-				})
-				.to('.participatory_section .participatory_section__content .video_wrapper video', {
-					height: '100%'
-				});
 
 			const parallax = gsap.timeline({
 				scrollTrigger: {
@@ -123,15 +78,7 @@
 					0
 				);
 			});
-		} else {
-			videoPlayer?.play();
 		}
-
-		// if ($page.url.hash) {
-		// 	gsap.timeline().to(window, {
-		// 		scrollTo: $page.url.hash
-		// 	});
-		// }
 	});
 </script>
 
@@ -247,49 +194,6 @@
 		</div>
 	</section>
 	<FoundersExitsSection {form} />
-	<section id="participatory-strategy">
-		<div class="participatory_section section">
-			<div class="container">
-				<div class="participatory_section__content">
-					<div class="content_wrapper pl_3">
-						<h2 class="font_bold mb_4">Participatory Strategy</h2>
-						<div class="divider divider_2 divider_blue_light" />
-						<p class="mt_4">
-							TAI offers a platform for candid, constructive exchange around grantmaking practices.
-							Our members learn from each other and hold each other accountable to be more
-							inclusive, equitable, innovative, and effective grantmakers.
-						</p>
-						<a
-							href="https://participatorystrategy.org/"
-							target="blank"
-							class="btn btn_dark mt_4 show_on_md_and_up"
-						>
-							Learn more
-						</a>
-					</div>
-					<div class="video_wrapper">
-						<video
-							bind:this={videoPlayer}
-							muted
-							loop
-							class="w_100"
-							src="https://api.tai.datalis.dev/uploads/participatory_strategy_d1cb234e94.webm"
-							poster={ParticipatoryVideoPoster}
-						>
-							<track kind="captions" />
-						</video>
-					</div>
-					<a
-						href="https://participatorystrategy.org/"
-						target="blank"
-						class="btn btn_dark mt_4 show_on_md_and_down"
-					>
-						Learn more
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
 	<ResourcesSection {resources} />
 </div>
 
@@ -298,59 +202,6 @@
 	$lg: map-get($grid-breakpoints, 'lg');
 	$xl: map-get($grid-breakpoints, 'xl');
 
-	/* .landing_section {
-		z-index: 1;
-		padding-top: 100px !important;
-		min-height: 100vh;
-		background-image: url(/src/lib/assets/images/hero.webp);
-		background-size: cover;
-		display: flex !important;
-		flex-direction: column !important;
-
-		@media screen and (max-width: $md) {
-			height: unset;
-		}
-
-		@media screen and (min-width: $xl) {
-			height: 80vh !important;
-		}
-
-		.container {
-			margin-top: auto !important;
-			@media screen and (max-width: $md) {
-				margin-top: 0 !important;
-			}
-		}
-
-		.container,
-		.col {
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-
-		.img_wrapper {
-			margin: auto !important;
-		}
-		.img_wrapper img {
-			margin: auto;
-
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			right: -14%;
-			@media screen and (max-width: $lg) {
-				right: -30%;
-			}
-			@media screen and (max-width: $md) {
-				position: relative;
-				right: 0;
-			}
-		}
-
-		:global(p) {
-			text-align: left;
-		}
-	} */
 
 	.landing_section {
 		//background-image: url(/src/lib/assets/images/hero.webp);
@@ -529,81 +380,5 @@
 		}
 	}
 
-	.participatory_section {
-		min-height: 105vh;
-		display: flex !important;
-		flex-direction: column;
-		justify-content: center;
-
-		@media screen and (max-width: $md) {
-			min-height: auto;
-			padding-bottom: 0 !important;
-		}
-
-		.container {
-			flex: 1 0 auto;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-		}
-
-		&__content {
-			display: flex;
-			justify-content: flex-start;
-			align-items: stretch;
-			transform: translate3d(0, 0, 0);
-			flex: 1 0 auto;
-
-			@media screen and (max-width: $md) {
-				flex-direction: column;
-			}
-
-			.content_wrapper {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: flex-start;
-				padding-right: 4rem;
-				p {
-					max-width: 70%;
-					@media screen and (max-width: $md) {
-						max-width: 100%;
-					}
-				}
-			}
-
-			.content_wrapper,
-			.video_wrapper {
-				flex-shrink: 0;
-				flex-basis: 65%;
-				@media screen and (max-width: $md) {
-					flex-basis: 100%;
-					padding-right: 0 !important;
-					padding: 0;
-				}
-			}
-
-			.video_wrapper {
-				display: flex;
-				flex-direction: column;
-
-				video {
-					@media screen and (max-width: $md) {
-						margin-top: 2rem;
-					}
-					height: 90%;
-					margin: auto;
-					max-width: 100%;
-					object-fit: cover;
-					border-radius: 25px;
-				}
-			}
-		}
-
-		@media (max-width: $md) {
-			.btn {
-				width: 100%;
-			}
-		}
-	}
+	
 </style>
