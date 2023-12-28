@@ -82,9 +82,9 @@
 								<a href="/how-we-fund#founders-exits" class="text_dark display_block"
 									>Funder exits</a
 								>
-								<a href="/how-we-fund#participatory-strategy" class="text_dark display_block"
+								<!-- <a href="/how-we-fund#participatory-strategy" class="text_dark display_block"
 									>Participatory Strategy</a
-								>
+								> -->
 								<a href="/how-we-fund#resources" class="text_dark display_block"> Resources </a>
 							</div>
 						</div>
@@ -111,9 +111,9 @@
 								<a href="/how-tai-works#featured-topics" class="text_dark display_block"
 									>Featured topics</a
 								>
-								<a href="/how-tai-works#past-funding" class="text_dark display_block"
+								<!-- <a href="/how-tai-works#past-funding" class="text_dark display_block"
 									>Past Funding Explorations</a
-								>
+								> -->
 								<a href="/how-tai-works#working-with-others" class="text_dark display_block"
 									>Working with other groups</a
 								>
