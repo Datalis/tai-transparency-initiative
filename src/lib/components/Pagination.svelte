@@ -71,8 +71,8 @@
 				}
 			}
 			.pagination-nav .option.active {
-				border-top: 2px solid map-get($colors, 'green');
-				color: map-get($colors, 'green');
+				border-top: 2px solid map-get($colors, 'blue_lighy');
+				color: map-get($colors, 'blue_light');
 			}
 			.pagination-nav .option.disabled {
 				cursor: auto;

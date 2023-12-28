@@ -53,10 +53,13 @@
 		}
 
 		&__link {
-			color: #00deb3;
+			color: map-get($colors, "blue_light" );
 		}
 		&__link:hover {
-			color: #43b79e;
+			color: map-get($colors, "green");
+		}
+		:global(path){
+			fill: map-get($colors, "blue_light" );
 		}
 		/* &__left {
 			flex-shrink: 0;

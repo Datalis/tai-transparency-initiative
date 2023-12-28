@@ -34,6 +34,9 @@ export const load: PageServerLoad = async () => {
 		populate: {
 			hero: {
 				fields: ['title', 'message']
+			},
+			knowledgehub: {
+				populate: ['websites', 'websites.image']
 			}
 		}
 	};

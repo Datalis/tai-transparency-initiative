@@ -1,8 +1,8 @@
 <script>
-	export let title = 'Transparency & Accountability Initiative';
+	export let title = 'Trust, Accountability and Inclusion Collaborative';
 	export let description =
-		'The Transparency and Accountability Initiative (TAI) is a donor collaborative working toward a democratic world where power and resources are more equally distributed; people are informed and empowered, governments and the corporate sector are open and responsive, and collective action advances the public good.';
-	export let img = 'https://www.transparency-initiative.org/seo.jpg';
+		'The Trust, Accountability, and Inclusion Collaborative - Funders for Participatory Governance is a network of funders committed to advancing a world where power and resources are distributed more equitably, communities are informed and empowered, and governments and the corporate sector act with integrity for the good of people and planet.';
+	export let img = 'https://taicollaborative.org/seo2.png';
 	export let url = '/';
 	export let type = 'website';
 </script>
@@ -10,7 +10,7 @@
 <title>{title}</title>
 <meta name="description" content={description} />
 
-<meta property="og:url" content="https://www.transparency-initiative.org{url}" />
+<meta property="og:url" content="https://taicollaborative.org{url}" />
 <meta property="og:type" content={type} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -18,8 +18,8 @@
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:domain" content="transparency-initiative.org" />
-<meta property="twitter:url" content="https://www.transparency-initiative.org{url}" />
+<meta property="twitter:domain" content="taicollaborative.org" />
+<meta property="twitter:url" content="https://taicollaborative.org{url}" />
 
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />

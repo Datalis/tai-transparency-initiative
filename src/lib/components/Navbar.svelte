@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Logo from '$lib/assets/images/logo.svg?component';
+	import LogoFooter from '$lib/assets/images/logo-footer.svg?component';
 	import FacebookIcon from '$lib/assets/icons/facebook.svg?component';
 	import TwitterIcon from '$lib/assets/icons/twitter.svg?component';
 	import LinkedInIcon from '$lib/assets/icons/linkedin.svg?component';
@@ -120,11 +121,15 @@
 
 <svelte:window on:scroll={onScroll} />
 
-<header class="header" class:pinned={isPinned} class:hidden={isHidden}>
+<header class="header" class:pinned={isPinned} class:white_pinned={isPinned && !$page.url.pathname.includes('resources')} class:blue_pinned={$page.url.pathname.includes('resources')} class:hidden={isHidden}>
 	<div class="container">
 		<div class="navbar">
 			<a href="/" class="navbar_brand display_flex mr_auto">
+				{#if $page.url.pathname.includes('resources')}
+				<LogoFooter class="logo" />
+				{:else}
 				<Logo class="logo" />
+				{/if}
 			</a>
 			<nav class="navbar_nav hide_on_md_and_down">
 				<a href="https://www.facebook.com/TAInitiative/" target="_blank" class="link-icon">
@@ -148,7 +153,7 @@
 				<div class="container">
 					<div class="display_flex align_center mt_3">
 						<a href="/" class="navbar_menu_brand">
-							<Logo class="logo" />
+							<LogoFooter class="logo" />
 						</a>
 						<button class="navbar_menu__close ml_auto" on:click={() => toggleMenu()}>
 							<CloseIcon width="24" height="24" />
@@ -157,7 +162,7 @@
 					<nav class="navbar_menu__nav">
 						<a
 							href="/what-we-fund"
-							class="display_flex align_center text_gray mt_2"
+							class="display_flex align_center text_white mt_2"
 							class:active={$page.url.pathname.includes('what-we-fund')}
 						>
 							<h2 class=" m_0">What we fund and why</h2>
@@ -166,7 +171,7 @@
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/how-we-fund"
-							class="display_flex align_center text_gray"
+							class="display_flex align_center text_white"
 							class:active={$page.url.pathname.includes('how-we-fund')}
 						>
 							<h2 class=" m_0">How we fund</h2>
@@ -175,7 +180,7 @@
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/how-tai-works"
-							class="display_flex align_center text_gray"
+							class="display_flex align_center text_white"
 							class:active={$page.url.pathname.includes('how-tai-works')}
 						>
 							<h2 class=" m_0">How TAI works</h2>
@@ -184,7 +189,7 @@
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/about-us"
-							class="display_flex align_center text_gray"
+							class="display_flex align_center text_white"
 							class:active={$page.url.pathname.includes('about-us')}
 						>
 							<h2 class="m_0">About us</h2>
@@ -193,7 +198,7 @@
 						<div class="divider divider_gray divider_1 my_4" />
 						<a
 							href="/resources"
-							class="display_flex align_center text_gray"
+							class="display_flex align_center text_white"
 							class:active={$page.url.pathname.includes('resources')}
 						>
 							<h2 class=" m_0">Resources</h2>
@@ -295,15 +300,15 @@
 						</div> -->
 					</nav>
 					<nav class="navbar_menu__links mt_5">
-						<a href="https://www.facebook.com/TAInitiative/" class="mr_3 link-icon">
+						<a href="https://www.facebook.com/TAInitiative/" class="mr_3 link-icon border_white">
 							<FacebookIcon width="20" height="20" />
 						</a>
-						<a href="https://twitter.com/TAInitiative" class="mr_3 link-icon">
+						<a href="https://twitter.com/TAInitiative" class="mr_3 link-icon border_white">
 							<TwitterIcon width="20" height="20" />
 						</a>
 						<a
 							href="https://www.linkedin.com/organization-guest/company/transparency-and-accountability-initiative?challengeId=AQFexlD2lTMqaAAAAXDvHIOa1MJGYXZxIQdXCoyqun-gbymyAqHKYz4JTJMObstoYl_5nPPpDIzLiS_jaiczyjYN6ze8lOTtlQ&submissionId=ec1285b6-8c7c-fd15-bcd2-b963fa594427"
-							class="mr_3 link-icon"
+							class="mr_3 link-icon border_white"
 						>
 							<LinkedInIcon width="20" height="20" />
 						</a>
@@ -327,6 +332,10 @@
 		width: 100%;
 		transition: all 0.3s ease-in-out;
 
+		.border_white{
+			border-color: white !important;
+		}
+
 		.navbar,
 		.navbar .navbar_nav {
 			transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -346,8 +355,11 @@
 			height: 50px;
 			transition: all 0.3s ease-in-out;
 			:global(svg) {
-				width: 100%;
+				//width: 100%;
 				height: 100%;
+				:global(.cls-2){
+					fill: #1e3653;
+				}
 			}
 		}
 
@@ -402,7 +414,7 @@
 				height: 50px;
 				transition: all 0.3s ease-in-out;
 				:global(svg) {
-					width: 100%;
+					//width: 100%;
 					height: 100%;
 				}
 			}
@@ -418,6 +430,7 @@
 						min-width: 42px;
 					}
 					:global(svg path) {
+						stroke: map-get($colors, "white" ) !important;
 						stroke-width: 1px !important;
 					}
 					h2 {
@@ -430,12 +443,12 @@
 				a.active {
 					h2 {
 						font-weight: 600 !important;
-						color: $green;
+						color: map-get($colors, "blue_light" );
 					}
 					:global(svg path) {
 						transition: all 0.1s ease;
 						stroke-width: 2px !important;
-						stroke: $green !important;
+						stroke: map-get($colors, "blue_light" ) !important;
 					}
 				}
 				@media (max-width: $sm) {
@@ -473,6 +486,14 @@
 					justify-content: center;
 				}
 			}
+
+			
+		}
+
+		.navbar_toggler{
+			:global(path){
+				stroke: map-get($colors, "blue_light" ) !important;
+			}
 		}
 
 		&.hidden {
@@ -480,8 +501,15 @@
 			transform: translate3d(0, -100%, 0);
 		}
 
+		&.white_pinned{
+			background-color: rgba(white, 0.9);
+		}
+		&.blue_pinned{
+			background-color: rgba(30, 54, 83, 0.9);
+		}
+
 		&.pinned {
-			background-color: rgba($blue, 0.9);
+			//background-color: rgba(white, 0.9);
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 			max-height: 70px;
 			backdrop-filter: blur(10px);

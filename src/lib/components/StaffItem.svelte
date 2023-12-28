@@ -24,8 +24,8 @@
 			</div>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div on:click={toggle} class="content_wrapper display_flex flex_column">
-				<h5 class="text_dark mt_0 mb_2 text_light">{data.name}</h5>
-				<small class="text_dark text_uppercase green_text">{data.role}</small>
+				<h5 class="text_dark mt_0 mb_2">{data.name}</h5>
+				<small class="text_light text_uppercase">{data.role}</small>
 				<div class="content_wrapper__text font_regular text_light">
 					{@html data.summary}
 				</div>
@@ -43,9 +43,7 @@
 <style lang="scss" scoped>
 	$transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 	$sm: map-get($grid-breakpoints, 'sm');
-	.green_text {
-		color: #00deb3;
-	}
+
 	.staff_item {
 		display: flex;
 		flex-direction: column;
@@ -103,7 +101,7 @@
 		}
 
 		.content_wrapper {
-			flex-shrink: 0;
+			//flex-shrink: 0;
 			width: 70%;
 			min-height: 100px;
 			padding-top: 2rem;
@@ -117,11 +115,11 @@
 				}
 				h5 {
 					font-size: pxToRem(14);
-					max-width: 70%;
+					//max-width: 70%;
 				}
 				small {
 					font-size: pxToRem(12);
-					max-width: 70%;
+					//max-width: 70%;
 				}
 			}
 

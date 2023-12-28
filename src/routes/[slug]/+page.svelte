@@ -65,13 +65,13 @@
 </svelte:head>
 
 <article id="resource" class="page">
-	<section class="heading_section section bg_blue">
+	<section class="heading_section section gradient_sm_gray_light">
 		<div class="container">
-			<div class="row">
+			<div class="row m_auto">
 				{#if resource.type.id == 2}
-					<div class="text_center col col_7 col_sm_12">
-						<span class="text_light font_bold text_uppercase">{resource.type.label}</span>
-						<h1 class="text_green">
+					<div class="header_block col col_7 col_sm_12">
+						<span class="text_blue_light font_bold text_uppercase text_center">{resource.type.label}</span>
+						<h1 class="text_blue text_center">
 							{resource.title}
 						</h1>
 						<small class="text_gray font_light">
@@ -79,9 +79,9 @@
 						</small>
 					</div>
 				{:else}
-					<div class="col col_7 col_sm_12">
-						<span class="text_light font_bold text_uppercase">{resource.type.label}</span>
-						<h1 class="text_green">
+					<div class="header_block col col_7 col_sm_12">
+						<span class="text_blue_light font_bold text_uppercase text_center">{resource.type.label}</span>
+						<h1 class="text_blue text_center">
 							{resource.title}
 						</h1>
 						<small class="text_gray font_light">
@@ -95,7 +95,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="content_section section bg_light">
+	<section class="content_section section">
 		<div class="container">
 			<div class="row">
 				<div class="col col_8 col_sm_12">
@@ -110,7 +110,7 @@
 		
 						<div class="share_block">
 							<h5 class="mr_3">Share this article</h5>
-							<div class="divider divider_dark divider_1 mr_3" />
+							<div class="divider divider_dark divider_1 mr_3 show_on_md_and_up" />
 		
 							<div class="display_flex">
 								<a
@@ -151,19 +151,18 @@
 				</div>
 				<div class="col col_4 col_sm_12">
 					<aside class="releated">
-						<div class="subscribe_block">
+						<div class="subscribe_block show_on_md_and_up">
 							<h4 class="font_bold mb_3 mt_0">Keep updated with TAI weekly</h4>
 							<p>
-								Everything you need to know about transparency, accountability and participation,
-								delivered to your inbox.
+								Everything you need to know about accountability, inclusive participation and trust, delivered to your inbox.
 							</p>
 							<div class="form_control mt_4">
 								<input type="email" placeholder="Email Address" id="subemail" />
 							</div>
-							<button class="btn btn_blue mt_3" on:click={gotoSub}>Subscribe</button>
+							<button class="btn btn_dark text_green_light mt_3" on:click={gotoSub}>Subscribe</button>
 						</div>
 						<h4 class="mt_5 mb_4">You may also like</h4>
-						<div class="divider divider_green divider_2 mb_4" />
+						<div class="divider divider_blue_light divider_2 mb_4" />
 						<div class="related_articles_list">
 							{#each related as r}
 								<a href="/{r.slug}" class="related_article_item">
@@ -174,8 +173,8 @@
 										{r.title}
 									</span>
 									<small>
-										<a href="/resources/{r.id}" class="text_gray display_flex align_center green_text"
-											>Read More <LinkIcon class="ml_1" style="fill: #00DEB3" /></a
+										<a href="/resources/{r.id}" class="text_gray display_flex align_center blue_light_text"
+											>Read More <LinkIcon class="ml_1" style="fill: #8f8bff" /></a
 										>
 									</small>
 								</a>
@@ -222,17 +221,20 @@
 			</div>
 		</div>
 	</section>
-	<SubscribeSection />
+	<div class="bg_green_light">
+		<SubscribeSection />
+	</div>
+	
 </article>
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
 	$green_light: #59ebcf;
-	.green_text {
-		color: #00deb3;
+	.blue_light_text {
+		color: map-get($colors, "blue_light" );
 	}
-	.green_text:hover {
-		color: #43b79e;
+	.blue_light_text:hover {
+		color: #adaaf3;
 	}
 	.heading_section {
 		//min-height: 80vh !important;
@@ -254,7 +256,10 @@
 	.heading_section a {
 		text-decoration: underline;
 	}
-	.heading_section .row {
+	.header_block {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 100%;
 		align-items: center;
 	}
 
@@ -458,7 +463,7 @@
 		.share_icon {
 			width: 42px;
 			height: 42px;
-			background-color: map-get($colors, 'gray_light');
+			background-color: #8F8BFF;
 			border-radius: 50%;
 			display: flex;
 			align-items: center;
@@ -466,24 +471,39 @@
 			:global(svg) {
 				width: 24px;
 				height: 24px;
-				fill: #212121;
+				:global(circle){
+					fill: map-get($colors, "white") !important;
+				}
+				:global(path){
+					fill: map-get($colors, "white") !important;
+				}
 			}
 		}
+
 		.divider {
 			flex-grow: 1;
 		}
 		h5 {
 			font-size: pxToRem(20);
 			line-height: 1;
+
+			@media (max-width: $md){
+				margin-right: 0;
+			}
+		}
+
+		@media (max-width: $md){
+			flex-direction: column;
 		}
 	}
+
 	.content_section .subscribe_block {
 		// margin-top: 1rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		background-color: $green_light;
+		background-color: map-get($colors, "green_light" );
 		padding: 2rem;
 		border-radius: 15px;
 		.form_control,

@@ -16,7 +16,7 @@
 	import FoundersExitsSection from '$lib/components/FoundersExitsSection.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 
-	import HeroImg from '$lib/assets/images/heroes/how-we-fund.png?webp';
+	import HeroImg from '$lib/assets/images/heroes/how-we-fund-inside.png?webp';
 	// import HeroImg2 from '$lib/assets/images/hero/2.2.png'
 
 	import ParticipatoryVideoPoster from '$lib/assets/images/participatory-video-poster.webp';
@@ -137,23 +137,23 @@
 
 <svelte:head>
 	<link rel="preload" href={HeroImg} as="image" />
-	<Seo title="Transparency & Accountability Initiative - How we fund" url="/how-we-fund" />
+	<Seo title="Trust, Accountability and Inclusion Collaborative - How we fund" url="/how-we-fund" />
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
 
 <div id="how-we-fund" class="page">
-	<section class="landing_section section bg_blue">
+	<section class="landing_section section">
 		<div class="container">
 			<div class="content">
 				<div class="content-left">
-					<h1 class="text_green mb_4">{hero?.title}</h1>
-					<span class="divider divider_2 divider_light mb_3" />
+					<h1 class="text_blue_light mb_4">{hero?.title}</h1>
+					<span class="divider divider_2 divider_blue_light mb_3" />
 					<div class="font_light">
 						{@html hero?.message}
 					</div>
 				</div>
-				<div class="content-right">
+				<div class="content-right gradient_sm_green_light">
 					<img
 						src={HeroImg}
 						class="img_wrapper_2"
@@ -188,10 +188,10 @@
 			</div>
 		</div> -->
 	</section>
-	<section id="partner-support" class="partners_section section bg_light">
+	<section id="partner-support" class="partners_section section">
 		<div class="container">
 			<h2 class="font_bold mb_4 mt_0">Partner support</h2>
-			<div class="divider divider_2 divider_green" />
+			<div class="divider divider_2 divider_blue_light" />
 			<p class="mt_4">
 				We help donor members work together to improve grant making practice and <br />
 				boost collective impact. Specifically, TAI aims to accomplish the following:
@@ -253,7 +253,7 @@
 				<div class="participatory_section__content">
 					<div class="content_wrapper pl_3">
 						<h2 class="font_bold mb_4">Participatory Strategy</h2>
-						<div class="divider divider_2 divider_green" />
+						<div class="divider divider_2 divider_blue_light" />
 						<p class="mt_4">
 							TAI offers a platform for candid, constructive exchange around grantmaking practices.
 							Our members learn from each other and hold each other accountable to be more
@@ -262,7 +262,7 @@
 						<a
 							href="https://participatorystrategy.org/"
 							target="blank"
-							class="btn btn_outline_green text_dark mt_4"
+							class="btn btn_dark mt_4 show_on_md_and_up"
 						>
 							Learn more
 						</a>
@@ -279,12 +279,18 @@
 							<track kind="captions" />
 						</video>
 					</div>
+					<a
+						href="https://participatorystrategy.org/"
+						target="blank"
+						class="btn btn_dark mt_4 show_on_md_and_down"
+					>
+						Learn more
+					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 	<ResourcesSection {resources} />
-	<SubscribeSection />
 </div>
 
 <style lang="scss">
@@ -327,7 +333,7 @@
 		}
 		.img_wrapper img {
 			margin: auto;
-			
+
 			position: absolute;
 			top: 0;
 			bottom: 0;
@@ -347,7 +353,7 @@
 	} */
 
 	.landing_section {
-		background-image: url(/src/lib/assets/images/hero.webp);
+		//background-image: url(/src/lib/assets/images/hero.webp);
 		background-size: cover;
 		z-index: 1;
 
@@ -387,12 +393,26 @@
 
 		.content .content-right {
 			position: relative;
+
+
 			display: flex;
 			align-items: center;
 			justify-content: center;
+
 			img {
-				height: calc(100% - 100px);
 				object-fit: contain;
+			}
+
+			@media screen and (min-width: $md) {
+				margin-top: -8rem;
+				padding-top: 8rem;
+				margin-right: -100vw;
+				padding-right: 100vw;
+				height: 100svh;
+
+				img{
+					height: 100%;
+				}
 			}
 		}
 		.content .content-left {
@@ -408,6 +428,12 @@
 	}
 
 	.partners_section {
+
+		padding-bottom: 0 !important;
+		@media (max-width: $md){
+			padding-top: 0 !important;
+		}
+		
 		position: relative;
 		min-height: 100vh !important;
 
@@ -437,11 +463,11 @@
 				width: 100%;
 				height: 300px;
 				z-index: 1;
-				background: url(/src/lib/assets/images/green_line.svg);
+				background: url(/src/lib/assets/images/blue_line.svg);
 				background-repeat: no-repeat;
-				background-size: 110% 100%;
+				background-size: 110% 120%;
 				background-attachment: local;
-				background-position-x: center;
+				background-position-x: left;
 				-webkit-overflow-scrolling: touch;
 				margin-top: -30px;
 
@@ -461,6 +487,7 @@
 
 			width: calc(33.3333vw - 4rem);
 			max-width: calc(1400px / 3 - 4rem);
+			padding-bottom: 2rem;
 
 			img {
 				width: 90%;
@@ -488,7 +515,7 @@
 			p {
 				margin-top: 1rem;
 				text-align: center;
-				font-size: pxToRem(14);
+				//font-size: pxToRem(14);
 				font-weight: 600;
 			}
 		}
@@ -552,6 +579,7 @@
 				@media screen and (max-width: $md) {
 					flex-basis: 100%;
 					padding-right: 0 !important;
+					padding: 0;
 				}
 			}
 

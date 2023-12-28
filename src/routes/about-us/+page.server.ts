@@ -49,5 +49,27 @@ export const load: PageServerLoad = async () => {
 		}
 	};
 	const { data } = await get('about-us-page', params);
-	return data;
+	const { data: resources } = await get('wc-resources', {
+		fields: ['id', 'summary', 'title', 'slug'],
+		sort: 'date:DESC',
+		filters: {
+			type: {
+				id: {
+					$not: 7 // No Library items
+				}
+			}
+		},
+		pagination: {
+			limit: 3
+		},
+		populate: {
+			image: {
+				populate: '*'
+			},
+			type: {
+				fields: ['id', 'label']
+			}
+		}
+	});
+	return { ...data, resources };
 };

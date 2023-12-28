@@ -6,7 +6,7 @@
 	$: resources = data?.resources || [];
 </script>
 
-<section id="why-it-matters" class="why_matters_section section bg_light">
+<section id="why-it-matters" class="why_matters_section section">
 	<div class="container">
 		<h2 class="text_dark mt_0 mb_4">Why it matters</h2>
 		<span class="divider divider_2 divider_green" />
@@ -14,8 +14,8 @@
 			<div class="why_matters_section__message col col_8 col_md_12 mt_0">
 				{@html data.message}
 			</div>
-			<div class="col col_4 col_md_12">
-				<a href="/resources?type=18" class="btn btn_outline_green text_dark ml_auto">See All</a>
+			<div class="col col_4 col_md_12 show_on_md_and_up">
+				<a href="/resources?type=18" class="btn btn_dark ml_auto">See All</a>
 			</div>
 		</div>
 		<div class="articles_row row">
@@ -25,6 +25,7 @@
 				</div>
 			{/each}
 		</div>
+		<a href="/resources?type=18" class="btn btn_dark show_on_md_and_down mt_2">See All</a>
 	</div>
 </section>
 

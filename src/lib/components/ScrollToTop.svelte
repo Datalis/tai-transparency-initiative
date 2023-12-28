@@ -40,7 +40,7 @@
 		right: 2.5%;
 		z-index: 9;
 		cursor: pointer;
-		background-color: map-get($colors, 'green');
+		background-color: map-get($colors, 'blue_light');
 		visibility: collapse;
 		display: flex;
 		justify-content: center;
@@ -50,7 +50,7 @@
 		}
 		:global {
 			svg {
-				fill: map-get($colors, 'blue') !important;
+				fill: map-get($colors, 'white') !important;
 			}
 		}
 	}

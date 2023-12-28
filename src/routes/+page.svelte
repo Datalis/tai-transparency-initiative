@@ -1,10 +1,10 @@
 <script lang="ts">
-	import HeroImgLayer0 from '$lib/assets/images/home/group_3.webp';
+	import HeroImgLayer0 from '$lib/assets/images/home/map.png';
 	// import HeroImgLayer1 from '$lib/assets/images/home/group_1.webp';
-	import HeroImgLayer1 from '$lib/assets/images/home/gente.png';
+	import HeroImgLayer1 from '$lib/assets/images/home/people.png';
 	import HeroImgLayer1Mobile from '$lib/assets/images/home/group_1_sm.webp';
-	import HeroImgLayer2 from '$lib/assets/images/home/group_2.webp';
-	import HeroImgLayer2Mobile from '$lib/assets/images/home/group_2_sm.webp';
+	import HeroImgLayer2 from '$lib/assets/images/home/group_2.png';
+	import HeroImgLayer2Mobile from '$lib/assets/images/home/group_2.png';
 
 	import MacArthurLogo from '$lib/assets/icons/mac-arthur.svg?component';
 	import FordLogo from '$lib/assets/icons/ford.svg?component';
@@ -14,6 +14,7 @@
 	import SkollLogo from '$lib/assets/icons/skoll.svg?component';
 	import ChandlerLogo from '$lib/assets/images/chandler.svg?component';
 	import FCDOLogo from '$lib/assets/images/fcdo.svg?component';
+	import Packard from '$lib/assets/icons/Packard.svg?component';
 
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
@@ -28,6 +29,8 @@
 	import CardsSection from '$lib/components/CardsSection.svelte';
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 	import Seo from '$lib/components/Seo.svelte';
+	import Popup from '$lib/components/Popup.svelte';
+	import KnowledgeHubSection from '$lib/components/KnowledgeHubSection.svelte';
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
@@ -39,6 +42,7 @@
 	export let form: ActionData;
 
 	$: hero = data.hero;
+	$: knowledgeHub = data.knowledgehub;
 	// $: resources = data.ResourcesSection;
 	$: res = data.resources;
 
@@ -99,8 +103,8 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<div id="home" class="page bg_blue">
-	<section class="landing_section section bg_blue">
+<div id="home" class="page bg_white">
+	<section class="landing_section section bg_white">
 		<div class="container">
 			<div class="row">
 				<div class="landing_section__hero--wrapper col col_12 show_on_md_and_down">
@@ -113,12 +117,12 @@
 
 				<div class="col col_5 col_md_12">
 					<div class="landing_section__content">
-						<h1 class="text_green mb_3 mt_0">{hero?.title}</h1>
-						<span class="divider divider_2 divider_light" />
+						<h1 class="text_blue_light mb_3 mt_0">{hero?.title}</h1>
+						<span class="divider divider_2 divider_blue_light" />
 						<div class="landing_section__content__message font_light">
 							{@html hero?.message}
 						</div>
-						<a href="/about-us" class="btn btn_outline_green mt_4 mb_4">Read More</a>
+						<a href="/about-us" class="btn btn_dark mt_4 mb_4">Read More</a>
 					</div>
 				</div>
 
@@ -132,7 +136,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="brands_section section bg_blue show_on_lg_and_up">
+	<section class="brands_section section bg_white show_on_lg_and_up">
 		<div class="container">
 			<span class="brands_section__title">OUR MEMBERS</span>
 		</div>
@@ -150,48 +154,44 @@
 				target="blank"><FCDOLogo width="300" /></a
 			>
 			<a href="https://www.chandlerfoundation.org/" target="blank"><ChandlerLogo width="300" /></a>
+			<a href="https://www.packard.org/" target="blank">
+				<Packard width="300" class="mt_4" />
+			</a>
 		</div>
 	</section>
-	<section class="brands_section_mobile section bg_blue show_on_lg_and_down">
+	<section class="brands_section_mobile section bg_white show_on_lg_and_down">
 		<div class="container">
 			<span class="brands_section__title">OUR MEMBERS</span>
 		</div>
-		<div class="wrapper">
-			<a href="https://www.macfound.org/" target="blank">
-				<MacArthurLogo height="50" width="50%" />
-			</a>
-			<a href="https://www.fordfoundation.org/" target="blank">
-				<FordLogo height="50" width="50%" />
-			</a>
-			<a href="https://hewlett.org/" target="blank">
-				<HewlettLogo height="50" width="50%" class="mt_4" />
-			</a>
-			<a href="https://luminategroup.com/" target="blank">
-				<LuminateLogo height="50" width="50%" class="mt_4" />
-			</a>
-			<a href="https://www.opensocietyfoundations.org/" target="blank">
-				<OpenSocietyLogo height="50" width="50%" class="mt_4" />
-			</a>
-			<a href="https://skoll.org/" target="blank">
-				<SkollLogo height="50" width="50%" class="mt_4" />
-			</a>
+		<div class="brands_grid show_on_md_and_down pb_4">
+			<a href="https://www.macfound.org/" target="blank"><MacArthurLogo width="150" /></a>
+			<a href="https://www.fordfoundation.org/" target="blank"><FordLogo width="150" /></a>
+			<a href="https://hewlett.org/" target="blank"><HewlettLogo width="150" /></a>
+			<a href="https://luminategroup.com/" target="blank"><LuminateLogo width="150" /></a>
+			<a href="https://www.opensocietyfoundations.org/" target="blank"
+				><OpenSocietyLogo width="150" /></a
+			>
+			<a href="https://skoll.org/" target="blank"><SkollLogo height="80" /></a>
 			<a
 				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
-				target="blank"
+				target="blank"><FCDOLogo width="150" /></a
 			>
-				<FCDOLogo height="50" width="50%" class="mt_4" />
-			</a>
-			<a href="https://www.chandlerfoundation.org/" target="blank">
-				<ChandlerLogo height="50" width="50%" class="mt_4" />
+			<a href="https://www.chandlerfoundation.org/" target="blank"><ChandlerLogo width="150" /></a>
+			<a href="https://www.packard.org/" target="blank" class="span_2">
+				<Packard width="150" height="60" class="mt_4" />
 			</a>
 		</div>
 	</section>
 	<CardsSection />
-	<JoinSection {form} />
-	<ResourcesSection resources={res} />
-	<SubscribeSection />
-</div>
+	<div class="gradient_sm_gray_light">
+		<KnowledgeHubSection data={knowledgeHub}></KnowledgeHubSection>
+		<JoinSection {form} />
+		<SubscribeSection />
+		<ResourcesSection resources={res} />
+	</div>
 
+</div>
+<Popup />
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
 	$lg: map-get($grid-breakpoints, 'lg');
@@ -259,7 +259,7 @@
 					margin: auto;
 				}
 				&:nth-child(2) {
-					top: -100px;
+					top: -2rem;
 					max-width: 550px;
 					left: 0;
 					right: 0;
@@ -286,7 +286,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			justify-content: flex-end;
+			justify-content: center;
 
 			&__message {
 				:global {
@@ -318,8 +318,8 @@
 			// }
 
 			.btn:hover {
-				background-color: map-get($colors, 'green');
-				color: map-get($colors, 'dark');
+				background-color: map-get($colors, 'blue_light');
+				color: map-get($colors, 'white');
 			}
 
 			// @media (max-width: $md) {
@@ -335,17 +335,19 @@
 		}
 	}
 
+
+
 	.brands_section {
 		padding-top: 2rem !important;
 		padding-bottom: 0 !important;
-		background: map-get($colors, 'blue');
+		background: map-get($colors, 'white');
 		position: relative;
 		z-index: 1;
 
 		&__title {
 			font-size: pxToRem(14);
 			font-weight: 500;
-			color: map-get($colors, 'green');
+			color: map-get($colors, 'blue_light');
 			display: block;
 		}
 
@@ -353,11 +355,16 @@
 			margin-top: 2rem;
 			width: max-content;
 			display: flex;
+			align-items: center;
 			:global(svg) {
 				flex-shrink: 0;
 				max-width: 350px;
 				padding-left: 2rem;
 				padding-right: 3rem;
+			}
+
+			:global(path){
+				fill: map-get($colors, "gray" ) !important;
 			}
 		}
 
@@ -368,16 +375,27 @@
 			padding-top: 0 !important;
 			padding-bottom: 0 !important;
 
-			.wrapper {
-				display: flex;
-				flex-wrap: wrap;
+			.brands_section__title{
+				margin-inline: auto;
+				width: fit-content;
+			}
+
+			.brands_grid {
+				display: grid;
+				grid-template-columns: repeat(2, auto);
+				grid-template-rows: repeat(1, 1fr);
+				justify-content: space-around;
 				align-items: center;
-				justify-content: center;
-				padding: 1rem;
-				a {
-					width: 50%;
-					display: flex;
-					justify-content: center;
+				grid-gap: 1rem;
+				padding-block: 1rem;
+
+				:global(path){
+					fill: map-get($colors, "gray" ) !important;
+				}
+
+				.span_2{
+					grid-column: span 2;
+					justify-self: center;
 				}
 			}
 		}

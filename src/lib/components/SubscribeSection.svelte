@@ -15,22 +15,21 @@
 	}
 </script>
 
-<section class="subscribe_section section bg_light">
+<section class="subscribe_section section">
 	<div class="container">
 		<div class="subscribe_section__panel">
 			<h2 class="text_center">
 				Keep updated with <br /> <span class="font_black">TAI WEEKLY</span>
 			</h2>
 			<span class="font_light text_center"
-				>Everything you need to know about transparency, accountability <br /> and participation, delivered
-				to your inbox.</span
+				>Everything you need to know about accountability, <br /> inclusive participation and trust, delivered to your inbox.</span
 			>
 
 			<form class="mt_5">
 				<div class="form_control mb_0">
 					<input type="email" placeholder="Email" name="" id="subemail" />
 				</div>
-				<button on:click={gotoSub} style="cursor: pointer" class="btn btn_blue">Subscribe</button>
+				<button on:click={gotoSub} style="cursor: pointer" class="btn btn_dark text_green_light">Subscribe</button>
 			</form>
 		</div>
 	</div>
@@ -41,6 +40,7 @@
 
 	.subscribe_section {
 		min-height: 400px;
+		padding-bottom: 0 !important;
 
 		@media (max-width: $md) {
 			height: auto;

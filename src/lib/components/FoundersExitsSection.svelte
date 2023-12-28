@@ -1,16 +1,28 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
+	import ConnectingDots from './ConnectingDots.svelte';
 
 	export let form: any;
 </script>
 
-<section id="founders-exits" class="founders_section section mt_5">
+<section id="founders-exits" class="founders_section section mt_5 bg_gray_light text_dark">
+	<div class="connecting_dots">
+		<ConnectingDots height={200} dotSpeed={0.1} dotRadius={6} dotCount={13} dotConnectionDistance={180} color={{r: 170, g: 170, b: 240}}/>
+	</div>
+	<div class="connecting_dots show_on_md_and_up">
+		<ConnectingDots height={200} dotSpeed={1} dotRadius={6} dotCount={18} dotConnectionDistance={210} color={{r: 137, g: 134, b: 255}}/>
+	</div> 
+
+	<div class="connecting_dots show_on_md_and_down">
+		<ConnectingDots height={100} dotSpeed={0.2} dotRadius={5} dotCount={35} dotConnectionDistance={140} color={{r: 137, g: 134, b: 255}}/>
+	</div> 	
+
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
 				<div class="col col_6 col_lg_12">
-					<div class="display_flex flex_column justify_center box">
+					<div class="display_flex flex_column justify_center box bg_white">
 						<h6 class="mb_4">Let the TAI Secretariat know how we can help.</h6>
 						<form action="{$page.url.pathname}?/join" method="post" use:enhance>
 							<div class="form_control">
@@ -51,14 +63,14 @@
 									Subscribe to TAI's Weekly
 								</label>
 							</div>
-							<button class="btn btn_blue mt_4" type="submit">Get in Touch</button>
+							<button class="btn btn_blue_dark mt_4" type="submit">Get in Touch</button>
 						</form>
 					</div>
 				</div>
 				<div class="col col_6 col_lg_12">
-					<h2 class="mt_0">Funder exits</h2>
-					<div class="divider divider_green divider_2" />
-					<p class="mt_4">
+					<h2 class="mt_0 text_blue_dark">Funder exits</h2>
+					<div class="divider divider_white divider_2" />
+					<p class="mt_4 text_blue_dark">
 						Funders regularly adapt their strategies, which often prompt investment in new issue
 						areas, but also the tough decision to scale back or fully wind down funding for existing
 						portfolios. These funding “exits” are a painful reality, especially for impacted
@@ -84,13 +96,13 @@
 <style lang="scss" scoped>
 	$lg: map-get($grid-breakpoints, 'lg');
 	.box {
-		background-color: #00deb3;
+		//background-color: #00deb3;
 		border-radius: 15px;
 		padding: 2rem 4rem;
 		color: #0a132d;
 		margin: 0px 2rem 0px 0px;
 		// shadow to box
-		box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.9);
+		box-shadow: 7px 7px 0px map-get($colors, "dark" );
 		@media (max-width: $lg) {
 			height: auto;
 			margin: 1rem;
@@ -102,16 +114,22 @@
 	}
 	.founders_section {
 		// background: map-get($colors, 'light');
-		background: #5c4aff;
+		//background: #5c4aff;
 		position: relative;
 		z-index: 0;
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
+		
+		@media (max-width: $lg){
+			padding-bottom: 3rem !important;
+		}
+
 		min-height: 100vh;
 		color: #fff;
 		display: flex !important;
 		flex-direction: column;
 		justify-content: center;
+		overflow-y: hidden;
 	}
 	.founders_section .wrapper {
 		// background: #59ebcf;
@@ -127,13 +145,28 @@
 		@media (max-width: $lg) {
 			height: auto;
 
+			.row{
+				flex-direction: column-reverse;
+				margin: 0rem;
+			}
 			.col {
-				margin-top: 2rem;
+				margin-top: 1rem;
+				width: 100%;
+			}
+
+			.box{
+				margin: 0;
 			}
 
 			button {
 				width: 100%;
 			}
 		}
+	}
+
+	.connecting_dots{
+		position: absolute;
+		bottom: -1rem;
+		z-index: -1;
 	}
 </style>

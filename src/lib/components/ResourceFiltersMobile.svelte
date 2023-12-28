@@ -23,7 +23,7 @@
 <div class="resource_filters px_4">
 	<CollapsibleCard bind:open={isOpen}>
 		<div class="resource_filters__menu header" slot="header">
-			<small class="text_green font_bold mr_2">{current?.label || 'Select a category'}</small>
+			<small class="text_blue_light font_bold mr_2">{current?.label || 'Select a category'}</small>
 			<FiltersIcon width="24" height="24" />
 		</div>
 		<div class="resource_filters__options body" slot="body">
@@ -71,7 +71,7 @@
 			}
 			:global(svg) {
 				cursor: pointer;
-				fill: map-get($colors, 'green') !important;
+				fill: map-get($colors, 'blue_light') !important;
 			}
 		}
 

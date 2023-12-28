@@ -75,7 +75,7 @@
 </script>
 
 <svelte:head>
-	<Seo title="Transparency & Accountability Initiative - Resources" url="/resources" />
+	<Seo title="Trust, Accountability and Inclusion Collaborative - Resources" url="/resources" />
 </svelte:head>
 
 <div id="resources" class="page">
@@ -95,7 +95,7 @@
 			on:onChange={() => (currentPage = 1)}
 		/>
 	</div>
-	<section class="resource_list_section section bg_light">
+	<section class="resource_list_section section">
 		{#if typeParam}
 			<div class="library_summary py_2">
 				<div class="container display_flex align_center">
@@ -139,7 +139,7 @@
 				</div>
 				<!-- <div class="divider divider_blue divider_1 my_2	" /> -->
 				{#if !resources.length}
-					<h6 class="w_100 text_center text_green">No results found</h6>
+					<h6 class="w_100 text_center text_blue_light">No results found</h6>
 				{/if}
 				{#each resources as resource}
 					{#if resource?.type?.id == 7}
@@ -161,6 +161,10 @@
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
+
+	#resources{
+		padding-bottom: 3rem;
+	}
 	.resource_filters {
 		padding-top: calc(100px + 1rem);
 	}
@@ -252,6 +256,9 @@
 
 			&_toggler {
 				cursor: pointer;
+				:global(path){
+					stroke: map-get($colors, "blue_light" ) !important;
+				}
 			}
 
 			input {
