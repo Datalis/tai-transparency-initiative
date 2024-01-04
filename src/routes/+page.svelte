@@ -338,7 +338,7 @@
 
 
 	.brands_section {
-		padding-top: 2rem !important;
+		padding-top: 0rem !important;
 		padding-bottom: 0 !important;
 		background: map-get($colors, 'white');
 		position: relative;
@@ -356,6 +356,7 @@
 			width: max-content;
 			display: flex;
 			align-items: center;
+			height: 100px;
 			:global(svg) {
 				flex-shrink: 0;
 				max-width: 350px;
