@@ -25,27 +25,23 @@
 			const containerOffset = container?.offsetLeft;
 			const scroller = document.querySelector('.scroller') as HTMLDivElement;
 
-			
-
 			const mm = gsap.matchMedia();
 
-			mm.add("(min-width: 1024px)", () => {
+			mm.add('(min-width: 1024px)', () => {
 				scroller.style.gridAutoColumns = container?.offsetWidth / 2 - 220 + 'px';
 				gsap.to(scroller, {
-				x: () => wrapper?.offsetWidth - scroller?.offsetWidth - containerOffset * 2 - 32,
-				scrollTrigger: {
-					trigger: '.kh_section-container',
-					pin: true,
-					invalidateOnRefresh: true,
-					start: '-50 top',
-					end: 'bottom top',
-					// markers: true,
-					scrub: true
-				}
+					x: () => wrapper?.offsetWidth - scroller?.offsetWidth - containerOffset * 2 - 32,
+					scrollTrigger: {
+						trigger: '.kh_section-container',
+						pin: true,
+						invalidateOnRefresh: true,
+						start: '-50 top',
+						end: 'bottom top',
+						// markers: true,
+						scrub: true
+					}
+				});
 			});
-			})
-
-			
 		});
 
 		return () => ctx.revert();
@@ -121,7 +117,6 @@
 		color: #adaaf3;
 	}
 	#knowledge-hub {
-
 		@media (max-width: $md) {
 			padding-bottom: 0;
 		}
@@ -132,8 +127,8 @@
 				display: none;
 			}
 
-			:global(.swiper-pagination){
-				--swiper-pagination-color: #736EFF;
+			:global(.swiper-pagination) {
+				--swiper-pagination-color: #736eff;
 				position: relative;
 				margin-top: 1rem;
 			}
@@ -142,7 +137,7 @@
 			display: grid;
 			grid-auto-flow: column;
 			grid-auto-columns: 400px;
-			gap: 4rem;
+			gap: 3rem;
 			@media (max-width: $md) {
 				display: none;
 			}
@@ -161,9 +156,14 @@
 				font-size: 1rem;
 			}
 			p {
-				font-size: 0.85rem;
+				font-size: pxToRem(14);
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 5;
+				overflow: hidden;
+				text-overflow: ellipsis;
 				line-height: 28px;
-				color: #222222;
+				margin: 0.75rem 0;
 			}
 			a {
 				font-size: 0.85rem;
@@ -172,7 +172,7 @@
 				border-radius: 20px;
 				overflow: hidden;
 				aspect-ratio: 5/3;
-				img {
+				:global(img) {
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
