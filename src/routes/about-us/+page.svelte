@@ -53,7 +53,7 @@
 			<div class="wrapper display_flex flex_column align_center justify_center">
 				<h1 class="text_blue mt_4 mb_3">About Us</h1>
 				<p class="text_blue text_center mx_auto w_75">
-					The Trust, Accountability, and Inclusion (TAI) is a collaborative for funder learning and action in support of participation, openness and accountability around the world. Our members have over USD500 million in active grants in support of those goals.
+					The Trust, Accountability, and Inclusion (TAI) Collaborative - Funders for Participatory Governance is a platform for funder learning and action in support of participation, openness and accountability around the world. Our members have over USD500 million in active grants in support of those goals. Join us!
 				</p>
 			</div>
 		</div>
