@@ -150,7 +150,9 @@
 		</div>
 	</section>
 	<div class="gradient_sm_gray_light">
-		<JoinSection {form} />
+		<div class="pt_5">
+			<JoinSection {form} />
+		</div>
 		<div class="container">
 			<div class="collab_section">
 				<h3 class="mt_0 mb_2 text_center">Do you want to know more/ <br> collaborate with us?</h3>
