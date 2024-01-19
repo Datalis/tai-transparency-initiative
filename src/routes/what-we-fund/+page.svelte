@@ -326,66 +326,6 @@
 		}
 	}
 
-	/* .landing_section {
-		z-index: 1;
-		padding-top: 100px !important;
-		min-height: 100vh;
-		background-image: url(/src/lib/assets/images/hero.webp);
-		background-size: cover;
-		display: flex !important;
-		flex-direction: column !important;
-
-		@media screen and (max-width: $md) {
-			height: unset;
-		}
-
-		@media screen and (min-width: $xl) {
-			height: 80vh !important;
-		}
-
-		.container {
-			margin-top: auto !important;
-			@media screen and (max-width: $md) {
-				margin-top: 0 !important;
-			}
-		}
-
-		.container,
-		.col {
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-
-		.img_wrapper {
-			margin: auto !important;
-
-			position: relative;
-
-
-			img {
-
-				position: absolute;
-				max-width: 75%;
-
-				left: 0;
-				right: 0;
-				bottom: 0;
-				top: 0;
-
-				margin: auto;
-
-				@media screen and (max-width: $md) {
-					position: relative;
-					max-width: 100%;
-					margin-top: 1rem;
-				}
-			}
-		}
-
-		:global(p) {
-			text-align: left;
-		}
-	} */
 	.funding_section {
 		display: flex !important;
 		flex-direction: column !important;
@@ -510,27 +450,5 @@
 		}
 	}
 
-	.funding_data_section {
-		min-height: 100vh;
-		display: flex !important;
-		flex-direction: column !important;
-
-		.container {
-			height: 100% !important;
-			flex-grow: 1;
-			display: flex;
-			flex-direction: column;
-			.row {
-				flex-grow: 1;
-				height: 100%;
-				align-items: center;
-			}
-		}
-
-		@media (max-width: $md) {
-			a {
-				width: 100%;
-			}
-		}
-	}
+	
 </style>

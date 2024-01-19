@@ -16,7 +16,6 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
-
 	export let data: PageData;
 	export let form: ActionData;
 
@@ -53,7 +52,9 @@
 			<div class="wrapper display_flex flex_column align_center justify_center">
 				<h1 class="text_blue mt_4 mb_3">About Us</h1>
 				<p class="text_blue text_center mx_auto w_75">
-					The Trust, Accountability, and Inclusion (TAI) is a collaborative for funder learning and action in support of participation, openness and accountability around the world. Our members have over USD500 million in active grants in support of those goals.
+					The Trust, Accountability, and Inclusion (TAI) is a collaborative for funder learning and
+					action in support of participation, openness and accountability around the world. Our
+					members have over USD500 million in active grants in support of those goals.
 				</p>
 			</div>
 		</div>
@@ -150,12 +151,19 @@
 	</section>
 	<div class="gradient_sm_gray_light">
 		<JoinSection {form} />
-		<div class="purple_subscribe">
-			<SubscribeSection />
+		<div class="container">
+			<div class="collab_section">
+				<h3 class="mt_0 mb_2 text_center">Do you want to know more/ <br> collaborate with us?</h3>
+				<p class="mt_2 mb_0 text_center font_light">Our editorial policy, style guide and identity <br> manual are at your disposal</p>
+				<div class="mt_4 links">
+					<a href="">Editorial Policy</a>
+					<a href="">Style Guide</a>
+					<a href="">Brand Book</a>
+				</div>
+			</div>
 		</div>
 		<ResourcesSection resources={res} />
 	</div>
-
 </div>
 
 <style lang="scss">
@@ -164,9 +172,9 @@
 		color: #00deb3;
 	} */
 
-	.w_75{
+	.w_75 {
 		width: auto;
-		@media (min-width: $md){
+		@media (min-width: $md) {
 			width: 75%;
 		}
 	}
@@ -183,7 +191,7 @@
 		justify-content: center;
 		height: fit-content;
 
-		.container{
+		.container {
 			height: calc(100svh - 10rem);
 			position: relative;
 			.wrapper_bg {
@@ -217,7 +225,7 @@
 		position: relative;
 		z-index: 1;
 
-		.divider{
+		.divider {
 			margin-inline: auto;
 		}
 
@@ -252,21 +260,19 @@
 			.divider.divider_blue {
 				opacity: 0.5;
 			}
-
 		}
-
 	}
 	.team_section {
-		background-color: #73C5C7;
+		background-color: #73c5c7;
 		padding-top: 120px !important;
 		padding-bottom: 0 !important;
-		@media (max-width: $md){
+		@media (max-width: $md) {
 			padding-top: 2rem !important;
 		}
 
 		position: relative;
 		z-index: 1;
-		 .staff_list {
+		.staff_list {
 			.divider {
 				width: 100% !important;
 				margin-top: 0.5rem !important;
@@ -275,7 +281,7 @@
 		}
 	}
 	.committee_section {
-		background-color: #73C5C7;
+		background-color: #73c5c7;
 		position: relative;
 		z-index: 1;
 		.divider {
@@ -285,20 +291,33 @@
 		}
 	}
 
-	.purple_subscribe{
-		:global{
-			.subscribe_section__panel{
-				background-color: map-get($colors, "blue_light" ) !important;
-			}
-			h2, span, input{
-				color: white;
-				border-color: white;
-			}
-			button{
-				color: map-get($colors, "blue_light" );
-				background-color: map-get($colors, "dark" );
-			}
+	.collab_section {
+		background-color: #c7c5ff;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border-radius: 15px;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		margin-top: 3rem;
+		margin-bottom: 1rem;
 
+		.links {
+			display: flex;
+			gap: 1rem;
+		}
+
+		.links a {
+			padding: 0.65rem 1rem;
+			min-width: 200px;
+			font-size: 14px;
+			border: 1px solid #1F1F24;
+			color: #1F1F24;
+			border-radius: 50px;
+			line-height: 1;
+			text-align: center;
+			text-transform: uppercase;
 		}
 	}
 

@@ -98,6 +98,12 @@
 				margin-right: 1rem;
 				transform-origin: top left;
 			}
+
+			:global(img) {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 
 		.content_wrapper {
