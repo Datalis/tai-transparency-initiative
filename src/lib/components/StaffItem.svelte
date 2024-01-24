@@ -26,12 +26,12 @@
 			<div on:click={toggle} class="content_wrapper display_flex flex_column">
 				<h5 class="text_dark mt_0 mb_2">{data.name}</h5>
 				<small class="text_light text_uppercase">{data.role}</small>
-				<div class="content_wrapper__text font_regular text_light">
+				<div class="content_wrapper__text font_regular text_dark">
 					{@html data.summary}
 				</div>
 			</div>
 		</div>
-		<div class="staff_item__text font_regular text_light">
+		<div class="staff_item__text font_regular text_dark">
 			{@html data.summary}
 		</div>
 	</div>
@@ -120,7 +120,7 @@
 					}
 				}
 				h5 {
-					font-size: pxToRem(14);
+					font-size: pxToRem(18);
 					//max-width: 70%;
 				}
 				small {
