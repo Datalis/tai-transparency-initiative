@@ -171,7 +171,7 @@
 			<a href="https://www.opensocietyfoundations.org/" target="blank"
 				><OpenSocietyLogo width="150" /></a
 			>
-			<a href="https://skoll.org/" target="blank"><SkollLogo height="80" /></a>
+			<a href="https://skoll.org/" target="blank"><SkollLogo width="100" /></a>
 			<a
 				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
 				target="blank"><FCDOLogo width="150" /></a
