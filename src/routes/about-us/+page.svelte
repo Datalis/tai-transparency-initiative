@@ -1,18 +1,12 @@
 <script lang="ts">
 	import WorldImg from '$lib/assets/images/home/map-about-us.png';
-	import LogoIcon from '$lib/assets/images/logo-footer.svg?component';
-
 	import EnvisionImg1 from '$lib/assets/images/envision_1.webp';
 	import EnvisionImg2 from '$lib/assets/images/envision_2.webp';
 	import EnvisionImg3 from '$lib/assets/images/envision_3.webp';
 	import MemberItem from '$lib/components/MemberItem.svelte';
 	import JoinSection from '$lib/components/JoinSection.svelte';
-	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import StaffItem from '$lib/components/StaffItem.svelte';
 	import type { ActionData, PageData } from './$types';
-	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
-	import gsap from 'gsap/dist/gsap';
 	import Seo from '$lib/components/Seo.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
@@ -32,13 +26,6 @@
 
 	$: commitee = data?.SteeringCommittee;
 	$: commiteeList = commitee?.StaffItem || [];
-
-	// onMount(() => {
-	// 	gsap.timeline().to(window, {
-	// 		scrollTo: $page.url.hash,
-	// 		duration: 0.5
-	// 	});
-	// });
 </script>
 
 <svelte:head>
@@ -195,6 +182,9 @@
 
 		.container {
 			height: calc(100svh - 10rem);
+			@media screen and (max-width: $md) {
+				height: calc(60svh - 10rem);
+			}
 			position: relative;
 			.wrapper_bg {
 				z-index: -1;
@@ -307,7 +297,10 @@
 
 		.links {
 			display: flex;
+			align-items: center;
+			justify-content: center;
 			gap: 1rem;
+			flex-wrap: wrap;
 		}
 
 		.links a {
