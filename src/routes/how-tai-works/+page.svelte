@@ -176,28 +176,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="container h-100">
-			<div class="row">
-				<div class="col col_5 col_md_12 pb_5">
-					<div class="display_flex flex_column h_100 justify_center">
-						<h1 class="text_green mb_4">{hero?.title}</h1>
-						<span class="divider divider_2 divider_light mb_3" />
-						<div class="font_light">
-							{@html hero?.message}
-						</div>
-					</div>
-				</div>
-				<div class="img_wrapper col col_7 col_md_12 h_100">
-					<img
-						src={HeroImg1}
-						class="img_wrapper_2"
-						alt="How TAI works"
-						decoding="sync"
-						loading="eager"
-					/>
-				</div>
-			</div>
-		</div> -->
+		
 	</section>
 	<Six6csSection data={six_data} />
 	<section id="progress-model" class="progress_model_section section bg_white">
@@ -390,7 +369,7 @@
 								<HewlettLogo width="150" />
 								<LuminateLogo width="150" />
 								<OpenSocietyLogo width="150" />
-								<SkollLogo width="150" />
+								<SkollLogo width="80" />
 								<FCDOLogo width="150" />
 								<ChandlerLogo width="150" />
 								<div class="span_2" >
