@@ -56,7 +56,7 @@
 
 				&--left {
 					width: 100% !important;
-					height: 250px;
+					max-height: 250px;
 				}
 
 				&--right {
@@ -117,7 +117,7 @@
 				}
 
 				.summary {
-					padding-top: 1rem;
+					padding-top: 0.5rem;
 				}
 
 				.summary,
@@ -125,7 +125,7 @@
 					/* margin-top: auto; */
 					/* padding-top: 1rem; */
 					margin: 0;
-					font-size: pxToRem(13);
+					font-size: pxToRem(15);
 					display: -webkit-box;
 					-webkit-box-orient: vertical;
 					-webkit-line-clamp: 3;
