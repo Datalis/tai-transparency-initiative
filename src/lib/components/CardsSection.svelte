@@ -223,6 +223,7 @@
 						a {
 							font-weight: 400;
 							// font-size: pxToRem(12);
+							line-height: 2;
 							&:hover {
 								font-weight: 600 !important;
 							}
