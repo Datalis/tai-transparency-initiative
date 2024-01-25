@@ -12,7 +12,7 @@
 
 	export let data: any;
 
-	$: items = data.Item || [];
+	$: items = data?.Item || [];
 
 	onMount(() => {
 		gsap
@@ -119,8 +119,8 @@
 		}
 
 		&__mobile {
-			--swiper-pagination-color: #50BFC2;
-			:global(.swiper-slide){
+			--swiper-pagination-color: #50bfc2;
+			:global(.swiper-slide) {
 				height: auto;
 			}
 
@@ -145,7 +145,7 @@
 		}
 
 		._6Cs_wrapper {
-			background-color: #50BFC2;
+			background-color: #50bfc2;
 			border-radius: 15px;
 			//padding: 2rem;
 			max-height: 90vh;
@@ -204,7 +204,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				color: #50BFC2;
+				color: #50bfc2;
 				font-size: pxToRem(38);
 				line-height: 1;
 				font-weight: 900;

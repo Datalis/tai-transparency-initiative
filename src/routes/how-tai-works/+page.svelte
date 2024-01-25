@@ -8,8 +8,10 @@
 	import ChandlerLogo from '$lib/assets/images/chandler.svg?component';
 	import FCDOLogo from '$lib/assets/images/fcdo.svg?component';
 	import Packard from '$lib/assets/icons/Packard.svg?component';
+	import SpeakerIcon from '$lib/assets/icons/Speaker_Icon.svg?component';
 
 	import ClimateVideoPoster from '$lib/assets/images/climate-video-poster.webp';
+
 
 	// import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
@@ -20,14 +22,13 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap/dist/gsap';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
-	import SpeakerIcon from '$lib/assets/icons/Speaker_Icon.svg?component';
-	// import Image from '$lib/components/Image.svelte';
+	
 
 	import HeroImg from '$lib/assets/images/heroes/how-tai-works-inside.png';
 	import Seo from '$lib/components/Seo.svelte';
-	import ConnectingDots from '$lib/components/ConnectingDots.svelte';
-	// import HeroImg1 from '$lib/assets/images/hero/3.2.png';
-	// import HeroImg2 from '$lib/assets/images/hero/3.1.png';
+	
+	import FeaturedTopics from '$lib/components/FeaturedTopics.svelte';
+	
 	let videoPlayer: HTMLVideoElement;
 	let windowWidth: number;
 
@@ -37,6 +38,7 @@
 	$: resources = data.resources;
 	// $: past_funding = data.past_funding;
 	$: six_data = data.six_cs;
+	$: featured_topics = data.featured_topics;
 
 	let isVideoMuted = true;
 
@@ -179,14 +181,8 @@
 		
 	</section>
 	<Six6csSection data={six_data} />
-	<section id="progress-model" class="progress_model_section section bg_white">
-		<div class="connecting_dots">
-			<ConnectingDots height={150} dotSpeed={0.1} dotRadius={4} dotCount={36} dotConnectionDistance={140} color={{r: 229, g: 227, b: 255}}/>
-		</div>
-		<div class="connecting_dots">
-			<ConnectingDots height={200} dotSpeed={1} dotRadius={5} dotCount={16} dotConnectionDistance={230} color={{r: 199, g: 197, b: 255}}/>
-		</div>
-
+	<FeaturedTopics data={featured_topics}></FeaturedTopics>
+	<section id="progress-model" class="progress_model_section section">
 		<div class="container">
 			<h2 class="mt_0">Our Model for Field-Level Progress</h2>
 			<div class="divider divider_blue_light divider_2" />
@@ -272,7 +268,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="featured-topics" class="featured_section section bg_gray_light">
+	<section id="featured-topics" class="featured_section section bg_light">
 		<div class="container">
 			<div class="featured_section__content">
 				<div class="content_wrapper">
@@ -285,7 +281,7 @@
 					</p>
 				</div>
 				<div class="video_wrapper text_center">
-					<!-- <img src={FeaturedImg} class="w_100" alt="" /> -->
+					
 					<video
 						bind:this={videoPlayer}
 						muted
@@ -296,6 +292,7 @@
 					>
 						<track kind="captions" />
 					</video>
+					
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<div
 						class="video_overlay_muted_button muted hidden"
@@ -497,55 +494,14 @@
 		}
 	}
 
-	/* .landing_section {
-		z-index: 1;
-		padding-top: 100px !important;
-		padding-bottom: 0 !important;
-		// height: 80vh;
-		min-height: 100vh;
-		background-image: url(/src/lib/assets/images/hero.webp);
-		background-size: cover;
-		display: flex !important;
-		flex-direction: column !important;
-
-		@media screen and (max-width: $md) {
-			height: unset;
-		}
-
-		@media screen and (min-width: $xl) {
-			height: 80vh !important;
-		}
-
-		.container {
-			margin-top: auto !important;
-		}
-
-		.container,
-		.col {
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-
-		.img_wrapper {
-			margin: auto !important;
-			// margin-bottom: 0 !important;
-			position: relative;
-
-			img {
-				position: relative;
-			}
-		}
-
-		:global(p) {
-			text-align: left;
-		}
-	} */
+	
 
 	.progress_model_section {
 		position: relative;
 		margin-top: -2px;
 		min-height: 100vh !important;
 		z-index: 1;
+		background-color: #c7c5ff;
 
 		/* @media (max-width: $md) {
 			button {
@@ -562,11 +518,7 @@
 			}
 		}
 
-		.connecting_dots{
-			position: absolute;
-			bottom: -1rem;
-			z-index: -1;
-		}
+		
 
 		.model_item_arrow {
 			margin-top: 1rem;

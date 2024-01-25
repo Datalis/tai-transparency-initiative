@@ -20,19 +20,14 @@ export const load: PageServerLoad = async () => {
 					}
 				}
 			},
-			// past_funding: {
-			// 	fields: ['title'],
-			// 	populate: {
-			// 		PastFundingItem: {
-			// 			fields: ['id', 'summary', 'url', 'name'],
-			// 			populate: {
-			// 				image: {
-			// 					populate: '*'
-			// 				}
-			// 			}
-			// 		}
-			// 	}
-			// }
+			featured_topics: {
+				fields: ['title'],
+				populate: {
+					image: {
+						populate: '*'
+					}
+				}
+			}
 		}
 	};
 
@@ -60,5 +55,6 @@ export const load: PageServerLoad = async () => {
 	});
 
 	const { data } = await get('how-we-work-page', params);
+
 	return { ...data, resources };
 };
