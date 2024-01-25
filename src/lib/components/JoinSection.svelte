@@ -34,10 +34,22 @@
 				simply looking for a space to compare notes with fellow funders of all types, please reach
 				out.
 			</p>
-			<button class="close-button" on:click={() => showPopup = false}>
-				<svg width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M1 13L13 1M1 1L13 13" stroke="#565656" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
+			<button class="close-button" on:click={() => (showPopup = false)}>
+				<svg
+					width="12"
+					height="12"
+					viewBox="0 0 14 14"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M1 13L13 1M1 1L13 13"
+						stroke="#565656"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+				</svg>
 			</button>
 		</div>
 	</div>
@@ -54,7 +66,7 @@
 						</div>
 					</div>
 					<div class="col col_5 col_lg_12">
-						<div class="display_flex flex_column justify_center h_100">
+						<div class="display_flex flex_column justify_center align_start h_100">
 							<h2 class="mb_4 font_bold mt_0 text_dark">Join TAI</h2>
 							<img class="join_img__mobile my_auto" src={JoinImg} alt="" />
 							<div class="divider divider_2" />
@@ -62,10 +74,24 @@
 								The TAI secretariat is here to help and can explain all that is on offer. If you are
 								new to this field, scoping potential new investments, looking for evidence of what's
 								working, or simply looking for a space to compare notes with fellow funders of all
-								types, please reach out.
+								types, please reach out. We offer core and associate membership options.
 							</p>
-							<h6 class="mb_4 text_dark">Let the TAI Secretariat know how we can help</h6>
-							<form action="{$page.url.pathname}?/join" method="post" use:enhance>
+							<button type="button" on:click={() => (showPopup = true)} class="more pl_0"
+								>More details <svg
+									width="11"
+									height="11"
+									viewBox="0 0 11 11"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M4.20412 9.61035L5.26462 10.6709L10.2949 5.6406L5.26462 0.610352L4.20412 1.67085L7.42387 4.8906H0.234375V6.3906H7.42387L4.20412 9.61035Z"
+										fill="#736EFF"
+									/>
+								</svg></button
+							>
+							<h6 class="mb_4 mt_4 text_dark">Let the TAI Secretariat know how we can help</h6>
+							<form action="{$page.url.pathname}?/join" method="post" class="w_100" use:enhance>
 								<div class="form_control">
 									<input
 										type="text"
@@ -105,20 +131,6 @@
 								</div>
 								<div class="actions mt_5">
 									<button class="btn btn_dark" type="submit">Get in Touch</button>
-									<button type="button" on:click={() => (showPopup = true)} class="more"
-										>More details <svg
-											width="11"
-											height="11"
-											viewBox="0 0 11 11"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M4.20412 9.61035L5.26462 10.6709L10.2949 5.6406L5.26462 0.610352L4.20412 1.67085L7.42387 4.8906H0.234375V6.3906H7.42387L4.20412 9.61035Z"
-												fill="#736EFF"
-											/>
-										</svg></button
-									>
 								</div>
 							</form>
 						</div>
@@ -224,16 +236,17 @@
 		}
 	}
 
+	.more {
+		color: #736eff;
+		font-size: 16px;
+	}
+
 	.join_section .actions {
 		display: flex;
 		align-items: center;
 		gap: 1rem;
 		.btn.btn_dark {
 			min-width: 100px;
-		}
-		.more {
-			color: #736eff;
-			font-size: 16px;
 		}
 	}
 
@@ -254,6 +267,12 @@
 
 		.container {
 			margin: auto !important;
+		}
+
+
+		p {
+			font-size: pxToRem(14);
+			font-weight: 300;
 		}
 
 		.join_img {
