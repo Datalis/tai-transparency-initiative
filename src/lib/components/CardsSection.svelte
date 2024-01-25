@@ -51,9 +51,9 @@
 								<a href="/what-we-fund#funding" class="text_dark display_block"
 									>What TAI funding looks like?</a
 								>
-								<a href="/what-we-fund#funding-data-library" class="text_dark display_block"
+								<!-- <a href="/what-we-fund#funding-data-library" class="text_dark display_block"
 									>Funding Data Library</a
-								>
+								> -->
 								<a href="/what-we-fund#why-it-matters" class="text_dark display_block"
 									>Why it matters</a
 								>
