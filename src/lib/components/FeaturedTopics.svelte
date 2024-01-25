@@ -274,7 +274,7 @@
 
 			.topic_item {
 				position: relative;
-				aspect-ratio: 3/1.8;
+				aspect-ratio: 3/1.4;
 				&:nth-child(3) {
 					.topic_title {
 						left: unset;
