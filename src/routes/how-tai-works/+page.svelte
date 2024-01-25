@@ -268,7 +268,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="featured-topics" class="featured_section section bg_light">
+	<!-- <section id="featured-topics" class="featured_section section bg_light">
 		<div class="container">
 			<div class="featured_section__content">
 				<div class="content_wrapper">
@@ -293,7 +293,7 @@
 						<track kind="captions" />
 					</video>
 					
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					
 					<div
 						class="video_overlay_muted_button muted hidden"
 						class:mute={!isVideoMuted}
@@ -304,7 +304,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- <PastFundingSection data={past_funding} /> -->
 	<section id="working-with-others" class="other_groups_section section gradient_sm_green_light">
 		<IntersectionObserver let:top>
@@ -569,7 +569,7 @@
 		}
 	}
 
-	.featured_section {
+	/* .featured_section {
 		min-height: 105vh;
 		display: flex !important;
 		flex-direction: column;
@@ -646,7 +646,7 @@
 				}
 			}
 		}
-	}
+	} */
 
 	.other_groups_section {
 		min-height: 100vh;
