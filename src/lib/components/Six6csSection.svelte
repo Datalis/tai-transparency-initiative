@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { gsap } from 'gsap/dist/gsap';
-
 	import 'swiper/css';
 	import 'swiper/css/pagination';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
@@ -12,49 +11,83 @@
 
 	export let data: any;
 
-	$: items = data.Item || [];
+	$: items = data?.Item || [];
+
+	// onMount(() => {
+	// 	gsap
+	// 		.timeline()
+	// 		.to('._6Cs_section', {
+	// 			scrollTrigger: {
+	// 				trigger: '._6Cs_section',
+	// 				pin: true,
+	// 				scrub: true,
+	// 				start: 'center center',
+	// 				end: 'bottom -100%'
+	// 			}
+	// 		})
+	// 		.to('._6Cs_section ._6Cs_wrapper', {
+	// 			scrollTrigger: {
+	// 				trigger: '._6Cs_section',
+	// 				start: 'top bottom',
+	// 				end: 'bottom -300%',
+	// 				scrub: 0.5
+	// 			},
+	// 			y: '-5%'
+	// 		});
+
+	// 	let parentWidth = _6CsSectionSlider.parentElement?.getBoundingClientRect().width || 0;
+	// 	let marginOffset = _6CsSectionSlider.getBoundingClientRect().left;
+	// 	let toScroll =
+	// 		parentWidth - _6CsSectionSlider.getBoundingClientRect().right + marginOffset * 1.1;
+
+	// 	gsap.timeline().to('._6Cs_section ._6Cs_section_slide', {
+	// 		x: toScroll,
+	// 		scrollTrigger: {
+	// 			trigger: '._6Cs_section',
+	// 			scrub: 1,
+	// 			start: 'top top',
+	// 			end: 'bottom -100%'
+	// 		}
+	// 	});
+	// });
+
 
 	onMount(() => {
-		gsap
-			.timeline()
-			.to('._6Cs_section', {
-				scrollTrigger: {
-					trigger: '._6Cs_section',
-					pin: true,
-					scrub: true,
-					start: 'center center',
-					end: 'bottom -100%'
-				}
-			})
-			.to('._6Cs_section ._6Cs_wrapper', {
-				scrollTrigger: {
-					trigger: '._6Cs_section',
-					start: 'top bottom',
-					end: 'bottom -300%',
-					scrub: 0.5
-				},
-				y: '-5%'
+		// console.log('websites', websites)
+
+		let ctx = gsap.context((g: typeof gsap) => {
+			gsap.registerPlugin(ScrollTrigger);
+
+			const wrapper = document.querySelector('._6Cs_section') as HTMLDivElement;
+			const container = document.querySelector('._6Cs_section_container') as HTMLDivElement;
+			const containerOffset = container?.offsetLeft;
+			const scroller = document.querySelector('._6Cs_section_slide') as HTMLDivElement;
+
+			const mm = gsap.matchMedia();
+
+			mm.add('(min-width: 1024px)', () => {
+				scroller.style.gridAutoColumns = container?.offsetWidth / 2 - 220 + 'px';
+				gsap.to(scroller, {
+					x: () => wrapper?.offsetWidth - scroller?.offsetWidth - containerOffset * 2 - 50,
+					scrollTrigger: {
+						trigger: '._6Cs_section_container',
+						pin: true,
+						invalidateOnRefresh: true,
+						start: '-50 top',
+						end: 'bottom top',
+						// markers: true,
+						scrub: true
+					}
+				});
 			});
-
-		let parentWidth = _6CsSectionSlider.parentElement?.getBoundingClientRect().width || 0;
-		let marginOffset = _6CsSectionSlider.getBoundingClientRect().left;
-		let toScroll =
-			parentWidth - _6CsSectionSlider.getBoundingClientRect().right + marginOffset * 1.1;
-
-		gsap.timeline().to('._6Cs_section ._6Cs_section_slide', {
-			x: toScroll,
-			scrollTrigger: {
-				trigger: '._6Cs_section',
-				scrub: 1,
-				start: 'top top',
-				end: 'bottom -100%'
-			}
 		});
+
+		return () => ctx.revert();
 	});
 </script>
 
 <section id="sixcs" class="_6Cs_section section bg_white show_on_md_and_up">
-	<div class="container">
+	<div class="container _6Cs_section_container">
 		<div class="_6Cs_wrapper">
 			<div class="_6Cs_section_title">
 				<h3 class="font_regular mb_4 mt_0 text_light">{data?.title}</h3>
@@ -119,8 +152,8 @@
 		}
 
 		&__mobile {
-			--swiper-pagination-color: #50BFC2;
-			:global(.swiper-slide){
+			--swiper-pagination-color: #50bfc2;
+			:global(.swiper-slide) {
 				height: auto;
 			}
 
@@ -145,7 +178,7 @@
 		}
 
 		._6Cs_wrapper {
-			background-color: #50BFC2;
+			background-color: #50bfc2;
 			border-radius: 15px;
 			//padding: 2rem;
 			max-height: 90vh;
@@ -204,7 +237,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				color: #50BFC2;
+				color: #50bfc2;
 				font-size: pxToRem(38);
 				line-height: 1;
 				font-weight: 900;

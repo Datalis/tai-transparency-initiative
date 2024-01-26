@@ -180,42 +180,7 @@
 								</a>
 							{/each}
 						</div>
-						<div class="social">
-							<!-- <h4 class="mb_4">Follow us!</h4>
-							<div class="divider divider_green divider_2 mb_4" /> -->
-		
-							<!-- <div class="twitter-feed">
-								{#each social.twitter as twit}
-									<div class="twit">
-										<div class="display_flex align_center">
-											<a
-												class="display_flex"
-												href={`https://twitter.com/${twit.user.screen_name}`}
-												target="_blank"
-											>
-												<img class="profile_img" src={twit.user.profile_image_url} alt="" />
-											</a>
-											<a class="text_dark font_bold" href={`https://twitter.com/${twit.user.screen_name}`} target="_blank">
-												<small class="text_dark font_bold">{twit.user.name}</small>
-											</a>
-										</div>
-										<small class="mt_2">
-											{@html parseTwitterText(twit.full_text)}
-										</small>
-									</div>
-								{/each}
-							</div>
-		 -->
-							<!-- <a class="youtube-latest" target="_blank" rel="noopener" href="https://youtube.com/watch?v={social.youtube?.videoId}">
-								<img 
-									src={social.youtube?.thumbnailHigh?.url} 
-									width={social.youtube?.thumbnailHigh?.width} 
-									height={social.youtube?.thumbnailHigh?.height} 
-									alt={social.youtube?.title} />
-								<span class="font_bold text_dark mt_2">{social.youtube?.title}</span>
-								<small class="text_dark mt_2">{social.youtube?.description}</small>
-							</a> -->
-						</div>
+						
 					</aside>
 				</div>
 			</div>
@@ -546,29 +511,8 @@
 			}
 		}
 	}
-	/* .content_section .social {
-		margin-top: 3rem;
-		.twitter-feed {
-			margin-top: 2rem;
-		}
-		.twitter-feed .twit {
-			margin-bottom: 1rem;
-
-			a {
-				text-decoration: none;
-			}
-			small {
-				display: block;
-				line-height: 1.5;
-			}
-			.profile_img {
-				width: 25px;
-				height: 25px;
-				border-radius: 50%;
-				margin-right: 0.5rem;
-			}
-		}
-
-		
-	} */
+	
+	:global(.subscribe_section) {
+		padding-top: 0 !important;
+	}
 </style>

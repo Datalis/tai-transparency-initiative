@@ -51,9 +51,9 @@
 								<a href="/what-we-fund#funding" class="text_dark display_block"
 									>What TAI funding looks like?</a
 								>
-								<a href="/what-we-fund#funding-data-library" class="text_dark display_block"
+								<!-- <a href="/what-we-fund#funding-data-library" class="text_dark display_block"
 									>Funding Data Library</a
-								>
+								> -->
 								<a href="/what-we-fund#why-it-matters" class="text_dark display_block"
 									>Why it matters</a
 								>
@@ -82,9 +82,9 @@
 								<a href="/how-we-fund#founders-exits" class="text_dark display_block"
 									>Funder exits</a
 								>
-								<a href="/how-we-fund#participatory-strategy" class="text_dark display_block"
+								<!-- <a href="/how-we-fund#participatory-strategy" class="text_dark display_block"
 									>Participatory Strategy</a
-								>
+								> -->
 								<a href="/how-we-fund#resources" class="text_dark display_block"> Resources </a>
 							</div>
 						</div>
@@ -111,9 +111,9 @@
 								<a href="/how-tai-works#featured-topics" class="text_dark display_block"
 									>Featured topics</a
 								>
-								<a href="/how-tai-works#past-funding" class="text_dark display_block"
+								<!-- <a href="/how-tai-works#past-funding" class="text_dark display_block"
 									>Past Funding Explorations</a
-								>
+								> -->
 								<a href="/how-tai-works#working-with-others" class="text_dark display_block"
 									>Working with other groups</a
 								>
@@ -223,6 +223,7 @@
 						a {
 							font-weight: 400;
 							// font-size: pxToRem(12);
+							line-height: 2;
 							&:hover {
 								font-weight: 600 !important;
 							}

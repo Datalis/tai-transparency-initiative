@@ -6,7 +6,6 @@
 	import LightBulbIcon from '$lib/assets/icons/funding/5.svg?component';
 	import ChartIcon from '$lib/assets/icons/funding/6.svg?component';
 	import FundingImg from '$lib/assets/images/funding_data_library.webp';
-	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 	import HeroImg from '$lib/assets/images/heroes/what-we-fund-inside.png?webp';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
@@ -86,29 +85,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="container">
-			<div class="row">
-				<div class="col col_5 col_md_12">
-					<div class="display_flex flex_column justify_center h_100">
-						<h1 class="text_green mb_4">{hero?.title}</h1>
-						<span class="divider divider_2 divider_light" />
-						<div class="mt_4 mb_2 font_light">
-							{@html hero?.message}
-						</div>
-					</div>
-				</div>
-				<div class="img_wrapper col col_7 col_md_12 h_100">
-					<img
-						class="parallax"
-						data-depth="-0.15"
-						src={HeroImg}
-						alt="What we fund"
-						decoding="sync"
-						loading="eager"
-					/>
-				</div>
-			</div>
-		</div> -->
+		
 	</section>
 	<section id="funding" class="funding_section section">
 		<div class="container">
@@ -262,42 +239,6 @@
 		</div>
 	</section>
 	<div class="gradient_lg_gray_light">
-		<section id="funding-data-library" class="funding_data_section section">
-			<div class="container">
-				<div class="row">
-					<div class="show_on_md_and_down col col_12">
-						<h2>Funding Data Library</h2>
-						<div class="divider divider_blue_light divider_2" />
-					</div>
-					<div class="col col_7 col_md_12">
-						<img class="w_100" src={FundingImg} alt="" />
-					</div>
-					<div class="col col_5 col_md_12">
-						<div class="show_on_md_and_up">
-							<h2>Funding Data Library</h2>
-							<div class="divider divider_blue_light divider_2" />
-						</div>
-						<p class="mt_4">
-							You can explore data related to over $500 million in active transparency and
-							accountability grants in TAI’s member funding database.
-						</p>
-						<p>
-							<strong>GRANTMAKERS</strong> find peers to engage around new portfolio thinking and new partners
-							you might want to connect with.
-						</p>
-						<p>
-							<strong>GRANT SEEKERS</strong> find out which funders are supporting your issues, or identify
-							new peer groups you might want to meet.
-						</p>
-						<a
-							href="https://grants.transparency-initiative.org/"
-							target="blank"
-							class="btn btn_dark mt_4">Read More</a
-						>
-					</div>
-				</div>
-			</div>
-		</section>
 		<WhyItMattersSection data={whyItMatters} />
 	</div>
 	<PathwaysSection />
@@ -385,66 +326,6 @@
 		}
 	}
 
-	/* .landing_section {
-		z-index: 1;
-		padding-top: 100px !important;
-		min-height: 100vh;
-		background-image: url(/src/lib/assets/images/hero.webp);
-		background-size: cover;
-		display: flex !important;
-		flex-direction: column !important;
-
-		@media screen and (max-width: $md) {
-			height: unset;
-		}
-
-		@media screen and (min-width: $xl) {
-			height: 80vh !important;
-		}
-
-		.container {
-			margin-top: auto !important;
-			@media screen and (max-width: $md) {
-				margin-top: 0 !important;
-			}
-		}
-
-		.container,
-		.col {
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-
-		.img_wrapper {
-			margin: auto !important;
-
-			position: relative;
-
-
-			img {
-
-				position: absolute;
-				max-width: 75%;
-
-				left: 0;
-				right: 0;
-				bottom: 0;
-				top: 0;
-
-				margin: auto;
-
-				@media screen and (max-width: $md) {
-					position: relative;
-					max-width: 100%;
-					margin-top: 1rem;
-				}
-			}
-		}
-
-		:global(p) {
-			text-align: left;
-		}
-	} */
 	.funding_section {
 		display: flex !important;
 		flex-direction: column !important;
@@ -569,27 +450,5 @@
 		}
 	}
 
-	.funding_data_section {
-		min-height: 100vh;
-		display: flex !important;
-		flex-direction: column !important;
-
-		.container {
-			height: 100% !important;
-			flex-grow: 1;
-			display: flex;
-			flex-direction: column;
-			.row {
-				flex-grow: 1;
-				height: 100%;
-				align-items: center;
-			}
-		}
-
-		@media (max-width: $md) {
-			a {
-				width: 100%;
-			}
-		}
-	}
+	
 </style>

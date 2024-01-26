@@ -22,11 +22,13 @@
 		</div>
 		<div class="divider divider_2 divider_blue_light" />
 		<div class="row mt_4">
-			{#each resources as resItem}
-				<div class="col col_4 col_md_6 col_sm_12">
-					<ResourceItem data={resItem} />
-				</div>
-			{/each}
+			{#if resources}
+				{#each resources as resource}
+					<div class="col col_4 col_md_6 col_sm_12">
+						<ResourceItem data={resource} />
+					</div>
+				{/each}
+			{/if}
 		</div>
 		<a href="/resources" class="pop_out btn btn_dark show_on_md_and_down w_100 mt_3">Explore Our Resources</a>
 	</div>

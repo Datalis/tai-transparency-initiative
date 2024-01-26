@@ -1,21 +1,14 @@
 <script lang="ts">
 	import WorldImg from '$lib/assets/images/home/map-about-us.png';
-	import LogoIcon from '$lib/assets/images/logo-footer.svg?component';
-
 	import EnvisionImg1 from '$lib/assets/images/envision_1.webp';
 	import EnvisionImg2 from '$lib/assets/images/envision_2.webp';
 	import EnvisionImg3 from '$lib/assets/images/envision_3.webp';
 	import MemberItem from '$lib/components/MemberItem.svelte';
 	import JoinSection from '$lib/components/JoinSection.svelte';
-	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import StaffItem from '$lib/components/StaffItem.svelte';
 	import type { ActionData, PageData } from './$types';
-	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
-	import gsap from 'gsap/dist/gsap';
 	import Seo from '$lib/components/Seo.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
-
 
 	export let data: PageData;
 	export let form: ActionData;
@@ -33,13 +26,6 @@
 
 	$: commitee = data?.SteeringCommittee;
 	$: commiteeList = commitee?.StaffItem || [];
-
-	// onMount(() => {
-	// 	gsap.timeline().to(window, {
-	// 		scrollTo: $page.url.hash,
-	// 		duration: 0.5
-	// 	});
-	// });
 </script>
 
 <svelte:head>
@@ -149,13 +135,22 @@
 		</div>
 	</section>
 	<div class="gradient_sm_gray_light">
-		<JoinSection {form} />
-		<div class="purple_subscribe">
-			<SubscribeSection />
+		<div class="pt_5">
+			<JoinSection {form} />
+		</div>
+		<div class="container">
+			<div class="collab_section">
+				<h3 class="mt_0 mb_2 text_center">Do you want to know more/ <br> collaborate with us?</h3>
+				<p class="mt_2 mb_0 text_center font_light">Our editorial policy, style guide and identity <br> manual are at your disposal</p>
+				<div class="mt_4 links">
+					<a href="">Editorial Policy</a>
+					<a href="">Style Guide</a>
+					<a href="">Brand Book</a>
+				</div>
+			</div>
 		</div>
 		<ResourcesSection resources={res} />
 	</div>
-
 </div>
 
 <style lang="scss">
@@ -164,9 +159,9 @@
 		color: #00deb3;
 	} */
 
-	.w_75{
+	.w_75 {
 		width: auto;
-		@media (min-width: $md){
+		@media (min-width: $md) {
 			width: 75%;
 		}
 	}
@@ -183,8 +178,11 @@
 		justify-content: center;
 		height: fit-content;
 
-		.container{
+		.container {
 			height: calc(100svh - 10rem);
+			@media screen and (max-width: $md) {
+				height: calc(60svh - 10rem);
+			}
 			position: relative;
 			.wrapper_bg {
 				z-index: -1;
@@ -217,7 +215,7 @@
 		position: relative;
 		z-index: 1;
 
-		.divider{
+		.divider {
 			margin-inline: auto;
 		}
 
@@ -252,21 +250,19 @@
 			.divider.divider_blue {
 				opacity: 0.5;
 			}
-
 		}
-
 	}
 	.team_section {
-		background-color: #73C5C7;
+		background-color: #73c5c7;
 		padding-top: 120px !important;
 		padding-bottom: 0 !important;
-		@media (max-width: $md){
+		@media (max-width: $md) {
 			padding-top: 2rem !important;
 		}
 
 		position: relative;
 		z-index: 1;
-		 .staff_list {
+		.staff_list {
 			.divider {
 				width: 100% !important;
 				margin-top: 0.5rem !important;
@@ -275,7 +271,7 @@
 		}
 	}
 	.committee_section {
-		background-color: #73C5C7;
+		background-color: #73c5c7;
 		position: relative;
 		z-index: 1;
 		.divider {
@@ -285,20 +281,36 @@
 		}
 	}
 
-	.purple_subscribe{
-		:global{
-			.subscribe_section__panel{
-				background-color: map-get($colors, "blue_light" ) !important;
-			}
-			h2, span, input{
-				color: white;
-				border-color: white;
-			}
-			button{
-				color: map-get($colors, "blue_light" );
-				background-color: map-get($colors, "dark" );
-			}
+	.collab_section {
+		background-color: #c7c5ff;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border-radius: 15px;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		margin-top: 3rem;
+		margin-bottom: 1rem;
 
+		.links {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.links a {
+			padding: 0.65rem 1rem;
+			min-width: 200px;
+			font-size: 14px;
+			border: 1px solid #1F1F24;
+			color: #1F1F24;
+			border-radius: 50px;
+			line-height: 1;
+			text-align: center;
+			text-transform: uppercase;
 		}
 	}
 

@@ -48,10 +48,10 @@
 						<li class="">
 							<a href="/what-we-fund#funding" class="text_white">What TAI funding looks like?</a>
 						</li>
-						<li>
+						<!-- <li>
 							<a href="/what-we-fund#funding-data-library" class="text_white">Funding data library</a
 							>
-						</li>
+						</li> -->
 						<li>
 							<a href="/what-we-fund#why-it-matters" class="text_white">Why it matters</a>
 						</li>
@@ -104,7 +104,7 @@
 				</div>
 				<div class="col col_lg_5">
 					<h6 class="text_uppercase  mt_0 mb_4">
-						<a href="/how-tai-works" class="">How we work together</a>
+						<a href="/how-tai-works" class="">How TAI works</a>
 					</h6>
 					<ul>
 						<li>
@@ -117,9 +117,9 @@
 						<li>
 							<a href="/how-tai-works#featured-topics" class="text_white">Featured topic</a>
 						</li>
-						<li>
+						<!-- <li>
 							<a href="/how-tai-works#past-funding" class="text_white">Past projects</a>
-						</li>
+						</li> -->
 						<li>
 							<a href="/how-tai-works#working-with-others" class="text_white"
 								>Working with other groups</a

@@ -6,13 +6,13 @@
 	import PartnerImg5 from '$lib/assets/images/partner_support/5.webp';
 	import PartnerImg6 from '$lib/assets/images/partner_support/6.webp';
 
-	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
+	// import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 
 	import { gsap } from 'gsap/dist/gsap';
 
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
+	// import { page } from '$app/stores';
 	import FoundersExitsSection from '$lib/components/FoundersExitsSection.svelte';
 	import type { PageData } from '.svelte-kit/types/src/routes/$types';
 
@@ -56,7 +56,8 @@
 					x: toScroll
 				});
 
-			gsap
+
+				gsap
 				.timeline({
 					scrollTrigger: {
 						trigger: '.participatory_section',
@@ -102,6 +103,7 @@
 					height: '100%'
 				});
 
+
 			const parallax = gsap.timeline({
 				scrollTrigger: {
 					trigger: '.landing_section',
@@ -126,12 +128,6 @@
 		} else {
 			videoPlayer?.play();
 		}
-
-		// if ($page.url.hash) {
-		// 	gsap.timeline().to(window, {
-		// 		scrollTo: $page.url.hash
-		// 	});
-		// }
 	});
 </script>
 
@@ -298,59 +294,6 @@
 	$lg: map-get($grid-breakpoints, 'lg');
 	$xl: map-get($grid-breakpoints, 'xl');
 
-	/* .landing_section {
-		z-index: 1;
-		padding-top: 100px !important;
-		min-height: 100vh;
-		background-image: url(/src/lib/assets/images/hero.webp);
-		background-size: cover;
-		display: flex !important;
-		flex-direction: column !important;
-
-		@media screen and (max-width: $md) {
-			height: unset;
-		}
-
-		@media screen and (min-width: $xl) {
-			height: 80vh !important;
-		}
-
-		.container {
-			margin-top: auto !important;
-			@media screen and (max-width: $md) {
-				margin-top: 0 !important;
-			}
-		}
-
-		.container,
-		.col {
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-
-		.img_wrapper {
-			margin: auto !important;
-		}
-		.img_wrapper img {
-			margin: auto;
-
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			right: -14%;
-			@media screen and (max-width: $lg) {
-				right: -30%;
-			}
-			@media screen and (max-width: $md) {
-				position: relative;
-				right: 0;
-			}
-		}
-
-		:global(p) {
-			text-align: left;
-		}
-	} */
 
 	.landing_section {
 		//background-image: url(/src/lib/assets/images/hero.webp);
@@ -534,6 +477,7 @@
 		display: flex !important;
 		flex-direction: column;
 		justify-content: center;
+		/* padding-bottom: 0 !important; */
 
 		@media screen and (max-width: $md) {
 			min-height: auto;

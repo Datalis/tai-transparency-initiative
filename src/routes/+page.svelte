@@ -30,6 +30,7 @@
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 	import Seo from '$lib/components/Seo.svelte';
 	import Popup from '$lib/components/Popup.svelte';
+	import KnowledgeHubSection from '$lib/components/KnowledgeHubSection.svelte';
 
 	let brandSlide: HTMLElement;
 	let windowWidth: number;
@@ -41,6 +42,7 @@
 	export let form: ActionData;
 
 	$: hero = data.hero;
+	$: knowledgeHub = data.knowledgehub;
 	// $: resources = data.ResourcesSection;
 	$: res = data.resources;
 
@@ -169,7 +171,7 @@
 			<a href="https://www.opensocietyfoundations.org/" target="blank"
 				><OpenSocietyLogo width="150" /></a
 			>
-			<a href="https://skoll.org/" target="blank"><SkollLogo height="80" /></a>
+			<a href="https://skoll.org/" target="blank"><SkollLogo width="100" /></a>
 			<a
 				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
 				target="blank"><FCDOLogo width="150" /></a
@@ -182,6 +184,7 @@
 	</section>
 	<CardsSection />
 	<div class="gradient_sm_gray_light">
+		<KnowledgeHubSection data={knowledgeHub}></KnowledgeHubSection>
 		<JoinSection {form} />
 		<SubscribeSection />
 		<ResourcesSection resources={res} />
@@ -335,7 +338,7 @@
 
 
 	.brands_section {
-		padding-top: 2rem !important;
+		padding-top: 0rem !important;
 		padding-bottom: 0 !important;
 		background: map-get($colors, 'white');
 		position: relative;
@@ -353,6 +356,7 @@
 			width: max-content;
 			display: flex;
 			align-items: center;
+			height: 100px;
 			:global(svg) {
 				flex-shrink: 0;
 				max-width: 350px;
