@@ -49,7 +49,7 @@
 						</path>
 						<!-- <path id="circle" d="M0,100 a 30 -30 0 1 0 190, 0 Z" /> -->
 					</defs>
-					<text>
+					<text dominant-baseline="hanging" textLength="620px">
 						<textPath
 							textLength="620px"
 							spacing="auto"
@@ -74,7 +74,7 @@
 						>
 						</path>
 					</defs>
-					<text>
+					<text dominant-baseline="text-before-edge" >
 						<textPath
 							startOffset="5%"
 							spacing="auto"
