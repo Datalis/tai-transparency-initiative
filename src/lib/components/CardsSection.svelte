@@ -82,10 +82,10 @@
 								<a href="/how-we-fund#founders-exits" class="text_dark display_block"
 									>Funder exits</a
 								>
-								<!-- <a href="/how-we-fund#participatory-strategy" class="text_dark display_block"
+								<a href="/how-we-fund#participatory-strategy" class="text_dark display_block"
 									>Participatory Strategy</a
-								> -->
-								<a href="/how-we-fund#resources" class="text_dark display_block"> Resources </a>
+								>
+								<!--<a href="/how-we-fund#resources" class="text_dark display_block"> Resources </a>-->
 							</div>
 						</div>
 					</div>
