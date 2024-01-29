@@ -239,6 +239,42 @@
 		</div>
 	</section>
 	<div class="gradient_lg_gray_light">
+		<section id="funding-data-library" class="funding_data_section section">
+			<div class="container">
+				<div class="row">
+					<div class="show_on_md_and_down col col_12">
+						<h2>Funding Data Library</h2>
+						<div class="divider divider_blue_light divider_2" />
+					</div>
+					<div class="col col_7 col_md_12">
+						<img class="w_100" src={FundingImg} alt="" />
+					</div>
+					<div class="col col_5 col_md_12">
+						<div class="show_on_md_and_up">
+							<h2>Funding Data Library</h2>
+							<div class="divider divider_blue_light divider_2" />
+						</div>
+						<p class="mt_4">
+							You can explore data related to over $500 million in active transparency and
+							accountability grants in TAI’s member funding database.
+						</p>
+						<p>
+							<strong>GRANTMAKERS</strong> find peers to engage around new portfolio thinking and new partners
+							you might want to connect with.
+						</p>
+						<p>
+							<strong>GRANT SEEKERS</strong> find out which funders are supporting your issues, or identify
+							new peer groups you might want to meet.
+						</p>
+						<a
+							href="https://grants.transparency-initiative.org/"
+							target="blank"
+							class="btn btn_dark mt_4">Read More</a
+						>
+					</div>
+				</div>
+			</div>
+		</section>
 		<WhyItMattersSection data={whyItMatters} />
 	</div>
 	<PathwaysSection />

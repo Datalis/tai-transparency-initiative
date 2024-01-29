@@ -115,7 +115,7 @@
 						</li>
 
 						<li>
-							<a href="/how-tai-works#featured-topics" class="text_white">Featured topic</a>
+							<a href="/how-tai-works#featured-topics" class="text_white">Featured topics</a>
 						</li>
 						<!-- <li>
 							<a href="/how-tai-works#past-funding" class="text_white">Past projects</a>

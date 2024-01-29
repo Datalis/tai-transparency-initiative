@@ -141,11 +141,11 @@
 		<div class="container">
 			<div class="collab_section">
 				<h3 class="mt_0 mb_2 text_center">Do you want to know more/ <br> collaborate with us?</h3>
-				<p class="mt_2 mb_0 text_center font_light">Our editorial policy, style guide and identity <br> manual are at your disposal</p>
+				<p class="mt_2 mb_0 text_center font_light">Explore and download our publishing guidelines and brand assets <br/> from the links provided below.</p>
 				<div class="mt_4 links">
-					<a href="">Editorial Policy</a>
-					<a href="">Style Guide</a>
-					<a href="">Brand Book</a>
+					<a href="#">Editorial Policy</a>
+					<!--<a href="">Style Guide</a>-->
+					<a target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1gp1W1GmJUdJlKm3KlHH0yasyKrnFIboj?usp=sharing">Brand Book</a>
 				</div>
 			</div>
 		</div>

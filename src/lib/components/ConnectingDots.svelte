@@ -109,7 +109,7 @@
         draw();
   
         window.addEventListener("resize", () => {
-          width = canvas.width = window.innerWidth;
+          width = canvas?.width = window.innerWidth;
         });
       }
     });
