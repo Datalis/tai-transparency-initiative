@@ -32,7 +32,7 @@
 		/>
 	</div>
 	<div class="container show_on_md_and_up">
-		<h2 class="mt_0">Harnessing Trust, Accountability and Inclusion to Tackle Global Challenges</h2>
+		<h2 class="mt_0">Featured Topics</h2>
 		<div class="divider divider_blue_light divider_2" />
 		<div class="topics mt_4 mb_5">
 			<div class="circles">
@@ -145,7 +145,7 @@
 		</div>
 	</div>
 	<div class="container show_on_md_and_down">
-		<h2 class="mt_0">Harnessing Trust, Accountability and Inclusion to Tackle Global Challenges</h2>
+		<h2 class="mt_0">Featured Topics</h2>
 		<div class="divider divider_blue_light divider_2" />
 		<div class="topics_list mt_5">
 			{#each data as item}
