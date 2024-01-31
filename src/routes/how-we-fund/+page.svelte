@@ -251,9 +251,7 @@
 						<h2 class="font_bold mb_4">Participatory Strategy</h2>
 						<div class="divider divider_2 divider_blue_light" />
 						<p class="mt_4">
-							TAI offers a platform for candid, constructive exchange around grantmaking practices.
-							Our members learn from each other and hold each other accountable to be more
-							inclusive, equitable, innovative, and effective grantmakers.
+							Our Participatory Strategy Library describes how funders and nonproﬁts have designed and executed their participatory strategic processes. TAI encourages transparent, participatory and accountable funding practices.
 						</p>
 						<a
 							href="https://participatorystrategy.org/"
