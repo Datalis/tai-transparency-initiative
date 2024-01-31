@@ -134,13 +134,13 @@
 				</div>
 			</div>
 			{#each data as item}
-				<div class="topic_item">
+				<a rel="noopener" target="_blank" href={item?.url} class="topic_item">
 					<div class="topic_image">
 						<div class="overlay"></div>
 						<Image image={item?.image}></Image>
 					</div>
 					<h3 class="topic_title">{item?.title}</h3>
-				</div>
+				</a>
 			{/each}
 		</div>
 	</div>
@@ -149,13 +149,13 @@
 		<div class="divider divider_blue_light divider_2" />
 		<div class="topics_list mt_5">
 			{#each data as item}
-				<div class="topic_item">
+				<a class="topic_item" rel="noopener" target="_blank" href={item?.url}>
 					<div class="topic_image">
 						<div class="overlay"></div>
 						<Image image={item?.image}></Image>
 					</div>
 					<h3 class="topic_title">{item?.title}</h3>
-				</div>
+				</a>
 			{/each}
 		</div>
 	</div>
@@ -260,7 +260,7 @@
 					justify-content: space-evenly;
 					padding: 1rem 1.4rem;
 					span {
-						font-size: pxToRem(11);
+						font-size: pxToRem(9);
 						text-align: center;
 						padding: 0 0.5rem;
 						border: 2px solid #212121;
@@ -275,6 +275,7 @@
 			.topic_item {
 				position: relative;
 				aspect-ratio: 3/1.4;
+				overflow: hidden;
 				&:nth-child(3) {
 					.topic_title {
 						left: unset;
@@ -304,6 +305,7 @@
 				height: 100%;
 				top: 0;
 				left: 0;
+				transition: transform 0.2s ease;
 				.overlay {
 					position: absolute;
 					width: 100%;
@@ -317,6 +319,9 @@
 					height: 100%;
 					object-fit: cover;
 				}
+			}
+			.topic_item:hover .topic_image {
+				transform: scale(1.05);
 			}
 			.topic_item .topic_title {
 				position: absolute;
