@@ -21,7 +21,7 @@ export const load: PageServerLoad = async () => {
 				}
 			},
 			featured_topics: {
-				fields: ['title'],
+				fields: ['title', 'url'],
 				populate: {
 					image: {
 						populate: '*'
