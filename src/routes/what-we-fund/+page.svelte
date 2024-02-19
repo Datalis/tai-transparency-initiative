@@ -58,7 +58,10 @@
 
 <svelte:head>
 	<link rel="preload" as="image" href={HeroImg} />
-	<Seo title="Trust, Accountability and Inclusion Collaborative - What we fund" url="/what-we-fund" />
+	<Seo
+		title="Trust, Accountability and Inclusion Collaborative - What we fund"
+		url="/what-we-fund"
+	/>
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -85,7 +88,6 @@
 				</div>
 			</div>
 		</div>
-		
 	</section>
 	<section id="funding" class="funding_section section">
 		<div class="container">
@@ -246,8 +248,14 @@
 						<h2>Funding Data Library</h2>
 						<div class="divider divider_blue_light divider_2" />
 					</div>
-					<div class="col col_7 col_md_12">
-						<img class="w_100" src={FundingImg} alt="" />
+					<div class="col col_7 col_md_12 powerbi-container">
+						<!-- <img class="w_100" src={FundingImg} alt="" /> -->
+						<iframe
+							title="Member Database_v1"
+							src="https://app.powerbi.com/view?r=eyJrIjoiMDQ5MTI1ZTktYzgzMy00YTQ1LWEyOTAtYzNlY2E1YWYwNjM0IiwidCI6ImY5MWRkNzZlLTcxODYtNDdmYi1hN2RmLTI4ZWViZjI3NzNiMyIsImMiOjN9"
+							frameborder="0"
+							allowFullScreen={true}
+						></iframe>
 					</div>
 					<div class="col col_5 col_md_12">
 						<div class="show_on_md_and_up">
@@ -259,8 +267,8 @@
 							accountability grants in TAI’s member funding database.
 						</p>
 						<p>
-							<strong>GRANTMAKERS</strong> find peers to engage around new portfolio thinking and new partners
-							you might want to connect with.
+							<strong>GRANTMAKERS</strong> find peers to engage around new portfolio thinking and new
+							partners you might want to connect with.
 						</p>
 						<p>
 							<strong>GRANT SEEKERS</strong> find out which funders are supporting your issues, or identify
@@ -288,6 +296,25 @@
 	$xl: map-get($grid-breakpoints, 'xl');
 	$md: map-get($grid-breakpoints, 'md');
 
+	.funding_data_section {
+		.powerbi-container {
+			display: flex;
+			align-items: center;
+			padding-right: 1rem;
+		}
+		.powerbi-container iframe {
+			box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			border-radius: 15px;
+			aspect-ratio: 5/3;
+			width: 100%;
+			
+			@media screen and (max-width: $md) {
+				aspect-ratio: 4/3;
+			}
+		}
+	}
+
 	.landing_section {
 		//background-image: url(/src/lib/assets/images/hero.webp);
 		background-size: cover;
@@ -302,7 +329,6 @@
 		@media screen and (max-width: $md) {
 			height: unset !important;
 		}
-
 
 		.container {
 			flex-grow: 1;
@@ -335,7 +361,6 @@
 			justify-content: center;
 
 			img {
-
 				object-fit: contain;
 			}
 
@@ -346,7 +371,7 @@
 				padding-right: 100vw;
 				height: 100vh;
 
-				img{
+				img {
 					height: 100%;
 				}
 			}
@@ -413,11 +438,10 @@
 					margin-right: 0 !important;
 					height: 80%;
 
-					p{
+					p {
 						font-size: 22px !important;
 					}
 				}
-
 			}
 		}
 
@@ -469,7 +493,7 @@
 			padding-bottom: 0.5rem;
 			padding-left: 3rem;
 			padding-right: 2.3rem;
-			background-color: map-get($colors, "gray_light" );
+			background-color: map-get($colors, 'gray_light');
 
 			@media screen and (max-width: $md) {
 				height: 75%;
@@ -485,6 +509,4 @@
 			}
 		}
 	}
-
-	
 </style>
