@@ -5,7 +5,7 @@
 	import SearchIcon from '$lib/assets/icons/funding/4.svg?component';
 	import LightBulbIcon from '$lib/assets/icons/funding/5.svg?component';
 	import ChartIcon from '$lib/assets/icons/funding/6.svg?component';
-	import FundingImg from '$lib/assets/images/funding_data_library.webp';
+	// import FundingImg from '$lib/assets/images/funding_data_library.webp';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
 	import HeroImg from '$lib/assets/images/heroes/what-we-fund-inside.png?webp';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
@@ -274,11 +274,12 @@
 							<strong>GRANT SEEKERS</strong> find out which funders are supporting your issues, or identify
 							new peer groups you might want to meet.
 						</p>
-						<a
+						<!-- <a
 							href="https://grants.transparency-initiative.org/"
 							target="blank"
 							class="btn btn_dark mt_4">Read More</a
-						>
+						> -->
+						<a class="btn btn_dark mt_4" target="_blank"  href="https://app.powerbi.com/view?r=eyJrIjoiMDQ5MTI1ZTktYzgzMy00YTQ1LWEyOTAtYzNlY2E1YWYwNjM0IiwidCI6ImY5MWRkNzZlLTcxODYtNDdmYi1hN2RmLTI4ZWViZjI3NzNiMyIsImMiOjN9">Read More</a>
 					</div>
 				</div>
 			</div>
