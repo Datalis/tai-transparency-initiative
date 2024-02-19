@@ -1,10 +1,10 @@
+import { PREVIEW_SECRET } from '$env/static/private';
 import { get } from '$lib/api';
-import { getLatestPostsFromTwitter } from '$lib/api/social';
+// import { getLatestPostsFromTwitter } from '$lib/api/social';
 import imageLoader from '$lib/utils/imageLoader';
 import { generatePdfPreview } from '$lib/utils/pdfjs';
 import { error } from '@sveltejs/kit';
 import { parse } from 'node-html-parser';
-import { isPreview } from 'sveltekit-preview-mode';
 
 const loadRelatedResources = async (resource: any) => {
 	const queryParams = {
@@ -141,9 +141,19 @@ const htmlContentParser = async (content: string) => {
 	return root.toString();
 };
 
-export async function load({ params }: { [key: string]: any }) {
-	const { slug } = params;
+const isPreview = (url: URL) => {
+	const params = url.searchParams;
+	const previewToken = params.get('previewToken');
+	if (previewToken && previewToken === PREVIEW_SECRET) {
+		return true;
+	}
+	return false;
+}
 
+export async function load({ params, url  }: { [key: string]: any }) {
+	const isPreviewMode = isPreview(url);
+	
+	const { slug } = params;
 
 	const queryParams: any = {
 		populate: '*',
@@ -154,7 +164,7 @@ export async function load({ params }: { [key: string]: any }) {
 		}
 	};
 
-	if (isPreview()) {
+	if (isPreviewMode) {
 		queryParams['publicationState'] = 'preview';
 	}
 
@@ -173,7 +183,8 @@ export async function load({ params }: { [key: string]: any }) {
 			return {
 				resource,
 				related,
-				social
+				social,
+				isPreview: isPreviewMode
 			};
 		} else {
 			throw error(404, 'Not found');
