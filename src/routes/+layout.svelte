@@ -241,5 +241,15 @@
 				fill: map-get($colors, "blue_light") !important;
 			}
 		}
+
+		.preview-banner {
+			padding: 0.8rem 1rem;
+			margin-bottom: 1rem;
+			font-size: 1rem;
+			border-radius: 15px;	
+			a {
+				color: map-get($map: $colors, $key: 'blue_light' );
+			}
+		}
 	}
 </style>
