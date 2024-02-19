@@ -13,7 +13,8 @@
 	import 'swiper/css';
 	import 'swiper/css/pagination';
 	import 'swiper/css/navigation';
-	import { parseTwitterText } from '$lib/utils/twitter';
+	// import { parseTwitterText } from '$lib/utils/twitter';
+	import { PreviewBanner } from 'sveltekit-preview-mode'
 
 	export let data: PageData;
 
@@ -68,7 +69,16 @@
 	<section class="heading_section section gradient_sm_gray_light">
 		<div class="container">
 			<div class="row m_auto">
-				{#if resource.type.id == 2}
+				<div class="header_block col col_7 col_sm_12">
+					<span class="text_blue_light font_bold text_uppercase text_center">{resource.type.label}</span>
+					<h1 class="text_blue text_center">
+						{resource.title}
+					</h1>
+					<small class="text_gray font_light">
+						By <a href="/" class="text_gray">{resource.author.name}</a> ({resource.author.role})
+					</small>
+				</div>
+				<!-- {#if resource.type.id == 2}
 					<div class="header_block col col_7 col_sm_12">
 						<span class="text_blue_light font_bold text_uppercase text_center">{resource.type.label}</span>
 						<h1 class="text_blue text_center">
@@ -89,9 +99,9 @@
 						</small>
 					</div>
 					<div class="col col_5 col_sm_12" style="margin-top: 0;margin-bottom: 0;">
-						<!-- <Image size="medium" priority image={resource?.image} /> -->
+						
 					</div>
-				{/if}
+				{/if} -->
 			</div>
 		</div>
 	</section>
@@ -100,6 +110,7 @@
 			<div class="row">
 				<div class="col col_8 col_sm_12">
 					<div class="content">
+						<PreviewBanner></PreviewBanner>
 						<div class="content_img">
 							<Image priority image={resource?.image} alt={resource?.image_alt} />
 						</div>

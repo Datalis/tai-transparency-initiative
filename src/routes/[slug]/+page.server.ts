@@ -4,6 +4,7 @@ import imageLoader from '$lib/utils/imageLoader';
 import { generatePdfPreview } from '$lib/utils/pdfjs';
 import { error } from '@sveltejs/kit';
 import { parse } from 'node-html-parser';
+import { isPreview } from 'sveltekit-preview-mode';
 
 const loadRelatedResources = async (resource: any) => {
 	const queryParams = {
@@ -143,7 +144,8 @@ const htmlContentParser = async (content: string) => {
 export async function load({ params }: { [key: string]: any }) {
 	const { slug } = params;
 
-	const queryParams = {
+
+	const queryParams: any = {
 		populate: '*',
 		filters: {
 			slug: {
@@ -151,6 +153,10 @@ export async function load({ params }: { [key: string]: any }) {
 			}
 		}
 	};
+
+	if (isPreview()) {
+		queryParams['publicationState'] = 'preview';
+	}
 
 	try {
 		const { data } = await get('wc-resources', queryParams);

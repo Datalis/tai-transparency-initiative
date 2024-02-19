@@ -90,6 +90,9 @@ devDependencies:
   svelte-preprocess:
     specifier: ^5.0.4
     version: 5.0.4(postcss@8.4.23)(sass@1.63.4)(svelte@3.59.1)(typescript@5.1.3)
+  sveltekit-preview-mode:
+    specifier: ^0.1.8
+    version: 0.1.8(vite@4.3.9)
   swiper:
     specifier: ^8.4.4
     version: 8.4.4
@@ -3281,6 +3284,16 @@ packages:
   /svelte@3.59.1:
     resolution: {integrity: sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /sveltekit-preview-mode@0.1.8(vite@4.3.9):
+    resolution: {integrity: sha512-lYe3zlxr+lQIn+lCkNdGTB6KhMiih4Bqz4I6XCXKLoqMJ5SRHudmxaI/UQOoTNWLfy8381h0z6AuCIvsjUAK8A==}
+    dependencies:
+      '@sveltejs/kit': 1.20.4(svelte@3.59.1)(vite@4.3.9)
+      svelte: 3.59.1
+    transitivePeerDependencies:
+      - supports-color
+      - vite
     dev: true
 
   /svgo@2.8.0:
