@@ -14,14 +14,14 @@
 	import 'swiper/css/pagination';
 	import 'swiper/css/navigation';
 	// import { parseTwitterText } from '$lib/utils/twitter';
-	import { PreviewBanner } from 'sveltekit-preview-mode'
 
 	export let data: PageData;
 
 	$: resource = data.resource;
 	$: related = data.related;
-	$: social = data.social;
+	// $: social = data.social;
 	$: share_url = `https://www.transparency-initiative.org/${resource.slug}`;
+	$: is_preview = data.isPreview;
 
 	function gotoSub() {
 		// Get the email address from the input field
@@ -70,7 +70,9 @@
 		<div class="container">
 			<div class="row m_auto">
 				<div class="header_block col col_7 col_sm_12">
-					<span class="text_blue_light font_bold text_uppercase text_center">{resource.type.label}</span>
+					<span class="text_blue_light font_bold text_uppercase text_center"
+						>{resource.type.label}</span
+					>
 					<h1 class="text_blue text_center">
 						{resource.title}
 					</h1>
@@ -110,19 +112,23 @@
 			<div class="row">
 				<div class="col col_8 col_sm_12">
 					<div class="content">
-						<PreviewBanner></PreviewBanner>
+						{#if is_preview}
+							<div class="preview-banner">
+								This is a preview of the article.
+							</div>
+						{/if}
 						<div class="content_img">
 							<Image priority image={resource?.image} alt={resource?.image_alt} />
 						</div>
-		
+
 						<div class="post_content">
 							{@html resource.content}
 						</div>
-		
+
 						<div class="share_block">
 							<h5 class="mr_3">Share this article</h5>
 							<div class="divider divider_dark divider_1 mr_3 show_on_md_and_up" />
-		
+
 							<div class="display_flex">
 								<a
 									href="https://api.whatsapp.com/send?text={share_url}"
@@ -165,12 +171,15 @@
 						<div class="subscribe_block show_on_md_and_up">
 							<h4 class="font_bold mb_3 mt_0">Keep updated with TAI weekly</h4>
 							<p>
-								Everything you need to know about accountability, inclusive participation and trust, delivered to your inbox.
+								Everything you need to know about accountability, inclusive participation and trust,
+								delivered to your inbox.
 							</p>
 							<div class="form_control mt_4">
 								<input type="email" placeholder="Email Address" id="subemail" />
 							</div>
-							<button class="btn btn_dark text_green_light mt_3" on:click={gotoSub}>Subscribe</button>
+							<button class="btn btn_dark text_green_light mt_3" on:click={gotoSub}
+								>Subscribe</button
+							>
 						</div>
 						<h4 class="mt_5 mb_4">You may also like</h4>
 						<div class="divider divider_blue_light divider_2 mb_4" />
@@ -184,14 +193,15 @@
 										{r.title}
 									</span>
 									<small>
-										<a href="/resources/{r.id}" class="text_gray display_flex align_center blue_light_text"
+										<a
+											href="/resources/{r.id}"
+											class="text_gray display_flex align_center blue_light_text"
 											>Read More <LinkIcon class="ml_1" style="fill: #8f8bff" /></a
 										>
 									</small>
 								</a>
 							{/each}
 						</div>
-						
 					</aside>
 				</div>
 			</div>
@@ -200,14 +210,13 @@
 	<div class="bg_green_light">
 		<SubscribeSection />
 	</div>
-	
 </article>
 
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
 	$green_light: #59ebcf;
 	.blue_light_text {
-		color: map-get($colors, "blue_light" );
+		color: map-get($colors, 'blue_light');
 	}
 	.blue_light_text:hover {
 		color: #adaaf3;
@@ -240,7 +249,6 @@
 	}
 
 	.content_section {
-
 		@media (max-width: 576px) {
 			.row {
 				flex-direction: column;
@@ -256,7 +264,6 @@
 			@media screen and (max-width: $md) {
 				max-width: 100%;
 			}
-
 		}
 	}
 
@@ -286,8 +293,7 @@
 	} */
 
 	.content_section .content,
-	.content_section .releated  {
-		
+	.content_section .releated {
 		@media screen and (max-width: $md) {
 			padding: 0 1rem;
 		}
@@ -369,14 +375,14 @@
 				padding-left: 40px;
 			}
 
-			ul,ol {
+			ul,
+			ol {
 				p {
 					margin: 0;
 				}
 			}
 
-			iframe
-			{
+			iframe {
 				width: 100%;
 				height: auto;
 				min-height: 650px;
@@ -419,7 +425,7 @@
 						}
 
 						span {
-							color:  map-get($colors, 'green_light');
+							color: map-get($colors, 'green_light');
 							font-size: 14px;
 							margin-top: 0.5rem;
 							/* text-transform: uppercase; */
@@ -439,7 +445,7 @@
 		.share_icon {
 			width: 42px;
 			height: 42px;
-			background-color: #8F8BFF;
+			background-color: #8f8bff;
 			border-radius: 50%;
 			display: flex;
 			align-items: center;
@@ -447,11 +453,11 @@
 			:global(svg) {
 				width: 24px;
 				height: 24px;
-				:global(circle){
-					fill: map-get($colors, "white") !important;
+				:global(circle) {
+					fill: map-get($colors, 'white') !important;
 				}
-				:global(path){
-					fill: map-get($colors, "white") !important;
+				:global(path) {
+					fill: map-get($colors, 'white') !important;
 				}
 			}
 		}
@@ -463,12 +469,12 @@
 			font-size: pxToRem(20);
 			line-height: 1;
 
-			@media (max-width: $md){
+			@media (max-width: $md) {
 				margin-right: 0;
 			}
 		}
 
-		@media (max-width: $md){
+		@media (max-width: $md) {
 			flex-direction: column;
 		}
 	}
@@ -479,7 +485,7 @@
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		background-color: map-get($colors, "green_light" );
+		background-color: map-get($colors, 'green_light');
 		padding: 2rem;
 		border-radius: 15px;
 		.form_control,
@@ -507,7 +513,7 @@
 			}
 			.img_wrapper {
 				overflow: hidden;
-				
+
 				/* background-color: map-get($colors, 'panel'); */
 				:global {
 					img {
@@ -522,7 +528,7 @@
 			}
 		}
 	}
-	
+
 	:global(.subscribe_section) {
 		padding-top: 0 !important;
 	}

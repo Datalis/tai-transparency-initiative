@@ -247,9 +247,9 @@
 			margin-bottom: 1rem;
 			font-size: 1rem;
 			border-radius: 15px;	
-			a {
-				color: map-get($map: $colors, $key: 'blue_light' );
-			}
+			background-color: map-get($colors, 'dark');
+			color: map-get($map: $colors, $key: 'blue_light' );
+			
 		}
 	}
 </style>

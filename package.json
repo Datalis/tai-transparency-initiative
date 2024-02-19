@@ -41,7 +41,6 @@
 		"svelte-lazy-loader": "^1.0.0",
 		"svelte-paginate": "^0.1.0",
 		"svelte-preprocess": "^5.0.4",
-		"sveltekit-preview-mode": "^0.1.8",
 		"swiper": "^8.4.4",
 		"twitter-api-client": "^1.6.1",
 		"typescript": "^5.1.3",
