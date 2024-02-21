@@ -174,32 +174,14 @@
 							</div>
 							<div class="form_control form_control_radio mr_4">
 								<label>
-									<input type="radio" bind:group={currentFilter} name="" value={3} on:change={onFilterChange} />
-									Collaboration case note
-								</label>
-							</div>
-							<div class="form_control form_control_radio mr_4">
-								<label>
-									<input type="radio" bind:group={currentFilter} name="" value={5} on:change={onFilterChange} />
-									Think pieces
-								</label>
-							</div>
-							<div class="form_control form_control_radio mr_4">
-								<label>
 									<input type="radio" bind:group={currentFilter} name="" value={8} on:change={onFilterChange} />
-									Blogs
+									Blogs/Interviews
 								</label>
 							</div>
 							<div class="form_control form_control_radio mr_4">
 								<label>
 									<input type="radio" bind:group={currentFilter} name="" value={16} on:change={onFilterChange} />
 									Reports
-								</label>
-							</div>
-							<div class="form_control form_control_radio mr_4">
-								<label>
-									<input type="radio" bind:group={currentFilter} name="" value={18} on:change={onFilterChange} />
-									Full Disclosure Series
 								</label>
 							</div>
 							<div class="form_control form_control_radio mr_4">

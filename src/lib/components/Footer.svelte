@@ -133,16 +133,10 @@
 								<a href="/resources?type=1" class="text_gray">TAI weekly</a>
 							</li>
 							<li>
-								<a href="/resources?type=6" class="text_gray">Blogs</a>
+								<a href="/resources?type=6" class="text_gray">Blogs/Interviews</a>
 							</li>
 							<li>
 								<a href="/resources?type=2" class="text_gray">Reports</a>
-							</li>
-							<li>
-								<a href="/resources?type=3" class="text_gray">Collaboration cases</a>
-							</li>
-							<li>
-								<a href="/resources?type=5" class="text_gray">Think pieces</a>
 							</li>
 							<li>
 								<a href="/resources?type=7" class="text_gray">Library</a>
@@ -163,12 +157,6 @@
 						</li>
 						<li>
 							<a href="/resources?type=2" class="text_gray">Reports</a>
-						</li>
-						<li>
-							<a href="/resources?type=3" class="text_gray">Collaboration cases</a>
-						</li>
-						<li>
-							<a href="/resources?type=5" class="text_gray">Think pieces</a>
 						</li>
 						<li>
 							<a href="/resources?type=7" class="text_gray">Library</a>
