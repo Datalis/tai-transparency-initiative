@@ -1,5 +1,6 @@
+import { PREVIEW_SECRET } from '$env/static/private';
 import { get } from '$lib/api';
-import { getLatestPostsFromTwitter } from '$lib/api/social';
+// import { getLatestPostsFromTwitter } from '$lib/api/social';
 import imageLoader from '$lib/utils/imageLoader';
 import { generatePdfPreview } from '$lib/utils/pdfjs';
 import { error } from '@sveltejs/kit';
@@ -140,10 +141,21 @@ const htmlContentParser = async (content: string) => {
 	return root.toString();
 };
 
-export async function load({ params }: { [key: string]: any }) {
+const isPreview = (url: URL) => {
+	const params = url.searchParams;
+	const previewToken = params.get('previewToken');
+	if (previewToken && previewToken === PREVIEW_SECRET) {
+		return true;
+	}
+	return false;
+}
+
+export async function load({ params, url  }: { [key: string]: any }) {
+	const isPreviewMode = isPreview(url);
+	
 	const { slug } = params;
 
-	const queryParams = {
+	const queryParams: any = {
 		populate: '*',
 		filters: {
 			slug: {
@@ -151,6 +163,10 @@ export async function load({ params }: { [key: string]: any }) {
 			}
 		}
 	};
+
+	if (isPreviewMode) {
+		queryParams['publicationState'] = 'preview';
+	}
 
 	try {
 		const { data } = await get('wc-resources', queryParams);
@@ -167,7 +183,8 @@ export async function load({ params }: { [key: string]: any }) {
 			return {
 				resource,
 				related,
-				social
+				social,
+				isPreview: isPreviewMode
 			};
 		} else {
 			throw error(404, 'Not found');
