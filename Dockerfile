@@ -14,6 +14,8 @@ RUN pnpm build
 FROM base as runner
 WORKDIR /usr/local/app
 COPY ./package.json ./
+RUN npm install -g pnpm
+RUN pnpm install --prod
 COPY --from=builder /usr/local/app/build ./
 EXPOSE 3002
 ENV PORT 3002
