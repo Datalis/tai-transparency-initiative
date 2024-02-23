@@ -35,7 +35,7 @@
 
 		if (searchParam) params.set('search', searchParam);
 
-		if (browser) goto(`/tag/${tag.slug}?` + params.toString());
+		if (browser) goto(`/tags/${tag.slug}?` + params.toString());
 	}
 
 	function onSearch(e: any) {
