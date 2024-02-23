@@ -21,7 +21,7 @@
 	let searchParam: string | null = $page.url.searchParams.get('search');
 
 	$: tag = data.tag;
-	$: resources = data.resources.data || [];
+	$: resources = data?.resources?.data || [];
 	$: resourcesPagination = data.resources?.meta?.pagination;
 
 	let currentPage = resourcesPagination?.page || 1;
@@ -35,7 +35,7 @@
 
 		if (searchParam) params.set('search', searchParam);
 
-		if (browser) goto(`/resources/${tag.slug}?` + params.toString());
+		if (browser) goto(`/resources/tags/${tag.slug}?` + params.toString());
 	}
 
 	function onSearch(e: any) {
