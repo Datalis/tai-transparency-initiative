@@ -148,11 +148,11 @@ const isPreview = (url: URL) => {
 		return true;
 	}
 	return false;
-}
+};
 
-export async function load({ params, url  }: { [key: string]: any }) {
+export async function load({ params, url }: { [key: string]: any }) {
 	const isPreviewMode = isPreview(url);
-	
+
 	const { slug } = params;
 
 	const queryParams: any = {
@@ -178,7 +178,7 @@ export async function load({ params, url  }: { [key: string]: any }) {
 			const social = {
 				// youtube: await getLatestPostsFromYoutube(),
 				// twitter: await getLatestPostsFromTwitter(),
-			}
+			};
 
 			return {
 				resource,

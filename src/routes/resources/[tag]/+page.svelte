@@ -1,16 +1,16 @@
 <script lang="ts">
-	import ResourceFilters from '$lib/components/ResourceFilters.svelte';
+	import Pagination from '$lib/components/Pagination.svelte';
 	import ResourceItemLarge from '$lib/components/ResourceItemLarge.svelte';
+	import ResourceLibraryItem from '$lib/components/ResourceLibraryItem.svelte';
 	import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import SearchThick from '$lib/assets/icons/search_thick.svg?component';
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
-	import { afterNavigate, goto } from '$app/navigation';
 	import { browser } from '$app/environment';
-	import ResourceFiltersMobile from '$lib/components/ResourceFiltersMobile.svelte';
-	import ResourceLibraryItem from '$lib/components/ResourceLibraryItem.svelte';
-	import Pagination from '$lib/components/Pagination.svelte';
+	import { goto } from '$app/navigation';
 	import Seo from '$lib/components/Seo.svelte';
+
+	export let data: PageData;
 
 	let showSearchInput = true;
 
@@ -18,48 +18,24 @@
 		showSearchInput = !showSearchInput;
 	}
 
-	export let data: PageData;
-
-	let typeParam = $page.url.searchParams.get('type');
 	let searchParam: string | null = $page.url.searchParams.get('search');
-	let sortByParam: string | null = $page.url.searchParams.get('sortBy');
 
-	let currentTopic: number | null = null;
-
+	$: tag = data.tag;
 	$: resources = data.resources.data || [];
 	$: resourcesPagination = data.resources?.meta?.pagination;
 
-	$: libTopics = data.libraryTopics.data || [];
-
 	let currentPage = resourcesPagination?.page || 1;
-
 	$: pageSize = resourcesPagination?.pageSize || 6;
-
-	$: types = data.types.data || [];
-
-	$: typeDescription = types?.find((t) => t.id.toString() == typeParam)?.description;
-
-	afterNavigate(() => {
-		let current = $page.url.searchParams.get('type');
-		if (current !== typeParam) {
-			typeParam = current;
-		}
-	});
 
 	$: {
 		let params = new URLSearchParams();
-		if (typeParam) params.set('type', typeParam.toString());
+
 		params.set('page', currentPage.toString());
 		params.set('pageSize', pageSize.toString());
 
-		if (typeParam && +typeParam == 7 && currentTopic) {
-			params.set('topic', currentTopic.toString());
-		}
-
 		if (searchParam) params.set('search', searchParam);
-		if (sortByParam) params.set('sortBy', sortByParam);
 
-		if (browser) goto('/resources?' + params.toString());
+		if (browser) goto(`/resources/${tag.slug}?` + params.toString());
 	}
 
 	function onSearch(e: any) {
@@ -67,63 +43,23 @@
 		if (e.key == 'Enter') searchParam = s;
 		else if (s == '') searchParam = null;
 	}
-
-	function filterByTopic(topic: number) {
-		if (currentTopic == topic) currentTopic = null;
-		else currentTopic = topic;
-	}
 </script>
 
 <svelte:head>
-	<Seo title="Trust, Accountability and Inclusion Collaborative - Resources" url="/resources" />
+	<Seo
+		title={`Trust, Accountability and Inclusion Collaborative - ${tag.title}`}
+		url={`/resources/${tag.slug}`}
+	/>
 </svelte:head>
 
-<div id="resources" class="page">
-	<div class="resource_filters bg_blue pb_2 show_on_md_and_up">
-		<div class="container">
-			<ResourceFilters
-				options={types}
-				bind:currentFilter={typeParam}
-				on:onChange={() => (currentPage = 1)}
-			/>
-		</div>
-	</div>
-	<div class="resource_filters_mobile bg_blue pb_2 show_on_md_and_down">
-		<ResourceFiltersMobile
-			options={types}
-			bind:currentFilter={typeParam}
-			on:onChange={() => (currentPage = 1)}
-		/>
-	</div>
+<div class="page">
 	<section class="resource_list_section section">
-		{#if typeParam}
-			<div class="library_summary py_2">
-				<div class="container display_flex align_center">
-					<p class="m_0">
-						{typeDescription}
-					</p>
-				</div>
-			</div>
-		{/if}
 		<div class="container">
 			<div class="display_flex flex_column pt_4">
 				<div class="toolbar_wrapper display_flex align_end mb_4">
-					<div class="filters_wrapper display_flex align_center flex-grow_1">
-						<!-- <h4 class="sort_by_btn mb_1 mr_3 mt_1">Sort By</h4>
-						<ArrowThick width="24" height="24" /> -->
-
-						{#if typeParam && +typeParam == 7}
-							{#each libTopics as topic}
-								<!-- svelte-ignore a11y-click-events-have-key-events -->
-								<small
-									class="chip"
-									class:active={currentTopic == topic.id}
-									on:click={() => filterByTopic(topic.id)}>{topic.name}</small
-								>
-							{/each}
-						{/if}
+					<div class="tag_title">
+						<span>{tag.title}</span>
 					</div>
-
 					<div class="search_control form_control mb_0" class:show={showSearchInput}>
 						<!-- svelte-ignore a11y-click-events-have-key-events -->
 						<div class="search_control_toggler mt_1" on:click={toggleSearch}>
@@ -162,15 +98,9 @@
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
 
-	#resources {
+	.page {
 		padding-bottom: 3rem;
-	}
-	.resource_filters {
 		padding-top: calc(100px + 1rem);
-	}
-
-	.resource_filters_mobile {
-		padding-top: 100px;
 	}
 
 	.resource_list_section {
@@ -178,20 +108,6 @@
 		// @media screen and (max-width: $md) {
 		// 	padding-top: 1rem !important;
 		// }
-
-		.library_summary p {
-			line-height: 1.5 !important;
-			font-size: pxToRem(14);
-			@media screen and (max-width: $md) {
-				line-height: 1.2 !important;
-				font-size: pxToRem(12);
-			}
-		}
-
-		/* .divider {
-			width: 100% !important;
-			opacity: 0.65 !important;
-		} */
 
 		.toolbar_wrapper {
 			@media screen and (max-width: $md) {
@@ -204,37 +120,11 @@
 			}
 		}
 
-		.library_summary {
-			background-color: map-get($colors, 'gray_light');
-			small {
-				font-size: pxToRem(12);
-				line-height: 1.45;
-			}
-		}
-
-		.filters_wrapper {
-			flex-wrap: wrap;
-
-			.chip {
-				margin: 0.15rem;
-				padding: 0.25rem 0.5rem;
-				font-size: pxToRem(12);
-				line-height: 1;
-				// background-color: map-get($colors, 'green_light');
-				border-radius: 25px;
-				border: 1px solid map-get($colors, 'green');
-				font-weight: 600;
-				cursor: pointer;
-				transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
-				&.active {
-					background-color: map-get($colors, 'green');
-					color: map-get($colors, 'light');
-					transform: scale(1.02);
-				}
-				&:hover {
-					transform: scale(1.01);
-				}
-			}
+		.toolbar_wrapper .tag_title {
+			flex-grow: 1;
+			color: map-get($colors, 'blue_light');
+			font-weight: 600;
+			font-size: 1.5rem;
 		}
 
 		.search_control {
