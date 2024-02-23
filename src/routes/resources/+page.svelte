@@ -162,7 +162,7 @@
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
 
-	#resources{
+	#resources {
 		padding-bottom: 3rem;
 	}
 	.resource_filters {
@@ -256,8 +256,8 @@
 
 			&_toggler {
 				cursor: pointer;
-				:global(path){
-					stroke: map-get($colors, "blue_light" ) !important;
+				:global(path) {
+					stroke: map-get($colors, 'blue_light') !important;
 				}
 			}
 

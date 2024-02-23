@@ -90,6 +90,7 @@ export const load: PageServerLoad = async ({ url }) => {
 			libraryTopics
 		};
 	} catch (e) {
+		console.error(e);
 		throw error(500, `Error: ${e}`);
 	}
 };
