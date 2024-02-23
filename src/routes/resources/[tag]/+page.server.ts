@@ -85,5 +85,5 @@ export async function load({ params, url }: { params: any; url: URL }) {
 			resources
 		};
 	}
-	_oldRedirect(slug);
+	await _oldRedirect(slug);
 }

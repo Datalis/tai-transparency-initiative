@@ -101,7 +101,7 @@
 						</small>
 					</div>
 					<div class="col col_5 col_sm_12" style="margin-top: 0;margin-bottom: 0;">
-						
+
 					</div>
 				{/if} -->
 			</div>
@@ -113,9 +113,7 @@
 				<div class="col col_8 col_sm_12">
 					<div class="content">
 						{#if is_preview}
-							<div class="preview-banner">
-								This is a preview of the article.
-							</div>
+							<div class="preview-banner">This is a preview of the article.</div>
 						{/if}
 						<div class="content_img">
 							<Image priority image={resource?.image} alt={resource?.image_alt} />
@@ -193,9 +191,7 @@
 										{r.title}
 									</span>
 									<small>
-										<a
-											href="/resources/{r.id}"
-											class="text_gray display_flex align_center blue_light_text"
+										<a href="/{r.slug}" class="text_gray display_flex align_center blue_light_text"
 											>Read More <LinkIcon class="ml_1" style="fill: #8f8bff" /></a
 										>
 									</small>
