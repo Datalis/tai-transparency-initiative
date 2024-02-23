@@ -1,32 +1,6 @@
 import { get } from '$lib/api';
 import type { Response } from '$lib/types/data';
-import { error, redirect } from '@sveltejs/kit';
-
-const _oldRedirect = async (id: string) => {
-	const queryParams = {
-		fields: ['slug'],
-		filters: {
-			id: {
-				$eq: id
-			}
-		}
-	};
-
-	let resource: any = null;
-
-	try {
-		const { data } = await get('wc-resources', queryParams);
-		resource = data && data.length ? data[0] : null;
-	} catch (e: any) {
-		throw error(e.status || 500, e.body || 'Unknown error');
-	}
-
-	if (!resource) {
-		throw error(404, 'Not found');
-	}
-
-	throw redirect(302, `/${resource.slug}`);
-};
+import { error } from '@sveltejs/kit';
 
 export async function load({ params, url }: { params: any; url: URL }) {
 	const { tag: slug } = params;
@@ -84,6 +58,7 @@ export async function load({ params, url }: { params: any; url: URL }) {
 			tag,
 			resources
 		};
+	} else {
+		return error(404, 'Tag not found');
 	}
-	await _oldRedirect(slug);
 }
