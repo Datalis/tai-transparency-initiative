@@ -38,6 +38,7 @@
 	}
 
 	onMount(() => {
+		console.log(resource);
 		new Swiper('.swiper', {
 			autoHeight: true,
 			slidesPerView: 1,
@@ -118,6 +119,14 @@
 						<div class="content_img">
 							<Image priority image={resource?.image} alt={resource?.image_alt} />
 						</div>
+
+						{#if resource?.wc_tags?.length}
+							<div class="tag_block">
+								{#each resource?.wc_tags as tag}
+									<a href="/tags/{tag.slug}" class="tag">{tag.title}</a>
+								{/each}
+							</div>
+						{/if}
 
 						<div class="post_content">
 							{@html resource.content}
@@ -211,6 +220,25 @@
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
 	$green_light: #59ebcf;
+
+	.tag_block {
+		margin-top: 1rem;
+		border-top: 1px solid #1B1C1F;
+		border-bottom: 1px solid #1B1C1F;
+		padding: 1rem 0;
+		line-height: 1;
+		display: flex;
+		align-items: center;
+		a {
+			font-size: 14px;
+			text-decoration: none !important;
+			background-color: #E9E4FB;
+			border-radius: 18px;
+			padding: 0.5rem .75rem;
+			color: #1B1C1F;
+		}
+	}
+
 	.blue_light_text {
 		color: map-get($colors, 'blue_light');
 	}
