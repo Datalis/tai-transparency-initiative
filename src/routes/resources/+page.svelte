@@ -59,7 +59,7 @@
 		if (searchParam) params.set('search', searchParam);
 		if (sortByParam) params.set('sortBy', sortByParam);
 
-		if (browser) goto('/resources?' + params.toString());
+		if (browser) goto('/resources?' + params.toString(), { replaceState: true });
 	}
 
 	function onSearch(e: any) {
