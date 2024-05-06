@@ -11,7 +11,6 @@
 	import HewlettLogo from '$lib/assets/icons/hewlett.svg?component';
 	import LuminateLogo from '$lib/assets/icons/luminate.svg?component';
 	import OpenSocietyLogo from '$lib/assets/icons/open-s.svg?component';
-	import SkollLogo from '$lib/assets/icons/skoll.svg?component';
 	import ChandlerLogo from '$lib/assets/images/chandler.svg?component';
 	import FCDOLogo from '$lib/assets/images/fcdo.svg?component';
 	import Packard from '$lib/assets/icons/Packard.svg?component';
@@ -148,7 +147,7 @@
 			<a href="https://www.opensocietyfoundations.org/" target="blank"
 				><OpenSocietyLogo width="300" /></a
 			>
-			<a href="https://skoll.org/" target="blank"><SkollLogo height="80" /></a>
+
 			<a
 				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
 				target="blank"><FCDOLogo width="300" /></a
@@ -171,7 +170,7 @@
 			<a href="https://www.opensocietyfoundations.org/" target="blank"
 				><OpenSocietyLogo width="150" /></a
 			>
-			<a href="https://skoll.org/" target="blank"><SkollLogo width="100" /></a>
+
 			<a
 				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
 				target="blank"><FCDOLogo width="150" /></a
@@ -184,14 +183,14 @@
 	</section>
 	<CardsSection />
 	<div class="gradient_sm_gray_light">
-		<KnowledgeHubSection data={knowledgeHub}></KnowledgeHubSection>
+		<KnowledgeHubSection data={knowledgeHub} />
 		<JoinSection {form} />
 		<SubscribeSection />
 		<ResourcesSection resources={res} />
 	</div>
-
 </div>
 <Popup />
+
 <style lang="scss">
 	$md: map-get($grid-breakpoints, 'md');
 	$lg: map-get($grid-breakpoints, 'lg');
@@ -335,8 +334,6 @@
 		}
 	}
 
-
-
 	.brands_section {
 		padding-top: 0rem !important;
 		padding-bottom: 0 !important;
@@ -364,8 +361,8 @@
 				padding-right: 3rem;
 			}
 
-			:global(path){
-				fill: map-get($colors, "gray" ) !important;
+			:global(path) {
+				fill: map-get($colors, 'gray') !important;
 			}
 		}
 
@@ -376,7 +373,7 @@
 			padding-top: 0 !important;
 			padding-bottom: 0 !important;
 
-			.brands_section__title{
+			.brands_section__title {
 				margin-inline: auto;
 				width: fit-content;
 			}
@@ -390,11 +387,11 @@
 				grid-gap: 1rem;
 				padding-block: 1rem;
 
-				:global(path){
-					fill: map-get($colors, "gray" ) !important;
+				:global(path) {
+					fill: map-get($colors, 'gray') !important;
 				}
 
-				.span_2{
+				.span_2 {
 					grid-column: span 2;
 					justify-self: center;
 				}
