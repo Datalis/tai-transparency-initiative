@@ -29,7 +29,31 @@
 	$: resources = data.resources.data || [];
 	$: resourcesPagination = data.resources?.meta?.pagination;
 
-	$: libTopics = data.libraryTopics.data || [];
+	const topics = [
+		{
+			id: 1,
+			title: 'Civic Space and human rights context'
+		},
+		{
+			id: 2,
+			title: 'System change'
+		},
+		{
+			id: 3,
+			title: 'Localization'
+		},
+		{
+			id: 4,
+			title: 'Gender and Racial Equity'
+		},
+		{
+			id: 5,
+
+			title: 'Learning, Monitoring and Evaluation'
+		}
+	];
+
+	$: libTopics = topics /* data.libraryTopics.data || [] */;
 
 	let currentPage = resourcesPagination?.page || 1;
 
@@ -118,7 +142,7 @@
 								<small
 									class="chip"
 									class:active={currentTopic == topic.id}
-									on:click={() => filterByTopic(topic.id)}>{topic.name}</small
+									on:click={() => filterByTopic(topic.id)}>{topic.title}</small
 								>
 							{/each}
 						{/if}

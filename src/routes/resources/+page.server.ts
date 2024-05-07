@@ -4,6 +4,18 @@ import type { Response } from '$lib/types/data';
 import type { Resource, ResourceType } from '$lib/types/resources';
 import type { PageServerLoad } from '.svelte-kit/types/src/routes/$types';
 
+const topics: any = {
+	1: [1],
+	2: [2, 3, 8, 9],
+	3: [5, 6],
+	4: [7],
+	5: [10, 11, 12]
+};
+
+const mapTopics = (topic: string): number[] => {
+	return topics[+topic];
+};
+
 export const load: PageServerLoad = async ({ url }) => {
 	try {
 		const page = url.searchParams.get('page') || 1;
@@ -71,9 +83,10 @@ export const load: PageServerLoad = async ({ url }) => {
 		}
 
 		if (topic) {
+			const _topics = mapTopics(topic);
 			params.filters['library_topic'] = {
 				id: {
-					$eq: topic
+					$in: _topics
 				}
 			};
 		}
