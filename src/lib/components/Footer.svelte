@@ -41,7 +41,7 @@
 					</ul>
 				</div>
 				<div class="col col_lg_5">
-					<h6 class="text_uppercase  mt_0 mb_4">
+					<h6 class="text_uppercase mt_0 mb_4">
 						<a href="/what-we-fund" class="">What we fund and why</a>
 					</h6>
 					<ul>
@@ -60,7 +60,7 @@
 						</li>
 					</ul>
 					<div class="show_on_sm_and_up">
-						<h6 class="text_uppercase  mb_4">
+						<h6 class="text_uppercase mb_4">
 							<a href="/how-we-fund" class="">How we fund</a>
 						</h6>
 						<ul>
@@ -82,7 +82,7 @@
 					</div>
 				</div>
 				<div class="col show_on_sm_and_down">
-					<h6 class="text_uppercase  mb_4 mt_0">
+					<h6 class="text_uppercase mb_4 mt_0">
 						<a href="/how-we-fund" class="">How we fund</a>
 					</h6>
 					<ul>
@@ -103,7 +103,7 @@
 					</ul>
 				</div>
 				<div class="col col_lg_5">
-					<h6 class="text_uppercase  mt_0 mb_4">
+					<h6 class="text_uppercase mt_0 mb_4">
 						<a href="/how-tai-works" class="">How TAI works</a>
 					</h6>
 					<ul>
@@ -127,7 +127,7 @@
 						</li>
 					</ul>
 					<div class="show_on_sm_and_up">
-						<h6 class="text_uppercase  mb_4">
+						<h6 class="text_uppercase mb_4">
 							<a href="/resources" class="">Resources</a>
 						</h6>
 						<ul>
@@ -135,7 +135,7 @@
 								<a href="/resources?type=1" class="text_white">TAI weekly</a>
 							</li>
 							<li>
-								<a href="/resources?type=6" class="text_gray">Blogs/Interviews</a>
+								<a href="/resources?type=8" class="text_gray">Blogs/Interviews</a>
 							</li>
 							<li>
 								<a href="/resources?type=16" class="text_white">Reports</a>
@@ -147,7 +147,7 @@
 					</div>
 				</div>
 				<div class="col full-width show_on_sm_and_down">
-					<h6 class="text_uppercase  mb_4 mt_0">
+					<h6 class="text_uppercase mb_4 mt_0">
 						<a href="/resources" class="">Resources</a>
 					</h6>
 					<ul class="grid_2_col">
@@ -166,7 +166,7 @@
 					</ul>
 				</div>
 				<div class="col full-width">
-					<h6 class="text_uppercase  mt_0 mb_4">Contact us</h6>
+					<h6 class="text_uppercase mt_0 mb_4">Contact us</h6>
 					<a href="mailto:ymgarcia@taicollaborative.org" class="display_block text_white"
 						>ymgarcia@taicollaborative.org</a
 					>
@@ -208,11 +208,11 @@
 <style lang="scss">
 	$sm: map-get($grid-breakpoints, 'sm');
 
-	.link-icon{
-		border: 1px solid map-get($colors, "white") !important;
+	.link-icon {
+		border: 1px solid map-get($colors, 'white') !important;
 	}
 
-	.grid_2_col{
+	.grid_2_col {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 	}
@@ -264,7 +264,7 @@
 				line-height: 1;
 				letter-spacing: normal;
 				font-weight: 500;
-				color: #8F8BFF;
+				color: #8f8bff;
 				@media screen and (max-width: $sm) {
 					font-size: pxToRem(12);
 				}
@@ -293,7 +293,7 @@
 				}
 			}
 			a {
-				color: #8F8BFF;
+				color: #8f8bff;
 				font-size: pxToRem(13);
 			}
 		}
