@@ -202,6 +202,9 @@
 				>
 			</div>
 		</div>
+		<small style="width: 100%; display: block; padding: 10px; text-align: center; font-size: 14px;"
+			>TAI is fiscally sponsored by Proteus Fund</small
+		>
 	</div>
 </footer>
 
