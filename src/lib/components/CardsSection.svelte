@@ -50,7 +50,7 @@
 							<div class="content__text">
 								<a
 									href="/what-we-fund#funding"
-									style="line-height: 1;"
+									style="line-height: 1.25;"
 									class="text_dark display_block"
 									>What does TAI members' <br /> funding look like?</a
 								>

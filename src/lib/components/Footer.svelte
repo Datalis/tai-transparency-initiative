@@ -47,7 +47,7 @@
 					<ul>
 						<li class="">
 							<a href="/what-we-fund#funding" style="line-height: 1;" class="text_white"
-								>What does TAI members' <br /> funding look like?</a
+								>What does TAI members' funding <br /> look like?</a
 							>
 						</li>
 						<!-- <li>
@@ -137,13 +137,13 @@
 								<a href="/resources?type=1" class="text_white">TAI weekly</a>
 							</li>
 							<li>
-								<a href="/resources?type=8" class="text_gray">Blogs/Interviews</a>
+								<a href="/resources?type=8" class="text_white">Blogs/Interviews</a>
 							</li>
 							<li>
 								<a href="/resources?type=16" class="text_white">Reports</a>
 							</li>
 							<li>
-								<a href="/resources?type=7" class="text_gray">Library</a>
+								<a href="/resources?type=7" class="text_white">Library</a>
 							</li>
 						</ul>
 					</div>
@@ -163,7 +163,7 @@
 							<a href="/resources?type=16" class="text_white">Reports</a>
 						</li>
 						<li>
-							<a href="/resources?type=7" class="text_gray">Library</a>
+							<a href="/resources?type=7" class="text_white">Library</a>
 						</li>
 					</ul>
 				</div>
