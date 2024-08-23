@@ -48,8 +48,11 @@
 							<a href="/what-we-fund"><h3 class="text_dark">What we fund</h3></a>
 							<div class="divider divider_light divider_2" />
 							<div class="content__text">
-								<a href="/what-we-fund#funding" class="text_dark display_block"
-									>What TAI funding looks like?</a
+								<a
+									href="/what-we-fund#funding"
+									style="line-height: 1;"
+									class="text_dark display_block"
+									>What does TAI members' <br /> funding look like?</a
 								>
 								<!-- <a href="/what-we-fund#funding-data-library" class="text_dark display_block"
 									>Funding Data Library</a
@@ -151,7 +154,7 @@
 			@media screen and (max-width: $md) {
 				max-height: unset;
 
-				.col{
+				.col {
 					min-height: 30rem;
 				}
 			}
@@ -160,7 +163,7 @@
 				border: none;
 				overflow: hidden;
 				padding: 0;
-				background: map-get($colors, "green_light");
+				background: map-get($colors, 'green_light');
 				border-radius: 15px;
 				height: calc(100% - pxToRem(20));
 				margin: auto;
@@ -210,8 +213,6 @@
 						flex-shrink: 0 !important;
 						width: 0 !important;
 						transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-
-						
 					}
 					&__text {
 						//flex-grow: 1;
@@ -228,11 +229,10 @@
 								font-weight: 600 !important;
 							}
 
-							@media (max-width: 900px){
+							@media (max-width: 900px) {
 								//padding-bottom: 0.4rem;
 							}
 						}
-						
 					}
 				}
 				.content h3 {

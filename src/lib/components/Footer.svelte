@@ -46,7 +46,9 @@
 					</h6>
 					<ul>
 						<li class="">
-							<a href="/what-we-fund#funding" class="text_white">What TAI funding looks like?</a>
+							<a href="/what-we-fund#funding" style="line-height: 1;" class="text_white"
+								>What does TAI members' <br /> funding look like?</a
+							>
 						</li>
 						<!-- <li>
 							<a href="/what-we-fund#funding-data-library" class="text_white">Funding data library</a
