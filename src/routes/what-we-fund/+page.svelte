@@ -91,7 +91,7 @@
 	</section>
 	<section id="funding" class="funding_section section">
 		<div class="container">
-			<h2 class="text_dark mt_0">What does TAI funding look like?</h2>
+			<h2 class="text_dark mt_0">What does TAI members' funding look like?</h2>
 			<span class="divider divider_2 divider_blue_light mb_5" />
 			<div class="show_on_md_and_up row">
 				<div class="col_4 col_lg_12">
@@ -279,7 +279,12 @@
 							target="blank"
 							class="btn btn_dark mt_4">Read More</a
 						> -->
-						<a class="btn btn_dark mt_4" target="_blank"  href="https://app.powerbi.com/view?r=eyJrIjoiOThjNzRkMzktNzE4OS00MzUyLWJmNmItZTE1NDMxYmFkZjQzIiwidCI6ImY5MWRkNzZlLTcxODYtNDdmYi1hN2RmLTI4ZWViZjI3NzNiMyIsImMiOjN9">Read More</a>
+						<a
+							class="btn btn_dark mt_4"
+							target="_blank"
+							href="https://app.powerbi.com/view?r=eyJrIjoiOThjNzRkMzktNzE4OS00MzUyLWJmNmItZTE1NDMxYmFkZjQzIiwidCI6ImY5MWRkNzZlLTcxODYtNDdmYi1hN2RmLTI4ZWViZjI3NzNiMyIsImMiOjN9"
+							>Read More</a
+						>
 					</div>
 				</div>
 			</div>
@@ -309,7 +314,7 @@
 			border-radius: 15px;
 			aspect-ratio: 5/3;
 			width: 100%;
-			
+
 			@media screen and (max-width: $md) {
 				aspect-ratio: 4/3;
 			}
