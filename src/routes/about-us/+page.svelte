@@ -76,7 +76,7 @@
 			</div>
 			<div class="text_center mt_5">
 				<a
-					href="https://api.tai.datalis.dev/uploads/tai_strategy_document_2020_2024_45f7b393f2.pdf"
+					href="https://taicollaborative.org/tai-strategic-framework-2025-2029"
 					target="blank"
 					class="btn bg_blue"
 				>
