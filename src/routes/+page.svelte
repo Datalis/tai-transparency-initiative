@@ -139,6 +139,11 @@
 		<div class="container">
 			<span class="brands_section__title">OUR MEMBERS</span>
 		</div>
+		<p class="container">
+			Bilateral donors with a track record of funding participatory governance, such as the United
+			Kingdom Foreign, Commonwealth and Development Office, regularly participate in TAI
+			conversations as official observers.
+		</p>
 		<div class="wrapper" bind:this={brandSlide}>
 			<a href="https://www.macfound.org/" target="blank"><MacArthurLogo width="300" /></a>
 			<a href="https://www.fordfoundation.org/" target="blank"><FordLogo width="300" /></a>
@@ -148,10 +153,10 @@
 				><OpenSocietyLogo width="300" /></a
 			>
 
-			<a
+			<!-- <a
 				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
 				target="blank"><FCDOLogo width="300" /></a
-			>
+			> -->
 			<a href="https://www.chandlerfoundation.org/" target="blank"><ChandlerLogo width="300" /></a>
 			<a href="https://www.packard.org/" target="blank">
 				<Packard width="300" class="mt_4" />
@@ -162,6 +167,11 @@
 		<div class="container">
 			<span class="brands_section__title">OUR MEMBERS</span>
 		</div>
+		<p class="container">
+			Bilateral donors with a track record of funding participatory governance, such as the United
+			Kingdom Foreign, Commonwealth and Development Office, regularly participate in TAI
+			conversations as official observers.
+		</p>
 		<div class="brands_grid show_on_md_and_down pb_4">
 			<a href="https://www.macfound.org/" target="blank"><MacArthurLogo width="150" /></a>
 			<a href="https://www.fordfoundation.org/" target="blank"><FordLogo width="150" /></a>
@@ -171,10 +181,10 @@
 				><OpenSocietyLogo width="150" /></a
 			>
 
-			<a
+			<!-- <a
 				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
 				target="blank"><FCDOLogo width="150" /></a
-			>
+			> -->
 			<a href="https://www.chandlerfoundation.org/" target="blank"><ChandlerLogo width="150" /></a>
 			<a href="https://www.packard.org/" target="blank" class="span_2">
 				<Packard width="150" height="60" class="mt_4" />
