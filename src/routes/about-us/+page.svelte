@@ -39,7 +39,10 @@
 			<div class="wrapper display_flex flex_column align_center justify_center">
 				<h1 class="text_blue mt_4 mb_3">About Us</h1>
 				<p class="text_blue text_center mx_auto w_75">
-					The Trust, Accountability, and Inclusion (TAI) Collaborative - Funders for Participatory Governance is a platform for funder learning and action in support of participation, openness and accountability around the world. Our members have over USD500 million in active grants in support of those goals. Join us!
+					The Trust, Accountability, and Inclusion (TAI) Collaborative - Funders for Participatory
+					Governance is a platform for funder learning and action in support of participation,
+					openness and accountability around the world. Our members have over USD500 million in
+					active grants in support of those goals. Join us!
 				</p>
 			</div>
 		</div>
@@ -85,6 +88,28 @@
 			</div>
 		</div>
 	</section>
+	<div class="container vission-mission-grid">
+		<section class="members_section section">
+			<div>
+				<h3 class="mb_4">Our Vision</h3>
+				<div class="divider divider_blue_light divider_2" />
+				<p>
+					A just world where trust, accountability, and inclusion are integrated into all systems of
+					governance. These are the foundations of a healthy democracy, economy, and planet.
+				</p>
+			</div>
+		</section>
+		<section class="members_section section">
+			<div>
+				<h3 class="mb_4">Our Mission</h3>
+				<div class="divider divider_blue_light divider_2" />
+				<p>
+					We learn, strategize, and collaborate to enhance the impact of participatory governance
+					funding.
+				</p>
+			</div>
+		</section>
+	</div>
 	<section id="members" class="members_section section">
 		<div class="container">
 			<h3 class="mb_4">{members.title}</h3>
@@ -119,7 +144,7 @@
 		</div>
 	</section>
 	<section class="committee_section section">
-		<div class="container">
+		<!-- <div class="container">
 			<div class="committee_list mt_4">
 				<h4 class="mb_4 mt_4 text_dark">Steering Committee</h4>
 				{#each commiteeList as commiteeItem, index}
@@ -132,7 +157,7 @@
 					/>
 				{/each}
 			</div>
-		</div>
+		</div> -->
 	</section>
 	<div class="gradient_sm_gray_light">
 		<div class="pt_5">
@@ -140,12 +165,20 @@
 		</div>
 		<div class="container">
 			<div class="collab_section">
-				<h3 class="mt_0 mb_2 text_center">Do you want to know more/ <br> collaborate with us?</h3>
-				<p class="mt_2 mb_0 text_center font_light">Explore and download our publishing guidelines and brand assets <br/> from the links provided below.</p>
+				<h3 class="mt_0 mb_2 text_center">Do you want to know more/ <br /> collaborate with us?</h3>
+				<p class="mt_2 mb_0 text_center font_light">
+					Explore and download our publishing guidelines and brand assets <br /> from the links provided
+					below.
+				</p>
 				<div class="mt_4 links">
 					<a href="#">Editorial Policy</a>
 					<!--<a href="">Style Guide</a>-->
-					<a target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1gp1W1GmJUdJlKm3KlHH0yasyKrnFIboj?usp=sharing">Brand Book</a>
+					<a
+						target="_blank"
+						rel="noopener"
+						href="https://drive.google.com/drive/folders/1gp1W1GmJUdJlKm3KlHH0yasyKrnFIboj?usp=sharing"
+						>Brand Book</a
+					>
 				</div>
 			</div>
 		</div>
@@ -235,6 +268,19 @@
 			}
 		}
 	}
+
+	.vission-mission-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1rem;
+
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			grid-gap: 1rem;
+		}
+	}
+
 	.members_section {
 		background: white;
 		position: relative;
@@ -305,8 +351,8 @@
 			padding: 0.65rem 1rem;
 			min-width: 200px;
 			font-size: 14px;
-			border: 1px solid #1F1F24;
-			color: #1F1F24;
+			border: 1px solid #1f1f24;
+			color: #1f1f24;
 			border-radius: 50px;
 			line-height: 1;
 			text-align: center;
