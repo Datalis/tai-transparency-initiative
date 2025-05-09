@@ -1,7 +1,7 @@
 <script lang="ts">
 	import HeroImgLayer0 from '$lib/assets/images/home/map.png';
 	// import HeroImgLayer1 from '$lib/assets/images/home/group_1.webp';
-	import HeroImgLayer1 from '$lib/assets/images/home/people.png';
+	import HeroImgLayer1 from '$lib/assets/images/home/people.webp';
 	import HeroImgLayer1Mobile from '$lib/assets/images/home/group_1_sm.webp';
 	import HeroImgLayer2 from '$lib/assets/images/home/group_2.png';
 	import HeroImgLayer2Mobile from '$lib/assets/images/home/group_2.png';
