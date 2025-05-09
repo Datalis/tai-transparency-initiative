@@ -10,7 +10,6 @@ RUN npm install -g pnpm
 RUN pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm rebuild sharp canvas
-RUN pnpm prepare
 RUN pnpm build
 
 FROM base as runner
