@@ -1,5 +1,5 @@
 # stage build
-FROM node:lts-slim as base
+FROM node:iron-slim as base
 RUN apt update
 RUN apt install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev libvips-dev -y
 
