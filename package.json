@@ -12,7 +12,7 @@
 		"test": "playwright test",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
-		"postinstall": "pnpm rebuild sharp --platform=linux --arch=x64 && pnpm rebuild canvas --platform=linux --arch=x64"
+		"postinstall": "npm rebuild sharp --platform=linux --arch=x64 && npm rebuild canvas --platform=linux --arch=x64"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.27.1",
