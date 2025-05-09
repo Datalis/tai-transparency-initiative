@@ -9,7 +9,7 @@ COPY pnpm-lock.yaml package.json ./
 RUN npm install -g pnpm
 RUN pnpm install --frozen-lockfile
 COPY . .
-RUN pnpm exec npm rebuild sharp
+RUN pnpm exec npm rebuild sharp canvas
 RUN pnpm build
 
 FROM base as runner
