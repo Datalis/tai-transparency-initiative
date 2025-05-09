@@ -11,8 +11,7 @@
 		"check:watch": "svelte-check --tsconfig ./jsconfig.json --watch",
 		"test": "playwright test",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
-		"format": "prettier --write --plugin-search-dir=. .",
-		"postinstall": "npm rebuild sharp --platform=linux --arch=x64 && npm rebuild canvas --platform=linux --arch=x64"
+		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.27.1",
