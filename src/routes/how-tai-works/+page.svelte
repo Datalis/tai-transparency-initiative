@@ -1,17 +1,16 @@
- <script lang="ts">
+<script lang="ts">
 	import MacArthurLogo from '$lib/assets/icons/mac-arthur.svg?component';
 	import FordLogo from '$lib/assets/icons/ford.svg?component';
 	import HewlettLogo from '$lib/assets/icons/hewlett.svg?component';
 	import LuminateLogo from '$lib/assets/icons/luminate.svg?component';
 	import OpenSocietyLogo from '$lib/assets/icons/open-s.svg?component';
 	import SkollLogo from '$lib/assets/icons/skoll.svg?component';
-	import ChandlerLogo from '$lib/assets/images/chandler.svg?component';
-	import FCDOLogo from '$lib/assets/images/fcdo.svg?component';
+	import ChandlerLogoImage from '$lib/assets/images/chandler.png';
+	import HumanityUnitedLogoImage from '$lib/assets/images/humanity-united.png';
 	import Packard from '$lib/assets/icons/Packard.svg?component';
 	import SpeakerIcon from '$lib/assets/icons/Speaker_Icon.svg?component';
 
 	import ClimateVideoPoster from '$lib/assets/images/climate-video-poster.webp';
-
 
 	// import SubscribeSection from '$lib/components/SubscribeSection.svelte';
 	import ResourcesSection from '$lib/components/ResourcesSection.svelte';
@@ -22,13 +21,12 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap/dist/gsap';
 	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
-	
 
 	import HeroImg from '$lib/assets/images/heroes/how-tai-works-inside.png';
 	import Seo from '$lib/components/Seo.svelte';
-	
+
 	import FeaturedTopics from '$lib/components/FeaturedTopics.svelte';
-	
+
 	let videoPlayer: HTMLVideoElement;
 	let windowWidth: number;
 
@@ -151,7 +149,10 @@
 
 <svelte:head>
 	<link rel="preload" as="image" href={HeroImg} />
-	<Seo title="Trust, Accountability and Inclusion Collaborative - How TAI works" url="/how-tai-works" />
+	<Seo
+		title="Trust, Accountability and Inclusion Collaborative - How TAI works"
+		url="/how-tai-works"
+	/>
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -178,10 +179,9 @@
 				</div>
 			</div>
 		</div>
-		
 	</section>
 	<Six6csSection data={six_data} />
-	<FeaturedTopics data={featured_topics}></FeaturedTopics>
+	<FeaturedTopics data={featured_topics} />
 	<section id="progress-model" class="progress_model_section section">
 		<div class="container">
 			<h2 class="mt_0">Our Model for Field-Level Progress</h2>
@@ -190,7 +190,6 @@
 				>At every stage, we monitor and evaluate what works, when, how and why.</span
 			>
 			<div class="model_items mt_5">
-				
 				<div class="model_item">
 					<div class="model_item__header bg_blue_dark py_3 px_4">
 						<h5 class="text_uppercase text_blue_light m_0">Learning</h5>
@@ -321,11 +320,15 @@
 									<LuminateLogo width="300" />
 									<OpenSocietyLogo width="300" />
 									<SkollLogo width="200" />
-									<FCDOLogo width="300" />
-									<ChandlerLogo width="300" />
+
+									<img src={ChandlerLogoImage} class="marquee_image" alt="Chandler Foundation" />
+									<img
+										src={HumanityUnitedLogoImage}
+										class="marquee_image"
+										alt="Chandler Foundation"
+									/>
 									<MacArthurLogo width="300" />
 									<Packard width="300" />
-
 								</div>
 								<div class="marquee_item">
 									<MacArthurLogo width="300" />
@@ -334,8 +337,12 @@
 									<LuminateLogo width="300" />
 									<OpenSocietyLogo width="300" />
 									<SkollLogo width="200" />
-									<FCDOLogo width="300" />
-									<ChandlerLogo width="300" />
+									<img src={ChandlerLogoImage} class="marquee_image" alt="Chandler Foundation" />
+									<img
+										src={HumanityUnitedLogoImage}
+										class="marquee_image"
+										alt="Chandler Foundation"
+									/>
 									<MacArthurLogo width="300" />
 									<Packard width="300" />
 								</div>
@@ -349,7 +356,8 @@
 							<h2>Working with other groups</h2>
 							<div class="divider divider_blue_light divider_2" />
 							<p class="mt_4">
-								Our work is intersectional and we must work with those championing change on related issues. That includes partnering with other funder networks.
+								Our work is intersectional and we must work with those championing change on related
+								issues. That includes partnering with other funder networks.
 							</p>
 							<p class="">
 								The good news is that there is a growing list of progressive funder groups to
@@ -367,12 +375,11 @@
 								<LuminateLogo width="150" />
 								<OpenSocietyLogo width="150" />
 								<SkollLogo width="80" />
-								<FCDOLogo width="150" />
-								<ChandlerLogo width="150" />
-								<div class="span_2" >
-									<Packard width="150" height="100"/>
+								<img src={ChandlerLogoImage} alt="Chandler Foundation" />
+								<img src={HumanityUnitedLogoImage} alt="Chandler Foundation" />
+								<div class="span_2">
+									<Packard width="150" height="100" />
 								</div>
-								
 							</div>
 						</div>
 					</div>
@@ -477,7 +484,7 @@
 				padding-right: 100vw;
 				height: 100svh;
 
-				img{
+				img {
 					height: 100%;
 				}
 			}
@@ -493,8 +500,6 @@
 			}
 		}
 	}
-
-	
 
 	.progress_model_section {
 		position: relative;
@@ -518,8 +523,6 @@
 			}
 		}
 
-		
-
 		.model_item_arrow {
 			margin-top: 1rem;
 			margin-bottom: 1rem;
@@ -527,8 +530,8 @@
 				transform: rotate(90deg);
 			}
 
-			:global(path){
-				stroke: map-get($colors, "blue_light" ) !important;
+			:global(path) {
+				stroke: map-get($colors, 'blue_light') !important;
 			}
 		}
 
@@ -560,7 +563,7 @@
 				flex-grow: 1;
 				justify-content: space-between;
 				// background-color: #c7ccd6 !important;
-				background-color: #E9E8FB !important;
+				background-color: #e9e8fb !important;
 				span {
 					font-size: pxToRem(15);
 					font-weight: 400;
@@ -684,11 +687,15 @@
 				align-items: center;
 				grid-gap: 1rem;
 
-				:global(path){
-					fill: map-get($colors, "dark" ) !important;
+				:global(path) {
+					fill: map-get($colors, 'dark') !important;
 				}
 
-				.span_2{
+				img {
+					filter: brightness(0.2);
+				}
+
+				.span_2 {
 					grid-column: span 2;
 					justify-self: center;
 				}
@@ -744,11 +751,16 @@
 							transform: rotate(45deg);
 							display: block;
 
-							path{
-								fill: map-get($colors, "dark") !important;
+							path {
+								fill: map-get($colors, 'dark') !important;
 							}
 						}
 
+						.marquee_image {
+							transform: rotate(45deg);
+							max-width: 300px;
+							filter: brightness(0.2);
+						}
 					}
 				}
 			}
