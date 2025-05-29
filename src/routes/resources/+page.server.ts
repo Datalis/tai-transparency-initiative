@@ -50,6 +50,11 @@ export const load: PageServerLoad = async ({ url }) => {
 						summary: {
 							$contains: search
 						}
+					},
+					{
+						content: {
+							$contains: search
+						}
 					}
 				]
 			},
