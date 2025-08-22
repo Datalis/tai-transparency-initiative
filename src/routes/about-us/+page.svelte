@@ -1,4 +1,5 @@
 <script lang="ts">
+	import StyleGuidePDF from '$lib/assets/TAI Collaborative Style Guide.pdf';
 	import WorldImg from '$lib/assets/images/home/map-about-us.png';
 	import EnvisionImg1 from '$lib/assets/images/envision_1.webp';
 	import EnvisionImg2 from '$lib/assets/images/envision_2.webp';
@@ -168,7 +169,9 @@
 					below.
 				</p>
 				<div class="mt_4 links">
-					<a href="#">Editorial Policy</a>
+					<a target="_blank"
+						rel="noopener"
+						href={StyleGuidePDF}>Editorial Policy</a>
 					<!--<a href="">Style Guide</a>-->
 					<a
 						target="_blank"
