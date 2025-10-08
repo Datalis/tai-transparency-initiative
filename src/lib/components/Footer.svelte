@@ -182,7 +182,7 @@
 						<a href="https://www.facebook.com/TAInitiative/" class="link-icon mr_2">
 							<FacebookIcon class="" width="24" height="24" />
 						</a>
-						<a href="https://twitter.com/TAInitiative" class="link-icon mr_2">
+						<a href="https://x.com/TAICollab" class="link-icon mr_2">
 							<TwitterIcon class="" width="24" height="24" />
 						</a>
 						<a

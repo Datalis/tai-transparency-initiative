@@ -135,7 +135,7 @@
 				<a href="https://www.facebook.com/TAInitiative/" target="_blank" class="link-icon">
 					<FacebookIcon width="20" height="20" />
 				</a>
-				<a href="https://twitter.com/TAInitiative" target="_blank" class="link-icon">
+				<a href="https://x.com/TAICollab" target="_blank" class="link-icon">
 					<TwitterIcon width="20" height="20" />
 				</a>
 				<a
