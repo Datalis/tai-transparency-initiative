@@ -11,7 +11,7 @@
 	import HewlettLogo from '$lib/assets/icons/hewlett.svg?component';
 	import LuminateLogo from '$lib/assets/icons/luminate.svg?component';
 	import OpenSocietyLogo from '$lib/assets/icons/open-s.svg?component';
-	import ChandlerLogoImage from '$lib/assets/images/chandler.png';
+	import HiltonFoundationLogo from '$lib/assets/icons/hilton.svg?component';
 	import HumanityUnitedLogoImage from '$lib/assets/images/humanity-united.png';
 	import Packard from '$lib/assets/icons/Packard.svg?component';
 
@@ -152,16 +152,11 @@
 			<a href="https://www.opensocietyfoundations.org/" target="blank"
 				><OpenSocietyLogo width="300" /></a
 			>
-
-			<!-- <a
-				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
-				target="blank"><FCDOLogo width="300" /></a
-			> -->
-			<a href="https://www.chandlerfoundation.org/" class="logo_image" target="blank">
-				<img src={ChandlerLogoImage} alt="Chandler Foundation" />
+			<a href="https://www.hiltonfoundation.org/">
+				<HiltonFoundationLogo width="300" />
 			</a>
-			<a href="https://www.chandlerfoundation.org/" class="logo_image" target="blank">
-				<img src={HumanityUnitedLogoImage} alt="Chandler Foundation" />
+			<a href="https://humanityunited.org/" class="logo_image" target="blank">
+				<img src={HumanityUnitedLogoImage} alt="Humanity United" />
 			</a>
 			<a href="https://www.packard.org/" target="blank">
 				<Packard width="300" class="mt_4" />
@@ -185,16 +180,11 @@
 			<a href="https://www.opensocietyfoundations.org/" target="blank"
 				><OpenSocietyLogo width="150" /></a
 			>
-
-			<!-- <a
-				href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office"
-				target="blank"><FCDOLogo width="150" /></a
-			> -->
-			<a href="https://www.chandlerfoundation.org/" class="logo_image" target="blank">
-				<img src={ChandlerLogoImage} alt="Chandler Foundation" />
+			<a href="https://www.hiltonfoundation.org/">
+				<HiltonFoundationLogo width="150" />
 			</a>
-			<a href="https://www.chandlerfoundation.org/" class="logo_image" target="blank">
-				<img src={HumanityUnitedLogoImage} alt="Chandler Foundation" />
+			<a href="https://humanityunited.org/" class="logo_image" target="blank">
+				<img src={HumanityUnitedLogoImage} alt="Humanity United" />
 			</a>
 			<a href="https://www.packard.org/" target="blank" class="span_2">
 				<Packard width="150" height="60" class="mt_4" />

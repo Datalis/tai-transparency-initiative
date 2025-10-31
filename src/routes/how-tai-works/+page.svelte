@@ -5,7 +5,7 @@
 	import LuminateLogo from '$lib/assets/icons/luminate.svg?component';
 	import OpenSocietyLogo from '$lib/assets/icons/open-s.svg?component';
 	import SkollLogo from '$lib/assets/icons/skoll.svg?component';
-	import ChandlerLogoImage from '$lib/assets/images/chandler.png';
+	import HiltonFoundationLogo from '$lib/assets/icons/hilton.svg?component';
 	import HumanityUnitedLogoImage from '$lib/assets/images/humanity-united.png';
 	import Packard from '$lib/assets/icons/Packard.svg?component';
 	import SpeakerIcon from '$lib/assets/icons/Speaker_Icon.svg?component';
@@ -321,12 +321,12 @@
 									<OpenSocietyLogo width="300" />
 									<SkollLogo width="200" />
 
-									<img src={ChandlerLogoImage} class="marquee_image" alt="Chandler Foundation" />
 									<img
 										src={HumanityUnitedLogoImage}
 										class="marquee_image"
-										alt="Chandler Foundation"
+										alt="Humanity United"
 									/>
+									<HiltonFoundationLogo width="300" />
 									<MacArthurLogo width="300" />
 									<Packard width="300" />
 								</div>
@@ -337,11 +337,10 @@
 									<LuminateLogo width="300" />
 									<OpenSocietyLogo width="300" />
 									<SkollLogo width="200" />
-									<img src={ChandlerLogoImage} class="marquee_image" alt="Chandler Foundation" />
 									<img
 										src={HumanityUnitedLogoImage}
 										class="marquee_image"
-										alt="Chandler Foundation"
+										alt="Humanity United"
 									/>
 									<MacArthurLogo width="300" />
 									<Packard width="300" />
@@ -375,8 +374,8 @@
 								<LuminateLogo width="150" />
 								<OpenSocietyLogo width="150" />
 								<SkollLogo width="80" />
-								<img src={ChandlerLogoImage} alt="Chandler Foundation" />
-								<img src={HumanityUnitedLogoImage} alt="Chandler Foundation" />
+								<HiltonFoundationLogo width="150" />
+								<img src={HumanityUnitedLogoImage} alt="Humanity United" />
 								<div class="span_2">
 									<Packard width="150" height="100" />
 								</div>
